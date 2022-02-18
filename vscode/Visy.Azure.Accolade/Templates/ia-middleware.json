@@ -1,0 +1,72 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "integrationAccounts_ia_npd_middleware_name": {
+            "defaultValue": "ia-npd-middleware",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Logic/integrationAccounts",
+            "apiVersion": "2016-06-01",
+            "name": "[parameters('integrationAccounts_ia_npd_middleware_name')]",
+            "location": "australiasoutheast",
+            "tags": {
+                "business:CostCenter": "595433",
+                "business:CostCenterName": "BSG AU - Custom Applications (Non SAP)",
+                "tech:Application": "accoladewines",
+                "tech:ApplicationTeam": "Enterprise Apps",
+                "tech:Environment": "Non Production"
+            },
+            "sku": {
+                "name": "Standard"
+            },
+            "properties": {
+                "state": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.Logic/integrationAccounts/maps",
+            "apiVersion": "2016-06-01",
+            "name": "[concat(parameters('integrationAccounts_ia_npd_middleware_name'), '/AccoladeASN_To_RamcoASN')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Logic/integrationAccounts', parameters('integrationAccounts_ia_npd_middleware_name'))]"
+            ],
+            "properties": {
+                "mapType": "Xslt30",
+                "contentLink": {
+                    "uri": "https://prod-21.australiasoutheast.logic.azure.com:443/integrationAccounts/055c66c116be49b38601b53216681254/maps/AccoladeASN_To_RamcoASN/contents/Value?api-version=2015-08-01-preview&se=2021-09-28T10%3A41%3A52.9978148Z&sp=%2Fmaps%2FAccoladeASN_To_RamcoASN%2Fread&sv=1.0&sig=ADm3S4ftKcwAKWVKRsYWbhgtH6uLMzD8UqsoPPftReI",
+                    "contentVersion": "\"0x8D9824B06950D51\"",
+                    "contentSize": 3704,
+                    "contentHash": {
+                        "algorithm": "md5",
+                        "value": "vC5Z3+7W7h1w5P0b7TQjkA=="
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Logic/integrationAccounts/maps",
+            "apiVersion": "2016-06-01",
+            "name": "[concat(parameters('integrationAccounts_ia_npd_middleware_name'), '/AccoladeSO_To_RamcoSO')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Logic/integrationAccounts', parameters('integrationAccounts_ia_npd_middleware_name'))]"
+            ],
+            "properties": {
+                "mapType": "Xslt30",
+                "contentLink": {
+                    "uri": "https://prod-21.australiasoutheast.logic.azure.com:443/integrationAccounts/055c66c116be49b38601b53216681254/maps/AccoladeSO_To_RamcoSO/contents/Value?api-version=2015-08-01-preview&se=2021-09-28T10%3A41%3A52.9978148Z&sp=%2Fmaps%2FAccoladeSO_To_RamcoSO%2Fread&sv=1.0&sig=XlbibuJGjGJb7wRCUK0lzOaWvFAw_qVlmodZ-v2M65Y",
+                    "contentVersion": "\"0x8D9824B0CC2B638\"",
+                    "contentSize": 8849,
+                    "contentHash": {
+                        "algorithm": "md5",
+                        "value": "phCLiYkL/ygPmKF8Amokbg=="
+                    }
+                }
+            }
+        }
+    ]
+}

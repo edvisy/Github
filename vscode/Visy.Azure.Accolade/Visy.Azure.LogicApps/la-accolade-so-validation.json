@@ -1,0 +1,513 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_la_accolade_so_name": {
+            "defaultValue": "la-accolade-so",
+            "type": "String"
+        },
+        "integrationAccounts_ia_middleware_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Logic/integrationAccounts/ia-middleware",
+            "type": "String"
+        },
+        "connections_azureblob_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/azureblob",
+            "type": "String"
+        },
+        "connections_office365_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/office365",
+            "type": "String"
+        },
+        "connections_sftpwithssh_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/sftpwithssh",
+            "type": "String"
+        },
+        "connections_sftpwithssh_5_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/sftpwithssh-5",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('workflows_la_accolade_so_name')]",
+            "location": "australiaeast",
+            "tags": {
+                "business:CostCenter": "595433",
+                "business:CostCenterName": "BSG AU - Custom Applications (Non SAP)",
+                "tech:Application": "accoladewines",
+                "tech:ApplicationTeam": "Enterprise Apps",
+                "tech:Environment": "Non Production"
+            },
+            "properties": {
+                "state": "Enabled",
+                "integrationAccount": {
+                    "id": "[parameters('integrationAccounts_ia_middleware_externalid')]"
+                },
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "Recurrence": {
+                            "recurrence": {
+                                "frequency": "Minute",
+                                "interval": 10
+                            },
+                            "evaluatedRecurrence": {
+                                "frequency": "Minute",
+                                "interval": 10
+                            },
+                            "type": "Recurrence"
+                        }
+                    },
+                    "actions": {
+                        "For_each": {
+                            "foreach": "@body('List_files_in_folder')",
+                            "actions": {
+                                "Ifso": {
+                                    "actions": {
+                                        "Create_blob_(V2)": {
+                                            "runAfter": {
+                                                "Get_file_content": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "body": "@body('Get_file_content')",
+                                                "headers": {
+                                                    "ReadFileMetadataFromServer": true
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
+                                                "queries": {
+                                                    "folderPath": "/salesorder",
+                                                    "name": "@{concat('inbound_', triggerBody()?['Name'], '.', guid(),'.', 'xml')}",
+                                                    "queryParametersSingleEncoded": true
+                                                }
+                                            },
+                                            "runtimeConfiguration": {
+                                                "contentTransfer": {
+                                                    "transferMode": "Chunked"
+                                                }
+                                            }
+                                        },
+                                        "Delete_file": {
+                                            "runAfter": {
+                                                "Switch": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "headers": {
+                                                    "SkipDeleteIfFileNotFoundOnServer": true
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sftpwithssh']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "delete",
+                                                "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(items('For_each')?['Id']))}"
+                                            }
+                                        },
+                                        "Get_file_content": {
+                                            "runAfter": {
+                                                "Get_file_metadata": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sftpwithssh']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "get",
+                                                "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(body('Get_file_metadata')?['Id']))}/content",
+                                                "queries": {
+                                                    "inferContentType": true
+                                                }
+                                            }
+                                        },
+                                        "Get_file_metadata": {
+                                            "runAfter": {},
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sftpwithssh']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "get",
+                                                "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(items('For_each')?['Id']))}"
+                                            }
+                                        },
+                                        "Switch": {
+                                            "runAfter": {
+                                                "XML_Validation": [
+                                                    "Succeeded",
+                                                    "Failed"
+                                                ]
+                                            },
+                                            "cases": {
+                                                "Case": {
+                                                    "case": "OK",
+                                                    "actions": {
+                                                        "Condition": {
+                                                            "actions": {
+                                                                "Send_an_email_(V2)": {
+                                                                    "runAfter": {},
+                                                                    "type": "ApiConnection",
+                                                                    "inputs": {
+                                                                        "body": {
+                                                                            "Attachments": [
+                                                                                {
+                                                                                    "ContentBytes": "@{base64(concat('f',body('Get_file_content')))}",
+                                                                                    "Name": "@items('For_each')?['DisplayName']"
+                                                                                }
+                                                                            ],
+                                                                            "Body": "<p>Please raise servicenow incident to your integration team for investigation</p>",
+                                                                            "Cc": "biztalk_team@visy.com.au",
+                                                                            "Subject": "Error while transforming Accolade Sales Order to Ramco XML (UAT)",
+                                                                            "To": "annette.clarke@visy.com.au;raj.kamaraj@visy.com.au"
+                                                                        },
+                                                                        "host": {
+                                                                            "connection": {
+                                                                                "name": "@parameters('$connections')['office365']['connectionId']"
+                                                                            }
+                                                                        },
+                                                                        "method": "post",
+                                                                        "path": "/v2/Mail"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "runAfter": {
+                                                                "Scope": [
+                                                                    "Succeeded"
+                                                                ]
+                                                            },
+                                                            "else": {
+                                                                "actions": {
+                                                                    "Create_blob_(V2)_2": {
+                                                                        "runAfter": {
+                                                                            "Create_file": [
+                                                                                "Succeeded"
+                                                                            ]
+                                                                        },
+                                                                        "type": "ApiConnection",
+                                                                        "inputs": {
+                                                                            "body": "@body('Transform_XML')",
+                                                                            "headers": {
+                                                                                "ReadFileMetadataFromServer": true
+                                                                            },
+                                                                            "host": {
+                                                                                "connection": {
+                                                                                    "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                                                                }
+                                                                            },
+                                                                            "method": "post",
+                                                                            "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
+                                                                            "queries": {
+                                                                                "folderPath": "/salesorder",
+                                                                                "name": "@{concat('outbound_', triggerBody()?['Name'], '.', guid(),'.', 'xml')}",
+                                                                                "queryParametersSingleEncoded": true
+                                                                            }
+                                                                        },
+                                                                        "runtimeConfiguration": {
+                                                                            "contentTransfer": {
+                                                                                "transferMode": "Chunked"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "Create_file": {
+                                                                        "runAfter": {},
+                                                                        "type": "ApiConnection",
+                                                                        "inputs": {
+                                                                            "body": "@body('Transform_XML')",
+                                                                            "headers": {
+                                                                                "ReadFileMetadataFromServer": true
+                                                                            },
+                                                                            "host": {
+                                                                                "connection": {
+                                                                                    "name": "@parameters('$connections')['sftpwithssh_2']['connectionId']"
+                                                                                }
+                                                                            },
+                                                                            "method": "post",
+                                                                            "path": "/datasets/default/files",
+                                                                            "queries": {
+                                                                                "folderPath": "/Inbound/outboundorder/in",
+                                                                                "name": "@{concat(guid(),'.', 'xml')}",
+                                                                                "queryParametersSingleEncoded": true
+                                                                            }
+                                                                        },
+                                                                        "runtimeConfiguration": {
+                                                                            "contentTransfer": {
+                                                                                "transferMode": "Chunked"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "expression": {
+                                                                "or": [
+                                                                    {
+                                                                        "equals": [
+                                                                            "@result('Scope')[0]['status']",
+                                                                            "Failed"
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "equals": [
+                                                                            "@empty(coalesce(body('Transform_XML'), ''))",
+                                                                            true
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "type": "If"
+                                                        },
+                                                        "Scope": {
+                                                            "actions": {
+                                                                "Transform_XML": {
+                                                                    "runAfter": {},
+                                                                    "type": "Xslt",
+                                                                    "inputs": {
+                                                                        "content": "@{body('Get_file_content')}",
+                                                                        "integrationAccount": {
+                                                                            "map": {
+                                                                                "name": "Accoladeso_To_Ramcoso"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "runAfter": {},
+                                                            "type": "Scope"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "default": {
+                                                "actions": {
+                                                    "For_each_2": {
+                                                        "foreach": "@body('Parse_JSON')",
+                                                        "actions": {
+                                                            "Append_to_string_variable": {
+                                                                "runAfter": {},
+                                                                "type": "AppendToStringVariable",
+                                                                "inputs": {
+                                                                    "name": "EmailBody",
+                                                                    "value": "@concat(items('For_each_2')['message'], '<br />')"
+                                                                }
+                                                            }
+                                                        },
+                                                        "runAfter": {
+                                                            "Parse_JSON": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "Foreach"
+                                                    },
+                                                    "Parse_JSON": {
+                                                        "runAfter": {},
+                                                        "type": "ParseJson",
+                                                        "inputs": {
+                                                            "content": "@outputs('XML_Validation')['errors']",
+                                                            "schema": {
+                                                                "items": {
+                                                                    "properties": {
+                                                                        "lineNumber": {
+                                                                            "type": "integer"
+                                                                        },
+                                                                        "linePosition": {
+                                                                            "type": "integer"
+                                                                        },
+                                                                        "message": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "severity": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "message",
+                                                                        "lineNumber",
+                                                                        "linePosition",
+                                                                        "severity"
+                                                                    ],
+                                                                    "type": "object"
+                                                                },
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    },
+                                                    "Send_an_email_(V2)_2": {
+                                                        "runAfter": {
+                                                            "For_each_2": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "ApiConnection",
+                                                        "inputs": {
+                                                            "body": {
+                                                                "Attachments": [
+                                                                    {
+                                                                        "ContentBytes": "@{base64(body('Get_file_content'))}",
+                                                                        "Name": "@items('For_each')?['DisplayName']"
+                                                                    }
+                                                                ],
+                                                                "Body": "<p>@{replace(variables('EmailBody'), 'in namespace ''http://Visy.Middleware.Ramco.Accolade.Schemas.salesordercanonical''', '')}</p>",
+                                                                "Cc": "biztalk_team@visy.com.au",
+                                                                "Subject": "Accolade Sales Order Failed Message (UAT)",
+                                                                "To": "annette.clarke@visy.com.au;raj.kamaraj@visy.com.au"
+                                                            },
+                                                            "host": {
+                                                                "connection": {
+                                                                    "name": "@parameters('$connections')['office365']['connectionId']"
+                                                                }
+                                                            },
+                                                            "method": "post",
+                                                            "path": "/v2/Mail"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "expression": "@actions('XML_Validation')['Code']",
+                                            "type": "Switch"
+                                        },
+                                        "Transform_Canonical": {
+                                            "runAfter": {
+                                                "Create_blob_(V2)": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "Xslt",
+                                            "inputs": {
+                                                "content": "@{body('Get_file_content')}",
+                                                "integrationAccount": {
+                                                    "map": {
+                                                        "name": "AccoladeSO_To_CanonicalSO"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "XML_Validation": {
+                                            "runAfter": {
+                                                "Transform_Canonical": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "XmlValidation",
+                                            "inputs": {
+                                                "content": "@{body('Transform_Canonical')}",
+                                                "integrationAccount": {
+                                                    "schema": {
+                                                        "name": "salesordercanonical"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "runAfter": {},
+                                    "expression": {
+                                        "and": [
+                                            {
+                                                "startsWith": [
+                                                    "@items('For_each')?['Name']",
+                                                    "SALESORDER_"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "type": "If"
+                                }
+                            },
+                            "runAfter": {
+                                "List_files_in_folder": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach"
+                        },
+                        "Initialize_variable": {
+                            "runAfter": {},
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "EmailBody",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        },
+                        "List_files_in_folder": {
+                            "runAfter": {
+                                "Initialize_variable": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "metadata": {
+                                "L0FjY29sYWRlL1VBVC9JTg==": "/Accolade/UAT/IN",
+                                "L2hvbWUvRWRpQWNjb2xhZGVXaW5lc19leHQvTG9naWNBcHBzL0FjY29sYWRlL1VBVC9JTg==": "/home/EdiAccoladeWines_ext/LogicApps/Accolade/UAT/IN"
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['sftpwithssh']['connectionId']"
+                                    }
+                                },
+                                "method": "get",
+                                "path": "/datasets/default/folders/@{encodeURIComponent(encodeURIComponent('L0FjY29sYWRlL1VBVC9JTg=='))}"
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "azureblob": {
+                                "connectionId": "[parameters('connections_azureblob_externalid')]",
+                                "connectionName": "azureblob",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/azureblob"
+                            },
+                            "office365": {
+                                "connectionId": "[parameters('connections_office365_externalid')]",
+                                "connectionName": "office365",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/office365"
+                            },
+                            "sftpwithssh": {
+                                "connectionId": "[parameters('connections_sftpwithssh_externalid')]",
+                                "connectionName": "sftpwithssh",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/sftpwithssh"
+                            },
+                            "sftpwithssh_2": {
+                                "connectionId": "[parameters('connections_sftpwithssh_5_externalid')]",
+                                "connectionName": "sftpwithssh-5",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/sftpwithssh"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
