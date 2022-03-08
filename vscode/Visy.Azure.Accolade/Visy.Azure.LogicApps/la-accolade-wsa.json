@@ -14,6 +14,10 @@
             "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/azureblob",
             "type": "String"
         },
+        "connections_office365_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/office365",
+            "type": "String"
+        },
         "connections_sftpwithssh_externalid": {
             "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/sftpwithssh",
             "type": "String"
@@ -138,7 +142,32 @@
                                             }
                                         },
                                         "IfFailed": {
-                                            "actions": {},
+                                            "actions": {
+                                                "Send_an_email_(V2)": {
+                                                    "runAfter": {},
+                                                    "type": "ApiConnection",
+                                                    "inputs": {
+                                                        "body": {
+                                                            "Attachments": [
+                                                                {
+                                                                    "ContentBytes": "@{base64(body('Get_file_content'))}",
+                                                                    "Name": "@body('Get_file_metadata')?['DisplayName']"
+                                                                }
+                                                            ],
+                                                            "Body": "<p>Accolade Warehouse Shipping Advice &nbsp;Failed Message (UAT)</p>",
+                                                            "Subject": "Accolade Warehouse Shipping Advice  Failed Message (UAT)",
+                                                            "To": "biztalk_team@visy.com.au"
+                                                        },
+                                                        "host": {
+                                                            "connection": {
+                                                                "name": "@parameters('$connections')['office365']['connectionId']"
+                                                            }
+                                                        },
+                                                        "method": "post",
+                                                        "path": "/v2/Mail"
+                                                    }
+                                                }
+                                            },
                                             "runAfter": {
                                                 "Scope": [
                                                     "Succeeded"
@@ -167,7 +196,7 @@
                                                             "path": "/datasets/default/files",
                                                             "queries": {
                                                                 "folderPath": "/Accolade/UAT/OUT",
-                                                                "name": "@{concat('SHIPCONF_', string(variables('var_ordernumber')), '_SO_', formatDateTime(utcNow(), 'yyyMMddTHHmmss'), '.xml')}",
+                                                                "name": "@{concat('SHIPCONF_', string(variables('var_ordernumber')), '_SO_', formatDateTime(utcNow(), 'yyyMMddTHHmmss.FFF'), '.xml')}",
                                                                 "queryParametersSingleEncoded": true
                                                             }
                                                         },
@@ -198,7 +227,7 @@
                                                             "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
                                                             "queries": {
                                                                 "folderPath": "/shipconf",
-                                                                "name": "@{concat('outbound_', string(variables('var_ordernumber')), '_SO_', formatDateTime(utcNow(), 'yyyMMddTHHmmss'), '.xml')}",
+                                                                "name": "@{concat('SHIPCONF_', string(variables('var_ordernumber')), '_SO_', formatDateTime(utcNow(), 'yyyMMddTHHmmss.FFF'), '.xml')}",
                                                                 "queryParametersSingleEncoded": true
                                                             }
                                                         },
@@ -269,7 +298,7 @@
                                             {
                                                 "startsWith": [
                                                     "@body('Get_file_metadata')?['Name']",
-                                                    "SHIPCONF_"
+                                                    "VL_SC_"
                                                 ]
                                             }
                                         ]
@@ -339,6 +368,11 @@
                                 "connectionId": "[parameters('connections_azureblob_externalid')]",
                                 "connectionName": "azureblob",
                                 "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/azureblob"
+                            },
+                            "office365": {
+                                "connectionId": "[parameters('connections_office365_externalid')]",
+                                "connectionName": "office365",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/office365"
                             },
                             "sftpwithssh": {
                                 "connectionId": "[parameters('connections_sftpwithssh_externalid')]",

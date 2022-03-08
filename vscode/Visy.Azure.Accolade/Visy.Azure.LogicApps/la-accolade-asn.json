@@ -181,9 +181,16 @@
                                                                     "type": "ApiConnection",
                                                                     "inputs": {
                                                                         "body": {
+                                                                            "Attachments": [
+                                                                                {
+                                                                                    "ContentBytes": "@{base64(body('Get_file_content'))}",
+                                                                                    "Name": "@items('For_each')?['DisplayName']"
+                                                                                }
+                                                                            ],
                                                                             "Body": "<p> @result('Scope')</p>",
+                                                                            "Cc": "biztalk_team@visy.com.au",
                                                                             "Subject": "Accolade to Ramco ASN Transformation Failure",
-                                                                            "To": "ed.bangga@visy.com.sg"
+                                                                            "To": "annette.clarke@visy.com.au;raj.kamaraj@visy.com.au"
                                                                         },
                                                                         "host": {
                                                                             "connection": {
@@ -303,20 +310,77 @@
                                             },
                                             "default": {
                                                 "actions": {
-                                                    "Send_an_email_(V2)_3": {
+                                                    "For_each_3": {
+                                                        "foreach": "@body('Parse_JSON')",
+                                                        "actions": {
+                                                            "Append_to_string_variable": {
+                                                                "runAfter": {},
+                                                                "type": "AppendToStringVariable",
+                                                                "inputs": {
+                                                                    "name": "EmailBody",
+                                                                    "value": "@concat(items('For_each_3')['message'], '<br />')"
+                                                                }
+                                                            }
+                                                        },
+                                                        "runAfter": {
+                                                            "Parse_JSON": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "Foreach"
+                                                    },
+                                                    "Parse_JSON": {
                                                         "runAfter": {},
+                                                        "type": "ParseJson",
+                                                        "inputs": {
+                                                            "content": "@outputs('XML_Validation')['errors']",
+                                                            "schema": {
+                                                                "items": {
+                                                                    "properties": {
+                                                                        "lineNumber": {
+                                                                            "type": "integer"
+                                                                        },
+                                                                        "linePosition": {
+                                                                            "type": "integer"
+                                                                        },
+                                                                        "message": {
+                                                                            "type": "string"
+                                                                        },
+                                                                        "severity": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "required": [
+                                                                        "message",
+                                                                        "lineNumber",
+                                                                        "linePosition",
+                                                                        "severity"
+                                                                    ],
+                                                                    "type": "object"
+                                                                },
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    },
+                                                    "Send_an_email_(V2)_3": {
+                                                        "runAfter": {
+                                                            "For_each_3": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
                                                         "type": "ApiConnection",
                                                         "inputs": {
                                                             "body": {
                                                                 "Attachments": [
                                                                     {
                                                                         "ContentBytes": "@{base64(body('Get_file_content'))}",
-                                                                        "Name": "@{concat('inbound_', triggerBody()?['Name'], '.', guid(),'.', 'xml')}"
+                                                                        "Name": "@items('For_each')?['DisplayName']"
                                                                     }
                                                                 ],
-                                                                "Body": "<p>@{outputs('XML_Validation')['errors']}</p>",
-                                                                "Subject": "Failed",
-                                                                "To": "ed.bangga@visy.com.sg"
+                                                                "Body": "<p>@{replace(variables('EmailBody'), 'in namespace ''http://Visy.Middleware.Ramco.Accolade.Schemas.asncanonical''', '')}</p>",
+                                                                "Cc": "biztalk_team@visy.com.au",
+                                                                "Subject": "Accolade ASN Failed Message (UAT)",
+                                                                "To": "annette.clarke@visy.com.au;raj.kamaraj@visy.com.au"
                                                             },
                                                             "host": {
                                                                 "connection": {
@@ -332,7 +396,7 @@
                                             "expression": "@actions('XML_Validation')['Code']",
                                             "type": "Switch"
                                         },
-                                        "Transform_XML_Canonical": {
+                                        "Transform_Canonical": {
                                             "runAfter": {
                                                 "Create_blob_(V2)": [
                                                     "Succeeded"
@@ -350,44 +414,22 @@
                                         },
                                         "XML_Validation": {
                                             "runAfter": {
-                                                "Transform_XML_Canonical": [
+                                                "Transform_Canonical": [
                                                     "Succeeded"
                                                 ]
                                             },
                                             "type": "XmlValidation",
                                             "inputs": {
-                                                "content": "@{body('Transform_XML_Canonical')}",
+                                                "content": "@{body('Transform_Canonical')}",
                                                 "integrationAccount": {
                                                     "schema": {
-                                                        "name": "ASNCanonicalXml"
+                                                        "name": "asncanonical"
                                                     }
                                                 }
                                             }
                                         }
                                     },
                                     "runAfter": {},
-                                    "else": {
-                                        "actions": {
-                                            "Send_an_email_(V2)": {
-                                                "runAfter": {},
-                                                "type": "ApiConnection",
-                                                "inputs": {
-                                                    "body": {
-                                                        "Body": "<p>Please check this invalid file.</p>",
-                                                        "Subject": "Logic Apps Notification - Invalid File:  @{items('For_each')?['DisplayName']}",
-                                                        "To": "ed.bangga@visy.com.sg"
-                                                    },
-                                                    "host": {
-                                                        "connection": {
-                                                            "name": "@parameters('$connections')['office365']['connectionId']"
-                                                        }
-                                                    },
-                                                    "method": "post",
-                                                    "path": "/v2/Mail"
-                                                }
-                                            }
-                                        }
-                                    },
                                     "expression": {
                                         "and": [
                                             {
@@ -408,8 +450,24 @@
                             },
                             "type": "Foreach"
                         },
-                        "List_files_in_folder": {
+                        "Initialize_variable": {
                             "runAfter": {},
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "EmailBody",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        },
+                        "List_files_in_folder": {
+                            "runAfter": {
+                                "Initialize_variable": [
+                                    "Succeeded"
+                                ]
+                            },
                             "metadata": {
                                 "L0FjY29sYWRlL1VBVC9JTg==": "/Accolade/UAT/IN",
                                 "L2hvbWUvRWRpQWNjb2xhZGVXaW5lc19leHQvTG9naWNBcHBzL0FjY29sYWRlL1VBVC9JTg==": "/home/EdiAccoladeWines_ext/LogicApps/Accolade/UAT/IN"
