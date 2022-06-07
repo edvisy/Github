@@ -1,0 +1,456 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workflows_la_accolade_inventoryadj_name": {
+            "defaultValue": "la-accolade-inventoryadj",
+            "type": "String"
+        },
+        "integrationAccounts_ia_middleware_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Logic/integrationAccounts/ia-middleware",
+            "type": "String"
+        },
+        "connections_azureblob_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/azureblob",
+            "type": "String"
+        },
+        "connections_office365_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/office365",
+            "type": "String"
+        },
+        "connections_sftpwithssh_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/sftpwithssh",
+            "type": "String"
+        },
+        "connections_sftpwithssh_5_externalid": {
+            "defaultValue": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/resourceGroups/rg-vsm-npd-accoladewines/providers/Microsoft.Web/connections/sftpwithssh-5",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('workflows_la_accolade_inventoryadj_name')]",
+            "location": "australiaeast",
+            "tags": {
+                "business:CostCenter": "595433",
+                "business:CostCenterName": "BSG AU - Custom Applications (Non SAP)",
+                "tech:Application": "accoladewines",
+                "tech:ApplicationTeam": "Enterprise Apps",
+                "tech:Environment": "Non Production"
+            },
+            "properties": {
+                "state": "Enabled",
+                "integrationAccount": {
+                    "id": "[parameters('integrationAccounts_ia_middleware_externalid')]"
+                },
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "Recurrence": {
+                            "recurrence": {
+                                "frequency": "Minute",
+                                "interval": 10
+                            },
+                            "evaluatedRecurrence": {
+                                "frequency": "Minute",
+                                "interval": 10
+                            },
+                            "type": "Recurrence",
+                            "runtimeConfiguration": {
+                                "concurrency": {
+                                    "runs": 1
+                                }
+                            }
+                        }
+                    },
+                    "actions": {
+                        "For_each": {
+                            "foreach": "@body('List_files_in_folder')",
+                            "actions": {
+                                "Condition": {
+                                    "actions": {
+                                        "Create_blob_(V2)": {
+                                            "runAfter": {
+                                                "Get_file_content": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "body": "@body('Get_file_content')",
+                                                "headers": {
+                                                    "ReadFileMetadataFromServer": true
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "post",
+                                                "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
+                                                "queries": {
+                                                    "folderPath": "/stockadj",
+                                                    "name": "@{concat('inbound_', body('Get_file_metadata')?['DisplayName'], '_', formatDateTime(utcNow(), 'yyyMMddTHHmmss.FFF'), '_', variables('ctr'), '.', 'xml')}",
+                                                    "queryParametersSingleEncoded": true
+                                                }
+                                            },
+                                            "runtimeConfiguration": {
+                                                "contentTransfer": {
+                                                    "transferMode": "Chunked"
+                                                }
+                                            }
+                                        },
+                                        "Delete_file": {
+                                            "runAfter": {
+                                                "IfFailed": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "headers": {
+                                                    "SkipDeleteIfFileNotFoundOnServer": false
+                                                },
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sftpwithssh_1']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "delete",
+                                                "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(items('For_each')?['Id']))}"
+                                            }
+                                        },
+                                        "Get_file_content": {
+                                            "runAfter": {},
+                                            "type": "ApiConnection",
+                                            "inputs": {
+                                                "host": {
+                                                    "connection": {
+                                                        "name": "@parameters('$connections')['sftpwithssh_1']['connectionId']"
+                                                    }
+                                                },
+                                                "method": "get",
+                                                "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(body('Get_file_metadata')?['Id']))}/content",
+                                                "queries": {
+                                                    "inferContentType": true
+                                                }
+                                            }
+                                        },
+                                        "IfFailed": {
+                                            "actions": {
+                                                "Send_an_email_(V2)": {
+                                                    "runAfter": {},
+                                                    "type": "ApiConnection",
+                                                    "inputs": {
+                                                        "body": {
+                                                            "Attachments": [
+                                                                {
+                                                                    "ContentBytes": "@{base64(body('Get_file_content'))}",
+                                                                    "Name": "@body('Get_file_metadata')?['DisplayName']"
+                                                                }
+                                                            ],
+                                                            "Body": "<p>Accolade stockadjustment &nbsp;Failed Message (UAT)</p>",
+                                                            "Subject": "Accolade stockadjustment  Failed Message (UAT)",
+                                                            "To": "biztalk_team_v@visy.com.au"
+                                                        },
+                                                        "host": {
+                                                            "connection": {
+                                                                "name": "@parameters('$connections')['office365']['connectionId']"
+                                                            }
+                                                        },
+                                                        "method": "post",
+                                                        "path": "/v2/Mail"
+                                                    }
+                                                }
+                                            },
+                                            "runAfter": {
+                                                "Scope": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "else": {
+                                                "actions": {
+                                                    "Accolade": {
+                                                        "runAfter": {
+                                                            "Create_blob_(V2)_2": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "ApiConnection",
+                                                        "inputs": {
+                                                            "body": "@body('Transform_XML')",
+                                                            "headers": {
+                                                                "ReadFileMetadataFromServer": true
+                                                            },
+                                                            "host": {
+                                                                "connection": {
+                                                                    "name": "@parameters('$connections')['sftpwithssh']['connectionId']"
+                                                                }
+                                                            },
+                                                            "method": "post",
+                                                            "path": "/datasets/default/files",
+                                                            "queries": {
+                                                                "folderPath": "/Accolade/UAT/OUT",
+                                                                "name": "@{concat('stockadjustment_', string(variables('var_ordernumber')), '_', string(variables('var_ordertype')),'_', formatDateTime(utcNow(), 'yyyMMddTHHmmss.FFF'),'_', variables('ctr'),  '.xml')}",
+                                                                "queryParametersSingleEncoded": true
+                                                            }
+                                                        },
+                                                        "runtimeConfiguration": {
+                                                            "contentTransfer": {
+                                                                "transferMode": "Chunked"
+                                                            }
+                                                        }
+                                                    },
+                                                    "Create_blob_(V2)_2": {
+                                                        "runAfter": {
+                                                            "Set_variable_Order_Type": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "ApiConnection",
+                                                        "inputs": {
+                                                            "body": "@body('Transform_XML')",
+                                                            "headers": {
+                                                                "ReadFileMetadataFromServer": true
+                                                            },
+                                                            "host": {
+                                                                "connection": {
+                                                                    "name": "@parameters('$connections')['azureblob']['connectionId']"
+                                                                }
+                                                            },
+                                                            "method": "post",
+                                                            "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('AccountNameFromSettings'))}/files",
+                                                            "queries": {
+                                                                "folderPath": "/stockadj",
+                                                                "name": "@{concat('stockadjustment_', string(variables('var_ordernumber')), '_', string(variables('var_ordertype')),'_', formatDateTime(utcNow(), 'yyyMMddTHHmmss.FFF'), '_', variables('ctr'), '.xml')}",
+                                                                "queryParametersSingleEncoded": true
+                                                            }
+                                                        },
+                                                        "runtimeConfiguration": {
+                                                            "contentTransfer": {
+                                                                "transferMode": "Chunked"
+                                                            }
+                                                        }
+                                                    },
+                                                    "Set_variable_Order_Number": {
+                                                        "runAfter": {},
+                                                        "type": "SetVariable",
+                                                        "inputs": {
+                                                            "name": "var_ordernumber",
+                                                            "value": "@{\r\nxpath(xml(body('Get_file_content')),'/*[local-name()=\"Inventoryadjust\"]/*[local-name()=\"Header\"]/*[local-name()=\"Uniqueid\"]/text()')[0]}"
+                                                        }
+                                                    },
+                                                    "Set_variable_Order_Type": {
+                                                        "runAfter": {
+                                                            "Set_variable_Order_Number": [
+                                                                "Succeeded"
+                                                            ]
+                                                        },
+                                                        "type": "SetVariable",
+                                                        "inputs": {
+                                                            "name": "var_ordertype",
+                                                            "value": "@{xpath(xml(body('Get_file_content')),'/*[local-name()=\"inventoryadjeceiptMessageRoot\"]/*[local-name()=\"Body\"]/*[local-name()=\"OrderType\"]/text()')[0]}"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "expression": {
+                                                "or": [
+                                                    {
+                                                        "equals": [
+                                                            "@result('Scope')[0]['status']",
+                                                            "Failed"
+                                                        ]
+                                                    },
+                                                    {
+                                                        "equals": [
+                                                            "@empty(coalesce(body('Transform_XML'), ''))",
+                                                            true
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "type": "If"
+                                        },
+                                        "Scope": {
+                                            "actions": {
+                                                "Transform_XML": {
+                                                    "runAfter": {},
+                                                    "type": "Xslt",
+                                                    "inputs": {
+                                                        "content": "@{body('Get_file_content')}",
+                                                        "integrationAccount": {
+                                                            "map": {
+                                                                "name": "InventoryAdjustmentXml_To_AccoladeXml"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "runAfter": {
+                                                "Create_blob_(V2)": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "Scope"
+                                        }
+                                    },
+                                    "runAfter": {
+                                        "Get_file_metadata": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "expression": {
+                                        "and": [
+                                            {
+                                                "startsWith": [
+                                                    "@body('Get_file_metadata')?['Name']",
+                                                    "VL_OT"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "type": "If"
+                                },
+                                "Get_file_metadata": {
+                                    "runAfter": {},
+                                    "type": "ApiConnection",
+                                    "inputs": {
+                                        "host": {
+                                            "connection": {
+                                                "name": "@parameters('$connections')['sftpwithssh_1']['connectionId']"
+                                            }
+                                        },
+                                        "method": "get",
+                                        "path": "/datasets/default/files/@{encodeURIComponent(encodeURIComponent(items('For_each')?['Id']))}"
+                                    }
+                                },
+                                "Increment_variable": {
+                                    "runAfter": {
+                                        "Condition": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "type": "IncrementVariable",
+                                    "inputs": {
+                                        "name": "ctr",
+                                        "value": 1
+                                    }
+                                }
+                            },
+                            "runAfter": {
+                                "Initialize_variable_Order_Type": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach",
+                            "operationOptions": "Sequential"
+                        },
+                        "Initialize_variable": {
+                            "runAfter": {
+                                "List_files_in_folder": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "var_ordernumber",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        },
+                        "Initialize_variable_Order_Type": {
+                            "runAfter": {
+                                "Initialize_variable_ctr": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "var_ordertype",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        },
+                        "Initialize_variable_ctr": {
+                            "runAfter": {
+                                "Initialize_variable": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "ctr",
+                                        "type": "integer",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "List_files_in_folder": {
+                            "runAfter": {},
+                            "metadata": {
+                                "L091dGJvdW5kL0dvb2RzUmVjZWlwdC9pbg==": "/Outbound/stockAdjustment/in"                                
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['sftpwithssh_1']['connectionId']"
+                                    }
+                                },
+                                "method": "get",
+                                "path": "/datasets/default/folders/@{encodeURIComponent(encodeURIComponent('L091dGJvdW5kL0dvb2RzUmVjZWlwdC9pbg=='))}"
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                            "azureblob": {
+                                "connectionId": "[parameters('connections_azureblob_externalid')]",
+                                "connectionName": "azureblob",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/azureblob"
+                            },
+                            "office365": {
+                                "connectionId": "[parameters('connections_office365_externalid')]",
+                                "connectionName": "office365",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/office365"
+                            },
+                            "sftpwithssh": {
+                                "connectionId": "[parameters('connections_sftpwithssh_externalid')]",
+                                "connectionName": "sftpwithssh",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/sftpwithssh"
+                            },
+                            "sftpwithssh_1": {
+                                "connectionId": "[parameters('connections_sftpwithssh_5_externalid')]",
+                                "connectionName": "sftpwithssh-5",
+                                "id": "/subscriptions/bdbc96a1-b00e-4b6f-bfe1-f0648e3cadd5/providers/Microsoft.Web/locations/australiaeast/managedApis/sftpwithssh"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
