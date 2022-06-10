@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB4DF85E-3C05-48A7-97EE-F5F88B0C4E46}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.Glass.MES.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.Glass.MES.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.Glass.MES.Components\Visy.Middleware.SAP.Glass.MES.Components.csproj">
+      <Project>{4c1bb550-9b2d-489f-a4e0-f121d69ea439}</Project>
+      <Name>Visy.Middleware.SAP.Glass.MES.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.Glass.MES.Schemas\Visy.Middleware.SAP.Glass.MES.Schemas.btproj">
+      <Project>{5e00d04b-b7ce-4ff6-a73a-29f4e5726488}</Project>
+      <Name>Visy.Middleware.SAP.Glass.MES.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateDepartments.btm">
+      <TypeName>MES_Equipment_UpdateDepartments</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateEquipments.btm">
+      <TypeName>MES_Equipment_UpdateEquipments</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateEquipmentTypes.btm">
+      <TypeName>MES_Equipment_UpdateEquipmentTypes</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateFunctionalLocations.btm">
+      <TypeName>MES_Equipment_UpdateFunctionalLocations</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateProblemGroups.btm">
+      <TypeName>MES_Equipment_UpdateProblemGroups</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateProblems.btm">
+      <TypeName>MES_Equipment_UpdateProblems</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateWorkCentres.btm">
+      <TypeName>MES_Equipment_UpdateWorkCentres</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MES_Equipment_UpdateTranslations.btm">
+      <TypeName>MES_Equipment_UpdateTranslations</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ProductionPlanningFF_To_Orders.btm">
+      <TypeName>ProductionPlanningFF_To_Orders</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ProductionPlanningFF_To_GlassOrders.btm">
+      <SubType>Task</SubType>
+      <TypeName>ProductionPlanningFF_To_GlassOrders</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ProductionPlanningFF_To_SKUOrders.btm">
+      <SubType>Task</SubType>
+      <TypeName>ProductionPlanningFF_To_SKUOrders</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ProductionPlanningFF_To_BottleOrders.btm">
+      <SubType>Task</SubType>
+      <TypeName>ProductionPlanningFF_To_BottleOrders</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ProductionPlanningFF_To_WarespecOrders.btm">
+      <TypeName>ProductionPlanningFF_To_WarespecOrders</TypeName>
+      <Namespace>Visy.Middleware.SAP.Glass.MES.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ProductionPlanningFF_To_BottleOrders.xsl" />
+    <Content Include="ProductionPlanningFF_To_BottleOrders_extxml.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

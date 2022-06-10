@@ -1,0 +1,302 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f26eb6d8-c9c6-4ff7-ba3b-524f76c3cd3d" LowerBound="1.1" HigherBound="77.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="269e7f81-d7a3-4be1-856c-d73bca3d57c2" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveMultiDELFOR_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="340739ad-8d1d-409e-b295-29ea0d2fe6d9" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpDelfor" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="fb955337-b430-4d1c-bb0f-1b541bf78d1a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.60">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.Excel.ExcelXMLPO" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3a495349-102e-4204-bc54-b65bdefd0264" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Write_SingleDELFORPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5d4c4763-bdb6-4f0e-aa07-97bf686618df" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="0e328812-b9d7-4b3f-89cb-3457799eade4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="1527f0dc-f68e-4fd0-80d9-0b7a3ddbdaeb" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="76.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessSingleDELFOR" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="875fa8d4-8454-4cff-8bef-32f010db68f2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="str" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="55afb8e3-240d-4c60-b1ac-bafbe650e583" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xpathIndex" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="228f2f56-e41a-4d0a-92f6-163c4ffed3b2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="loopIndex" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="517e89bf-5600-4ae7-96c5-a639432a3f48" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2c9651fb-737f-47c6-b80d-c2134824c0d9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Components.DELFORBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Builder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5980a25d-3681-43f7-a275-7d8027a16c82" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Counter" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="666a528c-ca9d-4117-90e0-149675a66a7c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="084302ac-2b12-46d8-bd68-3899df87359a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.Excel.ExcelXMLPO" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgDelforExcel" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="610c5be7-6243-4aa8-a817-62d41747841b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Schemas.ArrayCount" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArrayCountmsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="fbbe84b6-6055-4de0-8647-39acad5f2e34" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e39d4aad-c4e7-47dc-b48a-94d4e96c969a" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="41.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveMultiDELFOR_Port" />
+                    <om:Property Name="MessageName" Value="msgDelforExcel" />
+                    <om:Property Name="OperationName" Value="OpDelfor" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvDELFORExcel" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="57d4dbd3-b4a1-415e-9dd8-2f0ef7daf433" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="53.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct_ArrayMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="c1359b44-a621-4f65-8d2e-c5e7b5d21775" ParentLink="Construct_MessageRef" LowerBound="42.23" HigherBound="42.36">
+                        <om:Property Name="Ref" Value="ArrayCountmsg" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="b298b6f1-1df2-4cff-8a34-efb662d9989d" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="52.1">
+                        <om:Property Name="Expression" Value="Builder = new Visy.Middleware.SAP.LionNathan.Plastics.Components.DELFORBuilder(msgDelforExcel);&#xD;&#xA;ArrayCountmsg = Builder.CountVISYs();&#xD;&#xA;xmlDoc=ArrayCountmsg;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;Total Message&quot;,xmlDoc.OuterXml)  ;&#xD;&#xA;Counter = System.Convert.ToInt32(xpath(ArrayCountmsg, &quot;count(//*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''])&quot;));&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;DEBUG xpath count &quot;,  Counter.ToString());&#xD;&#xA;loopIndex = 0;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="While" OID="4d1434da-4df2-4ee3-b89c-f9a06c27fe0f" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="74.1">
+                    <om:Property Name="Expression" Value="loopIndex &lt; Counter" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Extracted_DELFOR" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="VariableAssignment" OID="f3a9bdb5-e42a-41d7-bbe8-c4c720907cc0" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                        <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(&quot;LDEBUG: inside the loop&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Trace" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="58681391-56e4-467d-982c-f1600dc49fc6" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="71.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_SinglePOASN" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="49b37afc-2b08-440f-a192-7b1e2bb04a44" ParentLink="Construct_MessageRef" LowerBound="59.27" HigherBound="59.33">
+                            <om:Property Name="Ref" Value="msgOut" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="c6a44332-8402-4a30-9e5c-6fece1648c1a" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="70.1">
+                            <om:Property Name="Expression" Value="xpathIndex = loopIndex + 1;&#xD;&#xA;str = &quot;/*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''][&quot;+ xpathIndex.ToString()  + &quot;]&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;DEBUG ArrayCountmsg,xpath &quot; , str );&#xD;&#xA;str = xpath(ArrayCountmsg,str);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;DEBUG ArrayCountmsg,str &quot; , str );&#xD;&#xA;msgOut = Builder.GetOrder(xpath(ArrayCountmsg,str));&#xD;&#xA;loopIndex = loopIndex + 1;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;DEBUG counter&quot; , Counter.ToString());" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="CreateSinglePOASN" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="1d41d56b-7ac6-49e6-91fd-dfa03183f8c6" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                        <om:Property Name="PortName" Value="Write_SingleDELFORPort" />
+                        <om:Property Name="MessageName" Value="msgOut" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send Outbound" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="55ba329b-1125-4b76-bef1-01015acaae7c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.ReceiveMultiDELFOR_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveMultiDELFOR_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="29971a4a-6b48-4249-827c-b33d51530a17" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="01cf66f4-cbb1-4eab-b3c0-ab2329edf793" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="35" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.Write_SingleDELFORPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Write_SingleDELFORPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="12259e14-e7cc-4d20-85b4-a3d712507b44" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations
+{
+    public porttype ReceiveMultiDELFOR_PortType
+    {
+        oneway OpDelfor
+        {
+            Visy.Middleware.Common.Schemas.Excel.ExcelXMLPO
+        };
+    };
+    internal porttype Write_SingleDELFORPortType
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessSingleDELFOR
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveMultiDELFOR_PortType ReceiveMultiDELFOR_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Write_SingleDELFORPortType Write_SingleDELFORPort;
+        message System.Xml.XmlDocument msgOut;
+        message Visy.Middleware.Common.Schemas.Excel.ExcelXMLPO msgDelforExcel;
+        message Visy.Middleware.SAP.LionNathan.Plastics.Schemas.ArrayCount ArrayCountmsg;
+        System.String str;
+        System.Int32 xpathIndex;
+        System.Int32 loopIndex;
+        System.Xml.XmlDocument xmlDoc;
+        Visy.Middleware.SAP.LionNathan.Plastics.Components.DELFORBuilder Builder;
+        System.Int32 Counter;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e39d4aad-c4e7-47dc-b48a-94d4e96c969a")]
+            activate receive (ReceiveMultiDELFOR_Port.OpDelfor, msgDelforExcel);
+            str = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            Counter = 1;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("57d4dbd3-b4a1-415e-9dd8-2f0ef7daf433")]
+            construct ArrayCountmsg
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b298b6f1-1df2-4cff-8a34-efb662d9989d")]
+                Builder = new Visy.Middleware.SAP.LionNathan.Plastics.Components.DELFORBuilder(msgDelforExcel);
+                ArrayCountmsg = Builder.CountVISYs();
+                xmlDoc=ArrayCountmsg;
+                System.Diagnostics.EventLog.WriteEntry("Total Message",xmlDoc.OuterXml)  ;
+                Counter = System.Convert.ToInt32(xpath(ArrayCountmsg, "count(//*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''])"));
+                System.Diagnostics.EventLog.WriteEntry("DEBUG xpath count ",  Counter.ToString());
+                loopIndex = 0;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4d1434da-4df2-4ee3-b89c-f9a06c27fe0f")]
+            while (loopIndex < Counter)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f3a9bdb5-e42a-41d7-bbe8-c4c720907cc0")]
+                System.Diagnostics.Trace.WriteLine("LDEBUG: inside the loop");
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("58681391-56e4-467d-982c-f1600dc49fc6")]
+                construct msgOut
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c6a44332-8402-4a30-9e5c-6fece1648c1a")]
+                    xpathIndex = loopIndex + 1;
+                    str = "/*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()='']["+ xpathIndex.ToString()  + "]";
+                    System.Diagnostics.EventLog.WriteEntry("DEBUG ArrayCountmsg,xpath " , str );
+                    str = xpath(ArrayCountmsg,str);
+                    System.Diagnostics.EventLog.WriteEntry("DEBUG ArrayCountmsg,str " , str );
+                    msgOut = Builder.GetOrder(xpath(ArrayCountmsg,str));
+                    loopIndex = loopIndex + 1;
+                    System.Diagnostics.EventLog.WriteEntry("DEBUG counter" , Counter.ToString());
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1d41d56b-7ac6-49e6-91fd-dfa03183f8c6")]
+                send (Write_SingleDELFORPort.Operation_1, msgOut);
+            }
+        }
+    }
+}
+

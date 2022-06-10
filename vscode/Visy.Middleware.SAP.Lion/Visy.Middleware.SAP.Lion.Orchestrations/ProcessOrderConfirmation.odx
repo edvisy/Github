@@ -1,0 +1,244 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="67b530b9-0bd5-4a48-9c2e-5056bdf592ce" LowerBound="1.1" HigherBound="55.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Lion.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="3269ec84-da9d-41b8-9c5a-aad9a316dfea" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="54.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessOrderConfirmation" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="9b6ae8a7-577b-4b3a-a2e1-1a8a37dc9de4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6d9bb64a-88ad-4355-91cb-3e75af9e22c3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionOrderConfirmation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLionOrderConfirmation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a5247785-163a-4698-8ece-3709393f43d4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_SAPOrderConfirmation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mSAPOrderConfirmation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8ec9851a-24f2-45d3-899a-d7a4ca2594ea" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLionOrderConfirmationAck" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f257c4ec-fc5f-4cfd-b3c7-a7e331f8d2f6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="ab8c28fa-6f73-484a-883b-bec028b4b438" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive_OrderConfirmation_From_SAP" />
+                    <om:Property Name="MessageName" Value="mSAPOrderConfirmation" />
+                    <om:Property Name="OperationName" Value="Operation_Receive_OrderConfirmation_From_SAP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_SAPOrderConfirmation" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="6c05e70f-f90d-46d0-8cc3-766bf734ca83" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="46.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_LionOrderConfirmation" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="fa693da1-f67a-466d-89e6-5d05380023b7" ParentLink="ComplexStatement_Statement" LowerBound="43.1" HigherBound="45.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3ORDERS05Resp_To_cXMLResponse" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_SAPOrderConfirmationToLionOrderConfirmation" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="7961e024-8a75-4925-affb-6c0ff57ec129" ParentLink="Transform_InputMessagePartRef" LowerBound="44.157" HigherBound="44.211">
+                            <om:Property Name="MessageRef" Value="mSAPOrderConfirmation" />
+                            <om:Property Name="PartRef" Value="MessagePart_SAPOrderConfirmation" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="ffcd4fe3-e78c-41ff-8f7e-0fade48dec55" ParentLink="Transform_OutputMessagePartRef" LowerBound="44.28" HigherBound="44.84">
+                            <om:Property Name="MessageRef" Value="mLionOrderConfirmation" />
+                            <om:Property Name="PartRef" Value="MessagePart_LionOrderConfirmation" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="cbaedd06-a4f6-45dc-aa05-1e64e31e4168" ParentLink="Construct_MessageRef" LowerBound="41.23" HigherBound="41.45">
+                        <om:Property Name="Ref" Value="mLionOrderConfirmation" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="06de096b-2e67-4f25-a30c-466272798960" ParentLink="ServiceBody_Statement" LowerBound="46.1" HigherBound="50.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = mLionOrderConfirmation.MessagePart_LionOrderConfirmation;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Lion.OrderConfirmation: OrderConfirmation Request: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="93b2109e-9964-4ed5-a6dc-a437eff67fbf" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="52.1">
+                    <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Lion-&gt;Order Response: &quot; + Visy.Middleware.SAP.Lion.Components.HttpPostHelper.HttpPost(mLionOrderConfirmation));" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HttpPost" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ce659774-4a22-47f6-9f3f-8d87ca3e466c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Receive_OrderConfirmation_From_SAP" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive_OrderConfirmation_From_SAP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="bea382b6-5c78-459f-bfd9-5fa1c5ca2737" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9689e689-2c17-464a-b088-e991efa1cc17" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_LionOrderConfirmation" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="40cbd635-6013-41e7-8bc7-d068b4618a30" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.Fulfill_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_LionOrderConfirmation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="375db407-3ada-42f1-b831-865e5e38aa6c" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_SAPOrderConfirmation" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="e95de098-c47e-4799-b4a4-8b382e2dadfb" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Schemas.IDocOperation_ORDERS05_Z3ORDERS05_620_3_Receive" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_SAPOrderConfirmation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2346bd52-a4a7-4c2c-80ea-c0f8a33fb522" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive_OrderConfirmation_From_SAP" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="ec848945-40d7-4781-9ab1-13f446d5d3fc" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Receive_OrderConfirmation_From_SAP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="591eccd3-369c-43ef-a04c-73c4f7d594a7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.47">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_SAPOrderConfirmation" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="14b93ed3-89d1-41e8-a920-22e1f918639b" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendReceive_OrderConfirmation_To_Ariba" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f16739db-183e-4b13-b83f-c3f4bd43a509" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HTTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="514557d3-ffdb-4c29-94ae-6f1a84f8e5f9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.48">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionOrderConfirmation" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="56f2efc8-ad96-432d-8cbd-786347eeb68b" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="23.50" HigherBound="23.72">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Lion.Orchestrations
+{
+    internal messagetype MultipartType_LionOrderConfirmation
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.Fulfill_1_2_031.cXML MessagePart_LionOrderConfirmation;
+    };
+    internal messagetype MultipartType_SAPOrderConfirmation
+    {
+        body Visy.Middleware.SAP.Lion.Schemas.IDocOperation_ORDERS05_Z3ORDERS05_620_3_Receive MessagePart_SAPOrderConfirmation;
+    };
+    internal porttype PortType_Receive_OrderConfirmation_From_SAP
+    {
+        oneway Operation_Receive_OrderConfirmation_From_SAP
+        {
+            MultipartType_SAPOrderConfirmation
+        };
+    };
+    internal porttype PortType_SendReceive_OrderConfirmation_To_Ariba
+    {
+        requestresponse HTTP
+        {
+            MultipartType_LionOrderConfirmation, System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessOrderConfirmation
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Receive_OrderConfirmation_From_SAP Port_Receive_OrderConfirmation_From_SAP;
+        message MultipartType_LionOrderConfirmation mLionOrderConfirmation;
+        message MultipartType_SAPOrderConfirmation mSAPOrderConfirmation;
+        message System.Xml.XmlDocument mLionOrderConfirmationAck;
+        System.Xml.XmlDocument v_Xml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab8c28fa-6f73-484a-883b-bec028b4b438")]
+            activate receive (Port_Receive_OrderConfirmation_From_SAP.Operation_Receive_OrderConfirmation_From_SAP, mSAPOrderConfirmation);
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c05e70f-f90d-46d0-8cc3-766bf734ca83")]
+            construct mLionOrderConfirmation
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fa693da1-f67a-466d-89e6-5d05380023b7")]
+                transform (mLionOrderConfirmation.MessagePart_LionOrderConfirmation) = Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3ORDERS05Resp_To_cXMLResponse (mSAPOrderConfirmation.MessagePart_SAPOrderConfirmation);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("06de096b-2e67-4f25-a30c-466272798960")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = mLionOrderConfirmation.MessagePart_LionOrderConfirmation;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Lion.OrderConfirmation: OrderConfirmation Request: " + v_Xml.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("93b2109e-9964-4ed5-a6dc-a437eff67fbf")]
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Lion->Order Response: " + Visy.Middleware.SAP.Lion.Components.HttpPostHelper.HttpPost(mLionOrderConfirmation));
+        }
+    }
+}
+

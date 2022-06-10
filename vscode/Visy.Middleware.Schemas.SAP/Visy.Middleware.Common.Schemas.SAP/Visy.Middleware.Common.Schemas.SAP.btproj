@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ECA6B3CC-58EF-4C05-97C6-008826C7172B}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.Common.Schemas.SAP</RootNamespace>
+    <AssemblyName>Visy.Middleware.Common.Schemas.SAP</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACC_INVOICE_RECEIPT03.xsd.cs">
+      <DependentUpon>ACC_INVOICE_RECEIPT03.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+    <Schema Include="Invoice\Z3INVOIC01.xsd">
+      <TypeName>Z3INVOIC01</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.Invoice</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ACC_INVOICE_RECEIPT03.xsd">
+      <TypeName>ACC_INVOICE_RECEIPT03</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Z_BIZTALK_GET_IDOC_STATUS.xsd">
+      <TypeName>Z_BIZTALK_GET_IDOC_STATUS</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAPAlertContext.xsd">
+      <TypeName>SAPAlertContext</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PEXR\PEXR2001.xsd">
+      <TypeName>PEXR2001</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PEXR\PEXR2002.xsd">
+      <TypeName>PEXR2002</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="FileStructures\BASEFORECAST.xsd">
+      <TypeName>BASEFORECAST</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.FileStructures</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="FileStructures\FORECAST52W.xsd">
+      <TypeName>FORECAST52W</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.FileStructures</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Invoice\INVOIC02.xsd">
+      <TypeName>INVOIC02</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.Invoice</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="DesAdv\DESADV01.xsd">
+      <TypeName>DESADV01</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.DesAdv</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="DesAdv\Z1DESADV.xsd">
+      <TypeName>Z1DESADV</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.DesAdv</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="DesAdv\Z2DESADV.xsd">
+      <TypeName>Z2DESADV</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.DesAdv</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Invoice\Z_DEBIT_MEMO_CREATE01.xsd">
+      <TypeName>Z_DEBIT_MEMO_CREATE01</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.Invoice</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Invoice\INVOIC01.xsd">
+      <TypeName>INVOIC01</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.SAP.Invoice</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.dll" "..\..\..\..\References" /Y 
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

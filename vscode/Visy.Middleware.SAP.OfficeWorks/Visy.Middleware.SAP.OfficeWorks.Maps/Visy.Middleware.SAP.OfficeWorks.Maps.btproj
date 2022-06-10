@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CC3C0693-02CE-4366-9B36-F2E82CCB975A}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.OfficeWorks.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.OfficeWorks.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.EDI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.EDI.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.EDI.Orders, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.EDI.Orders.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.EDI.Orders.EAN005">
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.EDI.Orders.EAN005.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.EDI.Orders.EAN008, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.EDI.Orders.EAN008.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.Orders.EAN005">
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.Orders.EAN005.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.Z3Orders05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.Z3Orders05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Schemas.SAP.Generated.Delvry07, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Schemas.SAP.Generated.Delvry07.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Schemas.SAP.Generated.Orders05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Schemas.SAP.Generated.Orders05.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="EDI_To_Orders05.btm">
+      <TypeName>EDI_To_Orders05</TypeName>
+      <Namespace>Visy.Middleware.SAP.OfficeWorks.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ZADSHNO02_To_EDI.btm">
+      <TypeName>ZADSHNO02_To_EDI</TypeName>
+      <Namespace>Visy.Middleware.SAP.OfficeWorks.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="EDI_To_ORDCHG.btm">
+      <SubType>Task</SubType>
+      <TypeName>EDI_To_ORDCHG</TypeName>
+      <Namespace>Visy.Middleware.SAP.OfficeWorks.Maps</Namespace>
+    </Map>
+    <Content Include="EDI_To_ORDCHG.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EDI_To_ORDCHG.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ZADSHNO02_To_EDI.xsl" />
+    <Content Include="ZADSHNO02_To_EDI_extxml.xml" />
+    <Content Include="ZPOAORD01_To_EDI.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ZPOAORD01_To_EDI_extxml.xml" />
+    <Map Include="ZPOAORD01_To_EDI.btm">
+      <TypeName>ZPOAORD01_To_EDI</TypeName>
+      <Namespace>Visy.Middleware.SAP.OfficeWorks.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="EDI_To_Orders05.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="EDI_To_Orders05_extxml.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.OfficeWorks.Schemas\Visy.Middleware.SAP.OfficeWorks.Schemas.btproj">
+      <Project>{c9a1058b-cfd3-4fe2-9627-26582d87f6e4}</Project>
+      <Name>Visy.Middleware.SAP.OfficeWorks.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

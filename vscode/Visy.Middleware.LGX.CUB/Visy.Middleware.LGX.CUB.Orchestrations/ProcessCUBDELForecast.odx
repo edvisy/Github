@@ -1,0 +1,783 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7881efbe-dbd7-4312-9451-eeefa5b148d4" LowerBound="1.1" HigherBound="194.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.CUB.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="a78748ee-03ef-499c-b0fe-50f65f7a9a8c" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_CUBDelForEnvelope" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9ad79dc0-b441-41ee-abc5-5cfea3026f1e" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCUBDelForEnvelope" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="223651e4-6a90-4f29-8ca3-117a3bec9db0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="54924f4b-3fbe-4912-99ee-994f1e9ea148" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendFFToLgx" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a3e31e1c-f1e1-4204-a2b7-a2b2ff2f8179" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFFToLgx" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a385787d-f09a-456a-ac4d-3533b8a759a2" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="53b366d3-5c19-4178-ab66-64b57d07be09" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_TypeAgnosticMessage" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="aa397e5e-9a69-4efb-9ee6-1dcb7d1cf870" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFailedInterchange" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="8676c380-1467-49d1-b2bd-1dd60c9bfbe1" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="59ea1b06-cac2-4f3a-af28-08dad469dc0c" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="193.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessCUBDELForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="22537ece-66ab-48d3-b17e-a1a9fe96bd30" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.XLANGs.Pipeline.SendPipelineInputMessages" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndPipeInput" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2506ec1e-27f3-4db6-8c39-580baa6aebc6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="currentDate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a6747962-200d-48ea-b0f0-e9c45353f3d6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="currentTime" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="53744158-2bdd-4fa4-853c-acb8b8925669" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXpath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="987ce9d1-3cc7-42f9-aea2-c3ffa8910b7b" ParentLink="ServiceDeclaration_Transaction" LowerBound="26.21" HigherBound="26.67">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3843542f-08ee-450b-9211-f48d95a1277e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgCUBDelForEnvelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4845a952-36bd-4a94-9049-9a6901fd4d79" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FailedInterchange" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6ee2a368-046e-4749-92ec-e82e5555ab62" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutputInterchange" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="64a51da7-2a3b-4a8f-9036-3cd8290fe910" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="7eb26462-d4e6-42c6-bf0d-6472b9a6a606" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="49.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Rcv_CUBDelForEnvelope" />
+                    <om:Property Name="MessageName" Value="MsgCUBDelForEnvelope" />
+                    <om:Property Name="OperationName" Value="ReceiveCUBDelForEnvelope" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveForecastsEnvelope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="90800cf4-a704-40be-b89d-16b5d437d529" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope#Forecasts&quot;" />
+                        <om:Property Name="Grouping" Value="OR" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="bcbbcdf3-d875-411c-8265-1473f7d38a58" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.Operation" />
+                        <om:Property Name="RHS" Value="&quot;RepairedCUBForecasts&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="fd8e6271-e044-4afb-a571-6eb10ad940be" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="155.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_Atomic" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="VariableDeclaration" OID="6afef0fb-8a2c-4159-9936-6be15ae58b2f" ParentLink="Scope_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                        <om:Property Name="UseDefaultConstructor" Value="True" />
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Components.CUBDELFORSummary" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="varTrailer" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="9f3fecdf-13ec-4770-8773-70c49a86f194" ParentLink="Scope_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Microsoft.XLANGs.Pipeline.ReceivePipelineOutputMessages" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="RcvPipeOutput" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="7caceb0a-98eb-48d4-a364-8d586089234c" ParentLink="Scope_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                        <om:Property Name="InitialValue" Value="false" />
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="System.Boolean" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="IsHdrTlrConstructed" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="30bde3ec-5f7c-4996-878a-1c313aa6ff59" ParentLink="Scope_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                        <om:Property Name="UseDefaultConstructor" Value="True" />
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Components.CUBDELFOR" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="varCubDelFor" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="AtomicTransaction" OID="cf85f267-19b9-467b-8365-f3b6dbb341cc" ParentLink="Scope_Transaction" LowerBound="51.18" HigherBound="51.51">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="a4d5188c-2c0f-40ce-8fbf-85211f82ce1e" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="69.1">
+                        <om:Property Name="Expression" Value="currentDate = System.DateTime.Now.ToString(&quot;yyyyMMdd&quot;);&#xD;&#xA;currentTime = System.DateTime.Now.ToString(&quot;HHmmss&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="SetCurrentDateTime" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="975a62fa-8461-45e9-8125-c0b989c595a8" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="78.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="InitialiseTrailer" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="a57e43f2-58aa-4820-adbb-51a11fc8459c" ParentLink="Construct_MessageRef" LowerBound="70.31" HigherBound="70.43">
+                            <om:Property Name="Ref" Value="MsgFFTrailer" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="f176682a-023f-428d-8e11-5a73baef3120" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="77.1">
+                            <om:Property Name="Expression" Value="varCubDelFor =  new Visy.Middleware.LGX.CUB.Components.CUBDELFOR();&#xD;&#xA;varTrailer = new Visy.Middleware.LGX.CUB.Components.CUBDELFORSummary();&#xD;&#xA;varCubDelFor.Summary = varTrailer;&#xD;&#xA;MsgFFTrailer = Visy.Middleware.LGX.CUB.Components.SerializationHelper.Serialize(varCubDelFor);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="AssignTrailer" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Scope" OID="d0f78f17-0dab-495e-9e92-34cc7fe6bab1" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="105.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Scope_ExecuteReceivePipeline" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="VariableAssignment" OID="f0c7e4ed-93bb-408a-9a30-0cb7b0dde064" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="85.1">
+                            <om:Property Name="Expression" Value="RcvPipeOutput = Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteReceivePipeline(typeof(Visy.Middleware.LGX.CUB.Pipelines.XmlDisassembleForecasts), MsgCUBDelForEnvelope);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CallRcvPipeline" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Catch" OID="fca74c86-dc72-427d-84a5-7135a91be216" ParentLink="Scope_Catch" LowerBound="88.1" HigherBound="103.1">
+                            <om:Property Name="ExceptionName" Value="pEx" />
+                            <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.Pipeline.XLANGPipelineManagerException" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CatchPipelineException" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="bde292ec-2dac-4f27-a250-c116bc498395" ParentLink="Catch_Statement" LowerBound="91.1" HigherBound="98.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructFailedInterchangeMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="8c4e6fb6-3075-4677-85b6-22175886b8b8" ParentLink="Construct_MessageRef" LowerBound="92.43" HigherBound="92.60">
+                                    <om:Property Name="Ref" Value="FailedInterchange" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="448a03c5-2ec0-4d8e-a080-f61670fe79be" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="97.1">
+                                    <om:Property Name="Expression" Value="FailedInterchange = MsgCUBDelForEnvelope;&#xD;&#xA;FailedInterchange(Visy.Middleware.LGX.CUB.Schemas.ErrorDescription) = pEx.Message;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="SetErrorDetails" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="f920dbfb-1c64-4142-86c7-749ce0bdb62a" ParentLink="Catch_Statement" LowerBound="98.1" HigherBound="100.1">
+                                <om:Property Name="PortName" Value="SendFailedInterchange" />
+                                <om:Property Name="MessageName" Value="FailedInterchange" />
+                                <om:Property Name="OperationName" Value="SendFailedInterchange" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_FailedInterchange" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Terminate" OID="d17c47f5-1920-4c00-bf87-0a4093e1a1eb" ParentLink="Catch_Statement" LowerBound="100.1" HigherBound="102.1">
+                                <om:Property Name="ErrorMessage" Value="&quot;Receive pipeline execution failed with the following error:&quot; + pEx.Message;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="TerminateOrchestrationOnRcv" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="While" OID="18902b54-43c0-4f92-a0af-73ccaf96d283" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="151.1">
+                        <om:Property Name="Expression" Value="RcvPipeOutput.MoveNext()" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Loop_WhileThereAreMessages" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="3e92fb7a-8f38-416b-ac95-2e3ab2f50c04" ParentLink="ComplexStatement_Statement" LowerBound="108.1" HigherBound="120.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstrutIndividualForecast" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="fad93f7f-725c-4b49-a297-87cab2622ef4" ParentLink="Construct_MessageRef" LowerBound="109.35" HigherBound="109.56">
+                                <om:Property Name="Ref" Value="MsgIndividualForecast" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="ec1c05b8-24f1-4c3d-aae5-5a80d0ee181d" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="114.1">
+                                <om:Property Name="Expression" Value="MsgIndividualForecast = null;&#xD;&#xA;RcvPipeOutput.GetCurrent(MsgIndividualForecast);" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="GetIndividualMessage" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="6217e8c4-4466-47b0-84c9-4f82a47352eb" ParentLink="ComplexStatement_Statement" LowerBound="114.1" HigherBound="119.1">
+                                <om:Property Name="Expression" Value="//Overwrite date and time that was set in map&#xD;&#xA;MsgIndividualForecast.ScheduleDate = currentDate;&#xD;&#xA;MsgIndividualForecast.ScheduleTime = currentTime;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="OverwriteDateFields" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Decision" OID="42906295-fdab-43be-87af-81052809da45" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="142.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Decide_HeaderTrailerConstructed" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="e8313fda-f92e-4daf-a429-360c6e9e044c" ParentLink="ReallyComplexStatement_Branch" LowerBound="121.25" HigherBound="142.1">
+                                <om:Property Name="Expression" Value="IsHdrTlrConstructed == false" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="If_HeaderTrailerNotConstructed" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Construct" OID="0d534a96-69c9-4d0e-a6ca-ccd61055eaa9" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="129.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructHeaderMessage" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="8a2ad43e-0b70-4acb-bf90-7aa2332d17fe" ParentLink="Construct_MessageRef" LowerBound="124.39" HigherBound="124.50">
+                                        <om:Property Name="Ref" Value="MsgFFHeader" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Transform" OID="f4558e0c-07a7-406c-908c-6b0cb8b0b5bd" ParentLink="ComplexStatement_Statement" LowerBound="126.1" HigherBound="128.1">
+                                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToDelHeaderSchema" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Transform_IndividualForecastToDelHeader" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="MessagePartRef" OID="19f8df65-aba8-4375-bbe2-d0f7e0cce824" ParentLink="Transform_InputMessagePartRef" LowerBound="127.121" HigherBound="127.142">
+                                            <om:Property Name="MessageRef" Value="MsgIndividualForecast" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="042084c2-0794-48c2-8898-49cb0c842664" ParentLink="Transform_OutputMessagePartRef" LowerBound="127.44" HigherBound="127.55">
+                                            <om:Property Name="MessageRef" Value="MsgFFHeader" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Construct" OID="0e9b955c-5fc8-433f-ba51-14e9f7703a91" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="135.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructTrailer" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="8def6467-9937-4d28-9804-ca9aabd7cac0" ParentLink="Construct_MessageRef" LowerBound="130.39" HigherBound="130.51">
+                                        <om:Property Name="Ref" Value="MsgFFTrailer" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Transform" OID="f99224ed-a81b-453d-9adc-b35ff42fd802" ParentLink="ComplexStatement_Statement" LowerBound="132.1" HigherBound="134.1">
+                                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToDelTrailerSchema" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Transform_IndividualforecastToDelTrailer" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="MessagePartRef" OID="ef8bda81-1a50-47cc-93ff-b8ef9fc57ee3" ParentLink="Transform_InputMessagePartRef" LowerBound="133.123" HigherBound="133.144">
+                                            <om:Property Name="MessageRef" Value="MsgIndividualForecast" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="1a81d6c4-2568-4cd2-bf75-110707c07022" ParentLink="Transform_OutputMessagePartRef" LowerBound="133.44" HigherBound="133.56">
+                                            <om:Property Name="MessageRef" Value="MsgFFTrailer" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_6" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="VariableAssignment" OID="18c976c4-0877-4730-bf00-644c13c87432" ParentLink="ComplexStatement_Statement" LowerBound="135.1" HigherBound="139.1">
+                                    <om:Property Name="Expression" Value="SndPipeInput.Add(MsgFFHeader);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;Added header to send pipe input&quot;);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(SndPipeInput.ToString());&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="AddHeaderMessageToBatch" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="VariableAssignment" OID="f3c93549-4a6a-48f7-8bc2-4d614308fbdd" ParentLink="ComplexStatement_Statement" LowerBound="139.1" HigherBound="141.1">
+                                    <om:Property Name="Expression" Value="IsHdrTlrConstructed = true;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="SetBoolean" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="449ee04d-7024-421a-b4db-6fb31b38e419" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="1c9e4161-e569-4daa-9ed6-7db3341688ce" ParentLink="ComplexStatement_Statement" LowerBound="142.1" HigherBound="148.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructFFDetailMsg" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="247d5675-4fac-4c9b-8131-5cce363afeb3" ParentLink="Construct_MessageRef" LowerBound="143.35" HigherBound="143.48">
+                                <om:Property Name="Ref" Value="MsgFFDocument" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="8d00490a-cc1e-492f-8548-c4c50afd2be5" ParentLink="ComplexStatement_Statement" LowerBound="145.1" HigherBound="147.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToFFDocumentSchema" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_IndividualForecasToDocumentSchema" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="2f4c979c-c246-40a0-ae0c-d53c708f6f8c" ParentLink="Transform_InputMessagePartRef" LowerBound="146.120" HigherBound="146.141">
+                                    <om:Property Name="MessageRef" Value="MsgIndividualForecast" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="99286ce3-76cf-4370-a470-90328bf48e90" ParentLink="Transform_OutputMessagePartRef" LowerBound="146.40" HigherBound="146.53">
+                                    <om:Property Name="MessageRef" Value="MsgFFDocument" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="43fd67ca-21f8-4541-bdf1-4b5f5562fc2a" ParentLink="ComplexStatement_Statement" LowerBound="148.1" HigherBound="150.1">
+                            <om:Property Name="Expression" Value="SndPipeInput.Add(MsgFFDocument);&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="AddDetailMessageToBatch" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="7802d1a6-7d11-4445-9bd5-c89d534a4933" ParentLink="ComplexStatement_Statement" LowerBound="151.1" HigherBound="153.1">
+                        <om:Property Name="Expression" Value="SndPipeInput.Add(MsgFFTrailer);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="AddTrailerMessageToBatch" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="TransactionAttribute" OID="54b7e6d0-76bd-4aaf-b140-8a2905aff62e" ParentLink="Statement_CLRAttribute" LowerBound="50.1" HigherBound="51.1">
+                        <om:Property Name="Batch" Value="True" />
+                        <om:Property Name="Retry" Value="True" />
+                        <om:Property Name="Timeout" Value="60" />
+                        <om:Property Name="Isolation" Value="Serializable" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="c3349516-c701-4426-9e19-b85abeb616b9" ParentLink="Scope_MessageDeclaration" LowerBound="53.1" HigherBound="54.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForTrailerSchema" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MsgFFTrailer" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="03d646d1-b1a6-449d-87c1-96be3cc5f04b" ParentLink="Scope_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForHeaderSchema" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MsgFFHeader" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="3fd74f84-f6a6-40f1-ba34-b30ad56006e5" ParentLink="Scope_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastSchema" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MsgIndividualForecast" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="7b8b40b8-55f2-457b-a2f1-f2772e814bc0" ParentLink="Scope_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForDocumentSchema" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MsgFFDocument" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="5925ff93-ee48-45d9-9905-8dd8801df100" ParentLink="ServiceBody_Statement" LowerBound="155.1" HigherBound="191.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_ExecuteSendPipeline" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="fbad0a38-ac39-415f-bce3-935622f42612" ParentLink="ComplexStatement_Statement" LowerBound="160.1" HigherBound="169.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructOutputInterchange" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="55f5f440-557f-4c3c-99e0-3266c1af9f1d" ParentLink="Construct_MessageRef" LowerBound="161.31" HigherBound="161.48">
+                            <om:Property Name="Ref" Value="OutputInterchange" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="8ee99521-4500-493c-949e-ce87733b268b" ParentLink="ComplexStatement_Statement" LowerBound="163.1" HigherBound="168.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(&quot;Before executing send pipeline&quot;);&#xD;&#xA;System.Diagnostics.Trace.WriteLine(SndPipeInput.ToString());&#xD;&#xA;OutputInterchange = null;&#xD;&#xA;Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteSendPipeline(typeof(Visy.Middleware.LGX.CUB.Pipelines.FFAssembleForecasts), SndPipeInput, OutputInterchange);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="ExecuteSendPipeline" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="efe46436-a16f-4048-af3f-7d296ae88784" ParentLink="ComplexStatement_Statement" LowerBound="169.1" HigherBound="171.1">
+                        <om:Property Name="PortName" Value="SendFFToLgx" />
+                        <om:Property Name="MessageName" Value="OutputInterchange" />
+                        <om:Property Name="OperationName" Value="SendFFToLgx" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_OutputInterchange" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="001cfd08-606f-41b6-86e7-870b9b563a57" ParentLink="Scope_Catch" LowerBound="174.1" HigherBound="189.1">
+                        <om:Property Name="ExceptionName" Value="pEx" />
+                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.Pipeline.XLANGPipelineManagerException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchPipelineException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="f391aaf7-f4fb-41cb-8137-8680e6e99654" ParentLink="Catch_Statement" LowerBound="177.1" HigherBound="184.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructFailedInterchangeMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="f9e97ed9-68db-452f-989d-a215e659ccdd" ParentLink="ComplexStatement_Statement" LowerBound="180.1" HigherBound="183.1">
+                                <om:Property Name="Expression" Value="FailedInterchange = MsgCUBDelForEnvelope;&#xD;&#xA;FailedInterchange(Visy.Middleware.LGX.CUB.Schemas.ErrorDescription) = pEx.InnerException.ToString();&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="SetErrorDetails" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="3aa6d800-18fc-4129-aba5-c5be5c99ea43" ParentLink="Construct_MessageRef" LowerBound="178.35" HigherBound="178.52">
+                                <om:Property Name="Ref" Value="FailedInterchange" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="62cc4e99-808c-493f-9867-144fcf403eb3" ParentLink="Catch_Statement" LowerBound="184.1" HigherBound="186.1">
+                            <om:Property Name="PortName" Value="SendFailedInterchange" />
+                            <om:Property Name="MessageName" Value="FailedInterchange" />
+                            <om:Property Name="OperationName" Value="SendFailedInterchange" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_FailedInterchange" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Terminate" OID="30626a43-b92b-4dbb-a903-1f4a94f26b32" ParentLink="Catch_Statement" LowerBound="186.1" HigherBound="188.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Send pipeline execution failed with the following error:&quot; + pEx.Message;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="TerminateOrchestrationOnRcv" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a3a0a72f-9eec-405e-b8a7-84e4e07e5b90" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Orchestrations.PortType_CUBDelForEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Rcv_CUBDelForEnvelope" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="13a562f9-8995-4c7e-a70f-55877fcc88db" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b85a5c15-bade-4229-a35e-2c81c75ad5a5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Orchestrations.PortType_SendFFToLgx" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFFToLgx" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="8ccbbb8a-a2b8-4ffb-a8e1-b17e81c86e92" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="de5ed9b9-0e8e-4543-a770-3e505f9b17c0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="26" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Orchestrations.PortType_TypeAgnosticMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFailedInterchange" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="f88efe84-5e05-46a0-94a6-bc97c2490915" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.CUB.Orchestrations
+{
+    internal porttype PortType_CUBDelForEnvelope
+    {
+        oneway ReceiveCUBDelForEnvelope
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_SendFFToLgx
+    {
+        oneway SendFFToLgx
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_TypeAgnosticMessage
+    {
+        oneway SendFailedInterchange
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction ProcessCUBDELForecast
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements PortType_CUBDelForEnvelope Rcv_CUBDelForEnvelope;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendFFToLgx SendFFToLgx;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_TypeAgnosticMessage SendFailedInterchange;
+        message System.Xml.XmlDocument MsgCUBDelForEnvelope;
+        message System.Xml.XmlDocument FailedInterchange;
+        message System.Xml.XmlDocument OutputInterchange;
+        Microsoft.XLANGs.Pipeline.SendPipelineInputMessages SndPipeInput;
+        System.String currentDate;
+        System.String currentTime;
+        System.String strXpath;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7eb26462-d4e6-42c6-bf0d-6472b9a6a606")]
+            activate ((BTS.MessageType == "http://Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope#Forecasts") || (BTS.Operation == "RepairedCUBForecasts"))receive (Rcv_CUBDelForEnvelope.ReceiveCUBDelForEnvelope, MsgCUBDelForEnvelope);
+            SndPipeInput = new Microsoft.XLANGs.Pipeline.SendPipelineInputMessages();
+            currentDate = "";
+            currentTime = "";
+            strXpath = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd8e6271-e044-4afb-a571-6eb10ad940be")]
+            [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+            scope atomic transaction Transaction_2
+            {
+                message Visy.Middleware.LGX.CUB.Schemas.CUBDelForTrailerSchema MsgFFTrailer;
+                message Visy.Middleware.LGX.CUB.Schemas.CUBDelForHeaderSchema MsgFFHeader;
+                message Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastSchema MsgIndividualForecast;
+                message Visy.Middleware.LGX.CUB.Schemas.CUBDelForDocumentSchema MsgFFDocument;
+                Visy.Middleware.LGX.CUB.Components.CUBDELFORSummary varTrailer;
+                Microsoft.XLANGs.Pipeline.ReceivePipelineOutputMessages RcvPipeOutput;
+                System.Boolean IsHdrTlrConstructed;
+                Visy.Middleware.LGX.CUB.Components.CUBDELFOR varCubDelFor;
+                body
+                {
+                    varTrailer = new Visy.Middleware.LGX.CUB.Components.CUBDELFORSummary();
+                    IsHdrTlrConstructed = false;
+                    varCubDelFor = new Visy.Middleware.LGX.CUB.Components.CUBDELFOR();
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a4d5188c-2c0f-40ce-8fbf-85211f82ce1e")]
+                    currentDate = System.DateTime.Now.ToString("yyyyMMdd");
+                    currentTime = System.DateTime.Now.ToString("HHmmss");
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("975a62fa-8461-45e9-8125-c0b989c595a8")]
+                    construct MsgFFTrailer
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f176682a-023f-428d-8e11-5a73baef3120")]
+                        varCubDelFor =  new Visy.Middleware.LGX.CUB.Components.CUBDELFOR();
+                        varTrailer = new Visy.Middleware.LGX.CUB.Components.CUBDELFORSummary();
+                        varCubDelFor.Summary = varTrailer;
+                        MsgFFTrailer = Visy.Middleware.LGX.CUB.Components.SerializationHelper.Serialize(varCubDelFor);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d0f78f17-0dab-495e-9e92-34cc7fe6bab1")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f0c7e4ed-93bb-408a-9a30-0cb7b0dde064")]
+                            RcvPipeOutput = Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteReceivePipeline(typeof(Visy.Middleware.LGX.CUB.Pipelines.XmlDisassembleForecasts), MsgCUBDelForEnvelope);
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fca74c86-dc72-427d-84a5-7135a91be216")]
+                            catch (Microsoft.XLANGs.Pipeline.XLANGPipelineManagerException pEx)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("bde292ec-2dac-4f27-a250-c116bc498395")]
+                                construct FailedInterchange
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("448a03c5-2ec0-4d8e-a080-f61670fe79be")]
+                                    FailedInterchange = MsgCUBDelForEnvelope;
+                                    FailedInterchange(Visy.Middleware.LGX.CUB.Schemas.ErrorDescription) = pEx.Message;
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f920dbfb-1c64-4142-86c7-749ce0bdb62a")]
+                                send (SendFailedInterchange.SendFailedInterchange, FailedInterchange);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d17c47f5-1920-4c00-bf87-0a4093e1a1eb")]
+                                terminate "Receive pipeline execution failed with the following error:" + pEx.Message;;
+                            }
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("18902b54-43c0-4f92-a0af-73ccaf96d283")]
+                    while (RcvPipeOutput.MoveNext())
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e92fb7a-8f38-416b-ac95-2e3ab2f50c04")]
+                        construct MsgIndividualForecast
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ec1c05b8-24f1-4c3d-aae5-5a80d0ee181d")]
+                            MsgIndividualForecast = null;
+                            RcvPipeOutput.GetCurrent(MsgIndividualForecast);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6217e8c4-4466-47b0-84c9-4f82a47352eb")]
+                            //Overwrite date and time that was set in map
+                            MsgIndividualForecast.ScheduleDate = currentDate;
+                            MsgIndividualForecast.ScheduleTime = currentTime;
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("42906295-fdab-43be-87af-81052809da45")]
+                        if (IsHdrTlrConstructed == false)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0d534a96-69c9-4d0e-a6ca-ccd61055eaa9")]
+                            construct MsgFFHeader
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4558e0c-07a7-406c-908c-6b0cb8b0b5bd")]
+                                transform (MsgFFHeader) = Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToDelHeaderSchema (MsgIndividualForecast);
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0e9b955c-5fc8-433f-ba51-14e9f7703a91")]
+                            construct MsgFFTrailer
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f99224ed-a81b-453d-9adc-b35ff42fd802")]
+                                transform (MsgFFTrailer) = Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToDelTrailerSchema (MsgIndividualForecast);
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("18c976c4-0877-4730-bf00-644c13c87432")]
+                            SndPipeInput.Add(MsgFFHeader);
+                            System.Diagnostics.Trace.WriteLine("Added header to send pipe input");
+                            System.Diagnostics.Trace.WriteLine(SndPipeInput.ToString());
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f3c93549-4a6a-48f7-8bc2-4d614308fbdd")]
+                            IsHdrTlrConstructed = true;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1c9e4161-e569-4daa-9ed6-7db3341688ce")]
+                        construct MsgFFDocument
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8d00490a-cc1e-492f-8548-c4c50afd2be5")]
+                            transform (MsgFFDocument) = Visy.Middleware.LGX.CUB.Maps.CUBDelForecastToFFDocumentSchema (MsgIndividualForecast);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("43fd67ca-21f8-4541-bdf1-4b5f5562fc2a")]
+                        SndPipeInput.Add(MsgFFDocument);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7802d1a6-7d11-4445-9bd5-c89d534a4933")]
+                    SndPipeInput.Add(MsgFFTrailer);
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5925ff93-ee48-45d9-9905-8dd8801df100")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fbad0a38-ac39-415f-bce3-935622f42612")]
+                    construct OutputInterchange
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8ee99521-4500-493c-949e-ce87733b268b")]
+                        System.Diagnostics.Trace.WriteLine("Before executing send pipeline");
+                        System.Diagnostics.Trace.WriteLine(SndPipeInput.ToString());
+                        OutputInterchange = null;
+                        Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteSendPipeline(typeof(Visy.Middleware.LGX.CUB.Pipelines.FFAssembleForecasts), SndPipeInput, OutputInterchange);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("efe46436-a16f-4048-af3f-7d296ae88784")]
+                    send (SendFFToLgx.SendFFToLgx, OutputInterchange);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("001cfd08-606f-41b6-86e7-870b9b563a57")]
+                    catch (Microsoft.XLANGs.Pipeline.XLANGPipelineManagerException pEx)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f391aaf7-f4fb-41cb-8137-8680e6e99654")]
+                        construct FailedInterchange
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f9e97ed9-68db-452f-989d-a215e659ccdd")]
+                            FailedInterchange = MsgCUBDelForEnvelope;
+                            FailedInterchange(Visy.Middleware.LGX.CUB.Schemas.ErrorDescription) = pEx.InnerException.ToString();
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("62cc4e99-808c-493f-9867-144fcf403eb3")]
+                        send (SendFailedInterchange.SendFailedInterchange, FailedInterchange);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("30626a43-b92b-4dbb-a903-1f4a94f26b32")]
+                        terminate "Send pipeline execution failed with the following error:" + pEx.Message;;
+                    }
+                }
+            }
+        }
+    }
+}
+

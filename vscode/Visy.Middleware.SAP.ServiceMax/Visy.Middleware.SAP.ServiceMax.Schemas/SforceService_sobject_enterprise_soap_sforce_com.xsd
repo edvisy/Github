@@ -1,0 +1,821 @@
+<?xml version="1.0"?>
+<schema elementFormDefault="qualified" targetNamespace="urn:sobject.enterprise.soap.sforce.com" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation=".\SforceService_enterprise_soap_sforce_com.xsd" namespace="urn:enterprise.soap.sforce.com" />
+  <complexType name="sObject">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="fieldsToNull" nillable="true" type="string" />
+      <element name="Id" nillable="true" xmlns:q1="urn:enterprise.soap.sforce.com" type="q1:ID" />
+    </sequence>
+  </complexType>
+  <complexType name="Account">
+    <complexContent mixed="false">
+      <extension xmlns:q8="urn:sobject.enterprise.soap.sforce.com" base="q8:sObject">
+        <sequence>
+          <element minOccurs="0" name="ABN__c" nillable="true" type="string" />
+          <element minOccurs="0" name="AccountNumber" nillable="true" type="string" />          
+          <element minOccurs="0" name="BillingCity" nillable="true" type="string" />
+          <element minOccurs="0" name="BillingCountry" nillable="true" type="string" />          
+          <element minOccurs="0" name="BillingPostalCode" nillable="true" type="string" />
+          <element minOccurs="0" name="BillingState" nillable="true" type="string" />
+          <element minOccurs="0" name="BillingStreet" nillable="true" type="string" />
+          <element minOccurs="0" name="Billing_External_ID__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Credit_Status__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Customer_External_ID__c" nillable="true" type="string" />		  
+          <element minOccurs="0" name="Email__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="Fax" nillable="true" type="string" />          
+          <element minOccurs="0" name="Name" nillable="true" type="string" />         
+          <element minOccurs="0" name="Phone" nillable="true" type="string" />
+		  <element minOccurs="0" name="Status__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Sale_Account_del__r" nillable="true" type="q8:Account" />
+		  <element minOccurs="0" name="Type" nillable="true" type="string" />
+		  <element minOccurs="0" name="Vendor_Account_Number__c" nillable="true" type="string" />		  
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Billing_Addresses__c">
+    <complexContent mixed="false">
+      <extension xmlns:q240="urn:sobject.enterprise.soap.sforce.com" base="q240:sObject">
+        <sequence>          
+          <element minOccurs="0" name="Account__r" nillable="true" type="q240:Account" />          
+          <element minOccurs="0" name="Billing_Shipping_Account__r" nillable="true" type="q240:Account" />          
+          <element minOccurs="0" name="City__c" nillable="true" type="string" />                
+          <element minOccurs="0" name="Country__c" nillable="true" type="string" />                 
+          <element minOccurs="0" name="Phone__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Postcode__c" nillable="true" type="string" />         
+          <element minOccurs="0" name="SAP_Number__c" nillable="true" type="string" />
+          <element minOccurs="0" name="State__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Street_Name__c" nillable="true" type="string" />         
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Contact">
+    <complexContent mixed="false">
+      <extension xmlns:q527="urn:sobject.enterprise.soap.sforce.com" base="q527:sObject">
+        <sequence>
+          <element minOccurs="0" name="AcceptedEventRelations" nillable="true" xmlns:q528="urn:enterprise.soap.sforce.com" type="q528:QueryResult" />
+          <element minOccurs="0" name="Account" nillable="true" type="q527:Account" />
+          <element minOccurs="0" name="AccountContactRoles" nillable="true" xmlns:q529="urn:enterprise.soap.sforce.com" type="q529:QueryResult" />
+          <element minOccurs="0" name="AccountId" nillable="true" xmlns:q530="urn:enterprise.soap.sforce.com" type="q530:ID" />
+          <element minOccurs="0" name="ActivityHistories" nillable="true" xmlns:q531="urn:enterprise.soap.sforce.com" type="q531:QueryResult" />
+          <element minOccurs="0" name="Assets" nillable="true" xmlns:q532="urn:enterprise.soap.sforce.com" type="q532:QueryResult" />
+          <element minOccurs="0" name="AssistantName" nillable="true" type="string" />
+          <element minOccurs="0" name="AssistantPhone" nillable="true" type="string" />
+          <element minOccurs="0" name="AttachedContentDocuments" nillable="true" xmlns:q533="urn:enterprise.soap.sforce.com" type="q533:QueryResult" />
+          <element minOccurs="0" name="Attachments" nillable="true" xmlns:q534="urn:enterprise.soap.sforce.com" type="q534:QueryResult" />
+          <element minOccurs="0" name="Birthdate" nillable="true" type="date" />
+          <element minOccurs="0" name="CampaignMembers" nillable="true" xmlns:q535="urn:enterprise.soap.sforce.com" type="q535:QueryResult" />
+          <element minOccurs="0" name="CaseContactRoles" nillable="true" xmlns:q536="urn:enterprise.soap.sforce.com" type="q536:QueryResult" />
+          <element minOccurs="0" name="Cases" nillable="true" xmlns:q537="urn:enterprise.soap.sforce.com" type="q537:QueryResult" />
+          <element minOccurs="0" name="CombinedAttachments" nillable="true" xmlns:q538="urn:enterprise.soap.sforce.com" type="q538:QueryResult" />
+          <element minOccurs="0" name="Contact_External_ID__c" nillable="true" type="string" />
+          <element minOccurs="0" name="ContractContactRoles" nillable="true" xmlns:q539="urn:enterprise.soap.sforce.com" type="q539:QueryResult" />
+          <element minOccurs="0" name="ContractsSigned" nillable="true" xmlns:q540="urn:enterprise.soap.sforce.com" type="q540:QueryResult" />
+          <element minOccurs="0" name="CreatedBy" nillable="true" type="q527:User" />
+          <element minOccurs="0" name="CreatedById" nillable="true" xmlns:q541="urn:enterprise.soap.sforce.com" type="q541:ID" />
+          <element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="DeclinedEventRelations" nillable="true" xmlns:q542="urn:enterprise.soap.sforce.com" type="q542:QueryResult" />
+          <element minOccurs="0" name="Department" nillable="true" type="string" />
+          <element minOccurs="0" name="Description" nillable="true" type="string" />
+          <element minOccurs="0" name="DuplicateRecordItems" nillable="true" xmlns:q543="urn:enterprise.soap.sforce.com" type="q543:QueryResult" />
+          <element minOccurs="0" name="Email" nillable="true" type="string" />
+          <element minOccurs="0" name="EmailBouncedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="EmailBouncedReason" nillable="true" type="string" />
+          <element minOccurs="0" name="EmailStatuses" nillable="true" xmlns:q544="urn:enterprise.soap.sforce.com" type="q544:QueryResult" />
+          <element minOccurs="0" name="EventRelations" nillable="true" xmlns:q545="urn:enterprise.soap.sforce.com" type="q545:QueryResult" />
+          <element minOccurs="0" name="Events" nillable="true" xmlns:q546="urn:enterprise.soap.sforce.com" type="q546:QueryResult" />
+          <element minOccurs="0" name="Fax" nillable="true" type="string" />
+          <element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" xmlns:q547="urn:enterprise.soap.sforce.com" type="q547:QueryResult" />
+          <element minOccurs="0" name="Feeds" nillable="true" xmlns:q548="urn:enterprise.soap.sforce.com" type="q548:QueryResult" />
+          <element minOccurs="0" name="FirstName" nillable="true" type="string" />
+          <element minOccurs="0" name="Histories" nillable="true" xmlns:q549="urn:enterprise.soap.sforce.com" type="q549:QueryResult" />
+          <element minOccurs="0" name="HomePhone" nillable="true" type="string" />
+          <element minOccurs="0" name="IsDeleted" nillable="true" type="boolean" />
+          <element minOccurs="0" name="IsEmailBounced" nillable="true" type="boolean" />
+          <element minOccurs="0" name="JSEA1__r" nillable="true" xmlns:q550="urn:enterprise.soap.sforce.com" type="q550:QueryResult" />
+          <element minOccurs="0" name="JSEA3__r" nillable="true" xmlns:q551="urn:enterprise.soap.sforce.com" type="q551:QueryResult" />
+          <element minOccurs="0" name="JSEA__r" nillable="true" xmlns:q552="urn:enterprise.soap.sforce.com" type="q552:QueryResult" />
+          <element minOccurs="0" name="Jigsaw" nillable="true" type="string" />
+          <element minOccurs="0" name="JigsawContactId" nillable="true" type="string" />
+          <element minOccurs="0" name="LastActivityDate" nillable="true" type="date" />
+          <element minOccurs="0" name="LastCURequestDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastCUUpdateDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q527:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q553="urn:enterprise.soap.sforce.com" type="q553:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastName" nillable="true" type="string" />
+          <element minOccurs="0" name="LastReferencedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastViewedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LeadSource" nillable="true" type="string" />
+          <element minOccurs="0" name="Locations__r" nillable="true" xmlns:q554="urn:enterprise.soap.sforce.com" type="q554:QueryResult" />
+          <element minOccurs="0" name="LookedUpFromActivities" nillable="true" xmlns:q555="urn:enterprise.soap.sforce.com" type="q555:QueryResult" />
+          <element minOccurs="0" name="MailingAddress" nillable="true" xmlns:q556="urn:enterprise.soap.sforce.com" type="q556:address" />
+          <element minOccurs="0" name="MailingCity" nillable="true" type="string" />
+          <element minOccurs="0" name="MailingCountry" nillable="true" type="string" />
+          <element minOccurs="0" name="MailingLatitude" nillable="true" type="double" />
+          <element minOccurs="0" name="MailingLongitude" nillable="true" type="double" />
+          <element minOccurs="0" name="MailingPostalCode" nillable="true" type="string" />
+          <element minOccurs="0" name="MailingState" nillable="true" type="string" />
+          <element minOccurs="0" name="MailingStreet" nillable="true" type="string" />
+          <element minOccurs="0" name="MasterRecord" nillable="true" type="q527:Contact" />
+          <element minOccurs="0" name="MasterRecordId" nillable="true" xmlns:q557="urn:enterprise.soap.sforce.com" type="q557:ID" />
+          <element minOccurs="0" name="MobilePhone" nillable="true" type="string" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="Notes" nillable="true" xmlns:q558="urn:enterprise.soap.sforce.com" type="q558:QueryResult" />
+          <element minOccurs="0" name="NotesAndAttachments" nillable="true" xmlns:q559="urn:enterprise.soap.sforce.com" type="q559:QueryResult" />
+          <element minOccurs="0" name="OpenActivities" nillable="true" xmlns:q560="urn:enterprise.soap.sforce.com" type="q560:QueryResult" />
+          <element minOccurs="0" name="Opportunities" nillable="true" xmlns:q561="urn:enterprise.soap.sforce.com" type="q561:QueryResult" />
+          <element minOccurs="0" name="OpportunityContactRoles" nillable="true" xmlns:q562="urn:enterprise.soap.sforce.com" type="q562:QueryResult" />
+          <element minOccurs="0" name="OtherAddress" nillable="true" xmlns:q563="urn:enterprise.soap.sforce.com" type="q563:address" />
+          <element minOccurs="0" name="OtherCity" nillable="true" type="string" />
+          <element minOccurs="0" name="OtherCountry" nillable="true" type="string" />
+          <element minOccurs="0" name="OtherLatitude" nillable="true" type="double" />
+          <element minOccurs="0" name="OtherLongitude" nillable="true" type="double" />
+          <element minOccurs="0" name="OtherPhone" nillable="true" type="string" />
+          <element minOccurs="0" name="OtherPostalCode" nillable="true" type="string" />
+          <element minOccurs="0" name="OtherState" nillable="true" type="string" />
+          <element minOccurs="0" name="OtherStreet" nillable="true" type="string" />
+          <element minOccurs="0" name="Owner" nillable="true" type="q527:User" />
+          <element minOccurs="0" name="OwnerId" nillable="true" xmlns:q564="urn:enterprise.soap.sforce.com" type="q564:ID" />
+          <element minOccurs="0" name="Phone" nillable="true" type="string" />
+          <element minOccurs="0" name="PhotoUrl" nillable="true" type="string" />
+          <element minOccurs="0" name="ProcessInstances" nillable="true" xmlns:q565="urn:enterprise.soap.sforce.com" type="q565:QueryResult" />
+          <element minOccurs="0" name="ProcessSteps" nillable="true" xmlns:q566="urn:enterprise.soap.sforce.com" type="q566:QueryResult" />
+          <element minOccurs="0" name="RecordAssociatedGroups" nillable="true" xmlns:q567="urn:enterprise.soap.sforce.com" type="q567:QueryResult" />
+          <element minOccurs="0" name="ReportsTo" nillable="true" type="q527:Contact" />
+          <element minOccurs="0" name="ReportsToId" nillable="true" xmlns:q568="urn:enterprise.soap.sforce.com" type="q568:ID" />
+          <element minOccurs="0" name="SVMXC__Parts_Request_Partner__r" nillable="true" xmlns:q569="urn:enterprise.soap.sforce.com" type="q569:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Product_Stock__r" nillable="true" xmlns:q570="urn:enterprise.soap.sforce.com" type="q570:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Quote__r" nillable="true" xmlns:q571="urn:enterprise.soap.sforce.com" type="q571:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzZFEAY__r" nillable="true" xmlns:q572="urn:enterprise.soap.sforce.com" type="q572:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzc8EAA__r" nillable="true" xmlns:q573="urn:enterprise.soap.sforce.com" type="q573:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzcEEAQ__r" nillable="true" xmlns:q574="urn:enterprise.soap.sforce.com" type="q574:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzcJEAQ__r" nillable="true" xmlns:q575="urn:enterprise.soap.sforce.com" type="q575:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzdtEAA__r" nillable="true" xmlns:q576="urn:enterprise.soap.sforce.com" type="q576:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Order_Partner__r" nillable="true" xmlns:q577="urn:enterprise.soap.sforce.com" type="q577:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Order__r" nillable="true" xmlns:q578="urn:enterprise.soap.sforce.com" type="q578:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Order_Partner__r" nillable="true" xmlns:q579="urn:enterprise.soap.sforce.com" type="q579:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Order__r" nillable="true" xmlns:q580="urn:enterprise.soap.sforce.com" type="q580:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Requests__r" nillable="true" xmlns:q581="urn:enterprise.soap.sforce.com" type="q581:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Site__r" nillable="true" xmlns:q582="urn:enterprise.soap.sforce.com" type="q582:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Stock_Adjustment__r" nillable="true" xmlns:q583="urn:enterprise.soap.sforce.com" type="q583:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Stock_History__r" nillable="true" xmlns:q584="urn:enterprise.soap.sforce.com" type="q584:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Stock_Transfer__r" nillable="true" xmlns:q585="urn:enterprise.soap.sforce.com" type="q585:QueryResult" />
+          <element minOccurs="0" name="Salutation" nillable="true" type="string" />
+          <element minOccurs="0" name="Shares" nillable="true" xmlns:q586="urn:enterprise.soap.sforce.com" type="q586:QueryResult" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Tasks" nillable="true" xmlns:q587="urn:enterprise.soap.sforce.com" type="q587:QueryResult" />
+          <element minOccurs="0" name="Title" nillable="true" type="string" />
+          <element minOccurs="0" name="TopicAssignments" nillable="true" xmlns:q588="urn:enterprise.soap.sforce.com" type="q588:QueryResult" />
+          <element minOccurs="0" name="UndecidedEventRelations" nillable="true" xmlns:q589="urn:enterprise.soap.sforce.com" type="q589:QueryResult" />
+          <element minOccurs="0" name="UserRecordAccess" nillable="true" type="q527:UserRecordAccess" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Case">
+    <complexContent mixed="false">
+      <extension xmlns:q337="urn:sobject.enterprise.soap.sforce.com" base="q337:sObject">
+        <sequence>         
+          <element minOccurs="0" name="Credit_Amount__c" nillable="true" type="double" />
+          <element minOccurs="0" name="Credit_Reason__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="Individual_Number__c" nillable="true" type="string" />     
+		  <element minOccurs="0" name="SAP_Credit_Document_Number__c" nillable="true" type="string" />		  
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Profile">
+    <complexContent mixed="false">
+      <extension xmlns:q1537="urn:sobject.enterprise.soap.sforce.com" base="q1537:sObject">
+        <sequence>
+          <element minOccurs="0" name="CreatedBy" nillable="true" type="q1537:User" />
+          <element minOccurs="0" name="CreatedById" nillable="true" xmlns:q1538="urn:enterprise.soap.sforce.com" type="q1538:ID" />
+          <element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Description" nillable="true" type="string" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q1537:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q1539="urn:enterprise.soap.sforce.com" type="q1539:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastReferencedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastViewedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="PermissionsActivateContract" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsActivateOrder" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsApiEnabled" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsApiUserOnly" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsAssignPermissionSets" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsAssignTopics" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsAuthorApex" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsBulkApiHardDelete" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsBulkMacrosAllowed" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCanInsertFeedSystemFields" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCanUseNewDashboardBuilder" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterEditOwnPost" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterEditOwnRecordPost" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterFileLink" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterForSharePoint" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterInternalUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterInviteExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsChatterOwnGroups" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsConfigCustomRecs" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsConnectOrgToEnvironmentHub" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsContentAdministrator" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsConvertLeads" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCreateCustomizeFilters" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCreateMultiforce" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCreateTopics" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCreateWorkspaces" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCustomMobileAppsAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsCustomizeApplication" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsDataExport" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsDelegatedPortalUserAdmin" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsDeleteActivatedContract" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsDeleteTopics" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsDistributeFromPersWksp" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditActivatedOrders" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditBrandTemplates" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditCaseComments" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditEvent" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditHtmlTemplates" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditOppLineItemUnitPrice" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditPublicDocuments" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditPublicTemplates" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditReadonlyFields" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditReports" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditTask" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEditTopics" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEmailAdministration" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEmailMass" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEmailSingle" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEmailTemplateManagement" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsEnableNotifications" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsExportReport" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsFlowUFLRequired" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsForceTwoFactor" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsIdentityConnect" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsIdentityEnabled" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsImportLeads" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsImportPersonal" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsInboundMigrationToolsUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsInstallMultiforce" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageAnalyticSnapshots" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageAuthProviders" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageBusinessHourHolidays" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCallCenters" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCases" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCategories" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageChatterMessages" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageContentPermissions" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageContentProperties" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageContentTypes" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCssUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCustomPermissions" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageCustomReportTypes" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageDashboards" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageDataCategories" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageDataIntegrations" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageEmailClientConfig" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageExchangeConfig" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageInteraction" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageInternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageIpAddresses" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageLeads" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageLoginAccessPolicies" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageMobile" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManagePasswordPolicies" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageProfilesPermissionsets" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageRemoteAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageRoles" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageSelfService" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageSharing" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageSolutions" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageTranslation" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageTwoFactor" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageUnlistedGroups" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsManageUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsMassInlineEdit" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsMergeTopics" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsModerateChatter" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsModifyAllData" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsNewReportBuilder" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsOutboundMigrationToolsUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsPasswordNeverExpires" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsPortalSuperUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsPublishMultiforce" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsResetPasswords" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsRunFlow" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsRunReports" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsSalesConsole" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsScheduleJob" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsScheduleReports" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsSendSitRequests" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsSolutionImport" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsSubmitMacrosAllowed" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsTransferAnyCase" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsTransferAnyEntity" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsTransferAnyLead" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsTwoFactorApi" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsUseTeamReassignWizards" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewAllData" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewAllUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewContent" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewDataCategories" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewEncryptedData" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewEventLogFiles" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewHelpLink" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewMyTeamsDashboards" nillable="true" type="boolean" />
+          <element minOccurs="0" name="PermissionsViewSetup" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="UserLicense" nillable="true" type="q1537:UserLicense" />
+          <element minOccurs="0" name="UserLicenseId" nillable="true" xmlns:q1540="urn:enterprise.soap.sforce.com" type="q1540:ID" />
+          <element minOccurs="0" name="UserType" nillable="true" type="string" />
+          <element minOccurs="0" name="Users" nillable="true" xmlns:q1541="urn:enterprise.soap.sforce.com" type="q1541:QueryResult" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Pricebook2">
+    <complexContent mixed="false">
+      <extension xmlns:q1420="urn:sobject.enterprise.soap.sforce.com" base="q1420:sObject">
+        <sequence>
+          <element minOccurs="0" name="Contracts" nillable="true" xmlns:q1421="urn:enterprise.soap.sforce.com" type="q1421:QueryResult" />
+          <element minOccurs="0" name="CreatedBy" nillable="true" type="q1420:User" />
+          <element minOccurs="0" name="CreatedById" nillable="true" xmlns:q1422="urn:enterprise.soap.sforce.com" type="q1422:ID" />
+          <element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Description" nillable="true" type="string" />
+          <element minOccurs="0" name="Histories" nillable="true" xmlns:q1423="urn:enterprise.soap.sforce.com" type="q1423:QueryResult" />
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />
+          <element minOccurs="0" name="IsDeleted" nillable="true" type="boolean" />
+          <element minOccurs="0" name="IsStandard" nillable="true" type="boolean" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q1420:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q1424="urn:enterprise.soap.sforce.com" type="q1424:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastReferencedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastViewedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="Opportunities" nillable="true" xmlns:q1425="urn:enterprise.soap.sforce.com" type="q1425:QueryResult" />
+          <element minOccurs="0" name="Orders" nillable="true" xmlns:q1426="urn:enterprise.soap.sforce.com" type="q1426:QueryResult" />
+          <element minOccurs="0" name="PricebookEntries" nillable="true" xmlns:q1427="urn:enterprise.soap.sforce.com" type="q1427:QueryResult" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="UserRecordAccess" nillable="true" type="q1420:UserRecordAccess" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RecordType">
+    <complexContent mixed="false">
+      <extension xmlns:q1555="urn:sobject.enterprise.soap.sforce.com" base="q1555:sObject">
+        <sequence>
+          <element minOccurs="0" name="BusinessProcessId" nillable="true" xmlns:q1556="urn:enterprise.soap.sforce.com" type="q1556:ID" />
+          <element minOccurs="0" name="CreatedBy" nillable="true" type="q1555:User" />
+          <element minOccurs="0" name="CreatedById" nillable="true" xmlns:q1557="urn:enterprise.soap.sforce.com" type="q1557:ID" />
+          <element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Description" nillable="true" type="string" />
+          <element minOccurs="0" name="DeveloperName" nillable="true" type="string" />
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q1555:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q1558="urn:enterprise.soap.sforce.com" type="q1558:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Localization" nillable="true" xmlns:q1559="urn:enterprise.soap.sforce.com" type="q1559:QueryResult" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="NamespacePrefix" nillable="true" type="string" />
+          <element minOccurs="0" name="SobjectType" nillable="true" type="string" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SVMXC__Product_Stock__c">
+    <complexContent mixed="false">
+      <extension xmlns:q2914="urn:sobject.enterprise.soap.sforce.com" base="q2914:sObject">
+        <sequence>   
+		  <element minOccurs="0" name="Bin__c" nillable="true" type="string" />
+          <element minOccurs="0" name="MSP_Number__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__Product__c" nillable="true" xmlns:q2938="urn:enterprise.soap.sforce.com" type="q2938:ID" />          
+          <element minOccurs="0" name="Product_Stock_External_Id__c" nillable="true" type="string" /> 
+		  <element minOccurs="0" name="SVMXC__Location__r" nillable="true" type="q2914:SVMXC__Site__c" />
+          <element minOccurs="0" name="SVMXC__Quantity2__c" nillable="true" type="double" />
+          <element minOccurs="0" name="SVMXC__Reorder_Level2__c" nillable="true" type="double" />
+          <element minOccurs="0" name="SVMXC__Reorder_Quantity2__c" nillable="true" type="double" />          
+          <element minOccurs="0" name="Stock_On_Order__c" nillable="true" type="double" />
+          <element minOccurs="0" name="Stocking_Location_External_ID__c" nillable="true" type="string" /> 
+		  <element minOccurs="0" name="SVMXC__Product__r" nillable="true" type="q2914:Product2" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SVMXC__RMA_Shipment_Line__c">
+    <complexContent mixed="false">
+      <extension xmlns:q3108="urn:sobject.enterprise.soap.sforce.com" base="q3108:sObject">
+        <sequence>
+          <element minOccurs="0" name="Line_Item_External_ID__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Purchase_Order_Number__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="SAP_Purchase_Order_Line_Item__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__Line_Status__c" nillable="true" type="string" />
+         </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SVMXC__Service_Order_Line__c">
+    <complexContent mixed="false">
+      <extension xmlns:q4098="urn:sobject.enterprise.soap.sforce.com" base="q4098:sObject">
+        <sequence>          
+          <element minOccurs="0" name="MSP_Number__c" nillable="true" type="string" /> 
+          <element minOccurs="0" name="SVMXC__Activity_Type__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__Actual_Quantity2__c" nillable="true" type="double" />
+          <element minOccurs="0" name="SVMXC__Consumed_From_Location__c" nillable="true" xmlns:q4117="urn:enterprise.soap.sforce.com" type="q4117:ID" />
+          <element minOccurs="0" name="SVMXC__End_Date_and_Time__c" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="SVMXC__Group_Member__c" nillable="true" xmlns:q4119="urn:enterprise.soap.sforce.com" type="q4119:ID" />
+          <element minOccurs="0" name="SVMXC__Service_Order__c" nillable="true" xmlns:q4129="urn:enterprise.soap.sforce.com" type="q4129:ID" />
+          <element minOccurs="0" name="SVMXC__Start_Date_and_Time__c" nillable="true" type="dateTime" />          
+          <element minOccurs="0" name="Stocking_Location_External_ID__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="Transaction_Type__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="WBS_Number__c" nillable="true" xmlns:q4134="urn:enterprise.soap.sforce.com" type="q4134:ID" />          
+          <element minOccurs="0" name="Warehouse_Number__c" nillable="true" type="string" />          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="SVMXC__Site__c">
+    <complexContent mixed="false">
+      <extension xmlns:q4409="urn:sobject.enterprise.soap.sforce.com" base="q4409:sObject">
+        <sequence>          
+          <element minOccurs="0" name="Name" nillable="true" type="string" />          
+          <element minOccurs="0" name="RecordType" nillable="true" type="q4409:RecordType" />
+          <element minOccurs="0" name="RecordTypeId" nillable="true" xmlns:q4430="urn:enterprise.soap.sforce.com" type="q4430:ID" />         
+          <element minOccurs="0" name="SVMXC__City__c" nillable="true" type="string" />         
+          <element minOccurs="0" name="SVMXC__Country__c" nillable="true" type="string" />      
+          <element minOccurs="0" name="SVMXC__Site_Phone__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="SVMXC__Site_Fax__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__State__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="SVMXC__Stocking_Location__c" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SVMXC__Street__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="SVMXC__Zip__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="Stocking_Location_External_ID__c" nillable="true" type="string" /> 
+		  <element minOccurs="0" name="Storage_Type__c" nillable="true" type="string" />	
+          <element minOccurs="0" name="Inv_Blk__c" nillable="true" type="string" />	  
+		  <element minOccurs="0" name="Warehouse_Plant__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Row__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Putaway_Blk__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Removal_Blk__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Site_Description__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Warehouse__c" nillable="true" type="string" />
+      </sequence>
+	  </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="UserRecordAccess">
+    <complexContent mixed="false">
+      <extension xmlns:q5240="urn:sobject.enterprise.soap.sforce.com" base="q5240:sObject">
+        <sequence>
+          <element minOccurs="0" name="HasAllAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="HasDeleteAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="HasEditAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="HasReadAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="HasTransferAccess" nillable="true" type="boolean" />
+          <element minOccurs="0" name="MaxAccessLevel" nillable="true" type="string" />
+          <element minOccurs="0" name="RecordId" nillable="true" type="string" />
+          <element minOccurs="0" name="UserId" nillable="true" xmlns:q5241="urn:enterprise.soap.sforce.com" type="q5241:ID" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Name">
+    <complexContent mixed="false">
+      <extension xmlns:q1185="urn:sobject.enterprise.soap.sforce.com" base="q1185:sObject">
+        <sequence>
+          <element minOccurs="0" name="Alias" nillable="true" type="string" />
+          <element minOccurs="0" name="Email" nillable="true" type="string" />
+          <element minOccurs="0" name="FirstName" nillable="true" type="string" />
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />
+          <element minOccurs="0" name="LastName" nillable="true" type="string" />
+          <element minOccurs="0" name="LastReferencedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastViewedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="Phone" nillable="true" type="string" />
+          <element minOccurs="0" name="Profile" nillable="true" type="q1185:Profile" />
+          <element minOccurs="0" name="ProfileId" nillable="true" xmlns:q1186="urn:enterprise.soap.sforce.com" type="q1186:ID" />
+          <element minOccurs="0" name="RecordType" nillable="true" type="q1185:RecordType" />
+          <element minOccurs="0" name="RecordTypeId" nillable="true" xmlns:q1187="urn:enterprise.soap.sforce.com" type="q1187:ID" />
+          <element minOccurs="0" name="Title" nillable="true" type="string" />
+          <element minOccurs="0" name="Type" nillable="true" type="string" />
+          <element minOccurs="0" name="UserRole" nillable="true" type="q1185:UserRole" />
+          <element minOccurs="0" name="UserRoleId" nillable="true" xmlns:q1188="urn:enterprise.soap.sforce.com" type="q1188:ID" />
+          <element minOccurs="0" name="Username" nillable="true" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PricebookEntry">
+    <complexContent mixed="false">
+      <extension xmlns:q1431="urn:sobject.enterprise.soap.sforce.com" base="q1431:sObject">
+        <sequence>          
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />       
+          <element minOccurs="0" name="Pricebook2" nillable="true" type="q1431:Pricebook2" />
+		  <element minOccurs="0" name="Pricebook2Id" nillable="true" xmlns:q1436="urn:enterprise.soap.sforce.com" type="q1436:ID" />
+          <element minOccurs="0" name="Pricebook_Entry_External_ID__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Product2" nillable="true" type="q1431:Product2" />
+          <element minOccurs="0" name="ProductCode" nillable="true" type="string" />
+          <element minOccurs="0" name="UnitPrice" nillable="true" type="double" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="Product2">
+    <complexContent mixed="false">
+      <extension xmlns:q1477="urn:sobject.enterprise.soap.sforce.com" base="q1477:sObject">
+        <sequence>          
+          <element minOccurs="0" name="Buy_Description__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Colloquial_Description__c" nillable="true" type="string" />         
+          <element minOccurs="0" name="Description" nillable="true" type="string" />          
+          <element minOccurs="0" name="Family" nillable="true" type="string" />          
+          <element minOccurs="0" name="INC__c" nillable="true" type="string" />
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />      
+          <element minOccurs="0" name="NSC__c" nillable="true" type="string" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />         
+          <element minOccurs="0" name="OEM_Part_Number__c" nillable="true" type="string" />
+          <element minOccurs="0" name="OEM_Supplier__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="ProductCode" nillable="true" type="string" />
+          <element minOccurs="0" name="Product_External_ID__c" nillable="true" type="string" />
+		  <element minOccurs="0" name="Previous_Product_Number__c" nillable="true" type="string" />
+          <element minOccurs="0" name="RecordType" nillable="true" type="q1477:RecordType" />
+          <element minOccurs="0" name="RecordTypeId" nillable="true" xmlns:q1496="urn:enterprise.soap.sforce.com" type="q1496:ID" />          
+          <element minOccurs="0" name="SVMXC__Product_Cost__c" nillable="true" type="double" />          
+          <element minOccurs="0" name="SVMXC__Unit_Of_Measure__c" nillable="true" type="string" />          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="User">
+    <complexContent mixed="false">
+      <extension xmlns:q5093="urn:sobject.enterprise.soap.sforce.com" base="q5093:sObject">
+        <sequence>
+          <element minOccurs="0" name="AboutMe" nillable="true" type="string" />
+          <element minOccurs="0" name="AcceptedEventRelations" nillable="true" xmlns:q5094="urn:enterprise.soap.sforce.com" type="q5094:QueryResult" />
+          <element minOccurs="0" name="Account" nillable="true" type="q5093:Account" />
+          <element minOccurs="0" name="AccountId" nillable="true" xmlns:q5095="urn:enterprise.soap.sforce.com" type="q5095:ID" />
+          <element minOccurs="0" name="Address" nillable="true" xmlns:q5096="urn:enterprise.soap.sforce.com" type="q5096:address" />
+          <element minOccurs="0" name="Alias" nillable="true" type="string" />
+          <element minOccurs="0" name="AttachedContentDocuments" nillable="true" xmlns:q5097="urn:enterprise.soap.sforce.com" type="q5097:QueryResult" />
+          <element minOccurs="0" name="BadgeText" nillable="true" type="string" />
+          <element minOccurs="0" name="CallCenterId" nillable="true" xmlns:q5098="urn:enterprise.soap.sforce.com" type="q5098:ID" />
+          <element minOccurs="0" name="City" nillable="true" type="string" />
+          <element minOccurs="0" name="CombinedAttachments" nillable="true" xmlns:q5099="urn:enterprise.soap.sforce.com" type="q5099:QueryResult" />
+          <element minOccurs="0" name="CommunityNickname" nillable="true" type="string" />
+          <element minOccurs="0" name="CompanyName" nillable="true" type="string" />
+          <element minOccurs="0" name="Contact" nillable="true" type="q5093:Contact" />
+          <element minOccurs="0" name="ContactId" nillable="true" xmlns:q5100="urn:enterprise.soap.sforce.com" type="q5100:ID" />
+          <element minOccurs="0" name="ContractsSigned" nillable="true" xmlns:q5101="urn:enterprise.soap.sforce.com" type="q5101:QueryResult" />
+          <element minOccurs="0" name="Country" nillable="true" type="string" />
+          <element minOccurs="0" name="CreatedBy" nillable="true" type="q5093:User" />
+          <element minOccurs="0" name="CreatedById" nillable="true" xmlns:q5102="urn:enterprise.soap.sforce.com" type="q5102:ID" />
+          <element minOccurs="0" name="CreatedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="DeclinedEventRelations" nillable="true" xmlns:q5103="urn:enterprise.soap.sforce.com" type="q5103:QueryResult" />
+          <element minOccurs="0" name="DefaultGroupNotificationFrequency" nillable="true" type="string" />
+          <element minOccurs="0" name="DelegatedApproverId" nillable="true" xmlns:q5104="urn:enterprise.soap.sforce.com" type="q5104:ID" />
+          <element minOccurs="0" name="DelegatedUsers" nillable="true" xmlns:q5105="urn:enterprise.soap.sforce.com" type="q5105:QueryResult" />
+          <element minOccurs="0" name="Department" nillable="true" type="string" />
+          <element minOccurs="0" name="DigestFrequency" nillable="true" type="string" />
+          <element minOccurs="0" name="Division" nillable="true" type="string" />
+          <element minOccurs="0" name="Email" nillable="true" type="string" />
+          <element minOccurs="0" name="EmailEncodingKey" nillable="true" type="string" />
+          <element minOccurs="0" name="EmailPreferencesAutoBcc" nillable="true" type="boolean" />
+          <element minOccurs="0" name="EmailPreferencesAutoBccStayInTouch" nillable="true" type="boolean" />
+          <element minOccurs="0" name="EmailPreferencesStayInTouchReminder" nillable="true" type="boolean" />
+          <element minOccurs="0" name="EmployeeNumber" nillable="true" type="string" />
+          <element minOccurs="0" name="EventRelations" nillable="true" xmlns:q5106="urn:enterprise.soap.sforce.com" type="q5106:QueryResult" />
+          <element minOccurs="0" name="Extension" nillable="true" type="string" />
+          <element minOccurs="0" name="ExternalDataUserAuths" nillable="true" xmlns:q5107="urn:enterprise.soap.sforce.com" type="q5107:QueryResult" />
+          <element minOccurs="0" name="Fax" nillable="true" type="string" />
+          <element minOccurs="0" name="FederationIdentifier" nillable="true" type="string" />
+          <element minOccurs="0" name="FeedSubscriptions" nillable="true" xmlns:q5108="urn:enterprise.soap.sforce.com" type="q5108:QueryResult" />
+          <element minOccurs="0" name="FeedSubscriptionsForEntity" nillable="true" xmlns:q5109="urn:enterprise.soap.sforce.com" type="q5109:QueryResult" />
+          <element minOccurs="0" name="Feeds" nillable="true" xmlns:q5110="urn:enterprise.soap.sforce.com" type="q5110:QueryResult" />
+          <element minOccurs="0" name="FirstName" nillable="true" type="string" />
+          <element minOccurs="0" name="ForecastEnabled" nillable="true" type="boolean" />
+          <element minOccurs="0" name="FullPhotoUrl" nillable="true" type="string" />
+          <element minOccurs="0" name="GroupMemberships" nillable="true" xmlns:q5111="urn:enterprise.soap.sforce.com" type="q5111:QueryResult" />
+          <element minOccurs="0" name="InstalledMobileApps" nillable="true" xmlns:q5112="urn:enterprise.soap.sforce.com" type="q5112:QueryResult" />
+          <element minOccurs="0" name="IsActive" nillable="true" type="boolean" />
+          <element minOccurs="0" name="IsPortalEnabled" nillable="true" type="boolean" />
+          <element minOccurs="0" name="IsPortalSelfRegistered" nillable="true" type="boolean" />
+          <element minOccurs="0" name="LanguageLocaleKey" nillable="true" type="string" />
+          <element minOccurs="0" name="LastLoginDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q5093:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q5113="urn:enterprise.soap.sforce.com" type="q5113:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastName" nillable="true" type="string" />
+          <element minOccurs="0" name="LastPasswordChangeDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastReferencedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="LastViewedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Latitude" nillable="true" type="double" />
+          <element minOccurs="0" name="LocaleSidKey" nillable="true" type="string" />
+          <element minOccurs="0" name="Longitude" nillable="true" type="double" />
+          <element minOccurs="0" name="ManagedUsers" nillable="true" xmlns:q5114="urn:enterprise.soap.sforce.com" type="q5114:QueryResult" />
+          <element minOccurs="0" name="Manager" nillable="true" type="q5093:User" />
+          <element minOccurs="0" name="ManagerId" nillable="true" xmlns:q5115="urn:enterprise.soap.sforce.com" type="q5115:ID" />
+          <element minOccurs="0" name="MobilePhone" nillable="true" type="string" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="OfflinePdaTrialExpirationDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="OfflineTrialExpirationDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="OwnedContentDocuments" nillable="true" xmlns:q5116="urn:enterprise.soap.sforce.com" type="q5116:QueryResult" />
+          <element minOccurs="0" name="PermissionSetAssignments" nillable="true" xmlns:q5117="urn:enterprise.soap.sforce.com" type="q5117:QueryResult" />
+          <element minOccurs="0" name="PermissionSetLicenseAssignments" nillable="true" xmlns:q5118="urn:enterprise.soap.sforce.com" type="q5118:QueryResult" />
+          <element minOccurs="0" name="Phone" nillable="true" type="string" />
+          <element minOccurs="0" name="PortalRole" nillable="true" type="string" />
+          <element minOccurs="0" name="PostalCode" nillable="true" type="string" />
+          <element minOccurs="0" name="Profile" nillable="true" type="q5093:Profile" />
+          <element minOccurs="0" name="ProfileId" nillable="true" xmlns:q5119="urn:enterprise.soap.sforce.com" type="q5119:ID" />
+          <element minOccurs="0" name="ReceivesAdminInfoEmails" nillable="true" type="boolean" />
+          <element minOccurs="0" name="ReceivesInfoEmails" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SVMXC__Booking_Window__r" nillable="true" xmlns:q5120="urn:enterprise.soap.sforce.com" type="q5120:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Case_BW_Selected_By__r" nillable="true" xmlns:q5121="urn:enterprise.soap.sforce.com" type="q5121:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Dispatch_Console_Settings__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__Dispatcher_Access__r" nillable="true" xmlns:q5122="urn:enterprise.soap.sforce.com" type="q5122:QueryResult" />
+          <element minOccurs="0" name="SVMXC__FaceTime_ID__c" nillable="true" type="string" />
+          <element minOccurs="0" name="SVMXC__Is_Super_Dispatcher__c" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SVMXC__Location_History__r" nillable="true" xmlns:q5123="urn:enterprise.soap.sforce.com" type="q5123:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Offline_Log__r" nillable="true" xmlns:q5124="urn:enterprise.soap.sforce.com" type="q5124:QueryResult" />
+          <element minOccurs="0" name="SVMXC__OptiMax_Jobs__r" nillable="true" xmlns:q5125="urn:enterprise.soap.sforce.com" type="q5125:QueryResult" />
+          <element minOccurs="0" name="SVMXC__PM_Plan_Case_User__r" nillable="true" xmlns:q5126="urn:enterprise.soap.sforce.com" type="q5126:QueryResult" />
+          <element minOccurs="0" name="SVMXC__PM_Plan_WO_User__r" nillable="true" xmlns:q5127="urn:enterprise.soap.sforce.com" type="q5127:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Order_Lines1__r" nillable="true" xmlns:q5128="urn:enterprise.soap.sforce.com" type="q5128:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Order_Lines2__r" nillable="true" xmlns:q5129="urn:enterprise.soap.sforce.com" type="q5129:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Order_Lines3__r" nillable="true" xmlns:q5130="urn:enterprise.soap.sforce.com" type="q5130:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Order_Lines__r" nillable="true" xmlns:q5131="urn:enterprise.soap.sforce.com" type="q5131:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Request_Canceled_By__r" nillable="true" xmlns:q5132="urn:enterprise.soap.sforce.com" type="q5132:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Request_Closed_By__r" nillable="true" xmlns:q5133="urn:enterprise.soap.sforce.com" type="q5133:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Request_Line_Canceled_By__r" nillable="true" xmlns:q5134="urn:enterprise.soap.sforce.com" type="q5134:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Parts_Request_Line_Closed_By__r" nillable="true" xmlns:q5135="urn:enterprise.soap.sforce.com" type="q5135:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Preventive_Maintenance_Plans__r" nillable="true" xmlns:q5136="urn:enterprise.soap.sforce.com" type="q5136:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Proforma_Invoice__r" nillable="true" xmlns:q5137="urn:enterprise.soap.sforce.com" type="q5137:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzYXEAY__r" nillable="true" xmlns:q5138="urn:enterprise.soap.sforce.com" type="q5138:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzbvEAA__r" nillable="true" xmlns:q5139="urn:enterprise.soap.sforce.com" type="q5139:QueryResult" />
+          <element minOccurs="0" name="SVMXC__R00N70000001hzcwEAA__r" nillable="true" xmlns:q5140="urn:enterprise.soap.sforce.com" type="q5140:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Line_Canceled_By__r" nillable="true" xmlns:q5141="urn:enterprise.soap.sforce.com" type="q5141:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Line_Closed_By__r" nillable="true" xmlns:q5142="urn:enterprise.soap.sforce.com" type="q5142:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Line__r" nillable="true" xmlns:q5143="urn:enterprise.soap.sforce.com" type="q5143:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Order_Canceled_By__r" nillable="true" xmlns:q5144="urn:enterprise.soap.sforce.com" type="q5144:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Order_Closed_By__r" nillable="true" xmlns:q5145="urn:enterprise.soap.sforce.com" type="q5145:QueryResult" />
+          <element minOccurs="0" name="SVMXC__RMA_Shipment_Order__r" nillable="true" xmlns:q5146="urn:enterprise.soap.sforce.com" type="q5146:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Route_Stops1__r" nillable="true" xmlns:q5147="urn:enterprise.soap.sforce.com" type="q5147:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Route_Stops2__r" nillable="true" xmlns:q5148="urn:enterprise.soap.sforce.com" type="q5148:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Route_Stops3__r" nillable="true" xmlns:q5149="urn:enterprise.soap.sforce.com" type="q5149:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Route_Stops__r" nillable="true" xmlns:q5150="urn:enterprise.soap.sforce.com" type="q5150:QueryResult" />
+          <element minOccurs="0" name="SVMXC__SVMX_Config_Data__r" nillable="true" xmlns:q5151="urn:enterprise.soap.sforce.com" type="q5151:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Select__c" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SVMXC__ServiceMax_List__r" nillable="true" xmlns:q5152="urn:enterprise.soap.sforce.com" type="q5152:QueryResult" />
+          <element minOccurs="0" name="SVMXC__ServiceMax_Processes1__r" nillable="true" xmlns:q5153="urn:enterprise.soap.sforce.com" type="q5153:QueryResult" />
+          <element minOccurs="0" name="SVMXC__ServiceMax_Processes__r" nillable="true" xmlns:q5154="urn:enterprise.soap.sforce.com" type="q5154:QueryResult" />
+          <element minOccurs="0" name="SVMXC__ServiceMax_Settings__r" nillable="true" xmlns:q5155="urn:enterprise.soap.sforce.com" type="q5155:QueryResult" />
+          <element minOccurs="0" name="SVMXC__ServiceMax_User__c" nillable="true" type="boolean" />
+          <element minOccurs="0" name="SVMXC__Service_Group_Members__r" nillable="true" xmlns:q5156="urn:enterprise.soap.sforce.com" type="q5156:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Order_Closed_By__r" nillable="true" xmlns:q5157="urn:enterprise.soap.sforce.com" type="q5157:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Order_Line_Canceled_By__r" nillable="true" xmlns:q5158="urn:enterprise.soap.sforce.com" type="q5158:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Order_Line_Closed_By__r" nillable="true" xmlns:q5159="urn:enterprise.soap.sforce.com" type="q5159:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Service_Requests__r" nillable="true" xmlns:q5160="urn:enterprise.soap.sforce.com" type="q5160:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Site__r" nillable="true" xmlns:q5161="urn:enterprise.soap.sforce.com" type="q5161:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Stock_History_Changed_By__r" nillable="true" xmlns:q5162="urn:enterprise.soap.sforce.com" type="q5162:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Stock_History_Notified_User__r" nillable="true" xmlns:q5163="urn:enterprise.soap.sforce.com" type="q5163:QueryResult" />
+          <element minOccurs="0" name="SVMXC__Sync_Requests__r" nillable="true" xmlns:q5164="urn:enterprise.soap.sforce.com" type="q5164:QueryResult" />
+          <element minOccurs="0" name="SenderEmail" nillable="true" type="string" />
+          <element minOccurs="0" name="SenderName" nillable="true" type="string" />
+          <element minOccurs="0" name="Shares" nillable="true" xmlns:q5165="urn:enterprise.soap.sforce.com" type="q5165:QueryResult" />
+          <element minOccurs="0" name="Signature" nillable="true" type="string" />
+          <element minOccurs="0" name="SmallPhotoUrl" nillable="true" type="string" />
+          <element minOccurs="0" name="State" nillable="true" type="string" />
+          <element minOccurs="0" name="StayInTouchNote" nillable="true" type="string" />
+          <element minOccurs="0" name="StayInTouchSignature" nillable="true" type="string" />
+          <element minOccurs="0" name="StayInTouchSubject" nillable="true" type="string" />
+          <element minOccurs="0" name="Street" nillable="true" type="string" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="TimeZoneSidKey" nillable="true" type="string" />
+          <element minOccurs="0" name="Title" nillable="true" type="string" />
+          <element minOccurs="0" name="UndecidedEventRelations" nillable="true" xmlns:q5166="urn:enterprise.soap.sforce.com" type="q5166:QueryResult" />
+          <element minOccurs="0" name="UserEntityAccessRights" nillable="true" xmlns:q5167="urn:enterprise.soap.sforce.com" type="q5167:QueryResult" />
+          <element minOccurs="0" name="UserPermissionsAvantgoUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsCallCenterAutoLogin" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsChatterAnswersUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsInteractionUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsMarketingUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsMobileUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsOfflineUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsSFContentUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPermissionsSupportUser" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferences" nillable="true" xmlns:q5168="urn:enterprise.soap.sforce.com" type="q5168:QueryResult" />
+          <element minOccurs="0" name="UserPreferencesActivityRemindersPopup" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesApexPagesDeveloperMode" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesContentEmailAsAndWhen" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesContentNoEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisCommentAfterLikeEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisMentionsCommentEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisProfPostCommentEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableAllFeedsEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableBookmarkEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableChangeCommentEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableEndorsementEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableFileShareNotificationsForApi" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableFollowersEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableLaterCommentEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableLikeEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableMentionsPostEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableMessageEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableProfilePostEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesDisableSharePostEmail" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesEnableAutoSubForFeeds" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesEventRemindersCheckboxDefault" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesHideCSNDesktopTask" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesHideCSNGetChatterMobileTask" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesHideChatterOnboardingSplash" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesHideS1BrowserUI" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesHideSecondChatterOnboardingSplash" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesProcessAssistantCollapsed" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesReminderSoundOff" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowCityToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowCityToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowCountryToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowCountryToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowEmailToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowEmailToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowFaxToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowFaxToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowManagerToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowManagerToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowMobilePhoneToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowMobilePhoneToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowPostalCodeToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowPostalCodeToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowProfilePicToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowStateToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowStateToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowStreetAddressToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowStreetAddressToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowTitleToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowTitleToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowWorkPhoneToExternalUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesShowWorkPhoneToGuestUsers" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserPreferencesTaskRemindersCheckboxDefault" nillable="true" type="boolean" />
+          <element minOccurs="0" name="UserRole" nillable="true" type="q5093:UserRole" />
+          <element minOccurs="0" name="UserRoleId" nillable="true" xmlns:q5169="urn:enterprise.soap.sforce.com" type="q5169:ID" />
+          <element minOccurs="0" name="UserSites" nillable="true" xmlns:q5170="urn:enterprise.soap.sforce.com" type="q5170:QueryResult" />
+          <element minOccurs="0" name="UserType" nillable="true" type="string" />
+          <element minOccurs="0" name="Username" nillable="true" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="WBS_Number__c">
+    <complexContent mixed="false">
+      <extension xmlns:q5256="urn:sobject.enterprise.soap.sforce.com" base="q5256:sObject">
+        <sequence>          
+          <element minOccurs="0" name="Description__c" nillable="true" type="string" />          
+          <element minOccurs="0" name="IsDeleted" nillable="true" type="boolean" />          
+          <element minOccurs="0" name="Name" nillable="true" type="string" />          
+          <element minOccurs="0" name="Status__c" nillable="true" type="boolean" />          
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType> 
+ <complexType name="UserLicense">
+    <complexContent mixed="false">
+      <extension xmlns:q5181="urn:sobject.enterprise.soap.sforce.com" base="q5181:sObject">
+        <sequence>
+          <element minOccurs="0" name="LicenseDefinitionKey" nillable="true" type="string" />
+          <element minOccurs="0" name="MonthlyLoginsEntitlement" nillable="true" type="int" />
+          <element minOccurs="0" name="MonthlyLoginsUsed" nillable="true" type="int" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="userlicenses" nillable="true" xmlns:q5182="urn:enterprise.soap.sforce.com" type="q5182:QueryResult" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+<complexType name="UserRole">
+    <complexContent mixed="false">
+      <extension xmlns:q5242="urn:sobject.enterprise.soap.sforce.com" base="q5242:sObject">
+        <sequence>
+          <element minOccurs="0" name="CaseAccessForAccountOwner" nillable="true" type="string" />
+          <element minOccurs="0" name="ContactAccessForAccountOwner" nillable="true" type="string" />
+          <element minOccurs="0" name="DeveloperName" nillable="true" type="string" />
+          <element minOccurs="0" name="ForecastUserId" nillable="true" xmlns:q5243="urn:enterprise.soap.sforce.com" type="q5243:ID" />
+          <element minOccurs="0" name="LastModifiedBy" nillable="true" type="q5242:User" />
+          <element minOccurs="0" name="LastModifiedById" nillable="true" xmlns:q5244="urn:enterprise.soap.sforce.com" type="q5244:ID" />
+          <element minOccurs="0" name="LastModifiedDate" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="MayForecastManagerShare" nillable="true" type="boolean" />
+          <element minOccurs="0" name="Name" nillable="true" type="string" />
+          <element minOccurs="0" name="OpportunityAccessForAccountOwner" nillable="true" type="string" />
+          <element minOccurs="0" name="ParentRoleId" nillable="true" xmlns:q5245="urn:enterprise.soap.sforce.com" type="q5245:ID" />
+          <element minOccurs="0" name="PortalAccountId" nillable="true" xmlns:q5246="urn:enterprise.soap.sforce.com" type="q5246:ID" />
+          <element minOccurs="0" name="PortalAccountOwnerId" nillable="true" xmlns:q5247="urn:enterprise.soap.sforce.com" type="q5247:ID" />
+          <element minOccurs="0" name="PortalRole" nillable="true" type="string" />
+          <element minOccurs="0" name="PortalType" nillable="true" type="string" />
+          <element minOccurs="0" name="RollupDescription" nillable="true" type="string" />
+          <element minOccurs="0" name="SystemModstamp" nillable="true" type="dateTime" />
+          <element minOccurs="0" name="Users" nillable="true" xmlns:q5248="urn:enterprise.soap.sforce.com" type="q5248:QueryResult" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  
+</schema>

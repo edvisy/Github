@@ -1,0 +1,590 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7d29676a-6a68-42fd-a965-6a04c4bdfc70" LowerBound="1.1" HigherBound="117.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="3c97c7e0-19bd-42f2-819a-80ca98724d42" ParentLink="Module_PortType" LowerBound="20.1" HigherBound="27.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_GRInboundPort" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="e034cb3d-7995-490a-8a1e-a1ad82af1e3d" ParentLink="PortType_OperationDeclaration" LowerBound="22.1" HigherBound="26.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="webhttp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="5e4790c7-5246-4335-b731-e07cad882939" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="24.13" HigherBound="24.25">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="3104edcb-33a2-45a5-934e-188045839472" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="24.27" HigherBound="24.40">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b213594a-2c8f-4df8-9878-71edd3caa094" ParentLink="Module_PortType" LowerBound="27.1" HigherBound="34.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_JsonArchive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f45e1e28-63e3-4790-b2b8-f16b82b35b69" ParentLink="PortType_OperationDeclaration" LowerBound="29.1" HigherBound="33.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="538b12d0-84e0-4962-b9bd-4d92f6127f71" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="31.13" HigherBound="31.25">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="39df4e98-6335-401a-a942-7aacdeb97eb4" ParentLink="Module_PortType" LowerBound="34.1" HigherBound="41.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SAPRfcSoapPort" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="19f66bac-8a0c-43d6-83e3-0de7ad7ef6c4" ParentLink="PortType_OperationDeclaration" LowerBound="36.1" HigherBound="40.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WCF" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="b530e119-c3c0-458e-9559-e86fdebd28c5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="38.13" HigherBound="38.23">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c32f198d-7263-485f-8655-a45a855a82c0" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="38.25" HigherBound="38.35">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRRes" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b0cba5ea-19d5-4f88-b28e-e2660d2cdb1b" ParentLink="Module_PortType" LowerBound="41.1" HigherBound="48.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ArchiveSapReq" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="85ff3948-8f7b-4008-a1f8-3294c718e47d" ParentLink="PortType_OperationDeclaration" LowerBound="43.1" HigherBound="47.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1d0a5547-c661-4410-af8b-771df6fbff6d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="45.13" HigherBound="45.23">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="1329b0ab-79ca-486b-9c58-75d154a17fc4" ParentLink="Module_PortType" LowerBound="48.1" HigherBound="55.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ArchiveSapRes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="59cfa325-5f55-49e4-8a62-cc32daa61d37" ParentLink="PortType_OperationDeclaration" LowerBound="50.1" HigherBound="54.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2f3ea81a-d573-4d8f-b74a-52cb033a41c8" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="52.13" HigherBound="52.23">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRRes" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4cdd7100-eeb5-4d52-bb36-00251d9bcd9f" ParentLink="Module_PortType" LowerBound="55.1" HigherBound="62.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ArchiveJsonRes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="da654a21-a60e-4925-8794-b6fcf70e7a75" ParentLink="PortType_OperationDeclaration" LowerBound="57.1" HigherBound="61.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="37fe67ef-c801-4354-a639-13dd69bc9e5f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="59.13" HigherBound="59.26">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="880795c9-a52b-400d-8bad-7707b6299247" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="mg_GRJsonReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8e2e5c0e-e8b5-4b72-8f7e-5044e588bc63" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.ZITF_E07003_GRB2B" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b0267d44-c69e-4189-bfd2-d8c04a36f61f" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="mg_GRJsonResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="4b7c14c1-bf35-417f-8708-0153aa632f7d" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.ZITF_E07003_GRB2B_Response" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="a23c5581-cdb4-4715-8d04-d5aad7ed8aee" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_SapGRReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="b5f28802-fa6c-486d-a1c8-82c703d38a17" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Rfc.ZITF_E07003_GRB2B" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f564160b-2d21-47f1-b46a-9a7927afbb87" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_SapGRRes" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="258f0344-7180-405c-8ba6-e50421cb9c82" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Rfc.ZITF_E07003_GRB2BResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="191b8915-fb5c-4290-aa90-bcf99390b1a1" ParentLink="Module_ServiceDeclaration" LowerBound="62.1" HigherBound="116.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessInboundGR" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="340a7824-6b0a-4f8f-9d0e-9d1421361d7a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="82.1" HigherBound="83.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="39165274-71cf-4a65-9597-49ce5f4e8e6d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="77.1" HigherBound="78.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GRReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="69e6c702-5fcd-4d30-9105-0073b93aed10" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="78.1" HigherBound="79.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GRResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6ac94276-cab8-4dc6-a953-0050e2486078" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="79.1" HigherBound="80.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_SapGRReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8103e9cd-531d-4658-99ef-49f851d2a20b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="80.1" HigherBound="81.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.m_SapGRRes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_SapGRResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fd5f7b10-6697-4647-a9e6-cbac95790617" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="81.1" HigherBound="82.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.mg_GRJsonResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GRRespFinal" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="af3b5402-4deb-419c-9dcc-8f19b0a7cdbb" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="00828b54-555f-4196-ae12-e13548d460ed" ParentLink="ServiceBody_Statement" LowerBound="85.1" HigherBound="88.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_GRInboundPort" />
+                    <om:Property Name="MessageName" Value="msg_GRReq" />
+                    <om:Property Name="OperationName" Value="webhttp" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_GoodsReceipt" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="3aa73dc0-5f7a-4583-b91b-4f41f48cf7c3" ParentLink="ServiceBody_Statement" LowerBound="88.1" HigherBound="90.1">
+                    <om:Property Name="PortName" Value="Port_JsonXmlArchive" />
+                    <om:Property Name="MessageName" Value="msg_GRReq" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_JsonXmlArchive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="ee77c3e5-e713-468e-88b8-46fc81c092a6" ParentLink="ServiceBody_Statement" LowerBound="90.1" HigherBound="96.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="cm_msg_SapGRReq" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="62a0b84c-cc2a-467b-a3ac-a0876e79c894" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Maps.ZITF_E07003_GRB2B_to_RfcZITF_E07003_GRB2B" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="X_SAPGRReq" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="baee6965-6429-493b-9509-a234154548a6" ParentLink="Transform_InputMessagePartRef" LowerBound="94.132" HigherBound="94.145">
+                            <om:Property Name="MessageRef" Value="msg_GRReq" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="54e738a4-c6df-41b9-a814-02986bc6fd14" ParentLink="Transform_OutputMessagePartRef" LowerBound="94.28" HigherBound="94.44">
+                            <om:Property Name="MessageRef" Value="msg_SapGRReq" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="0f069e2f-1c7a-4145-a6a5-07de314b6edc" ParentLink="Construct_MessageRef" LowerBound="91.23" HigherBound="91.35">
+                        <om:Property Name="Ref" Value="msg_SapGRReq" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="76602e8a-da92-4e02-a7e3-27616ec07838" ParentLink="ServiceBody_Statement" LowerBound="96.1" HigherBound="98.1">
+                    <om:Property Name="PortName" Value="Port_ArchiveSapReq" />
+                    <om:Property Name="MessageName" Value="msg_SapGRReq" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_ArchiveReq" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="35eb1db4-9efc-481a-a4a0-4bf866da8bfe" ParentLink="ServiceBody_Statement" LowerBound="98.1" HigherBound="100.1">
+                    <om:Property Name="PortName" Value="Port_SAPRfcSoapPort" />
+                    <om:Property Name="MessageName" Value="msg_SapGRReq" />
+                    <om:Property Name="OperationName" Value="WCF" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_GRReq" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="f719131a-6a79-47c8-8e17-bae5f528c29e" ParentLink="ServiceBody_Statement" LowerBound="100.1" HigherBound="102.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_SAPRfcSoapPort" />
+                    <om:Property Name="MessageName" Value="msg_SapGRResp" />
+                    <om:Property Name="OperationName" Value="WCF" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvGRResp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="48179368-ed48-446a-98da-ab29e713dd9d" ParentLink="ServiceBody_Statement" LowerBound="102.1" HigherBound="104.1">
+                    <om:Property Name="PortName" Value="Port_ArchiveSapRes" />
+                    <om:Property Name="MessageName" Value="msg_SapGRResp" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_ArchiveSapResp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="3ef96118-0e8f-4eca-bbdf-9f228d80b712" ParentLink="ServiceBody_Statement" LowerBound="104.1" HigherBound="110.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="cm_GrResp" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="afddf980-753c-4f88-8781-24799738b231" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="109.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Maps.RfcZITF_E07003_GRB2B_to_ZITF_E07003_GRB2BRsp" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="X_GRResp" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="f5632e56-fe60-4107-a63e-17b977196e3e" ParentLink="Transform_InputMessagePartRef" LowerBound="108.133" HigherBound="108.150">
+                            <om:Property Name="MessageRef" Value="msg_SapGRResp" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="35994de2-50ad-4ebc-9f8c-93a4a1741829" ParentLink="Transform_OutputMessagePartRef" LowerBound="108.28" HigherBound="108.42">
+                            <om:Property Name="MessageRef" Value="msg_GRResp" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b49e83a2-2095-4182-a5fb-966be297bb90" ParentLink="Construct_MessageRef" LowerBound="105.23" HigherBound="105.33">
+                        <om:Property Name="Ref" Value="msg_GRResp" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="f50b07f5-2016-4a77-a28d-eeb75889c582" ParentLink="ServiceBody_Statement" LowerBound="110.1" HigherBound="112.1">
+                    <om:Property Name="PortName" Value="Port_ArchiveJsonRes" />
+                    <om:Property Name="MessageName" Value="msg_GRResp" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_JsonResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="b8ed818f-9145-43d1-a259-ba4b8bc87887" ParentLink="ServiceBody_Statement" LowerBound="112.1" HigherBound="114.1">
+                    <om:Property Name="PortName" Value="Port_GRInboundPort" />
+                    <om:Property Name="MessageName" Value="msg_GRResp" />
+                    <om:Property Name="OperationName" Value="webhttp" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_GRResp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="30c22569-8d80-4a2e-9972-ddd22583ffe0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="65.1" HigherBound="67.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_GRInboundPort" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_GRInboundPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b29a834a-0aaf-4cab-bd1b-47665eb48669" ParentLink="PortDeclaration_CLRAttribute" LowerBound="65.1" HigherBound="66.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a8146713-a3d3-47c5-b6be-a254ffeaccee" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="67.1" HigherBound="69.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_JsonArchive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_JsonXmlArchive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="a578ae9b-1395-4dba-ac87-cebdb89340c6" ParentLink="PortDeclaration_CLRAttribute" LowerBound="67.1" HigherBound="68.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b2fd031c-a972-41b9-acc7-aaf6e3ee1fe8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="69.1" HigherBound="71.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_SAPRfcSoapPort" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SAPRfcSoapPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c8121c94-6cc1-4e64-9289-54706e6ae247" ParentLink="PortDeclaration_CLRAttribute" LowerBound="69.1" HigherBound="70.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b62c560e-448d-4fed-8ba0-b9b7fb0c503d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="71.1" HigherBound="73.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_ArchiveSapReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ArchiveSapReq" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="17613c45-4d51-4826-815e-4ddd94905ee1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="71.1" HigherBound="72.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a06277d2-685b-45c6-86be-6806baa88f28" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="73.1" HigherBound="75.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_ArchiveSapRes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ArchiveSapRes" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ac90c937-1fbc-4114-9255-f6e402b00733" ParentLink="PortDeclaration_CLRAttribute" LowerBound="73.1" HigherBound="74.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ee421c5c-12cf-4941-9eb0-c3f531bf53ae" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="75.1" HigherBound="77.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="18" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_ArchiveJsonRes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ArchiveJsonRes" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="45f8fdfa-8a11-4e24-abed-f838b2c24c98" ParentLink="PortDeclaration_CLRAttribute" LowerBound="75.1" HigherBound="76.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Glass.ThingWorx.Orchs
+{
+    internal messagetype mg_GRJsonReq
+    {
+        body Visy.Middleware.SAP.Glass.ThingWorx.Schemas.ZITF_E07003_GRB2B XML;
+    };
+    internal messagetype mg_GRJsonResp
+    {
+        body Visy.Middleware.SAP.Glass.ThingWorx.Schemas.ZITF_E07003_GRB2B_Response XML;
+    };
+    internal messagetype m_SapGRReq
+    {
+        body Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Rfc.ZITF_E07003_GRB2B XML;
+    };
+    internal messagetype m_SapGRRes
+    {
+        body Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Rfc.ZITF_E07003_GRB2BResponse XML;
+    };
+    public porttype PortType_GRInboundPort
+    {
+        requestresponse webhttp
+        {
+            mg_GRJsonReq, mg_GRJsonResp
+        };
+    };
+    internal porttype PortType_JsonArchive
+    {
+        oneway FILE
+        {
+            mg_GRJsonReq
+        };
+    };
+    internal porttype PortType_SAPRfcSoapPort
+    {
+        requestresponse WCF
+        {
+            m_SapGRReq, m_SapGRRes
+        };
+    };
+    internal porttype PortType_ArchiveSapReq
+    {
+        oneway FILE
+        {
+            m_SapGRReq
+        };
+    };
+    internal porttype PortType_ArchiveSapRes
+    {
+        oneway FILE
+        {
+            m_SapGRRes
+        };
+    };
+    internal porttype PortType_ArchiveJsonRes
+    {
+        oneway FILE
+        {
+            mg_GRJsonResp
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessInboundGR
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_GRInboundPort Port_GRInboundPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_JsonArchive Port_JsonXmlArchive;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SAPRfcSoapPort Port_SAPRfcSoapPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_ArchiveSapReq Port_ArchiveSapReq;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_ArchiveSapRes Port_ArchiveSapRes;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_ArchiveJsonRes Port_ArchiveJsonRes;
+        message mg_GRJsonReq msg_GRReq;
+        message mg_GRJsonResp msg_GRResp;
+        message m_SapGRReq msg_SapGRReq;
+        message m_SapGRRes msg_SapGRResp;
+        message mg_GRJsonResp msg_GRRespFinal;
+        System.Xml.XmlDocument v_Xml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("00828b54-555f-4196-ae12-e13548d460ed")]
+            activate receive (Port_GRInboundPort.webhttp, msg_GRReq);
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3aa73dc0-5f7a-4583-b91b-4f41f48cf7c3")]
+            send (Port_JsonXmlArchive.FILE, msg_GRReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ee77c3e5-e713-468e-88b8-46fc81c092a6")]
+            construct msg_SapGRReq
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("62a0b84c-cc2a-467b-a3ac-a0876e79c894")]
+                transform (msg_SapGRReq.XML) = Visy.Middleware.SAP.Glass.ThingWorx.Maps.ZITF_E07003_GRB2B_to_RfcZITF_E07003_GRB2B (msg_GRReq.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("76602e8a-da92-4e02-a7e3-27616ec07838")]
+            send (Port_ArchiveSapReq.FILE, msg_SapGRReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("35eb1db4-9efc-481a-a4a0-4bf866da8bfe")]
+            send (Port_SAPRfcSoapPort.WCF, msg_SapGRReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f719131a-6a79-47c8-8e17-bae5f528c29e")]
+            receive (Port_SAPRfcSoapPort.WCF, msg_SapGRResp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("48179368-ed48-446a-98da-ab29e713dd9d")]
+            send (Port_ArchiveSapRes.FILE, msg_SapGRResp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3ef96118-0e8f-4eca-bbdf-9f228d80b712")]
+            construct msg_GRResp
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("afddf980-753c-4f88-8781-24799738b231")]
+                transform (msg_GRResp.XML) = Visy.Middleware.SAP.Glass.ThingWorx.Maps.RfcZITF_E07003_GRB2B_to_ZITF_E07003_GRB2BRsp (msg_SapGRResp.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f50b07f5-2016-4a77-a28d-eeb75889c582")]
+            send (Port_ArchiveJsonRes.FILE, msg_GRResp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b8ed818f-9145-43d1-a259-ba4b8bc87887")]
+            send (Port_GRInboundPort.webhttp, msg_GRResp);
+        }
+    }
+}
+

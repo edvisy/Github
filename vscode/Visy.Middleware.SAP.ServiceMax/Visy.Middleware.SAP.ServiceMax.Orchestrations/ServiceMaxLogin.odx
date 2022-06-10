@@ -1,0 +1,529 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="5785f398-a8af-4ba8-a8f9-65d8b45876c1" LowerBound="1.1" HigherBound="163.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="623214c6-d297-4ad4-9f9a-e2abd0ccc1e5" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="162.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ServiceMaxLogin" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="8a0720eb-eebf-4a64-bccb-46ef04115989" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="11.1" HigherBound="12.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.DateTime" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sessionDate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b0de881d-2060-4e34-aac8-d45b4d10a08b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="12.1" HigherBound="13.1">
+                <om:Property Name="InitialValue" Value="&quot;&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sessionId" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b474d0dd-1d71-4f27-8e87-aa2f51bb854d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="13.1" HigherBound="14.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.DateTime" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="nowDate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b2b2db44-df3f-4e7b-8c11-ea0c9955787c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.TimeSpan" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="diffTime" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="752ca5a3-4b22-493d-9ba7-98e4fe532d47" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="15.1" HigherBound="16.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8a07d066-0829-4847-8577-2692f5d803a4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="16.1" HigherBound="17.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c9815252-db56-4fac-89c6-32b3c3350b4d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="17.1" HigherBound="18.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="isException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="18fe7fdb-4a09-4fbc-be0d-d5e96fbd4734" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Exception" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="expObj" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="44ebc84b-779f-4808-86b9-0df692d7ba15" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryInterval" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c2edb11a-a015-4c7e-8459-95c3c18b6083" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="20.1" HigherBound="21.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryLimit" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c7a869d9-fd53-46a4-84c0-2aa8e9e6428d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="21.1" HigherBound="22.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="387f1b80-3d8d-4a4b-8e17-857c1a9e3492" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IsSoapExp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="72392f60-4ef5-4461-9ace-ca1fc8a15219" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sessionDuration" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="10795786-4ca5-47c6-af2a-4b01c9bb0c09" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="varSysExcp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4eedb575-ad64-4f81-8671-0415d7d9e7dd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="serverUrl" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a4100fb9-f92f-4545-9b46-df018a6ec13f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="9.1" HigherBound="10.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.loginResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLoginResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d23b65cb-7999-40b6-85bd-79816f28cdcf" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.loginRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLoginRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="7b809662-b42e-42dc-8b13-19c590d2d6b5" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="VariableAssignment" OID="ab2a18d0-9c71-4952-991f-f10bd2004d72" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="42.1">
+                    <om:Property Name="Expression" Value="sessionDate = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionDate;&#xD;&#xA;sessionId = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId;&#xD;&#xA;serverUrl = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl;&#xD;&#xA;nowDate = System.DateTime.Now;&#xD;&#xA;diffTime = nowDate.Subtract(sessionDate);&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="exp_GetSessionDetails" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="737fadba-e53f-4ad1-af7e-662959f0d1ad" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="53.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="construct_SMLoginResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="526b7a53-d8ec-44be-83d8-9271c2426210" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="52.1">
+                        <om:Property Name="Expression" Value="//Create Instance of Login response message&#xD;&#xA;xmlDoc.LoadXml(@&quot;&lt;ns0:loginResponse xmlns:ns0='urn:enterprise.soap.sforce.com'&gt; &lt;ns0:result&gt;&lt;ns0:metadataServerUrl&gt;metadataServerUrl_0&lt;/ns0:metadataServerUrl&gt;&lt;ns0:passwordExpired&gt;true&lt;/ns0:passwordExpired&gt;&lt;ns0:sandbox&gt;true&lt;/ns0:sandbox&gt;&lt;ns0:serverUrl&gt;serverUrl_0&lt;/ns0:serverUrl&gt;&lt;ns0:sessionId&gt;sessionId_0&lt;/ns0:sessionId&gt;&lt;ns0:userId&gt;userIduserIduserId&lt;/ns0:userId&gt; &lt;ns0:userInfo&gt;&lt;ns0:accessibilityMode&gt;true&lt;/ns0:accessibilityMode&gt;&lt;ns0:currencySymbol&gt;currencySymbol_0&lt;/ns0:currencySymbol&gt;&lt;ns0:orgAttachmentFileSizeLimit&gt;10&lt;/ns0:orgAttachmentFileSizeLimit&gt;&lt;ns0:orgDefaultCurrencyIsoCode&gt;orgDefaultCurrencyIsoCode_0&lt;/ns0:orgDefaultCurrencyIsoCode&gt;&lt;ns0:orgDisallowHtmlAttachments&gt;true&lt;/ns0:orgDisallowHtmlAttachments&gt;&lt;ns0:orgHasPersonAccounts&gt;true&lt;/ns0:orgHasPersonAccounts&gt;&lt;ns0:organizationId&gt;organizationIdorga&lt;/ns0:organizationId&gt;&lt;ns0:organizationMultiCurrency&gt;true&lt;/ns0:organizationMultiCurrency&gt;&lt;ns0:organizationName&gt;organizationName_0&lt;/ns0:organizationName&gt;&lt;ns0:profileId&gt;profileIdprofileId&lt;/ns0:profileId&gt;&lt;ns0:roleId&gt;roleIdroleIdroleId&lt;/ns0:roleId&gt;&lt;ns0:sessionSecondsValid&gt;10&lt;/ns0:sessionSecondsValid&gt;&lt;ns0:userDefaultCurrencyIsoCode&gt;userDefaultCurrencyIsoCode_0&lt;/ns0:userDefaultCurrencyIsoCode&gt;&lt;ns0:userEmail&gt;userEmail_0&lt;/ns0:userEmail&gt;&lt;ns0:userFullName&gt;userFullName_0&lt;/ns0:userFullName&gt;&lt;ns0:userId&gt;userIduserIduserId&lt;/ns0:userId&gt;&lt;ns0:userLanguage&gt;userLanguage_0&lt;/ns0:userLanguage&gt;&lt;ns0:userLocale&gt;userLocale_0&lt;/ns0:userLocale&gt;&lt;ns0:userName&gt;userName_0&lt;/ns0:userName&gt;&lt;ns0:userTimeZone&gt;userTimeZone_0&lt;/ns0:userTimeZone&gt;&lt;ns0:userType&gt;userType_0&lt;/ns0:userType&gt;&lt;ns0:userUiSkin&gt;userUiSkin_0&lt;/ns0:userUiSkin&gt;&lt;/ns0:userInfo&gt;&lt;/ns0:result&gt;&lt;/ns0:loginResponse&gt;&quot;);&#xD;&#xA;msgLoginResponse.parameters =xmlDoc;&#xD;&#xA;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Created Instance of Login response message&quot;,tokenIn));&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="msgassign_SMLoginRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="cd76c6cf-ea17-4b4f-9820-217a0a6dc39c" ParentLink="Construct_MessageRef" LowerBound="43.23" HigherBound="43.39">
+                        <om:Property Name="Ref" Value="msgLoginResponse" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="4cd6457d-e201-403b-899b-927cbdb1c419" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="65.1">
+                    <om:Property Name="Expression" Value="retryLimit = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;RetryLimit&quot;, &quot;SAP.ServiceMax&quot;));&#xD;&#xA;retryInterval = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;RetryInterval&quot;, &quot;SAP.ServiceMax&quot;));&#xD;&#xA;retryCount = 1;&#xD;&#xA;sessionDuration = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;SMaxSessionDuration&quot;, &quot;SAP.ServiceMax&quot;));&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Retry Limit:&quot; + retryLimit.ToString() + &quot;Retry Interval: &quot;+ retryInterval.ToString()+ &quot;Session Duration: &quot;+sessionDuration.ToString(),tokenIn));&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Retry Limit:{1}  Retry Interval: {2} Session Duration:{3} &quot;,tokenIn, retryLimit, retryInterval, sessionDuration));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Exp_GetRetryCountAndInterval" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="d2b5d5c6-05bf-48f8-9fef-0684fe44d726" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="80.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="construct_SMLoginRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="a59b6f83-06b5-4a22-8382-fc69f8e4235b" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="79.1">
+                        <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlDoc.LoadXml(@&quot;&lt;ns0:login xmlns:ns0=&quot;&quot;urn:enterprise.soap.sforce.com&quot;&quot;&gt;&lt;ns0:username&gt;&lt;/ns0:username&gt;&lt;ns0:password&gt;&lt;/ns0:password&gt;&lt;/ns0:login&gt;&quot;);&#xD;&#xA;msgLoginRequest.parameters=xmlDoc;&#xD;&#xA;msgLoginRequest.parameters.username = Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;Username&quot;, &quot;SAP.ServiceMax&quot;);&#xD;&#xA;msgLoginRequest.parameters.password = Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;Password&quot;, &quot;SAP.ServiceMax&quot;)+ Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;SecurityToken&quot;, &quot;SAP.ServiceMax&quot;);&#xD;&#xA;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Created instance of Login request message. UserName - {1}, Password - {2}&quot;,tokenIn, msgLoginRequest.parameters.username, msgLoginRequest.parameters.password));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="msgassign_SMLoginRequest" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="88d42ac0-d3e0-43e3-bbbb-66dbf2e9ff81" ParentLink="Construct_MessageRef" LowerBound="66.23" HigherBound="66.38">
+                        <om:Property Name="Ref" Value="msgLoginRequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="fc6c42b1-0eb1-44d8-895d-07f499f1b4d3" ParentLink="ServiceBody_Statement" LowerBound="80.1" HigherBound="160.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="decide_IfLoginRequired" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="7fbd3c34-ea14-4d7a-adf0-aa91b57c9201" ParentLink="ReallyComplexStatement_Branch" LowerBound="81.13" HigherBound="160.1">
+                        <om:Property Name="Expression" Value="sessionId == System.String.Empty || diffTime.Minutes &gt; sessionDuration" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="check_SessionIdAndDiffTime" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="While" OID="6634fffd-2e6a-451d-8bda-13ffc5aa68e3" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="159.1">
+                            <om:Property Name="Expression" Value="retryCount &lt;= retryLimit" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Loop_Retry" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Scope" OID="5e1c1c27-aac8-459e-8b9f-66f0f5fa98e5" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="129.1">
+                                <om:Property Name="InitializedTransactionType" Value="True" />
+                                <om:Property Name="IsSynchronized" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="scope_SMLogin" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="VariableAssignment" OID="a4a4290d-27ae-4ae2-83ab-d6637c7a5827" ParentLink="ComplexStatement_Statement" LowerBound="91.1" HigherBound="94.1">
+                                    <om:Property Name="Expression" Value="//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :Entered Login loop. Retry Count :&quot; +retryCount.ToString(), tokenIn));&#xD;&#xA;IsSoapExp = false;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="exp_Trace" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Send" OID="432a581a-aac7-47d2-ae7b-6b8a847ded48" ParentLink="ComplexStatement_Statement" LowerBound="94.1" HigherBound="96.1">
+                                    <om:Property Name="PortName" Value="SP_SFLogin" />
+                                    <om:Property Name="MessageName" Value="msgLoginRequest" />
+                                    <om:Property Name="OperationName" Value="login" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="send_LoginRequest" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Receive" OID="9db47a35-bd3c-4047-ba49-5bf4bce77172" ParentLink="ComplexStatement_Statement" LowerBound="96.1" HigherBound="98.1">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="SP_SFLogin" />
+                                    <om:Property Name="MessageName" Value="msgLoginResponse" />
+                                    <om:Property Name="OperationName" Value="login" />
+                                    <om:Property Name="OperationMessageName" Value="Response" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rcv_LoginResponse" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Catch" OID="dc71b7c6-f6f3-4ada-a5e9-73ac8920b2b0" ParentLink="Scope_Catch" LowerBound="101.1" HigherBound="111.1">
+                                    <om:Property Name="ExceptionName" Value="soapExc" />
+                                    <om:Property Name="ExceptionType" Value="SP_SFLogin.login.GenericSoapFault" />
+                                    <om:Property Name="IsFaultMessage" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="catch_GenericSoapException" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="b749387d-a1f6-4792-badd-b824cea3442e" ParentLink="Catch_Statement" LowerBound="104.1" HigherBound="110.1">
+                                        <om:Property Name="Expression" Value="strException = xpath(soapExc, &quot;string(/*[local-name()='Fault' and namespace-uri()='http://schemas.xmlsoap.org/soap/envelope/']/*[local-name()='faultstring' and namespace-uri()=''])&quot;);&#xD;&#xA;expObj = new System.Exception(strException);&#xD;&#xA;isException = true;&#xD;&#xA;IsSoapExp = true;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :A SOAP exception has occurred within the ServiceMax Login. Error Description: &quot;+strException, tokenIn));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_TraceException" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Catch" OID="879910b8-1531-4ac2-991c-8897c6459074" ParentLink="Scope_Catch" LowerBound="111.1" HigherBound="127.1">
+                                    <om:Property Name="ExceptionName" Value="exc" />
+                                    <om:Property Name="ExceptionType" Value="System.Exception" />
+                                    <om:Property Name="IsFaultMessage" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="catch_Exception" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="b318b048-140d-4b39-9ffe-2b4719ee44f8" ParentLink="Catch_Statement" LowerBound="114.1" HigherBound="126.1">
+                                        <om:Property Name="Expression" Value="varSysExcp = exc.ToString();&#xD;&#xA;if (varSysExcp.Contains(&quot;{&quot;) || varSysExcp.Contains(&quot;}&quot;))&#xD;&#xA;{&#xD;&#xA; varSysExcp = varSysExcp.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA; varSysExcp = varSysExcp.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;expObj = new System.Exception(varSysExcp);&#xD;&#xA;isException = true;&#xD;&#xA;IsSoapExp = false;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :Error in Transmitting the message; Retry count: {1}; Exception Details : {2}&quot;,tokenIn, retryCount.ToString(),varSysExcp));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_TraceException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Decision" OID="db18e639-f2e9-42e6-92a0-94b8335cc540" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="158.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Decide_RetryCount" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="DecisionBranch" OID="e7ae10a6-e234-4e37-b546-eb249730ccde" ParentLink="ReallyComplexStatement_Branch" LowerBound="130.21" HigherBound="138.1">
+                                    <om:Property Name="Expression" Value="(retryCount &gt;= retryLimit &amp;&amp; isException == true) || (IsSoapExp == true)" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Rule_RetryCountLimit" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="eadbe91b-4923-4cfc-bd20-78a9712c107d" ParentLink="ComplexStatement_Statement" LowerBound="132.1" HigherBound="135.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryLimit+1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : An error has occurred during the login to Service Max. Throwing exception and exiting the loop.&quot;,tokenIn));" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_ExitRetry" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Throw" OID="d769bcf2-d1b5-46e0-bfc7-db22bc51961a" ParentLink="ComplexStatement_Statement" LowerBound="135.1" HigherBound="137.1">
+                                        <om:Property Name="ThrownReference" Value="expObj" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="ThrowException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="f9880897-552d-4bd3-a54e-c2ed3e0af0b2" ParentLink="ReallyComplexStatement_Branch" LowerBound="138.26" HigherBound="149.1">
+                                    <om:Property Name="Expression" Value="isException == false" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Rule_NoException" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="463c07d1-629b-471e-8e81-77d74276f915" ParentLink="ComplexStatement_Statement" LowerBound="140.1" HigherBound="148.1">
+                                        <om:Property Name="Expression" Value="xmlDoc = msgLoginResponse.parameters;&#xD;&#xA;Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId = msgLoginResponse.parameters.result.sessionId;&#xD;&#xA;Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl = msgLoginResponse.parameters.result.serverUrl;&#xD;&#xA;Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionDate = System.DateTime.Now;&#xD;&#xA;retryCount = retryLimit + 1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Session established with ServiceMax, Session_Id: &quot;+ Visy.SAP.ServiceMax.Helpers.SessionDetails.SessionId.ToString(), tokenIn));&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Session established with ServiceMax, Server Url: &quot;+ Visy.SAP.ServiceMax.Helpers.SessionDetails.ServerUrl.ToString(), tokenIn));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_SetSessionDetails" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="12132105-af97-4ef2-8aa2-e78afffdcc89" ParentLink="ReallyComplexStatement_Branch">
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Else" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="e3c3e135-ee14-4e31-9ce7-fb9d6885814d" ParentLink="ComplexStatement_Statement" LowerBound="151.1" HigherBound="155.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryCount +1;&#xD;&#xA;isException =false;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Error in transmitting the login request; Waiting to retry&quot;,tokenIn));" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Exp_IncrementRetryCount" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Delay" OID="f62f4a3f-adda-4475-82ed-cfebd11a171d" ParentLink="ComplexStatement_Statement" LowerBound="155.1" HigherBound="157.1">
+                                        <om:Property Name="Timeout" Value="new System.TimeSpan(0,retryInterval,0);" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Delay_RetryInterval" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="22a90d8f-828a-454b-8557-3014346b9d07" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableDeclaration" OID="169fe8b3-8a8f-476f-87dd-deebf7902ca0" ParentLink="ServiceBody_Declaration" LowerBound="26.15" HigherBound="26.34">
+                    <om:Property Name="UseDefaultConstructor" Value="False" />
+                    <om:Property Name="Type" Value="System.Guid" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="tokenIn" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f88d4fbb-b426-4f04-9715-934cf99a35f8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="7.1" HigherBound="9.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.Soap" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SP_SFLogin" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="3cd3a752-0982-41b8-a837-6854a64e5ab4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="7.1" HigherBound="8.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.ServiceMax.Orchestrations
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ServiceMaxLogin
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.Soap SP_SFLogin;
+        message Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.loginResponse msgLoginResponse;
+        message Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.loginRequest msgLoginRequest;
+        System.DateTime sessionDate;
+        System.String sessionId;
+        System.DateTime nowDate;
+        System.TimeSpan diffTime;
+        System.Xml.XmlDocument xmlDoc;
+        System.Int32 retryCount;
+        System.Boolean isException;
+        System.Exception expObj;
+        System.Int32 retryInterval;
+        System.Int32 retryLimit;
+        System.String strException;
+        System.Boolean IsSoapExp;
+        System.Int32 sessionDuration;
+        System.String varSysExcp;
+        System.String serverUrl;
+        body (System.Guid tokenIn)
+        {
+            sessionId = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            isException = false;
+            expObj = new System.Exception();
+            strException = "";
+            IsSoapExp = false;
+            varSysExcp = "";
+            serverUrl = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab2a18d0-9c71-4952-991f-f10bd2004d72")]
+            sessionDate = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionDate;
+            sessionId = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId;
+            serverUrl = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl;
+            nowDate = System.DateTime.Now;
+            diffTime = nowDate.Subtract(sessionDate);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("737fadba-e53f-4ad1-af7e-662959f0d1ad")]
+            construct msgLoginResponse
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("526b7a53-d8ec-44be-83d8-9271c2426210")]
+                //Create Instance of Login response message
+                xmlDoc.LoadXml(@"<ns0:loginResponse xmlns:ns0='urn:enterprise.soap.sforce.com'> <ns0:result><ns0:metadataServerUrl>metadataServerUrl_0</ns0:metadataServerUrl><ns0:passwordExpired>true</ns0:passwordExpired><ns0:sandbox>true</ns0:sandbox><ns0:serverUrl>serverUrl_0</ns0:serverUrl><ns0:sessionId>sessionId_0</ns0:sessionId><ns0:userId>userIduserIduserId</ns0:userId> <ns0:userInfo><ns0:accessibilityMode>true</ns0:accessibilityMode><ns0:currencySymbol>currencySymbol_0</ns0:currencySymbol><ns0:orgAttachmentFileSizeLimit>10</ns0:orgAttachmentFileSizeLimit><ns0:orgDefaultCurrencyIsoCode>orgDefaultCurrencyIsoCode_0</ns0:orgDefaultCurrencyIsoCode><ns0:orgDisallowHtmlAttachments>true</ns0:orgDisallowHtmlAttachments><ns0:orgHasPersonAccounts>true</ns0:orgHasPersonAccounts><ns0:organizationId>organizationIdorga</ns0:organizationId><ns0:organizationMultiCurrency>true</ns0:organizationMultiCurrency><ns0:organizationName>organizationName_0</ns0:organizationName><ns0:profileId>profileIdprofileId</ns0:profileId><ns0:roleId>roleIdroleIdroleId</ns0:roleId><ns0:sessionSecondsValid>10</ns0:sessionSecondsValid><ns0:userDefaultCurrencyIsoCode>userDefaultCurrencyIsoCode_0</ns0:userDefaultCurrencyIsoCode><ns0:userEmail>userEmail_0</ns0:userEmail><ns0:userFullName>userFullName_0</ns0:userFullName><ns0:userId>userIduserIduserId</ns0:userId><ns0:userLanguage>userLanguage_0</ns0:userLanguage><ns0:userLocale>userLocale_0</ns0:userLocale><ns0:userName>userName_0</ns0:userName><ns0:userTimeZone>userTimeZone_0</ns0:userTimeZone><ns0:userType>userType_0</ns0:userType><ns0:userUiSkin>userUiSkin_0</ns0:userUiSkin></ns0:userInfo></ns0:result></ns0:loginResponse>");
+                msgLoginResponse.parameters =xmlDoc;
+                
+                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Created Instance of Login response message",tokenIn));
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4cd6457d-e201-403b-899b-927cbdb1c419")]
+            retryLimit = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("RetryLimit", "SAP.ServiceMax"));
+            retryInterval = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("RetryInterval", "SAP.ServiceMax"));
+            retryCount = 1;
+            sessionDuration = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("SMaxSessionDuration", "SAP.ServiceMax"));
+            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Retry Limit:" + retryLimit.ToString() + "Retry Interval: "+ retryInterval.ToString()+ "Session Duration: "+sessionDuration.ToString(),tokenIn));
+            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Retry Limit:{1}  Retry Interval: {2} Session Duration:{3} ",tokenIn, retryLimit, retryInterval, sessionDuration));
+            
+            
+            
+            
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d2b5d5c6-05bf-48f8-9fef-0684fe44d726")]
+            construct msgLoginRequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a59b6f83-06b5-4a22-8382-fc69f8e4235b")]
+                xmlDoc = new System.Xml.XmlDocument();
+                xmlDoc.LoadXml(@"<ns0:login xmlns:ns0=""urn:enterprise.soap.sforce.com""><ns0:username></ns0:username><ns0:password></ns0:password></ns0:login>");
+                msgLoginRequest.parameters=xmlDoc;
+                msgLoginRequest.parameters.username = Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("Username", "SAP.ServiceMax");
+                msgLoginRequest.parameters.password = Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("Password", "SAP.ServiceMax")+ Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("SecurityToken", "SAP.ServiceMax");
+                
+                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Created instance of Login request message. UserName - {1}, Password - {2}",tokenIn, msgLoginRequest.parameters.username, msgLoginRequest.parameters.password));
+                
+                
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fc6c42b1-0eb1-44d8-895d-07f499f1b4d3")]
+            if (sessionId == System.String.Empty || diffTime.Minutes > sessionDuration)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6634fffd-2e6a-451d-8bda-13ffc5aa68e3")]
+                while (retryCount <= retryLimit)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5e1c1c27-aac8-459e-8b9f-66f0f5fa98e5")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a4a4290d-27ae-4ae2-83ab-d6637c7a5827")]
+                            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :Entered Login loop. Retry Count :" +retryCount.ToString(), tokenIn));
+                            IsSoapExp = false;
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("432a581a-aac7-47d2-ae7b-6b8a847ded48")]
+                            send (SP_SFLogin.login, msgLoginRequest);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9db47a35-bd3c-4047-ba49-5bf4bce77172")]
+                            receive (SP_SFLogin.login, msgLoginResponse);
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("dc71b7c6-f6f3-4ada-a5e9-73ac8920b2b0")]
+                            catch (SP_SFLogin.login.GenericSoapFault soapExc)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b749387d-a1f6-4792-badd-b824cea3442e")]
+                                strException = xpath(soapExc, "string(/*[local-name()='Fault' and namespace-uri()='http://schemas.xmlsoap.org/soap/envelope/']/*[local-name()='faultstring' and namespace-uri()=''])");
+                                expObj = new System.Exception(strException);
+                                isException = true;
+                                IsSoapExp = true;
+                                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :A SOAP exception has occurred within the ServiceMax Login. Error Description: "+strException, tokenIn));
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("879910b8-1531-4ac2-991c-8897c6459074")]
+                            catch (System.Exception exc)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b318b048-140d-4b39-9ffe-2b4719ee44f8")]
+                                varSysExcp = exc.ToString();
+                                if (varSysExcp.Contains("{") || varSysExcp.Contains("}"))
+                                {
+                                 varSysExcp = varSysExcp.Replace("}","");
+                                 varSysExcp = varSysExcp.Replace("{","");
+                                }
+                                
+                                expObj = new System.Exception(varSysExcp);
+                                isException = true;
+                                IsSoapExp = false;
+                                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :Error in Transmitting the message; Retry count: {1}; Exception Details : {2}",tokenIn, retryCount.ToString(),varSysExcp));
+                            }
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("db18e639-f2e9-42e6-92a0-94b8335cc540")]
+                    if ((retryCount >= retryLimit && isException == true) || (IsSoapExp == true))
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("eadbe91b-4923-4cfc-bd20-78a9712c107d")]
+                        retryCount = retryLimit+1;
+                        //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : An error has occurred during the login to Service Max. Throwing exception and exiting the loop.",tokenIn));
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d769bcf2-d1b5-46e0-bfc7-db22bc51961a")]
+                        throw expObj;
+                    }
+                    else if (isException == false)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("463c07d1-629b-471e-8e81-77d74276f915")]
+                        xmlDoc = msgLoginResponse.parameters;
+                        Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId = msgLoginResponse.parameters.result.sessionId;
+                        Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl = msgLoginResponse.parameters.result.serverUrl;
+                        Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionDate = System.DateTime.Now;
+                        retryCount = retryLimit + 1;
+                        //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Session established with ServiceMax, Session_Id: "+ Visy.SAP.ServiceMax.Helpers.SessionDetails.SessionId.ToString(), tokenIn));
+                        //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Session established with ServiceMax, Server Url: "+ Visy.SAP.ServiceMax.Helpers.SessionDetails.ServerUrl.ToString(), tokenIn));
+                    }
+                    else 
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3c3e135-ee14-4e31-9ce7-fb9d6885814d")]
+                        retryCount = retryCount +1;
+                        isException =false;
+                        //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Error in transmitting the login request; Waiting to retry",tokenIn));
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f62f4a3f-adda-4475-82ed-cfebd11a171d")]
+                        delay new System.TimeSpan(0,retryInterval,0);
+                    }
+                }
+            }
+        }
+    }
+}
+

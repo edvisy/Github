@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="d650a655-6506-4bca-b799-a19b88386a2d" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="d31d31cf-b987-4a05-9644-885ff8114d96" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Receive_LGXInvoice_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5b4dd442-d27a-461c-9055-db2141cfcb3b" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_LGXInvoice_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="b6a6c03c-a45e-474e-a867-a6d2589726e3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.55">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2fdb4b1d-d489-4fd0-b3c2-60b0d857d539" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_EDI_Invoice_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="22e23a42-74d8-4925-865d-9581ed9916c9" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_EDI_Invoice_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f39897ad-6f81-468f-bece-badfb7ffbc24" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.72">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="c1b175ed-68f7-4f79-9dfc-632672e91b4c" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="c27340da-ab18-4928-acfb-38181c676805" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InvoiceIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1418942a-cb49-473c-8f74-37519d786470" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InvoiceOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="3a87a271-1890-486c-b7ac-815f438f5742" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3d97b0ff-8e40-4ff3-b667-46e767f4970d" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Receive_LGXInvoice_Port" />
+                    <om:Property Name="MessageName" Value="InvoiceIn" />
+                    <om:Property Name="OperationName" Value="Receive_LGXInvoice_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="93fa679f-4508-4556-9a05-a954001bc4f4" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="35bbd792-ecc3-49eb-b4ac-7122443711bb" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.NationalFoods.Maps.InvoiceMap" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="973e2080-2f11-4770-b480-8fb97b42e386" ParentLink="Transform_InputMessagePartRef" LowerBound="35.93" HigherBound="35.102">
+                            <om:Property Name="MessageRef" Value="InvoiceIn" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="c64400d9-62dc-4d10-ae63-946ea4b50b04" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.38">
+                            <om:Property Name="MessageRef" Value="InvoiceOut" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="cba9231c-439f-40aa-a319-2ee2b1c88da2" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.33">
+                        <om:Property Name="Ref" Value="InvoiceOut" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="f383425f-d7dd-466a-8ac9-57525b83ab34" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="Send_EDI_Invoice_Port" />
+                    <om:Property Name="MessageName" Value="InvoiceOut" />
+                    <om:Property Name="OperationName" Value="Send_EDI_Invoice_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5563f634-b51c-4dd8-9f06-bbfaf47c69c2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations.Receive_LGXInvoice_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_LGXInvoice_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="aa9f0897-cb3f-41fc-b554-ebc8a2622364" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e87ec7bb-9370-4db1-a390-d16dc301516c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="18" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations.Send_EDI_Invoice_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_EDI_Invoice_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="fe8b1e48-db67-45ea-aa96-d8c835ead95b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.NationalFoods.Orchestrations
+{
+    internal porttype Receive_LGXInvoice_PortType
+    {
+        oneway Receive_LGXInvoice_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.INVOICE
+        };
+    };
+    internal porttype Send_EDI_Invoice_PortType
+    {
+        oneway Send_EDI_Invoice_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessInvoice
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Receive_LGXInvoice_PortType Receive_LGXInvoice_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_EDI_Invoice_PortType Send_EDI_Invoice_Port;
+        message Visy.Middleware.Common.Schemas.LGX.INVOICE InvoiceIn;
+        message Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011 InvoiceOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3d97b0ff-8e40-4ff3-b667-46e767f4970d")]
+            activate receive (Receive_LGXInvoice_Port.Receive_LGXInvoice_PortOperation, InvoiceIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("93fa679f-4508-4556-9a05-a954001bc4f4")]
+            construct InvoiceOut
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("35bbd792-ecc3-49eb-b4ac-7122443711bb")]
+                transform (InvoiceOut) = Visy.Middleware.LGX.NationalFoods.Maps.InvoiceMap (InvoiceIn);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f383425f-d7dd-466a-8ac9-57525b83ab34")]
+            send (Send_EDI_Invoice_Port.Send_EDI_Invoice_PortOperation, InvoiceOut);
+        }
+    }
+}
+

@@ -1,0 +1,673 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ef16dc1b-688a-45e4-ac53-5c6b1e6ecdbc" LowerBound="1.1" HigherBound="165.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.IDOCTracker.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="e6bbca6f-cf96-45fe-8ef9-ad37b0f62073" ParentLink="Module_ServiceDeclaration" LowerBound="32.1" HigherBound="164.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="False" />
+            <om:Property Name="Name" Value="WaitForIdoc_Manual" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="78ceccb5-e3c9-4787-b10b-c0fe9b059b1f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="loopCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c5495d4d-9f4a-4c79-90f2-30cb693931bf" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="loopLimit" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="aa6e7500-dc27-46d2-aa2a-dd1b04ce54b9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="docNum" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ae49f015-c22f-4acd-947d-569470ab6a06" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="InitialValue" Value="&quot;TIMEOUT&quot;" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="status" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e91350ea-b822-4059-b864-2080513db071" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="statusCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="02c21d81-2a9d-4b76-8df8-29eebf75556f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="statusText" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8786d33a-5e13-4c96-9fdc-2dc48f5f9904" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Random" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="random" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="e9a02c30-75a1-4bac-87eb-046d0dad32f5" ParentLink="ServiceDeclaration_Transaction" LowerBound="33.21" HigherBound="33.64">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e1df0eb9-6d2e-4de9-9188-b3ec45dcc42e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WaitForIdocRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="bdd262d4-6b67-48f7-9922-d4adb2649ad1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WaitForIdocResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="cdd6b2c6-a73c-419a-b061-0230e378cfb1" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="bbb3bd92-6843-454a-89a4-cb348971cd8c" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="63.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="WaitForIdocRequestPort" />
+                    <om:Property Name="MessageName" Value="WaitForIdocRequest" />
+                    <om:Property Name="OperationName" Value="Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive WaitForIdocRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Delay" OID="52eaf15b-b727-4af2-a89b-2e27b135121a" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
+                    <om:Property Name="Timeout" Value="new System.TimeSpan(0, 0, 0, 1);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Delay_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="4f59def8-8cc1-43a8-8813-a86cd83f5ee4" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="162.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Query SAP Scope" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="3eff2e99-afa9-4212-8a7e-5082b84bd3c7" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="78.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct GetIdocStatus Request" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="11c320a4-80da-4c83-be64-f387cca6c47d" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdoc_to_Z_BIZTALK_GET_IDOC_STATUSRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="a96429de-250f-47c5-83fd-4203f122185b" ParentLink="Transform_InputMessagePartRef" LowerBound="76.146" HigherBound="76.164">
+                                <om:Property Name="MessageRef" Value="WaitForIdocRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="1234269c-6515-4c0a-9b0c-0a0bae430d30" ParentLink="Transform_OutputMessagePartRef" LowerBound="76.36" HigherBound="76.56">
+                                <om:Property Name="MessageRef" Value="GetIdocStatusRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="93b0203e-9236-4597-9f0e-06cc28f51b7d" ParentLink="Construct_MessageRef" LowerBound="73.31" HigherBound="73.51">
+                            <om:Property Name="Ref" Value="GetIdocStatusRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="8c769a22-d6d6-492e-819b-645091de4f26" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="80.1">
+                        <om:Property Name="PortName" Value="GetIdocStatus_RfcPort" />
+                        <om:Property Name="MessageName" Value="GetIdocStatusRequest" />
+                        <om:Property Name="OperationName" Value="Z_BIZTALK_GET_IDOC_STATUS" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send GetIdocStatus Request" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="37f46403-c12f-4ad5-9891-90db8198bd38" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="82.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="GetIdocStatus_RfcPort" />
+                        <om:Property Name="MessageName" Value="GetIdocStatusResponse" />
+                        <om:Property Name="OperationName" Value="Z_BIZTALK_GET_IDOC_STATUS" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive iDoc Staus Response" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="e178b408-9829-4ad6-8f55-7dae1bc0a6a4" ParentLink="ComplexStatement_Statement" LowerBound="82.1" HigherBound="87.1">
+                        <om:Property Name="Expression" Value="if (GetIdocStatusResponse.STATUS.STATUS != &quot;&quot;)&#xD;&#xA;{&#xD;&#xA;    statusCode = System.Convert.ToInt32(GetIdocStatusResponse.STATUS.STATUS);&#xD;&#xA;}&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Status Code" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="e56716ca-5b75-4c6a-a69e-eadcb874e9fc" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="160.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="iDoc Status?" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="fa7102a5-6af5-4e55-a070-68a8d47ae586" ParentLink="ReallyComplexStatement_Branch" LowerBound="88.21" HigherBound="114.1">
+                            <om:Property Name="Expression" Value="statusCode == 53" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Success Status" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="03ddbe5c-ab44-4afc-9bb6-c1b22d41fefd" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="100.1">
+                                <om:Property Name="Expression" Value="status = &quot;SUCCESS&quot;;&#xD;&#xA;docNum = System.Convert.ToString(GetIdocStatusResponse.STATUS.DOCNUM);&#xD;&#xA;statusText = GetIdocStatusResponse.STATUS.STATXT;&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;1&quot;,GetIdocStatusResponse.STATUS.STAPA1);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;2&quot;,GetIdocStatusResponse.STATUS.STAPA2);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;3&quot;,GetIdocStatusResponse.STATUS.STAPA3);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;4&quot;,GetIdocStatusResponse.STATUS.STAPA4);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Success properties" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="35b94a16-afaf-4174-8735-694a25705a0e" ParentLink="ComplexStatement_Statement" LowerBound="100.1" HigherBound="111.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct WaitForIdoc Response" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="2bc38911-14cb-4dcf-a8c8-1f4caa7bbe17" ParentLink="ComplexStatement_Statement" LowerBound="103.1" HigherBound="105.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Create Response" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="8668a601-a4cc-4392-ba7e-e068f0202d35" ParentLink="Transform_InputMessagePartRef" LowerBound="104.143" HigherBound="104.161">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocRequest" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="85a11906-0f3b-40bd-9f52-fc5e53d704d9" ParentLink="Transform_OutputMessagePartRef" LowerBound="104.40" HigherBound="104.59">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocResponse" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="ccc2dc77-61ad-4d41-aee9-878a57c19b1f" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="110.1">
+                                    <om:Property Name="Expression" Value="WaitForIdocResponse.DocumentNumber = docNum;&#xD;&#xA;WaitForIdocResponse.Status = status;&#xD;&#xA;WaitForIdocResponse.StatusCode = statusCode;&#xD;&#xA;WaitForIdocResponse.StatusText = statusText;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="Populate Response properties" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="7c102032-57d8-43bb-a80c-d9cc8e742766" ParentLink="Construct_MessageRef" LowerBound="101.35" HigherBound="101.54">
+                                    <om:Property Name="Ref" Value="WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="59e52569-c3ee-4cc0-8dda-8cd6346f1e09" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="113.1">
+                                <om:Property Name="PortName" Value="WaitForIdocResponsePort" />
+                                <om:Property Name="MessageName" Value="WaitForIdocResponse" />
+                                <om:Property Name="OperationName" Value="Operation" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send WaitForIdocResponse" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="e9ad7543-27f1-4a4e-88b0-52b901e79c0b" ParentLink="ReallyComplexStatement_Branch" LowerBound="114.26" HigherBound="141.1">
+                            <om:Property Name="Expression" Value="statusCode == 51" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Error Status" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="a90419ff-e661-4b83-b4e4-01dd080b200e" ParentLink="ComplexStatement_Statement" LowerBound="116.1" HigherBound="127.1">
+                                <om:Property Name="Expression" Value="status = &quot;FAILURE&quot;;&#xD;&#xA;docNum = System.Convert.ToString(GetIdocStatusResponse.STATUS.DOCNUM);&#xD;&#xA;statusText = GetIdocStatusResponse.STATUS.STATXT;&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;1&quot;,GetIdocStatusResponse.STATUS.STAPA1);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;2&quot;,GetIdocStatusResponse.STATUS.STAPA2);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;3&quot;,GetIdocStatusResponse.STATUS.STAPA3);&#xD;&#xA;statusText = statusText.Replace(&quot;&amp;4&quot;,GetIdocStatusResponse.STATUS.STAPA4);&#xD;&#xA;&#xD;&#xA;// Exit the loop&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Failure properties" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="ffdadf36-9911-42fb-9584-424632de0fea" ParentLink="ComplexStatement_Statement" LowerBound="127.1" HigherBound="138.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct WaitForIdoc Response" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="0ecba1aa-4e95-420a-96e6-cf2a47798136" ParentLink="ComplexStatement_Statement" LowerBound="130.1" HigherBound="132.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Create Response" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="667394ed-8f4e-4637-a19b-606cd33f978b" ParentLink="Transform_InputMessagePartRef" LowerBound="131.143" HigherBound="131.161">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocRequest" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="7eaa3c37-4051-499d-ab32-4b56ede41d72" ParentLink="Transform_OutputMessagePartRef" LowerBound="131.40" HigherBound="131.59">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocResponse" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="7df2843b-517a-4506-8170-855293f9648f" ParentLink="ComplexStatement_Statement" LowerBound="132.1" HigherBound="137.1">
+                                    <om:Property Name="Expression" Value="WaitForIdocResponse.DocumentNumber = docNum;&#xD;&#xA;WaitForIdocResponse.Status = status;&#xD;&#xA;WaitForIdocResponse.StatusCode = statusCode;&#xD;&#xA;WaitForIdocResponse.StatusText = statusText;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="Populate Response properties" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="cd3a1eee-c7ad-424d-8e2b-ec0b2950f144" ParentLink="Construct_MessageRef" LowerBound="128.35" HigherBound="128.54">
+                                    <om:Property Name="Ref" Value="WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="1a3c9e7f-a463-420f-80b9-bceab8036d40" ParentLink="ComplexStatement_Statement" LowerBound="138.1" HigherBound="140.1">
+                                <om:Property Name="PortName" Value="WaitForIdocResponsePort" />
+                                <om:Property Name="MessageName" Value="WaitForIdocResponse" />
+                                <om:Property Name="OperationName" Value="Operation" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send WaitForIdocResponse" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="46b2aeff-41ab-4c85-8b94-ade38ffccb99" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Construct" OID="7457fb44-f7b8-4813-9ed0-8f6381cdd75e" ParentLink="ComplexStatement_Statement" LowerBound="143.1" HigherBound="155.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct WaitForIdoc Response" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="656a3713-748e-4233-8d1c-9b06028c72bd" ParentLink="ComplexStatement_Statement" LowerBound="146.1" HigherBound="148.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Create Response" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="76d51433-52c8-4799-b00c-f515ead4d218" ParentLink="Transform_OutputMessagePartRef" LowerBound="147.40" HigherBound="147.59">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocResponse" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="aa56d918-795b-4c6d-9dfa-f5b803d62a5b" ParentLink="Transform_InputMessagePartRef" LowerBound="147.143" HigherBound="147.161">
+                                        <om:Property Name="MessageRef" Value="WaitForIdocRequest" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="4136cbee-b66c-4c2e-9945-312b818f1134" ParentLink="ComplexStatement_Statement" LowerBound="148.1" HigherBound="154.1">
+                                    <om:Property Name="Expression" Value="WaitForIdocResponse.DocumentNumber = docNum;&#xD;&#xA;WaitForIdocResponse.Status = status;&#xD;&#xA;WaitForIdocResponse.StatusCode = statusCode;&#xD;&#xA;WaitForIdocResponse.StatusText = statusText;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="Populate Response properties" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="717ddb81-e335-4890-8405-5e0164ba5b57" ParentLink="Construct_MessageRef" LowerBound="144.35" HigherBound="144.54">
+                                    <om:Property Name="Ref" Value="WaitForIdocResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="980c3824-e4fa-4b42-b00a-921d3f34e987" ParentLink="ComplexStatement_Statement" LowerBound="155.1" HigherBound="157.1">
+                                <om:Property Name="Expression" Value="System.IO.File.AppendAllText(@&quot;D:\interfaces\SAP.IDOCTracker\InterchangeId.txt&quot;, GetIdocStatusRequest.TRACKING_NUMBER + System.Environment.NewLine);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Expression_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Send" OID="13fc04c2-8840-43de-a305-a00f9f98a92d" ParentLink="ComplexStatement_Statement" LowerBound="157.1" HigherBound="159.1">
+                                <om:Property Name="PortName" Value="Port_PONotFound" />
+                                <om:Property Name="MessageName" Value="WaitForIdocResponse" />
+                                <om:Property Name="OperationName" Value="NotFound" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_PONotFound" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="104d604d-f4cc-4e38-b7c2-9d9a04bb5991" ParentLink="Scope_MessageDeclaration" LowerBound="68.1" HigherBound="69.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUS" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GetIdocStatusRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="e1a9ab13-8239-4d63-b12c-0dbb2ebcf7cd" ParentLink="Scope_MessageDeclaration" LowerBound="69.1" HigherBound="70.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUSResponse" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GetIdocStatusResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c070fcc7-6101-49c1-a869-747a5bc34947" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="35.1" HigherBound="37.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="38" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Orchestrations.GetIdocStatus_RfcPortType_Manual" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetIdocStatus_RfcPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="0e9569fa-2920-447a-b02b-8225c7d5a200" ParentLink="PortDeclaration_CLRAttribute" LowerBound="35.1" HigherBound="36.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1b346f5f-5f1e-4b61-bc97-0e020c5db552" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="37.1" HigherBound="39.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Orchestrations.WaitForIdocRequestPortType_Manual" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WaitForIdocRequestPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="530ba231-7ef3-4719-9e38-e506d24207e4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="37.1" HigherBound="38.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="df245fa9-04c2-45c4-9083-690c8ec5065a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="63" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Orchestrations.WaitForIdocResponsePortType_Manual" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WaitForIdocResponsePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="21da0ebe-e76c-4409-9182-8ce32bf76c0a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d966b488-8200-4335-8713-19f83ddc1529" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="44.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="57" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="Transmitted" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Orchestrations.PortType_PONotFound" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_PONotFound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="9061a018-76f1-40ad-8de8-703986433111" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="f6de5a24-3548-4c86-b8e0-2903774a7f1e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetIdocStatus_RfcPortType_Manual" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f7400bcf-f874-4551-9e5b-3bd86be9e672" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Z_BIZTALK_GET_IDOC_STATUS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4d686d35-c609-48ce-910b-ddd7291e5eb6" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.114">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUS" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="9d51cdbd-0043-417f-95fd-d6cd6e64091e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.116" HigherBound="8.225">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUSResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="868f9630-0d77-49a5-89f3-004a70b2ea2d" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="WaitForIdocRequestPortType_Manual" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="c741e528-26af-40c4-8da3-d97767a56434" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="8d607b81-910b-4aae-b5f2-3790b5c7e540" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.89">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e1f5233e-5c6c-42fc-9ff2-2567e487ad71" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="WaitForIdocResponsePortType_Manual" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="bbc3c0f2-ec2b-4d2c-8415-d4d0f1a926c8" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2a627269-a6a1-409c-8f31-ea8382cee20c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.90">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="376f60e4-804b-47f6-8bc5-d7ae4c57d9d1" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_PONotFound" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="06ce3265-a5fe-4140-9990-a124b14c927f" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="NotFound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f3ab81d6-2837-43be-b996-5752a7fb26f7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.90">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.IDOCTracker.Orchestrations
+{
+    internal porttype GetIdocStatus_RfcPortType_Manual
+    {
+        requestresponse Z_BIZTALK_GET_IDOC_STATUS
+        {
+            Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUS, Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUSResponse
+        };
+    };
+    internal porttype WaitForIdocRequestPortType_Manual
+    {
+        oneway Operation
+        {
+            Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest
+        };
+    };
+    internal porttype WaitForIdocResponsePortType_Manual
+    {
+        oneway Operation
+        {
+            Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse
+        };
+    };
+    public porttype PortType_PONotFound
+    {
+        oneway NotFound
+        {
+            Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction WaitForIdoc_Manual
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses GetIdocStatus_RfcPortType_Manual GetIdocStatus_RfcPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements WaitForIdocRequestPortType_Manual WaitForIdocRequestPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses WaitForIdocResponsePortType_Manual WaitForIdocResponsePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
+        port uses PortType_PONotFound Port_PONotFound;
+        message Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest WaitForIdocRequest;
+        message Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse WaitForIdocResponse;
+        System.Int32 loopCount;
+        System.Int32 loopLimit;
+        System.String docNum;
+        System.String status;
+        System.Int32 statusCode;
+        System.String statusText;
+        System.Random random;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bbb3bd92-6843-454a-89a4-cb348971cd8c")]
+            activate receive (WaitForIdocRequestPort.Operation, WaitForIdocRequest);
+            loopCount = 0;
+            docNum = "";
+            status = "TIMEOUT";
+            statusCode = 0;
+            statusText = "";
+            random = new System.Random();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("52eaf15b-b727-4af2-a89b-2e27b135121a")]
+            delay new System.TimeSpan(0, 0, 0, 1);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f59def8-8cc1-43a8-8813-a86cd83f5ee4")]
+            scope
+            {
+                message Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUS GetIdocStatusRequest;
+                message Visy.Middleware.Common.Schemas.SAP.IDOCStatus.Z_BIZTALK_GET_IDOC_STATUS_Rfc.Z_BIZTALK_GET_IDOC_STATUSResponse GetIdocStatusResponse;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3eff2e99-afa9-4212-8a7e-5082b84bd3c7")]
+                    construct GetIdocStatusRequest
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("11c320a4-80da-4c83-be64-f387cca6c47d")]
+                        transform (GetIdocStatusRequest) = Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdoc_to_Z_BIZTALK_GET_IDOC_STATUSRequest (WaitForIdocRequest);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c769a22-d6d6-492e-819b-645091de4f26")]
+                    send (GetIdocStatus_RfcPort.Z_BIZTALK_GET_IDOC_STATUS, GetIdocStatusRequest);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("37f46403-c12f-4ad5-9891-90db8198bd38")]
+                    receive (GetIdocStatus_RfcPort.Z_BIZTALK_GET_IDOC_STATUS, GetIdocStatusResponse);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e178b408-9829-4ad6-8f55-7dae1bc0a6a4")]
+                    if (GetIdocStatusResponse.STATUS.STATUS != "")
+                    {
+                        statusCode = System.Convert.ToInt32(GetIdocStatusResponse.STATUS.STATUS);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e56716ca-5b75-4c6a-a69e-eadcb874e9fc")]
+                    if (statusCode == 53)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("03ddbe5c-ab44-4afc-9bb6-c1b22d41fefd")]
+                        status = "SUCCESS";
+                        docNum = System.Convert.ToString(GetIdocStatusResponse.STATUS.DOCNUM);
+                        statusText = GetIdocStatusResponse.STATUS.STATXT;
+                        statusText = statusText.Replace("&1",GetIdocStatusResponse.STATUS.STAPA1);
+                        statusText = statusText.Replace("&2",GetIdocStatusResponse.STATUS.STAPA2);
+                        statusText = statusText.Replace("&3",GetIdocStatusResponse.STATUS.STAPA3);
+                        statusText = statusText.Replace("&4",GetIdocStatusResponse.STATUS.STAPA4);
+                        
+                        
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("35b94a16-afaf-4174-8735-694a25705a0e")]
+                        construct WaitForIdocResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2bc38911-14cb-4dcf-a8c8-1f4caa7bbe17")]
+                            transform (WaitForIdocResponse) = Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse (WaitForIdocRequest);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ccc2dc77-61ad-4d41-aee9-878a57c19b1f")]
+                            WaitForIdocResponse.DocumentNumber = docNum;
+                            WaitForIdocResponse.Status = status;
+                            WaitForIdocResponse.StatusCode = statusCode;
+                            WaitForIdocResponse.StatusText = statusText;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("59e52569-c3ee-4cc0-8dda-8cd6346f1e09")]
+                        send (WaitForIdocResponsePort.Operation, WaitForIdocResponse);
+                    }
+                    else if (statusCode == 51)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a90419ff-e661-4b83-b4e4-01dd080b200e")]
+                        status = "FAILURE";
+                        docNum = System.Convert.ToString(GetIdocStatusResponse.STATUS.DOCNUM);
+                        statusText = GetIdocStatusResponse.STATUS.STATXT;
+                        statusText = statusText.Replace("&1",GetIdocStatusResponse.STATUS.STAPA1);
+                        statusText = statusText.Replace("&2",GetIdocStatusResponse.STATUS.STAPA2);
+                        statusText = statusText.Replace("&3",GetIdocStatusResponse.STATUS.STAPA3);
+                        statusText = statusText.Replace("&4",GetIdocStatusResponse.STATUS.STAPA4);
+                        
+                        // Exit the loop
+                        
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("ffdadf36-9911-42fb-9584-424632de0fea")]
+                        construct WaitForIdocResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ecba1aa-4e95-420a-96e6-cf2a47798136")]
+                            transform (WaitForIdocResponse) = Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse (WaitForIdocRequest);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7df2843b-517a-4506-8170-855293f9648f")]
+                            WaitForIdocResponse.DocumentNumber = docNum;
+                            WaitForIdocResponse.Status = status;
+                            WaitForIdocResponse.StatusCode = statusCode;
+                            WaitForIdocResponse.StatusText = statusText;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1a3c9e7f-a463-420f-80b9-bceab8036d40")]
+                        send (WaitForIdocResponsePort.Operation, WaitForIdocResponse);
+                    }
+                    else 
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7457fb44-f7b8-4813-9ed0-8f6381cdd75e")]
+                        construct WaitForIdocResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("656a3713-748e-4233-8d1c-9b06028c72bd")]
+                            transform (WaitForIdocResponse) = Visy.Middleware.SAP.IDOCTracker.Maps.WaitForIdocRequest_to_WaitForIdocResponse (WaitForIdocRequest);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4136cbee-b66c-4c2e-9945-312b818f1134")]
+                            WaitForIdocResponse.DocumentNumber = docNum;
+                            WaitForIdocResponse.Status = status;
+                            WaitForIdocResponse.StatusCode = statusCode;
+                            WaitForIdocResponse.StatusText = statusText;
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("980c3824-e4fa-4b42-b00a-921d3f34e987")]
+                        System.IO.File.AppendAllText(@"D:\interfaces\SAP.IDOCTracker\InterchangeId.txt", GetIdocStatusRequest.TRACKING_NUMBER + System.Environment.NewLine);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("13fc04c2-8840-43de-a305-a00f9f98a92d")]
+                        send (Port_PONotFound.NotFound, WaitForIdocResponse);
+                    }
+                }
+            }
+        }
+    }
+}
+

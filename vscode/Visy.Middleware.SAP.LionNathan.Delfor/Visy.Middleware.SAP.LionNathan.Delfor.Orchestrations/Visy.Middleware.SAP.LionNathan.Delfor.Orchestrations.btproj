@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDFC393C-3A6A-4943-A020-E76FA339B018}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.LionNathan.Delfor.Orchestrations</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.LionNathan.Delfor.Orchestrations</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.EDI.Forecast, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.EDI.Forecast.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="ProcessEnvelope.odx">
+      <TypeName>ProcessEnvelope</TypeName>
+      <Namespace>Visy.Middleware.SAP.LionNathan.Delfor.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="ProcessTotal.odx">
+      <TypeName>ProcessTotal</TypeName>
+      <Namespace>Visy.Middleware.SAP.LionNathan.Delfor.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="ProcessWeeklyFC.odx">
+      <TypeName>ProcessWeeklyFC</TypeName>
+      <Namespace>Visy.Middleware.SAP.LionNathan.Delfor.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.LionNathan.Delfor.Components\Visy.Middleware.SAP.LionNathan.Delfor.Components.csproj">
+      <Project>{312bb000-8cb8-4eb1-a42a-43e682b38aa7}</Project>
+      <Name>Visy.Middleware.SAP.LionNathan.Delfor.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.LionNathan.Delfor.Maps\Visy.Middleware.SAP.LionNathan.Delfor.Maps.btproj">
+      <Project>{fe90b9c6-98db-4364-b39b-5e3e335f54f4}</Project>
+      <Name>Visy.Middleware.SAP.LionNathan.Delfor.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.LionNathan.Delfor.Schemas\Visy.Middleware.SAP.LionNathan.Delfor.Schemas.btproj">
+      <Project>{7349d4ce-8c97-4f5c-b2fe-d5e057ddccf2}</Project>
+      <Name>Visy.Middleware.SAP.LionNathan.Delfor.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

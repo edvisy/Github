@@ -1,0 +1,196 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ff2c807d-cc43-4bb0-bc6b-cb3f5d16de6e" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.CUB.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="8e2c1c45-2fe3-485d-828b-91d0a22dc5c2" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_RcvCUBDelXls" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3dda7c03-3f1c-42cf-aff2-7e206ee68724" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvXlsMsg" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="29c0086f-b0f4-4226-b990-052273806d17" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.59">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.CUB.Schemas.CUBForeCastXML" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c04eda63-e3bd-4ba0-9267-ccfe3dedb31f" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendForecatsEnvelope" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="10ff7fd3-581b-4ab3-970c-905c253ceb51" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendForecasts" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="72c35fc0-76b5-4329-b00e-235ba491a746" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.67">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="6befac5d-c3e3-4a10-8edb-cf11ef9f47d6" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessMain" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="345c3190-2cfb-449b-af33-b17d6f298099" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBForeCastXML" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgCubXls" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="53855014-2be4-4160-9ec7-95cf5be86b27" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgForecastsEnvelope" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="2ac12f16-4a43-4f10-8b4f-db986cdb6c41" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="ea7606e7-a6d9-4797-928e-bc1eb48c9518" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvCUBDelXlsMsg" />
+                    <om:Property Name="MessageName" Value="MsgCubXls" />
+                    <om:Property Name="OperationName" Value="RcvXlsMsg" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvXlsMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="c023b36f-d080-46b4-83f5-cfa32b171abe" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructForecastsEnvelopeMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="58d18e96-be95-46a2-944f-c5c57f8a777c" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.CUB.Maps.CUBForeCastXmlToCUBDelForecastEnvelope" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_XlsToEnvelope" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="a2c95fde-04cb-428b-be0e-94665d06031d" ParentLink="Transform_InputMessagePartRef" LowerBound="35.121" HigherBound="35.130">
+                            <om:Property Name="MessageRef" Value="MsgCubXls" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="081c3fcb-edf4-4fc4-af28-0ea120781343" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.48">
+                            <om:Property Name="MessageRef" Value="MsgForecastsEnvelope" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="aecdebc3-1872-49be-8cf2-add6c1a19944" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.43">
+                        <om:Property Name="Ref" Value="MsgForecastsEnvelope" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="3b304f8c-7f7e-4f5a-9e62-5b5733f41e08" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="SendForecatsEnvelope" />
+                    <om:Property Name="MessageName" Value="MsgForecastsEnvelope" />
+                    <om:Property Name="OperationName" Value="SendForecasts" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_ForecastsEnvelope" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b844131a-10ff-43f5-8a87-568b8c9f689a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Orchestrations.PortType_RcvCUBDelXls" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvCUBDelXlsMsg" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e7058b75-1f85-428a-8c43-e126a2910157" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b6faa267-0957-4a2a-bbf2-b072d1d17b20" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.CUB.Orchestrations.PortType_SendForecatsEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendForecatsEnvelope" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="085e9d0d-d80b-4a44-a515-0f941bc5af9f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.CUB.Orchestrations
+{
+    internal porttype PortType_RcvCUBDelXls
+    {
+        oneway RcvXlsMsg
+        {
+            Visy.Middleware.LGX.CUB.Schemas.CUBForeCastXML
+        };
+    };
+    internal porttype PortType_SendForecatsEnvelope
+    {
+        oneway SendForecasts
+        {
+            Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessMain
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_RcvCUBDelXls RcvCUBDelXlsMsg;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses PortType_SendForecatsEnvelope SendForecatsEnvelope;
+        message Visy.Middleware.LGX.CUB.Schemas.CUBForeCastXML MsgCubXls;
+        message Visy.Middleware.LGX.CUB.Schemas.CUBDelForecastEnvelope MsgForecastsEnvelope;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ea7606e7-a6d9-4797-928e-bc1eb48c9518")]
+            activate receive (RcvCUBDelXlsMsg.RcvXlsMsg, MsgCubXls);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c023b36f-d080-46b4-83f5-cfa32b171abe")]
+            construct MsgForecastsEnvelope
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("58d18e96-be95-46a2-944f-c5c57f8a777c")]
+                transform (MsgForecastsEnvelope) = Visy.Middleware.LGX.CUB.Maps.CUBForeCastXmlToCUBDelForecastEnvelope (MsgCubXls);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3b304f8c-7f7e-4f5a-9e62-5b5733f41e08")]
+            send (SendForecatsEnvelope.SendForecasts, MsgForecastsEnvelope);
+        }
+    }
+}
+

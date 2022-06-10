@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2021-04-20T17:55:03.4610859+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:SAP.Glass.WestPac]" Version="" Culture="" PublicKeyToken="" FullName="[Application:SAP.Glass.WestPac], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.Glass.WestPac.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.Glass.WestPac.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SAP.Glass.Westpac.Inbound.Archive" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.Glass.WestPac\Archive\%MessageID%.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2021-04-19T14:00:00</FromTime>
+        <ToTime>2021-04-20T13:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="FILESendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2021-04-19T14:00:00</FromTime>
+        <ToTime>2021-04-20T13:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" /&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.Glass.WestPac</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection>
+    <DistributionList Name="SAP.Glass.Westpac.Outbound.SPGroup">
+      <SendPorts>
+        <SendPortRef Name="SAP.Glass.Westpac.Inbound.Archive" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.Glass.Westpac.SFTP.Port" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>SAP.Glass.WestPac</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
+  <ReceivePortCollection>
+    <ReceivePort Name="SAP.Glass.Westpac.SFTP.Port" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="Receive Location5">
+          <Description xsi:nil="true" />
+          <Address>sftp://ssiw.support.qvalent.com:22/VisyOutgoing//</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2021-04-18T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2021-04-19T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="SFTP" Capabilities="523" ConfigurationClsid="f75aeff5-ebc7-4e7c-a753-fdd68ab45c95" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;ConnectionLimit vt="3"&gt;5&lt;/ConnectionLimit&gt;&lt;UserName vt="8"&gt;visyscp&lt;/UserName&gt;&lt;EncryptionCipher vt="8"&gt;Auto&lt;/EncryptionCipher&gt;&lt;PollingInterval vt="3"&gt;5&lt;/PollingInterval&gt;&lt;PrivateKey vt="8"&gt;D:\Temp\westpac\visy_uat_ssh_private_key.ppk&lt;/PrivateKey&gt;&lt;Port vt="3"&gt;22&lt;/Port&gt;&lt;PollingIntervalUnit vt="8"&gt;Seconds&lt;/PollingIntervalUnit&gt;&lt;ClientAuthenticationMode vt="8"&gt;Password&lt;/ClientAuthenticationMode&gt;&lt;ProxyPort vt="3"&gt;1080&lt;/ProxyPort&gt;&lt;ServerAddress vt="8"&gt;ssiw.support.qvalent.com&lt;/ServerAddress&gt;&lt;AccessAnySSHServerHostKey vt="11"&gt;-1&lt;/AccessAnySSHServerHostKey&gt;&lt;FolderPath vt="8"&gt;/VisyOutgoing/&lt;/FolderPath&gt;&lt;ProxyType vt="8"&gt;None&lt;/ProxyType&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication32" HostTrusted="true">
+            <TransportType Name="SFTP" Capabilities="523" ConfigurationClsid="f75aeff5-ebc7-4e7c-a753-fdd68ab45c95" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2021-04-18T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="Receive Location4">
+          <Description xsi:nil="true" />
+          <Address>SFTP://visyscp@ssiw.support.qvalent.com:22/VisyOutgoing/*.*</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2021-04-18T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2021-04-19T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.SFTP 2020" Capabilities="15627" ConfigurationClsid="7714027c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AfterConnect /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;CertPassSSOAffiliate /&amp;gt;&amp;lt;DeleteMode&amp;gt;0&amp;lt;/DeleteMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;5&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileMask&amp;gt;*.*&amp;lt;/FileMask&amp;gt;&amp;lt;Firewall&amp;gt;&amp;lt;AutoDetect&amp;gt;False&amp;lt;/AutoDetect&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;Host /&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;Port&amp;gt;0&amp;lt;/Port&amp;gt;&amp;lt;User /&amp;gt;&amp;lt;/Firewall&amp;gt;&amp;lt;MaxBatchSize&amp;gt;0&amp;lt;/MaxBatchSize&amp;gt;&amp;lt;MaxFileCount&amp;gt;10&amp;lt;/MaxFileCount&amp;gt;&amp;lt;MaxFileSize&amp;gt;0&amp;lt;/MaxFileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PersistentConnection&amp;gt;False&amp;lt;/PersistentConnection&amp;gt;&amp;lt;PollingInterval&amp;gt;60&amp;lt;/PollingInterval&amp;gt;&amp;lt;RemotePath&amp;gt;/VisyOutgoing/&amp;lt;/RemotePath&amp;gt;&amp;lt;RuntimeLicense /&amp;gt;&amp;lt;SSHAcceptServerHostKey&amp;gt;&amp;lt;AcceptAny&amp;gt;True&amp;lt;/AcceptAny&amp;gt;&amp;lt;StoreType&amp;gt;0&amp;lt;/StoreType&amp;gt;&amp;lt;Store&amp;gt;MY&amp;lt;/Store&amp;gt;&amp;lt;Subject /&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;Thumbprint /&amp;gt;&amp;lt;/SSHAcceptServerHostKey&amp;gt;&amp;lt;SSHAuthMode&amp;gt;3&amp;lt;/SSHAuthMode&amp;gt;&amp;lt;SSHCert&amp;gt;&amp;lt;StoreType&amp;gt;14&amp;lt;/StoreType&amp;gt;&amp;lt;Store&amp;gt;D:\Temp\westpac\visy_uat_ssh_private_key.ppk&amp;lt;/Store&amp;gt;&amp;lt;Subject&amp;gt;CN=pem_key_7df17801-16ed-4ea7-83fe-6beff2b7e890&amp;lt;/Subject&amp;gt;&amp;lt;StorePassword&amp;gt;******&amp;lt;/StorePassword&amp;gt;&amp;lt;Thumbprint&amp;gt;bbdde11e70ad0e9e8c5dda06e8a5fc6a255477f9&amp;lt;/Thumbprint&amp;gt;&amp;lt;/SSHCert&amp;gt;&amp;lt;SSHCompressionAlgorithms&amp;gt;none&amp;lt;/SSHCompressionAlgorithms&amp;gt;&amp;lt;SSHHost&amp;gt;ssiw.support.qvalent.com&amp;lt;/SSHHost&amp;gt;&amp;lt;SSHPassword&amp;gt;******&amp;lt;/SSHPassword&amp;gt;&amp;lt;SSHPort&amp;gt;22&amp;lt;/SSHPort&amp;gt;&amp;lt;SSHUser&amp;gt;visyscp&amp;lt;/SSHUser&amp;gt;&amp;lt;SSOAffiliate /&amp;gt;&amp;lt;TempPath /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TransportLog&amp;gt;&amp;lt;Location&amp;gt;Application&amp;lt;/Location&amp;gt;&amp;lt;LogMode&amp;gt;3&amp;lt;/LogMode&amp;gt;&amp;lt;LogType&amp;gt;1&amp;lt;/LogType&amp;gt;&amp;lt;/TransportLog&amp;gt;&amp;lt;URIIdentity&amp;gt;SFTP://&amp;lt;/URIIdentity&amp;gt;&amp;lt;uri&amp;gt;SFTP://visyscp@ssiw.support.qvalent.com:22/VisyOutgoing/*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.Glass.WestPac.Pipelines.OpenPGPDasm" FullyQualifiedName="Visy.Middleware.SAP.Glass.WestPac.Pipelines.OpenPGPDasm, Visy.Middleware.SAP.Glass.WestPac.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="PGPReceiveHost" HostTrusted="true">
+            <TransportType Name="nsoftware.SFTP 2020" Capabilities="15627" ConfigurationClsid="7714027c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2021-04-18T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.Glass.WestPac</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

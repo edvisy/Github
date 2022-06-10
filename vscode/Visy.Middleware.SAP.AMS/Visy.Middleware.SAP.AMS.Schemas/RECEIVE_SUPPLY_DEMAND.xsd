@@ -1,0 +1,79 @@
+<xs:schema targetNamespace="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_supply_demand_request" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_supply_demand_request" elementFormDefault="qualified" attributeFormDefault="unqualified">
+ <xs:element name="RECEIVE_SUPPLY_DEMAND">
+  <xs:complexType>
+   <xs:all>
+    <xs:element name="SUPPLY_DEMANDS" nillable="true" minOccurs="0">
+     <xs:complexType>
+      <xs:sequence minOccurs="0" maxOccurs="unbounded">
+       <xs:element name="SUPPLY_DEMAND">
+        <xs:complexType>
+         <xs:all>
+          <xs:element name="CONTRACT" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="5"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="PART_NO" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="25"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="SUPPLY_DEMAND_ID" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="2000"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="LINE_NO" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="2000"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="DEL_SCH_LINE_NO" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="2000"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="SUPPLY_DEMAND_TYPE" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="200"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="WO_NO" nillable="true" minOccurs="0">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+             <xs:maxLength value="2000"/>
+            </xs:restriction>
+           </xs:simpleType>
+          </xs:element>
+          <xs:element name="DEMAND_QTY" type="xs:float" nillable="true" minOccurs="0">
+          </xs:element>
+          <xs:element name="SUPPLY_QTY" type="xs:float" nillable="true" minOccurs="0">
+          </xs:element>
+          <xs:element name="REQUESTED_DATE" type="xs:date" nillable="true" minOccurs="0">
+          </xs:element>
+          <xs:element name="SAP_LEAD_TIME" type="xs:float" nillable="true" minOccurs="0">
+          </xs:element>
+          <xs:element name="SAP_EST_DEL_DATE" type="xs:date" nillable="true" minOccurs="0">
+          </xs:element>
+         </xs:all>
+        </xs:complexType>
+       </xs:element>
+      </xs:sequence>
+     </xs:complexType>
+    </xs:element>
+   </xs:all>
+  </xs:complexType>
+ </xs:element>
+</xs:schema>

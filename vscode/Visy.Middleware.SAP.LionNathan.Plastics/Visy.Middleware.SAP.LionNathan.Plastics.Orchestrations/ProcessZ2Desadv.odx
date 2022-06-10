@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c945bf55-74d5-40ef-900f-4a3ffabca3a5" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="67fbbed7-8642-45ab-8e53-e84d9e08d7e2" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAP2DesadvPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d8f61dbc-8061-4079-bc33-608fa1f62de2" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsSAP2DesadvPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="ade95edf-cc3a-4b48-a07a-2f65e0048c07" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.Z2DESADV" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3e2784e7-7585-49d2-8580-61d296f35fde" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendLionsDesadvPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="55624951-0bf7-4c64-9e8c-38601ceefc6f" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsSendLionsDesadv" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="5d9ce7eb-e3ba-4bff-be40-f2a71b4d58cb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_DESADV" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="9fcadcb4-15ef-4995-a7f9-2bbe4fb062ea" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessZ2Desadv" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="08d85a0b-9bf8-43c8-bf95-1adb280fecba" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.Z2DESADV" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSAPZ2Desadv" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fc948eba-9c5e-4538-96aa-fb541013bbe5" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_DESADV" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLionsDesadv" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="76164bd0-b403-4a45-8078-40ac733f940f" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="c43d746e-0013-4095-891f-8e03c5c45404" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="SAP2DesadvPort" />
+                    <om:Property Name="MessageName" Value="msgSAPZ2Desadv" />
+                    <om:Property Name="OperationName" Value="OpsSAP2DesadvPort" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvSAPZ2Desadv" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="b5694924-638e-4d93-b41a-f73fac9a2b24" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_EDI" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="b9772621-4363-4e49-bbb6-8e1cc85a75a9" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPZ2DESADVToLionsDesadv" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_SAPDESADVToLions" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="1ca94fcd-143d-4452-8a8a-ba87ce211c43" ParentLink="Transform_InputMessagePartRef" LowerBound="35.117" HigherBound="35.131">
+                            <om:Property Name="MessageRef" Value="msgSAPZ2Desadv" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="85b12fda-c519-4db2-9e06-9b83a280eb54" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.42">
+                            <om:Property Name="MessageRef" Value="msgLionsDesadv" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="d65d57ca-87ec-41fc-aae0-585d770f7407" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.37">
+                        <om:Property Name="Ref" Value="msgLionsDesadv" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="fff74364-967f-40de-8aa2-f0f85decb864" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="SendLionsDesadvPort" />
+                    <om:Property Name="MessageName" Value="msgLionsDesadv" />
+                    <om:Property Name="OperationName" Value="OpsSendLionsDesadv" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendLionDesadvEDI" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="13ea939d-26f5-4834-b6b0-7cf87a91fe93" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.SAP2DesadvPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAP2DesadvPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="3af21057-4a39-4aec-b663-4f0445211efb" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3289e174-0723-4888-ba15-e81c3a291e3c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.SendLionsDesadvPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendLionsDesadvPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="38524fde-71fb-44e4-9b12-56b503a0a66c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations
+{
+    public porttype SAP2DesadvPortType
+    {
+        oneway OpsSAP2DesadvPort
+        {
+            Visy.Middleware.Common.Schemas.SAP.DesAdv.Z2DESADV
+        };
+    };
+    internal porttype SendLionsDesadvPortType
+    {
+        oneway OpsSendLionsDesadv
+        {
+            Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_DESADV
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessZ2Desadv
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SAP2DesadvPortType SAP2DesadvPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendLionsDesadvPortType SendLionsDesadvPort;
+        message Visy.Middleware.Common.Schemas.SAP.DesAdv.Z2DESADV msgSAPZ2Desadv;
+        message Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_DESADV msgLionsDesadv;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c43d746e-0013-4095-891f-8e03c5c45404")]
+            activate receive (SAP2DesadvPort.OpsSAP2DesadvPort, msgSAPZ2Desadv);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b5694924-638e-4d93-b41a-f73fac9a2b24")]
+            construct msgLionsDesadv
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b9772621-4363-4e49-bbb6-8e1cc85a75a9")]
+                transform (msgLionsDesadv) = Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPZ2DESADVToLionsDesadv (msgSAPZ2Desadv);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fff74364-967f-40de-8aa2-f0f85decb864")]
+            send (SendLionsDesadvPort.OpsSendLionsDesadv, msgLionsDesadv);
+        }
+    }
+}
+

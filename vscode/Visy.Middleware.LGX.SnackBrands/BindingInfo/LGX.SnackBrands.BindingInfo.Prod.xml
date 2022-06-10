@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2018-04-16T11:28:52.5031835+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:LGX.SnackBrands]" Version="" Culture="" PublicKeyToken="" FullName="[Application:LGX.SnackBrands], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.SnackBrands.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.SnackBrands.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="LGX.SnackBrands.Send.Order.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Common\Inbound\ORDER.SNACKBRANDS.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDER.SNACKBRANDS.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="LGX.SnackBrands.Receive.EDIPort" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="5" Value="http://schemas.microsoft.com/Edi/Edifact#Efact_Contrl_Root" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="Visy.Middleware.LGX.SnackBrands.Maps.EdifactOrderD96A_to_LGXOrder" AssemblyQualifiedName="Visy.Middleware.LGX.SnackBrands.Maps.EdifactOrderD96A_to_LGXOrder,Visy.Middleware.LGX.SnackBrands.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.SnackBrands</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.SnackBrands.Send.Acknowlegement.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.SnackBrands\Acknowledgement\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Edi/Edifact#Efact_Contrl_Root" /&gt;
+    &lt;Statement Property="EDI.IsSystemGeneratedAck" Operator="0" Value="True" /&gt;
+    &lt;Statement Property="EDI.UNH2_1" Operator="0" Value="CONTRL" /&gt;
+    &lt;Statement Property="EDI.UNB2_1" Operator="0" Value="9310988000000" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.SnackBrands</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="LGX.SnackBrands.Receive.EDIPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.SnackBrands.Receive.EDI.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\inbound\from_commerceNet\in_snackbrands\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-01-08T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-01-09T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-01-08T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.SnackBrands</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

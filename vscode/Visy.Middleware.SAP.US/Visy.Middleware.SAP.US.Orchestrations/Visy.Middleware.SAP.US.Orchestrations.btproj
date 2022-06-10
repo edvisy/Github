@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C764CA98-D284-4DE8-BB95-9BE6AFF61FE4}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.US.Orchestrations</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.US.Orchestrations</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.MBGMCR02, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.MBGMCR02.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PORDCH01, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PORDCH01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PORDCR101, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PORDCR101.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.SAP.IDOCTracker.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.SAP.IDOCTracker.Schemas.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Process_ChangePurchaseOrder.odx">
+      <TypeName>Process_ChangePurchaseOrder</TypeName>
+      <Namespace>Visy.Middleware.SAP.US.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Process_CreatePurchaseOrder.odx">
+      <TypeName>Process_CreatePurchaseOrder</TypeName>
+      <Namespace>Visy.Middleware.SAP.US.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Process_GoodsMovement.odx">
+      <TypeName>Process_GoodsMovement</TypeName>
+      <Namespace>Visy.Middleware.SAP.US.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.US.Components\Visy.Middleware.SAP.US.Components.csproj">
+      <Project>{6f7608f6-f73b-4965-8df8-8970184e46d0}</Project>
+      <Name>Visy.Middleware.SAP.US.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.US.Maps\Visy.Middleware.SAP.US.Maps.btproj">
+      <Project>{b55757e9-7938-4d04-bd81-f419e277680c}</Project>
+      <Name>Visy.Middleware.SAP.US.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.US.Schemas\Visy.Middleware.SAP.US.Schemas.btproj">
+      <Project>{143e73ea-6f03-4cb2-9681-88c3bc898e7f}</Project>
+      <Name>Visy.Middleware.SAP.US.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

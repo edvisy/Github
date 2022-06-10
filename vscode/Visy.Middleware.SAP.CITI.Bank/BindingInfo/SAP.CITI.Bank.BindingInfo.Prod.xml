@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2018-04-13T18:44:21.1894803+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:SAP.CITI.Bank]" Version="" Culture="" PublicKeyToken="" FullName="[Application:SAP.CITI.Bank], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.CITI.Bank" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.CITI.Bank, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SAP.CITI.Bank.Send.FromSAP.Outbound.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.CITI.Bank\Outbound\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.CITI.Bank.Receive.FromSAPPort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.CITI.Bank.Send.FromSAP.Archive" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\SAP.CITI.Bank\Archive\FromSAP\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.CITI.Bank.Receive.FromSAPPort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.CITI.Bank.Send.ToSAP.Ack.SMTP" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>SAPFINANCIAL_OPS@visy.com.au</Address>
+        <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;Subject vt="8"&gt;BT2016: SAP.CITI ACK - File Contents&lt;/Subject&gt;&lt;SMTPHost vt="8"&gt;smtp.visyap.pratt.com&lt;/SMTPHost&gt;&lt;CC vt="8"&gt;biztalk_team_v@visy.com.au&lt;/CC&gt;&lt;DeliveryReceipt vt="11"&gt;0&lt;/DeliveryReceipt&gt;&lt;EmailBodyFileCharset vt="8"&gt;utf-8&lt;/EmailBodyFileCharset&gt;&lt;EmailBodyTextCharset vt="8"&gt;utf-8&lt;/EmailBodyTextCharset&gt;&lt;From vt="8"&gt;bt2016@visy.com.au&lt;/From&gt;&lt;MessagePartsAttachments vt="19"&gt;0&lt;/MessagePartsAttachments&gt;&lt;ReadReceipt vt="11"&gt;0&lt;/ReadReceipt&gt;&lt;To vt="8"&gt;SAPFINANCIAL_OPS@visy.com.au&lt;/To&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SMTPHost" HostTrusted="true">
+          <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.CITI.Bank.Send.ToSAP.Ack.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\SAP.CITI.Bank\Archive\FromCITI\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection>
+    <DistributionList Name="SAP.CITI.Bank.SPGroup.Ack">
+      <SendPorts>
+        <SendPortRef Name="SAP.CITI.Bank.Send.ToSAP.Ack.FILE" />
+        <SendPortRef Name="SAP.CITI.Bank.Send.ToSAP.Ack.SMTP" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.CITI.Bank.Receive.ToSAP.AckPort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
+  <ReceivePortCollection>
+    <ReceivePort Name="SAP.CITI.Bank.Receive.FromSAPPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.CITI.Bank.FromSAP.FTP">
+          <Description xsi:nil="true" />
+          <Address>ftp://sapintprd:21//SP1/interfaces/outbound/citi</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-01-15T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-01-16T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://sapintprd:21//SP1/interfaces/outbound/citi&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;sapintprd&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;SVC_SAP_EDIPRD&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;ftpServerType&amp;gt;Detect&amp;lt;/ftpServerType&amp;gt;&amp;lt;targetFolder&amp;gt;/SP1/interfaces/outbound/citi&amp;lt;/targetFolder&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;receiveDataTimeout&amp;gt;90000&amp;lt;/receiveDataTimeout&amp;gt;&amp;lt;maximumBatchSize&amp;gt;0&amp;lt;/maximumBatchSize&amp;gt;&amp;lt;maximumNumberOfFiles&amp;gt;0&amp;lt;/maximumNumberOfFiles&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;useNLST&amp;gt;False&amp;lt;/useNLST&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;pollingInterval&amp;gt;60&amp;lt;/pollingInterval&amp;gt;&amp;lt;redownloadInterval&amp;gt;-1&amp;lt;/redownloadInterval&amp;gt;&amp;lt;errorThreshold&amp;gt;10&amp;lt;/errorThreshold&amp;gt;&amp;lt;maxFileSize&amp;gt;100&amp;lt;/maxFileSize&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;deleteAfterDownload&amp;gt;True&amp;lt;/deleteAfterDownload&amp;gt;&amp;lt;enableTimeComparison&amp;gt;False&amp;lt;/enableTimeComparison&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost32" HostTrusted="true">
+            <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-01-15T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.CITI.Bank.FromSAP.Manual.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.CITI.Bank\Manual\*.*</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-01-15T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-01-16T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-01-15T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="SAP.CITI.Bank.Receive.ToSAP.AckPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.CITI.Bank.ToSAP.Ack.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.CITI.Bank\Inbound\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-01-15T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-01-16T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-01-15T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.CITI.Bank</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

@@ -1,0 +1,1830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="EDI.Orders.Router.Policies">
+    <version major="1" minor="1" description="" modifiedby="VISY\bangged" date="2019-05-07T17:07:53.2223908+10:00" />
+    <version major="1" minor="0" description="" modifiedby="VISY\bangged" date="2019-05-07T17:08:08.9699727+10:00" />
+    <configuration />
+    <bindings>
+      <class ref="EDIOrderFactObject" class="EDIOrderFactObject" instance="0" instances="16" selectivity="1">
+        <assembly>Visy.Middleware.EDI.Order.Router.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Visy.Middleware.EDI.Order.Router.Components\v4.0_1.0.0.0__7e7bc6e5fd308d12\Visy.Middleware.EDI.Order.Router.Components.dll-->
+        <namespace>Visy.Middleware.EDI.Order.Router.Components</namespace>
+      </class>
+    </bindings>
+    <rule name="SAP.GSGlobal" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>gsglobal_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.GSGlobal\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.TruBlu" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_t3196_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.TruBlu\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.McPackaging" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>mcpackaging_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.McPackaging\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.MAP" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_m3943_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.MAP\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Goodman.G2191" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_g2191_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Goodman\Inbound\G2191</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Unilever" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_r36_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Unilever\Inbound\R36</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Charter" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nz_c1018_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Charter\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Tatura" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_t281_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Tatura\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Sunrice" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_s2408_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Sunrice\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.SmithsSnackFood.S1077" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>qld_s1077_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.SmithsSnackFood\Inbound\S1077</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.HomeWrap" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>homewrap_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.HomeWrap\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Coke" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>coke_orders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Coke\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.JFE" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>jfe_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.JFE\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.GardenCityPlastics" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_g1169_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.GardenCityPlastics\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.TrustOgilvie" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_a183_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.TrustOgilvie\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.WesternMeatPackers" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_w3739_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.WesternMeatPackers\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Anchor" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_a1471_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Anchor\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Excel.Orders.N1258" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>qld_n1258_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Excel.Orders\Inbound\N1258</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Excel.Orders.N23" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_n23_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Excel.Orders\Inbound\N23</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Pirovic" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_p531_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Pirovic\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.CUB" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>cub.forecasts_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.CUB\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.BlanketOrders" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>blanket_order_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.BlanketOrders\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.NipponSteel" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>miso_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.NipponSteel\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Heinz" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_h859_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Heinz\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.Novelis" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>novelis.asn_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.Novelis\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Kraft" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_j77_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Kraft\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="DW.Recovery" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>1_visy_recovre_edi_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\DW.Recovery\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Goodman.G2165" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_g2165_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Goodman\Inbound\G2165</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.SanRemo" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>sanremo.orders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.SanRemo\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Warburn" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Vcartons@warburnestate.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Warburn\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.PetersIceCream" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_a5010_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.PetersIceCream\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.PeerLess" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_p530_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.PeerLess\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Primo.P4860" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>qld_p4860_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Primo\Inbound\P4860</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Nestle.N335" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_n335_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Nestle\Inbound\N335</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Propac" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>ppg.orders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Propac\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.Rasselstein" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>asn.rasselstein2_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.Rasselstein\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.LinleyValleyPork" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>wa_p2817_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.LinleyValleyPork\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Primo.P3965" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_p3965_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Primo\Inbound\P3965</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Glamapack" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_v10576_v@glamapak.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Glamapack\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Excel.Orders.B465" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>vic_b465_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Excel.Orders\Inbound\B465</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Teys" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>teys.orders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Teys\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Greens" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>qld_g2581_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\MIME.Extractor\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.Kemeny" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>kemeny_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.Kemeny\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.SkyeGroup" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_s1424_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.SkyeGroup\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Excel.Orders.N778" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_n778_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Excel.Orders\Inbound\N778</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.GoodMan.G2351" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_g2351_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.GoodMan\Inbound\G2351</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.GoodMan.G2033" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_g2033_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.GoodMan\Inbound\G2033</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Dominos" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>dominosorders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Dominos\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.SmithsSnackFood.A89" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>sa_a89_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.SmithsSnackFood\Inbound\A89</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Primo.P37" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>nsw_p37_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Primo\Inbound\P37</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Vinpac" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>au_vinpac_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Vinpac\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.MSCans" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>mscan_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.MSCans\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.TegelFoods" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>tegelfoods_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.TegelFoods\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="LGX.Griffins" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>griffins.orders_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\LGX.Griffins\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SAP.Hindustantin" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>asn_htwl_v@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>d:\interfaces\SAP.Hindustantin\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

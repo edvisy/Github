@@ -1,0 +1,683 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="12e7f12f-71fa-4516-bb9f-7a78f1c11582" LowerBound="1.1" HigherBound="163.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="4cb85e07-a133-44b8-84e8-5536d987af01" ParentLink="Module_PortType" LowerBound="24.1" HigherBound="31.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="WebServiceRequest_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="680bb029-e339-4eb3-8833-234604d0fe22" ParentLink="PortType_OperationDeclaration" LowerBound="26.1" HigherBound="30.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LegPicked" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f06c7e92-276c-460d-b488-44e0815dc015" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="28.13" HigherBound="28.33">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedRequestType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="ad2b0eb2-0ba3-4ac9-b54b-fb7b527b065e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="28.35" HigherBound="28.56">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedResponseType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4d5df05a-aac1-4a58-b764-f7a27d9863be" ParentLink="Module_PortType" LowerBound="31.1" HigherBound="38.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SapIdocSend_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="bf913080-ee88-4ccb-9751-b34a4aa94ee7" ParentLink="PortType_OperationDeclaration" LowerBound="33.1" HigherBound="37.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="9af802d4-3c87-4836-9652-5840f93ac3ed" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="35.13" HigherBound="35.38">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.SapZVMRUNSHEET01_SendType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="5bd7bd05-af19-4127-9620-2ce663c38f44" ParentLink="Module_PortType" LowerBound="38.1" HigherBound="45.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LegPickedSendResubmit_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="386ed9bf-38ce-4108-b62c-3c47623917cb" ParentLink="PortType_OperationDeclaration" LowerBound="40.1" HigherBound="44.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Resubmit" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f2182dd8-de7a-4532-b95e-1676a4a72328" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="42.13" HigherBound="42.33">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedRequestType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ba4e3f79-dfb4-4222-9aad-64de0b2473f1" ParentLink="Module_PortType" LowerBound="45.1" HigherBound="52.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LegPickedReceiveResubmit_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="d7548e39-763d-4905-819f-41717245abaa" ParentLink="PortType_OperationDeclaration" LowerBound="47.1" HigherBound="51.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Resubmit" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="58bc0cd9-ef5b-4cee-8b3e-a7bc91d6680e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="49.13" HigherBound="49.33">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedRequestType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="99887baf-10a4-458f-9330-f80380ba2ffa" ParentLink="Module_ServiceDeclaration" LowerBound="52.1" HigherBound="162.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LegPickedAgent" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="a2a0add8-3c49-4d18-bc36-cdba1d10ace8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="interchangeId" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fe6188bc-7f52-441a-b577-0668ad769399" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedRequestType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LegPickedRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ec4d3cfe-6ad0-4889-8181-b953680ed153" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedResponseType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LegPickedResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="78bcea14-edae-4ede-9f79-7d05792e8468" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.SapZVMRUNSHEET01_SendType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SapZVMRUNSHEET01" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="30d8fa19-25b3-41fb-9d73-f7332963cd88" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Listen" OID="c20269e9-f414-456d-92df-373c25e494be" ParentLink="ServiceBody_Statement" LowerBound="69.1" HigherBound="100.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Listen for LegPicked" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="ListenBranch" OID="024b2073-522b-49ad-a0a8-c579e9bc9e57" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.1" HigherBound="69.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Scope" OID="022d6f59-bb7f-4190-a49d-cb64fd8dc33e" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="93.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Syncronous Response Scope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="827da741-91a3-4f42-a922-bca8921fd51a" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="89.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct Response" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="973cb223-da21-48a1-a004-5425bd700040" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="86.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Maps.LegPickedRequest_to_LegPickedResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="LegPickedRequest_to_LegPickedResponse" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="9f033a13-1e40-4fea-83cb-6ab6909e8a1c" ParentLink="Transform_InputMessagePartRef" LowerBound="85.141" HigherBound="85.162">
+                                        <om:Property Name="MessageRef" Value="LegPickedRequest" />
+                                        <om:Property Name="PartRef" Value="Body" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="6f716246-5fd6-4666-bd04-26fa87b3ba1c" ParentLink="Transform_OutputMessagePartRef" LowerBound="85.44" HigherBound="85.66">
+                                        <om:Property Name="MessageRef" Value="LegPickedResponse" />
+                                        <om:Property Name="PartRef" Value="Body" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="20f0af1f-a44b-47e9-bf04-7c45b21dfaf4" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                                    <om:Property Name="Expression" Value="LegPickedResponse.Body.MessageStatus.StatusCode = &quot;ACCEPTED&quot;;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="Update MessageId" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="1a89722d-c3f6-4ac8-810d-41e95a617dab" ParentLink="Construct_MessageRef" LowerBound="82.39" HigherBound="82.56">
+                                    <om:Property Name="Ref" Value="LegPickedResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="7abb18bf-2e00-47dd-8c09-0f9ecbebb5c9" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="91.1">
+                                <om:Property Name="PortName" Value="WebServiceRequest_Port" />
+                                <om:Property Name="MessageName" Value="LegPickedResponse" />
+                                <om:Property Name="OperationName" Value="LegPicked" />
+                                <om:Property Name="OperationMessageName" Value="Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send Response" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Receive" OID="8f29ea25-cfab-4ca3-a061-78e0b9233c04" ParentLink="ListenBranch_Statement" LowerBound="72.1" HigherBound="73.92">
+                            <om:Property Name="Activate" Value="True" />
+                            <om:Property Name="PortName" Value="WebServiceRequest_Port" />
+                            <om:Property Name="MessageName" Value="LegPickedRequest" />
+                            <om:Property Name="OperationName" Value="LegPicked" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive Request" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="ListenBranch" OID="561b326a-d9b3-41b4-8c26-98b878e5af9c" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.1" HigherBound="69.1">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ListenBranch_2" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Receive" OID="f21e8011-d889-4502-ba20-18693222f2f4" ParentLink="ListenBranch_Statement" LowerBound="94.1" HigherBound="95.98">
+                            <om:Property Name="Activate" Value="True" />
+                            <om:Property Name="PortName" Value="LegPickedReceiveResubmit_Port" />
+                            <om:Property Name="MessageName" Value="LegPickedRequest" />
+                            <om:Property Name="OperationName" Value="Resubmit" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive Resubmit" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="a22ff8b3-6311-465e-a24a-a6758e32a3ed" ParentLink="ServiceBody_Statement" LowerBound="100.1" HigherBound="160.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Main Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="0ef4d336-ba88-415c-89f1-3bb3f21fb30e" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="107.1">
+                        <om:Property Name="Expression" Value="interchangeId = LegPickedRequest.Body.MessageHeader.InterchangeID;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log start of processing" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Scope" OID="5f4c9299-6223-48a9-9e3f-d3f9c09307a8" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="134.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Create Idoc Scope" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="b7dad7dd-99d5-45d7-87a4-58cfae473519" ParentLink="ComplexStatement_Statement" LowerBound="114.1" HigherBound="120.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Extract MessageHeader" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="801b1474-57f4-44ff-9f7e-1f5df123edf3" ParentLink="Construct_MessageRef" LowerBound="115.39" HigherBound="115.52">
+                                <om:Property Name="Ref" Value="MessageHeader" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="fff82b88-e2c7-4ab4-a848-143c999ce254" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="119.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Maps.LegPicked_to_MessageHeader" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="LegPicked_to_MessageHeader" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="d1c02bb4-4bec-412c-b1de-609a76de725e" ParentLink="Transform_InputMessagePartRef" LowerBound="118.126" HigherBound="118.147">
+                                    <om:Property Name="MessageRef" Value="LegPickedRequest" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_5" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="66cf4d12-f9e1-47f2-83e7-0a103c82880f" ParentLink="Transform_OutputMessagePartRef" LowerBound="118.44" HigherBound="118.62">
+                                    <om:Property Name="MessageRef" Value="MessageHeader" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_6" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="36cd76fd-9aed-4524-8cba-d84b14beea13" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="126.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Extract Job" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="4e6c7dd0-3574-41ab-875a-eb2d65d9f376" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="125.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Maps.LegPicked_to_Job" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="LegPicked_to_Job" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="bc15642b-aa7a-4207-b271-46c064e67ccd" ParentLink="Transform_InputMessagePartRef" LowerBound="124.106" HigherBound="124.127">
+                                    <om:Property Name="MessageRef" Value="LegPickedRequest" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_7" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="75abdc8c-a891-4f76-9cdb-5f778acac3d6" ParentLink="Transform_OutputMessagePartRef" LowerBound="124.44" HigherBound="124.52">
+                                    <om:Property Name="MessageRef" Value="Job" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_8" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="a6a28b4d-1f57-4e91-983d-95c0a5d726c4" ParentLink="Construct_MessageRef" LowerBound="121.39" HigherBound="121.42">
+                                <om:Property Name="Ref" Value="Job" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="db0d22f4-02aa-4bd9-8374-4fdcabe5621c" ParentLink="ComplexStatement_Statement" LowerBound="126.1" HigherBound="132.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct Idoc" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="4a221968-2c26-4f98-942a-1640f661acab" ParentLink="ComplexStatement_Statement" LowerBound="129.1" HigherBound="131.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Maps.MultipartJob_to_ZVMRUNSHEET01" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MultipartJob_to_ZVMRUNSHEET01" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="5533fd11-4f83-44ee-8a9d-49365fbc8753" ParentLink="Transform_InputMessagePartRef" LowerBound="130.132" HigherBound="130.150">
+                                    <om:Property Name="MessageRef" Value="MessageHeader" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="fd9d419f-50c3-4929-ba12-6c8efbe9f2f0" ParentLink="Transform_InputMessagePartRef" LowerBound="130.152" HigherBound="130.160">
+                                    <om:Property Name="MessageRef" Value="Job" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_9" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="1c586c95-13fc-447a-8436-3093b9a20595" ParentLink="Transform_OutputMessagePartRef" LowerBound="130.44" HigherBound="130.65">
+                                    <om:Property Name="MessageRef" Value="SapZVMRUNSHEET01" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="0c5f2de6-42f3-4e57-ae04-50a271806f91" ParentLink="Construct_MessageRef" LowerBound="127.39" HigherBound="127.55">
+                                <om:Property Name="Ref" Value="SapZVMRUNSHEET01" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageDeclaration" OID="2c3308de-98a8-4f60-81bb-9a7b76584300" ParentLink="Scope_MessageDeclaration" LowerBound="110.1" HigherBound="111.1">
+                            <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.MessageHeader_Type" />
+                            <om:Property Name="ParamDirection" Value="In" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessageHeader" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageDeclaration" OID="d656cbe7-1894-443b-890a-1db4c8fe2396" ParentLink="Scope_MessageDeclaration" LowerBound="111.1" HigherBound="112.1">
+                            <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.Job_Type" />
+                            <om:Property Name="ParamDirection" Value="In" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Job" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="d131ffa2-72da-4f90-be00-1a7525c92f61" ParentLink="ComplexStatement_Statement" LowerBound="134.1" HigherBound="136.1">
+                        <om:Property Name="PortName" Value="SapIdocSend_Port" />
+                        <om:Property Name="MessageName" Value="SapZVMRUNSHEET01" />
+                        <om:Property Name="OperationName" Value="Send" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send ZVMRUNSHEET01" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="02cb904f-65fd-4fdb-86a8-28d9ad31b398" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="144.1">
+                        <om:Property Name="Expression" Value="interchangeId = LegPickedRequest.Body.MessageHeader.InterchangeID;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&#xD;&#xA;    System.String.Format(&quot;{0}: Completed processing message with InterchangeId \&quot;{1}\&quot;.&quot;,&#xD;&#xA;    Microsoft.XLANGs.Core.Service.RootService.Name,&#xD;&#xA;    interchangeId)&#xD;&#xA;    );&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Log completion of processing" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="c8340a3d-9057-479a-a57e-28507582cebd" ParentLink="Scope_Catch" LowerBound="147.1" HigherBound="158.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch .Net Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Suspend" OID="cdb0f34e-ca77-4d63-93e8-833c9922129c" ParentLink="Catch_Statement" LowerBound="150.1" HigherBound="155.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Processing of InterchangeId \&quot;&quot; + interchangeId + &quot;\&quot; encountered an exception and has been suspended. Resume this instance to retry&quot; &#xD;&#xA;    + System.Environment.NewLine&#xD;&#xA;    + &quot;Exception details: &quot;&#xD;&#xA;    + ex.Message;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend before resubmit" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="33a94d72-d7a0-4c77-9778-bc7e8dfed962" ParentLink="Catch_Statement" LowerBound="155.1" HigherBound="157.1">
+                            <om:Property Name="PortName" Value="LegPickedSendResubmit_Port" />
+                            <om:Property Name="MessageName" Value="LegPickedRequest" />
+                            <om:Property Name="OperationName" Value="Resubmit" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b26ed3ae-c79b-4906-a35f-1ce5ac9f611e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="55.1" HigherBound="57.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.WebServiceRequest_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WebServiceRequest_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="24c579ff-cb1f-4964-b494-3793c7b971f1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="55.1" HigherBound="56.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a147814c-6099-43f9-99bf-f215dfa87c88" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="57.1" HigherBound="59.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="81" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.SapIdocSend_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SapIdocSend_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="f58ac9c8-1ff8-4bb1-ab75-0fcf39ee39c0" ParentLink="PortDeclaration_CLRAttribute" LowerBound="57.1" HigherBound="58.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7c9d3061-5abd-4e6c-98f4-9d366c74c810" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="59.1" HigherBound="61.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="107" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedSendResubmit_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LegPickedSendResubmit_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="90d6cd7f-9f36-4517-98a7-f486e7b17bc8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="59.1" HigherBound="60.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a6030cd-82a2-49bb-8a65-4cd8a6c71e92" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="61.1" HigherBound="63.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="3" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MTData.Orchestrations.Inbound.LegPickedReceiveResubmit_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LegPickedReceiveResubmit_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="f3c4caa2-b681-4b82-a93b-5691b9e31f5a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="61.1" HigherBound="62.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="a9dd6fd2-24eb-436d-95d4-afaeab6cd643" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MessageHeader_Type" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="04dbfb7b-f381-4ee0-abce-a7588f1c0ca1" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Schemas.MTDataMessageHeader.MessageHeader" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="aca12c61-bcf6-4b53-8969-ea6babc642a0" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Job_Type" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="de4c9ca4-fd6e-4743-9a1a-9b2a3a546091" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Schemas.JobSchema" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b3b132ec-5642-4d2e-a7c0-3cfe7a499850" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LegPickedRequestType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6637959e-9c5c-411f-b704-b12173a0469d" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Schemas.VisyWebServiceSchema.LegPicked" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d51b8df5-3968-4c3c-b5ab-51b235f7a553" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LegPickedResponseType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="269da4b8-1f07-4ea6-adef-f8df543edc9b" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MTData.Schemas.VisyWebServiceSchema.LegPickedResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="0bd3ccaf-94dc-4102-a7f2-32274c7f46dd" ParentLink="Module_MessageType" LowerBound="20.1" HigherBound="24.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SapZVMRUNSHEET01_SendType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c17580d2-990a-4ae3-bf4c-488fcebe4021" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.SAP.ZVMRunsheet.IDocOperation_ZVMRUNSHEET01_620_3_Send" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.MTData.Orchestrations.Inbound
+{
+    internal messagetype MessageHeader_Type
+    {
+        body Visy.Middleware.SAP.MTData.Schemas.MTDataMessageHeader.MessageHeader Body;
+    };
+    internal messagetype Job_Type
+    {
+        body Visy.Middleware.SAP.MTData.Schemas.JobSchema Body;
+    };
+    internal messagetype LegPickedRequestType
+    {
+        body Visy.Middleware.SAP.MTData.Schemas.VisyWebServiceSchema.LegPicked Body;
+    };
+    internal messagetype LegPickedResponseType
+    {
+        body Visy.Middleware.SAP.MTData.Schemas.VisyWebServiceSchema.LegPickedResponse Body;
+    };
+    internal messagetype SapZVMRUNSHEET01_SendType
+    {
+        body Visy.Middleware.Common.Schemas.SAP.ZVMRunsheet.IDocOperation_ZVMRUNSHEET01_620_3_Send Body;
+    };
+    public porttype WebServiceRequest_PortType
+    {
+        requestresponse LegPicked
+        {
+            LegPickedRequestType, LegPickedResponseType
+        };
+    };
+    internal porttype SapIdocSend_PortType
+    {
+        oneway Send
+        {
+            SapZVMRUNSHEET01_SendType
+        };
+    };
+    internal porttype LegPickedSendResubmit_PortType
+    {
+        oneway Resubmit
+        {
+            LegPickedRequestType
+        };
+    };
+    internal porttype LegPickedReceiveResubmit_PortType
+    {
+        oneway Resubmit
+        {
+            LegPickedRequestType
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service LegPickedAgent
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements WebServiceRequest_PortType WebServiceRequest_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SapIdocSend_PortType SapIdocSend_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses LegPickedSendResubmit_PortType LegPickedSendResubmit_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements LegPickedReceiveResubmit_PortType LegPickedReceiveResubmit_Port;
+        message LegPickedRequestType LegPickedRequest;
+        message LegPickedResponseType LegPickedResponse;
+        message SapZVMRUNSHEET01_SendType SapZVMRUNSHEET01;
+        System.String interchangeId;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c20269e9-f414-456d-92df-373c25e494be")]
+            listen
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f29ea25-cfab-4ca3-a061-78e0b9233c04")]
+                until activate receive (WebServiceRequest_Port.LegPicked, LegPickedRequest)
+                {
+                interchangeId = "";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("022d6f59-bb7f-4190-a49d-cb64fd8dc33e")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("827da741-91a3-4f42-a922-bca8921fd51a")]
+                            construct LegPickedResponse
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("973cb223-da21-48a1-a004-5425bd700040")]
+                                transform (LegPickedResponse.Body) = Visy.Middleware.SAP.MTData.Maps.LegPickedRequest_to_LegPickedResponse (LegPickedRequest.Body);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("20f0af1f-a44b-47e9-bf04-7c45b21dfaf4")]
+                                LegPickedResponse.Body.MessageStatus.StatusCode = "ACCEPTED";
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7abb18bf-2e00-47dd-8c09-0f9ecbebb5c9")]
+                            send (WebServiceRequest_Port.LegPicked, LegPickedResponse);
+                        }
+                    }
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f21e8011-d889-4502-ba20-18693222f2f4")]
+                until activate receive (LegPickedReceiveResubmit_Port.Resubmit, LegPickedRequest)
+                {
+                interchangeId = "";
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a22ff8b3-6311-465e-a24a-a6758e32a3ed")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ef4d336-ba88-415c-89f1-3bb3f21fb30e")]
+                    interchangeId = LegPickedRequest.Body.MessageHeader.InterchangeID;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5f4c9299-6223-48a9-9e3f-d3f9c09307a8")]
+                    scope
+                    {
+                        message MessageHeader_Type MessageHeader;
+                        message Job_Type Job;
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b7dad7dd-99d5-45d7-87a4-58cfae473519")]
+                            construct MessageHeader
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fff82b88-e2c7-4ab4-a848-143c999ce254")]
+                                transform (MessageHeader.Body) = Visy.Middleware.SAP.MTData.Maps.LegPicked_to_MessageHeader (LegPickedRequest.Body);
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("36cd76fd-9aed-4524-8cba-d84b14beea13")]
+                            construct Job
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4e6c7dd0-3574-41ab-875a-eb2d65d9f376")]
+                                transform (Job.Body) = Visy.Middleware.SAP.MTData.Maps.LegPicked_to_Job (LegPickedRequest.Body);
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("db0d22f4-02aa-4bd9-8374-4fdcabe5621c")]
+                            construct SapZVMRUNSHEET01
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a221968-2c26-4f98-942a-1640f661acab")]
+                                transform (SapZVMRUNSHEET01.Body) = Visy.Middleware.SAP.MTData.Maps.MultipartJob_to_ZVMRUNSHEET01 (MessageHeader.Body, Job.Body);
+                            }
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d131ffa2-72da-4f90-be00-1a7525c92f61")]
+                    send (SapIdocSend_Port.Send, SapZVMRUNSHEET01);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("02cb904f-65fd-4fdb-86a8-28d9ad31b398")]
+                    interchangeId = LegPickedRequest.Body.MessageHeader.InterchangeID;
+                    
+                    System.Diagnostics.Trace.WriteLine(
+                        System.String.Format("{0}: Completed processing message with InterchangeId \"{1}\".",
+                        Microsoft.XLANGs.Core.Service.RootService.Name,
+                        interchangeId)
+                        );
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c8340a3d-9057-479a-a57e-28507582cebd")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cdb0f34e-ca77-4d63-93e8-833c9922129c")]
+                        suspend "Processing of InterchangeId \"" + interchangeId + "\" encountered an exception and has been suspended. Resume this instance to retry" 
+                                + System.Environment.NewLine
+                                + "Exception details: "
+                                + ex.Message;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("33a94d72-d7a0-4c77-9778-bc7e8dfed962")]
+                        send (LegPickedSendResubmit_Port.Resubmit, LegPickedRequest);
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,377 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="d131ba86-83e0-4de4-8f13-c936403708b5" LowerBound="1.1" HigherBound="96.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Lion.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="341b5ff2-1da1-4109-b3fa-bdd33670ddde" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive_ProcessForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f600bd75-65d0-4bf4-85ce-7c582e2a16dc" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Receive_ProcessForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="517e08f2-a6f6-4684-bac7-a50634f498cf" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.54">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Schemas.Forecast" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="39bd45c6-93d8-4a6c-9780-c228fe94d4dc" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send_ProcessForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="4810ddf5-21df-4f50-835c-59f742248834" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Send_ProcessForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4f507912-d5c6-48c3-909f-0bd7db597a3f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.32">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_Email" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="dbb89d05-7a2a-48fe-a561-0d3eed2a8889" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_NzForecastEmail" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c2929703-dfcd-415d-8c61-611ce2d7ef7a" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Email" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2a3d31a5-1039-48ec-8acc-fad0c2630e84" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.32">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_Email" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="0ef957ce-a70b-48bb-8f5a-9fc690ce133b" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_Email" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="cd5eda0f-2e03-40fa-aabe-ddb3697c46de" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Components.Utilities.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_Email" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ba79bb14-2647-4a9a-abe5-e3498e70b842" ParentLink="Module_ServiceDeclaration" LowerBound="29.1" HigherBound="95.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="692b428a-7821-416c-9455-57264bc18c3a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Visy.Middleware.Components.Utilities.XSLTEMailBinder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XSLTEmailer" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="730285dc-d96b-45e2-914a-1707b290d921" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Plant" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="15458bcb-a594-4569-a861-e1ab42dd402f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Customer" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="AtomicTransaction" OID="5c9dcee8-870c-4740-a245-01d3ec306bfe" ParentLink="ServiceDeclaration_Transaction" LowerBound="31.21" HigherBound="31.40">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="TransactionAttribute" OID="10a7ace2-8d6d-4b27-998d-b93eb43b141f" ParentLink="ServiceDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Batch" Value="True" />
+                <om:Property Name="Retry" Value="True" />
+                <om:Property Name="Timeout" Value="60" />
+                <om:Property Name="Isolation" Value="Serializable" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="43b61fb6-1a94-4575-9879-cbf5797fa5dd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b1b641de-0250-49f7-8ff9-f9cbf048780a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Schemas.Forecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="31d8d9ac-04d4-439d-9a3f-8fa552e69614" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_Email" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Email" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="9b3efda7-e552-4b16-b164-44702ac04671" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e5678599-b225-4924-b756-fe571c14e213" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="52.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive_ProcessForecast" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="Operation_Receive_ProcessForecast" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Total" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="80c0b3eb-bdf3-4cd2-b25b-c3d792ae008c" ParentLink="ServiceBody_Statement" LowerBound="52.1" HigherBound="54.1">
+                    <om:Property Name="Expression" Value="Plant = Inbound.Header.VisySupplierCode;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Initialise" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="91bb73f8-af26-4c4b-8bb6-d5b616db4ea2" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="93.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Decide_Buyer" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="5aeac38e-9f0e-413f-b851-be9b4eef3614" ParentLink="ReallyComplexStatement_Branch" LowerBound="55.13" HigherBound="74.1">
+                        <om:Property Name="Expression" Value="Inbound.Header.VisyBuyerCode==&quot;15688&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="NZ" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="d60a5396-682b-4c71-9a64-48190b6546c7" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="71.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="e1171f86-e0c8-439d-9c90-350775e464cc" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="70.1">
+                                <om:Property Name="Expression" Value="&#xD;&#xA;Email.MessagePart_Email = new Visy.Middleware.Components.Utilities.RawString(Visy.Middleware.Components.Utilities.XSLTEMailBinder.XSLTEmailBind(&quot;d:\\interfaces\\SAP.Lion\\Common\\LNDELFOR.xslt&quot;,Inbound));&#xD;&#xA;Email.MessagePart_Email(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;Email(SMTP.Subject) = &quot;Lion-Visy Industries DELFOR Report - Plant &quot; + Plant;&#xD;&#xA;Email(SMTP.From) = &quot;biz06support@visy.com.au&quot;;&#xD;&#xA;Email(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;Email(SMTP.MessagePartsAttachments) = 1;&#xD;&#xA;Email(SMTP.SMTPHost) = &quot;biztalkmail&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EMail" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="3ce47137-53c4-437a-aca1-5412bb7ca4f0" ParentLink="Construct_MessageRef" LowerBound="58.27" HigherBound="58.32">
+                                <om:Property Name="Ref" Value="Email" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="acb24475-a3fd-491c-b30c-916dd0963476" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                            <om:Property Name="PortName" Value="Port_Send_NzForecastEmail" />
+                            <om:Property Name="MessageName" Value="Email" />
+                            <om:Property Name="OperationName" Value="Email" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="8bcb16b6-eacb-4047-b61d-a123f05408b8" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="09b2cc75-d779-4370-9719-6636599d1639" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="90.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="f7b67ed0-c7a1-413e-96ce-151fd7bba982" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="89.1">
+                                <om:Property Name="Expression" Value="&#xD;&#xA;Email.MessagePart_Email = new Visy.Middleware.Components.Utilities.RawString(Visy.Middleware.Components.Utilities.XSLTEMailBinder.XSLTEmailBind(&quot;d:\\interfaces\\SAP.Lion\\Common\\LNDELFOR.xslt&quot;,Inbound));&#xD;&#xA;Email.MessagePart_Email(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;Email(SMTP.Subject) = &quot;Lion-Visy Industries DELFOR Report - Plant &quot; + Plant;&#xD;&#xA;Email(SMTP.From) = &quot;biz06support@visy.com.au&quot;;&#xD;&#xA;Email(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;Email(SMTP.MessagePartsAttachments) = 1;&#xD;&#xA;Email(SMTP.SMTPHost) = &quot;biztalkmail&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EMail" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="344afb12-a9d5-488b-b9a1-4cf21fa48319" ParentLink="Construct_MessageRef" LowerBound="77.27" HigherBound="77.32">
+                                <om:Property Name="Ref" Value="Email" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="ceb185bf-1139-45f1-894c-573d5dd8a0fd" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="92.1">
+                            <om:Property Name="PortName" Value="Port_Send_ProcessForecast" />
+                            <om:Property Name="MessageName" Value="Email" />
+                            <om:Property Name="OperationName" Value="Operation_Send_ProcessForecast" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ba45dad8-0670-4bc7-9198-e82e60567c75" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="33.1" HigherBound="35.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Receive_ProcessForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive_ProcessForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="252cc4d0-a00d-48fb-be8c-fd8dc8090fcd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="33.1" HigherBound="34.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="09453a9b-22f3-4ec5-92b6-d71c034596b5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="35.1" HigherBound="37.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="36" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Send_ProcessForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_ProcessForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="3c8184df-840d-4d6b-8ad3-f27f09e8bc36" ParentLink="PortDeclaration_CLRAttribute" LowerBound="35.1" HigherBound="36.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2751b27f-696a-41b3-bfa7-694fff4b8fea" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="37.1" HigherBound="39.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_NzForecastEmail" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_NzForecastEmail" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="be5d5f94-eb04-457b-b14e-634e61c68863" ParentLink="PortDeclaration_CLRAttribute" LowerBound="37.1" HigherBound="38.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Lion.Orchestrations
+{
+    internal messagetype MultipartType_Email
+    {
+        body Visy.Middleware.Components.Utilities.RawString MessagePart_Email;
+    };
+    internal porttype PortType_Receive_ProcessForecast
+    {
+        oneway Operation_Receive_ProcessForecast
+        {
+            Visy.Middleware.SAP.Lion.Schemas.Forecast
+        };
+    };
+    internal porttype PortType_Send_ProcessForecast
+    {
+        oneway Operation_Send_ProcessForecast
+        {
+            MultipartType_Email
+        };
+    };
+    public porttype PortType_NzForecastEmail
+    {
+        oneway Email
+        {
+            MultipartType_Email
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+    internal service atomic transaction ProcessForecast
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Receive_ProcessForecast Port_Receive_ProcessForecast;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Send_ProcessForecast Port_Send_ProcessForecast;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_NzForecastEmail Port_Send_NzForecastEmail;
+        message System.Xml.XmlDocument xmlDoc;
+        message Visy.Middleware.SAP.Lion.Schemas.Forecast Inbound;
+        message MultipartType_Email Email;
+        Visy.Middleware.Components.Utilities.XSLTEMailBinder XSLTEmailer;
+        System.String Plant;
+        System.String Customer;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e5678599-b225-4924-b756-fe571c14e213")]
+            activate receive (Port_Receive_ProcessForecast.Operation_Receive_ProcessForecast, Inbound);
+            XSLTEmailer = new Visy.Middleware.Components.Utilities.XSLTEMailBinder();
+            Plant = "";
+            Customer = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("80c0b3eb-bdf3-4cd2-b25b-c3d792ae008c")]
+            Plant = Inbound.Header.VisySupplierCode;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("91bb73f8-af26-4c4b-8bb6-d5b616db4ea2")]
+            if (Inbound.Header.VisyBuyerCode=="15688")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d60a5396-682b-4c71-9a64-48190b6546c7")]
+                construct Email
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1171f86-e0c8-439d-9c90-350775e464cc")]
+                    
+                    Email.MessagePart_Email = new Visy.Middleware.Components.Utilities.RawString(Visy.Middleware.Components.Utilities.XSLTEMailBinder.XSLTEmailBind("d:\\interfaces\\SAP.Lion\\Common\\LNDELFOR.xslt",Inbound));
+                    Email.MessagePart_Email(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                    Email(SMTP.Subject) = "Lion-Visy Industries DELFOR Report - Plant " + Plant;
+                    Email(SMTP.From) = "biz06support@visy.com.au";
+                    Email(SMTP.EmailBodyFileCharset) = "UTF-8";
+                    Email(SMTP.MessagePartsAttachments) = 1;
+                    Email(SMTP.SMTPHost) = "biztalkmail";
+                    
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("acb24475-a3fd-491c-b30c-916dd0963476")]
+                send (Port_Send_NzForecastEmail.Email, Email);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("09b2cc75-d779-4370-9719-6636599d1639")]
+                construct Email
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f7b67ed0-c7a1-413e-96ce-151fd7bba982")]
+                    
+                    Email.MessagePart_Email = new Visy.Middleware.Components.Utilities.RawString(Visy.Middleware.Components.Utilities.XSLTEMailBinder.XSLTEmailBind("d:\\interfaces\\SAP.Lion\\Common\\LNDELFOR.xslt",Inbound));
+                    Email.MessagePart_Email(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                    Email(SMTP.Subject) = "Lion-Visy Industries DELFOR Report - Plant " + Plant;
+                    Email(SMTP.From) = "biz06support@visy.com.au";
+                    Email(SMTP.EmailBodyFileCharset) = "UTF-8";
+                    Email(SMTP.MessagePartsAttachments) = 1;
+                    Email(SMTP.SMTPHost) = "biztalkmail";
+                    
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ceb185bf-1139-45f1-894c-573d5dd8a0fd")]
+                send (Port_Send_ProcessForecast.Operation_Send_ProcessForecast, Email);
+            }
+        }
+    }
+}
+

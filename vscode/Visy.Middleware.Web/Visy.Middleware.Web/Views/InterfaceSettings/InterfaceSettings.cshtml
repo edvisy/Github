@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewBag.Title = "InterfaceSettings";
+}
+
+@model Visy.Middleware.Web.Models.InterfaceSettings
+@using PagedList.Mvc;
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+            $(".openDialogIS").on("click", function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $("#dialog-new-is").dialog({
+                    title: 'Add Lookup',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 320,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+                $("#dialog-new-is").dialog('open');
+                return false;
+            });
+            $(".editDialogIS").on("click", function (e) {
+                var url = $(this).attr('href');              
+                $("#dialog-edit-is").dialog({
+                    title: 'Edit Lookup',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 320,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+                $("#dialog-edit-is").dialog('open');
+                return false;
+            });
+            $(".confirmDialogIS").on("click", function (e) {
+                var eurl = $(this).attr('href');             
+              
+                $("#dialog-confirm-is").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 170,
+                    width: 350,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    buttons: {
+                        "OK": function () {
+                            $(this).dialog("close");
+                            $.ajax({
+                                url: eurl,
+                                cache: false
+                            });
+                            SetInterfaceList();                          
+                        },
+                        "Cancel": function () {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function (event, ui) {
+                        $(this).empty().dialog('destroy');
+                    }
+                });
+                $("#dialog-confirm-is").dialog('open');
+                
+                return false;
+            });
+        });
+       
+
+    function SetInterfaceList() {
+        
+        $.ajax({
+            url: "InterfaceSettings/InterfaceSettings?interfaceName=" + $('#ddlInterfaceName :selected').text(),
+            cache: false
+        })
+          .done(function (html) {            
+              $("#UpdateContentDiv").html(html);
+          });
+    }
+</script>
+
+    @using (Ajax.BeginForm("InterfaceSettings", "InterfaceSettings", new AjaxOptions { HttpMethod = "GET" }, new { id = "form1" }))
+    {
+        <div class="editor-label">
+            <label class="form-label">Interface List</label>           
+        </div>
+        <div>
+            <div style="display:inline-block; float:left">
+                @Html.DropDownList("ddlInterfaceName", ViewBag.InterfaceNames as SelectList, new { @class = "ui-widget ui-corner-all font-small" })
+            </div>  
+        </div>
+    }
+
+<br />
+<div id="users-contain" class="ui-widget">
+    <table class="ui-widget ui-widget-content" style="font-size: 12px; font-family:MuseoSans_500">
+        <thead>
+            <tr class="ui-widget-header ">
+                <th>Key</th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Value",
+                                "InterfaceSettings",
+                                new { sortOrder = ViewBag.RefSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>               
+                <th>Modified By</th>
+                <th>Modified Date</th>
+                <th></th>
+            </tr>
+
+
+            @foreach (var ot in Model.recordset)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => ot.key)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.value)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.modified_by)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.modified_date)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "ViewRecord", new {id=ot.lookup_id, key = ot.key, value = ot.value, interfacename=ot.interface_name }, new { @class = "editDialogIS" })|
+                        @Html.ActionLink("Delete", "DeleteRecord", new { id = ot.lookup_id }, new { @class = "confirmDialogIS" })
+                    </td>
+                </tr>
+            }
+        </thead>
+
+        <tbody></tbody>
+    </table>
+</div>
+<div>@Html.ActionLink("Create", "NewRecord", new { }, new { @class = "openDialogIS btn btn-default" })</div>
+
+<div id="dialog-confirm-is" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        Are you sure to delete ?
+    </p>
+</div>
+<div id="dialog-edit-is" style="display: none">
+</div>
+<div id="dialog-new-is" style="display: none">
+</div>
+<div id="dialog-view-is" style="display: none">
+</div>
+<div id="dialog-confirm-saved-is" style="display: none">
+    <p>
+        <span class="ui-icon ui-icon-bullet" style="float: left; margin: 0 7px 20px 0;"></span>
+        Record saved
+    </p>
+</div>
+<script type="text/javascript">
+         $(function () {
+             $("#ddlInterfaceName").change(function () {
+                 SetInterfaceList();
+                 if ($("#dialog-edit-is").hasClass('ui-dialog-content')) {
+                     $("#dialog-edit-is").dialog('destroy');                  
+                 }
+                
+             })
+         });
+</script>
+<p></p>

@@ -1,0 +1,185 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="216ba6db-0770-4940-9bd7-1247a7027bcb" LowerBound="1.1" HigherBound="44.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Common.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="51ee9e3b-fba8-4511-929a-423439c7e4ec" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="RcvIDOCPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="83ac0b82-ebdb-40c7-8f0b-641ee6e020ce" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvORDERS05Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="add5cee5-1718-4de1-aa53-f295c40203e9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvORDERS05Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="1b6eee40-26e1-4897-84b4-f8cfc55d5cff" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SndIDOCPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="db4996cd-1dbb-4ad0-9d2a-1eaa16262a8c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndIDOCOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="fe65615f-cd95-4b76-aee7-2991745d16cc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SndIDOCRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="604349e9-b2a8-4ea7-b6e8-2d08e15cb95d" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="43.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ORDERS05CustomerSplit" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="b8a2f878-c324-4710-8179-eb580750fcc0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IDOCReceived" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0822d26c-4a25-477b-9c52-5f5d5f86792e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IDOCSend" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="546d18ec-1463-41a9-87c8-17cdd10248fa" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="68a631b0-e6c9-439e-be34-fefc94a46563" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvORDERS05Port" />
+                    <om:Property Name="MessageName" Value="IDOCReceived" />
+                    <om:Property Name="OperationName" Value="RcvORDERS05Operation" />
+                    <om:Property Name="OperationMessageName" Value="RcvORDERS05Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_1" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="be9a9be5-1c23-43de-9a69-61773178f722" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="39.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="1c1a2dea-88fa-449b-baff-2585d656e387" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="38.1">
+                        <om:Property Name="Expression" Value="IDOCSend = IDOCReceived;&#xD;&#xA;IDOCSend(FILE.ReceivedFileName) = IDOCReceived.EDI_DC40.IDOCTYP + &quot;.&quot; + IDOCReceived.EDI_DC40.MESTYP + &quot;.&quot; + IDOCReceived.EDI_DC40.RCVPRN + &quot;.&quot; + IDOCReceived(BTS.MessageID) + &quot;.xml&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b70bde1f-3a15-4d6e-ba8d-f0d81369a138" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.31">
+                        <om:Property Name="Ref" Value="IDOCSend" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="7a9c4a0b-5241-41e1-921c-cd2488209b73" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="PortName" Value="SndIDOCPort" />
+                    <om:Property Name="MessageName" Value="IDOCSend" />
+                    <om:Property Name="OperationName" Value="SndIDOCOperation" />
+                    <om:Property Name="OperationMessageName" Value="SndIDOCRequest" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="IDOC" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="33e4348b-ceab-46a3-9813-3a54a43521a1" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Orchestrations.RcvIDOCPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvORDERS05Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="558a28d4-e7e3-44e5-b527-5124f44f0fb4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="dc357a87-0553-498b-9b59-aa261ddec1af" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="8" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Orchestrations.SndIDOCPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndIDOCPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6f411144-4db5-40c1-89a4-4647e298b66e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Common.Orchestrations
+{
+    internal porttype RcvIDOCPortType
+    {
+        oneway RcvORDERS05Operation
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05
+        };
+    };
+    internal porttype SndIDOCPortType
+    {
+        oneway SndIDOCOperation
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ORDERS05CustomerSplit
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements RcvIDOCPortType RcvORDERS05Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SndIDOCPortType SndIDOCPort;
+        message Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05 IDOCReceived;
+        message Visy.Middleware.Common.Schemas.SAP.Orders.ORDERS05 IDOCSend;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("68a631b0-e6c9-439e-be34-fefc94a46563")]
+            activate receive (RcvORDERS05Port.RcvORDERS05Operation, IDOCReceived);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("be9a9be5-1c23-43de-9a69-61773178f722")]
+            construct IDOCSend
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1c1a2dea-88fa-449b-baff-2585d656e387")]
+                IDOCSend = IDOCReceived;
+                IDOCSend(FILE.ReceivedFileName) = IDOCReceived.EDI_DC40.IDOCTYP + "." + IDOCReceived.EDI_DC40.MESTYP + "." + IDOCReceived.EDI_DC40.RCVPRN + "." + IDOCReceived(BTS.MessageID) + ".xml";
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a9c4a0b-5241-41e1-921c-cd2488209b73")]
+            send (SndIDOCPort.SndIDOCOperation, IDOCSend);
+        }
+    }
+}
+

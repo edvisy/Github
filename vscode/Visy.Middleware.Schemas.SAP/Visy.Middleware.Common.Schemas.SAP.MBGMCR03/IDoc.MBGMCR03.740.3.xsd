@@ -1,0 +1,2663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns3="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/MBGMCR03//740" elementFormDefault="qualified" targetNamespace="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/MBGMCR03//740" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\IDocSharedTypes.xsd" namespace="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">IDoc.MBGMCR03.740.3</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="E1MBGMCR">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2MBGMCR000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TESTRUN" nillable="true" type="ns3:E1MBGMCR_TESTRUN">
+        <xs:annotation>
+          <xs:documentation>Switch to Simulation Session for Write BAPIs</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="999" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1MBGMCR" nillable="true" type="ns3:E1MBGMCR" />
+  <xs:simpleType name="E1MBGMCR_TESTRUN">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Set</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1MBGMCR_TESTRUN" nillable="true" type="ns3:E1MBGMCR_TESTRUN" />
+  <xs:complexType name="E1BP2017_GM_HEAD_01">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BP2017_GM_HEAD_01003" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PSTNG_DATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Posting Date in the Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DOC_DATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Document Date in Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reference Document Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BILL_OF_LADING" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of bill of lading at time of goods receipt</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GR_GI_SLIP_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Goods Receipt/Issue Slip Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PR_UNAME" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>User Name</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HEADER_TXT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Document Header Text</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="25" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VER_GR_GI_SLIP" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_VER_GR_GI_SLIP">
+        <xs:annotation>
+          <xs:documentation>Version for Printing GR/GI Slip</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VER_GR_GI_SLIPX" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_VER_GR_GI_SLIPX">
+        <xs:annotation>
+          <xs:documentation>Updated information in related user data field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EXT_WMS" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_EXT_WMS">
+        <xs:annotation>
+          <xs:documentation>Control posting for external WMS</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC_NO_LONG" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reference Document Number (for Dependencies see Long Text)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="35" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BILL_OF_LADING_LONG" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Bill of Lading Number in GR (Dependencies: see Long Text)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="35" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BAR_CODE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Bar code entry</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="40" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="792" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BP2017_GM_HEAD_01" nillable="true" type="ns3:E1BP2017_GM_HEAD_01" />
+  <xs:simpleType name="E1BP2017_GM_HEAD_01_VER_GR_GI_SLIP">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Individual Slip</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Individual Slip with Inspection Text</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Collective Slip</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_HEAD_01_VER_GR_GI_SLIP" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_VER_GR_GI_SLIP" />
+  <xs:simpleType name="E1BP2017_GM_HEAD_01_VER_GR_GI_SLIPX">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Update for the field</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_HEAD_01_VER_GR_GI_SLIPX" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_VER_GR_GI_SLIPX" />
+  <xs:simpleType name="E1BP2017_GM_HEAD_01_EXT_WMS">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Execute stock change in ERP</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Create delivery and transmit to WM</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_HEAD_01_EXT_WMS" nillable="true" type="ns3:E1BP2017_GM_HEAD_01_EXT_WMS" />
+  <xs:complexType name="E1BP2017_GM_CODE">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BP2017_GM_CODE000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GM_CODE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Assign code to transaction for BAPI goods movement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="998" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BP2017_GM_CODE" nillable="true" type="ns3:E1BP2017_GM_CODE" />
+  <xs:complexType name="_x002F_SPE_x002F_E1BP2017_GM_REF_EWM">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="/SPE/E1BP2017_GM_REF_EWM000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC_EWM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of Material Document in EWM</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LOGSYS" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Logical System of EWM Material Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GTS_SCRAP_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Customs Reference Number for Scrapping</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="35" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="939" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_GM_REF_EWM" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_GM_REF_EWM" />
+  <xs:complexType name="E1BP2017_GM_ITEM_CREATE">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BP2017_GM_ITEM_CREATE002" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATERIAL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="18" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PLANT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Plant</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_LOC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage Location</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BATCH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Batch Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_TYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Movement Type (Inventory Management)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STCK_TYPE" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_STCK_TYPE">
+        <xs:annotation>
+          <xs:documentation>Stock Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SPEC_STOCK" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Special Stock Indicator</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VENDOR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Vendor Account Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CUSTOMER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Account Number of Customer</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SALES_ORD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sales Order Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="S_ORD_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item Number in Sales Order</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCHED_LINE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery Schedule for Sales Order</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VAL_TYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Valuation Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ENTRY_QNT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quantity in Unit of Entry</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ENTRY_UOM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unit of Entry</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ENTRY_UOM_ISO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO code for unit of measurement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PO_PR_QNT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quantity in Purchase Order Price Unit</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ORDERPR_UN" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Order Price Unit (Purchasing)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ORDERPR_UN_ISO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO code for unit of measurement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PO_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Purchase Order Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PO_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item Number of Purchasing Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="5" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SHIPPING" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Shipping Instructions</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="COMP_SHIP" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Compliance with Shipping Instructions</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NO_MORE_GR" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_MORE_GR">
+        <xs:annotation>
+          <xs:documentation>"Delivery Completed" Indicator</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ITEM_TEXT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item Text</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="50" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GR_RCPT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Goods Recipient/Ship-To Party</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UNLOAD_PT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unloading Point</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="25" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="COSTCENTER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Cost Center</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ORDERID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Order Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ORDER_ITNO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Order Item Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CALC_MOTIVE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Accounting Indicator</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ASSET_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Main Asset Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SUB_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Asset Subnumber</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RESERV_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of Reservation/Dependent Requirement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RES_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item Number of Reservation/Dependent Requirement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RES_TYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Record type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="WITHDRAWN" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_WITHDRAWN">
+        <xs:annotation>
+          <xs:documentation>Final Issue for This Reservation</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_MAT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Receiving/Issuing Material</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="18" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_PLANT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Receiving/Issuing Plant</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_STLOC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Receiving/Issuing Storage Location</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_BATCH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Receiving/Issuing Batch</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_VAL_TYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Valuation Type of Transfer Batch</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MVT_IND" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_MVT_IND">
+        <xs:annotation>
+          <xs:documentation>Movement Indicator</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_REAS" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reason for Movement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RL_EST_KEY" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Internal Key for Real Estate Object</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reference Date for Settlement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="COST_OBJ" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Cost Object</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PROFIT_SEGM_NO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Profitability Segment Number (CO-PA)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PROFIT_CTR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Profit Center</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="WBS_ELEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Work Breakdown Structure Element (WBS Element)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="24" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NETWORK" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Network Number for Account Assignment</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ACTIVITY" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Operation/Activity Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PART_ACCT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Partner Account Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMOUNT_LC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externally entered posting amount in local currency</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="25" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMOUNT_SV" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Externally entered sales value in local currency</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="25" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC_YR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Fiscal Year of a Reference Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Document No. of a Reference Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="REF_DOC_IT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item of a Reference Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EXPIRYDATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Shelf Life Expiration or Best-Before Date</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PROD_DATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Date of Manufacture</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FUND" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Fund</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FUNDS_CTR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Funds Center</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CMMT_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Commitment Item</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="14" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VAL_SALES_ORD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sales Order Number of Valuated Sales Order Stock</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VAL_S_ORD_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Sales Order Item of Valuated Sales Order Stock</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VAL_WBS_ELEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Work Breakdown Structure Element (WBS Element)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="24" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GL_ACCOUNT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>G/L Account Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="IND_PROPOSE_QUANX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_IND_PROPOSE_QUANX">
+        <xs:annotation>
+          <xs:documentation>Propose quantities</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="XSTOB" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_XSTOB">
+        <xs:annotation>
+          <xs:documentation>Use Reversal Movement Type Indicator</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EAN_UPC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>International Article Number (EAN/UPC)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="18" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_NUMB_TO_SEARCH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_ITEM_TO_SEARCH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery Item</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SERIALNO_AUTO_NUMBERASSIGNMENT" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_SERIALNO_AUTO_NUMBERASSIGNMENT">
+        <xs:annotation>
+          <xs:documentation>Create serial number automatically</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VENDRBATCH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Vendor Batch Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_TYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_BIN" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage Bin</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SU_PL_STCK_1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of Storage Units to be Placed Into Storage</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ST_UN_QTYY_1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quantity per Storage Unit to be Placed into Stock in Alt.UoM</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ST_UN_QTYY_1_ISO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO code for unit of measurement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UNITTYPE_1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage Unit Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SU_PL_STCK_2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of Storage Units to be Placed Into Storage</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ST_UN_QTYY_2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quantity per Storage Unit to be Placed into Stock in Alt.UoM</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ST_UN_QTYY_2_ISO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ISO code for unit of measurement</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UNITTYPE_2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage Unit Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_TYPE_PC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage type for transfer posting</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_BIN_PC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage bin for transfer posting</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NO_PST_CHGNT" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_PST_CHGNT">
+        <xs:annotation>
+          <xs:documentation>Indicator: Do not create posting change notice</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GR_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Goods Receipt Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_TYPE_ST" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage type for stock transfer</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STGE_BIN_ST" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Storage bin for stock transfer</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATDOC_TR_CANCEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material doc. no. of transfer requirement to be cancelled</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATITEM_TR_CANCEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material doc. item of transf.reqmnt item to be cancelled</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATYEAR_TR_CANCEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material doc. year of transfer requirement to be cancelled</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NO_TRANSFER_REQ" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_TRANSFER_REQ">
+        <xs:annotation>
+          <xs:documentation>Indicator: No Transfer Requirement Created</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CO_BUSPROC" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Business Process</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="12" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ACTTYPE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Activity Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SUPPL_VEND" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Supplying Vendor</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATERIAL_EXTERNAL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Long Material Number for MATERIAL Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="40" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATERIAL_GUID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>External GUID for MATERIAL Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="32" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATERIAL_VERSION" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Version Number for MATERIAL Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_MAT_EXTERNAL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Long Material Number for MOVE_MAT Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="40" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_MAT_GUID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>External GUID for MOVE_MAT Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="32" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_MAT_VERSION" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Version Number for MOVE_MAT Field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FUNC_AREA" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Functional Area</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TR_PART_BA" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Trading Partner's Business Area</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PAR_COMPCO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Clearing company code</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_STCK_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Quality inspection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="S">
+        <xs:annotation>
+          <xs:documentation>Blocked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Quality inspection</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Blocked</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Unrestricted-use</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_STCK_TYPE" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_STCK_TYPE" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_NO_MORE_GR">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_NO_MORE_GR" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_MORE_GR" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_WITHDRAWN">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_WITHDRAWN" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_WITHDRAWN" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_MVT_IND">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Goods movement for purchase order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="F">
+        <xs:annotation>
+          <xs:documentation>Goods movement for production order</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="L">
+        <xs:annotation>
+          <xs:documentation>Goods movement for delivery note</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="K">
+        <xs:annotation>
+          <xs:documentation>Goods movement for kanban requirement (WM - internal only)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="O">
+        <xs:annotation>
+          <xs:documentation>Subsequent adjustment of "material-provided" consumption</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="W">
+        <xs:annotation>
+          <xs:documentation>Subsequent adjustment of proportion/product unit material</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_MVT_IND" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_MVT_IND" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_IND_PROPOSE_QUANX">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_IND_PROPOSE_QUANX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_IND_PROPOSE_QUANX" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_XSTOB">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_XSTOB" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_XSTOB" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_SERIALNO_AUTO_NUMBERASSIGNMENT">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_SERIALNO_AUTO_NUMBERASSIGNMENT" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_SERIALNO_AUTO_NUMBERASSIGNMENT" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_NO_PST_CHGNT">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_NO_PST_CHGNT" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_PST_CHGNT" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE_NO_TRANSFER_REQ">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE_NO_TRANSFER_REQ" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE_NO_TRANSFER_REQ" />
+  <xs:complexType name="E1BP2017_GM_ITEM_CREATE1">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BP2017_GM_ITEM_CREATE1003" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_NUMB" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery Item</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NB_SLIPS" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Number of GR/GI Slips to Be Printed</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NB_SLIPSX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_NB_SLIPSX">
+        <xs:annotation>
+          <xs:documentation>Updated information in related user data field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GR_RCPTX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_GR_RCPTX">
+        <xs:annotation>
+          <xs:documentation>Updated information in related user data field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UNLOAD_PTX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_UNLOAD_PTX">
+        <xs:annotation>
+          <xs:documentation>Updated information in related user data field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SPEC_MVMT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Special movement indicator for warehouse management</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GRANT_NBR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Grant</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="20" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CMMT_ITEM_LONG" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Commitment Item</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="24" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FUNC_AREA_LONG" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Functional Area</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LINE_ID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identification of document line</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="PARENT_ID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Identifier of immediately superior line</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LINE_DEPTH" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Hierarchy level of line in document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="QUANTITY" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Quantity</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BASE_UOM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Base Unit of Measure</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LONGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Smart Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="40" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="BUDGET_PERIOD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>FM: Budget Period</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="835" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE1" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE1_NB_SLIPSX">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Update for the field</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE1_NB_SLIPSX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_NB_SLIPSX" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE1_GR_RCPTX">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Update for the field</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE1_GR_RCPTX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_GR_RCPTX" />
+  <xs:simpleType name="E1BP2017_GM_ITEM_CREATE1_UNLOAD_PTX">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Update for the field</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="E1BP2017_GM_ITEM_CREATE1_UNLOAD_PTX" nillable="true" type="ns3:E1BP2017_GM_ITEM_CREATE1_UNLOAD_PTX" />
+  <xs:complexType name="E2BP2017_GM_ITEM_CREATE002GRP">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="E2BP2017_GM_ITEM_CREATE002" type="ns3:E1BP2017_GM_ITEM_CREATE">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Create Material Document Item</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="1" tag_name="E2BP2017_GM_ITEM_CREATE002" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2BP2017_GM_ITEM_CREATE1003" type="ns3:E1BP2017_GM_ITEM_CREATE1">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Create Material Document Item</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="2" tag_name="E2BP2017_GM_ITEM_CREATE1003" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="E1BP2017_GM_SERIALNUMBER">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BP2017_GM_SERIALNUMBER001" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATDOC_ITM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Item in Material Document</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="4" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SERIALNO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Serial Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="18" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="UII" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique Item Identifier</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="72" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="906" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BP2017_GM_SERIALNUMBER" nillable="true" type="ns3:E1BP2017_GM_SERIALNUMBER" />
+  <xs:complexType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="/SPE/E1BP2017_SERVICEPART_D001" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LINE_ID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identification of document line</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RET_AUTH_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Return Material Authorization Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="20" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DELIV_ITEM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Delivery Item</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="HU_NUMBER" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>External Handling Unit Identification</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="20" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="INSPOUT_GUID" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Inspection Outcome: Stock  GUID set by EWM</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="32" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="EVENT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Logical time</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Date</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="8" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TIME" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Time</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ZONLO" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Time Zone</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="TIMESTAMP" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Start time of transaction (UTC time stamp)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCRAP_INDICATOR" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_SCRAP_INDICATOR">
+        <xs:annotation>
+          <xs:documentation>Scrap Indicator for EWM Processing</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="KEEP_QUANTITY" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Retention Quantity for Scrap. Process in EWM</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="15" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="GTS_STOCK_TYPE" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_GTS_STOCK_TYPE">
+        <xs:annotation>
+          <xs:documentation>GTS Stock Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MOVE_GTS_STOCK_TYPE" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_MOVE_GTS_STOCK_TYPE">
+        <xs:annotation>
+          <xs:documentation>GTS Stock Type</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="KEEP_QUANTITY_CONVERSION" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_KEEP_QUANTITY_CONVERSION">
+        <xs:annotation>
+          <xs:documentation>Quantity conversion not necessary</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ZERO_QUANTITY" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_ZERO_QUANTITY">
+        <xs:annotation>
+          <xs:documentation>Allow Posting of Goods Movement Despite Zero Quantity</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NUMERATOR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Numerator (factor) for conversion of sales quantity into SKU</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DENOMINATR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Denominator (Divisor) for Conversion of Sales Qty into SKU</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="828" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D" />
+  <xs:simpleType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_SCRAP_INDICATOR">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:documentation>Scrap Entire Inventory</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:documentation>Scrap Inventory with Retention Quantity Constraint</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:documentation>Scrap Predetermined Quantity</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_SCRAP_INDICATOR" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_SCRAP_INDICATOR" />
+  <xs:simpleType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_GTS_STOCK_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Temporary Storage Relevant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Scrapping Relevant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_GTS_STOCK_TYPE" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_GTS_STOCK_TYPE" />
+  <xs:simpleType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_MOVE_GTS_STOCK_TYPE">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Temporary Storage Relevant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Scrapping Relevant</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_MOVE_GTS_STOCK_TYPE" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_MOVE_GTS_STOCK_TYPE" />
+  <xs:simpleType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_KEEP_QUANTITY_CONVERSION">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_KEEP_QUANTITY_CONVERSION" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_KEEP_QUANTITY_CONVERSION" />
+  <xs:simpleType name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_ZERO_QUANTITY">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X">
+        <xs:annotation>
+          <xs:documentation>Yes</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_ZERO_QUANTITY" nillable="true" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D_ZERO_QUANTITY" />
+  <xs:complexType name="E1BPPAREX">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="E2BPPAREX000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="STRUCTURE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Structure name of  BAPI table extension</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VALUEPART1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Data part of BAPI extension parameter</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="240" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VALUEPART2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Data part of BAPI extension parameter</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="240" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VALUEPART3" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Data part of BAPI extension parameter</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="240" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="VALUEPART4" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Data part of BAPI extension parameter</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="240" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="10" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="E1BPPAREX" nillable="true" type="ns3:E1BPPAREX" />
+  <xs:complexType name="E2MBGMCR000GRP">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="E2MBGMCR000" type="ns3:E1MBGMCR">
+        <xs:annotation>
+          <xs:documentation>Header Segment</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="1" tag_name="E2MBGMCR000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2BP2017_GM_HEAD_01003" type="ns3:E1BP2017_GM_HEAD_01">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Material Document Header Data</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="2" tag_name="E2BP2017_GM_HEAD_01003" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2BP2017_GM_CODE000" type="ns3:E1BP2017_GM_CODE">
+        <xs:annotation>
+          <xs:documentation>MMIM: New Key Assignment GM_CODE to Transaction of Inv. Mgmt</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="3" tag_name="E2BP2017_GM_CODE000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="_x002F_SPE_x002F_E1BP2017_GM_REF_EWM000" type="ns3:_x002F_SPE_x002F_E1BP2017_GM_REF_EWM">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Material Document EWM Ref.</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="4" tag_name="/SPE/E1BP2017_GM_REF_EWM000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="999999999" name="E2BP2017_GM_ITEM_CREATE002GRP" type="ns3:E2BP2017_GM_ITEM_CREATE002GRP">
+        <xs:annotation>
+          <xs:appinfo>
+            <recordInfo structure="delimited" child_delimiter_type="hex" child_delimiter="0xd 0xa" child_order="infix" sequence_number="5" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="999999999" name="E2BP2017_GM_SERIALNUMBER001" type="ns3:E1BP2017_GM_SERIALNUMBER">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Create Mat. Doc., Serial No.</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="6" tag_name="E2BP2017_GM_SERIALNUMBER001" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="999999999" name="_x002F_SPE_x002F_E1BP2017_SERVICEPART_D001" type="ns3:_x002F_SPE_x002F_E1BP2017_SERVICEPART_D">
+        <xs:annotation>
+          <xs:documentation>BAPI Communication Structure: Service Parts Data</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="7" tag_name="/SPE/E1BP2017_SERVICEPART_D001" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="999999999" name="E2BPPAREX000" type="ns3:E1BPPAREX">
+        <xs:annotation>
+          <xs:documentation>Ref. Structure for BAPI Parameter EXTENSIONIN/EXTENSIONOUT</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="8" tag_name="E2BPPAREX000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MBGMCR03">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/" minOccurs="1" maxOccurs="1" name="EDI_DC40" type="q1:EDI_DC40">
+        <xs:annotation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="1" tag_name="MBGMCR03" tag_offset="39" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="E2MBGMCR000GRP" type="ns3:E2MBGMCR000GRP">
+        <xs:annotation>
+          <xs:appinfo>
+            <recordInfo structure="delimited" child_delimiter_type="hex" child_delimiter="0xd 0xa" child_order="infix" sequence_number="2" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

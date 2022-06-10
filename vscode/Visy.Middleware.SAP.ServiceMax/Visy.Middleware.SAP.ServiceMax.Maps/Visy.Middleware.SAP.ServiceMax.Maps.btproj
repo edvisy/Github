@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FB8B4D13-FD7F-49E2-9531-AC1BD777DED3}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.ServiceMax.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.ServiceMax.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.MATMAS05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.MATMAS05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZLFMAS02, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZLFMAS02.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.CREMAS04.740, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.CREMAS04.740.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.MBGMCR03">
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.MBGMCR03.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PORDCR05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PORDCR05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PREQCR03, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PREQCR03.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PROJECT01, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PROJECT01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_CREDNOTE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_CREDNOTE.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_DEBIT_MEMO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_DEBIT_MEMO.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_DEBMAS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_DEBMAS.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_PRICE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_PRICE.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_PROD, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_PROD.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_PR_STATUS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_PR_STATUS.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_STKLOC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_STKLOC.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.ZSM_WBS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.ZSM_WBS.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="CREDNOTE.To.Upsert.btm">
+      <TypeName>CREDNOTE_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="DEBMAS07.To.Upsert.btm">
+      <TypeName>DEBMAS07_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="DEBMAS07.To.Upsert.xsl" />
+    <Content Include="ExternalAssembly.xml" />
+    <Map Include="PartUpdate.To.Upsert.btm">
+      <TypeName>PartUpdate_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="PartUpdate.To.Upsert.xsl" />
+    <Map Include="PRICE.To.Upsert.btm">
+      <TypeName>PRICE_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="PROD.To.ProductStock.btm">
+      <TypeName>PROD_To_ProductStock</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="PROJECT01.To.Upsert.btm">
+      <TypeName>PROJECT01_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="PROJECT01.To.Upsert.xsl" />
+    <Map Include="PRSTATUS.To.Upsert.btm">
+      <TypeName>PRSTATUS_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="STKLOC.To.Upsert.btm">
+      <TypeName>STKLOC_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="WBS.To.Upsert.btm">
+      <TypeName>WBS_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZCREMAS04.To.Upsert.btm">
+      <TypeName>ZCREMAS04_To_Upsert</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\INVToDEBITMEMO.btm">
+      <TypeName>INVToDEBITMEMO</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\POToPREQCR03.btm">
+      <TypeName>POToPREQCR03</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\PURToPORDCR05.btm">
+      <TypeName>PURToPORDCR05</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\STToMBGMCR03.btm">
+      <TypeName>STToMBGMCR03</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\WODToMBGMCR03.btm">
+      <TypeName>WODToMBGMCR03</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ToSAP\WODToWODInternal.btm">
+      <TypeName>WODToWODInternal</TypeName>
+      <Namespace>Visy.Middleware.SAP.ServiceMax.Maps.ToSAP</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="ZCREMAS04.To.Upsert.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.ServiceMax.Components\Visy.Middleware.SAP.ServiceMax.Components.csproj">
+      <Project>{ac7b2d13-aab7-4abf-b633-401baa5fd82b}</Project>
+      <Name>Visy.Middleware.SAP.ServiceMax.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.ServiceMax.Schemas\Visy.Middleware.SAP.ServiceMax.Schemas.btproj">
+      <Project>{ae5b6661-e2d5-469a-9a85-293e3cbd6ec6}</Project>
+      <Name>Visy.Middleware.SAP.ServiceMax.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

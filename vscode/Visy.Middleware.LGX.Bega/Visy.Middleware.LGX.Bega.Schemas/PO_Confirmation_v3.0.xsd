@@ -1,0 +1,94 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PurchaseOrderConfirmation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PUNO">
+			<xs:simpleType>
+				<xs:annotation>
+					<xs:documentation>Purchase Order Number</xs:documentation>
+				</xs:annotation>
+					<xs:restriction base="xs:string">
+					<xs:maxLength value="10"/>
+					</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+        <xs:element name="PurchaseOrderLineItems" maxOccurs="unbounded">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="PNLI">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>Purchase Order line number</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="3"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+                    <xs:element name="CODT">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>Confirmed Delivery Date</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="10"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+                    <xs:element name="PUPR">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>Purchase Price</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="19"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="LNAM">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>PO Line Price</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="17"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+                    <xs:element name="ORQA">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>Ordered quantity</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="17"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="STATUS">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>PO Line Status</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="17"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="RE_REASON" minOccurs="0">
+						<xs:simpleType>
+							<xs:annotation>
+								<xs:documentation>Rejection Reason</xs:documentation>
+							</xs:annotation>
+							<xs:restriction base="xs:string">
+							<xs:maxLength value="17"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+                 </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

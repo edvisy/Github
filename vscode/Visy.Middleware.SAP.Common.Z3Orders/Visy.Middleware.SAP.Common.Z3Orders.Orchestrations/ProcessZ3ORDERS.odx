@@ -1,0 +1,438 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="b535f705-2b60-4c19-837b-53f1944e6717" LowerBound="1.1" HigherBound="111.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Common.Z3Orders.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="c17e7f2e-b21e-4667-aec3-ee579245925e" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveZ3ORDERS05_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="35866bdc-2952-45a0-aa52-9eecea6f577f" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveZ3ORDERS05_PortOp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a7044ded-7277-4dc4-ade1-c403d3396787" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b7a9931b-5568-4463-b50b-fea0c2c9ce32" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_Z3Orders_AlertOrders_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="57cb1c91-a354-496d-8f95-c44bdd01f61b" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_Z3Orders_AlertOrders_PortOP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0886a174-4174-485e-bad9-d0b857493776" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.SAPAlertContext" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fd22e3bd-529d-490f-a8aa-02df4f508aff" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ArchiveZ3ORDERS_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="fe0cf381-ebbe-4ba4-b7c1-04cf1c7da325" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArchiveZ3ORDERS_PortOp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="00a49ccc-33ab-4e97-9efc-6a0e7a753f14" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="62f2a837-42c5-4fed-ab33-a99eff454e90" ParentLink="Module_PortType" LowerBound="29.1" HigherBound="36.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendSAPZ3ORDERS_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="566a66f1-437d-4ad3-91f6-cb40ccf4f84d" ParentLink="PortType_OperationDeclaration" LowerBound="31.1" HigherBound="35.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendSAPZ3ORDERS_PortOp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0744dd56-222b-4d25-b58a-1f8283761fce" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="33.13" HigherBound="33.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="39ae6448-8ac6-4b27-9279-9f028f751f7d" ParentLink="Module_PortType" LowerBound="36.1" HigherBound="43.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_Z3Orders_AlertMessage_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="a9231cd1-50ea-4475-90c3-b77b183e4bc5" ParentLink="PortType_OperationDeclaration" LowerBound="38.1" HigherBound="42.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_Z3Orders_AlertMessage_PortOp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="5c98ef72-b6c9-4e91-959f-84ec45639e4f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="40.13" HigherBound="40.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.SAPAlertContext" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="15dc7bf5-1d5b-473f-9639-f55f75014bff" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="EMailZ2OrderType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="d99e5a4d-5479-43b0-92ac-dba5334147db" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Components.Utilities.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EmailBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b6cd3d23-1cc5-435d-a1d1-6846a3c1d96d" ParentLink="Module_ServiceDeclaration" LowerBound="43.1" HigherBound="110.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessZ3ORDERS" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="d2745982-d0f2-4b4c-bbdf-39b773a35928" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iAlertDelay" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="069ee413-c726-47a5-9d6c-c71c2de2102b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iAlertLoopCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2060dff6-2581-4e9e-b8e3-1855dbf0ae2d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iAlertLoopLimit" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="934f3f49-a1ab-4a68-a5cc-188ef126807c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgbody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="47386c29-3674-4aee-af01-3863fd609a54" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sAlertBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e8f4fdfe-893c-4096-9a3d-177157bbbcd2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sApplicationName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="cadb6eba-efdd-4c12-85f9-423e70d7e6d5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sBiztalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b54a6f30-204d-4559-9224-481b33c71b7c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sContextID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="64b4b929-f978-469b-b393-d46b282908f5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sCustomerCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="644f25c5-cb77-487a-9fb1-c0c5fc70a07f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sOutputFileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e27e8549-3902-4183-b38a-af63ce8574e4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sStatusString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="98930efe-a818-479c-a7a1-c4878b12dcb3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sTemp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="08fea326-18cd-4ce3-8966-1e757c9a8374" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.SAPAlertContext" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AlertMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="870540e3-98b8-4108-8951-fbffd980dd96" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Z3Orders.Orchestrations.EMailZ2OrderType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMail" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d5cf8a2a-13e2-4c77-b1d0-5ba22d80ffdb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InORDERS" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="363beaca-59e9-42d3-b305-4550d47df976" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutORDERS" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="6c76300a-78c9-4c7b-9596-51f7946ddeab" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="79e5b601-ce0f-4af0-b995-fb5a23317ea9" ParentLink="ServiceBody_Statement" LowerBound="68.1" HigherBound="79.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveZ3ORDERS05_Port" />
+                    <om:Property Name="MessageName" Value="InORDERS" />
+                    <om:Property Name="OperationName" Value="ReceiveZ3ORDERS05_PortOp" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="346b55be-5e59-4ebe-b25b-fbb2f31dbde4" ParentLink="ServiceBody_Statement" LowerBound="79.1" HigherBound="98.1">
+                    <om:Property Name="Expression" Value="//DELAY and ALERT PARAMETERS&#xD;&#xA;iAlertDelay = System.Int32.Parse(Visy.Middleware.Components.Utilities.AppSettingsReader.retrieveValue(&quot;RSPAlertTimeout&quot;) );&#xD;&#xA;iAlertLoopCount = 1;&#xD;&#xA;iAlertLoopLimit = 3;&#xD;&#xA;&#xD;&#xA;//FILE NAME PARAMETERS&#xD;&#xA;sTemp = InORDERS(FILE.ReceivedFileName);&#xD;&#xA;sTemp = sTemp.Substring(sTemp.IndexOf(&quot;.&quot;)+1); &#xD;&#xA;sTemp = sTemp.Substring(sTemp.IndexOf(&quot;.&quot;)+1); //remove ORDER. from start&#xD;&#xA;sApplicationName = sTemp.Substring(0,sTemp.IndexOf(&quot;.&quot;));&#xD;&#xA;&#xD;&#xA;//BiztalkID and Parts from Message&#xD;&#xA;sBiztalkID = InORDERS.EDI_DC40.ARCKEY;&#xD;&#xA;sContextID = Visy.Middleware.Components.Utilities.ContextManager.GetContextID(sBiztalkID);&#xD;&#xA;sCustomerCode = InORDERS.EDI_DC40.RCVPRN + &quot;-&quot; + InORDERS.EDI_DC40.SNDPRN;&#xD;&#xA;&#xD;&#xA;//SET OUTPUT FILENAME&#xD;&#xA;sOutputFileName = sApplicationName + &quot;.&quot; + sCustomerCode + &quot;.&quot; + sBiztalkID + &quot;.xml&quot;;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Initialize" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="681c13ce-5517-4c5a-a5f1-eee131985eeb" ParentLink="ServiceBody_Statement" LowerBound="98.1" HigherBound="106.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct ORDERS" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="58d13f84-33a7-4406-9674-606f322335dd" ParentLink="ComplexStatement_Statement" LowerBound="101.1" HigherBound="105.1">
+                        <om:Property Name="Expression" Value="OutORDERS = InORDERS;&#xD;&#xA;OutORDERS(*) = InORDERS(*);&#xD;&#xA;OutORDERS(FILE.ReceivedFileName) = sOutputFileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="080934ab-584f-4e28-9534-1c93f97777a7" ParentLink="Construct_MessageRef" LowerBound="99.23" HigherBound="99.32">
+                        <om:Property Name="Ref" Value="OutORDERS" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="ff687144-069a-46b2-8434-b176c24cc8c3" ParentLink="ServiceBody_Statement" LowerBound="106.1" HigherBound="108.1">
+                    <om:Property Name="PortName" Value="SendSAPZ3ORDERS_Port" />
+                    <om:Property Name="MessageName" Value="OutORDERS" />
+                    <om:Property Name="OperationName" Value="SendSAPZ3ORDERS_PortOp" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ORDER" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="42a37785-48ec-46d9-a7d3-724b8b938bf8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="48.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Z3Orders.Orchestrations.ReceiveZ3ORDERS05_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveZ3ORDERS05_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e725768d-1560-482f-8ff1-d51f58bcee4d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="46.1" HigherBound="47.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5fb780ca-e68b-44bf-9835-f900cafc889a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="48.1" HigherBound="50.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Z3Orders.Orchestrations.SendSAPZ3ORDERS_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendSAPZ3ORDERS_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="12b3dd2d-8e42-4f60-8839-ce45e6ff4b7e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="48.1" HigherBound="49.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Common.Z3Orders.Orchestrations
+{
+    internal messagetype EMailZ2OrderType
+    {
+        body Visy.Middleware.Components.Utilities.RawString EmailBody;
+    };
+    public porttype ReceiveZ3ORDERS05_PortType
+    {
+        oneway ReceiveZ3ORDERS05_PortOp
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05
+        };
+    };
+    internal porttype Send_Z3Orders_AlertOrders_PortType
+    {
+        oneway Send_Z3Orders_AlertOrders_PortOP
+        {
+            Visy.Middleware.Common.Schemas.SAP.SAPAlertContext
+        };
+    };
+    internal porttype ArchiveZ3ORDERS_PortType
+    {
+        oneway ArchiveZ3ORDERS_PortOp
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05
+        };
+    };
+    internal porttype SendSAPZ3ORDERS_PortType
+    {
+        oneway SendSAPZ3ORDERS_PortOp
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05
+        };
+    };
+    internal porttype Send_Z3Orders_AlertMessage_PortType
+    {
+        oneway Send_Z3Orders_AlertMessage_PortOp
+        {
+            Visy.Middleware.Common.Schemas.SAP.SAPAlertContext
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessZ3ORDERS
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveZ3ORDERS05_PortType ReceiveZ3ORDERS05_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendSAPZ3ORDERS_PortType SendSAPZ3ORDERS_Port;
+        message Visy.Middleware.Common.Schemas.SAP.SAPAlertContext AlertMessage;
+        message EMailZ2OrderType EMail;
+        message Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05 InORDERS;
+        message Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05 OutORDERS;
+        System.Int32 iAlertDelay;
+        System.Int32 iAlertLoopCount;
+        System.Int32 iAlertLoopLimit;
+        System.Text.StringBuilder msgbody;
+        System.String sAlertBody;
+        System.String sApplicationName;
+        System.String sBiztalkID;
+        System.String sContextID;
+        System.String sCustomerCode;
+        System.String sOutputFileName;
+        System.String sStatusString;
+        System.String sTemp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("79e5b601-ce0f-4af0-b995-fb5a23317ea9")]
+            activate receive (ReceiveZ3ORDERS05_Port.ReceiveZ3ORDERS05_PortOp, InORDERS);
+            msgbody = new System.Text.StringBuilder();
+            sAlertBody = "";
+            sApplicationName = "";
+            sBiztalkID = "";
+            sContextID = "";
+            sCustomerCode = "";
+            sOutputFileName = "";
+            sStatusString = "";
+            sTemp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("346b55be-5e59-4ebe-b25b-fbb2f31dbde4")]
+            //DELAY and ALERT PARAMETERS
+            iAlertDelay = System.Int32.Parse(Visy.Middleware.Components.Utilities.AppSettingsReader.retrieveValue("RSPAlertTimeout") );
+            iAlertLoopCount = 1;
+            iAlertLoopLimit = 3;
+            
+            //FILE NAME PARAMETERS
+            sTemp = InORDERS(FILE.ReceivedFileName);
+            sTemp = sTemp.Substring(sTemp.IndexOf(".")+1); 
+            sTemp = sTemp.Substring(sTemp.IndexOf(".")+1); //remove ORDER. from start
+            sApplicationName = sTemp.Substring(0,sTemp.IndexOf("."));
+            
+            //BiztalkID and Parts from Message
+            sBiztalkID = InORDERS.EDI_DC40.ARCKEY;
+            sContextID = Visy.Middleware.Components.Utilities.ContextManager.GetContextID(sBiztalkID);
+            sCustomerCode = InORDERS.EDI_DC40.RCVPRN + "-" + InORDERS.EDI_DC40.SNDPRN;
+            
+            //SET OUTPUT FILENAME
+            sOutputFileName = sApplicationName + "." + sCustomerCode + "." + sBiztalkID + ".xml";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("681c13ce-5517-4c5a-a5f1-eee131985eeb")]
+            construct OutORDERS
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("58d13f84-33a7-4406-9674-606f322335dd")]
+                OutORDERS = InORDERS;
+                OutORDERS(*) = InORDERS(*);
+                OutORDERS(FILE.ReceivedFileName) = sOutputFileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ff687144-069a-46b2-8434-b176c24cc8c3")]
+            send (SendSAPZ3ORDERS_Port.SendSAPZ3ORDERS_PortOp, OutORDERS);
+        }
+    }
+}
+

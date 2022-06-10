@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="urn:sap-com:document:sap:rfc:functions" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Z_INF_VIPA_PROSPECTCUST_CREATE">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="COMPANY" type="tns:ZVIPA_IB_PROSPECT_CUST_COY" />
+        <xs:element name="GENERAL" type="tns:ZVIPA_IB_PROSPECT_CUST_GENERAL" />
+        <xs:element name="MESSAGES">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZVIPA_IB_PROSPECT_CUST_MESSAGE" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SALES" type="tns:ZVIPA_IB_PROSPECT_CUST_SALES" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Z_INF_VIPA_PROSPECTCUST_CREATE.Response">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="CUSTOMER">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="MESSAGES">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZVIPA_IB_PROSPECT_CUST_MESSAGE" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ZVIPA_IB_PROSPECT_CUST_COY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPANY_CODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZVIPA_IB_PROSPECT_CUST_GENERAL">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT_GROUP">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="NAME">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="STREET">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="CITY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="35" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="POSTCODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="STATE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="COUNTRY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="TELEPHONE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="16" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="FAX">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="31" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="INDUSTRY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZVIPA_IB_PROSPECT_CUST_MESSAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TYPE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="MESSAGE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="220" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZVIPA_IB_PROSPECT_CUST_SALES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DIST_CHANNEL">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="LGX_NUMBER">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="SALES_REP_CODE">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

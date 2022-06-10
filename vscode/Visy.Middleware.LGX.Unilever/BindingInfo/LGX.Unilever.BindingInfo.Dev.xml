@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="11" TotalEndpoints="11">
+  <Timestamp>2017-10-12T08:55:49.4287989+00:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:LGX.Unilever]" Version="" Culture="" PublicKeyToken="" FullName="[Application:LGX.Unilever], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Visy.Middleware.LGX.Unilever.Schemas.Schema2" RootName="typeOnlySchema" AssemblyQualifiedName="Visy.Middleware.LGX.Unilever.Schemas.Schema2,Visy.Middleware.LGX.Unilever.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.LGX.Unilever.Schemas.Schema1" RootName="typeOnlySchema" AssemblyQualifiedName="Visy.Middleware.LGX.Unilever.Schemas.Schema1,Visy.Middleware.LGX.Unilever.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.LGX.Unilever.Schemas.MainSchema" RootName="DespatchedDeliveryNotification" AssemblyQualifiedName="Visy.Middleware.LGX.Unilever.Schemas.MainSchema,Visy.Middleware.LGX.Unilever.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification" RootName="ProductActivityNotification" AssemblyQualifiedName="Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification,Visy.Middleware.LGX.Unilever.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Unilever.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Unilever.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Unilever.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Unilever.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Unilever.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Unilever.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Unilever.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.LGX.Unilever.Orchestrations.ProcessASN" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveASN_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Unilever.Receive.ASNPort" />
+            </Port>
+            <Port Name="Send_ASN_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Unilever.Send.ASN.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="ProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Unilever.Orchestrations.ProcessPAN" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="Receive_Unilever_PAN_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Unilever.Receive.PANPort" />
+            </Port>
+            <Port Name="Send_LGX_DELFOR_Port" Modifier="1" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef Name="LGX.Unilever.SPGroup.DELFOR" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Send_LGX_INVRPT_Port" Modifier="1" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef Name="LGX.Unilever.SPGroup.INVRPT" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="ProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Unilever.Orchestrations.XML2LGX" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveR11PO_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Unilever.Receive.R11.AttachmentPort" />
+            </Port>
+            <Port Name="SendR11LGX_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Unilever.Send.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="ProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Unilever.Orchestrations.POToLGX" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveR36PO_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Unilever.Receive.R36.AttachmentPort" />
+            </Port>
+            <Port Name="SendR36PO_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Unilever.Send.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="ProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Unilever.Orchestrations.XLS2LGX" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveS49PO_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Unilever.Receive.S49.AttachmentPort" />
+            </Port>
+            <Port Name="SendS49PO_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Unilever.Send.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="ProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="LGX.Unilever.Send.PAN.DELFOR.FTP" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.SendDELFOR_FF" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.SendDELFOR_FF, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>ftp://sybuatoltp:21//interfaces/biztalk/inbound/bmsvbdmastr.%SourceFileName%</Address>
+        <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://sybuatoltp:21//interfaces/biztalk/inbound/bmsvbdmastr.%SourceFileName%&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;sybuatoltp&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;sapintf&amp;lt;/userName&amp;gt;&amp;lt;ftpServerType&amp;gt;Detect&amp;lt;/ftpServerType&amp;gt;&amp;lt;targetFolder&amp;gt;/interfaces/biztalk/inbound&amp;lt;/targetFolder&amp;gt;&amp;lt;targetFileName&amp;gt;bmsvbdmastr.%SourceFileName%&amp;lt;/targetFileName&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;allocateStorage&amp;gt;False&amp;lt;/allocateStorage&amp;gt;&amp;lt;appendIfExists&amp;gt;False&amp;lt;/appendIfExists&amp;gt;&amp;lt;connectionLimit&amp;gt;0&amp;lt;/connectionLimit&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="FTPHost" HostTrusted="true">
+          <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Unilever.Send.PAN.INVRPT.FTP" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.SendINVRPT_FF" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.SendINVRPT_FF, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>ftp://sybuatoltp:21//interfaces/biztalk/inbound/bstvbdmastr.%SourceFileName%</Address>
+        <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://sybuatoltp:21//interfaces/biztalk/inbound/bstvbdmastr.%SourceFileName%&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;sybuatoltp&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;sapintf&amp;lt;/userName&amp;gt;&amp;lt;ftpServerType&amp;gt;Detect&amp;lt;/ftpServerType&amp;gt;&amp;lt;targetFolder&amp;gt;/interfaces/biztalk/inbound&amp;lt;/targetFolder&amp;gt;&amp;lt;targetFileName&amp;gt;bstvbdmastr.%SourceFileName%&amp;lt;/targetFileName&amp;gt;&amp;lt;representationType&amp;gt;binary&amp;lt;/representationType&amp;gt;&amp;lt;allocateStorage&amp;gt;False&amp;lt;/allocateStorage&amp;gt;&amp;lt;appendIfExists&amp;gt;False&amp;lt;/appendIfExists&amp;gt;&amp;lt;connectionLimit&amp;gt;0&amp;lt;/connectionLimit&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="FTPHost" HostTrusted="true">
+          <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Unilever.Send.Order.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Common\Inbound\ORDER.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDER.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Unilever.Send.ASN.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\inbound\from_as2\Unilever\Outbound\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Unilever.Send.PAN.DELFOR.Archive" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.SendDELFOR_FF" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.SendDELFOR_FF, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Unilever\Archive\DELFOR.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DELFOR.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-12T00:00:00</FromTime>
+        <ToTime>2017-10-12T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-12T00:00:00</FromTime>
+        <ToTime>2017-10-12T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Unilever.Send.PAN.INVRTP.Archive" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.SendINVRPT_FF" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.SendINVRPT_FF, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Unilever\Archive\INVRPT.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;INVRPT.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-12T00:00:00</FromTime>
+        <ToTime>2017-10-12T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-10-12T00:00:00</FromTime>
+        <ToTime>2017-10-12T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection>
+    <DistributionList Name="LGX.Unilever.SPGroup.INVRPT">
+      <SendPorts>
+        <SendPortRef Name="LGX.Unilever.Send.PAN.INVRPT.FTP" />
+        <SendPortRef Name="LGX.Unilever.Send.PAN.INVRTP.Archive" />
+      </SendPorts>
+      <Filter />
+      <ApplicationName>LGX.Unilever</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+    <DistributionList Name="LGX.Unilever.SPGroup.DELFOR">
+      <SendPorts>
+        <SendPortRef Name="LGX.Unilever.Send.PAN.DELFOR.Archive" />
+        <SendPortRef Name="LGX.Unilever.Send.PAN.DELFOR.FTP" />
+      </SendPorts>
+      <Filter />
+      <ApplicationName>LGX.Unilever</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
+  <ReceivePortCollection>
+    <ReceivePort Name="LGX.Unilever.Receive.S49.AttachmentPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Unilever.Receive.S49.Attachment.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Poller.Mail\Outbound\nsw_s49~*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-13T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;nsw_s49~*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveS49PO" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveS49PO, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost32" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Unilever.Receive.R11.AttachmentPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Unilever.Receive.R11.Attachment.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Poller.Mail\Outbound\nsw_r11~*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-13T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;nsw_r11~*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveR11PO" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveR11PO, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost32" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Unilever.Receive.R36.AttachmentPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Unilever.Receive.R36.Attachment.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Poller.Mail\Outbound\vic_r36~*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-13T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;vic_r36~*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveR36PO" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveR36PO, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost32" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Unilever.Receive.ASNPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Unilever.Receive.ASN.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Unilever\Inbound\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-13T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveDESADV" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.ReceiveDESADV, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Unilever.Receive.PANPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Unilever.Receive.PAN.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\inbound\from_as2\Unilever\Inbound\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-13T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Unilever.Pipelines.ReceivePAN" FullyQualifiedName="Visy.Middleware.LGX.Unilever.Pipelines.ReceivePAN, Visy.Middleware.LGX.Unilever.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Unilever</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

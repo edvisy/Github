@@ -1,0 +1,228 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="232d87c1-c740-4d32-be06-72dce22a415f" LowerBound="1.1" HigherBound="53.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="38007452-6d9e-454e-922f-09f7308fc01b" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="52.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessDESADV" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="6f604e19-6179-472c-8e7d-6a4c047362d3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="74dab651-fc07-4e03-b205-2c162d0d75e9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="temp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ddc578b9-4b8f-46a0-ab93-2db5c8766662" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Schemas.GoodsReceipt" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1ad4346d-a328-42bd-91ff-abe46aa51b91" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="2ac5fc92-e466-4135-a56a-4c91ad1d01a3" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="69cbbf1e-00ee-4c27-9153-fb9ed3700152" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveGoodsReceipt_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="ReceiveGoodsReceipt_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_GoodsReceipt" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="81d16693-be19-4120-9ff5-08d7cf3e75ef" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="48.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct ASN" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="81821403-af1d-4bed-8633-eb97301bcc34" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="40.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.NipponSteel.Maps.GoodsReceipt_2_DESADV" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform ASN" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="da45725a-cbbd-4c3a-8dc3-1951a55b91b9" ParentLink="Transform_InputMessagePartRef" LowerBound="39.100" HigherBound="39.107">
+                            <om:Property Name="MessageRef" Value="Inbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="bc4e9d1e-906c-4a15-af9d-b83db5276c8c" ParentLink="Transform_OutputMessagePartRef" LowerBound="39.28" HigherBound="39.36">
+                            <om:Property Name="MessageRef" Value="Outbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="567228a6-9df1-4d7f-9c0d-0ba16614f16d" ParentLink="ComplexStatement_Statement" LowerBound="40.1" HigherBound="47.1">
+                        <om:Property Name="Expression" Value="temp = Inbound(BTS.MessageID);&#xD;&#xA;temp = temp.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;temp = temp.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;Outbound.EDI_DC40.ARCKEY = temp + &quot;~1~1&quot;;&#xD;&#xA;FileName = &quot;NIPPONSTEEL.114312.&quot; + temp + &quot;~1~1.xml&quot;;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = FileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Assigning FileName" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="a049f588-f6d0-4117-97f4-54ed001744f6" ParentLink="Construct_MessageRef" LowerBound="36.23" HigherBound="36.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="46612df8-94d9-48d6-a804-d8dfa8c1a365" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="50.1">
+                    <om:Property Name="PortName" Value="Send_ASN_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="Send_ASN_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_ASN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ab203c8c-3e65-4837-8a13-1415eb92aeed" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations.ReceiveGoodsReceipt_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveGoodsReceipt_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="70cb63e1-4798-4793-be38-04133579ad13" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="49e3b91c-dae7-49d2-91ff-6944f6908d6e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations.Send_ASN_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_ASN_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="8e60bee4-4072-4024-abc7-f1734f5a41ec" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6cb904a9-a7da-4daf-bd83-816fe2eea783" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveGoodsReceipt_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7e252437-88ba-4844-8ae8-60ccf0b572d2" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveGoodsReceipt_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="355788e5-6891-46e8-934a-dfb42dad88cf" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.NipponSteel.Schemas.GoodsReceipt" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="5b761d4e-aaad-4f36-ab1b-a75aa6a32d4b" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_ASN_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="32291223-ac63-46d1-b878-c72c291a84b9" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_ASN_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="ac58c828-3f5a-48fe-baee-73b79d8d89fb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.NipponSteel.Orchestrations
+{
+    internal porttype ReceiveGoodsReceipt_PortType
+    {
+        oneway ReceiveGoodsReceipt_Operation
+        {
+            Visy.Middleware.SAP.NipponSteel.Schemas.GoodsReceipt
+        };
+    };
+    internal porttype Send_ASN_PortType
+    {
+        oneway Send_ASN_Operation
+        {
+            Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessDESADV
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveGoodsReceipt_PortType ReceiveGoodsReceipt_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_ASN_PortType Send_ASN_Port;
+        message Visy.Middleware.SAP.NipponSteel.Schemas.GoodsReceipt Inbound;
+        message Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01 Outbound;
+        System.String FileName;
+        System.String temp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("69cbbf1e-00ee-4c27-9153-fb9ed3700152")]
+            activate receive (ReceiveGoodsReceipt_Port.ReceiveGoodsReceipt_Operation, Inbound);
+            FileName = "";
+            temp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("81d16693-be19-4120-9ff5-08d7cf3e75ef")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("81821403-af1d-4bed-8633-eb97301bcc34")]
+                transform (Outbound) = Visy.Middleware.SAP.NipponSteel.Maps.GoodsReceipt_2_DESADV (Inbound);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("567228a6-9df1-4d7f-9c0d-0ba16614f16d")]
+                temp = Inbound(BTS.MessageID);
+                temp = temp.Replace("{","");
+                temp = temp.Replace("}","");
+                Outbound.EDI_DC40.ARCKEY = temp + "~1~1";
+                FileName = "NIPPONSTEEL.114312." + temp + "~1~1.xml";
+                Outbound(FILE.ReceivedFileName) = FileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("46612df8-94d9-48d6-a804-d8dfa8c1a365")]
+            send (Send_ASN_Port.Send_ASN_Operation, Outbound);
+        }
+    }
+}
+

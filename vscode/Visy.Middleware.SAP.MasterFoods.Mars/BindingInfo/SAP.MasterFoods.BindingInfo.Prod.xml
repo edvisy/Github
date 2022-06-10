@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="11" TotalEndpoints="11">
+  <Timestamp>2018-04-13T18:50:33.3734131+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:SAP.MasterFoods.Mars]" Version="" Culture="" PublicKeyToken="" FullName="[Application:SAP.MasterFoods.Mars], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.MFORDER" RootName="ORDER" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.MFORDER,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001" RootName="PEXR2001" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.ZORDERS5" RootName="ZORDERS05" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.ZORDERS5,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.DELFOR" RootName="ZIN_SUPPLIER_CONNECTIVITY" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.DELFOR,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.DELVRY03" RootName="DELVRY03" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.DELVRY03,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.ExceptionRPT_VB" RootName="ExceptionRPT" AssemblyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.ExceptionRPT_VB,Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.MasterFoods.Mars.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.MasterFoods.Mars.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.MasterFoods.Mars.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.MasterFoods.Mars.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.FORECASTAgent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveDELFOR_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SAP.MasterFoods.Mars.Receive.ForeCastPort" />
+            </Port>
+            <Port Name="SendFORECAST_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.ForeCast.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.PEXR2001Process" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="RcvPEXR2001Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SAP.MasterFoods.Mars.Receive.PEXR2001Port" />
+            </Port>
+            <Port Name="SndPEXR2001Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.Outbound.PEXR2001.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.Z1DESADVProcess" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveDESADV_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SAP.MasterFoods.Mars.Receive.Z1DesAdvPort" />
+            </Port>
+            <Port Name="Send2MASTERFOODS_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.Outbound.Z1DesAdv.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="ArchiveDESADV_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.Z1DesAdv.XML.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="ArchiveDAT_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.Z1DesAdv.IDOC.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.Z2ORERS05Agent" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveFromInbound" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SAP.MasterFoods.Mars.Receive.OrdersPort" />
+            </Port>
+            <Port Name="SendToOutbound_SAP" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.SAP.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendToOutbound_LGX" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.MasterFoods.Mars.Send.LGX.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.ForeCast.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.Common\Inbound\FORECAST.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;FORECAST.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Z1DesAdv.IDOC.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\SAP.MasterFoods\Archive\DELVRY03.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DELVRY03.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Staging.DelFor.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.MasterFoods\Inbound\DELFOR.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DELFOR.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Staging.Orders.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.MasterFoods\Inbound\ZORDERS05.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ZORDERS05.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.MasterFoods.Mars.Receive.CnetPort" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="ZORDERS05" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.DelFor.SMTP" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>SAP_SD_SUPPORT@visy.com.au</Address>
+        <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;Subject vt="8"&gt;BT2016: MASTERFOODS: FORECAST received&lt;/Subject&gt;&lt;SMTPHost vt="8"&gt;smtp.visyap.pratt.com&lt;/SMTPHost&gt;&lt;CC vt="8"&gt;biztalk_team_v@visy.com.au&lt;/CC&gt;&lt;DeliveryReceipt vt="11"&gt;0&lt;/DeliveryReceipt&gt;&lt;EmailBodyFileCharset vt="8"&gt;utf-8&lt;/EmailBodyFileCharset&gt;&lt;EmailBodyTextCharset vt="8"&gt;utf-8&lt;/EmailBodyTextCharset&gt;&lt;From vt="8"&gt;bt2016@visy.com.au&lt;/From&gt;&lt;MessagePartsAttachments vt="19"&gt;0&lt;/MessagePartsAttachments&gt;&lt;ReadReceipt vt="11"&gt;0&lt;/ReadReceipt&gt;&lt;To vt="8"&gt;SAP_SD_SUPPORT@visy.com.au&lt;/To&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SMTPHost" HostTrusted="true">
+          <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Outbound.PEXR2001.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.MasterFoods\Outbound\PEXR2001.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;PEXR2001.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.LGX.Order.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Common\Inbound\ORDER.%SourceFileName%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDER.%SourceFileName%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.SAP.Order.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.WriteLGXPOFlat" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.WriteLGXPOFlat, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.Common\transfer\O.ordvbdmastr.%SourceFileName%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;O.ordvbdmastr.%SourceFileName%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Z1DesAdv.XML.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\SAP.MasterFoods\Archive\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.MasterFoods.Mars.Send.Outbound.Z1DesAdv.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>ftp://209.95.224.133:21//SZQ7NFTN/DELVRY03.%SourceFileName%</Address>
+        <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://209.95.224.133:21//SZQ7NFTN/DELVRY03.%SourceFileName%&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;209.95.224.133&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;SZQ7NFTI&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;ftpServerType&amp;gt;Detect&amp;lt;/ftpServerType&amp;gt;&amp;lt;targetFolder&amp;gt;/SZQ7NFTN&amp;lt;/targetFolder&amp;gt;&amp;lt;targetFileName&amp;gt;DELVRY03.%SourceFileName%&amp;lt;/targetFileName&amp;gt;&amp;lt;representationType&amp;gt;ASCII&amp;lt;/representationType&amp;gt;&amp;lt;beforePut&amp;gt;SITE ASCII_RECSEP=NONE&amp;lt;/beforePut&amp;gt;&amp;lt;allocateStorage&amp;gt;False&amp;lt;/allocateStorage&amp;gt;&amp;lt;appendIfExists&amp;gt;False&amp;lt;/appendIfExists&amp;gt;&amp;lt;connectionLimit&amp;gt;0&amp;lt;/connectionLimit&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPSendHost32" HostTrusted="true">
+          <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection>
+    <DistributionList Name="SAP.MasterFoods.DelFor.SPGroup">
+      <SendPorts>
+        <SendPortRef Name="SAP.MasterFoods.Mars.DelFor.SMTP" />
+        <SendPortRef Name="SAP.MasterFoods.Mars.Send.Staging.DelFor.FILE" />
+      </SendPorts>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="SAP.MasterFoods.Mars.Receive.CnetPort" /&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="ZIN_SUPPLIER_CONNECTIVITY" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+      <Description xsi:nil="true" />
+    </DistributionList>
+  </DistributionListCollection>
+  <ReceivePortCollection>
+    <ReceivePort Name="SAP.MasterFoods.Mars.Receive.ForeCastPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.MasterFoods.Mars.Receive.ForeCast.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.MasterFoods\Inbound\DELFOR*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-24T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-25T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;DELFOR*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveDELFOR" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveDELFOR, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-24T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="SAP.MasterFoods.Mars.Receive.PEXR2001Port" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.MasterFoods.Mars.Receive.PEXR2001.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.MasterFoods\Inbound\PEXR2001.*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-24T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-25T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;PEXR2001.*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceivePEXR2001" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceivePEXR2001, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-24T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="SAP.MasterFoods.Mars.Receive.Z1DesAdvPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.MasterFoods.Mars.Receive.Z1DesAdv.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.Common.Listener\Outbound\Z1DESADV*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-24T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-25T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;Z1DESADV*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveDESADV" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveDESADV, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-24T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="SAP.MasterFoods.Mars.Receive.OrdersPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.MasterFoods.Mars.Receive.Orders.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\SAP.MasterFoods\Inbound\ZORDERS05.*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-24T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-25T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;ZORDERS05.*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveZORDERS05" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveZORDERS05, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-24T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="SAP.MasterFoods.Mars.Receive.CnetPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.MasterFoods.Mars.Receive.Cnet.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\inbound\from_commerceNet\in_mars\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-24T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-25T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveALL" FullyQualifiedName="Visy.Middleware.SAP.MasterFoods.Mars.Pipelines.ReceiveALL, Visy.Middleware.SAP.MasterFoods.Mars.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="SAPReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-24T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.MasterFoods.Mars</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

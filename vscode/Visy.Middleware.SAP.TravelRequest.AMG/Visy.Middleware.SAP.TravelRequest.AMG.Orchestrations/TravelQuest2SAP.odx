@@ -1,0 +1,296 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="0e430c79-466d-41bb-9eef-5d41627a44cc" LowerBound="1.1" HigherBound="68.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.TravelRequest.AMG.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="6e75cc61-8603-4370-bfb0-75fe6dcf9c89" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePO_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="8f3711e0-13e9-4e5b-b868-bf34eb68bc73" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="632ed920-f1c6-4880-8949-d6de20c996f4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.70">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.TRQ_Invoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d6a1c96c-e940-4413-a843-5c279c9930f4" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send2SAP_PortName" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="934e4f1d-bb98-41a5-b718-57d5c561ae72" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="3e8b676a-78cd-4075-b8c8-1306c1551027" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.70">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4d7db2cb-f1da-43a9-af19-6c72743fcbb8" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="67.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="TravelQuest2SAP" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="bae964a2-4707-4a33-aaa2-5efb3b67a745" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgIDAMG" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1a83916c-611d-4f17-9760-87bccd43c08e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3485a1e7-b19b-4758-a6ad-4d728db89eaf" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgIDVIP" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="aba62502-8014-4cb3-9a63-723b4d36296a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="isAMG" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4c10fe2c-28f3-4fbd-a4fd-d8407f83ca4e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.TRQ_Invoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PO_Instance" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="03c67fae-9b40-46ea-b0e2-a38996d4ab45" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAP_Instance" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4ce70871-f385-4dd0-8d39-4094661b66c6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="outputAMG" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="243f652b-5087-4038-abbf-8773ed20332e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="outputVIP" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="ec36867a-0497-4f0c-8a10-50f934c1fe7e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e16c8e3c-397b-441a-a5cc-173921fd060e" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="41.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceivePO_Port" />
+                    <om:Property Name="MessageName" Value="PO_Instance" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="d1f59532-3351-42f5-93b2-c72d5ff1a5ca" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="45.1">
+                    <om:Property Name="Expression" Value="xmlDoc = PO_Instance;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;DEBUG PACT INPUT MSG:&quot; + xmlDoc.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Trace" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="2079ba88-40cd-4b69-af00-b575de21eeca" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="51.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct_SAP_Instance" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="f37ee095-1740-4a45-9143-614e12af0789" ParentLink="ComplexStatement_Statement" LowerBound="48.1" HigherBound="50.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.TravelRequest.AMG.Maps.InvoiceMap" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="AMG2SAP" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="85e64a24-1817-45cc-bfcb-38145b77f874" ParentLink="Transform_InputMessagePartRef" LowerBound="49.99" HigherBound="49.110">
+                            <om:Property Name="MessageRef" Value="PO_Instance" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="35c4632b-6977-4e1f-8151-d021dac6be08" ParentLink="Transform_OutputMessagePartRef" LowerBound="49.28" HigherBound="49.40">
+                            <om:Property Name="MessageRef" Value="SAP_Instance" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="7867f901-de42-4d29-ad02-fc7d59bc01c2" ParentLink="Construct_MessageRef" LowerBound="46.23" HigherBound="46.35">
+                        <om:Property Name="Ref" Value="SAP_Instance" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="9ca199b9-d0e4-4715-a8c7-96081b69e301" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="55.1">
+                    <om:Property Name="Expression" Value="xmlDoc = SAP_Instance;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;DEBUG PACT OUTPUT MSG :&quot; + xmlDoc.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Trace" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="64ef2893-230c-4ce8-a487-4a6419291c08" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="63.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructAMG" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="817a041a-03cb-4430-b0b2-4480e7414de2" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="62.1">
+                        <om:Property Name="Expression" Value="sMsgIDAMG = PO_Instance(FILE.ReceivedFileName);&#xD;&#xA;outputAMG = SAP_Instance;&#xD;&#xA;outputAMG(FILE.ReceivedFileName) = &quot;TRAVELREQUEST.AMG.&quot; + sMsgIDAMG + &quot;.dat&quot;;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="SetOutputDetails" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="c8446beb-31fa-4563-847f-41684d320400" ParentLink="Construct_MessageRef" LowerBound="56.23" HigherBound="56.32">
+                        <om:Property Name="Ref" Value="outputAMG" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="4e1d6382-de3c-4465-ae04-5f57cf14386d" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
+                    <om:Property Name="PortName" Value="Send2SAP_Port" />
+                    <om:Property Name="MessageName" Value="outputAMG" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send2SAP_Folder" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ac91ab88-18da-462e-9add-fe58752cc177" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Orchestrations.ReceivePO_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePO_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="2bd52af0-54d5-4d6e-aff9-cbe686c11870" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0ab48052-b795-4f4e-b869-5b22fbb18a7a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="46" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.TravelRequest.AMG.Orchestrations.Send2SAP_PortName" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send2SAP_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d4c8d8f6-2eeb-407e-9f19-c90d86b61518" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.TravelRequest.AMG.Orchestrations
+{
+    internal porttype ReceivePO_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.SAP.TravelRequest.AMG.Schemas.TRQ_Invoice
+        };
+    };
+    internal porttype Send2SAP_PortName
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service TravelQuest2SAP
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceivePO_PortType ReceivePO_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send2SAP_PortName Send2SAP_Port;
+        message Visy.Middleware.SAP.TravelRequest.AMG.Schemas.TRQ_Invoice PO_Instance;
+        message Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice SAP_Instance;
+        message Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice outputAMG;
+        message Visy.Middleware.SAP.TravelRequest.AMG.Schemas.Out_Invoice outputVIP;
+        System.String sMsgIDAMG;
+        System.Xml.XmlDocument xmlDoc;
+        System.String sMsgIDVIP;
+        System.Boolean isAMG;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e16c8e3c-397b-441a-a5cc-173921fd060e")]
+            activate receive (ReceivePO_Port.Operation_1, PO_Instance);
+            sMsgIDAMG = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            sMsgIDVIP = "";
+            isAMG = true;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d1f59532-3351-42f5-93b2-c72d5ff1a5ca")]
+            xmlDoc = PO_Instance;
+            
+            System.Diagnostics.Trace.WriteLine("DEBUG PACT INPUT MSG:" + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2079ba88-40cd-4b69-af00-b575de21eeca")]
+            construct SAP_Instance
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f37ee095-1740-4a45-9143-614e12af0789")]
+                transform (SAP_Instance) = Visy.Middleware.SAP.TravelRequest.AMG.Maps.InvoiceMap (PO_Instance);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9ca199b9-d0e4-4715-a8c7-96081b69e301")]
+            xmlDoc = SAP_Instance;
+            
+            System.Diagnostics.Trace.WriteLine("DEBUG PACT OUTPUT MSG :" + xmlDoc.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("64ef2893-230c-4ce8-a487-4a6419291c08")]
+            construct outputAMG
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("817a041a-03cb-4430-b0b2-4480e7414de2")]
+                sMsgIDAMG = PO_Instance(FILE.ReceivedFileName);
+                outputAMG = SAP_Instance;
+                outputAMG(FILE.ReceivedFileName) = "TRAVELREQUEST.AMG." + sMsgIDAMG + ".dat";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4e1d6382-de3c-4465-ae04-5f57cf14386d")]
+            send (Send2SAP_Port.Operation_1, outputAMG);
+        }
+    }
+}
+

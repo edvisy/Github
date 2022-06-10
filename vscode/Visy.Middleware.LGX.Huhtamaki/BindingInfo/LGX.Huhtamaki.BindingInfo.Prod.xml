@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="14" TotalEndpoints="14">
+  <Timestamp>2018-04-13T18:35:00.6756583+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:LGX.Huhtamaki]" Version="" Culture="" PublicKeyToken="" FullName="[Application:LGX.Huhtamaki], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Visy.Middleware.LGX.Huhtamaki.Schemas.EFACT_D96A_DESADV2" RootName="EFACT_D96A_DESADV2" AssemblyQualifiedName="Visy.Middleware.LGX.Huhtamaki.Schemas.EFACT_D96A_DESADV2,Visy.Middleware.LGX.Huhtamaki.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Huhtamaki.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Huhtamaki.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Huhtamaki.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Huhtamaki.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Huhtamaki.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Huhtamaki.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.Huhtamaki.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.Huhtamaki.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.LGX.Huhtamaki.Orchestrations.ProcessASN" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveASN_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Huhtamaki.Receive.ASNPort" />
+            </Port>
+            <Port Name="ArchiveASNOriginal_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.DesAdvXml.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="ArchiveASNPort_EAN_9310096999999" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.DesAdv.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendASNPort_EAN_9310096999999" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.DesAdv.Outbound.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="ArchiveASN_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.DesAdv.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendASN_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.DesAdv.Outbound.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="LGXProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Huhtamaki.Orchestrations.ProcessORDRSP" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveORDRSP_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Huhtamaki.Receive.OrdRspPort" />
+            </Port>
+            <Port Name="ArchiveOriginal_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.OrdRspXml.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="ArchivePort_EAN_9310096999999" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.OrdRsp.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendEDIPort_EAN_9310096999999" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.OrdRsp.Outbound.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Archive_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.OrdRsp.Archive" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendEDI_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.OrdRsp.Outbound.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="LGXProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+        <Service Name="Visy.Middleware.LGX.Huhtamaki.Orchestrations.ProcessPO" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceivePO_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.Huhtamaki.Receive.OrderPort" />
+            </Port>
+            <Port Name="Send2LGX_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.Huhtamaki.Send.Order.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="LGXProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="LGX.Huhtamaki.Send.OrdRspXml.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\LGX.Huhtamaki\Archive\ORDRSP.HUHTAMAKI.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDRSP.HUHTAMAKI.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.DesAdv.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\LGX.Huhtamaki\Archive\DESADV.HUHTAMAKI.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DESADV.HUHTAMAKI.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.FTP" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>ftp://209.95.224.133:21//SZQ7NFTH/%SourceFileName%.xml</Address>
+        <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;ftp://209.95.224.133:21//SZQ7NFTH/%SourceFileName%.xml&amp;lt;/uri&amp;gt;&amp;lt;serverAddress&amp;gt;209.95.224.133&amp;lt;/serverAddress&amp;gt;&amp;lt;serverPort&amp;gt;21&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;SZQ7NFTI&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;******&amp;lt;/password&amp;gt;&amp;lt;ftpServerType&amp;gt;AIX&amp;lt;/ftpServerType&amp;gt;&amp;lt;targetFolder&amp;gt;/SZQ7NFTH&amp;lt;/targetFolder&amp;gt;&amp;lt;targetFileName&amp;gt;%SourceFileName%.xml&amp;lt;/targetFileName&amp;gt;&amp;lt;commandLogFilename&amp;gt;D:\interfaces\temp\FTPLogs\SZQ7NFTH_log_outbound.txt&amp;lt;/commandLogFilename&amp;gt;&amp;lt;representationType&amp;gt;ASCII&amp;lt;/representationType&amp;gt;&amp;lt;beforePut&amp;gt;SITE ASCII_RECSEP=NONE&amp;lt;/beforePut&amp;gt;&amp;lt;afterPut&amp;gt;SITE ASCII_RECSEP=CRLF&amp;lt;/afterPut&amp;gt;&amp;lt;allocateStorage&amp;gt;False&amp;lt;/allocateStorage&amp;gt;&amp;lt;appendIfExists&amp;gt;False&amp;lt;/appendIfExists&amp;gt;&amp;lt;connectionLimit&amp;gt;0&amp;lt;/connectionLimit&amp;gt;&amp;lt;passiveMode&amp;gt;False&amp;lt;/passiveMode&amp;gt;&amp;lt;firewallType&amp;gt;NoFirewall&amp;lt;/firewallType&amp;gt;&amp;lt;firewallPort&amp;gt;21&amp;lt;/firewallPort&amp;gt;&amp;lt;useSsl&amp;gt;False&amp;lt;/useSsl&amp;gt;&amp;lt;useDataProtection&amp;gt;True&amp;lt;/useDataProtection&amp;gt;&amp;lt;ftpsConnMode&amp;gt;Explicit&amp;lt;/ftpsConnMode&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXSendHost32" HostTrusted="true">
+          <TransportType Name="FTP" Capabilities="80907" ConfigurationClsid="3979ffed-0067-4cc6-9f5a-859a5db6e9bb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="LGX.Huhtamaki.Receive.OutboundPort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.Order.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Common\Inbound\ORDER.%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDER.%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.DesAdvXml.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\LGX.Huhtamaki\Archive\DESADV.HUHTAMAKI.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DESADV.HUHTAMAKI.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.OrdRsp.Archive" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>e:\LGX.Huhtamaki\Archive\ORDRSP.HUHTAMAKI.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDRSP.HUHTAMAKI.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.DesAdv.Outbound.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Huhtamaki\Outbound\DESADV.HUHTAMAKI.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;DESADV.HUHTAMAKI.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.Huhtamaki.Send.OrdRsp.Outbound.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Huhtamaki\Outbound\ORDRSP.HUHTAMAKI.%MessageID%.dat</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDRSP.HUHTAMAKI.%MessageID%.dat&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="LGX.Huhtamaki.Receive.OrderPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Huhtamaki.Receive.Order.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\inbound\from_commerceNet\in_huhtamaki\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveORDER" FullyQualifiedName="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveORDER, Visy.Middleware.LGX.Huhtamaki.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Visy.Middleware.Components.Pipelines.ContextArchiver"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler"&gt;&lt;Properties&gt;&lt;EdiDataValidation vt="11"&gt;0&lt;/EdiDataValidation&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Huhtamaki.Receive.OrdRspPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Huhtamaki.Receive.OrdRsp.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Common\Outbound\ordrsp.HUHTAMAKI*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;ordrsp.HUHTAMAKI*.xml&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveORDRSP" FullyQualifiedName="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveORDRSP, Visy.Middleware.LGX.Huhtamaki.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Huhtamaki.Receive.ASNPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Huhtamaki.Receive.ASN.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Huhtamaki\Inbound\bdavbdaulgx*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;bdavbdaulgx*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveASN" FullyQualifiedName="Visy.Middleware.LGX.Huhtamaki.Pipelines.ReceiveASN, Visy.Middleware.LGX.Huhtamaki.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.Huhtamaki.Receive.OutboundPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.Huhtamaki.Receive.Outbound.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Huhtamaki\Outbound\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-10-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-10-04T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-10-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.Huhtamaki</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

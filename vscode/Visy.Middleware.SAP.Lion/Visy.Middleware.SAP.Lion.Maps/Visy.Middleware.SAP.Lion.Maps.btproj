@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F83127D-5D24-4F70-AC45-B599953B3CF8}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.Lion.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.Lion.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.Orders, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.Orders.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.RFC_CUSMAT, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.RFC_CUSMAT.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.Z3Orders05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.Z3Orders05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.RuleEngineComponents.InterfaceLookup, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.RuleEngineComponents.InterfaceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.SAP.LionNathan.Delfor.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Visy.Middleware.SAP.LionNathan.Delfor.Components\v4.0_1.0.0.0__7e7bc6e5fd308d12\Visy.Middleware.SAP.LionNathan.Delfor.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.SAP.LionNathan.Plastics.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Visy.Middleware.SAP.LionNathan.Plastics\Visy.Middleware.SAP.LionNathan.Plastics.Components\bin\Debug\Visy.Middleware.SAP.LionNathan.Plastics.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Schemas.cXML.1.2.031, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Schemas.cXML.1.2.031.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="WeeklyZSASTransform.btm">
+      <TypeName>WeeklyZSASTransform</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Map_cXMLSingleJitSP_To_SAPZ3ORDERS05.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_cXMLSingleJitSP_To_SAPZ3ORDERS05</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_cXMLSingleJitSP_To_SAPZ3ORDERS05.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLSingleJitSP_To_SAPZ3ORDERS05_extxml.xml" />
+    <Content Include="WeeklyZSASTransform.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WeeklyZSASTransform_extxml.xml" />
+    <Map Include="Map_cXMLMultiLine_To_LionForecast.btm">
+      <TypeName>Map_cXMLMultiLine_To_LionForecast</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="LNDELFOR.xslt" />
+    <Content Include="Map_cXMLMultiLine_To_LionForecast.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLMultiLine_To_LionForecast_extxml.xml" />
+    <Map Include="Map_cXMLSingleJit_To_SAPZ3ORDERS05.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_cXMLSingleJit_To_SAPZ3ORDERS05</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_cXMLSingleJit_To_SAPZ3ORDERS05.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLSingleJit_To_SAPZ3ORDERS05_extxml.xml" />
+    <Map Include="Map_SAPZ3INVOIC01Inv_To_cXMLInvoice.btm">
+      <TypeName>Map_SAPZ3INVOIC01Inv_To_cXMLInvoice</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_SAPZ3INVOIC01Inv_To_cXMLInvoice.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo_extxml.xml" />
+    <Content Include="Map_SAPZ3INVOIC01Inv_To_cXMLInvoice_extxml.xml" />
+    <Map Include="Map_SAPZ2DESADV_To_cXMLFulfill.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_SAPZ2DESADV_To_cXMLFulfill</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_SAPZ2DESADV_To_cXMLFulfill.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_SAPZ3ORDERS05Resp_To_cXMLResponse.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_SAPZ2DESADV_To_cXMLFulfill.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_SAPZ3ORDERS05Resp_To_cXMLResponse_extxml.xml" />
+    <Map Include="Map_SAPZ3ORDERS05Resp_To_cXMLResponse.btm">
+      <TypeName>Map_SAPZ3ORDERS05Resp_To_cXMLResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Map_cXMLMultiLine_To_cXMLSingleLine.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_cXMLMultiLine_To_cXMLSingleLine</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_cXMLMultiLine_To_cXMLSingleLine.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLMultiLine_To_cXMLSingleLine_extxml.xml" />
+    <Map Include="Map_cXMLSingleLine_To_SAPZ3ORDERS05.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_cXMLSingleLine_To_SAPZ3ORDERS05</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Map Include="Map_cXMLSingleLine_To_RfcGetCusMat.btm">
+      <TypeName>Map_cXMLSingleLine_To_RfcGetCusMat</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Map_cXMLSingleLine_SAPRfcResp_To_cXMLSingleLineWERKS.btm">
+      <SubType>Task</SubType>
+      <TypeName>Map_cXMLSingleLine_SAPRfcResp_To_cXMLSingleLineWERKS</TypeName>
+      <Namespace>Visy.Middleware.SAP.Lion.Maps</Namespace>
+    </Map>
+    <Content Include="Map_cXMLSingleLine_SAPRfcResp_To_cXMLSingleLineWERKS.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLSingleLine_To_SAPZ3ORDERS05.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Map_cXMLSingleLine_To_SAPZ3ORDERS05_extxml.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.Lion.Schemas\Visy.Middleware.SAP.Lion.Schemas.btproj">
+      <Project>{fceea423-0041-40ce-ba79-8f6b47c381a4}</Project>
+      <Name>Visy.Middleware.SAP.Lion.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nsproc="urn:schemas-IBX:/docs/process.nsprocess" targetNamespace="urn:schemas-IBX:/docs/process.nsprocess">
+	<xs:import namespace="http://www.w3.org/2003/05/soap-envelope" schemaLocation="SOAP-ENV.xsd"/>
+	<xs:element name="process" type="nsproc:processType"/>
+	<xs:complexType name="processType">
+		<xs:sequence>
+			<xs:element ref="nsproc:correlationid" minOccurs="0">
+		<xs:annotation>
+			<xs:documentation>Not used for any business logic or mapping of documents within the IBX OnDemand platform. It´s not recommended to base any processing logic on the content of this optional tag. In case the payload document is of type orderresponse, changeorder, invoice etc. the correlationid is supposed to be the messageID of the underlying purchase order document.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+			<xs:element ref="nsproc:relatedDocid" minOccurs="0">
+		<xs:annotation>
+			<xs:documentation>Not used for any business logic or mapping of documents within the IBX OnDemand platform. It´s not recommended to base any processing logic on the content of this optional tag. In case the payload document is of type orderresponse, changeorder, invoice etc. the relatedDocid is supposed to hold the ordernumber of the underlying purchase order document.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="SOAP-ENV:mustUnderstand" use="optional" default="true">
+		<xs:annotation>
+			<xs:documentation>The SOAP mustUnderstand attribute indicates whether a header entry is mandatory or optional for the recipient to process. If mustUnderstand="1" or "true" then this indicates that the receiver processing the Header must recognize the element. If the receiver does not recognize the element it will fail when processing the Header.
+</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	</xs:complexType>
+	<xs:element name="correlationid" type="xs:string"/>
+	<xs:element name="relatedDocid" type="xs:string"/>
+</xs:schema>

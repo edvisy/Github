@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="2" TotalEndpoints="2">
+  <Timestamp>2018-04-16T11:23:28.266085+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:LGX.ProPac]" Version="" Culture="" PublicKeyToken="" FullName="[Application:LGX.ProPac], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Visy.Middleware.LGX.ProPac.Schemas.PROPAC_ORDERS" RootName="ORDER" AssemblyQualifiedName="Visy.Middleware.LGX.ProPac.Schemas.PROPAC_ORDERS,Visy.Middleware.LGX.ProPac.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.ProPac.Pipelines" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.ProPac.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.ProPac.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.ProPac.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.ProPac.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.ProPac.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.LGX.ProPac.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.LGX.ProPac.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.LGX.ProPac.Orchestrations.Transform_PROPACOrdrsp_To_Email" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="Receive_PROPAC_Ordrsp_Msg_From_LGX_Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="LGX.ProPac.Receive.OrdRspPort" />
+            </Port>
+            <Port Name="Send_EMailMsgFor_P3850_To_PROPAC_Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="LGX.ProPac.Send.SMTP" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="LGXProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="LGX.ProPac.Send.SMTP" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>MaryAnn.Turner@visy.com.au;qldpurchasing@pro-pac.com.au;vicpurchasing@pro-pac.com.au;monita.narayan@visy.com.au;ppsydpur@pro-pac.com.au;rhiannon.sayers@pro-pac.com.au;po.my@pro-pac.com.au;PPPURCHASINGNSW@ppgaust.com;</Address>
+        <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;Subject vt="8"&gt;PROD: BT2016 PROPAC order failed to proces in LGX system&lt;/Subject&gt;&lt;SMTPHost vt="8"&gt;smtp.visyap.pratt.com&lt;/SMTPHost&gt;&lt;CC vt="8"&gt;Jay.Wood@visy.com.au;courtney.dungey@pro-pac.com.au;aimee.hall@pro-pac.com.au;po.my@pro-pac.com.au;biztalk_team_v@visy.com.au;&lt;/CC&gt;&lt;DeliveryReceipt vt="11"&gt;0&lt;/DeliveryReceipt&gt;&lt;EmailBodyFileCharset vt="8"&gt;utf-8&lt;/EmailBodyFileCharset&gt;&lt;EmailBodyTextCharset vt="8"&gt;utf-8&lt;/EmailBodyTextCharset&gt;&lt;From vt="8"&gt;bt2016@visy.com.au&lt;/From&gt;&lt;MessagePartsAttachments vt="19"&gt;0&lt;/MessagePartsAttachments&gt;&lt;ReadReceipt vt="11"&gt;0&lt;/ReadReceipt&gt;&lt;To vt="8"&gt;MaryAnn.Turner@visy.com.au;qldpurchasing@pro-pac.com.au;vicpurchasing@pro-pac.com.au;monita.narayan@visy.com.au;ppsydpur@pro-pac.com.au;rhiannon.sayers@pro-pac.com.au;po.my@pro-pac.com.au;PPPURCHASINGNSW@ppgaust.com;&lt;/To&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SMTPHost" HostTrusted="true">
+          <TransportType Name="SMTP" Capabilities="2" ConfigurationClsid="8f36b311-b670-4cf6-aaec-04ebb80ed48d" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.ProPac</ApplicationName>
+    </SendPort>
+    <SendPort Name="LGX.ProPac.Send.Orders.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\LGX.Common\Inbound\ORDER.PROPAC.%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;ORDER.PROPAC.%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="LGXCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T16:00:00</FromTime>
+        <ToTime>2000-01-01T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="LGX.ProPac.Receive.AttachmentPort" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="Visy.Middleware.LGX.ProPac.Maps.PROPAC_ORDERS_CSV2LGX" AssemblyQualifiedName="Visy.Middleware.LGX.ProPac.Maps.PROPAC_ORDERS_CSV2LGX,Visy.Middleware.LGX.ProPac.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.ProPac</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="LGX.ProPac.Receive.AttachmentPort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.ProPac.Receive.Attachment.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces.\LGX.Poller.Mail\Outbound\ppg.orders*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-15T13:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-17T12:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;ppg.orders*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.ProPac.Pipelines.ReceivePROPACOrders" FullyQualifiedName="Visy.Middleware.LGX.ProPac.Pipelines.ReceivePROPACOrders, Visy.Middleware.LGX.ProPac.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.ProPac</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="LGX.ProPac.Receive.OrdRspPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="LGX.ProPac.Receive.OrdRsp.FILE">
+          <Description xsi:nil="true" />
+          <Address>d:\interfaces\LGX.Common\Outbound\ordrsprejected.PROPAC*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2017-11-15T13:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2017-11-17T12:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;ordrsprejected.PROPAC*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Visy.Middleware.LGX.ProPac.Pipelines.ReceivePROPAC_ORDRSP" FullyQualifiedName="Visy.Middleware.LGX.ProPac.Pipelines.ReceivePROPAC_ORDRSP, Visy.Middleware.LGX.ProPac.Pipelines, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="LGXCommonReceiveHost" HostTrusted="true">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-11-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>LGX.ProPac</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

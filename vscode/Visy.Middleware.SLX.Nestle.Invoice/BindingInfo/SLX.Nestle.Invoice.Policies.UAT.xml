@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="SLX.Nestle.Invoice.Policies">
+    <version major="1" minor="1" description="" modifiedby="VISY\bangged" date="2018-07-12T12:52:53.9265751+10:00" />
+    <configuration />
+    <bindings>
+      <class ref="VendorCodeLookup" class="VendorCodeLookup" instance="0" instances="16" selectivity="1">
+        <assembly>Visy.Middleware.SLX.Nestle.Invoice.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Visy.Middleware.SLX.Nestle.Invoice.Components\v4.0_1.0.0.0__7e7bc6e5fd308d12\Visy.Middleware.SLX.Nestle.Invoice.Components.dll-->
+        <namespace>Visy.Middleware.SLX.Nestle.Invoice.Components</namespace>
+      </class>
+    </bindings>
+    <rule name="VisyPAK (Freswater Place) 140928" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="PlantCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>2108</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>0000140928</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100925635</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Visy Packaging Pty Ltd" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="PlantCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>2106</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>0000015726</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100987362</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Visy Board Pty Ltd (Campbellfield)" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <constant>
+                <string>1</string>
+              </constant>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>1</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>140928</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100280399</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="VisyPET (NZ) Ltd invoice to Nestlé New Zealand Limited" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="PlantCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>2579</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>0000209844</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100925635</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="Visy Board Pty Ltd (Coolaroo)" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <constant>
+                <string>1</string>
+              </constant>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>1</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>44474</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100280399</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="VisyPAK (Freswater Place) 158226" priority="0" active="true">
+      <if>
+        <and>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="PlantCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>2108</string>
+              </constant>
+            </rhs>
+          </compare>
+          <compare operator="equal">
+            <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+            <lhs>
+              <function>
+                <classmember member="CustomerCode" sideeffects="true">
+                  <classref ref="VendorCodeLookup" />
+                </classmember>
+              </function>
+            </lhs>
+            <rhs>
+              <constant>
+                <string>0000158226</string>
+              </constant>
+            </rhs>
+          </compare>
+        </and>
+      </if>
+      <then>
+        <function>
+          <classmember member="VendorCode" sideeffects="true">
+            <classref ref="VendorCodeLookup" />
+            <argument>
+              <constant>
+                <string>100925635</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

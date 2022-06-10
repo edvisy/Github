@@ -1,0 +1,206 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="e665ddea-cf52-4d96-94c1-55c683673132" LowerBound="1.1" HigherBound="47.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="fa12d568-db42-4c7c-acf1-eb36f0137a80" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Receive_PO_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="b5edce34-27ed-4e0d-9e2f-d7b17d09a9a9" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_PO_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="92d488a8-34c6-41cf-8362-6f86f92e954f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.59">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SLX.ORDER_ROUTE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7f530ba7-d7d5-41e1-a22f-501ecb364586" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_PO_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5ac29a61-c5ec-4369-a960-3dc50f1f91c0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_PO_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="6fa54d11-9c5e-476a-847f-f12702366845" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="0ea927df-827d-435d-85b8-2c4294f1e067" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="46.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessLGX_ORDER" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="50dad130-c9d9-4504-a6c8-299fc85cbae3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SLX.ORDER_ROUTE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0082da0a-5d4f-48f9-b070-d9dd22ae0b7f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b90fc2d9-9a45-4fba-b68e-55b11d1c8b87" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="08552338-f115-4870-b22f-5dd702315b67" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Receive_PO_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="Receive_PO_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="522e6db7-29dd-4520-a4b1-f7d53c59c2d8" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="42.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Contruct PO" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="4b444806-1fb3-498c-8f06-729fd8047fe5" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.NationalFoods.Maps.LGX_ORDER" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="XForm Order" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="1b3284dd-8d11-46e1-9dc4-699bf7468632" ParentLink="Transform_InputMessagePartRef" LowerBound="35.90" HigherBound="35.97">
+                            <om:Property Name="MessageRef" Value="Inbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="9820519b-ac6b-443e-9bb2-6ed90123858c" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.36">
+                            <om:Property Name="MessageRef" Value="Outbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="b401ce6f-a113-4bc6-b6c3-320d774633e8" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="41.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;Outbound.Header.biztalk_id = Inbound.Header.BizTalkID;&#xD;&#xA;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = &quot;NATIONALFOODS.&quot; + Outbound.Header.customer_code + &quot;.&quot; + Inbound.Header.BizTalkID + &quot;.xml&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Initialise" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="2f12bfe2-4f5a-4696-9d8c-c8886fb4e486" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="b588bdf4-3f3c-4502-8054-c01e7f61b599" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="PortName" Value="Send_PO_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="Send_PO_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2695cccb-794a-4e1b-a055-986b051cdf4f" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations.Receive_PO_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_PO_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ce9fd914-4806-475d-9f0e-24cb5979364f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8e66816a-ef43-48ac-bd5b-93d080b1d6a7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="22" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.NationalFoods.Orchestrations.Send_PO_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_PO_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="eab5607f-9744-48fa-b198-35e13c862f63" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.NationalFoods.Orchestrations
+{
+    internal porttype Receive_PO_PortType
+    {
+        oneway Receive_PO_Operation
+        {
+            Visy.Middleware.Common.Schemas.SLX.ORDER_ROUTE
+        };
+    };
+    internal porttype Send_PO_PortType
+    {
+        oneway Send_PO_Operation
+        {
+            Visy.Middleware.Common.Schemas.LGX.ORDER
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessLGX_ORDER
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Receive_PO_PortType Receive_PO_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_PO_PortType Send_PO_Port;
+        message Visy.Middleware.Common.Schemas.SLX.ORDER_ROUTE Inbound;
+        message Visy.Middleware.Common.Schemas.LGX.ORDER Outbound;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("08552338-f115-4870-b22f-5dd702315b67")]
+            activate receive (Receive_PO_Port.Receive_PO_Operation, Inbound);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("522e6db7-29dd-4520-a4b1-f7d53c59c2d8")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4b444806-1fb3-498c-8f06-729fd8047fe5")]
+                transform (Outbound) = Visy.Middleware.LGX.NationalFoods.Maps.LGX_ORDER (Inbound);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b401ce6f-a113-4bc6-b6c3-320d774633e8")]
+                
+                Outbound.Header.biztalk_id = Inbound.Header.BizTalkID;
+                
+                Outbound(FILE.ReceivedFileName) = "NATIONALFOODS." + Outbound.Header.customer_code + "." + Inbound.Header.BizTalkID + ".xml";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b588bdf4-3f3c-4502-8054-c01e7f61b599")]
+            send (Send_PO_Port.Send_PO_Operation, Outbound);
+        }
+    }
+}
+

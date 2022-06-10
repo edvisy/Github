@@ -1,0 +1,228 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="748e71ea-4df5-4634-9321-4082dda63a0d" LowerBound="1.1" HigherBound="64.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.AS2.Common.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="32ab37b5-0038-4938-aae0-6ed4054318ff" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AS2Send" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="ce6cb915-4f03-4865-9e5b-e3829691b30d" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AS2" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="3d855d7f-b74b-406b-ad08-0c551ed38b7b" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="2be64da4-0c32-4acf-812b-989407db37ee" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="8.37" HigherBound="8.59">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3345b823-bf4f-4cc0-ad57-e5eb0b8f11d7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AS2Receive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2c299fc3-9fa0-4582-98b7-a7b2ac3f3f4f" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="166f9af0-65e7-4e0f-b480-1239e57a2cc7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="cdd61c1b-4084-4acc-a1a1-707090f2fa87" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="63.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AS2HeaderContextPromoter" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="321bc7f4-d708-46f8-a594-82f0a1e7e71b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fb7eee90-2948-4218-9bc5-2e19caeaf326" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d4304442-7d96-451d-b538-4bbc08927a8b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_MDN" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="8012bb54-91d3-43bd-8b35-298b11083214" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="cea60372-c137-440e-a1ef-32b0b01e0bd9" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive" />
+                    <om:Property Name="MessageName" Value="msg_In" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_AS2Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="7e53e126-6abe-45ac-97de-0d94c61e127f" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="57.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Out" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="eb391fa2-10dc-4855-9608-cb1691b90452" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="56.1">
+                        <om:Property Name="Expression" Value="msg_Out=new System.Xml.XmlDocument();  &#xD;&#xA;msg_Out=msg_In;  &#xD;&#xA;msg_Out(EdiIntAS.IsAS2PayloadMessage)=true;  &#xD;&#xA;msg_Out(EdiIntAS.IsAS2AsynchronousMdn)=true;  &#xD;&#xA;msg_Out(EdiIntAS.IsAS2MdnResponseMessage)=true;  &#xD;&#xA;msg_Out(EdiIntAS.SendMDN)=true;  &#xD;&#xA;msg_Out(EdiIntAS.IsAS2MessageSigned)=true;  &#xD;&#xA;msg_Out(EdiIntAS.AS2To)=&quot;ULECOMM_QA&quot;;  &#xD;&#xA;msg_Out(EdiIntAS.AS2From)=&quot;VISYUAT&quot;;  &#xD;&#xA;msg_Out(EdiIntAS.MessageId)= &quot;6064c3e4-eb5c-4807-8059-0c5b61d4933d&quot;;&#xD;&#xA;msg_Out(EdiIntAS.OriginalMessageId)=&quot;6064c3e4-eb5c-4807-8059-0c5b61d4933d&quot;;  &#xD;&#xA;msg_Out(HTTP.UserHttpHeaders)=&quot;Disposition-Notification-Options: signed-receipt-protocol=required,pkcs7-signature; signed-receipt-micalg=required,sha-256\r\n&quot; +&#xD;&#xA;    &quot;AS2-Version: 1.2\r\n&quot; +&#xD;&#xA;    &quot;Content-Transfer-Encoding: binary\r\n&quot; +&#xD;&#xA;    &quot;Mime-Version: 1.0\r\n&quot; +&#xD;&#xA;    &quot;EDIINT-Features: multiple-attachments\r\n&quot; +&#xD;&#xA;    &quot;AS2-To: ULECOMM_QA\r\n&quot; +&#xD;&#xA;    &quot;Message-ID:6064c3e4-eb5c-4807-8059-0c5b61d4933d\r\n&quot; + &#xD;&#xA;    &quot;AS2-From: VISYUAT\r\n&quot; +&#xD;&#xA;    &quot;Disposition-Notification-To: .&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_Out" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="3be4333c-e387-4649-ac6f-cb924e1295f7" ParentLink="Construct_MessageRef" LowerBound="33.23" HigherBound="33.30">
+                        <om:Property Name="Ref" Value="msg_Out" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="56a48c26-a130-4179-870b-c9f06853b546" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="59.1">
+                    <om:Property Name="PortName" Value="Port_AS2Send" />
+                    <om:Property Name="MessageName" Value="msg_Out" />
+                    <om:Property Name="OperationName" Value="AS2" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_AS2Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="5a0227da-d8a6-4eae-9656-57338d103939" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="61.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_AS2Send" />
+                    <om:Property Name="MessageName" Value="msg_MDN" />
+                    <om:Property Name="OperationName" Value="AS2" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_MDN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1bde94f1-5729-4aa6-8098-c87efab8aeb9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="9" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.AS2.Common.Orchestrations.PortType_AS2Send" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_AS2Send" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="9d5b1676-90a0-4aef-8871-bede1c2653da" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1f2a6259-6027-433f-8880-73ffc21faa79" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="3" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.AS2.Common.Orchestrations.PortType_AS2Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="cb78b68f-1d1a-4e95-939d-281542f8d584" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.AS2.Common.Orchestrations
+{
+    public porttype PortType_AS2Send
+    {
+        requestresponse AS2
+        {
+            System.Xml.XmlDocument, System.Xml.XmlDocument
+        };
+    };
+    public porttype PortType_AS2Receive
+    {
+        oneway FILE
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service AS2HeaderContextPromoter
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_AS2Send Port_AS2Send;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_AS2Receive Port_Receive;
+        message System.Xml.XmlDocument msg_In;
+        message System.Xml.XmlDocument msg_Out;
+        message System.Xml.XmlDocument msg_MDN;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cea60372-c137-440e-a1ef-32b0b01e0bd9")]
+            activate receive (Port_Receive.FILE, msg_In);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7e53e126-6abe-45ac-97de-0d94c61e127f")]
+            construct msg_Out
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("eb391fa2-10dc-4855-9608-cb1691b90452")]
+                msg_Out=new System.Xml.XmlDocument();  
+                msg_Out=msg_In;  
+                msg_Out(EdiIntAS.IsAS2PayloadMessage)=true;  
+                msg_Out(EdiIntAS.IsAS2AsynchronousMdn)=true;  
+                msg_Out(EdiIntAS.IsAS2MdnResponseMessage)=true;  
+                msg_Out(EdiIntAS.SendMDN)=true;  
+                msg_Out(EdiIntAS.IsAS2MessageSigned)=true;  
+                msg_Out(EdiIntAS.AS2To)="ULECOMM_QA";  
+                msg_Out(EdiIntAS.AS2From)="VISYUAT";  
+                msg_Out(EdiIntAS.MessageId)= "6064c3e4-eb5c-4807-8059-0c5b61d4933d";
+                msg_Out(EdiIntAS.OriginalMessageId)="6064c3e4-eb5c-4807-8059-0c5b61d4933d";  
+                msg_Out(HTTP.UserHttpHeaders)="Disposition-Notification-Options: signed-receipt-protocol=required,pkcs7-signature; signed-receipt-micalg=required,sha-256\r\n" +
+                    "AS2-Version: 1.2\r\n" +
+                    "Content-Transfer-Encoding: binary\r\n" +
+                    "Mime-Version: 1.0\r\n" +
+                    "EDIINT-Features: multiple-attachments\r\n" +
+                    "AS2-To: ULECOMM_QA\r\n" +
+                    "Message-ID:6064c3e4-eb5c-4807-8059-0c5b61d4933d\r\n" + 
+                    "AS2-From: VISYUAT\r\n" +
+                    "Disposition-Notification-To: .";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("56a48c26-a130-4179-870b-c9f06853b546")]
+            send (Port_AS2Send.AS2, msg_Out);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5a0227da-d8a6-4eae-9656-57338d103939")]
+            receive (Port_AS2Send.AS2, msg_MDN);
+        }
+    }
+}
+

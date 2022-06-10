@@ -1,0 +1,578 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="154e8596-03e4-490c-a24b-e37c4600a222" LowerBound="1.1" HigherBound="179.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.TIM.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="7763a36c-af76-4c79-b177-edabde9eee7d" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="178.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ActiveOrderSync" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="019de62e-c116-4486-b5e4-48bbb12d61ca" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ErrorMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="08124ad9-27fb-42d1-a316-7dbe6e488b15" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="originalMsgXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="2d9fcdcf-b7b8-400e-a0c0-934ce25e444d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AcceptOrderSync" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="114dd056-3364-439f-bdc9-aa47f2cdf108" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Orchestrations.EmailExceptionType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EmailException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="28419240-bd56-4df9-8e4c-780328c30b46" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3108114f-388d-4337-b07d-cfaff18da162" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="57.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="FTP_ReceiveOrderSync_Port" />
+                    <om:Property Name="MessageName" Value="AcceptOrderSync" />
+                    <om:Property Name="OperationName" Value="AcceptOrderSync" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive AcceptOrderSync" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="37017ebb-0540-4361-9444-b1e54beeba1b" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="176.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Main Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableDeclaration" OID="a3f0f54a-3e31-4283-932f-7512011a4502" ParentLink="Scope_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                        <om:Property Name="UseDefaultConstructor" Value="True" />
+                        <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="sbMsgBody" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="d423a202-331c-4652-82bf-fdce1e6884b7" ParentLink="Scope_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                        <om:Property Name="UseDefaultConstructor" Value="True" />
+                        <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="xmlDoc" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="8767511b-2b4c-4d34-9919-477988bd60fa" ParentLink="Scope_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Components.ActiveOrderBuilder" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="objActiveOrderSync" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="9d68c844-8f4b-4655-99c2-1dd6a0028fc8" ParentLink="Scope_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="System.String" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="sybaseConn" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="f125f2c9-ec6d-42f7-bbc8-1295b343da48" ParentLink="Scope_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="System.String" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="sybaseSPName" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableDeclaration" OID="c4d52a44-1347-4162-8955-4cc28006d830" ParentLink="Scope_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                        <om:Property Name="UseDefaultConstructor" Value="False" />
+                        <om:Property Name="Type" Value="System.String" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="exceptionString" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="4ef92139-76ab-4c30-9c17-8a0fe7c80f14" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="86.1">
+                        <om:Property Name="Expression" Value="sybaseConn = System.Configuration.ConfigurationSettings.AppSettings.Get(&quot;SybaseDBConn&quot;);&#xD;&#xA;sybaseSPName = System.Configuration.ConfigurationSettings.AppSettings.Get(&quot;SybaseSPName&quot;);&#xD;&#xA;&#xD;&#xA;originalMsgXml = AcceptOrderSync;&#xD;&#xA;&#xD;&#xA;//Update Sybase and construct response message to be sent to BizTalk archive location&#xD;&#xA;objActiveOrderSync = new Visy.Middleware.LGX.TIM.Components.ActiveOrderBuilder(AcceptOrderSync);&#xD;&#xA;xmlDoc = objActiveOrderSync.getActiveOrderBuilder(AcceptOrderSync,sybaseConn,sybaseSPName,out exceptionString);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Exp_OrderSync" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="ae7940fb-aae3-4912-a280-d18016baa4d3" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="109.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Decide_IfNullInboundResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="057bf52f-d817-48b0-b7bc-9ebba4219e3e" ParentLink="ReallyComplexStatement_Branch" LowerBound="87.21" HigherBound="98.1">
+                            <om:Property Name="Expression" Value="xmlDoc != null &amp;&amp; exceptionString != &quot;EmptyOrderSyncRequest&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CheckNullResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="a33dbb16-5222-4931-b67e-874c11b5a56e" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="95.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Construct Vendor Order Sync " />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="4d30baf6-36ca-4ee3-ac82-e9a5c04f8651" ParentLink="Construct_MessageRef" LowerBound="90.35" HigherBound="90.58">
+                                    <om:Property Name="Ref" Value="VendorOrderSyncResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="40e72e3e-abcf-43fc-bf46-e2674cb23bcd" ParentLink="ComplexStatement_Statement" LowerBound="92.1" HigherBound="94.1">
+                                    <om:Property Name="Expression" Value="VendorOrderSyncResponse = xmlDoc;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="eb8647cc-ce8d-4506-9e0d-2aba3d61d4e9" ParentLink="ComplexStatement_Statement" LowerBound="95.1" HigherBound="97.1">
+                                <om:Property Name="PortName" Value="Sybase_Send_OrderSync" />
+                                <om:Property Name="MessageName" Value="VendorOrderSyncResponse" />
+                                <om:Property Name="OperationName" Value="UpdateVendorOrderSync" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send VerdorOrderSync" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="66b71dfe-a9db-47a2-98ce-a583507b8b92" ParentLink="ReallyComplexStatement_Branch" LowerBound="98.26" HigherBound="104.1">
+                            <om:Property Name="Expression" Value="xmlDoc == null &amp;&amp; exceptionString == &quot;EmptyOrderSyncRequest&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CheckEmptyOrderSyncRequest" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="da5b3e3d-1138-4330-ab4a-81ac88704247" ParentLink="ComplexStatement_Statement" LowerBound="100.1" HigherBound="103.1">
+                                <om:Property Name="Expression" Value="ErrorMessage = &quot;Invalid Order Sync Request : A sync request with no order received from Vendor.&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;TIM ACTIVE ORDER SYNC&quot;, ErrorMessage, System.Diagnostics.EventLogEntryType.Information, 1000);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Log Info" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="f650bb14-7b2e-4407-8064-8ce84173da53" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="d655f743-366c-4287-8e24-7b583d8b2f18" ParentLink="ComplexStatement_Statement" LowerBound="106.1" HigherBound="108.1">
+                                <om:Property Name="Expression" Value="throw new System.Exception(exceptionString);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ThrowException" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="9a5ce186-d9c8-4799-b7fd-0f3181a9d717" ParentLink="Scope_MessageDeclaration" LowerBound="60.1" HigherBound="61.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Schemas.ActiveOrderSyncResponse" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="VendorOrderSyncResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="59a3ad62-70c3-4050-8569-cbf2cd7fee9c" ParentLink="Scope_Catch" LowerBound="112.1" HigherBound="174.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch .Net Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="cd486942-29a0-4670-8b00-51b4abe80c4d" ParentLink="Catch_Statement" LowerBound="115.1" HigherBound="118.1">
+                            <om:Property Name="Expression" Value="ErrorMessage = System.String.Format(&quot;An exception occurred in TIM Active Order Sync Process.The exception and stack trace is as follows - Exception : {0}, Stack Trace : {1}&quot;, ex.Message, ex.StackTrace);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;TIM ACTIVE ORDER SYNC&quot;, ErrorMessage, System.Diagnostics.EventLogEntryType.Error, 1000);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Error" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="1c6bcf43-2174-4a7d-bdd0-e59deb2bde12" ParentLink="Catch_Statement" LowerBound="118.1" HigherBound="167.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructExceptionEmail" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="023cabbc-8f73-45b3-85f7-9033f1c355bb" ParentLink="ComplexStatement_Statement" LowerBound="121.1" HigherBound="166.1">
+                                <om:Property Name="Expression" Value="//Build HTML Message body&#xD;&#xA;sbMsgBody = new System.Text.StringBuilder();&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;p&gt;&lt;B&gt;Active Order Sync Error Message&lt;/B&gt;&lt;/p&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Date of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(System.DateTime.Now.ToShortDateString());&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Time of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Exception:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(ErrorMessage);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Incoming Message:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(System.String.Format(&quot;&lt;xmp&gt;{0}&lt;/xmp&gt;​&quot;,originalMsgXml.InnerXml));&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Processing Server:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(System.Environment.MachineName);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;sbMsgBody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//Set Email Properties&#xD;&#xA;EmailException.MsgBody = new Visy.Middleware.LGX.TIM.Components.RawString(sbMsgBody.ToString());&#xD;&#xA;EmailException.MsgBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;EmailException(SMTP.Subject) = &quot;Inbound Order Sync failed in BizTalk Server: &quot; + System.Environment.MachineName;&#xD;&#xA;&#xD;&#xA;EmailException(SMTP.From) = &quot;bt2016@visy.com.au&quot;;&#xD;&#xA;EmailException(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_2" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="dc5a0bd9-c80e-414c-8335-7ff86d1a19f3" ParentLink="Construct_MessageRef" LowerBound="119.35" HigherBound="119.49">
+                                <om:Property Name="Ref" Value="EmailException" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="1ad841f7-d34b-49a2-8c9a-5c31ff73a675" ParentLink="Catch_Statement" LowerBound="167.1" HigherBound="169.1">
+                            <om:Property Name="PortName" Value="SMTPExceptionSend_Port" />
+                            <om:Property Name="MessageName" Value="EmailException" />
+                            <om:Property Name="OperationName" Value="SendEmail" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Exception Email" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="54bc24fa-831c-4ae3-ac5c-2b08a92f68b6" ParentLink="Catch_Statement" LowerBound="169.1" HigherBound="171.1">
+                            <om:Property Name="ErrorMessage" Value="ErrorMessage + &quot;. Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend orchestration" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="27a291d9-9034-43f0-b0a3-f68d971efd37" ParentLink="Catch_Statement" LowerBound="171.1" HigherBound="173.1">
+                            <om:Property Name="PortName" Value="ResubmitActiveOrderSyncMessage" />
+                            <om:Property Name="MessageName" Value="AcceptOrderSync" />
+                            <om:Property Name="OperationName" Value="Resubmit" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Resubmit_ActiveOrderSync" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9c54610d-d938-4f17-9165-ed7004b51334" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Orchestrations.FTP_ReceiveOrderSync_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FTP_ReceiveOrderSync_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="de926f91-3be2-4252-b521-e3bca2119311" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a23cf0db-02c7-40ef-a7a1-0e5dbff8279a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Orchestrations.Sybase_Send_OrderSyncType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Sybase_Send_OrderSync" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="aac613bc-4b74-40be-a3c9-f165bf2b8b8a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e281a80e-3c39-489b-b4cf-42317a984eca" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="22" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Orchestrations.SMTPExceptionSend_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SMTPExceptionSend_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="002d98d0-9675-4f5b-817e-104b96612a44" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a23fc03-d124-4c16-98af-a822a5af14cd" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.TIM.Orchestrations.ActiveOrderResubmitPort_Type" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ResubmitActiveOrderSyncMessage" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="058e364e-39bd-4acf-a120-cbe701b47de7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e3b05450-fa8f-4042-8736-ced26c1329c4" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="FTP_ReceiveOrderSync_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="abd2db84-b556-4481-b5c5-462d2677093c" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AcceptOrderSync" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1b0dc6fd-8ee9-4296-9d61-0d9d8170e4ab" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.69">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="24e50135-0c1a-4bcd-a6ea-c88ba86d50ac" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Sybase_Send_OrderSyncType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="ade1b7bd-ba73-4a49-acd6-658521ca4e57" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UpdateVendorOrderSync" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a2d37c13-629b-4b9a-8f81-0b1f06e71237" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.68">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.TIM.Schemas.ActiveOrderSyncResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a47eeda7-61a4-4163-85b1-611884badcaf" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ActiveOrderResubmitPort_Type" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="aa534751-e464-42f7-a771-760b79f2d363" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Resubmit" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4204a91f-8aee-46bd-9082-f6622ff43207" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.69">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="083b3bc5-bda9-48bd-a9b2-07f31bcf6935" ParentLink="Module_PortType" LowerBound="29.1" HigherBound="36.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SMTPExceptionSend_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="ceaadb82-08a3-4bfe-8b9e-dff92930fd20" ParentLink="PortType_OperationDeclaration" LowerBound="31.1" HigherBound="35.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEmail" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0545e8ba-2bb8-4843-a203-d52631d9a136" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="33.13" HigherBound="33.31">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.TIM.Orchestrations.EmailExceptionType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f22c0251-351b-4dc9-ac3f-34e36e5c567c" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="EmailExceptionType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="653ab558-1b15-49b1-b1c7-45968f6daa10" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.LGX.TIM.Components.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.TIM.Orchestrations
+{
+    internal messagetype EmailExceptionType
+    {
+        body Visy.Middleware.LGX.TIM.Components.RawString MsgBody;
+    };
+    internal porttype FTP_ReceiveOrderSync_PortType
+    {
+        oneway AcceptOrderSync
+        {
+            Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master
+        };
+    };
+    internal porttype Sybase_Send_OrderSyncType
+    {
+        oneway UpdateVendorOrderSync
+        {
+            Visy.Middleware.LGX.TIM.Schemas.ActiveOrderSyncResponse
+        };
+    };
+    internal porttype ActiveOrderResubmitPort_Type
+    {
+        oneway Resubmit
+        {
+            Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master
+        };
+    };
+    internal porttype SMTPExceptionSend_PortType
+    {
+        oneway SendEmail
+        {
+            EmailExceptionType
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ActiveOrderSync
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements FTP_ReceiveOrderSync_PortType FTP_ReceiveOrderSync_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Sybase_Send_OrderSyncType Sybase_Send_OrderSync;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SMTPExceptionSend_PortType SMTPExceptionSend_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ActiveOrderResubmitPort_Type ResubmitActiveOrderSyncMessage;
+        message Visy.Middleware.LGX.TIM.Schemas.ACTIVE_ORDER_SYNC_Master AcceptOrderSync;
+        message EmailExceptionType EmailException;
+        System.String ErrorMessage;
+        System.Xml.XmlDocument originalMsgXml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3108114f-388d-4337-b07d-cfaff18da162")]
+            activate receive (FTP_ReceiveOrderSync_Port.AcceptOrderSync, AcceptOrderSync);
+            ErrorMessage = "";
+            originalMsgXml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("37017ebb-0540-4361-9444-b1e54beeba1b")]
+            scope
+            {
+                message Visy.Middleware.LGX.TIM.Schemas.ActiveOrderSyncResponse VendorOrderSyncResponse;
+                System.Text.StringBuilder sbMsgBody;
+                System.Xml.XmlDocument xmlDoc;
+                Visy.Middleware.LGX.TIM.Components.ActiveOrderBuilder objActiveOrderSync;
+                System.String sybaseConn;
+                System.String sybaseSPName;
+                System.String exceptionString;
+                body
+                {
+                    sbMsgBody = new System.Text.StringBuilder();
+                    xmlDoc = new System.Xml.XmlDocument();
+                    sybaseConn = "";
+                    sybaseSPName = "";
+                    exceptionString = "";
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ef92139-76ab-4c30-9c17-8a0fe7c80f14")]
+                    sybaseConn = System.Configuration.ConfigurationSettings.AppSettings.Get("SybaseDBConn");
+                    sybaseSPName = System.Configuration.ConfigurationSettings.AppSettings.Get("SybaseSPName");
+                    
+                    originalMsgXml = AcceptOrderSync;
+                    
+                    //Update Sybase and construct response message to be sent to BizTalk archive location
+                    objActiveOrderSync = new Visy.Middleware.LGX.TIM.Components.ActiveOrderBuilder(AcceptOrderSync);
+                    xmlDoc = objActiveOrderSync.getActiveOrderBuilder(AcceptOrderSync,sybaseConn,sybaseSPName,out exceptionString);
+                    
+                    
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ae7940fb-aae3-4912-a280-d18016baa4d3")]
+                    if (xmlDoc != null && exceptionString != "EmptyOrderSyncRequest")
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a33dbb16-5222-4931-b67e-874c11b5a56e")]
+                        construct VendorOrderSyncResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("40e72e3e-abcf-43fc-bf46-e2674cb23bcd")]
+                            VendorOrderSyncResponse = xmlDoc;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("eb8647cc-ce8d-4506-9e0d-2aba3d61d4e9")]
+                        send (Sybase_Send_OrderSync.UpdateVendorOrderSync, VendorOrderSyncResponse);
+                    }
+                    else if (xmlDoc == null && exceptionString == "EmptyOrderSyncRequest")
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("da5b3e3d-1138-4330-ab4a-81ac88704247")]
+                        ErrorMessage = "Invalid Order Sync Request : A sync request with no order received from Vendor.";
+                        System.Diagnostics.EventLog.WriteEntry("TIM ACTIVE ORDER SYNC", ErrorMessage, System.Diagnostics.EventLogEntryType.Information, 1000);
+                    }
+                    else 
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d655f743-366c-4287-8e24-7b583d8b2f18")]
+                        throw new System.Exception(exceptionString);
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("59a3ad62-70c3-4050-8569-cbf2cd7fee9c")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cd486942-29a0-4670-8b00-51b4abe80c4d")]
+                        ErrorMessage = System.String.Format("An exception occurred in TIM Active Order Sync Process.The exception and stack trace is as follows - Exception : {0}, Stack Trace : {1}", ex.Message, ex.StackTrace);
+                        System.Diagnostics.EventLog.WriteEntry("TIM ACTIVE ORDER SYNC", ErrorMessage, System.Diagnostics.EventLogEntryType.Error, 1000);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1c6bcf43-2174-4a7d-bdd0-e59deb2bde12")]
+                        construct EmailException
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("023cabbc-8f73-45b3-85f7-9033f1c355bb")]
+                            //Build HTML Message body
+                            sbMsgBody = new System.Text.StringBuilder();
+                            
+                            sbMsgBody.AppendLine("<html>");
+                            sbMsgBody.AppendLine("<head>");
+                            sbMsgBody.AppendLine("</head>");
+                            sbMsgBody.AppendLine("<body>");
+                            sbMsgBody.AppendLine("<p><B>Active Order Sync Error Message</B></p>");
+                            
+                            sbMsgBody.AppendLine("<table>");
+                            
+                            sbMsgBody.AppendLine("<tr><td>Date of Error:</td><td>");
+                            sbMsgBody.AppendLine(System.DateTime.Now.ToShortDateString());
+                            sbMsgBody.AppendLine("</td></tr>");
+                            
+                            sbMsgBody.AppendLine("<tr><td>Time of Error:</td><td>");
+                            sbMsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());
+                            sbMsgBody.AppendLine("</td></tr>");
+                            
+                            sbMsgBody.AppendLine("<tr><td>Exception:</td><td>");
+                            sbMsgBody.AppendLine(ErrorMessage);
+                            sbMsgBody.AppendLine("</td></tr>");
+                            
+                            sbMsgBody.AppendLine("<tr><td>Incoming Message:</td><td>");
+                            sbMsgBody.AppendLine(System.String.Format("<xmp>{0}</xmp>​",originalMsgXml.InnerXml));
+                            sbMsgBody.AppendLine("</td></tr>");
+                            
+                            sbMsgBody.AppendLine("<tr><td>Processing Server:</td><td>");
+                            sbMsgBody.AppendLine(System.Environment.MachineName);
+                            sbMsgBody.AppendLine("</td></tr>");
+                            
+                            sbMsgBody.AppendLine("</table>");
+                            
+                            sbMsgBody.AppendLine("</body>");
+                            sbMsgBody.AppendLine("</html>");
+                            
+                            //Set Email Properties
+                            EmailException.MsgBody = new Visy.Middleware.LGX.TIM.Components.RawString(sbMsgBody.ToString());
+                            EmailException.MsgBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                            EmailException(SMTP.Subject) = "Inbound Order Sync failed in BizTalk Server: " + System.Environment.MachineName;
+                            
+                            EmailException(SMTP.From) = "bt2016@visy.com.au";
+                            EmailException(SMTP.EmailBodyFileCharset) = "UTF-8";
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1ad841f7-d34b-49a2-8c9a-5c31ff73a675")]
+                        send (SMTPExceptionSend_Port.SendEmail, EmailException);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("54bc24fa-831c-4ae3-ac5c-2b08a92f68b6")]
+                        suspend ErrorMessage + ". Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.";
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("27a291d9-9034-43f0-b0a3-f68d971efd37")]
+                        send (ResubmitActiveOrderSyncMessage.Resubmit, AcceptOrderSync);
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3973BCC9-03F6-4C34-B4C4-047DFDD5DC9F}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.Magento.Schemas</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.Magento.Schemas</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Magento\MagentoService_schemas_xmlsoap_org_soap_encoding_1.xsd.cs">
+      <DependentUpon>MagentoService_schemas_xmlsoap_org_soap_encoding_1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+    <Schema Include="Product.Single.xsd">
+      <TypeName>Product_Single</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDoc.ZMATLCLASS.740.3.xsd">
+      <TypeName>IDoc_ZMATLCLASS_740_3</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZMATLCLASS.740.3.Receive.xsd">
+      <TypeName>IDocOperation_ZMATLCLASS_740_3_Receive</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZMATLCLASS.740.3.ReceiveResponse.xsd">
+      <TypeName>IDocOperation_ZMATLCLASS_740_3_ReceiveResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocSharedTypes.xsd">
+      <TypeName>IDocSharedTypes</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\SalesOrderResponse_Property.xsd">
+      <TypeName>SalesOrderResponse_Property</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerListRequest.xsd">
+      <TypeName>customerCustomerListRequest</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerListResponse.xsd">
+      <TypeName>customerCustomerListResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Customer.Single.xsd">
+      <TypeName>Customer_Single</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\MagentoService_schemas_xmlsoap_org_soap_encoding_1.xsd">
+      <SubType>Task</SubType>
+      <TypeName>MagentoService_schemas_xmlsoap_org_soap_encoding_1</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+    </Schema>
+    <Schema Include="SAP\IDoc.INVOIC02.620.3.xsd">
+      <TypeName>IDoc_INVOIC02_620_3</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDoc.ZCUSTCLASS.740.3.xsd">
+      <TypeName>IDoc_ZCUSTCLASS_740_3</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDoc.ZMATPRICE01.740.3.xsd">
+      <TypeName>IDoc_ZMATPRICE01_740_3</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.INVOIC02.620.3.Receive.xsd">
+      <TypeName>IDocOperation_INVOIC02_620_3_Receive</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.INVOIC02.620.3.ReceiveResponse.xsd">
+      <TypeName>IDocOperation_INVOIC02_620_3_ReceiveResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZCUSTCLASS.740.3.Receive.xsd">
+      <TypeName>IDocOperation_ZCUSTCLASS_740_3_Receive</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZCUSTCLASS.740.3.ReceiveResponse.xsd">
+      <TypeName>IDocOperation_ZCUSTCLASS_740_3_ReceiveResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZMATPRICE01.740.3.Receive.xsd">
+      <TypeName>IDocOperation_ZMATPRICE01_740_3_Receive</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SAP\IDocOperation.ZMATPRICE01.740.3.ReceiveResponse.xsd">
+      <TypeName>IDocOperation_ZMATPRICE01_740_3_ReceiveResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.PropertySchema</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\login.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>login</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\loginResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>loginResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\MagentoService_Magento.xsd">
+      <SubType>Task</SubType>
+      <TypeName>MagentoService_Magento</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+    </Schema>
+    <Schema Include="Magento\salesOrderShipmentCreate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderShipmentCreate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderShipmentCreateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderShipmentCreateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderShipmentAddComment.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderShipmentAddComment</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderShipmentAddCommentResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderShipmentAddCommentResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderInvoiceCreate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderInvoiceCreate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderInvoiceCreateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderInvoiceCreateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderInvoiceAddComment.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderInvoiceAddComment</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\salesOrderInvoiceAddCommentResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>salesOrderInvoiceAddCommentResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerCreate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerCreate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerCreateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerCreateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerInfo.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerInfo</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerInfoResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerInfoResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerUpdate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerUpdate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerCustomerUpdateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerCustomerUpdateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerAddressCreate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerAddressCreate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerAddressCreateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerAddressCreateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerAddressUpdate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerAddressUpdate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\customerAddressUpdateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>customerAddressUpdateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductInfo.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductInfo</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductInfoResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductInfoResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductCreate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductCreate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductCreateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductCreateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductUpdate.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductUpdate</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\catalogProductUpdateResponse.xsd">
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas.Magento</Namespace>
+      <TypeName>catalogProductUpdateResponse</TypeName>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\SalesOrderResponse.xsd">
+      <TypeName>SalesOrderResponse</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\result.xsd">
+      <TypeName>result</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\array.xsd">
+      <TypeName>array</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Magento\Envelope.xsd">
+      <TypeName>Envelope</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PriceCanonical.xsd">
+      <TypeName>PriceCanonical</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SAP\WcfReceivePort_SAPBinding_Custom.bindinginfo.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

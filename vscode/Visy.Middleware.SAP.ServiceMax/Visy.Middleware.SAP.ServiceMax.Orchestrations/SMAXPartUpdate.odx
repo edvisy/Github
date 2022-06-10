@@ -1,0 +1,1415 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="beadbc0d-18e5-49e3-8098-a167e014e16f" LowerBound="1.1" HigherBound="474.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="5a865b27-d113-452a-94c0-152fc0cfb049" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ResubmitMATMASCLFMAS" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="0ab7a1f2-4a7b-4374-836a-be404aaa0a73" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_SendMATMAS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="32588d0d-7567-4b6b-a3e3-ea977c1339a0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.89">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="7c0289f0-ecf8-4681-b428-4e172a84ae2a" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_SendCLFMAS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="02f01d3a-d7b9-45e5-9a4d-2d9aded047eb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.99">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="12a06933-ab95-4289-b763-bc41462f4b92" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Email" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="22bb4935-1ebd-4e38-91a6-0bcfe8775d38" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Email" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c8163a21-8ee6-4408-b3b2-6735985b4c17" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.31">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.emailExceptionType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="169ee2fd-7ed2-4c27-accb-64ad39411416" ParentLink="Module_PortType" LowerBound="26.1" HigherBound="37.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_XMLMessage" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="38a318d7-8667-48ed-9da4-69d1d4bea6d4" ParentLink="PortType_OperationDeclaration" LowerBound="28.1" HigherBound="32.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MATMAS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="82a861d6-86c5-4470-9eca-e4ba258ba2d4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="30.13" HigherBound="30.89">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="1f6e7907-bfb5-4611-b0e1-a0d784c7a26c" ParentLink="PortType_OperationDeclaration" LowerBound="32.1" HigherBound="36.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CLFMAS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1f5b2ab7-fa02-4e38-8b98-e45544e1ea50" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="34.13" HigherBound="34.99">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="1dfed7d0-a574-4845-9505-7da4c5f323b4" ParentLink="Module_ServiceDeclaration" LowerBound="41.1" HigherBound="473.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SMAXPartUpdateAgent" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="5678d3d0-d0f4-4081-baef-e23b73bcb297" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDocForBAM" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="721174be-d612-40af-a523-d25d66178615" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="upsertResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="34ddbc04-68b8-40da-9909-ea0694268e63" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IsCLFMASRcvd" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f768d3d6-63ef-4561-a46d-e29d95a26d27" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7d01b3db-87cc-4b94-a85f-64c2d3dc2870" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="token" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f9ac1f6b-e500-403c-9f15-f534a682d38f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="67.1" HigherBound="68.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="0bd8135c-7efe-4a50-b628-791d36803682" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="68.1" HigherBound="69.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="90b69617-807e-41b1-9273-2966c9cc8466" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="69.1" HigherBound="70.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="isException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3f96efe4-c5ff-4c9c-b762-a3e9c58716b8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="70.1" HigherBound="71.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Exception" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="expObj" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="df144be2-cce4-4928-88da-41b1501d6bfc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="71.1" HigherBound="72.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strbuilder_MsgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f7ea136e-4a2b-435e-80af-eb1f8113bb07" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="72.1" HigherBound="73.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="errorMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d2e2400a-66cd-4c0a-a84c-8f69ba7ceceb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="73.1" HigherBound="74.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryLimit" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="954be213-1bd9-4537-9feb-8851d0fdf6a7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="74.1" HigherBound="75.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="retryInterval" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c01f46f6-ceac-45db-9dd4-afca996afbf2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="75.1" HigherBound="76.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="correlationDelay" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a25e8bd6-4f7b-4c29-b8b7-55c5a0d61a00" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="76.1" HigherBound="77.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IsSoapExp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a48b42b9-3c3c-43d2-96fd-c0ac385c61b6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="77.1" HigherBound="78.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CLFMASDocNum" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e07a7e7f-37e5-46e6-ba74-d2dc5c835520" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="78.1" HigherBound="79.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MATMASPartXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1f5ce616-445d-47e4-a31c-fc55d90723b2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="79.1" HigherBound="80.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CLFMASPartXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="34b29320-edf7-42ca-b14f-dd0e3549407e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="80.1" HigherBound="81.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strSystemExcp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="50d99496-d41f-4283-a951-7682e5bacc70" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.CorrelationType_MSPNo" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_MSPNo" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="ea4b54a1-4230-45ba-b794-e4f3089a534e" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="84.69" HigherBound="84.97">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="7f7570c7-c720-41a8-b3a0-7fa6abb847aa" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="3caa6b86-f8f2-443a-af09-f95f98deed42" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="140.78" HigherBound="140.95">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="0681bd19-e57f-48fc-a27c-7c4203131c95" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e62c9be2-31bd-4cea-973d-c36c48604a3f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.upsertRequest" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgUpsertRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="67ea6a20-ab66-4800-bf65-dd2edb01511b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.upsertResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgUpsertResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a59c762d-c4ef-4b1b-b6df-96bd55dc27cd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.emailExceptionType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgEmailException" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="49105c85-8fc1-4d5d-b7d6-d6febdd6d278" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgCLFMAS02" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="52e568b2-94b9-474c-b6f3-9db144324bcd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgMATMAS05" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0465dc06-4b19-4605-9e24-b1a7ed60098a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgXmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="34131dbd-5e24-4f74-94e4-a99b92c9a1a8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgCLFMASRcv" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="929b943d-9bb5-4da1-a355-9fe1ca89c6a8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgMATMASRcv" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="729662e0-844b-4f38-b55d-b3b58e1dd6ae" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="7f7570c7-c720-41a8-b3a0-7fa6abb847aa" ParentLink="ServiceBody_Statement" LowerBound="83.1" HigherBound="99.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="port_RcvPartXml" />
+                    <om:Property Name="MessageName" Value="msgMATMASRcv" />
+                    <om:Property Name="OperationName" Value="MATMAS" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="rcv_MATMAS05" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="1cd59764-8f11-4bad-a83d-52b94b337250" ParentLink="ServiceBody_Statement" LowerBound="99.1" HigherBound="106.1">
+                    <om:Property Name="Expression" Value="token = System.Guid.NewGuid();//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceIn(&quot;Part Update Orchestration started&quot;);&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Received MATMAS05 Message from SAP&quot;, token));&#xD;&#xA;IsCLFMASRcvd = false;&#xD;&#xA;CLFMASDocNum = &quot;&quot;;&#xD;&#xA;strException = &quot;&quot;;&#xD;&#xA;strSystemExcp =&quot;&quot;;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="exp_InitialiseTracing" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="e5b65e9e-7b43-4803-a4e1-0dbe15e44312" ParentLink="ServiceBody_Statement" LowerBound="106.1" HigherBound="115.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="construct_MATMAS05" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="fa1c1e4b-3a92-460b-a597-2252b540d8d5" ParentLink="Construct_MessageRef" LowerBound="107.23" HigherBound="107.34">
+                        <om:Property Name="Ref" Value="msgMATMAS05" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="b014f056-edf7-4192-af28-e4998f9817f2" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="114.1">
+                        <om:Property Name="Expression" Value="msgMATMAS05 = msgMATMASRcv;&#xD;&#xA;msgMATMAS05(*) = msgMATMASRcv(*);&#xD;&#xA;MATMASPartXml = msgMATMASRcv;&#xD;&#xA;msgMATMAS05(FILE.ReceivedFileName) = &quot;MATMAS_Resubmit_&quot; + token.ToString()+&quot;.xml&quot;;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="5acac764-8d28-45e5-93a5-b09fa2a40ba5" ParentLink="ServiceBody_Statement" LowerBound="115.1" HigherBound="471.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_Main" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="VariableAssignment" OID="cad58c38-31ca-4cc0-8821-ed4c2cbe46e8" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="128.1">
+                        <om:Property Name="Expression" Value="retryLimit = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;RetryLimit&quot;,&quot;SAP.ServiceMax&quot;));&#xD;&#xA;retryInterval = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;RetryInterval&quot;,&quot;SAP.ServiceMax&quot;));&#xD;&#xA;correlationDelay = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(&quot;CorrelationDelay&quot;,&quot;SAP.ServiceMax&quot;));&#xD;&#xA;retryCount = 1;&#xD;&#xA;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Retry Limit: &quot; + retryLimit.ToString() +&quot;Retry Interval: &quot;+ retryInterval.ToString() + &quot;Correlation Delay: &quot;+ correlationDelay.ToString(), token));&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Waiting for CLFMAS Idoc&quot;, token));&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Exp_SetRetryCount" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="73ffdd6a-2104-405b-8788-b5812980da52" ParentLink="ComplexStatement_Statement" LowerBound="128.1" HigherBound="136.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="contsruct_CLAFMAS02" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="adb7b768-3528-4ce0-9e93-255ead353523" ParentLink="Construct_MessageRef" LowerBound="129.31" HigherBound="129.42">
+                            <om:Property Name="Ref" Value="msgCLFMAS02" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="367a592b-31f7-4dca-814f-c09a4297b30b" ParentLink="ComplexStatement_Statement" LowerBound="131.1" HigherBound="135.1">
+                            <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlDoc.LoadXml(&quot;&lt;ns0:Receive xmlns:ns0='http://Microsoft.LobServices.Sap/2007/03/Idoc/3/CLFMAS02/ZCLFMAS02/620/Receive'&gt;   &lt;ns0:idocData&gt;     &lt;ns1:EDI_DC40 xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'&gt;       &lt;ns2:TABNAM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;TABNAM_0&lt;/ns2:TABNAM&gt;       &lt;ns2:MANDT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;MANDT_0&lt;/ns2:MANDT&gt;       &lt;ns2:DOCNUM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;DOCNUM_0&lt;/ns2:DOCNUM&gt;       &lt;ns2:DOCREL xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;DOCREL_0&lt;/ns2:DOCREL&gt;       &lt;ns2:STATUS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;STATUS_0&lt;/ns2:STATUS&gt;       &lt;ns2:DIRECT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;1&lt;/ns2:DIRECT&gt;       &lt;ns2:OUTMOD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;1&lt;/ns2:OUTMOD&gt;       &lt;ns2:EXPRSS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;X&lt;/ns2:EXPRSS&gt;       &lt;ns2:TEST xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;X&lt;/ns2:TEST&gt;       &lt;ns2:IDOCTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;IDOCTYP_0&lt;/ns2:IDOCTYP&gt;       &lt;ns2:CIMTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;CIMTYP_0&lt;/ns2:CIMTYP&gt;       &lt;ns2:MESTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;MESTYP_0&lt;/ns2:MESTYP&gt;       &lt;ns2:MESCOD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;MESCOD_0&lt;/ns2:MESCOD&gt;       &lt;ns2:MESFCT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;MESFCT_0&lt;/ns2:MESFCT&gt;       &lt;ns2:STD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;STD_0&lt;/ns2:STD&gt;       &lt;ns2:STDVRS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;STDVRS_0&lt;/ns2:STDVRS&gt;       &lt;ns2:STDMES xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;STDMES_0&lt;/ns2:STDMES&gt;       &lt;ns2:SNDPOR xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDPOR_0&lt;/ns2:SNDPOR&gt;       &lt;ns2:SNDPRT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDPRT_0&lt;/ns2:SNDPRT&gt;       &lt;ns2:SNDPFC xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDPFC_0&lt;/ns2:SNDPFC&gt;       &lt;ns2:SNDPRN xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDPRN_0&lt;/ns2:SNDPRN&gt;       &lt;ns2:SNDSAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDSAD_0&lt;/ns2:SNDSAD&gt;       &lt;ns2:SNDLAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SNDLAD_0&lt;/ns2:SNDLAD&gt;       &lt;ns2:RCVPOR xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVPOR_0&lt;/ns2:RCVPOR&gt;       &lt;ns2:RCVPRT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVPRT_0&lt;/ns2:RCVPRT&gt;       &lt;ns2:RCVPFC xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVPFC_0&lt;/ns2:RCVPFC&gt;       &lt;ns2:RCVPRN xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVPRN_0&lt;/ns2:RCVPRN&gt;       &lt;ns2:RCVSAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVSAD_0&lt;/ns2:RCVSAD&gt;       &lt;ns2:RCVLAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;RCVLAD_0&lt;/ns2:RCVLAD&gt;       &lt;ns2:CREDAT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;CREDAT_0&lt;/ns2:CREDAT&gt;       &lt;ns2:CRETIM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;CRETIM_0&lt;/ns2:CRETIM&gt;       &lt;ns2:REFINT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;REFINT_0&lt;/ns2:REFINT&gt;       &lt;ns2:REFGRP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;REFGRP_0&lt;/ns2:REFGRP&gt;       &lt;ns2:REFMES xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;REFMES_0&lt;/ns2:REFMES&gt;       &lt;ns2:ARCKEY xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;ARCKEY_0&lt;/ns2:ARCKEY&gt;       &lt;ns2:SERIAL xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'&gt;SERIAL_0&lt;/ns2:SERIAL&gt;     &lt;/ns1:EDI_DC40&gt;     &lt;ns1:E2OCLFM001GRP xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'&gt;       &lt;ns1:E2OCLFM001&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;E2OCLFM001&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;         &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;         &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;         &lt;ns1:MSGFN&gt;003&lt;/ns1:MSGFN&gt;         &lt;ns1:OBTAB&gt;OBTAB_0&lt;/ns1:OBTAB&gt;         &lt;ns1:OBJEK&gt;OBJEK_0&lt;/ns1:OBJEK&gt;         &lt;ns1:KLART&gt;KLART_0&lt;/ns1:KLART&gt;         &lt;ns1:MAFID&gt;MAFID_0&lt;/ns1:MAFID&gt;         &lt;ns1:OBJECT_TABLE&gt;OBJECT_TABLE_0&lt;/ns1:OBJECT_TABLE&gt;         &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;       &lt;/ns1:E2OCLFM001&gt;       &lt;ns1:E2KSSKMGRP&gt;         &lt;ns1:E2KSSKM&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;E2KSSKM&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;           &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;           &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;           &lt;ns1:MSGFN&gt;003&lt;/ns1:MSGFN&gt;           &lt;ns1:CLASS&gt;&lt;/ns1:CLASS&gt;           &lt;ns1:AENNR&gt;AENNR_0&lt;/ns1:AENNR&gt;           &lt;ns1:DATUV&gt;DATUV_0&lt;/ns1:DATUV&gt;           &lt;ns1:STATU&gt;STATU_0&lt;/ns1:STATU&gt;           &lt;ns1:STDCL&gt;X&lt;/ns1:STDCL&gt;           &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;         &lt;/ns1:E2KSSKM&gt;         &lt;ns1:Z2SWORM000&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;Z2SWORM000&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;           &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;           &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;           &lt;ns1:SPRAS&gt;SPRAS_0&lt;/ns1:SPRAS&gt;           &lt;ns1:KSCHL&gt;KSCHL_0&lt;/ns1:KSCHL&gt;           &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;         &lt;/ns1:Z2SWORM000&gt;         &lt;ns1:Z2SWORM000&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;Z2SWORM000&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;           &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;           &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;           &lt;ns1:SPRAS&gt;SPRAS_0&lt;/ns1:SPRAS&gt;           &lt;ns1:KSCHL&gt;KSCHL_0&lt;/ns1:KSCHL&gt;           &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;         &lt;/ns1:Z2SWORM000&gt;         &lt;ns1:Z2SWORM000&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;Z2SWORM000&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;           &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;           &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;           &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;           &lt;ns1:SPRAS&gt;SPRAS_0&lt;/ns1:SPRAS&gt;           &lt;ns1:KSCHL&gt;KSCHL_0&lt;/ns1:KSCHL&gt;           &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;         &lt;/ns1:Z2SWORM000&gt;       &lt;/ns1:E2KSSKMGRP&gt;       &lt;ns1:E2AUSPM001&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;E2AUSPM001&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;         &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;         &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;         &lt;ns1:MSGFN&gt;003&lt;/ns1:MSGFN&gt;         &lt;ns1:ATNAM&gt;ATNAM_0&lt;/ns1:ATNAM&gt;         &lt;ns1:AENNR&gt;AENNR_0&lt;/ns1:AENNR&gt;         &lt;ns1:DATUV&gt;DATUV_0&lt;/ns1:DATUV&gt;         &lt;ns1:ATWRT&gt;ATWRT_0&lt;/ns1:ATWRT&gt;         &lt;ns1:ATFLV&gt;ATFLV_0&lt;/ns1:ATFLV&gt;         &lt;ns1:ATAWE&gt;ATAWE_0&lt;/ns1:ATAWE&gt;         &lt;ns1:ATFLB&gt;ATFLB_0&lt;/ns1:ATFLB&gt;         &lt;ns1:ATAW1&gt;ATAW1_0&lt;/ns1:ATAW1&gt;         &lt;ns1:ATCOD&gt;ATCOD_0&lt;/ns1:ATCOD&gt;         &lt;ns1:ATTLV&gt;ATTLV_0&lt;/ns1:ATTLV&gt;         &lt;ns1:ATTLB&gt;ATTLB_0&lt;/ns1:ATTLB&gt;         &lt;ns1:ATPRZ&gt;X&lt;/ns1:ATPRZ&gt;         &lt;ns1:ATINC&gt;ATINC_0&lt;/ns1:ATINC&gt;         &lt;ns1:ATAUT&gt;1&lt;/ns1:ATAUT&gt;         &lt;ns1:ATIMB&gt;ATIMB_0&lt;/ns1:ATIMB&gt;         &lt;ns1:ATZIS&gt;ATZIS_0&lt;/ns1:ATZIS&gt;         &lt;ns1:UDEF_CHAR&gt;UDEF_CHAR_0&lt;/ns1:UDEF_CHAR&gt;         &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;       &lt;/ns1:E2AUSPM001&gt;       &lt;ns1:E2DATEM001&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;E2DATEM001&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;         &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;         &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;         &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;         &lt;ns1:MSGFN&gt;003&lt;/ns1:MSGFN&gt;         &lt;ns1:KEY_DATE&gt;KEY_DATE_0&lt;/ns1:KEY_DATE&gt;         &lt;ns1:AENNR&gt;AENNR_0&lt;/ns1:AENNR&gt;         &lt;ns1:EFFECTIVITY&gt;X&lt;/ns1:EFFECTIVITY&gt;         &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;       &lt;/ns1:E2DATEM001&gt;     &lt;/ns1:E2OCLFM001GRP&gt;     &lt;ns1:E2UPSLINK000 xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'&gt;       &lt;ns1:DATAHEADERCOLUMN_SEGNAM&gt;E2UPSLINK000&lt;/ns1:DATAHEADERCOLUMN_SEGNAM&gt;       &lt;ns1:DATAHEADERCOLUMN_MANDT&gt;DATAHEADERCOLUMN_MANDT_0&lt;/ns1:DATAHEADERCOLUMN_MANDT&gt;       &lt;ns1:DATAHEADERCOLUMN_DOCNUM&gt;DATAHEADERCOLUMN_DOCNUM_0&lt;/ns1:DATAHEADERCOLUMN_DOCNUM&gt;       &lt;ns1:DATAHEADERCOLUMN_SEGNUM&gt;DATAHEADERCOLUMN_SEGNUM_0&lt;/ns1:DATAHEADERCOLUMN_SEGNUM&gt;       &lt;ns1:DATAHEADERCOLUMN_PSGNUM&gt;DATAHEADERCOLUMN_PSGNUM_0&lt;/ns1:DATAHEADERCOLUMN_PSGNUM&gt;       &lt;ns1:DATAHEADERCOLUMN_HLEVEL&gt;DATAHEADERCOLUMN_HLEVEL_0&lt;/ns1:DATAHEADERCOLUMN_HLEVEL&gt;       &lt;ns1:UPSNAM&gt;UPSNAM_0&lt;/ns1:UPSNAM&gt;       &lt;ns1:ORGNAM&gt;ORGNAM_0&lt;/ns1:ORGNAM&gt;       &lt;ns1:MESTYP&gt;MESTYP_0&lt;/ns1:MESTYP&gt;       &lt;ns1:OBJID&gt;OBJID_0&lt;/ns1:OBJID&gt;       &lt;ns1:OBJVAL&gt;OBJVAL_0&lt;/ns1:OBJVAL&gt;       &lt;ns1:SEGMENTPAD&gt;SEGMENTPAD_0&lt;/ns1:SEGMENTPAD&gt;     &lt;/ns1:E2UPSLINK000&gt;   &lt;/ns0:idocData&gt; &lt;/ns0:Receive&gt;&quot;);&#xD;&#xA;msgCLFMAS02 = xmlDoc;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Listen" OID="9d5fa62e-2f00-4ba3-a75e-7e66f1cb423e" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="165.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Listen" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="ListenBranch" OID="5c190ce9-0eca-4a44-a3c5-cd762cc10f8c" ParentLink="ReallyComplexStatement_Branch" LowerBound="136.1" HigherBound="136.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_1" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="6fc7b8c0-ac2f-41e9-a3c4-281269377564" ParentLink="ComplexStatement_Statement" LowerBound="142.1" HigherBound="145.1">
+                                <om:Property Name="Expression" Value="//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Received CLFMAS02 Message from SAP&quot;, token));&#xD;&#xA;IsCLFMASRcvd = true;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="exp_Tracing" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="9cd1f099-8ba9-4d54-ba21-70d5820f1a60" ParentLink="ComplexStatement_Statement" LowerBound="145.1" HigherBound="157.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="construct_CLFMAS02" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageRef" OID="d74fb7fe-083c-49b1-a9a0-da44b28c8bbb" ParentLink="Construct_MessageRef" LowerBound="146.39" HigherBound="146.50">
+                                    <om:Property Name="Ref" Value="msgCLFMAS02" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessageAssignment" OID="3a535eef-1794-49b6-8df3-e9c2f44f89d4" ParentLink="ComplexStatement_Statement" LowerBound="148.1" HigherBound="156.1">
+                                    <om:Property Name="Expression" Value="msgCLFMAS02 = msgCLFMASRcv;&#xD;&#xA;msgCLFMAS02(*) = msgCLFMASRcv(*);&#xD;&#xA;msgCLFMAS02(FILE.ReceivedFileName) = &quot;CLFMAS_Resubmit_&quot; + token.ToString()+&quot;.xml&quot;;&#xD;&#xA;&#xD;&#xA;CLFMASPartXml = msgCLFMASRcv;&#xD;&#xA;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :CLFMAS Message Assignment has been completed&quot;, token));" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="edbd8eba-c8dc-4fa7-b7a1-0a335b18608a" ParentLink="ComplexStatement_Statement" LowerBound="157.1" HigherBound="159.1">
+                                <om:Property Name="Expression" Value="CLFMASDocNum =  msgCLFMAS02(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="exp_BAMTracking" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Receive" OID="0681bd19-e57f-48fc-a27c-7c4203131c95" ParentLink="ListenBranch_Statement" LowerBound="139.1" HigherBound="140.96">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="port_RcvPartXml" />
+                                <om:Property Name="MessageName" Value="msgCLFMASRcv" />
+                                <om:Property Name="OperationName" Value="CLFMAS" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="rcv_ZCLFMAS02" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ListenBranch" OID="b4c0d819-0140-4a30-b04e-651e002a17e3" ParentLink="ReallyComplexStatement_Branch" LowerBound="136.1" HigherBound="136.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_2" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Delay" OID="7e528480-2e9c-4066-81b2-0c97b4157c1b" ParentLink="ListenBranch_Statement" LowerBound="160.1" HigherBound="161.74">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,correlationDelay)" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delay" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Scope" OID="5582994a-8b67-4770-b46a-1d7d776e5082" ParentLink="ComplexStatement_Statement" LowerBound="165.1" HigherBound="398.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Scope_LoginAndUpsert" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Call" OID="b6e11cf0-89b1-4321-b3f0-1c3fe7659e51" ParentLink="ComplexStatement_Statement" LowerBound="170.1" HigherBound="172.1">
+                            <om:Property Name="Identifier" Value="CallSMLoginOrch" />
+                            <om:Property Name="Invokee" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.ServiceMaxLogin" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="callorch_ServiceMaxLogin" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Parameter" OID="32919566-7880-4684-bea3-bc801a9664d6" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="token" />
+                                <om:Property Name="Type" Value="System.Guid" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="cbd81e39-3cf3-4999-b762-ca5e5dd0fac4" ParentLink="ComplexStatement_Statement" LowerBound="172.1" HigherBound="188.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="construct_UpsertReq" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="1713181f-f0ba-42c0-a99e-e77eeb2fda73" ParentLink="Construct_MessageRef" LowerBound="173.39" HigherBound="173.55">
+                                <om:Property Name="Ref" Value="msgUpsertRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="fd4dabde-8997-4d86-b51e-ed18f0d2450a" ParentLink="ComplexStatement_Statement" LowerBound="175.1" HigherBound="177.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.ServiceMax.Maps.PartUpdate_To_Upsert" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="transform_Upsert" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="6a4118ff-982a-49dd-a7e6-7729ec6c5216" ParentLink="Transform_InputMessagePartRef" LowerBound="176.133" HigherBound="176.144">
+                                    <om:Property Name="MessageRef" Value="msgMATMAS05" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="98d2b2ae-c3df-440b-96ed-40c190e29ac4" ParentLink="Transform_InputMessagePartRef" LowerBound="176.146" HigherBound="176.157">
+                                    <om:Property Name="MessageRef" Value="msgCLFMAS02" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="d1003b1c-7aa6-4680-8f44-c0a3bd1510f8" ParentLink="Transform_OutputMessagePartRef" LowerBound="176.44" HigherBound="176.71">
+                                    <om:Property Name="MessageRef" Value="msgUpsertRequest" />
+                                    <om:Property Name="PartRef" Value="parameters" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="b959cb38-d0e7-427a-858e-1495fde0b461" ParentLink="ComplexStatement_Statement" LowerBound="177.1" HigherBound="187.1">
+                                <om:Property Name="Expression" Value="msgUpsertRequest(WCF.SecurityMode)=&quot;Transport&quot;;&#xD;&#xA;msgUpsertRequest(WCF.TransportClientCredentialType) = &quot;None&quot;;&#xD;&#xA;msgUpsertRequest(WCF.Action)=&quot;&quot;;&#xD;&#xA;msgUpsertRequest(WCF.OutboundCustomHeaders) = &quot;&lt;headers&gt;&lt;SessionHeader xmlns='urn:enterprise.soap.sforce.com'&gt;&lt;sessionId&gt;&quot; +  Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId + &quot;&lt;/sessionId&gt;&lt;/SessionHeader&gt;&lt;/headers&gt;&quot;;&#xD;&#xA;&#xD;&#xA;port_SendPartUpsert(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl;&#xD;&#xA;port_SendPartUpsert(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;WCF-BasicHttp&quot;;&#xD;&#xA;xmlDocForBAM = msgUpsertRequest.parameters;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="msgassign_UpsertReq" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="719a2926-7fea-4d2d-8a69-ea24c7049272" ParentLink="ComplexStatement_Statement" LowerBound="188.1" HigherBound="197.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="construct_UpsertRes" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="768867d7-c092-40f0-b511-6275b6281470" ParentLink="Construct_MessageRef" LowerBound="189.39" HigherBound="189.56">
+                                <om:Property Name="Ref" Value="msgUpsertResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="218a064b-58a8-4ba6-9b9a-e590480c7df6" ParentLink="ComplexStatement_Statement" LowerBound="191.1" HigherBound="196.1">
+                                <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlDoc.LoadXml(@&quot;&lt;upsertResponse xmlns='urn:enterprise.soap.sforce.com'&gt;&lt;result&gt;&lt;created&gt;&lt;/created&gt;&lt;id&gt;&lt;/id&gt;&lt;success&gt;&lt;/success&gt;&lt;/result&gt;&lt;/upsertResponse&gt;&quot;);&#xD;&#xA;msgUpsertResponse.parameters=xmlDoc;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Upsert Response message has been constructed&quot;,token));" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="msgassign_UpsertReq" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="0e48f317-074d-4d7d-80aa-61c07407a182" ParentLink="ComplexStatement_Statement" LowerBound="197.1" HigherBound="207.1">
+                            <om:Property Name="Expression" Value="//flowTracker.ServerUrl = Visy.SAP.ServiceMax.Helpers.SessionDetails.ServerUrl;&#xD;&#xA;//flowTracker.SessionId = Visy.SAP.ServiceMax.Helpers.SessionDetails.SessionId;&#xD;&#xA;//flowTracker.ServiceMaxReqMsg = xmlDocForBAM.OuterXml;&#xD;&#xA;//flowTracker.CommitSAPToServiceMaxPartUpdateActivity();&#xD;&#xA;isException = false;&#xD;&#xA;expObj = new System.Exception();&#xD;&#xA;IsSoapExp = false;&#xD;&#xA;xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;upsertResp = &quot;false&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="exp_BAMTracking" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="While" OID="b1fda8b7-26a7-4349-82c2-823e38955512" ParentLink="ComplexStatement_Statement" LowerBound="207.1" HigherBound="311.1">
+                            <om:Property Name="Expression" Value="retryCount &lt;= retryLimit" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Loop_Retry" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Scope" OID="1868ae2e-741c-4683-83e0-3d6d3daa5f54" ParentLink="ComplexStatement_Statement" LowerBound="210.1" HigherBound="246.1">
+                                <om:Property Name="InitializedTransactionType" Value="True" />
+                                <om:Property Name="IsSynchronized" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="scope_Upsert" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Send" OID="67e491c1-8d25-4afb-8ecf-afc62497e160" ParentLink="ComplexStatement_Statement" LowerBound="215.1" HigherBound="217.1">
+                                    <om:Property Name="PortName" Value="port_SendPartUpsert" />
+                                    <om:Property Name="MessageName" Value="msgUpsertRequest" />
+                                    <om:Property Name="OperationName" Value="Operation_SendUpsert" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="send_UpsertReq" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Receive" OID="fde650c8-2c78-4b77-905b-5548e7aa9972" ParentLink="ComplexStatement_Statement" LowerBound="217.1" HigherBound="219.1">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="port_SendPartUpsert" />
+                                    <om:Property Name="MessageName" Value="msgUpsertResponse" />
+                                    <om:Property Name="OperationName" Value="Operation_SendUpsert" />
+                                    <om:Property Name="OperationMessageName" Value="Response" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rcv_UpsertRes" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Catch" OID="bd6d1c57-6295-4351-9232-bc3f940b11d0" ParentLink="Scope_Catch" LowerBound="222.1" HigherBound="233.1">
+                                    <om:Property Name="ExceptionName" Value="soapExc" />
+                                    <om:Property Name="ExceptionType" Value="port_SendPartUpsert.Operation_SendUpsert.GenericSoapFault" />
+                                    <om:Property Name="IsFaultMessage" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="catch_GenericSOAPExp" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="bc39ed09-8406-4a5f-ade2-38e12c9ca85f" ParentLink="Catch_Statement" LowerBound="225.1" HigherBound="232.1">
+                                        <om:Property Name="Expression" Value="strException = xpath(soapExc, &quot;string(/*[local-name()='Fault' and namespace-uri()='http://schemas.xmlsoap.org/soap/envelope/']/*[local-name()='faultstring' and namespace-uri()=''])&quot;);&#xD;&#xA;isException = true;&#xD;&#xA;IsSoapExp = true;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.ServiceMax: &quot; + System.String.Format(&quot;{0} :A SOAP exception has occurred with the Upsert call. Error Description: &quot;+ strException, token));&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :A SOAP exception has occurred with the Upsert call. Error Description: &quot;+ strException, token));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_TraceException" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Catch" OID="30657d32-8ccb-44e1-a7eb-c772bbd59e2c" ParentLink="Scope_Catch" LowerBound="233.1" HigherBound="244.1">
+                                    <om:Property Name="ExceptionName" Value="excp" />
+                                    <om:Property Name="ExceptionType" Value="System.Exception" />
+                                    <om:Property Name="IsFaultMessage" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="catch_Exception" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="864be223-9b70-434a-bf15-978477fca996" ParentLink="Catch_Statement" LowerBound="236.1" HigherBound="243.1">
+                                        <om:Property Name="Expression" Value="strSystemExcp = excp.ToString();&#xD;&#xA;isException = true;&#xD;&#xA;IsSoapExp = false;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.ServiceMax: &quot; + System.String.Format(&quot;{0} :Error in Transmitting the message.{1}; Retry count:&quot;+retryCount.ToString(), token, excp.ToString()));&#xD;&#xA;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} :Error in Transmitting the message.{1}; Retry count:&quot;+retryCount.ToString(), token, excp.ToString()));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_TraceException" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="5e18d4b1-cf99-43b3-b19c-8d690a706d01" ParentLink="ComplexStatement_Statement" LowerBound="246.1" HigherBound="249.1">
+                                <om:Property Name="Expression" Value="upsertResp = xpath(msgUpsertResponse.parameters, &quot;string(/*[local-name()='upsertResponse' and namespace-uri()='urn:enterprise.soap.sforce.com']/*[local-name()='result' and namespace-uri()='urn:enterprise.soap.sforce.com']/*[local-name()='success' and namespace-uri()='urn:enterprise.soap.sforce.com']/text())&quot;);&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Upsert Response :&quot; + upsertResp, token));&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="exp_CaptureResp" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Decision" OID="3cf498ba-24ce-4184-af7e-3873bf62fcb7" ParentLink="ComplexStatement_Statement" LowerBound="249.1" HigherBound="310.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="decide_RetryCount" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="DecisionBranch" OID="f76305cf-7c5f-432e-8963-6eb514e788cd" ParentLink="ReallyComplexStatement_Branch" LowerBound="250.33" HigherBound="259.1">
+                                    <om:Property Name="Expression" Value="(retryCount &gt;= retryLimit &amp;&amp; isException == true)" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rule_RetryCountLimit" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="fbd4f0ef-c0e7-4654-9273-340a39a1c579" ParentLink="ComplexStatement_Statement" LowerBound="252.1" HigherBound="256.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryLimit + 1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : The error has occurred while connecting to Service Max&quot;,token));&#xD;&#xA;expObj = new System.Exception(strSystemExcp);" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_ExitRetry" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="Throw" OID="3ef44370-6dc3-44c7-ad39-1eca00295419" ParentLink="ComplexStatement_Statement" LowerBound="256.1" HigherBound="258.1">
+                                        <om:Property Name="ThrownReference" Value="expObj" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="throwException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="cb0e4b32-349b-4b1c-b5f8-418a6fc3b0dd" ParentLink="ReallyComplexStatement_Branch" LowerBound="259.38" HigherBound="276.1">
+                                    <om:Property Name="Expression" Value="(isException == false) &amp;&amp; (upsertResp == &quot;true&quot;)" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rule_NoException" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="c089a3ae-cae2-4e17-a344-451beee0b126" ParentLink="ComplexStatement_Statement" LowerBound="261.1" HigherBound="275.1">
+                                        <om:Property Name="Expression" Value="xmlDoc = msgUpsertResponse.parameters;&#xD;&#xA;//flowTracker.IsError = &quot;False&quot;;&#xD;&#xA;//flowTracker.IsRetrying = &quot;False&quot;;&#xD;&#xA;//flowTracker.IsEmailSent = &quot;False&quot;;&#xD;&#xA;//flowTracker.IsMessageSuspended = &quot;False&quot;;&#xD;&#xA;//flowTracker.IsSentToServiceMax = &quot;Success&quot;;&#xD;&#xA;//flowTracker.SentToServiceMaxTime = System.DateTime.Now.ToString();&#xD;&#xA;//flowTracker.ServiceMaxRespMsg = xmlDoc.OuterXml;&#xD;&#xA;//flowTracker.CommitSAPToServiceMaxPartUpdateActivity();&#xD;&#xA;//flowTracker.EndSAPToServiceMaxPartUpdateActivity();&#xD;&#xA;retryCount = retryLimit + 1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Upsert successfully completed; Upsert response: &quot; + xmlDoc.OuterXml.ToString(), token));&#xD;&#xA;&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_BAMTracking" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="b7782433-e4ed-46e9-a295-2742d86127f0" ParentLink="ReallyComplexStatement_Branch" LowerBound="276.38" HigherBound="291.1">
+                                    <om:Property Name="Expression" Value="(upsertResp == &quot;false&quot;) &amp;&amp; (isException == false)" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rule_UpsertResp" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Construct" OID="eb147fe8-a8ef-4267-b2a7-9c3dd2811398" ParentLink="ComplexStatement_Statement" LowerBound="278.1" HigherBound="284.1">
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="construct_XMLDocUpsertRespMsg" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="MessageRef" OID="ce6e5047-248c-495b-8fff-ce2b3eeb992e" ParentLink="Construct_MessageRef" LowerBound="279.47" HigherBound="279.56">
+                                            <om:Property Name="Ref" Value="msgXmlDoc" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessageAssignment" OID="7f50655a-8b71-4b19-a9ed-4ca662a032dd" ParentLink="ComplexStatement_Statement" LowerBound="281.1" HigherBound="283.1">
+                                            <om:Property Name="Expression" Value="msgXmlDoc = msgUpsertResponse.parameters;&#xD;&#xA;" />
+                                            <om:Property Name="ReportToAnalyst" Value="False" />
+                                            <om:Property Name="Name" Value="msgAssign_UpsertResp" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="VariableAssignment" OID="c6cd8319-daef-4ddc-be41-d56a6e8c74e5" ParentLink="ComplexStatement_Statement" LowerBound="284.1" HigherBound="288.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryLimit + 1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Upsert returned a failure response. &quot;+msgXmlDoc.OuterXml,token));&#xD;&#xA;expObj = new System.Exception(System.String.Format(&quot;ServiceMax returned an error message; &lt;xmp&gt;{0}&lt;/xmp&gt;​ &quot;, msgXmlDoc.OuterXml));" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_ExitRetry" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Throw" OID="36b5be67-f974-403b-be14-00d717949815" ParentLink="ComplexStatement_Statement" LowerBound="288.1" HigherBound="290.1">
+                                        <om:Property Name="ThrownReference" Value="expObj" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="throwException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="5322b06d-da2b-4654-a44c-32223ef0654e" ParentLink="ReallyComplexStatement_Branch" LowerBound="291.38" HigherBound="301.1">
+                                    <om:Property Name="Expression" Value="IsSoapExp == true" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rule_SOAPExp" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="4a0efd8e-e7e0-4b12-8ec1-1f046b2efb94" ParentLink="ComplexStatement_Statement" LowerBound="293.1" HigherBound="298.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryLimit + 1;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : A SOAP exception has occurred while connecting to Service Max&quot;,token));&#xD;&#xA;&#xD;&#xA;expObj = new System.Exception(&quot;ServiceMax returned an error message;  &quot;+strException);" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_ExitRetry" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Throw" OID="32e39f43-28e5-4238-b766-c38a9c53ee69" ParentLink="ComplexStatement_Statement" LowerBound="298.1" HigherBound="300.1">
+                                        <om:Property Name="ThrownReference" Value="expObj" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="throwException" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="79f1bb72-5a83-4b57-9501-56b5f3716a74" ParentLink="ReallyComplexStatement_Branch">
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Else" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="VariableAssignment" OID="ba9e4c73-0c18-403c-9d62-39f5bd22d691" ParentLink="ComplexStatement_Statement" LowerBound="303.1" HigherBound="307.1">
+                                        <om:Property Name="Expression" Value="retryCount = retryCount +1;&#xD;&#xA;isException =false;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Error in transmitting the upsert request; Waiting to retry&quot;,token));&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="exp_IncrementRetryCount" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Delay" OID="be2de0bf-c2be-44ac-9017-de2bbe6a37ad" ParentLink="ComplexStatement_Statement" LowerBound="307.1" HigherBound="309.1">
+                                        <om:Property Name="Timeout" Value="new System.TimeSpan(0,retryInterval,0);" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="delay_RetryInterval" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Catch" OID="aae17c60-756d-487c-8531-57cbe26177a4" ParentLink="Scope_Catch" LowerBound="314.1" HigherBound="396.1">
+                            <om:Property Name="ExceptionName" Value="AllExcp" />
+                            <om:Property Name="ExceptionType" Value="System.Exception" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="catch_SystemException" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="e9f84088-7403-4e90-89cf-816571d32dd7" ParentLink="Catch_Statement" LowerBound="317.1" HigherBound="319.1">
+                                <om:Property Name="Expression" Value="errorMsg = AllExcp.ToString();" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ErrorMessage" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Construct" OID="9e604bd5-e86a-49aa-a7b2-24a2d0a92652" ParentLink="Catch_Statement" LowerBound="319.1" HigherBound="379.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ConstructExceptionEmail" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessageAssignment" OID="53e1ccf4-8621-4f6d-8dd9-544b2bd8ea9a" ParentLink="ComplexStatement_Statement" LowerBound="322.1" HigherBound="378.1">
+                                    <om:Property Name="Expression" Value="//Build HTML Message body&#xD;&#xA;strbuilder_MsgBody = new System.Text.StringBuilder();&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;p&gt;&lt;B&gt;ServiceMax Part Update Orchestration Error&lt;/B&gt;&lt;/p&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Date of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortDateString());&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Time of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Integration Point:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;SAP-SMAX_PART&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Exception:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(errorMsg);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;MATMAS IDOC DocNum of Incoming Message:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(msgMATMAS05(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber));&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;CLFMAS IDOC DocNum of Incoming Message:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(CLFMASDocNum);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Processing Server:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.Environment.MachineName);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//Set Email Properties&#xD;&#xA;msgEmailException.msgBody = new Visy.Middleware.SAP.ServiceMax.Components.RawString(strbuilder_MsgBody.ToString());&#xD;&#xA;msgEmailException.msgBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;msgEmailException(SMTP.Subject) = &quot;ServiceMax Part Update Orchestration failed in BizTalk Server: &quot; + System.Environment.MachineName;&#xD;&#xA;&#xD;&#xA;msgEmailException(SMTP.From) = &quot;webitadmin@visy.com.au&quot;;&#xD;&#xA;msgEmailException(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Created SMTP Mail Message&quot;,token));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="False" />
+                                    <om:Property Name="Name" Value="MessageAssignment_1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="4d05c5d9-6ca9-4e6a-aeea-add25b0d8ab7" ParentLink="Construct_MessageRef" LowerBound="320.43" HigherBound="320.60">
+                                    <om:Property Name="Ref" Value="msgEmailException" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="b62b0279-80cd-41bf-8d56-f4bab477c3f4" ParentLink="Catch_Statement" LowerBound="379.1" HigherBound="381.1">
+                                <om:Property Name="PortName" Value="Port_SendPartEmail" />
+                                <om:Property Name="MessageName" Value="msgEmailException" />
+                                <om:Property Name="OperationName" Value="Email" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="send_Mail" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Suspend" OID="01b58d37-7812-4a76-a822-cca83d803c40" ParentLink="Catch_Statement" LowerBound="381.1" HigherBound="383.1">
+                                <om:Property Name="ErrorMessage" Value="&quot;Error Description: &quot; + errorMsg + &quot; Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.&quot;;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Suspend_Message" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Send" OID="d7d57392-64bb-46cc-b0c5-0f7526f2ab0f" ParentLink="Catch_Statement" LowerBound="383.1" HigherBound="385.1">
+                                <om:Property Name="PortName" Value="Port_ResubmitMATMASCLFMAS" />
+                                <om:Property Name="MessageName" Value="msgMATMAS05" />
+                                <om:Property Name="OperationName" Value="Operation_SendMATMAS" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send_MATMAS" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Delay" OID="1d0daaef-d2d1-485a-8674-2b3e6dcc828b" ParentLink="Catch_Statement" LowerBound="385.1" HigherBound="387.1">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,5);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delay" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Decision" OID="f42d4cd9-5b13-4035-b3cd-ee161bde81a3" ParentLink="Catch_Statement" LowerBound="387.1" HigherBound="393.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="decide_IfCLFMASReceived" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="DecisionBranch" OID="4c726475-39a3-4304-9480-b6f293eb21be" ParentLink="ReallyComplexStatement_Branch" LowerBound="388.33" HigherBound="393.1">
+                                    <om:Property Name="Expression" Value="IsCLFMASRcvd == true" />
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="rule" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Send" OID="a96ec8ce-43de-4fda-9101-bb81ac859f22" ParentLink="ComplexStatement_Statement" LowerBound="390.1" HigherBound="392.1">
+                                        <om:Property Name="PortName" Value="Port_ResubmitMATMASCLFMAS" />
+                                        <om:Property Name="MessageName" Value="msgCLFMAS02" />
+                                        <om:Property Name="OperationName" Value="Operation_SendCLFMAS" />
+                                        <om:Property Name="OperationMessageName" Value="Request" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Send_CLFMAS" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="DecisionBranch" OID="280e742a-8af0-48ac-a856-5205722fde9e" ParentLink="ReallyComplexStatement_Branch">
+                                    <om:Property Name="IsGhostBranch" Value="True" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Else" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Terminate" OID="4a18e483-e80b-4e03-bd2f-972eca2fb24b" ParentLink="Catch_Statement" LowerBound="393.1" HigherBound="395.1">
+                                <om:Property Name="ErrorMessage" Value="&quot;The Part Update Orchestration has been terminated due to the error. The suspended messages needs to be manually reprocessed later&quot; + AllExcp.ToString();" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Terminate" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="95bc7dfa-a536-4828-8ffa-013c1a1ef6cc" ParentLink="Scope_Catch" LowerBound="401.1" HigherBound="469.1">
+                        <om:Property Name="ExceptionName" Value="sysex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="catch_GeneralException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="41adcfc2-e13b-49c0-ae50-ffd1197e4303" ParentLink="Catch_Statement" LowerBound="404.1" HigherBound="406.1">
+                            <om:Property Name="Expression" Value="errorMsg = sysex.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ErrorMessage" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="1bbaded8-4a61-4bbb-a5a8-98c98bc0f1a4" ParentLink="Catch_Statement" LowerBound="406.1" HigherBound="466.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructExceptionEmail" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="56cf5855-0c42-4602-8236-ed2d43029d64" ParentLink="ComplexStatement_Statement" LowerBound="409.1" HigherBound="465.1">
+                                <om:Property Name="Expression" Value="//Build HTML Message body&#xD;&#xA;strbuilder_MsgBody = new System.Text.StringBuilder();&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;p&gt;&lt;B&gt;ServiceMax Part Update Orchestration Error&lt;/B&gt;&lt;/p&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Date of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortDateString());&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Time of Error:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Integration Point:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;SAP-SMAX_PART&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Exception:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(errorMsg);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;MATMAS IDOC DocNum of Incoming Message:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(msgMATMAS05(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber));&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;CLFMAS IDOC DocNum of Incoming Message:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(CLFMASDocNum);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;tr&gt;&lt;td&gt;Processing Server:&lt;/td&gt;&lt;td&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(System.Environment.MachineName);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/td&gt;&lt;/tr&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;strbuilder_MsgBody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//Set Email Properties&#xD;&#xA;msgEmailException.msgBody = new Visy.Middleware.SAP.ServiceMax.Components.RawString(strbuilder_MsgBody.ToString());&#xD;&#xA;msgEmailException.msgBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;msgEmailException(SMTP.Subject) = &quot;ServiceMax Part Update Orchestration failed in BizTalk Server: &quot; + System.Environment.MachineName;&#xD;&#xA;&#xD;&#xA;msgEmailException(SMTP.From) = &quot;webitadmin@visy.com.au&quot;;&#xD;&#xA;msgEmailException(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format(&quot;{0} : Created SMTP Mail Message&quot;,token));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="a841f705-cfc5-45ba-98ee-5e7c9c0e741d" ParentLink="Construct_MessageRef" LowerBound="407.35" HigherBound="407.52">
+                                <om:Property Name="Ref" Value="msgEmailException" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="925c9f81-3521-425f-977a-0148c7fe3390" ParentLink="Catch_Statement" LowerBound="466.1" HigherBound="468.1">
+                            <om:Property Name="PortName" Value="Port_SendPartEmail" />
+                            <om:Property Name="MessageName" Value="msgEmailException" />
+                            <om:Property Name="OperationName" Value="Email" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="send_Mail" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0e6d414a-1c03-4f61-bf97-66ac5b195c5e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="44.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="True" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_XMLMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="port_RcvPartXml" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b1b52094-105c-4f4f-999f-b84d0ae99cab" ParentLink="PortDeclaration_CLRAttribute" LowerBound="44.1" HigherBound="45.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="873afc5d-027f-443d-8ff1-6a87c023fd5c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="47.1" HigherBound="49.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="71" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_SendUpsertReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="port_SendPartUpsert" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="eb85cb75-94c9-42d2-b062-c75486817636" ParentLink="PortDeclaration_CLRAttribute" LowerBound="47.1" HigherBound="48.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6600d6d1-546b-49e9-bcd6-0fd5155458f5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="49.1" HigherBound="51.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="154" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_Email" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendPartEmail" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b82fd7ba-08eb-46e0-a018-e6a9d0a50aac" ParentLink="PortDeclaration_CLRAttribute" LowerBound="49.1" HigherBound="50.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="55f0c5f9-ef6a-451d-b27e-51b78ef31618" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="51.1" HigherBound="53.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_ResubmitMATMASCLFMAS" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ResubmitMATMASCLFMAS" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="4a61cc3d-d09d-461a-8aa9-9983e41adc3d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="51.1" HigherBound="52.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="53b66c0c-6f9c-437c-b42d-5c79e5f9693d" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="emailExceptionType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="183945be-047a-4894-a71e-780244f687d3" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.ServiceMax.Components.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="d2e6358a-3da2-4a46-bbc1-71ad416aaa4c" ParentLink="Module_CorrelationType" LowerBound="37.1" HigherBound="41.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_MSPNo" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="4f35bfe4-1bb2-4106-ad6d-59e7b734fd84" ParentLink="CorrelationType_PropertyRef" LowerBound="39.9" HigherBound="39.57">
+                <om:Property Name="Ref" Value="Visy.Middleware.SAP.ServiceMax.Schemas.MSPNumber" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.ServiceMax.Orchestrations
+{
+    internal messagetype emailExceptionType
+    {
+        body Visy.Middleware.SAP.ServiceMax.Components.RawString msgBody;
+    };
+    internal porttype PortType_ResubmitMATMASCLFMAS
+    {
+        oneway Operation_SendMATMAS
+        {
+            Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive
+        };
+        oneway Operation_SendCLFMAS
+        {
+            Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive
+        };
+    };
+    public porttype PortType_Email
+    {
+        oneway Email
+        {
+            emailExceptionType
+        };
+    };
+    public porttype PortType_XMLMessage
+    {
+        oneway MATMAS
+        {
+            Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive
+        };
+        oneway CLFMAS
+        {
+            Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive
+        };
+    };
+    internal correlationtype CorrelationType_MSPNo
+    {
+        Visy.Middleware.SAP.ServiceMax.Schemas.MSPNumber
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SMAXPartUpdateAgent
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
+        port implements PortType_XMLMessage port_RcvPartXml;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.XMLReceive), typeof(Microsoft.BizTalk.DefaultPipelines.XMLTransmit))]
+        port uses dynamic PortType_SendUpsertReq port_SendPartUpsert;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Email Port_SendPartEmail;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_ResubmitMATMASCLFMAS Port_ResubmitMATMASCLFMAS;
+        correlation CorrelationType_MSPNo Correlation_MSPNo;
+        message Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.upsertRequest msgUpsertRequest;
+        message Visy.Middleware.SAP.ServiceMax.Schemas.SforceServiceClient.upsertResponse msgUpsertResponse;
+        message emailExceptionType msgEmailException;
+        message Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive msgCLFMAS02;
+        message Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive msgMATMAS05;
+        message System.Xml.XmlDocument msgXmlDoc;
+        message Visy.Middleware.Common.SAP.AMS.ZLFMAS02.IDocOperation_CLFMAS02_ZCLFMAS02_620_3_Receive msgCLFMASRcv;
+        message Visy.Middleware.Common.SAP.AMS.MATMAS05.IDocOperation_MATMAS05_620_3_Receive msgMATMASRcv;
+        System.Xml.XmlDocument xmlDocForBAM;
+        System.String upsertResp;
+        System.Boolean IsCLFMASRcvd;
+        System.String strException;
+        System.Guid token;
+        System.Xml.XmlDocument xmlDoc;
+        System.Int32 retryCount;
+        System.Boolean isException;
+        System.Exception expObj;
+        System.Text.StringBuilder strbuilder_MsgBody;
+        System.String errorMsg;
+        System.Int32 retryLimit;
+        System.Int32 retryInterval;
+        System.Int32 correlationDelay;
+        System.Boolean IsSoapExp;
+        System.String CLFMASDocNum;
+        System.Xml.XmlDocument MATMASPartXml;
+        System.Xml.XmlDocument CLFMASPartXml;
+        System.String strSystemExcp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f7570c7-c720-41a8-b3a0-7fa6abb847aa")]
+            activate receive (port_RcvPartXml.MATMAS, msgMATMASRcv, initialize Correlation_MSPNo);
+            xmlDocForBAM = new System.Xml.XmlDocument();
+            upsertResp = "";
+            IsCLFMASRcvd = false;
+            strException = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            isException = false;
+            expObj = new System.Exception();
+            strbuilder_MsgBody = new System.Text.StringBuilder();
+            errorMsg = "";
+            IsSoapExp = false;
+            CLFMASDocNum = "";
+            MATMASPartXml = new System.Xml.XmlDocument();
+            CLFMASPartXml = new System.Xml.XmlDocument();
+            strSystemExcp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cd59764-8f11-4bad-a83d-52b94b337250")]
+            token = System.Guid.NewGuid();//Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceIn("Part Update Orchestration started");
+            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Received MATMAS05 Message from SAP", token));
+            IsCLFMASRcvd = false;
+            CLFMASDocNum = "";
+            strException = "";
+            strSystemExcp ="";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e5b65e9e-7b43-4803-a4e1-0dbe15e44312")]
+            construct msgMATMAS05
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b014f056-edf7-4192-af28-e4998f9817f2")]
+                msgMATMAS05 = msgMATMASRcv;
+                msgMATMAS05(*) = msgMATMASRcv(*);
+                MATMASPartXml = msgMATMASRcv;
+                msgMATMAS05(FILE.ReceivedFileName) = "MATMAS_Resubmit_" + token.ToString()+".xml";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5acac764-8d28-45e5-93a5-b09fa2a40ba5")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("cad58c38-31ca-4cc0-8821-ed4c2cbe46e8")]
+                    retryLimit = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("RetryLimit","SAP.ServiceMax"));
+                    retryInterval = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("RetryInterval","SAP.ServiceMax"));
+                    correlationDelay = System.Convert.ToInt32(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData("CorrelationDelay","SAP.ServiceMax"));
+                    retryCount = 1;
+                    
+                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Retry Limit: " + retryLimit.ToString() +"Retry Interval: "+ retryInterval.ToString() + "Correlation Delay: "+ correlationDelay.ToString(), token));
+                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Waiting for CLFMAS Idoc", token));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("73ffdd6a-2104-405b-8788-b5812980da52")]
+                    construct msgCLFMAS02
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("367a592b-31f7-4dca-814f-c09a4297b30b")]
+                        xmlDoc = new System.Xml.XmlDocument();
+                        xmlDoc.LoadXml("<ns0:Receive xmlns:ns0='http://Microsoft.LobServices.Sap/2007/03/Idoc/3/CLFMAS02/ZCLFMAS02/620/Receive'>   <ns0:idocData>     <ns1:EDI_DC40 xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'>       <ns2:TABNAM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>TABNAM_0</ns2:TABNAM>       <ns2:MANDT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>MANDT_0</ns2:MANDT>       <ns2:DOCNUM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>DOCNUM_0</ns2:DOCNUM>       <ns2:DOCREL xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>DOCREL_0</ns2:DOCREL>       <ns2:STATUS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>STATUS_0</ns2:STATUS>       <ns2:DIRECT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>1</ns2:DIRECT>       <ns2:OUTMOD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>1</ns2:OUTMOD>       <ns2:EXPRSS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>X</ns2:EXPRSS>       <ns2:TEST xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>X</ns2:TEST>       <ns2:IDOCTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>IDOCTYP_0</ns2:IDOCTYP>       <ns2:CIMTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>CIMTYP_0</ns2:CIMTYP>       <ns2:MESTYP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>MESTYP_0</ns2:MESTYP>       <ns2:MESCOD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>MESCOD_0</ns2:MESCOD>       <ns2:MESFCT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>MESFCT_0</ns2:MESFCT>       <ns2:STD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>STD_0</ns2:STD>       <ns2:STDVRS xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>STDVRS_0</ns2:STDVRS>       <ns2:STDMES xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>STDMES_0</ns2:STDMES>       <ns2:SNDPOR xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDPOR_0</ns2:SNDPOR>       <ns2:SNDPRT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDPRT_0</ns2:SNDPRT>       <ns2:SNDPFC xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDPFC_0</ns2:SNDPFC>       <ns2:SNDPRN xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDPRN_0</ns2:SNDPRN>       <ns2:SNDSAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDSAD_0</ns2:SNDSAD>       <ns2:SNDLAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SNDLAD_0</ns2:SNDLAD>       <ns2:RCVPOR xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVPOR_0</ns2:RCVPOR>       <ns2:RCVPRT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVPRT_0</ns2:RCVPRT>       <ns2:RCVPFC xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVPFC_0</ns2:RCVPFC>       <ns2:RCVPRN xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVPRN_0</ns2:RCVPRN>       <ns2:RCVSAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVSAD_0</ns2:RCVSAD>       <ns2:RCVLAD xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>RCVLAD_0</ns2:RCVLAD>       <ns2:CREDAT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>CREDAT_0</ns2:CREDAT>       <ns2:CRETIM xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>CRETIM_0</ns2:CRETIM>       <ns2:REFINT xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>REFINT_0</ns2:REFINT>       <ns2:REFGRP xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>REFGRP_0</ns2:REFGRP>       <ns2:REFMES xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>REFMES_0</ns2:REFMES>       <ns2:ARCKEY xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>ARCKEY_0</ns2:ARCKEY>       <ns2:SERIAL xmlns:ns2='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/'>SERIAL_0</ns2:SERIAL>     </ns1:EDI_DC40>     <ns1:E2OCLFM001GRP xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'>       <ns1:E2OCLFM001>         <ns1:DATAHEADERCOLUMN_SEGNAM>E2OCLFM001</ns1:DATAHEADERCOLUMN_SEGNAM>         <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>         <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>         <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>         <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>         <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>         <ns1:MSGFN>003</ns1:MSGFN>         <ns1:OBTAB>OBTAB_0</ns1:OBTAB>         <ns1:OBJEK>OBJEK_0</ns1:OBJEK>         <ns1:KLART>KLART_0</ns1:KLART>         <ns1:MAFID>MAFID_0</ns1:MAFID>         <ns1:OBJECT_TABLE>OBJECT_TABLE_0</ns1:OBJECT_TABLE>         <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>       </ns1:E2OCLFM001>       <ns1:E2KSSKMGRP>         <ns1:E2KSSKM>           <ns1:DATAHEADERCOLUMN_SEGNAM>E2KSSKM</ns1:DATAHEADERCOLUMN_SEGNAM>           <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>           <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>           <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>           <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>           <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>           <ns1:MSGFN>003</ns1:MSGFN>           <ns1:CLASS></ns1:CLASS>           <ns1:AENNR>AENNR_0</ns1:AENNR>           <ns1:DATUV>DATUV_0</ns1:DATUV>           <ns1:STATU>STATU_0</ns1:STATU>           <ns1:STDCL>X</ns1:STDCL>           <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>         </ns1:E2KSSKM>         <ns1:Z2SWORM000>           <ns1:DATAHEADERCOLUMN_SEGNAM>Z2SWORM000</ns1:DATAHEADERCOLUMN_SEGNAM>           <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>           <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>           <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>           <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>           <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>           <ns1:SPRAS>SPRAS_0</ns1:SPRAS>           <ns1:KSCHL>KSCHL_0</ns1:KSCHL>           <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>         </ns1:Z2SWORM000>         <ns1:Z2SWORM000>           <ns1:DATAHEADERCOLUMN_SEGNAM>Z2SWORM000</ns1:DATAHEADERCOLUMN_SEGNAM>           <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>           <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>           <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>           <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>           <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>           <ns1:SPRAS>SPRAS_0</ns1:SPRAS>           <ns1:KSCHL>KSCHL_0</ns1:KSCHL>           <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>         </ns1:Z2SWORM000>         <ns1:Z2SWORM000>           <ns1:DATAHEADERCOLUMN_SEGNAM>Z2SWORM000</ns1:DATAHEADERCOLUMN_SEGNAM>           <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>           <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>           <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>           <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>           <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>           <ns1:SPRAS>SPRAS_0</ns1:SPRAS>           <ns1:KSCHL>KSCHL_0</ns1:KSCHL>           <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>         </ns1:Z2SWORM000>       </ns1:E2KSSKMGRP>       <ns1:E2AUSPM001>         <ns1:DATAHEADERCOLUMN_SEGNAM>E2AUSPM001</ns1:DATAHEADERCOLUMN_SEGNAM>         <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>         <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>         <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>         <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>         <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>         <ns1:MSGFN>003</ns1:MSGFN>         <ns1:ATNAM>ATNAM_0</ns1:ATNAM>         <ns1:AENNR>AENNR_0</ns1:AENNR>         <ns1:DATUV>DATUV_0</ns1:DATUV>         <ns1:ATWRT>ATWRT_0</ns1:ATWRT>         <ns1:ATFLV>ATFLV_0</ns1:ATFLV>         <ns1:ATAWE>ATAWE_0</ns1:ATAWE>         <ns1:ATFLB>ATFLB_0</ns1:ATFLB>         <ns1:ATAW1>ATAW1_0</ns1:ATAW1>         <ns1:ATCOD>ATCOD_0</ns1:ATCOD>         <ns1:ATTLV>ATTLV_0</ns1:ATTLV>         <ns1:ATTLB>ATTLB_0</ns1:ATTLB>         <ns1:ATPRZ>X</ns1:ATPRZ>         <ns1:ATINC>ATINC_0</ns1:ATINC>         <ns1:ATAUT>1</ns1:ATAUT>         <ns1:ATIMB>ATIMB_0</ns1:ATIMB>         <ns1:ATZIS>ATZIS_0</ns1:ATZIS>         <ns1:UDEF_CHAR>UDEF_CHAR_0</ns1:UDEF_CHAR>         <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>       </ns1:E2AUSPM001>       <ns1:E2DATEM001>         <ns1:DATAHEADERCOLUMN_SEGNAM>E2DATEM001</ns1:DATAHEADERCOLUMN_SEGNAM>         <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>         <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>         <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>         <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>         <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>         <ns1:MSGFN>003</ns1:MSGFN>         <ns1:KEY_DATE>KEY_DATE_0</ns1:KEY_DATE>         <ns1:AENNR>AENNR_0</ns1:AENNR>         <ns1:EFFECTIVITY>X</ns1:EFFECTIVITY>         <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>       </ns1:E2DATEM001>     </ns1:E2OCLFM001GRP>     <ns1:E2UPSLINK000 xmlns:ns1='http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/CLFMAS02/ZCLFMAS02/620'>       <ns1:DATAHEADERCOLUMN_SEGNAM>E2UPSLINK000</ns1:DATAHEADERCOLUMN_SEGNAM>       <ns1:DATAHEADERCOLUMN_MANDT>DATAHEADERCOLUMN_MANDT_0</ns1:DATAHEADERCOLUMN_MANDT>       <ns1:DATAHEADERCOLUMN_DOCNUM>DATAHEADERCOLUMN_DOCNUM_0</ns1:DATAHEADERCOLUMN_DOCNUM>       <ns1:DATAHEADERCOLUMN_SEGNUM>DATAHEADERCOLUMN_SEGNUM_0</ns1:DATAHEADERCOLUMN_SEGNUM>       <ns1:DATAHEADERCOLUMN_PSGNUM>DATAHEADERCOLUMN_PSGNUM_0</ns1:DATAHEADERCOLUMN_PSGNUM>       <ns1:DATAHEADERCOLUMN_HLEVEL>DATAHEADERCOLUMN_HLEVEL_0</ns1:DATAHEADERCOLUMN_HLEVEL>       <ns1:UPSNAM>UPSNAM_0</ns1:UPSNAM>       <ns1:ORGNAM>ORGNAM_0</ns1:ORGNAM>       <ns1:MESTYP>MESTYP_0</ns1:MESTYP>       <ns1:OBJID>OBJID_0</ns1:OBJID>       <ns1:OBJVAL>OBJVAL_0</ns1:OBJVAL>       <ns1:SEGMENTPAD>SEGMENTPAD_0</ns1:SEGMENTPAD>     </ns1:E2UPSLINK000>   </ns0:idocData> </ns0:Receive>");
+                        msgCLFMAS02 = xmlDoc;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9d5fa62e-2f00-4ba3-a75e-7e66f1cb423e")]
+                    listen
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0681bd19-e57f-48fc-a27c-7c4203131c95")]
+                        until receive (port_RcvPartXml.CLFMAS, msgCLFMASRcv, Correlation_MSPNo)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6fc7b8c0-ac2f-41e9-a3c4-281269377564")]
+                            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Received CLFMAS02 Message from SAP", token));
+                            IsCLFMASRcvd = true;
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9cd1f099-8ba9-4d54-ba21-70d5820f1a60")]
+                            construct msgCLFMAS02
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a535eef-1794-49b6-8df3-e9c2f44f89d4")]
+                                msgCLFMAS02 = msgCLFMASRcv;
+                                msgCLFMAS02(*) = msgCLFMASRcv(*);
+                                msgCLFMAS02(FILE.ReceivedFileName) = "CLFMAS_Resubmit_" + token.ToString()+".xml";
+                                
+                                CLFMASPartXml = msgCLFMASRcv;
+                                
+                                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :CLFMAS Message Assignment has been completed", token));
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("edbd8eba-c8dc-4fa7-b7a1-0a335b18608a")]
+                            CLFMASDocNum =  msgCLFMAS02(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7e528480-2e9c-4066-81b2-0c97b4157c1b")]
+                        timeout new System.TimeSpan(0,0,correlationDelay)
+                        {
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5582994a-8b67-4770-b46a-1d7d776e5082")]
+                    scope
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b6e11cf0-89b1-4321-b3f0-1c3fe7659e51")]
+                            call Visy.Middleware.SAP.ServiceMax.Orchestrations.ServiceMaxLogin (token);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cbd81e39-3cf3-4999-b762-ca5e5dd0fac4")]
+                            construct msgUpsertRequest
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fd4dabde-8997-4d86-b51e-ed18f0d2450a")]
+                                transform (msgUpsertRequest.parameters) = Visy.Middleware.SAP.ServiceMax.Maps.PartUpdate_To_Upsert (msgMATMAS05, msgCLFMAS02);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b959cb38-d0e7-427a-858e-1495fde0b461")]
+                                msgUpsertRequest(WCF.SecurityMode)="Transport";
+                                msgUpsertRequest(WCF.TransportClientCredentialType) = "None";
+                                msgUpsertRequest(WCF.Action)="";
+                                msgUpsertRequest(WCF.OutboundCustomHeaders) = "<headers><SessionHeader xmlns='urn:enterprise.soap.sforce.com'><sessionId>" +  Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.SessionId + "</sessionId></SessionHeader></headers>";
+                                
+                                port_SendPartUpsert(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.SAP.ServiceMax.Components.SessionDetails.ServerUrl;
+                                port_SendPartUpsert(Microsoft.XLANGs.BaseTypes.TransportType)="WCF-BasicHttp";
+                                xmlDocForBAM = msgUpsertRequest.parameters;
+                                
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("719a2926-7fea-4d2d-8a69-ea24c7049272")]
+                            construct msgUpsertResponse
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("218a064b-58a8-4ba6-9b9a-e590480c7df6")]
+                                xmlDoc = new System.Xml.XmlDocument();
+                                xmlDoc.LoadXml(@"<upsertResponse xmlns='urn:enterprise.soap.sforce.com'><result><created></created><id></id><success></success></result></upsertResponse>");
+                                msgUpsertResponse.parameters=xmlDoc;
+                                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Upsert Response message has been constructed",token));
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0e48f317-074d-4d7d-80aa-61c07407a182")]
+                            //flowTracker.ServerUrl = Visy.SAP.ServiceMax.Helpers.SessionDetails.ServerUrl;
+                            //flowTracker.SessionId = Visy.SAP.ServiceMax.Helpers.SessionDetails.SessionId;
+                            //flowTracker.ServiceMaxReqMsg = xmlDocForBAM.OuterXml;
+                            //flowTracker.CommitSAPToServiceMaxPartUpdateActivity();
+                            isException = false;
+                            expObj = new System.Exception();
+                            IsSoapExp = false;
+                            xmlDoc = new System.Xml.XmlDocument();
+                            upsertResp = "false";
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b1fda8b7-26a7-4349-82c2-823e38955512")]
+                            while (retryCount <= retryLimit)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1868ae2e-741c-4683-83e0-3d6d3daa5f54")]
+                                scope
+                                {
+                                    body
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("67e491c1-8d25-4afb-8ecf-afc62497e160")]
+                                        send (port_SendPartUpsert.Operation_SendUpsert, msgUpsertRequest);
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("fde650c8-2c78-4b77-905b-5548e7aa9972")]
+                                        receive (port_SendPartUpsert.Operation_SendUpsert, msgUpsertResponse);
+                                    }
+                                    exceptions
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("bd6d1c57-6295-4351-9232-bc3f940b11d0")]
+                                        catch (port_SendPartUpsert.Operation_SendUpsert.GenericSoapFault soapExc)
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bc39ed09-8406-4a5f-ade2-38e12c9ca85f")]
+                                            strException = xpath(soapExc, "string(/*[local-name()='Fault' and namespace-uri()='http://schemas.xmlsoap.org/soap/envelope/']/*[local-name()='faultstring' and namespace-uri()=''])");
+                                            isException = true;
+                                            IsSoapExp = true;
+                                            
+                                            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.ServiceMax: " + System.String.Format("{0} :A SOAP exception has occurred with the Upsert call. Error Description: "+ strException, token));
+                                            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :A SOAP exception has occurred with the Upsert call. Error Description: "+ strException, token));
+                                        }
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("30657d32-8ccb-44e1-a7eb-c772bbd59e2c")]
+                                        catch (System.Exception excp)
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("864be223-9b70-434a-bf15-978477fca996")]
+                                            strSystemExcp = excp.ToString();
+                                            isException = true;
+                                            IsSoapExp = false;
+                                            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.ServiceMax: " + System.String.Format("{0} :Error in Transmitting the message.{1}; Retry count:"+retryCount.ToString(), token, excp.ToString()));
+                                            
+                                            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} :Error in Transmitting the message.{1}; Retry count:"+retryCount.ToString(), token, excp.ToString()));
+                                        }
+                                    }
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("5e18d4b1-cf99-43b3-b19c-8d690a706d01")]
+                                upsertResp = xpath(msgUpsertResponse.parameters, "string(/*[local-name()='upsertResponse' and namespace-uri()='urn:enterprise.soap.sforce.com']/*[local-name()='result' and namespace-uri()='urn:enterprise.soap.sforce.com']/*[local-name()='success' and namespace-uri()='urn:enterprise.soap.sforce.com']/text())");
+                                //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Upsert Response :" + upsertResp, token));
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3cf498ba-24ce-4184-af7e-3873bf62fcb7")]
+                                if ((retryCount >= retryLimit && isException == true))
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fbd4f0ef-c0e7-4654-9273-340a39a1c579")]
+                                    retryCount = retryLimit + 1;
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : The error has occurred while connecting to Service Max",token));
+                                    expObj = new System.Exception(strSystemExcp);
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3ef44370-6dc3-44c7-ad39-1eca00295419")]
+                                    throw expObj;
+                                }
+                                else if ((isException == false) && (upsertResp == "true"))
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c089a3ae-cae2-4e17-a344-451beee0b126")]
+                                    xmlDoc = msgUpsertResponse.parameters;
+                                    //flowTracker.IsError = "False";
+                                    //flowTracker.IsRetrying = "False";
+                                    //flowTracker.IsEmailSent = "False";
+                                    //flowTracker.IsMessageSuspended = "False";
+                                    //flowTracker.IsSentToServiceMax = "Success";
+                                    //flowTracker.SentToServiceMaxTime = System.DateTime.Now.ToString();
+                                    //flowTracker.ServiceMaxRespMsg = xmlDoc.OuterXml;
+                                    //flowTracker.CommitSAPToServiceMaxPartUpdateActivity();
+                                    //flowTracker.EndSAPToServiceMaxPartUpdateActivity();
+                                    retryCount = retryLimit + 1;
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Upsert successfully completed; Upsert response: " + xmlDoc.OuterXml.ToString(), token));
+                                    
+                                }
+                                else if ((upsertResp == "false") && (isException == false))
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("eb147fe8-a8ef-4267-b2a7-9c3dd2811398")]
+                                    construct msgXmlDoc
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f50655a-8b71-4b19-a9ed-4ca662a032dd")]
+                                        msgXmlDoc = msgUpsertResponse.parameters;
+                                    }
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c6cd8319-daef-4ddc-be41-d56a6e8c74e5")]
+                                    retryCount = retryLimit + 1;
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Upsert returned a failure response. "+msgXmlDoc.OuterXml,token));
+                                    expObj = new System.Exception(System.String.Format("ServiceMax returned an error message; <xmp>{0}</xmp>​ ", msgXmlDoc.OuterXml));
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("36b5be67-f974-403b-be14-00d717949815")]
+                                    throw expObj;
+                                }
+                                else if (IsSoapExp == true)
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a0efd8e-e7e0-4b12-8ec1-1f046b2efb94")]
+                                    retryCount = retryLimit + 1;
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : A SOAP exception has occurred while connecting to Service Max",token));
+                                    
+                                    expObj = new System.Exception("ServiceMax returned an error message;  "+strException);
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("32e39f43-28e5-4238-b766-c38a9c53ee69")]
+                                    throw expObj;
+                                }
+                                else 
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ba9e4c73-0c18-403c-9d62-39f5bd22d691")]
+                                    retryCount = retryCount +1;
+                                    isException =false;
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Error in transmitting the upsert request; Waiting to retry",token));
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("be2de0bf-c2be-44ac-9017-de2bbe6a37ad")]
+                                    delay new System.TimeSpan(0,retryInterval,0);
+                                }
+                            }
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("aae17c60-756d-487c-8531-57cbe26177a4")]
+                            catch (System.Exception AllExcp)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e9f84088-7403-4e90-89cf-816571d32dd7")]
+                                errorMsg = AllExcp.ToString();
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e604bd5-e86a-49aa-a7b2-24a2d0a92652")]
+                                construct msgEmailException
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("53e1ccf4-8621-4f6d-8dd9-544b2bd8ea9a")]
+                                    //Build HTML Message body
+                                    strbuilder_MsgBody = new System.Text.StringBuilder();
+                                    strbuilder_MsgBody.AppendLine("<html>");
+                                    strbuilder_MsgBody.AppendLine("<head>");
+                                    strbuilder_MsgBody.AppendLine("</head>");
+                                    strbuilder_MsgBody.AppendLine("<body>");
+                                    strbuilder_MsgBody.AppendLine("<p><B>ServiceMax Part Update Orchestration Error</B></p>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<table>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>Date of Error:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortDateString());
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>Time of Error:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>Integration Point:</td><td>");
+                                    strbuilder_MsgBody.AppendLine("SAP-SMAX_PART");
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>Exception:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(errorMsg);
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>MATMAS IDOC DocNum of Incoming Message:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(msgMATMAS05(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber));
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>CLFMAS IDOC DocNum of Incoming Message:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(CLFMASDocNum);
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("<tr><td>Processing Server:</td><td>");
+                                    strbuilder_MsgBody.AppendLine(System.Environment.MachineName);
+                                    strbuilder_MsgBody.AppendLine("</td></tr>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("</table>");
+                                    
+                                    strbuilder_MsgBody.AppendLine("</body>");
+                                    strbuilder_MsgBody.AppendLine("</html>");
+                                    
+                                    //Set Email Properties
+                                    msgEmailException.msgBody = new Visy.Middleware.SAP.ServiceMax.Components.RawString(strbuilder_MsgBody.ToString());
+                                    msgEmailException.msgBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                                    msgEmailException(SMTP.Subject) = "ServiceMax Part Update Orchestration failed in BizTalk Server: " + System.Environment.MachineName;
+                                    
+                                    msgEmailException(SMTP.From) = "webitadmin@visy.com.au";
+                                    msgEmailException(SMTP.EmailBodyFileCharset) = "UTF-8";
+                                    //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Created SMTP Mail Message",token));
+                                    
+                                    
+                                    
+                                    
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b62b0279-80cd-41bf-8d56-f4bab477c3f4")]
+                                send (Port_SendPartEmail.Email, msgEmailException);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("01b58d37-7812-4a76-a822-cca83d803c40")]
+                                suspend "Error Description: " + errorMsg + " Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.";
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d7d57392-64bb-46cc-b0c5-0f7526f2ab0f")]
+                                send (Port_ResubmitMATMASCLFMAS.Operation_SendMATMAS, msgMATMAS05);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1d0daaef-d2d1-485a-8674-2b3e6dcc828b")]
+                                delay new System.TimeSpan(0,0,5);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f42d4cd9-5b13-4035-b3cd-ee161bde81a3")]
+                                if (IsCLFMASRcvd == true)
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a96ec8ce-43de-4fda-9101-bb81ac859f22")]
+                                    send (Port_ResubmitMATMASCLFMAS.Operation_SendCLFMAS, msgCLFMAS02);
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a18e483-e80b-4e03-bd2f-972eca2fb24b")]
+                                terminate "The Part Update Orchestration has been terminated due to the error. The suspended messages needs to be manually reprocessed later" + AllExcp.ToString();;
+                            }
+                        }
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("95bc7dfa-a536-4828-8ffa-013c1a1ef6cc")]
+                    catch (System.Exception sysex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("41adcfc2-e13b-49c0-ae50-ffd1197e4303")]
+                        errorMsg = sysex.ToString();
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1bbaded8-4a61-4bbb-a5a8-98c98bc0f1a4")]
+                        construct msgEmailException
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("56cf5855-0c42-4602-8236-ed2d43029d64")]
+                            //Build HTML Message body
+                            strbuilder_MsgBody = new System.Text.StringBuilder();
+                            strbuilder_MsgBody.AppendLine("<html>");
+                            strbuilder_MsgBody.AppendLine("<head>");
+                            strbuilder_MsgBody.AppendLine("</head>");
+                            strbuilder_MsgBody.AppendLine("<body>");
+                            strbuilder_MsgBody.AppendLine("<p><B>ServiceMax Part Update Orchestration Error</B></p>");
+                            
+                            strbuilder_MsgBody.AppendLine("<table>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>Date of Error:</td><td>");
+                            strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortDateString());
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>Time of Error:</td><td>");
+                            strbuilder_MsgBody.AppendLine(System.DateTime.Now.ToShortTimeString());
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>Integration Point:</td><td>");
+                            strbuilder_MsgBody.AppendLine("SAP-SMAX_PART");
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>Exception:</td><td>");
+                            strbuilder_MsgBody.AppendLine(errorMsg);
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>MATMAS IDOC DocNum of Incoming Message:</td><td>");
+                            strbuilder_MsgBody.AppendLine(msgMATMAS05(Visy.Middleware.SAP.ServiceMax.Schemas.DocNumber));
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>CLFMAS IDOC DocNum of Incoming Message:</td><td>");
+                            strbuilder_MsgBody.AppendLine(CLFMASDocNum);
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("<tr><td>Processing Server:</td><td>");
+                            strbuilder_MsgBody.AppendLine(System.Environment.MachineName);
+                            strbuilder_MsgBody.AppendLine("</td></tr>");
+                            
+                            strbuilder_MsgBody.AppendLine("</table>");
+                            
+                            strbuilder_MsgBody.AppendLine("</body>");
+                            strbuilder_MsgBody.AppendLine("</html>");
+                            
+                            //Set Email Properties
+                            msgEmailException.msgBody = new Visy.Middleware.SAP.ServiceMax.Components.RawString(strbuilder_MsgBody.ToString());
+                            msgEmailException.msgBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                            msgEmailException(SMTP.Subject) = "ServiceMax Part Update Orchestration failed in BizTalk Server: " + System.Environment.MachineName;
+                            
+                            msgEmailException(SMTP.From) = "webitadmin@visy.com.au";
+                            msgEmailException(SMTP.EmailBodyFileCharset) = "UTF-8";
+                            //Microsoft.BizTalk.CAT.BestPractices.Framework.Instrumentation.TraceManager.WorkflowComponent.TraceInfo(System.String.Format("{0} : Created SMTP Mail Message",token));
+                            
+                            
+                            
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("925c9f81-3521-425f-977a-0148c7fe3390")]
+                        send (Port_SendPartEmail.Email, msgEmailException);
+                    }
+                }
+            }
+        }
+    }
+}
+

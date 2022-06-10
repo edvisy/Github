@@ -1,0 +1,228 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="a4c089d7-8482-40e2-afbc-b4ce7c5dfb76" LowerBound="1.1" HigherBound="53.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.AusPost.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="cb28b55f-1252-443c-8853-72ec64c35c27" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePO_PortLocation" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e142c1c1-fc77-4262-833c-9e4728811ee2" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePO_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="df2ffc42-e2f0-4559-a106-7dd8e64be479" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.AusPost.Schemas.Visy_xCBLv4_01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="deb27499-4ee3-4bdc-944d-810275bad7b7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendPO_PortLocation" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f4e9a0cf-7d82-46df-85c3-c24afd90d1c8" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendPO_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="8c1f9311-fdc9-4f6b-9b66-7fcb5fbd774d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="d7c95722-457e-4372-827a-f15ffdb9140e" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="52.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPO" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="3f4d6290-eed6-47fd-9cd8-97f089fa501e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GUID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8df7e121-7e14-4e21-beb2-4117e69d9a85" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sBizTalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="cc360f2b-c2eb-493c-912d-27a376a3222b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.AusPost.Schemas.Visy_xCBLv4_01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ddd16151-83d4-4f31-a91f-d256ec972f5f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="03bed48f-166a-47f6-bbc9-2ea15e6cb5f9" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="ca7d17cd-e0c2-42b9-a1be-86cff20a253e" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="34.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceivePO_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="ReceivePO_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="6cd143b2-cf69-41f8-8cf0-2fcb04d5153d" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="48.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="4e046cce-f7e3-472c-9504-764bb0d18d51" ParentLink="ComplexStatement_Statement" LowerBound="37.1" HigherBound="39.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.AusPost.Maps.xCBL_To_LGX" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="30d5082b-97b5-44e1-a5c3-b0fb73649a04" ParentLink="Transform_InputMessagePartRef" LowerBound="38.86" HigherBound="38.93">
+                            <om:Property Name="MessageRef" Value="Inbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="0e800490-a2ee-4c2c-bad2-aae4cd33f6d8" ParentLink="Transform_OutputMessagePartRef" LowerBound="38.28" HigherBound="38.36">
+                            <om:Property Name="MessageRef" Value="Outbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="d725f133-3b76-4e35-8b0e-74c947ab286e" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="47.1">
+                        <om:Property Name="Expression" Value="GUID = System.Guid.NewGuid();&#xD;&#xA;sBizTalkID = GUID.ToString();&#xD;&#xA;sBizTalkID = sBizTalkID.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;sBizTalkID = sBizTalkID.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;sBizTalkID = sBizTalkID + &quot;~1~1&quot;;&#xD;&#xA;Outbound.Header.biztalk_id = sBizTalkID;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = &quot;AUSPOST..&quot; + sBizTalkID + &quot;.xml&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Initialise" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="aa1ba3ec-4dde-4eb9-8a55-bf257d8351f0" ParentLink="Construct_MessageRef" LowerBound="35.23" HigherBound="35.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="d93da97b-5743-4982-89f2-e2a76760495b" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="50.1">
+                    <om:Property Name="PortName" Value="SendPO_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="SendPO_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="f5a559e0-5edd-446c-b58f-adb768b3f356" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.AusPost.Orchestrations.ReceivePO_PortLocation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePO_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c31d0e06-487b-4cd1-a043-73560eb09bfd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d9b12711-f5be-4dcf-b41e-7ea54a9135e0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="22" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.AusPost.Orchestrations.SendPO_PortLocation" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendPO_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="413a2a42-319e-4bc8-9d8f-d41a9fc8459b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.AusPost.Orchestrations
+{
+    internal porttype ReceivePO_PortLocation
+    {
+        oneway ReceivePO_PortOperation
+        {
+            Visy.Middleware.LGX.AusPost.Schemas.Visy_xCBLv4_01
+        };
+    };
+    internal porttype SendPO_PortLocation
+    {
+        oneway SendPO_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.ORDER
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPO
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceivePO_PortLocation ReceivePO_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendPO_PortLocation SendPO_Port;
+        message Visy.Middleware.LGX.AusPost.Schemas.Visy_xCBLv4_01 Inbound;
+        message Visy.Middleware.Common.Schemas.LGX.ORDER Outbound;
+        System.Guid GUID;
+        System.String sBizTalkID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ca7d17cd-e0c2-42b9-a1be-86cff20a253e")]
+            activate receive (ReceivePO_Port.ReceivePO_PortOperation, Inbound);
+            sBizTalkID = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6cd143b2-cf69-41f8-8cf0-2fcb04d5153d")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4e046cce-f7e3-472c-9504-764bb0d18d51")]
+                transform (Outbound) = Visy.Middleware.LGX.AusPost.Maps.xCBL_To_LGX (Inbound);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d725f133-3b76-4e35-8b0e-74c947ab286e")]
+                GUID = System.Guid.NewGuid();
+                sBizTalkID = GUID.ToString();
+                sBizTalkID = sBizTalkID.Replace("{","");
+                sBizTalkID = sBizTalkID.Replace("}","");
+                sBizTalkID = sBizTalkID + "~1~1";
+                Outbound.Header.biztalk_id = sBizTalkID;
+                Outbound(FILE.ReceivedFileName) = "AUSPOST.." + sBizTalkID + ".xml";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d93da97b-5743-4982-89f2-e2a76760495b")]
+            send (SendPO_Port.SendPO_PortOperation, Outbound);
+        }
+    }
+}
+

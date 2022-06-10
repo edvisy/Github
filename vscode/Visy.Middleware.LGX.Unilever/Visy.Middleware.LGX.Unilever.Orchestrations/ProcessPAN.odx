@@ -1,0 +1,303 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7913239a-ffbd-49e4-9e00-1b47e2f0543b" LowerBound="1.1" HigherBound="62.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Unilever.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="ff10645d-14d7-4e2e-a909-d6b66fabad24" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Receive_Unilever_PAN_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1cd7b864-6235-4669-9503-40fc9d39908f" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_Unilever_PAN_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="59e0f09d-f364-4d95-8f0e-9b1d1ed1d32f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.77">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="dbdbbe96-b936-4203-9b27-ec5112d5a45c" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_LGX_DELFOR_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3388bfa1-5ea1-4ddc-805e-6d2259144d88" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_LGX_DELFOR_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="e7b4664c-98da-4f88-a8ea-ad7268f8aef8" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.54">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.DELFOR" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="283cf3bc-893e-4bc1-bae9-2fd8d75edb1f" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_LGX_INVRPT_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8e3cebfa-4743-4d62-aa0a-6226ce33840b" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_LGX_INVRPT_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="db500603-c22b-4d25-add7-b80769c451c4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.54">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.INVRPT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="2d6a7da8-cc54-4b1f-a8be-584f9afa0d2b" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="61.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPAN" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="1375f50e-9af0-406c-b659-8d9dffb6458d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="32072161-af6b-4844-8ce9-95c16288ce5c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound_PAN" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="87de4b8c-84ba-4dfa-b317-98a153a928d0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.DELFOR" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound_DELFOR" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fc560b3c-161e-4c39-a231-c1e0eb83494e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.INVRPT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound_INVRPT" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="1d7096b6-1ef1-4e56-86b8-f6d7f2fea763" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="323d456d-b552-4f2c-ae70-74cf21945282" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="43.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Receive_Unilever_PAN_Port" />
+                    <om:Property Name="MessageName" Value="Inbound_PAN" />
+                    <om:Property Name="OperationName" Value="Receive_Unilever_PAN_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_PAN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="48ea6fa7-a311-4962-986f-4d89a9747ee6" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="55.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Transform" OID="e7b357a7-c95e-45d1-a285-18e664d7e322" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="48.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Unilever.Maps.PAN_To_DELFOR" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform DELFOR" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="77caef17-03f7-48ae-b754-11c325242835" ParentLink="Transform_InputMessagePartRef" LowerBound="47.96" HigherBound="47.107">
+                            <om:Property Name="MessageRef" Value="Inbound_PAN" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="4d644e90-1714-4236-8b52-3c414c991804" ParentLink="Transform_OutputMessagePartRef" LowerBound="47.28" HigherBound="47.43">
+                            <om:Property Name="MessageRef" Value="Outbound_DELFOR" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Transform" OID="748db149-b35c-4dfb-ab0b-07ba691bcb07" ParentLink="ComplexStatement_Statement" LowerBound="48.1" HigherBound="50.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Unilever.Maps.PAN_To_INVRPT" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform INVRPT" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="42764469-175f-4875-9836-47f0483c4734" ParentLink="Transform_InputMessagePartRef" LowerBound="49.96" HigherBound="49.107">
+                            <om:Property Name="MessageRef" Value="Inbound_PAN" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="2541c4ef-5628-44c0-98ea-4b433ec22c84" ParentLink="Transform_OutputMessagePartRef" LowerBound="49.28" HigherBound="49.43">
+                            <om:Property Name="MessageRef" Value="Outbound_INVRPT" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="1635933b-f8e7-4c9b-992e-5c417e6aad46" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="54.1">
+                        <om:Property Name="Expression" Value="FileName = &quot;UNILEVER.&quot; + Inbound_PAN(BTS.MessageID) + &quot;.dat&quot;;&#xD;&#xA;Outbound_DELFOR(FILE.ReceivedFileName) = FileName;&#xD;&#xA;Outbound_INVRPT(FILE.ReceivedFileName) = FileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="FileName Assignment" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="79f0234b-1663-4b02-ac33-e1b3c84078db" ParentLink="Construct_MessageRef" LowerBound="44.23" HigherBound="44.38">
+                        <om:Property Name="Ref" Value="Outbound_DELFOR" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="422ebf83-7586-4ed4-b013-7dd4dd633db9" ParentLink="Construct_MessageRef" LowerBound="44.40" HigherBound="44.55">
+                        <om:Property Name="Ref" Value="Outbound_INVRPT" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="e467f133-8004-45f0-9d70-302fef2fa50e" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="57.1">
+                    <om:Property Name="PortName" Value="Send_LGX_DELFOR_Port" />
+                    <om:Property Name="MessageName" Value="Outbound_DELFOR" />
+                    <om:Property Name="OperationName" Value="Send_LGX_DELFOR_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_DELFOR" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="dc72851f-fbf1-48ac-839d-302bc65988a8" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="59.1">
+                    <om:Property Name="PortName" Value="Send_LGX_INVRPT_Port" />
+                    <om:Property Name="MessageName" Value="Outbound_INVRPT" />
+                    <om:Property Name="OperationName" Value="Send_LGX_INVRPT_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_INVRPT" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="15c27d20-b118-4444-bf8f-a38ea119b32f" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Unilever.Orchestrations.Receive_Unilever_PAN_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_Unilever_PAN_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b25e709d-14b3-4af6-983c-4141971ffb3b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8e83db9a-f059-4174-9876-f048299ff2e8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="22" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Unilever.Orchestrations.Send_LGX_DELFOR_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_LGX_DELFOR_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="a7b00fba-f351-4ce9-a3c0-ce540f492ebd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b30c8849-d0a8-4483-8575-e5f26df62074" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="24" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Unilever.Orchestrations.Send_LGX_INVRPT_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="False" />
+                <om:Property Name="Name" Value="Send_LGX_INVRPT_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="1ee22ab6-5c55-4008-b81e-0fd0772b0515" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Unilever.Orchestrations
+{
+    internal porttype Receive_Unilever_PAN_PortType
+    {
+        oneway Receive_Unilever_PAN_Operation
+        {
+            Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification
+        };
+    };
+    internal porttype Send_LGX_DELFOR_PortType
+    {
+        oneway Send_LGX_DELFOR_Operation
+        {
+            Visy.Middleware.Common.Schemas.LGX.DELFOR
+        };
+    };
+    internal porttype Send_LGX_INVRPT_PortType
+    {
+        oneway Send_LGX_INVRPT_Operation
+        {
+            Visy.Middleware.Common.Schemas.LGX.INVRPT
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPAN
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Receive_Unilever_PAN_PortType Receive_Unilever_PAN_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_LGX_DELFOR_PortType Send_LGX_DELFOR_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_LGX_INVRPT_PortType Send_LGX_INVRPT_Port;
+        message Visy.Middleware.LGX.Unilever.Schemas.ProductActivityNotification Inbound_PAN;
+        message Visy.Middleware.Common.Schemas.LGX.DELFOR Outbound_DELFOR;
+        message Visy.Middleware.Common.Schemas.LGX.INVRPT Outbound_INVRPT;
+        System.String FileName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("323d456d-b552-4f2c-ae70-74cf21945282")]
+            activate receive (Receive_Unilever_PAN_Port.Receive_Unilever_PAN_Operation, Inbound_PAN);
+            FileName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("48ea6fa7-a311-4962-986f-4d89a9747ee6")]
+            construct Outbound_DELFOR, Outbound_INVRPT
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e7b357a7-c95e-45d1-a285-18e664d7e322")]
+                transform (Outbound_DELFOR) = Visy.Middleware.LGX.Unilever.Maps.PAN_To_DELFOR (Inbound_PAN);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("748db149-b35c-4dfb-ab0b-07ba691bcb07")]
+                transform (Outbound_INVRPT) = Visy.Middleware.LGX.Unilever.Maps.PAN_To_INVRPT (Inbound_PAN);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1635933b-f8e7-4c9b-992e-5c417e6aad46")]
+                FileName = "UNILEVER." + Inbound_PAN(BTS.MessageID) + ".dat";
+                Outbound_DELFOR(FILE.ReceivedFileName) = FileName;
+                Outbound_INVRPT(FILE.ReceivedFileName) = FileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e467f133-8004-45f0-9d70-302fef2fa50e")]
+            send (Send_LGX_DELFOR_Port.Send_LGX_DELFOR_Operation, Outbound_DELFOR);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("dc72851f-fbf1-48ac-839d-302bc65988a8")]
+            send (Send_LGX_INVRPT_Port.Send_LGX_INVRPT_Operation, Outbound_INVRPT);
+        }
+    }
+}
+

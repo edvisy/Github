@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_inventory_part_chr_request" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_inventory_part_chr_request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RECEIVE_INVENTORY_PART_CHR">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="INVENTORY_PART_CHRS" nillable="true">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="INVENTORY_PART_CHR">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" name="CONTRACT" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="PART_NO" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="DESCRIPTION" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TECHNICAL_CLASS" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="TECHNICAL_CLASS_DESC" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="ATTRIBUTES" nillable="true">
+                      <xs:complexType>
+                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                          <xs:element name="ATTRIBUTE">
+                            <xs:complexType>
+                              <xs:all>
+                                <xs:element minOccurs="0" name="ATTRIB_DESC" nillable="true">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="200" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="ATTRIB_VALUE" nillable="true">
+                                  <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                      <xs:maxLength value="200" />
+                                    </xs:restriction>
+                                  </xs:simpleType>
+                                </xs:element>
+                                <xs:element minOccurs="0" name="ATTRIB_ORDER" nillable="true" type="xs:float" />
+                              </xs:all>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

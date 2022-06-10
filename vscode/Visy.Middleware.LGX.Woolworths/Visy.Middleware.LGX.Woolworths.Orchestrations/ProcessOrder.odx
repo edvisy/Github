@@ -1,0 +1,337 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="818656c5-97a5-4f37-a162-5a4e2dc0c12c" LowerBound="1.1" HigherBound="73.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Woolworths.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="22a39741-0c14-4db9-9ced-191b6e715874" ParentLink="Module_PortType" LowerBound="16.1" HigherBound="23.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive_Order_From_Ariba" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1fcf89c7-f623-4411-8c5e-2814fb55bdc6" ParentLink="PortType_OperationDeclaration" LowerBound="18.1" HigherBound="22.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HTTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="05b2d9b7-3eb6-44e1-97b0-59e475ed2e5c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="20.13" HigherBound="20.24">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_cXMLOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="10edcd26-b5ce-47bb-ad71-0cd98cc38be7" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="20.26" HigherBound="20.45">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_cXMLOrderResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="347d0015-710e-479e-9ce2-d08881192a5b" ParentLink="Module_PortType" LowerBound="23.1" HigherBound="30.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_LGXOrder" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="3f19260f-f19a-488f-96e1-3dbed57850de" ParentLink="PortType_OperationDeclaration" LowerBound="25.1" HigherBound="29.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0e0c56ad-bf20-4508-8856-eb60a3159484" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="27.13" HigherBound="27.23">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_LGXOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="1316cff6-bc39-4f12-ba43-61eea58c15d7" ParentLink="Module_ServiceDeclaration" LowerBound="30.1" HigherBound="72.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessOrder" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="7c3d1707-338a-448a-b9b8-dfdfe8e4f6be" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a24c39c7-e57c-452c-acb4-72af75441859" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_cXMLOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_WoolworthscXMLOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b3ee226e-6275-4730-b609-59d5c3197c8e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_cXMLOrderResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Response" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="413c6cd6-2f3e-458c-be72-cdf8de29a748" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_LGXOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_LGXOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="4f2fdf9c-2942-4014-9f66-5522b9924938" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="58c84069-34f3-4fe6-a85e-0b0aee86a1b4" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="46.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_HTTPReceive" />
+                    <om:Property Name="MessageName" Value="msg_WoolworthscXMLOrder" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Order" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="5ed58aee-89b4-4bcd-91f1-b1981fc14d1b" ParentLink="ServiceBody_Statement" LowerBound="46.1" HigherBound="50.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_WoolworthscXMLOrder.XML;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.Woolworths.Order: Order Request: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="bd3d9dc0-3796-4562-a38b-baa8158e6e49" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="56.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_mResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="38524d19-de10-4058-9c53-6615274ee21b" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="55.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Woolworths.Maps.Transform_OrderResponsecXML" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_Response" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="d0541e80-4dec-475f-8920-196bffc2c6b3" ParentLink="Transform_InputMessagePartRef" LowerBound="54.113" HigherBound="54.140">
+                            <om:Property Name="MessageRef" Value="msg_WoolworthscXMLOrder" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="198393c8-e6ed-4dd3-a35d-aab094a3d49a" ParentLink="Transform_OutputMessagePartRef" LowerBound="54.28" HigherBound="54.44">
+                            <om:Property Name="MessageRef" Value="msg_Response" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="9c439d5d-d3ab-45d5-a988-d25640f2bcdc" ParentLink="Construct_MessageRef" LowerBound="51.23" HigherBound="51.35">
+                        <om:Property Name="Ref" Value="msg_Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="cafd1edf-0e22-45b5-86ea-08822fd1487d" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="58.1">
+                    <om:Property Name="PortName" Value="Port_HTTPReceive" />
+                    <om:Property Name="MessageName" Value="msg_Response" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="a41f6d9e-e1e3-4ebc-9bc6-8477e63951bd" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="62.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_Response.XML;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.Woolworths.Order: Order Response: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="088c2004-c3ae-4c14-b01c-b72cd9ba7908" ParentLink="ServiceBody_Statement" LowerBound="62.1" HigherBound="68.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_LGX" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="e39639dc-b185-42b7-8baf-6985bab7bda3" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="67.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Woolworths.Maps.cXMLOrder_To_LGXOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_LGX" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="9b9c9980-d46e-4401-9ee9-478b3852dbb6" ParentLink="Transform_InputMessagePartRef" LowerBound="66.103" HigherBound="66.126">
+                            <om:Property Name="MessageRef" Value="msg_WoolworthscXMLOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="15bd3618-92c6-41a4-bb82-153a707225a9" ParentLink="Transform_OutputMessagePartRef" LowerBound="66.28" HigherBound="66.40">
+                            <om:Property Name="MessageRef" Value="msg_LGXOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="f0052dcb-6b3e-49e4-8b1a-0857b5f2b6bb" ParentLink="Construct_MessageRef" LowerBound="63.23" HigherBound="63.35">
+                        <om:Property Name="Ref" Value="msg_LGXOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="8245272c-d4c8-4ee5-acd1-5ff61e6a9284" ParentLink="ServiceBody_Statement" LowerBound="68.1" HigherBound="70.1">
+                    <om:Property Name="PortName" Value="Port_LGXOrder" />
+                    <om:Property Name="MessageName" Value="msg_LGXOrder" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_LGX" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d7d563de-df9e-4f33-917b-c639e9ca41df" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="33.1" HigherBound="35.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.PortType_Receive_Order_From_Ariba" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_HTTPReceive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="b51d2294-7731-4efb-945e-f2ae863e56d7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="33.1" HigherBound="34.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1248b3cd-9ede-4228-97a8-54c784d120db" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="35.1" HigherBound="37.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="33" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.PortType_LGXOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_LGXOrder" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d241b2c4-5205-490e-9dae-0f777a9700e5" ParentLink="PortDeclaration_CLRAttribute" LowerBound="35.1" HigherBound="36.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="efd5cc8f-139f-4538-acba-1cd3b9b2c1e5" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_cXMLOrder" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="3846e0b5-40f1-4ba5-b7f2-0eeef8da22cc" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.cXML_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="2e0db94f-ab9f-4e0d-b6ae-6b0b2a6a0282" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_LGXOrder" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="e258fdb2-288c-4cf3-800a-5c01ef6527ff" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="ab95445d-f476-4e57-a043-f5c548878481" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_cXMLOrderResponse" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="108a7837-69e7-4fd6-a22a-2466e082faa4" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.cXML_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Woolworths.Orchestrations
+{
+    internal messagetype m_cXMLOrder
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.cXML_1_2_031.cXML XML;
+    };
+    internal messagetype m_LGXOrder
+    {
+        body Visy.Middleware.Common.Schemas.LGX.ORDER XML;
+    };
+    internal messagetype m_cXMLOrderResponse
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.cXML_1_2_031.cXML XML;
+    };
+    public porttype PortType_Receive_Order_From_Ariba
+    {
+        requestresponse HTTP
+        {
+            m_cXMLOrder, m_cXMLOrderResponse
+        };
+    };
+    internal porttype PortType_LGXOrder
+    {
+        oneway FILE
+        {
+            m_LGXOrder
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessOrder
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Receive_Order_From_Ariba Port_HTTPReceive;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_LGXOrder Port_LGXOrder;
+        message m_cXMLOrder msg_WoolworthscXMLOrder;
+        message m_cXMLOrderResponse msg_Response;
+        message m_LGXOrder msg_LGXOrder;
+        System.Xml.XmlDocument v_Xml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("58c84069-34f3-4fe6-a85e-0b0aee86a1b4")]
+            activate receive (Port_HTTPReceive.HTTP, msg_WoolworthscXMLOrder);
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5ed58aee-89b4-4bcd-91f1-b1981fc14d1b")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_WoolworthscXMLOrder.XML;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.Woolworths.Order: Order Request: " + v_Xml.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bd3d9dc0-3796-4562-a38b-baa8158e6e49")]
+            construct msg_Response
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("38524d19-de10-4058-9c53-6615274ee21b")]
+                transform (msg_Response.XML) = Visy.Middleware.LGX.Woolworths.Maps.Transform_OrderResponsecXML (msg_WoolworthscXMLOrder.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("cafd1edf-0e22-45b5-86ea-08822fd1487d")]
+            send (Port_HTTPReceive.HTTP, msg_Response);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a41f6d9e-e1e3-4ebc-9bc6-8477e63951bd")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_Response.XML;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.Woolworths.Order: Order Response: " + v_Xml.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("088c2004-c3ae-4c14-b01c-b72cd9ba7908")]
+            construct msg_LGXOrder
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e39639dc-b185-42b7-8baf-6985bab7bda3")]
+                transform (msg_LGXOrder) = Visy.Middleware.LGX.Woolworths.Maps.cXMLOrder_To_LGXOrder (msg_WoolworthscXMLOrder);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8245272c-d4c8-4ee5-acd1-5ff61e6a9284")]
+            send (Port_LGXOrder.FILE, msg_LGXOrder);
+        }
+    }
+}
+

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B79D2284-7CC0-4A57-9454-ACBC22FBD180}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.LGX.TIM.Schemas</RootNamespace>
+    <AssemblyName>Visy.Middleware.LGX.TIM.Schemas</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="AcceptOrder.xsd">
+      <TypeName>AcceptOrder</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="ActiveOrderSyncResponse.xsd">
+      <TypeName>ActiveOrderSyncResponse</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="vendor_order.xsd">
+      <TypeName>vendor_order_type</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="ACTIVE_ORDER_SYNC_Master.xsd">
+      <TypeName>ACTIVE_ORDER_SYNC_Master</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ACTIVE_ORDER_SYNC_Split.xsd">
+      <TypeName>ACTIVE_ORDER_SYNC_Split</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="CompleteOrder.xsd">
+      <TypeName>CompleteOrder</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="InboundResponse.xsd">
+      <TypeName>InboundResponse</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="RejectOrder.xsd">
+      <TypeName>RejectOrder</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="External\PropertiesSchema.xsd">
+      <TypeName>PropertiesSchema</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_process_request.xsd">
+      <TypeName>pu_tim_process_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_process_response.xsd">
+      <TypeName>pu_tim_process_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pu_tim_process_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_accept_request.xsd">
+      <TypeName>pu_tim_vendor_order_accept_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_accept_response.xsd">
+      <TypeName>pu_tim_vendor_order_accept_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pu_tim_vendor_order_accept_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_handover_request.xsd">
+      <TypeName>pu_tim_vendor_order_handover_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_handover_response.xsd">
+      <TypeName>pu_tim_vendor_order_handover_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pu_tim_vendor_order_handover_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_reject_request.xsd">
+      <TypeName>pu_tim_vendor_order_reject_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_reject_response.xsd">
+      <TypeName>pu_tim_vendor_order_reject_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pu_tim_vendor_order_reject_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_submit_request.xsd">
+      <TypeName>pu_tim_vendor_order_submit_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\pu_tim_vendor_order_submit_response.xsd">
+      <TypeName>pu_tim_vendor_order_submit_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pu_tim_vendor_order_submit_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\p_tim_process.xsd">
+      <TypeName>p_tim_process</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>p_tim_process.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\p_tim_process_detail_request.xsd">
+      <TypeName>p_tim_process_detail_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\p_tim_process_detail_response.xsd">
+      <TypeName>p_tim_process_detail_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>p_tim_process_detail_response.Designer.cs</LastGenOutput>
+    </Schema>
+    <Schema Include="External\p_tim_vendor_order_detail_request.xsd">
+      <TypeName>p_tim_vendor_order_detail_request</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="External\p_tim_vendor_order_detail_response.xsd">
+      <TypeName>p_tim_vendor_order_detail_response</TypeName>
+      <Namespace>Visy.Middleware.LGX.TIM.Schemas.External</Namespace>
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>p_tim_vendor_order_detail_response.Designer.cs</LastGenOutput>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

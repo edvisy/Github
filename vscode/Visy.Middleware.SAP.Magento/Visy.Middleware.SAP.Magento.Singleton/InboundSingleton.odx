@@ -1,0 +1,287 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="30b87a8b-a85a-49c1-a7b0-cdcc5829f896" LowerBound="1.1" HigherBound="64.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Magento.Singleton" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="deace417-35a6-4dc6-8467-965bc08d0c52" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="064ea835-b395-4dea-a337-8c3573a57884" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="b9d7b1dc-3552-4437-a1c8-3e4caa19ed7a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ee017d80-6c9c-469f-b47e-2d04a2ca182e" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_2" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="48743e76-98f4-4a1e-a5dd-9cb294615254" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1f1ae92e-d826-4ba5-bf9b-962e3657db04" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="2f9ad8df-c511-4d07-8cd6-978bc8b4b248" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ct_ReceivePortName" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="a04c9001-bc29-4221-984d-0b9a774a71c1" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.28">
+                <om:Property Name="Ref" Value="BTS.ReceivePortName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ad3a5985-e411-4940-baa6-acc89ba78601" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="63.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="InboundSingleton" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="2e3fe7ba-0a69-42db-9b06-cdd5842348fe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="False" />
+                <om:Property Name="Name" Value="Loop" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="d129d183-87e4-413e-a381-9651426f1477" ParentLink="ServiceDeclaration_Transaction" LowerBound="23.21" HigherBound="23.62">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="00bd0ead-8eea-4efb-8eff-079e1224912e" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Singleton.ct_ReceivePortName" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="cs_ReceivePortName" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="8c5e02fa-49d0-4fa4-87a3-cf35841bac1e" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="37.72" HigherBound="37.101">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="8bf90023-43f1-4c60-9ca0-d58e6acdd7be" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="194caf0b-fbd9-4303-969d-1e3e24bf25ed" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="50.77" HigherBound="50.95">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="50f1d6fb-7309-4507-9662-3aefc673dcbe" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a2547cb3-9611-4453-807f-994f21a7bf34" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="faa2e892-fdb5-462a-9b84-ec4931b84049" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="e0cdd7b6-125f-431f-9ca0-75b7b663510b" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="8bf90023-43f1-4c60-9ca0-d58e6acdd7be" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="39.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_ReceiveFromVendor" />
+                    <om:Property Name="MessageName" Value="msg_Inbound" />
+                    <om:Property Name="OperationName" Value="FTP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_Vendor" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="33758cf8-aacb-48ff-8077-4732290beeb3" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="61.1">
+                    <om:Property Name="Expression" Value="Loop == true" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Delay" OID="9b64665d-bb8f-4da0-b397-b1849f991fa1" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                        <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,60);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Delay_60s" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="19a15c7d-310e-4024-b59e-8c7ec49b3f36" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
+                        <om:Property Name="PortName" Value="Port_SendInbound" />
+                        <om:Property Name="MessageName" Value="msg_Inbound" />
+                        <om:Property Name="OperationName" Value="FILE" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Inbound" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Listen" OID="fce6743f-e09e-4fc2-9099-abdfab9e8600" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="60.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Listen_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ListenBranch" OID="2df731a0-a6a4-4d99-9bd0-394c77ff5b60" ParentLink="ReallyComplexStatement_Branch" LowerBound="46.1" HigherBound="46.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Receive" OID="50f1d6fb-7309-4507-9662-3aefc673dcbe" ParentLink="ListenBranch_Statement" LowerBound="49.1" HigherBound="50.96">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="Port_ReceiveFromVendor" />
+                                <om:Property Name="MessageName" Value="msg_Inbound" />
+                                <om:Property Name="OperationName" Value="FTP" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Rcv_Vendor2" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ListenBranch" OID="87fb8f04-de45-4858-b4f3-4ca11811a282" ParentLink="ReallyComplexStatement_Branch" LowerBound="46.1" HigherBound="46.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_2" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="63e87805-16ef-49dc-a76f-de31fe2c0cb9" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                                <om:Property Name="Expression" Value="Loop =  false;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="SetLoop" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Delay" OID="f2b00330-400c-419d-9ff3-3c6f9a6ba5f7" ParentLink="ListenBranch_Statement" LowerBound="53.1" HigherBound="54.58">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,60)" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delay_60s" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c00e51a8-152e-4bde-a076-501048a3b73b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="28.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="True" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Singleton.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ReceiveFromVendor" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="fa558978-47c3-4fc0-85e1-0d51e8a65c48" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="dd8d1f92-219e-4518-a85c-0e41d247ba3a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Singleton.PortType_2" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendInbound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="acbdf3c6-7a84-45f3-a6c1-7de8fdc40c1d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Magento.Singleton
+{
+    public porttype PortType_1
+    {
+        oneway FTP
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    public porttype PortType_2
+    {
+        oneway FILE
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal correlationtype ct_ReceivePortName
+    {
+        BTS.ReceivePortName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction InboundSingleton
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
+        port implements PortType_1 Port_ReceiveFromVendor;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_2 Port_SendInbound;
+        correlation ct_ReceivePortName cs_ReceivePortName;
+        message System.Xml.XmlDocument msg_Inbound;
+        message System.Xml.XmlDocument msg_Outbound;
+        System.Boolean Loop;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8bf90023-43f1-4c60-9ca0-d58e6acdd7be")]
+            activate receive (Port_ReceiveFromVendor.FTP, msg_Inbound, initialize cs_ReceivePortName);
+            Loop = true;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("33758cf8-aacb-48ff-8077-4732290beeb3")]
+            while (Loop == true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b64665d-bb8f-4da0-b397-b1849f991fa1")]
+                delay new System.TimeSpan(0,0,0,60);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("19a15c7d-310e-4024-b59e-8c7ec49b3f36")]
+                send (Port_SendInbound.FILE, msg_Inbound);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fce6743f-e09e-4fc2-9099-abdfab9e8600")]
+                listen
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("50f1d6fb-7309-4507-9662-3aefc673dcbe")]
+                    until receive (Port_ReceiveFromVendor.FTP, msg_Inbound, cs_ReceivePortName)
+                    {
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f2b00330-400c-419d-9ff3-3c6f9a6ba5f7")]
+                    timeout new System.TimeSpan(0,0,0,60)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("63e87805-16ef-49dc-a76f-de31fe2c0cb9")]
+                        Loop =  false;
+                    }
+                }
+            }
+        }
+    }
+}
+

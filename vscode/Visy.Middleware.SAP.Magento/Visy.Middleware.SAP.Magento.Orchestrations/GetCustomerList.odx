@@ -1,0 +1,259 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ec3b7a53-a0b4-40c3-98b2-2ddafbeff999" LowerBound="1.1" HigherBound="58.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Magento.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MultipartMessageType" OID="2ff1c875-3bec-482c-b265-52123f8c2446" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_CustomerListReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="505c52fa-068a-4887-89a6-51c06d4308b0" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento.Schemas.Magento.customerCustomerListRequest" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="122502ed-6891-4a07-b768-49a914720b05" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_CustomerListRes" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="2800f729-9b8a-414d-bf36-be6b3ce5a857" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento.Schemas.Magento.customerCustomerListResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="488a95ad-6db3-486b-b826-6b3a8dcebf4d" ParentLink="Module_ServiceDeclaration" LowerBound="19.1" HigherBound="57.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetCustomerList" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="1e773a0a-634f-4757-902b-7134e40b37a4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="47a7559e-8f7f-4044-b902-fe24cdc90649" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Orchestrations.m_CustomerListReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_CustomerListReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e2e05f7f-7839-48ff-90cc-e87211cb7db7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_CustomerListRes" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="77eca1c2-4931-407e-b53e-5f40da87e7ae" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="VariableAssignment" OID="4e936b4c-a6c7-41a0-b156-c8255b90dfa4" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="34.1">
+                    <om:Property Name="Expression" Value="Visy.Middleware.SAP.Magento.Components.MappingHelper.SetDataValue(&quot;SessionId&quot;, v_SessionKey);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Starting Get Customer List for session: &quot; + v_SessionKey);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Set Session Id" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="ded65ac6-a7b8-47c3-855e-6ba49f115b87" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="40.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_SoapReq" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="e1ae0724-f391-426f-8b49-08ea126b1b10" ParentLink="ComplexStatement_Statement" LowerBound="37.1" HigherBound="39.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento.Maps.ZCustClass_To_GetCustomerList" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_GetCustomerListReq" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="a1daa98b-e3f9-4254-b37e-53fcdbbeb0cb" ParentLink="Transform_InputMessagePartRef" LowerBound="38.119" HigherBound="38.139">
+                            <om:Property Name="MessageRef" Value="msg_CustomerIDOC" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="305f9d7c-51d1-4dfc-8a57-96e84a9355a7" ParentLink="Transform_OutputMessagePartRef" LowerBound="38.28" HigherBound="38.51">
+                            <om:Property Name="MessageRef" Value="msg_CustomerListReq" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="84ce28ac-97cc-40c8-861d-ecfdc8c70172" ParentLink="Construct_MessageRef" LowerBound="35.23" HigherBound="35.42">
+                        <om:Property Name="Ref" Value="msg_CustomerListReq" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="093a01cc-c02b-46c3-9c83-9d5c64fa2427" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="42.1">
+                    <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Soap Request: &quot; + Visy.Middleware.SAP.Magento.Components.OrchestrationHelper.XlangMessageToString(msg_CustomerListReq));" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="5799f654-096f-4fd3-be10-470700176d49" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="PortName" Value="Port_MagentoSoapAPI" />
+                    <om:Property Name="MessageName" Value="msg_CustomerListReq" />
+                    <om:Property Name="OperationName" Value="customerCustomerList" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_SoapReq" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="eb159d18-f160-4f07-9f24-9eb664163dc7" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="46.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_MagentoSoapAPI" />
+                    <om:Property Name="MessageName" Value="msg_CustomerListRes" />
+                    <om:Property Name="OperationName" Value="customerCustomerList" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_SoapResp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="326d0962-a7c8-47ea-b774-997d0b1def3f" ParentLink="ServiceBody_Statement" LowerBound="46.1" HigherBound="55.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;v_Xml = msg_CustomerListRes;&#xD;&#xA;&#xD;&#xA;v_CustomerId = &quot;&quot;;&#xD;&#xA;&#xD;&#xA;v_CustomerId = Visy.Middleware.SAP.Magento.Components.OrchestrationHelper.GetNodeValue(v_Xml.OuterXml, &quot;customer_id&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Soap Response: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Get Customer Id" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableDeclaration" OID="0790fd36-f4ad-42e1-a9e7-c86f115d86a8" ParentLink="ServiceBody_Declaration" LowerBound="27.15" HigherBound="27.45">
+                    <om:Property Name="UseDefaultConstructor" Value="False" />
+                    <om:Property Name="Type" Value="System.String" />
+                    <om:Property Name="ParamDirection" Value="Out" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="v_CustomerId" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableDeclaration" OID="d5c37e71-7fcd-4576-ad20-674ef186b75a" ParentLink="ServiceBody_Declaration" LowerBound="27.47" HigherBound="27.73">
+                    <om:Property Name="UseDefaultConstructor" Value="False" />
+                    <om:Property Name="Type" Value="System.String" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="v_SessionKey" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageDeclaration" OID="0f37b6f1-c6eb-43bc-a932-1bc0232a3aee" ParentLink="ServiceBody_Declaration" LowerBound="27.75" HigherBound="27.119">
+                    <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Orchestrations.m_SAPCustomerSingle" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="msg_CustomerIDOC" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0200c9f2-2931-4ad4-a03f-60458dc89837" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="22.1" HigherBound="24.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento.Orchestrations.PortType_CustomerInfoSoap" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_MagentoSoapAPI" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="08580048-b225-4241-a1ce-e5e6377da4c6" ParentLink="PortDeclaration_CLRAttribute" LowerBound="22.1" HigherBound="23.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fe4f7116-6993-4c9e-a850-e9e366266ba0" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_CustomerInfoSoap" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f01c3608-c022-4a59-b0d9-95644e31214f" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="customerCustomerList" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a55d353f-b6ff-41d6-b331-05994a9d4837" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.30">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Magento.Orchestrations.m_CustomerListReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="4a6a32d8-72ee-4ea0-97eb-ed2b065d14cb" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="16.32" HigherBound="16.54">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Magento.Orchestrations
+{
+    internal messagetype m_CustomerListReq
+    {
+        body Visy.Middleware.SAP.Magento.Schemas.Magento.customerCustomerListRequest XML;
+    };
+    internal messagetype m_CustomerListRes
+    {
+        body Visy.Middleware.SAP.Magento.Schemas.Magento.customerCustomerListResponse XML;
+    };
+    internal porttype PortType_CustomerInfoSoap
+    {
+        requestresponse customerCustomerList
+        {
+            m_CustomerListReq, System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service GetCustomerList
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_CustomerInfoSoap Port_MagentoSoapAPI;
+        message m_CustomerListReq msg_CustomerListReq;
+        message System.Xml.XmlDocument msg_CustomerListRes;
+        System.Xml.XmlDocument v_Xml;
+        body (out System.String v_CustomerId, System.String v_SessionKey, message m_SAPCustomerSingle msg_CustomerIDOC)
+        {
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4e936b4c-a6c7-41a0-b156-c8255b90dfa4")]
+            Visy.Middleware.SAP.Magento.Components.MappingHelper.SetDataValue("SessionId", v_SessionKey);
+            
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Starting Get Customer List for session: " + v_SessionKey);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ded65ac6-a7b8-47c3-855e-6ba49f115b87")]
+            construct msg_CustomerListReq
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e1ae0724-f391-426f-8b49-08ea126b1b10")]
+                transform (msg_CustomerListReq.XML) = Visy.Middleware.SAP.Magento.Maps.ZCustClass_To_GetCustomerList (msg_CustomerIDOC.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("093a01cc-c02b-46c3-9c83-9d5c64fa2427")]
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Soap Request: " + Visy.Middleware.SAP.Magento.Components.OrchestrationHelper.XlangMessageToString(msg_CustomerListReq));
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5799f654-096f-4fd3-be10-470700176d49")]
+            send (Port_MagentoSoapAPI.customerCustomerList, msg_CustomerListReq);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("eb159d18-f160-4f07-9f24-9eb664163dc7")]
+            receive (Port_MagentoSoapAPI.customerCustomerList, msg_CustomerListRes);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("326d0962-a7c8-47ea-b774-997d0b1def3f")]
+            
+            v_Xml = msg_CustomerListRes;
+            
+            v_CustomerId = "";
+            
+            v_CustomerId = Visy.Middleware.SAP.Magento.Components.OrchestrationHelper.GetNodeValue(v_Xml.OuterXml, "customer_id");
+            
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Soap Response: " + v_Xml.OuterXml);
+        }
+    }
+}
+

@@ -1,0 +1,214 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c6b6a8d5-9cab-4ba3-98b1-bd0f441bd289" LowerBound="1.1" HigherBound="47.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="5e654aac-137f-4e07-8b56-b742165ad8a6" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="RcvPEXR2001PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d97c69d8-c857-448a-91cc-b97320c8e87d" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvPEXR2001Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7b37084a-f664-4fc0-93ef-08b13244bbfd" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.66">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvPEXR2001Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="9b465da0-3b33-4bf5-b3cf-9d825854dcad" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SndPEXR2001PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3b57b1d4-c7da-432a-ba21-b3397866277a" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndPEXR2001Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f1c42fa8-e095-4208-a1b6-442103e6d4ca" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.56">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.PEXR2001" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SndPEXR2001Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b410adfb-c10e-4c6a-82d0-6b0342846de5" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="46.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PEXR2001Process" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="eeec3c65-ce75-413f-a9b3-620885ad3c34" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="dd176c19-1ad4-48bd-85e5-3f1c34f024ec" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InPEXR2001" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7c7136bc-a44a-4bcf-bd93-675a88abc8fc" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.PEXR2001" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutIDOCPEXR2001" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="0cc32f44-b3da-45e0-9b58-93191a8429a7" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3482ea60-1675-4173-b490-825490d0de75" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="33.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvPEXR2001Port" />
+                    <om:Property Name="MessageName" Value="InPEXR2001" />
+                    <om:Property Name="OperationName" Value="RcvPEXR2001Operation" />
+                    <om:Property Name="OperationMessageName" Value="RcvPEXR2001Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="InPEXR2001Msg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="38c4f9bf-0c3f-4ab1-b5ad-85fe19fd53c1" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="42.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Transform" OID="39eea93a-ac62-4ddc-8cd0-1e33a004ed79" ParentLink="ComplexStatement_Statement" LowerBound="36.1" HigherBound="38.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.MasterFoods.Mars.Maps.PEXR2001" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="17a53fa4-cb0d-416d-a9b2-93fd345dcd96" ParentLink="Transform_InputMessagePartRef" LowerBound="37.99" HigherBound="37.109">
+                            <om:Property Name="MessageRef" Value="InPEXR2001" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="ea7cfd0f-7bbb-4f49-8540-b86e23f7c463" ParentLink="Transform_OutputMessagePartRef" LowerBound="37.28" HigherBound="37.43">
+                            <om:Property Name="MessageRef" Value="OutIDOCPEXR2001" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="7077f9c6-45a5-4d9a-9e85-4bfbc822070f" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="41.1">
+                        <om:Property Name="Expression" Value="sMsgID = InPEXR2001(FILE.ReceivedFileName);&#xD;&#xA;OutIDOCPEXR2001(FILE.ReceivedFileName) = &quot;MASTERFOODS.16941.&quot; + sMsgID + &quot;~1.xml&quot;;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="5d5034dc-a9a0-4262-a08d-108b61279388" ParentLink="Construct_MessageRef" LowerBound="34.23" HigherBound="34.38">
+                        <om:Property Name="Ref" Value="OutIDOCPEXR2001" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="4a7abc3d-1903-402b-89f9-055d268517d8" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="44.1">
+                    <om:Property Name="PortName" Value="SndPEXR2001Port" />
+                    <om:Property Name="MessageName" Value="OutIDOCPEXR2001" />
+                    <om:Property Name="OperationName" Value="SndPEXR2001Operation" />
+                    <om:Property Name="OperationMessageName" Value="SndPEXR2001Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="OutPEXR2001" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b325682c-2afe-4825-975e-d606710ccf26" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.RcvPEXR2001PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvPEXR2001Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="9c9297c7-8d78-4b2b-8ac8-37a6541369a1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="547aa08c-b875-4214-ba1c-0ff0cc269996" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations.SndPEXR2001PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndPEXR2001Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6bd2913f-9a49-4d75-86f6-71466c9e9b07" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.MasterFoods.Mars.Orchestrations
+{
+    internal porttype RcvPEXR2001PortType
+    {
+        oneway RcvPEXR2001Operation
+        {
+            Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001
+        };
+    };
+    internal porttype SndPEXR2001PortType
+    {
+        oneway SndPEXR2001Operation
+        {
+            Visy.Middleware.Common.Schemas.SAP.PEXR2001
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PEXR2001Process
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements RcvPEXR2001PortType RcvPEXR2001Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SndPEXR2001PortType SndPEXR2001Port;
+        message Visy.Middleware.SAP.MasterFoods.Mars.Schemas.PEXR2001 InPEXR2001;
+        message Visy.Middleware.Common.Schemas.SAP.PEXR2001 OutIDOCPEXR2001;
+        System.String sMsgID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3482ea60-1675-4173-b490-825490d0de75")]
+            activate receive (RcvPEXR2001Port.RcvPEXR2001Operation, InPEXR2001);
+            sMsgID = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("38c4f9bf-0c3f-4ab1-b5ad-85fe19fd53c1")]
+            construct OutIDOCPEXR2001
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("39eea93a-ac62-4ddc-8cd0-1e33a004ed79")]
+                transform (OutIDOCPEXR2001) = Visy.Middleware.SAP.MasterFoods.Mars.Maps.PEXR2001 (InPEXR2001);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7077f9c6-45a5-4d9a-9e85-4bfbc822070f")]
+                sMsgID = InPEXR2001(FILE.ReceivedFileName);
+                OutIDOCPEXR2001(FILE.ReceivedFileName) = "MASTERFOODS.16941." + sMsgID + "~1.xml";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a7abc3d-1903-402b-89f9-055d268517d8")]
+            send (SndPEXR2001Port.SndPEXR2001Operation, OutIDOCPEXR2001);
+        }
+    }
+}
+

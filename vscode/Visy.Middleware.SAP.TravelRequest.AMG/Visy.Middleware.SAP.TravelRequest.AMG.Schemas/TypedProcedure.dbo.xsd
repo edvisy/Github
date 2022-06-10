@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/p_TRSUser" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/p_concord_byrequestid" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\ProcedureResultSet.dbo.p_concord_byrequestid.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/p_concord_byrequestid" />
+  <xs:import schemaLocation=".\ProcedureResultSet.dbo.p_TRSUser.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/p_TRSUser" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TypedProcedure.dbo</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="p_concord_byrequestid">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/dbo/p_concord_byrequestid</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="requestid" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p_concord_byrequestidResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/dbo/p_concord_byrequestid/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet0" nillable="true" type="ns3:ArrayOfStoredProcedureResultSet0" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p_TRSUser">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/dbo/p_TRSUser</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="TRSUserID" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" maxOccurs="1" name="BPSUserID" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p_TRSUserResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/dbo/p_TRSUser/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet1" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet1" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

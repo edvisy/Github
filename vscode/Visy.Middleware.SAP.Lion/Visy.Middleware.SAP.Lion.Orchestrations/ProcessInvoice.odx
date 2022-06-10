@@ -1,0 +1,442 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="67b530b9-0bd5-4a48-9c2e-5056bdf592ce" LowerBound="1.1" HigherBound="97.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Lion.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="3269ec84-da9d-41b8-9c5a-aad9a316dfea" ParentLink="Module_ServiceDeclaration" LowerBound="33.1" HigherBound="96.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="9b6ae8a7-577b-4b3a-a2e1-1a8a37dc9de4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="64e019a3-a41d-4410-ac7f-e0be4350e28c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Resp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="af9e4190-0547-438c-92c6-c12c510bc91a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_idocType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6d9bb64a-88ad-4355-91cb-3e75af9e22c3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLionInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a5247785-163a-4698-8ece-3709393f43d4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_SAPInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mSAPInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8ec9851a-24f2-45d3-899a-d7a4ca2594ea" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLionInvoiceAck" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="880e0683-fe36-480f-8dbb-0fdc58c3e81d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_StrResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f257c4ec-fc5f-4cfd-b3c7-a7e331f8d2f6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="ab8c28fa-6f73-484a-883b-bec028b4b438" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="56.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive_Invoice_From_SAP" />
+                    <om:Property Name="MessageName" Value="mSAPInvoice" />
+                    <om:Property Name="OperationName" Value="Operation_Receive_Invoice_From_SAP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_SAPInvoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="7c7ceecd-e61e-4c7b-91a3-f6327755f339" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="59.1">
+                    <om:Property Name="Expression" Value="v_idocType = xpath(mSAPInvoice.MessagePart_SAPInvoice, &quot;string(/*[local-name()='Receive']/*[local-name()='idocData']/*[local-name()='E2EDK01005GRP']/*[local-name()='E2EDK01005']/*[local-name()='BSART']/text())&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Lion-&gt;Invoice Type: &quot; + v_idocType);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetIdocType" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="0ccdab28-3c83-4d45-b787-8550674cec3a" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="78.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckInvoiceType" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="dbb59a9b-e21a-402a-b6ac-35cbc14493ed" ParentLink="ReallyComplexStatement_Branch" LowerBound="60.13" HigherBound="69.1">
+                        <om:Property Name="Expression" Value="v_idocType == &quot;INVO&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="IfInvoice" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="1b8710a3-8503-4a14-ac17-f1d87e042a10" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="68.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_LionInvoice" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="b04a28fb-cc6a-4f6e-a890-3d230d4b5198" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="67.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3INVOIC01Inv_To_cXMLInvoice" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_SAPInvoiceToLionInvoice" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="6cd7f509-d0e5-4dd2-a9e4-7ecee976478d" ParentLink="Transform_OutputMessagePartRef" LowerBound="66.32" HigherBound="66.68">
+                                    <om:Property Name="MessageRef" Value="mLionInvoice" />
+                                    <om:Property Name="PartRef" Value="MessagePart_LionInvoice" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="057bb6bf-a889-4544-b76e-3076fc8c639f" ParentLink="Transform_InputMessagePartRef" LowerBound="66.139" HigherBound="66.173">
+                                    <om:Property Name="MessageRef" Value="mSAPInvoice" />
+                                    <om:Property Name="PartRef" Value="MessagePart_SAPInvoice" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="4dc0307c-c14f-4a4f-baa9-4e8f56df3fb3" ParentLink="Construct_MessageRef" LowerBound="63.27" HigherBound="63.39">
+                                <om:Property Name="Ref" Value="mLionInvoice" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="a4b0ace3-cfd8-4073-9f81-e47a02c8f464" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="568f59df-d828-4558-b22d-1adf38f334aa" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="77.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_LionCreditMemo" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="8c7ebc8b-11fe-4b65-9a9f-e5fff69d75e1" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="76.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_SAPInvoiceToLionInvoice" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="f2cfd20c-a974-4122-99a5-cfa480160638" ParentLink="Transform_OutputMessagePartRef" LowerBound="75.32" HigherBound="75.68">
+                                    <om:Property Name="MessageRef" Value="mLionInvoice" />
+                                    <om:Property Name="PartRef" Value="MessagePart_LionInvoice" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="d1672e41-0550-42d7-a71c-4225f77e7614" ParentLink="Transform_InputMessagePartRef" LowerBound="75.142" HigherBound="75.176">
+                                    <om:Property Name="MessageRef" Value="mSAPInvoice" />
+                                    <om:Property Name="PartRef" Value="MessagePart_SAPInvoice" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="2d9bfeb6-6485-4ea7-9c79-44332f349ccf" ParentLink="Construct_MessageRef" LowerBound="72.27" HigherBound="72.39">
+                                <om:Property Name="Ref" Value="mLionInvoice" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="2d94656c-34db-45a7-b442-061cd677e54a" ParentLink="ServiceBody_Statement" LowerBound="78.1" HigherBound="80.1">
+                    <om:Property Name="PortName" Value="Port_InvoicecXMLArchive" />
+                    <om:Property Name="MessageName" Value="mLionInvoice" />
+                    <om:Property Name="OperationName" Value="Archive" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_cXMLArchive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="4ddb16e8-3f49-471a-a566-f70c35fa490b" ParentLink="ServiceBody_Statement" LowerBound="80.1" HigherBound="86.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;v_Resp =  Visy.Middleware.SAP.Lion.Components.HttpPostHelper.HttpPost(mLionInvoice);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Lion-&gt;Invoice Response: &quot; + v_Resp);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="HttpPost" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="809d396c-af30-43fe-9ae7-a14732a9a773" ParentLink="ServiceBody_Statement" LowerBound="86.1" HigherBound="92.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_StrResp" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="18168d26-faf2-49f6-8c3d-12d6338fd6d3" ParentLink="Construct_MessageRef" LowerBound="87.23" HigherBound="87.34">
+                        <om:Property Name="Ref" Value="msg_StrResp" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="cd955ccc-f9ef-4de4-b156-2c939a423221" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="91.1">
+                        <om:Property Name="Expression" Value="msg_StrResp = v_Resp;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="7d55a8f9-9509-47bc-8cd1-a54e9805f376" ParentLink="ServiceBody_Statement" LowerBound="92.1" HigherBound="94.1">
+                    <om:Property Name="PortName" Value="Port_SmtpNotification" />
+                    <om:Property Name="MessageName" Value="msg_StrResp" />
+                    <om:Property Name="OperationName" Value="Email" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_RespNotification" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ce659774-4a22-47f6-9f3f-8d87ca3e466c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="36.1" HigherBound="38.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Receive_Invoice_From_SAP" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive_Invoice_From_SAP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="bea382b6-5c78-459f-bfd9-5fa1c5ca2737" ParentLink="PortDeclaration_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2a92e575-2d77-4376-8213-95ed65f226be" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="38.1" HigherBound="40.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="21" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_SmtpNotification" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SmtpNotification" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="dfa73529-be7e-429f-9eda-faf92a2e047e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="38.1" HigherBound="39.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="83ec2561-4394-4d1e-9faa-6b1d135d96f9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="40.1" HigherBound="42.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_InvoicecXMLArchive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_InvoicecXMLArchive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="19a98c97-80e1-4587-9c97-cc33529b6f5e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="40.1" HigherBound="41.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9689e689-2c17-464a-b088-e991efa1cc17" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_LionInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="40cbd635-6013-41e7-8bc7-d068b4618a30" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_LionInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="375db407-3ada-42f1-b831-865e5e38aa6c" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_SAPInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="e95de098-c47e-4799-b4a4-8b382e2dadfb" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Schemas.IDocOperation_INVOIC02_Z3INVOIC02_620_3_Receive" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_SAPInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2346bd52-a4a7-4c2c-80ea-c0f8a33fb522" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive_Invoice_From_SAP" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="ec848945-40d7-4781-9ab1-13f446d5d3fc" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Receive_Invoice_From_SAP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="591eccd3-369c-43ef-a04c-73c4f7d594a7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.37">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_SAPInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="14b93ed3-89d1-41e8-a920-22e1f918639b" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendReceive_Invoice_To_Ariba" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f16739db-183e-4b13-b83f-c3f4bd43a509" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HTTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="514557d3-ffdb-4c29-94ae-6f1a84f8e5f9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.38">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="56f2efc8-ad96-432d-8cbd-786347eeb68b" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="23.40" HigherBound="23.62">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7d825cbb-a8a8-4997-b3b2-87e18a6f5384" ParentLink="Module_PortType" LowerBound="26.1" HigherBound="33.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_InvoicecXMLArchive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3f7ae116-fbb0-4731-8d99-a4241a0ba9df" ParentLink="PortType_OperationDeclaration" LowerBound="28.1" HigherBound="32.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Archive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="74abc9bf-63c4-48aa-be2e-83c0ea6c0435" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="30.13" HigherBound="30.38">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Lion.Orchestrations
+{
+    internal messagetype MultipartType_LionInvoice
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML MessagePart_LionInvoice;
+    };
+    internal messagetype MultipartType_SAPInvoice
+    {
+        body Visy.Middleware.SAP.Lion.Schemas.IDocOperation_INVOIC02_Z3INVOIC02_620_3_Receive MessagePart_SAPInvoice;
+    };
+    internal porttype PortType_Receive_Invoice_From_SAP
+    {
+        oneway Operation_Receive_Invoice_From_SAP
+        {
+            MultipartType_SAPInvoice
+        };
+    };
+    internal porttype PortType_SendReceive_Invoice_To_Ariba
+    {
+        requestresponse HTTP
+        {
+            MultipartType_LionInvoice, System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_InvoicecXMLArchive
+    {
+        oneway Archive
+        {
+            MultipartType_LionInvoice
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessInvoice
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Receive_Invoice_From_SAP Port_Receive_Invoice_From_SAP;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SmtpNotification Port_SmtpNotification;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_InvoicecXMLArchive Port_InvoicecXMLArchive;
+        message MultipartType_LionInvoice mLionInvoice;
+        message MultipartType_SAPInvoice mSAPInvoice;
+        message System.Xml.XmlDocument mLionInvoiceAck;
+        message System.String msg_StrResp;
+        System.Xml.XmlDocument v_Xml;
+        System.String v_Resp;
+        System.String v_idocType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab8c28fa-6f73-484a-883b-bec028b4b438")]
+            activate receive (Port_Receive_Invoice_From_SAP.Operation_Receive_Invoice_From_SAP, mSAPInvoice);
+            v_Xml = new System.Xml.XmlDocument();
+            v_Resp = "";
+            v_idocType = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7c7ceecd-e61e-4c7b-91a3-f6327755f339")]
+            v_idocType = xpath(mSAPInvoice.MessagePart_SAPInvoice, "string(/*[local-name()='Receive']/*[local-name()='idocData']/*[local-name()='E2EDK01005GRP']/*[local-name()='E2EDK01005']/*[local-name()='BSART']/text())");
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Lion->Invoice Type: " + v_idocType);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ccdab28-3c83-4d45-b787-8550674cec3a")]
+            if (v_idocType == "INVO")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1b8710a3-8503-4a14-ac17-f1d87e042a10")]
+                construct mLionInvoice
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b04a28fb-cc6a-4f6e-a890-3d230d4b5198")]
+                    transform (mLionInvoice.MessagePart_LionInvoice) = Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3INVOIC01Inv_To_cXMLInvoice (mSAPInvoice.MessagePart_SAPInvoice);
+                }
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("568f59df-d828-4558-b22d-1adf38f334aa")]
+                construct mLionInvoice
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c7ebc8b-11fe-4b65-9a9f-e5fff69d75e1")]
+                    transform (mLionInvoice.MessagePart_LionInvoice) = Visy.Middleware.SAP.Lion.Maps.Map_SAPZ3INVOIC01Inv_To_cXMLCreditMemo (mSAPInvoice.MessagePart_SAPInvoice);
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d94656c-34db-45a7-b442-061cd677e54a")]
+            send (Port_InvoicecXMLArchive.Archive, mLionInvoice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4ddb16e8-3f49-471a-a566-f70c35fa490b")]
+            
+            
+            
+            v_Resp =  Visy.Middleware.SAP.Lion.Components.HttpPostHelper.HttpPost(mLionInvoice);
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Lion->Invoice Response: " + v_Resp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("809d396c-af30-43fe-9ae7-a14732a9a773")]
+            construct msg_StrResp
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("cd955ccc-f9ef-4de4-b156-2c939a423221")]
+                msg_StrResp = v_Resp;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7d55a8f9-9509-47bc-8cd1-a54e9805f376")]
+            send (Port_SmtpNotification.Email, msg_StrResp);
+        }
+    }
+}
+

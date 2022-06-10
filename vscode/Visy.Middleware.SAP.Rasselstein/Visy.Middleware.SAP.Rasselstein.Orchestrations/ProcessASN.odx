@@ -1,0 +1,380 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="5d6b7006-27ff-445a-84ed-64d10d10acdc" LowerBound="1.1" HigherBound="92.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Rasselstein.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="e787a1eb-f9e2-46e5-877f-cba5ec4badba" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveASN_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3e37147a-39d8-4e95-8314-025bb05133d4" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="714c1da4-c563-498f-9892-bc572eed32c2" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4c3ab7b8-7d29-4ada-a2bd-b8098a9dc7a6" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Z2DesAdv" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="400b4871-e4b2-4018-9cbd-500297538c0a" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f119de1e-61aa-41da-a697-ab60f724cc0f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.96">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Rexam.IDocOperation_DESADV01_Z2DESADV_620_3_Send" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7e3d4ec9-80d4-48b0-afdf-86fa65e831fc" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ASNXml" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="4a842f5e-9fb4-4bfe-882c-1c192a8828c8" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="e0508998-8b4e-4976-9667-7e03b2459afa" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="574da6b5-c60f-4848-a50d-4c2e4b34036f" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="91.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessASN" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="bb27f1bf-1013-4f39-b699-fad8eeeb1cc3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2cdef09a-b9a5-490d-9539-eb64d1fb2c9e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="recCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="41c39208-f2ab-4aa1-83a7-400c1655d015" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="counterInt" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a4e5aaec-0c51-4bb4-a7c3-51b61ea8cde8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="11f36bd2-16c8-4b4f-90a1-c4c6da86137b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_XmlString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="99bd2af0-582a-43ee-a21d-b55842c5e141" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="In_Instance" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3ef38a6f-d753-4ce3-9ed4-8e25fea5df9c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Rexam.IDocOperation_DESADV01_Z2DESADV_620_3_Send" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out_Instance" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ba54e9d4-fd30-4778-8ab2-7706b8f921e8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01_Single" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Single" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f1114a7e-54be-4729-97fc-aef564cd414d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Multiple" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="0b8439a2-0fe8-4307-b88d-c3cc407e0677" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="c60bfb1f-e759-4cf8-8450-e6f0b6d4f6e0" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="48.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_ASNXml" />
+                    <om:Property Name="MessageName" Value="In_Instance" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_ASN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="900d7d18-9e50-4711-af99-5c60de98a562" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="54.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;recCount = xpath(In_Instance, &quot;count(//*[local-name()='PACKING_LIST']/*[local-name()='HEADER'])&quot;); &#xD;&#xA;counterInt = 1;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Rasselstein: &quot; + recCount.ToString());" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Get Record Count" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="384b5037-1d5b-4daf-b9e4-2ddb5705822a" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="89.1">
+                    <om:Property Name="Expression" Value="counterInt &lt;= recCount" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_Records" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="d6e3eadc-4c20-4a03-92de-9b66cc786a4d" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="72.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_Single" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="c5bbb664-d41a-4da4-9b52-65d8737c61e6" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="71.1">
+                            <om:Property Name="Expression" Value="v_XmlString = &quot;&quot;;&#xD;&#xA;v_XmlString = System.String.Format(&quot;/*[local-name()='PACKING_LISTS']/*[local-name()='PACKING_LIST']/*[local-name()='HEADER'][{0}]&quot;, counterInt);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;SAP.Rasselstein: &quot; + v_XmlString);&#xD;&#xA;&#xD;&#xA;v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;&#xD;&#xA;v_Xml = xpath(In_Instance,v_XmlString);&#xD;&#xA;&#xD;&#xA;msg_Single = v_Xml;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Single" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="28b52699-e451-4dde-b95c-e3fdb16a0192" ParentLink="Construct_MessageRef" LowerBound="58.27" HigherBound="58.37">
+                            <om:Property Name="Ref" Value="msg_Single" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="64b7274a-923a-49d9-b79b-b243af88da49" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="78.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_Multiple" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="7c0bd45f-e4bd-421e-a931-415ce3c98671" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Rasselstein.Maps.Single_To_PackList" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_to_Multiple" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="a226d798-e6a4-4be8-9e75-f8790e39dbf9" ParentLink="Transform_InputMessagePartRef" LowerBound="76.105" HigherBound="76.115">
+                                <om:Property Name="MessageRef" Value="msg_Single" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="7a78946d-b374-4547-aef4-0ad388c7f882" ParentLink="Transform_OutputMessagePartRef" LowerBound="76.32" HigherBound="76.44">
+                                <om:Property Name="MessageRef" Value="msg_Multiple" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="16eb84a4-d967-4a91-abcd-9b01b4cedb19" ParentLink="Construct_MessageRef" LowerBound="73.27" HigherBound="73.39">
+                            <om:Property Name="Ref" Value="msg_Multiple" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="c84160ce-bc10-4ded-8c93-5bdc9e8254e9" ParentLink="ComplexStatement_Statement" LowerBound="78.1" HigherBound="84.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_Z2DesAdv" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="7a0acd7f-c8f9-4e25-bba8-9ad2c15c3329" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="83.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Rasselstein.Maps.New_ASNTransform" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="013a001a-2885-4ab7-9c2e-2def97bc15ee" ParentLink="Transform_InputMessagePartRef" LowerBound="82.103" HigherBound="82.115">
+                                <om:Property Name="MessageRef" Value="msg_Multiple" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="1ff666bf-342a-40ce-9c9b-6f3bc88d0b2e" ParentLink="Transform_OutputMessagePartRef" LowerBound="82.32" HigherBound="82.44">
+                                <om:Property Name="MessageRef" Value="Out_Instance" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="16183da7-ca6f-45a7-8929-b552dcb28416" ParentLink="Construct_MessageRef" LowerBound="79.27" HigherBound="79.39">
+                            <om:Property Name="Ref" Value="Out_Instance" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="41780fdf-0925-427c-b954-23e703c9c4af" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="86.1">
+                        <om:Property Name="Expression" Value="counterInt = counterInt + 1;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Increment" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="380b49fb-ff1e-4448-8d06-21c8a2735285" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                        <om:Property Name="PortName" Value="Port_Z2DesAdv" />
+                        <om:Property Name="MessageName" Value="Out_Instance" />
+                        <om:Property Name="OperationName" Value="Inbound" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Z2DesAdv" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a0f32eb-3380-4de8-a8dd-bbc517b73ef5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Rasselstein.Orchestrations.PortType_Z2DesAdv" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Z2DesAdv" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="30519fec-5f15-4d4d-a036-de340d4eab8b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="37d60e54-40aa-484c-895d-7f4fe75bfef6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Rasselstein.Orchestrations.PortType_ASNXml" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ASNXml" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="1370cee6-2264-4be1-a3f4-9b669fbf2bda" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Rasselstein.Orchestrations
+{
+    internal porttype ReceiveASN_PortType
+    {
+        oneway FILE
+        {
+            Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01
+        };
+    };
+    internal porttype PortType_Z2DesAdv
+    {
+        oneway Inbound
+        {
+            Visy.Middleware.Common.Schemas.SAP.Rexam.IDocOperation_DESADV01_Z2DESADV_620_3_Send
+        };
+    };
+    internal porttype PortType_ASNXml
+    {
+        oneway FILE
+        {
+            Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessASN
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Z2DesAdv Port_Z2DesAdv;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ASNXml Port_ASNXml;
+        message Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01 In_Instance;
+        message Visy.Middleware.Common.Schemas.SAP.Rexam.IDocOperation_DESADV01_Z2DESADV_620_3_Send Out_Instance;
+        message Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01_Single msg_Single;
+        message Visy.Middleware.SAP.Rasselstein.Schemas.Packliste_01 msg_Multiple;
+        System.String sMsgID;
+        System.Int32 recCount;
+        System.Int32 counterInt;
+        System.Xml.XmlDocument v_Xml;
+        System.String v_XmlString;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c60bfb1f-e759-4cf8-8450-e6f0b6d4f6e0")]
+            activate receive (Port_ASNXml.FILE, In_Instance);
+            sMsgID = "";
+            v_Xml = new System.Xml.XmlDocument();
+            v_XmlString = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("900d7d18-9e50-4711-af99-5c60de98a562")]
+            
+            recCount = xpath(In_Instance, "count(//*[local-name()='PACKING_LIST']/*[local-name()='HEADER'])"); 
+            counterInt = 1;
+            
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Rasselstein: " + recCount.ToString());
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("384b5037-1d5b-4daf-b9e4-2ddb5705822a")]
+            while (counterInt <= recCount)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d6e3eadc-4c20-4a03-92de-9b66cc786a4d")]
+                construct msg_Single
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c5bbb664-d41a-4da4-9b52-65d8737c61e6")]
+                    v_XmlString = "";
+                    v_XmlString = System.String.Format("/*[local-name()='PACKING_LISTS']/*[local-name()='PACKING_LIST']/*[local-name()='HEADER'][{0}]", counterInt);
+                    
+                    System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "SAP.Rasselstein: " + v_XmlString);
+                    
+                    v_Xml = new System.Xml.XmlDocument();
+                    
+                    v_Xml = xpath(In_Instance,v_XmlString);
+                    
+                    msg_Single = v_Xml;
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("64b7274a-923a-49d9-b79b-b243af88da49")]
+                construct msg_Multiple
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7c0bd45f-e4bd-421e-a931-415ce3c98671")]
+                    transform (msg_Multiple) = Visy.Middleware.SAP.Rasselstein.Maps.Single_To_PackList (msg_Single);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c84160ce-bc10-4ded-8c93-5bdc9e8254e9")]
+                construct Out_Instance
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a0acd7f-c8f9-4e25-bba8-9ad2c15c3329")]
+                    transform (Out_Instance) = Visy.Middleware.SAP.Rasselstein.Maps.New_ASNTransform (msg_Multiple);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("41780fdf-0925-427c-b954-23e703c9c4af")]
+                counterInt = counterInt + 1;
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("380b49fb-ff1e-4448-8d06-21c8a2735285")]
+                send (Port_Z2DesAdv.Inbound, Out_Instance);
+            }
+        }
+    }
+}
+

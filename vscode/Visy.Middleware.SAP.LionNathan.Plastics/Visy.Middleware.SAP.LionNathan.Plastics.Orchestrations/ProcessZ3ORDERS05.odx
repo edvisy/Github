@@ -1,0 +1,237 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="2c0c9eaf-4209-4332-93f7-9704d7153ac2" LowerBound="1.1" HigherBound="54.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="e7f7e7a9-beb5-45db-a84e-211b70b2948e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LionsEDIPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="be8be4eb-d2ea-4d77-a14a-3cdf24cbfc5c" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsLionsEDIPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="aecb3b1f-b147-42ec-95cb-f2d053c34671" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.79">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.EDI.Orders.EFACT_D01B_ORDERS_EAN010" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6daf9e16-92a9-4f99-8326-bd8c927fbbae" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAPPOPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="fc916b68-0769-48e3-a9a1-d00e89959cfb" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsSAPPO" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0f83b043-726a-483e-bb31-5c7e463b8803" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.65">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b6ee36b2-97ee-4da6-9b67-72e7c59460df" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="53.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessZ3ORDERS05" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="6afa361a-2708-427b-8abe-7c466753081d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d9eb77e9-6480-45dd-bd0b-8604fbb79af5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PlantCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="dc3f02cb-be1f-45f0-bd0f-20e5d63b6a26" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CustCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="92ee5c92-72fd-4ce4-ab24-e1e8b39fe1b3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.Orders.EFACT_D01B_ORDERS_EAN010" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLionsEDIPO" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="30c58313-a36a-4ccf-9f93-50844f3d9adf" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSAPPO" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="3d181f5a-0b93-4811-b43f-0c8d182edf65" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b331abb7-3069-48ca-9a35-1958c27618a4" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="37.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="LionsEDIPort" />
+                    <om:Property Name="MessageName" Value="msgLionsEDIPO" />
+                    <om:Property Name="OperationName" Value="OpsLionsEDIPort" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvLionsEDIPO" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="e4e80168-341d-4cdf-854b-fe5259c08e25" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="49.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct_Z3ORDERS05" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="5dbd6316-025f-406e-9ca9-28f4e34e2d05" ParentLink="ComplexStatement_Statement" LowerBound="40.1" HigherBound="42.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPZ3ORDERS05Map" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_LionsEDIPOToSAPPO" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="890132f0-efe3-4bba-b7e8-201d797fa035" ParentLink="Transform_InputMessagePartRef" LowerBound="41.103" HigherBound="41.116">
+                            <om:Property Name="MessageRef" Value="msgLionsEDIPO" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="f1f3b604-6b5d-4ac2-92e9-efdbd05e3eb2" ParentLink="Transform_OutputMessagePartRef" LowerBound="41.28" HigherBound="41.36">
+                            <om:Property Name="MessageRef" Value="msgSAPPO" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="f8458127-5416-47af-9fb2-4dbe1a77d12c" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="48.1">
+                        <om:Property Name="Expression" Value="sMsgID = msgLionsEDIPO(FILE.ReceivedFileName);&#xD;&#xA;xpath(msgSAPPO,&quot;//ARCKEY&quot;) = sMsgID + &quot;~1&quot;;&#xD;&#xA;CustCode = xpath(msgSAPPO,&quot;string(//*[local-name()='SNDPRN'])&quot;);&#xD;&#xA;PlantCode = xpath(msgSAPPO,&quot;string(//*[local-name()='RCVPRN'])&quot;);&#xD;&#xA;msgSAPPO(FILE.ReceivedFileName) = &quot;LIONNATHAN.PLASTICSDAIRY.&quot;+ PlantCode + &quot;-&quot; + CustCode + &quot;~1.xml&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="e2fae997-c7d7-46eb-8621-7d2c10eed32f" ParentLink="Construct_MessageRef" LowerBound="38.23" HigherBound="38.31">
+                        <om:Property Name="Ref" Value="msgSAPPO" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="10c00920-81bf-41c1-98f5-df0d5393006d" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="51.1">
+                    <om:Property Name="PortName" Value="SAPPOPort" />
+                    <om:Property Name="MessageName" Value="msgSAPPO" />
+                    <om:Property Name="OperationName" Value="OpsSAPPO" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendToSAP" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8092b5b4-409d-43f1-88ba-297bb67ce827" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.LionsEDIPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LionsEDIPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="d0e712ae-829d-4871-9fbd-7a0e179ac15f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a70462a5-f820-4d00-966f-a9b898692c1d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.SAPPOPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAPPOPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="a3d1139d-56df-40a6-9f92-68a65155bdd6" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations
+{
+    public porttype LionsEDIPortType
+    {
+        oneway OpsLionsEDIPort
+        {
+            Visy.Middleware.Common.Schemas.EDI.Orders.EFACT_D01B_ORDERS_EAN010
+        };
+    };
+    internal porttype SAPPOPortType
+    {
+        oneway OpsSAPPO
+        {
+            Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessZ3ORDERS05
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements LionsEDIPortType LionsEDIPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SAPPOPortType SAPPOPort;
+        message Visy.Middleware.Common.Schemas.EDI.Orders.EFACT_D01B_ORDERS_EAN010 msgLionsEDIPO;
+        message Visy.Middleware.Common.Schemas.SAP.Orders.Z3ORDERS05 msgSAPPO;
+        System.String sMsgID;
+        System.String PlantCode;
+        System.String CustCode;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b331abb7-3069-48ca-9a35-1958c27618a4")]
+            activate receive (LionsEDIPort.OpsLionsEDIPort, msgLionsEDIPO);
+            sMsgID = "";
+            PlantCode = "";
+            CustCode = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e4e80168-341d-4cdf-854b-fe5259c08e25")]
+            construct msgSAPPO
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("5dbd6316-025f-406e-9ca9-28f4e34e2d05")]
+                transform (msgSAPPO) = Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPZ3ORDERS05Map (msgLionsEDIPO);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8458127-5416-47af-9fb2-4dbe1a77d12c")]
+                sMsgID = msgLionsEDIPO(FILE.ReceivedFileName);
+                xpath(msgSAPPO,"//ARCKEY") = sMsgID + "~1";
+                CustCode = xpath(msgSAPPO,"string(//*[local-name()='SNDPRN'])");
+                PlantCode = xpath(msgSAPPO,"string(//*[local-name()='RCVPRN'])");
+                msgSAPPO(FILE.ReceivedFileName) = "LIONNATHAN.PLASTICSDAIRY."+ PlantCode + "-" + CustCode + "~1.xml";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("10c00920-81bf-41c1-98f5-df0d5393006d")]
+            send (SAPPOPort.OpsSAPPO, msgSAPPO);
+        }
+    }
+}
+

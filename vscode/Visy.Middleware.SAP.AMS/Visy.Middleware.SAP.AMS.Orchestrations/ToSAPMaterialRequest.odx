@@ -1,0 +1,429 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="b4247d52-b6b4-4cfe-ae16-42c90c6277a7" LowerBound="1.1" HigherBound="106.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.AMS.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="4374a8da-6ca5-48ac-a582-25b04eaf70c7" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="IFSOutboundMatReqPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2c5c4d20-025d-4bd3-81f8-2841daab4ea0" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="f90e0feb-3d99-4d4d-8aaf-c3ebec5dc13e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="401828a8-8cff-4845-8144-d0d6b3a0858f" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAPInboundReservationCreatePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a2a0cb4a-9023-4ee2-9fea-c8668ea5c1d0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_MATERIALRESERVATION_CREATE1" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="30eccf4a-6403-49d3-aee3-be299bb9f190" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.124">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101._740_IDocOperation_MATERIALRESERVATION_CREATE101_740_3_Send" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7e431e00-f538-42b1-956c-24da2cc4371b" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAPInboundReservationDeletePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9c1a2d1b-162e-42d2-bb85-67cc31fbce90" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_ZMATERIALRESERVATION_DELETE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="77fc83c4-84cc-4ac7-8587-8030f58a6b79" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.110">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION.IDocOperation_ZMATERIALRESERVATION_620_3_Send" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="6f851cee-3b24-4860-96c7-f5e7013462f0" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="105.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ToSAPMaterialRequest" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="c6c886fe-db76-40fb-9220-3ef8a81c3c37" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Double" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RequiredQty" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d4b624c9-af1a-49e0-802b-448b1ebc3766" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RequiredQtyStr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d46bd0c6-a872-4ab5-885d-35c399f118b6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d4ec03ab-a10b-40b4-9abc-44dcf51348fb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Schemas.MATERIAL_REQ" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MaterialRequestMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f8b89c5b-bffc-46f3-9f47-37364d2c0b50" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101._740_IDocOperation_MATERIALRESERVATION_CREATE101_740_3_Send" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreateMatResMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9e927e15-0f6c-4be5-a84d-36144da725eb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION.IDocOperation_ZMATERIALRESERVATION_620_3_Send" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DeleteMatResMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="96c80451-7a30-4a04-b870-8b7ede2c423d" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="59a59d64-4ad8-4740-a2d7-dc42371ba378" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="45.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="IFSOutboundMatReqPort" />
+                    <om:Property Name="MessageName" Value="IncomingMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveIncomingMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="aba24333-6757-4de5-a853-d80ec44429c1" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="103.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Process Mesage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="9acbec6c-16bf-42c2-9786-87a25bcaf8c7" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="56.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Material Request" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="c24bb7c6-17e6-426f-81b2-e2a477749caf" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="55.1">
+                            <om:Property Name="Expression" Value="MaterialRequestMessage = IncomingMessage;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Material Request Message Assignment" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="5fc22635-94c9-43b4-b687-4ddbb615e2b8" ParentLink="Construct_MessageRef" LowerBound="51.31" HigherBound="51.53">
+                            <om:Property Name="Ref" Value="MaterialRequestMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="cab2b6e0-2a07-4e3a-9f39-7f1f5340665b" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="62.1">
+                        <om:Property Name="Expression" Value="RequiredQtyStr = xpath(IncomingMessage, &quot;string(/*[local-name()='MATERIAL_REQ']/*[local-name()='MATERIAL_REQ_LINES']/*[local-name()='MATERIAL_REQ_LINE']/*[local-name()='QTY_REQUIRED']/text())&quot;);&#xD;&#xA;&#xD;&#xA;RequiredQty = System.Convert.ToDouble(RequiredQtyStr);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(System.String.Format(&quot;RequestedQty = {0}&quot;, RequiredQtyStr));" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Message Type" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="1bd0ffa5-7534-4e5a-80ad-4a467411772d" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="85.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Determine Message Type" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="2447f623-79cd-400d-accc-a554b8a197ee" ParentLink="ReallyComplexStatement_Branch" LowerBound="63.21" HigherBound="74.1">
+                            <om:Property Name="Expression" Value="(RequiredQty == 0) " />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Delete" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Construct" OID="925c78ff-d971-4ad8-a891-17bc55e172c9" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="71.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delete Reservation" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="31f91186-1357-40d1-9d8a-abb953d6b888" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.AMS.Maps.MATERIAL_REQ_to_ZMATERIALRESERVATION_DELETE" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ZMATERIALRESERVATION_DELETE Transform" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="16fa5ea2-2da4-427f-9026-045b070cce51" ParentLink="Transform_InputMessagePartRef" LowerBound="69.137" HigherBound="69.159">
+                                        <om:Property Name="MessageRef" Value="MaterialRequestMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="0b204b8d-de94-4b01-8886-97da3a40c103" ParentLink="Transform_OutputMessagePartRef" LowerBound="69.40" HigherBound="69.59">
+                                        <om:Property Name="MessageRef" Value="DeleteMatResMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="c88614a5-eaba-4a10-8bd1-f11b62ab9fcb" ParentLink="Construct_MessageRef" LowerBound="66.35" HigherBound="66.54">
+                                    <om:Property Name="Ref" Value="DeleteMatResMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="7e314320-669e-4f5f-82cf-98ec703f8a1c" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                                <om:Property Name="PortName" Value="SAPInboundReservationDeletePort" />
+                                <om:Property Name="MessageName" Value="DeleteMatResMessage" />
+                                <om:Property Name="OperationName" Value="Send_ZMATERIALRESERVATION_DELETE" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send ZMATERIALRESERVATION_DELETE Message" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="a9aab1bb-2147-469e-ac49-1783d9cb72de" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="AnalystComments" Value="Create Material Reservation" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="51d17c12-5c07-4516-9596-51693006f972" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="82.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Create Reservation" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="9227f6d8-4f24-4534-bd15-b52f582debd8" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.AMS.Maps.MATERIAL_REQ_to_MATERIALRES_CREATE1_740" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MATERIALRESERVATION_CREATE1 Transform" />
+                                    <om:Property Name="Signal" Value="False" />
+                                    <om:Element Type="MessagePartRef" OID="000af137-0d3d-4e19-bafa-13ceb8c8cb64" ParentLink="Transform_InputMessagePartRef" LowerBound="80.133" HigherBound="80.155">
+                                        <om:Property Name="MessageRef" Value="MaterialRequestMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="b78e56c0-4316-4bc8-8582-38183008c6ef" ParentLink="Transform_OutputMessagePartRef" LowerBound="80.40" HigherBound="80.59">
+                                        <om:Property Name="MessageRef" Value="CreateMatResMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="1fdb869a-e92a-4f6d-857c-9b1bc4615188" ParentLink="Construct_MessageRef" LowerBound="77.35" HigherBound="77.54">
+                                    <om:Property Name="Ref" Value="CreateMatResMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="ec2a965b-5d88-43c0-b538-8cd7d73ac981" ParentLink="ComplexStatement_Statement" LowerBound="82.1" HigherBound="84.1">
+                                <om:Property Name="PortName" Value="SAPInboundReservationCreatePort" />
+                                <om:Property Name="MessageName" Value="CreateMatResMessage" />
+                                <om:Property Name="OperationName" Value="Send_MATERIALRESERVATION_CREATE1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send MATERIALRESERVATION_CREATE1 Message" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="0b6a379d-4d28-47f4-ba70-d3f7954b3f35" ParentLink="Scope_Catch" LowerBound="88.1" HigherBound="101.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.SystemException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="e88d9b2b-a164-4165-94aa-2916e37ca3df" ParentLink="Catch_Statement" LowerBound="91.1" HigherBound="93.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(ex.Message);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Trace" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="e71ef96b-e175-4337-8360-06bca26ebf29" ParentLink="Catch_Statement" LowerBound="93.1" HigherBound="100.1">
+                            <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;Processing of IFS Material Request {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}&quot;,&#xD;&#xA;    RequiredQtyStr,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.Message,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.StackTrace);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6e6ae930-af72-4b6a-9098-70f800bc2801" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.IFSOutboundMatReqPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IFSOutboundMatReqPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="d0860d4a-c79a-4d45-94b8-2a2ce5502d3a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d6e120a7-3ff1-4451-ad5c-54b795a5c51a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="46" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.SAPInboundReservationCreatePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAPInboundReservationCreatePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ec0116ba-21c0-4746-8e68-cef267f52df6" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="25dc6791-d44e-4404-b13f-8851ef435b6d" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="50" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.SAPInboundReservationDeletePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAPInboundReservationDeletePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="2adc1915-3c57-4bdf-8096-951b3feb3dd1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.AMS.Orchestrations
+{
+    internal porttype IFSOutboundMatReqPortType
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype SAPInboundReservationCreatePortType
+    {
+        oneway Send_MATERIALRESERVATION_CREATE1
+        {
+            Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101._740_IDocOperation_MATERIALRESERVATION_CREATE101_740_3_Send
+        };
+    };
+    internal porttype SAPInboundReservationDeletePortType
+    {
+        oneway Send_ZMATERIALRESERVATION_DELETE
+        {
+            Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION.IDocOperation_ZMATERIALRESERVATION_620_3_Send
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ToSAPMaterialRequest
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements IFSOutboundMatReqPortType IFSOutboundMatReqPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SAPInboundReservationCreatePortType SAPInboundReservationCreatePort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SAPInboundReservationDeletePortType SAPInboundReservationDeletePort;
+        message System.Xml.XmlDocument IncomingMessage;
+        message Visy.Middleware.SAP.AMS.Schemas.MATERIAL_REQ MaterialRequestMessage;
+        message Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101._740_IDocOperation_MATERIALRESERVATION_CREATE101_740_3_Send CreateMatResMessage;
+        message Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION.IDocOperation_ZMATERIALRESERVATION_620_3_Send DeleteMatResMessage;
+        System.Double RequiredQty;
+        System.String RequiredQtyStr;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("59a59d64-4ad8-4740-a2d7-dc42371ba378")]
+            activate receive (IFSOutboundMatReqPort.Operation_1, IncomingMessage);
+            RequiredQtyStr = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("aba24333-6757-4de5-a853-d80ec44429c1")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9acbec6c-16bf-42c2-9786-87a25bcaf8c7")]
+                    construct MaterialRequestMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("c24bb7c6-17e6-426f-81b2-e2a477749caf")]
+                        MaterialRequestMessage = IncomingMessage;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("cab2b6e0-2a07-4e3a-9f39-7f1f5340665b")]
+                    RequiredQtyStr = xpath(IncomingMessage, "string(/*[local-name()='MATERIAL_REQ']/*[local-name()='MATERIAL_REQ_LINES']/*[local-name()='MATERIAL_REQ_LINE']/*[local-name()='QTY_REQUIRED']/text())");
+                    
+                    RequiredQty = System.Convert.ToDouble(RequiredQtyStr);
+                    
+                    System.Diagnostics.Trace.WriteLine(System.String.Format("RequestedQty = {0}", RequiredQtyStr));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("1bd0ffa5-7534-4e5a-80ad-4a467411772d")]
+                    if ((RequiredQty == 0) )
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("925c78ff-d971-4ad8-a891-17bc55e172c9")]
+                        construct DeleteMatResMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("31f91186-1357-40d1-9d8a-abb953d6b888")]
+                            transform (DeleteMatResMessage) = Visy.Middleware.SAP.AMS.Maps.MATERIAL_REQ_to_ZMATERIALRESERVATION_DELETE (MaterialRequestMessage);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7e314320-669e-4f5f-82cf-98ec703f8a1c")]
+                        send (SAPInboundReservationDeletePort.Send_ZMATERIALRESERVATION_DELETE, DeleteMatResMessage);
+                    }
+                    else 
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("51d17c12-5c07-4516-9596-51693006f972")]
+                        construct CreateMatResMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9227f6d8-4f24-4534-bd15-b52f582debd8")]
+                            transform (CreateMatResMessage) = Visy.Middleware.SAP.AMS.Maps.MATERIAL_REQ_to_MATERIALRES_CREATE1_740 (MaterialRequestMessage);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("ec2a965b-5d88-43c0-b538-8cd7d73ac981")]
+                        send (SAPInboundReservationCreatePort.Send_MATERIALRESERVATION_CREATE1, CreateMatResMessage);
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("0b6a379d-4d28-47f4-ba70-d3f7954b3f35")]
+                    catch (System.SystemException ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e88d9b2b-a164-4165-94aa-2916e37ca3df")]
+                        System.Diagnostics.Trace.WriteLine(ex.Message);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e71ef96b-e175-4337-8360-06bca26ebf29")]
+                        suspend System.String.Format("Processing of IFS Material Request {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}",
+                                RequiredQtyStr,
+                                System.Environment.NewLine,
+                                ex.Message,
+                                System.Environment.NewLine,
+                                ex.StackTrace);
+                    }
+                }
+            }
+        }
+    }
+}
+

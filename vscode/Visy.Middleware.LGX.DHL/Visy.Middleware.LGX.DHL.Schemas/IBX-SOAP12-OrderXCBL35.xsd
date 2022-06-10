@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:nseps="urn:schemas-IBX:/docs/endpoint.nsendpoint" xmlns:nsprop="urn:schemas-IBX:/docs/property.nsproperty" xmlns:nsproc="urn:schemas-IBX:/docs/process.nsprocess" xmlns:nsfst="urn:schemas-IBX:/docs/manifest.nsmanifest" xmlns:nsxcbl35="rrn:org.xcbl:schemas/xcbl/v3_5/xcbl35.xsd" targetNamespace="http://www.w3.org/2003/05/soap-envelope" elementFormDefault="qualified">
+	<xs:import namespace="urn:schemas-IBX:/docs/endpoint.nsendpoint" schemaLocation="nseps.xsd"/>
+	<xs:import namespace="urn:schemas-IBX:/docs/property.nsproperty" schemaLocation="nsprop.xsd"/>
+	<xs:import namespace="urn:schemas-IBX:/docs/process.nsprocess" schemaLocation="nsproc.xsd"/>
+	<xs:import namespace="urn:schemas-IBX:/docs/manifest.nsmanifest" schemaLocation="nsfst.xsd"/>
+	<xs:import namespace="rrn:org.xcbl:schemas/xcbl/v3_5/xcbl35.xsd" schemaLocation="IBXOrder.xsd"/>
+<!--	<xs:attribute name="mustUnderstand" type="xs:boolean" default="1"/>
+	<xs:attribute name="encodingStyle" type="xs:anyURI"/>-->
+	<xs:complexType name="Envelope">
+		<xs:sequence>
+			<xs:element ref="SOAP-ENV:Header"/>
+			<xs:element ref="SOAP-ENV:Body"/>
+		</xs:sequence>
+		<!--		<xs:anyAttribute namespace="##other" processContents="lax"/>
+-->
+	</xs:complexType>
+	<xs:element name="Envelope" type="SOAP-ENV:Envelope"/>
+	<xs:element name="Header" type="SOAP-ENV:Header"/>
+	<xs:complexType name="Header">
+		<xs:annotation>
+			<xs:documentation>
+	  </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="nseps:endpoints"/>
+			<xs:element ref="nsprop:properties"/>
+			<xs:element ref="nsproc:process" minOccurs="0"/>
+			<xs:element ref="nsfst:manifest" minOccurs="0"/>
+		</xs:sequence>
+		<!--		<xs:anyAttribute namespace="##other" processContents="lax"/>-->
+	</xs:complexType>
+	<xs:element name="Body" type="SOAP-ENV:Body"/>
+	<xs:complexType name="Body">
+		<xs:sequence>
+			<xs:element ref="nsxcbl35:Order"/>
+		</xs:sequence>
+		<!--		<xs:sequence>
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>-->
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+</xs:schema>

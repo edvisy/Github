@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Macros xmlns="http://schemas.modhul.com/BizTalk/Pipeline/Components/Archive">
+
+	<!-- Message Tracking Properties -->
+	<Macro name="ActivityIdentity">
+		<ContextProperty>ActivityIdentity</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/messagetracking-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AdapterReceiveCompleteTime">
+		<ContextProperty>AdapterReceiveCompleteTime</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/messagetracking-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="PortName">
+		<ContextProperty>PortName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/messagetracking-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* Message Tracking Properties -->
+
+	<!-- System Properties -->
+	<!-- note message type macro will only resolve the root node name, due to problems using namespaces in filenames -->
+	<Macro name="MessageType">
+		<ContextProperty>MessageType</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>	
+	<Macro name="AuthenticationRequiredOnReceivePort">
+		<ContextProperty>AuthenticationRequiredOnReceivePort</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="LRPMsgBodyTracking">
+		<ContextProperty>LRPMsgBodyTracking</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="InboundTransportType">
+		<ContextProperty>InboundTransportType</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="InboundTransportLocation">
+		<ContextProperty>InboundTransportLocation</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="InterchangeID">
+		<ContextProperty>InterchangeID</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="InterchangeSequenceNumber">
+		<ContextProperty>InterchangeSequenceNumber</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="MessageExchangePattern">
+		<ContextProperty>MessageExchangePattern</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceiveInstanceID">
+		<ContextProperty>ReceiveInstanceID</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivePortID">
+		<ContextProperty>ReceivePortID</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivePortName">
+		<ContextProperty>ReceivePortName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceiveLocationName">
+		<ContextProperty>ReceiveLocationName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivePipelineID">
+		<ContextProperty>ReceivePipelineID</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivePipelineConfig">
+		<ContextProperty>ReceivePipelineConfig</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="WasSolicitResponse">
+		<ContextProperty>WasSolicitResponse</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/system-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* System Properties -->
+
+	<!-- File Adapter Properties -->
+	<Macro name="FileCreationTime">
+		<ContextProperty>FileCreationTime</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/file-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivedFileNameFile">
+		<!-- File name without extension -->
+		<ContextProperty>ReceivedFileName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/file-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ReceivedFolder">
+		<ContextProperty>ReceivedFileName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/file-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* File Adapter Properties -->
+
+	<!-- FTP Adapter Properties -->
+	<Macro name="ReceivedFileNameFTP">
+		<ContextProperty>ReceivedFileName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/ftp-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* FTP Adapter Properties -->
+
+	<!-- HTTP Adapter Properties -->
+	<Macro name="ProxyName">
+		<ContextProperty>ProxyName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyPort">
+		<ContextProperty>ProxyPort</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseHandlerProxySettings">
+		<ContextProperty>UseHandlerProxySettings</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseProxy">
+		<ContextProperty>UseProxy</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="RequestTimeout">
+		<ContextProperty>RequestTimeout</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="Username">
+		<ContextProperty>ProxyPort</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="Password">
+		<ContextProperty>UseHandlerProxySettings</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyUsername">
+		<ContextProperty>UseProxy</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyPassword">
+		<ContextProperty>RequestTimeout</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="MaxRedirects">
+		<ContextProperty>MaxRedirects</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ContentType">
+		<ContextProperty>ContentType</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AuthenticationScheme">
+		<ContextProperty>AuthenticationScheme</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="Certificate">
+		<ContextProperty>Certificate</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseSSO">
+		<ContextProperty>UseSSO</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AffiliateApplicationName">
+		<ContextProperty>AffiliateApplicationName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="InboundHttpHeaders">
+		<ContextProperty>InboundHttpHeaders</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="SubmissionHandle">
+		<ContextProperty>SubmissionHandle</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/http-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* HTTP Adapter Properties -->
+
+	<!-- SOAP Adapter Properties -->
+	<Macro name="AssemblyName">
+		<ContextProperty>AssemblyName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="MethodName">
+		<ContextProperty>MethodName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="Username">
+		<ContextProperty>Username</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="Password">
+		<ContextProperty>Password</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ClientCertificate">
+		<ContextProperty>ClientCertificate</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseProxy">
+		<ContextProperty>UseProxy</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyAddress">
+		<ContextProperty>ProxyAddress</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyPort">
+		<ContextProperty>ProxyPort</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyUsername">
+		<ContextProperty>ProxyUsername</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ProxyPassword">
+		<ContextProperty>ProxyPassword</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UnknownHeaders">
+		<ContextProperty>UnknownHeaders</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AffiliateApplicationName">
+		<ContextProperty>AffiliateApplicationName</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AuthenticationScheme">
+		<ContextProperty>AuthenticationScheme</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseSSO">
+		<ContextProperty>UseSSO</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseHandlerSetting">
+		<ContextProperty>UseHandlerSetting</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="ClientConnectionTimeout">
+		<ContextProperty>ClientConnectionTimeout</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UserDefined">
+		<ContextProperty>UserDefined</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="UseSoap12">
+		<ContextProperty>UseSoap12</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2003/soap-properties</ContextPropertyNamespace>
+	</Macro>
+	<!-- *End* SOAP Adapter Properties -->
+
+	<Macro name="AS2MessageId">
+		<ContextProperty>OriginalMessageId</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2006/as2-properties</ContextPropertyNamespace>
+	</Macro>
+	<Macro name="AS2MessageIdFileName">
+		<!-- This is a version of the AS2 Original Message Id, cleaned up for use as a valid filename -->
+		<ContextProperty>OriginalMessageId</ContextProperty>
+		<ContextPropertyNamespace>http://schemas.microsoft.com/BizTalk/2006/as2-properties</ContextPropertyNamespace>
+	</Macro>
+
+  <!-- TIM Process specific Properties -->
+  <Macro name="TIM_vendor_order_id">
+    <ContextProperty>vendor_order_id</ContextProperty>
+    <ContextPropertyNamespace>http://Visy.ECommerce.TIM.InternalSchemas.PropertiesSchema</ContextPropertyNamespace>
+  </Macro>
+  <Macro name="TIM_process_type_code">
+    <ContextProperty>process_type_code</ContextProperty>
+    <ContextPropertyNamespace>http://Visy.ECommerce.TIM.InternalSchemas.PropertiesSchema</ContextPropertyNamespace>
+  </Macro>
+  <Macro name="TIM_process_code_1">
+    <ContextProperty>process_code_1</ContextProperty>
+    <ContextPropertyNamespace>http://Visy.ECommerce.TIM.InternalSchemas.PropertiesSchema</ContextPropertyNamespace>
+  </Macro>
+  <Macro name="TIM_process_attempt_no">
+    <ContextProperty>process_attempt_no</ContextProperty>
+    <ContextPropertyNamespace>http://Visy.ECommerce.TIM.InternalSchemas.PropertiesSchema</ContextPropertyNamespace>
+  </Macro>
+  <!-- *End* TIM Process specific Properties -->
+
+
+</Macros>

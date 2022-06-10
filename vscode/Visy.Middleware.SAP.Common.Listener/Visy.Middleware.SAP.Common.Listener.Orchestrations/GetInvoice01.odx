@@ -1,0 +1,246 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="fba36d40-a03f-48cb-b020-061610f8c047" LowerBound="1.1" HigherBound="60.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Common.Listener.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="5ef37737-6c87-4aec-9240-af0b7e902b5d" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="59.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetInvoice01" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="b8442b6b-fa59-455a-b29e-41a6bb5cd0e2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Guid" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="beee6b22-e6f7-4584-ad27-c2cae85d8586" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sBiztalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="984699d0-928b-4602-8602-8be62058f0d3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sCustCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="bbcd757a-2c81-4e22-b04e-798f49aff9e0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sFileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3298a76e-65aa-4742-8a54-6be8533c0f0b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InINVOICE" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ee3ea628-6275-4b98-8ca1-94cd30121573" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutINVOICE" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="2d29daa1-2c65-40d3-9e06-15b1abb086ff" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="69554a05-21d9-4251-9987-eee5abe3d3a2" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveINVOICE01_Port" />
+                    <om:Property Name="MessageName" Value="InINVOICE" />
+                    <om:Property Name="OperationName" Value="ReceiveINVOICE01_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_INV" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="fba2d22c-82bb-4038-9723-4f7f73e9aeed" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="55.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Out" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="e252a39e-d7bd-4d30-8bdd-98db6bb8e0c0" ParentLink="Construct_MessageRef" LowerBound="43.23" HigherBound="43.33">
+                        <om:Property Name="Ref" Value="OutINVOICE" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="0554cd1c-ea79-41dc-a74f-c92673f65808" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="54.1">
+                        <om:Property Name="Expression" Value="Guid = System.Guid.NewGuid();&#xD;&#xA;&#xD;&#xA;sBiztalkID = Guid.ToString() + &quot;~1&quot;;&#xD;&#xA;sCustCode = InINVOICE.idocData.EDI_DC40.RCVPRN;&#xD;&#xA;&#xD;&#xA;OutINVOICE = InINVOICE;&#xD;&#xA;sFileName = &quot;INVOICE01.&quot; + sCustCode + &quot;.&quot; + sBiztalkID + &quot;.xml&quot;;&#xD;&#xA;OutINVOICE(FILE.ReceivedFileName) = sFileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_3" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="e9ac0157-9de7-4c04-9669-0b33405dfd4a" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="57.1">
+                    <om:Property Name="PortName" Value="SendINVOICE01_Port" />
+                    <om:Property Name="MessageName" Value="OutINVOICE" />
+                    <om:Property Name="OperationName" Value="SendINVOICE01_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_INVOICE" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="192d0f88-1627-41d7-a4df-36e238b230ba" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Listener.Orchestrations.ReceiveINVOICE01_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveINVOICE01_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="183b1d13-6e92-496b-8109-b48904372867" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="d747d72e-49bf-4bdb-8665-a081d683b98e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="34" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Listener.Orchestrations.SendINVOICE01_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendINVOICE01_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="3f893dd0-1883-46fa-8ead-0d8245c876f7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="b973e8d8-e1ec-4173-b811-15652e88d4f9" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="EMailTypeInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="415463d9-c258-438c-9960-ce2dd10b5919" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Components.Utilities.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMailBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="074f341a-1176-49a7-869f-64ecf2bf4645" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveINVOICE01_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="cc4fc551-e482-41e5-b54a-51a8fbe70021" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveINVOICE01_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="eeafbcde-09f8-465e-8118-d2da3478b025" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.96">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="33fe37c2-0f9c-4271-9743-5f1484094700" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendINVOICE01_PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="77da1e9f-ee04-4bd0-947c-99bd82224cd1" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendINVOICE01_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="52596e9f-ba17-4320-b878-2a522ba601cd" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.96">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Common.Listener.Orchestrations
+{
+    internal messagetype EMailTypeInvoice
+    {
+        body Visy.Middleware.Components.Utilities.RawString EMailBody;
+    };
+    internal porttype ReceiveINVOICE01_PortType
+    {
+        oneway ReceiveINVOICE01_PortOperation
+        {
+            Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive
+        };
+    };
+    internal porttype SendINVOICE01_PortType
+    {
+        oneway SendINVOICE01_PortOperation
+        {
+            Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service GetInvoice01
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveINVOICE01_PortType ReceiveINVOICE01_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendINVOICE01_PortType SendINVOICE01_Port;
+        message Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive InINVOICE;
+        message Visy.Middleware.Schemas.SAP.Generated.Invoic01.IDocOperation_INVOIC01_740_3_Receive OutINVOICE;
+        System.Guid Guid;
+        System.String sBiztalkID;
+        System.String sCustCode;
+        System.String sFileName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("69554a05-21d9-4251-9987-eee5abe3d3a2")]
+            activate receive (ReceiveINVOICE01_Port.ReceiveINVOICE01_PortOperation, InINVOICE);
+            sBiztalkID = "";
+            sCustCode = "";
+            sFileName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fba2d22c-82bb-4038-9723-4f7f73e9aeed")]
+            construct OutINVOICE
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0554cd1c-ea79-41dc-a74f-c92673f65808")]
+                Guid = System.Guid.NewGuid();
+                
+                sBiztalkID = Guid.ToString() + "~1";
+                sCustCode = InINVOICE.idocData.EDI_DC40.RCVPRN;
+                
+                OutINVOICE = InINVOICE;
+                sFileName = "INVOICE01." + sCustCode + "." + sBiztalkID + ".xml";
+                OutINVOICE(FILE.ReceivedFileName) = sFileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e9ac0157-9de7-4c04-9669-0b33405dfd4a")]
+            send (SendINVOICE01_Port.SendINVOICE01_PortOperation, OutINVOICE);
+        }
+    }
+}
+

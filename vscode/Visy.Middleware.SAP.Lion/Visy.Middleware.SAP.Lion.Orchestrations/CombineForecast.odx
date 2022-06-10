@@ -1,0 +1,598 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="fbe4318d-b821-4105-a51d-4f1c2ede5471" LowerBound="1.1" HigherBound="134.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Lion.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="a2749dd9-41b8-4c8e-9d31-78225fc32edd" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AggregateLionForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f991ecd4-63ca-452a-b21e-dcc5f4db0912" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_AggregateLionForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="96f5a667-1318-4208-baa7-dc48ca00820d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.36">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b4a280c4-86ab-48fb-9d23-c40cf842931f" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AggregatedForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="cf41aafe-5cfd-458b-8cc9-268a237b0764" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_AggregatedForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1b52f5d5-1151-423c-9991-e4049895c63a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a59b7dc4-c1c1-436b-997c-124a4d686097" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send_SAPForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="63832fe1-23b7-4967-aa74-7b722b2a95ff" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Send_SAPForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7922d80d-0976-43f5-9eb8-e734d1f2e36a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.35">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_SAPOrder" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3af85038-9ecc-4053-bc13-dcbc05a9131c" ParentLink="Module_PortType" LowerBound="29.1" HigherBound="36.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send_InternalLionForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="193ef350-a832-49d8-9d28-c902f0164586" ParentLink="PortType_OperationDeclaration" LowerBound="31.1" HigherBound="35.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Send_InternalLionForecastNZ" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="85e304c7-ce69-4391-8750-504697d33d02" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="33.13" HigherBound="33.47">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_InternalLionForecast" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e1cbcd0f-e4f0-4ef4-adf7-b28143056400" ParentLink="Module_PortType" LowerBound="36.1" HigherBound="43.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send_InternalLionForecastNz" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="59d16ea2-d1a5-4a48-b442-4ed8d8cf0e03" ParentLink="PortType_OperationDeclaration" LowerBound="38.1" HigherBound="42.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Prophit" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0600463d-1696-45fc-8438-5c4d3ab1e111" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="40.13" HigherBound="40.47">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_InternalLionForecast" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="c4dffe52-f2ac-4895-adf0-009188631e05" ParentLink="Module_CorrelationType" LowerBound="43.1" HigherBound="47.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_ByPlantCode" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="947bbb3b-4f7b-42a7-8eaa-e895ab5ef778" ParentLink="CorrelationType_PropertyRef" LowerBound="45.9" HigherBound="45.70">
+                <om:Property Name="Ref" Value="Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.addressID" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="f8e3a23b-cb17-4083-8590-44eab9db5e0f" ParentLink="Module_ServiceDeclaration" LowerBound="47.1" HigherBound="133.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CombineForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="a2f0c587-86b4-4bf2-8e7f-19fd3fe4164b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Guid" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="047295d6-7043-48d8-b4a0-aaf820a584f9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.UInt32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TotalNumberOfMessages" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="dcbc0dfc-aa9f-419c-b2f7-ac4f178074f5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="TimeOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f0ea2a6a-06fe-4d22-95a5-3373c1446c14" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="67.1" HigherBound="68.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Microsoft.XLANGs.Pipeline.SendPipelineInputMessages" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagesToAggregate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="50fefe4b-c1e7-40e9-8969-3cec547313bf" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.CorrelationType_ByPlantCode" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_AggregateByPOPlantCode" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="0185e764-2f1e-47ff-9e5c-112e5564d36d" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="84.109" HigherBound="84.143">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="5538bc06-614f-4017-bc7c-76b22fbed416" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="f4a07bf3-d209-49e0-8434-5d652b719299" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="71.99" HigherBound="71.144">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="628092e0-4342-48a6-bc35-f87aab4f9133" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ad4c5e3b-a09f-4a1f-a39e-8ebe8bb15537" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mAggregatedForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="75f1ae68-686f-4dd6-ac33-79f98288050d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mFirstForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f14d4b68-b6ed-470b-9128-d30bb2f8b317" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_LionOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mSucceedingForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c9306adb-0cfb-4821-ba21-c7d5690a75f6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Schemas.cXMLEnvelope" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mAggregatedTyped" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f4fdbf99-03f5-4c7c-9fba-1044fe2f5eaf" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.MultipartType_InternalLionForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mInternalLionSchema" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b5ef8721-a12f-4017-a46d-088e2f6c53f3" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="628092e0-4342-48a6-bc35-f87aab4f9133" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="75.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_ConvoyRecieve" />
+                    <om:Property Name="MessageName" Value="mFirstForecast" />
+                    <om:Property Name="OperationName" Value="Operation_AggregateLionForecast" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_ActivationMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="06dcf0c2-9375-44b0-84fc-1662c23794a2" ParentLink="ServiceBody_Statement" LowerBound="75.1" HigherBound="77.1">
+                    <om:Property Name="Expression" Value="MessagesToAggregate.Add(mFirstForecast);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="AddMessageToAggregatorList" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="509b17eb-ed9a-4693-beb0-d32ababe609c" ParentLink="ServiceBody_Statement" LowerBound="77.1" HigherBound="98.1">
+                    <om:Property Name="Expression" Value="(TimeOut == false)" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_UntilMessagesCollected" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Listen" OID="01e3688f-c4cb-4baa-8a7a-ffda0074fd4a" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="97.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Listen_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ListenBranch" OID="64724d54-ac7e-4420-81b5-3321e8c60dd3" ParentLink="ReallyComplexStatement_Branch" LowerBound="80.1" HigherBound="80.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Receive" OID="5538bc06-614f-4017-bc7c-76b22fbed416" ParentLink="ListenBranch_Statement" LowerBound="83.1" HigherBound="84.144">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="Port_ConvoyRecieve" />
+                                <om:Property Name="MessageName" Value="mSucceedingForecast" />
+                                <om:Property Name="OperationName" Value="Operation_AggregateLionForecast" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Receive_ConvoyMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="02218c88-8dc7-470f-b898-2d3610711a32" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="89.1">
+                                <om:Property Name="Expression" Value="MessagesToAggregate.Add(mSucceedingForecast);&#xD;&#xA;TotalNumberOfMessages = TotalNumberOfMessages + 1;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="AddMessageToAggregatorList" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ListenBranch" OID="2de301d9-477b-4beb-a3e0-8237a3af4389" ParentLink="ReallyComplexStatement_Branch" LowerBound="80.1" HigherBound="80.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_2" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Delay" OID="c79a3e2d-d9e3-46ac-a07c-5e03175192c3" ParentLink="ListenBranch_Statement" LowerBound="90.1" HigherBound="91.56">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,30)" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delay" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="ab6eea75-df83-474f-8089-8cabe6b398dc" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
+                                <om:Property Name="Expression" Value="TimeOut = true;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Timeout Flag" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="4e6d9f95-7159-4abb-9006-c1e92d6c6c1d" ParentLink="ServiceBody_Statement" LowerBound="98.1" HigherBound="112.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructAggregatedMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="3a0dd0b9-4c34-4f08-b306-5f4e5e9c2f91" ParentLink="ComplexStatement_Statement" LowerBound="101.1" HigherBound="109.1">
+                        <om:Property Name="Expression" Value="mAggregatedForecast = null;&#xD;&#xA;Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteSendPipeline(typeof(Visy.Middleware.SAP.Lion.Pipelines.XMLAggregatingPipeline),MessagesToAggregate,mAggregatedForecast);&#xD;&#xA;Guid = System.Guid.NewGuid();&#xD;&#xA;mAggregatedForecast(FILE.ReceivedFileName) = mFirstForecast(Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.orderID) + &quot;.&quot; + mFirstForecast(Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.addressID) + &quot;.&quot; + Guid.ToString() + &quot;.xml&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="ExecuteSendPipeline" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="c842a4c2-269f-4e8e-9787-ba6fb12f06b6" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="111.1">
+                        <om:Property Name="Expression" Value="mAggregatedTyped = mAggregatedForecast;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_XmlToTyped" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="4ff674eb-2d41-4793-b698-7be81f807e20" ParentLink="Construct_MessageRef" LowerBound="99.23" HigherBound="99.42">
+                        <om:Property Name="Ref" Value="mAggregatedForecast" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="91419015-5272-4699-9ddd-28710122e928" ParentLink="Construct_MessageRef" LowerBound="99.44" HigherBound="99.60">
+                        <om:Property Name="Ref" Value="mAggregatedTyped" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="3a5badf0-0327-4e56-84fa-7e13212380a9" ParentLink="ServiceBody_Statement" LowerBound="112.1" HigherBound="114.1">
+                    <om:Property Name="PortName" Value="Port_SendAggregatedMessage" />
+                    <om:Property Name="MessageName" Value="mAggregatedForecast" />
+                    <om:Property Name="OperationName" Value="Operation_AggregatedForecast" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_AggregatedMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="74883cca-c1ec-4274-b4b1-dd9cce5ebc96" ParentLink="ServiceBody_Statement" LowerBound="114.1" HigherBound="120.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="c63a7a0e-6116-4562-895f-e68ef8a40537" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="119.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Maps.Map_cXMLMultiLine_To_LionForecast" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="020eb658-f768-4d87-8a4d-e3e886a765f6" ParentLink="Transform_InputMessagePartRef" LowerBound="118.149" HigherBound="118.165">
+                            <om:Property Name="MessageRef" Value="mAggregatedTyped" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="455a3ed9-9b56-4fee-bc0b-9201b47a7989" ParentLink="Transform_OutputMessagePartRef" LowerBound="118.28" HigherBound="118.80">
+                            <om:Property Name="MessageRef" Value="mInternalLionSchema" />
+                            <om:Property Name="PartRef" Value="MessagePart_InternalLionForecast" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="5cb7de41-775a-4ed7-96bb-ef368892c2bc" ParentLink="Construct_MessageRef" LowerBound="115.23" HigherBound="115.42">
+                        <om:Property Name="Ref" Value="mInternalLionSchema" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="e5266923-b7a5-486b-8d79-ebe26bf2de07" ParentLink="ServiceBody_Statement" LowerBound="120.1" HigherBound="131.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckPlant" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="4a8b5e20-a547-43b1-9ef4-3bf3953dbd3b" ParentLink="ReallyComplexStatement_Branch" LowerBound="121.13" HigherBound="126.1">
+                        <om:Property Name="Expression" Value="mInternalLionSchema.MessagePart_InternalLionForecast.Header.VisyBuyerCode==&quot;15688&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ifNZ" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Send" OID="09a57425-d4ce-4479-bc37-1f43de52c4fd" ParentLink="ComplexStatement_Statement" LowerBound="123.1" HigherBound="125.1">
+                            <om:Property Name="PortName" Value="Port_Send_InternalLionForecastNz" />
+                            <om:Property Name="MessageName" Value="mInternalLionSchema" />
+                            <om:Property Name="OperationName" Value="Prophit" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_Nz" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="58e5e0d4-20ae-43fd-b2a3-3aec2fc89f0d" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Send" OID="6dd7dc1b-26d7-4d82-a0e7-320009c2e992" ParentLink="ComplexStatement_Statement" LowerBound="128.1" HigherBound="130.1">
+                            <om:Property Name="PortName" Value="Port_Send_InternalLionForecast" />
+                            <om:Property Name="MessageName" Value="mInternalLionSchema" />
+                            <om:Property Name="OperationName" Value="Operation_Send_InternalLionForecastNZ" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_AU" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="52182f5d-9877-4250-97c9-23502caaee2e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="50.1" HigherBound="52.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_AggregateLionForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ConvoyRecieve" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="8cba961b-df96-4e4c-81fb-5534c5cc4440" ParentLink="PortDeclaration_CLRAttribute" LowerBound="50.1" HigherBound="51.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="90831fb9-9343-4327-9543-e9215f6153ec" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="52.1" HigherBound="54.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="57" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_AggregatedForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendAggregatedMessage" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="cba1df50-ae7d-46d1-9d3b-8725d5e8073d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="52.1" HigherBound="53.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5a0653f8-95d4-4a10-9788-8c2b1cf1d385" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="54.1" HigherBound="56.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="70" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Send_InternalLionForecast" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_InternalLionForecast" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="d915d1e2-81dd-48da-b28f-24e4cf0394af" ParentLink="PortDeclaration_CLRAttribute" LowerBound="54.1" HigherBound="55.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="cccc6e5d-7fee-4319-855f-2118c81754dc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="56.1" HigherBound="58.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Lion.Orchestrations.PortType_Send_InternalLionForecastNz" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_InternalLionForecastNz" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="fb3739c3-e747-40a5-bb45-7eb4bd51745f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="56.1" HigherBound="57.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="849d3911-1f36-4219-a665-9dd29d96619e" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MultipartType_InternalLionForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6fc5bb30-fb63-4fba-8f09-9bb6bbc749ea" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Lion.Schemas.Forecast" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessagePart_InternalLionForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Lion.Orchestrations
+{
+    internal messagetype MultipartType_InternalLionForecast
+    {
+        body Visy.Middleware.SAP.Lion.Schemas.Forecast MessagePart_InternalLionForecast;
+    };
+    internal porttype PortType_AggregateLionForecast
+    {
+        oneway Operation_AggregateLionForecast
+        {
+            MultipartType_LionOrder
+        };
+    };
+    internal porttype PortType_AggregatedForecast
+    {
+        oneway Operation_AggregatedForecast
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_Send_SAPForecast
+    {
+        oneway Operation_Send_SAPForecast
+        {
+            MultipartType_SAPOrder
+        };
+    };
+    internal porttype PortType_Send_InternalLionForecast
+    {
+        oneway Operation_Send_InternalLionForecastNZ
+        {
+            MultipartType_InternalLionForecast
+        };
+    };
+    public porttype PortType_Send_InternalLionForecastNz
+    {
+        oneway Prophit
+        {
+            MultipartType_InternalLionForecast
+        };
+    };
+    internal correlationtype CorrelationType_ByPlantCode
+    {
+        Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.addressID
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CombineForecast
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_AggregateLionForecast Port_ConvoyRecieve;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_AggregatedForecast Port_SendAggregatedMessage;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Send_InternalLionForecast Port_Send_InternalLionForecast;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Send_InternalLionForecastNz Port_Send_InternalLionForecastNz;
+        correlation CorrelationType_ByPlantCode Correlation_AggregateByPOPlantCode;
+        message System.Xml.XmlDocument mAggregatedForecast;
+        message MultipartType_LionOrder mFirstForecast;
+        message MultipartType_LionOrder mSucceedingForecast;
+        message Visy.Middleware.SAP.Lion.Schemas.cXMLEnvelope mAggregatedTyped;
+        message MultipartType_InternalLionForecast mInternalLionSchema;
+        System.Guid Guid;
+        System.UInt32 TotalNumberOfMessages;
+        System.Boolean TimeOut;
+        Microsoft.XLANGs.Pipeline.SendPipelineInputMessages MessagesToAggregate;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("628092e0-4342-48a6-bc35-f87aab4f9133")]
+            activate receive (Port_ConvoyRecieve.Operation_AggregateLionForecast, mFirstForecast, initialize Correlation_AggregateByPOPlantCode);
+            TotalNumberOfMessages = 1;
+            TimeOut = false;
+            MessagesToAggregate = new Microsoft.XLANGs.Pipeline.SendPipelineInputMessages();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("06dcf0c2-9375-44b0-84fc-1662c23794a2")]
+            MessagesToAggregate.Add(mFirstForecast);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("509b17eb-ed9a-4693-beb0-d32ababe609c")]
+            while ((TimeOut == false))
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("01e3688f-c4cb-4baa-8a7a-ffda0074fd4a")]
+                listen
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5538bc06-614f-4017-bc7c-76b22fbed416")]
+                    until receive (Port_ConvoyRecieve.Operation_AggregateLionForecast, mSucceedingForecast, Correlation_AggregateByPOPlantCode)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("02218c88-8dc7-470f-b898-2d3610711a32")]
+                        MessagesToAggregate.Add(mSucceedingForecast);
+                        TotalNumberOfMessages = TotalNumberOfMessages + 1;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c79a3e2d-d9e3-46ac-a07c-5e03175192c3")]
+                    timeout new System.TimeSpan(0,0,30)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("ab6eea75-df83-474f-8089-8cabe6b398dc")]
+                        TimeOut = true;
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4e6d9f95-7159-4abb-9006-c1e92d6c6c1d")]
+            construct mAggregatedForecast, mAggregatedTyped
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a0dd0b9-4c34-4f08-b306-5f4e5e9c2f91")]
+                mAggregatedForecast = null;
+                Microsoft.XLANGs.Pipeline.XLANGPipelineManager.ExecuteSendPipeline(typeof(Visy.Middleware.SAP.Lion.Pipelines.XMLAggregatingPipeline),MessagesToAggregate,mAggregatedForecast);
+                Guid = System.Guid.NewGuid();
+                mAggregatedForecast(FILE.ReceivedFileName) = mFirstForecast(Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.orderID) + "." + mFirstForecast(Visy.Middleware.Schemas.cXML_1_2_031.PropertySchema.addressID) + "." + Guid.ToString() + ".xml";
+                
+                
+                
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c842a4c2-269f-4e8e-9787-ba6fb12f06b6")]
+                mAggregatedTyped = mAggregatedForecast;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3a5badf0-0327-4e56-84fa-7e13212380a9")]
+            send (Port_SendAggregatedMessage.Operation_AggregatedForecast, mAggregatedForecast);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("74883cca-c1ec-4274-b4b1-dd9cce5ebc96")]
+            construct mInternalLionSchema
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c63a7a0e-6116-4562-895f-e68ef8a40537")]
+                transform (mInternalLionSchema.MessagePart_InternalLionForecast) = Visy.Middleware.SAP.Lion.Maps.Map_cXMLMultiLine_To_LionForecast (mAggregatedTyped);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e5266923-b7a5-486b-8d79-ebe26bf2de07")]
+            if (mInternalLionSchema.MessagePart_InternalLionForecast.Header.VisyBuyerCode=="15688")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("09a57425-d4ce-4479-bc37-1f43de52c4fd")]
+                send (Port_Send_InternalLionForecastNz.Prophit, mInternalLionSchema);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6dd7dc1b-26d7-4d82-a0e7-320009c2e992")]
+                send (Port_Send_InternalLionForecast.Operation_Send_InternalLionForecastNZ, mInternalLionSchema);
+            }
+        }
+    }
+}
+

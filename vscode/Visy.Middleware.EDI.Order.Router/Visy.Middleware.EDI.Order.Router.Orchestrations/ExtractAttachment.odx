@@ -1,0 +1,943 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="0668ae77-a5cd-4b2f-9633-f4e987e16ed7" LowerBound="1.1" HigherBound="315.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.EDI.Order.Router.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="37200f8d-737c-4971-a015-803e71eaa904" ParentLink="Module_PortType" LowerBound="9.1" HigherBound="16.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Message_In" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e567323a-4c72-40d0-96e0-d297465d82d0" ParentLink="PortType_OperationDeclaration" LowerBound="11.1" HigherBound="15.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMailIn" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7c48d5a2-d413-4d50-9e2d-dd3924aba465" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="13.13" HigherBound="13.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8356e61e-aa64-41b4-ba2f-6a905b4fe1d7" ParentLink="Module_PortType" LowerBound="16.1" HigherBound="23.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PT_Inbound" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="9d352efd-ff9d-469f-bfa1-5e57b50acdd5" ParentLink="PortType_OperationDeclaration" LowerBound="18.1" HigherBound="22.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="11329819-2ba4-4c18-9394-d34ce685fc41" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="20.13" HigherBound="20.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="91ef2bc7-bb8f-40de-89c7-58f2dee6f789" ParentLink="Module_PortType" LowerBound="23.1" HigherBound="30.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PollerAlertPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e00281cf-baaa-4aec-98bc-97188d57ead9" ParentLink="PortType_OperationDeclaration" LowerBound="25.1" HigherBound="29.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PollerAlertOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="66705d03-01c1-4994-bcef-6d20dd295220" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="27.13" HigherBound="27.26">
+                    <om:Property Name="Ref" Value="System.String" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="PollerAlertRequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d34bf2e3-a625-4bdc-8036-65c427fdec80" ParentLink="Module_PortType" LowerBound="30.1" HigherBound="37.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ErrorNotification" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2d8f1afd-117a-495b-96e4-644199e6d401" ParentLink="PortType_OperationDeclaration" LowerBound="32.1" HigherBound="36.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Email" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="b7dddede-4850-4e56-9d14-3e3e69cfcc89" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="34.13" HigherBound="34.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="658d326a-cb4c-4461-92ba-39a083ebcf95" ParentLink="Module_PortType" LowerBound="37.1" HigherBound="44.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Backup" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8316b305-e07a-4511-98e7-610546809a14" ParentLink="PortType_OperationDeclaration" LowerBound="39.1" HigherBound="43.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Backup" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="961ce6db-cc19-483f-8296-8d5518696f61" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="41.13" HigherBound="41.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="40f3bf55-7388-484e-a9f0-f6172021f5d8" ParentLink="Module_ServiceDeclaration" LowerBound="44.1" HigherBound="314.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AttachmentsExtract" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="751929ec-2931-4277-9d8e-b6f2ae57a82c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="nCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="51d3f4a4-5ae3-4379-8fc4-2786c5b34937" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="n" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7798fe69-3a4d-4516-a438-8aeec45a6004" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="Microsoft.XLANGs.BaseTypes.XLANGMessage" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="oXMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="81b0863e-31e7-4a1b-905e-7a77aa7dabfe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Mailbox" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8be92b5b-0470-425e-aeb8-c4108d3d548e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="63.1" HigherBound="64.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="Microsoft.XLANGs.BaseTypes.XLANGPart" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgPart" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7ce7af41-4878-414b-916e-9a9622d489da" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="64.1" HigherBound="65.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="94138511-5f5e-444a-9599-078c2ea2664a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="65.1" HigherBound="66.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="context_id" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="04c854a4-2d00-415c-92f2-a10215435c3d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="email_from" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2f826dd4-1721-4c27-a661-1fae852ffa04" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="67.1" HigherBound="68.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="email_to" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f357e209-54b3-40f1-9b08-3ccc9f177895" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="68.1" HigherBound="69.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="email_subject" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a5c37724-20a2-4630-aab1-99150566d493" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="69.1" HigherBound="70.1">
+                <om:Property Name="InitialValue" Value="true" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="bRequiresContext" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="08717eee-6339-4262-a9f1-1dfec6ccde51" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="70.1" HigherBound="71.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="var_cc_mail" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a8fff3d9-cc7e-4337-846e-8decb7a8fba4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="71.1" HigherBound="72.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="var_mail" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="65cb1e46-57f3-4b93-a36e-671c6e113bc4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="72.1" HigherBound="73.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="var_code" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ce6746a0-4864-4877-bf83-c44b4acb93cf" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="73.1" HigherBound="74.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OrderMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b3f4934c-201e-46b5-afa1-656d2393bcfe" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5a0a5c24-8417-48e5-957f-6f6f5e511b11" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="04e9db84-9d77-4263-b20b-bd0b7cf34d83" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="14a98222-6c34-406f-9384-fa6501ca9472" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="Type" Value="Visy.Middleware.EDI.Order.Router.Orchestrations.AttachmentIn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgWithAttachment" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b01b64af-08b6-4178-be8f-f319f2e48067" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="d1e5fb25-f931-478a-a24c-e601c3c4dc2f" ParentLink="ServiceBody_Statement" LowerBound="76.1" HigherBound="91.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_OrderAttachment" />
+                    <om:Property Name="MessageName" Value="In" />
+                    <om:Property Name="OperationName" Value="EMailIn" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_In" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="955a3b71-6fa7-479a-9f74-0a65ef1a43c1" ParentLink="ServiceBody_Statement" LowerBound="91.1" HigherBound="119.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;oXMessage = In;&#xD;&#xA;Mailbox = In(BTS.InboundTransportLocation);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Mailbox = Mailbox.Substring(Mailbox.LastIndexOf(&quot;#&quot;) + 1);&#xD;&#xA;&#xD;&#xA;if (Mailbox.Contains(@&quot;visyau\&quot;))&#xD;&#xA;{&#xD;&#xA;    Mailbox = Mailbox.Substring(Mailbox.LastIndexOf(@&quot;\&quot;));&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    //assume username@visy.com.au&#xD;&#xA;    Mailbox = Mailbox.Substring(0,Mailbox.LastIndexOf(&quot;@&quot;));&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Get count&#xD;&#xA;nCount = oXMessage.Count;&#xD;&#xA;context_id = In(BTS.MessageID);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetCount" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Scope" OID="28980335-a975-4e73-9524-2bdf3e403e68" ParentLink="ServiceBody_Statement" LowerBound="119.1" HigherBound="137.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_CheckCcMailId" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="63b37869-f27c-4c8d-bf19-995780c7d314" ParentLink="ComplexStatement_Statement" LowerBound="124.1" HigherBound="128.1">
+                        <om:Property Name="Expression" Value="var_cc_mail = In(POP3.CC);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Exp_AssignCcMailId" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="214b2f4c-dafb-46d3-9d9f-37f1a6bee7ae" ParentLink="Scope_Catch" LowerBound="131.1" HigherBound="135.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="Microsoft.XLANGs.BaseTypes.MissingPropertyException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch_MissingProperty" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="d2d8935c-753b-40ba-a5d2-2163411ed9e5" ParentLink="ServiceBody_Statement" LowerBound="137.1" HigherBound="160.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="MailMessageContextTry" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="VariableAssignment" OID="22315236-ef8e-4790-86a8-e487b1ffb83f" ParentLink="ComplexStatement_Statement" LowerBound="142.1" HigherBound="147.1">
+                        <om:Property Name="Expression" Value="email_from = In(POP3.From);&#xD;&#xA;email_subject = In(POP3.Subject);&#xD;&#xA;email_to = In(POP3.To);&#xD;&#xA;email_to = email_to.ToLower();" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MailMessageContext" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="a8a5330f-5b07-4b06-ad87-a25d3586ddd6" ParentLink="Scope_Catch" LowerBound="150.1" HigherBound="158.1">
+                        <om:Property Name="ExceptionType" Value="General Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MailMessageContextCatch" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="44b8f2e6-20ec-4a3c-9f3b-70093b58af14" ParentLink="Catch_Statement" LowerBound="153.1" HigherBound="157.1">
+                            <om:Property Name="Expression" Value="email_from = &quot;&quot;;&#xD;&#xA;email_subject = &quot;&quot;;&#xD;&#xA;email_to = &quot;&quot;;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MailMessageContextException" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="6e6e2107-4fcf-4bbc-a990-6d33a0ca99ad" ParentLink="ServiceBody_Statement" LowerBound="160.1" HigherBound="162.1">
+                    <om:Property Name="Expression" Value="n = 0;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Reset" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="b271d6d1-b6f6-45e2-ae00-effd8f6f9b91" ParentLink="ServiceBody_Statement" LowerBound="162.1" HigherBound="312.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckAttachments" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="While" OID="2fca73ff-cbff-48cc-9853-f21322cc8810" ParentLink="ComplexStatement_Statement" LowerBound="167.1" HigherBound="296.1">
+                        <om:Property Name="Expression" Value="n &lt; nCount" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="LoopParts" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Scope" OID="1f6621ea-2b24-41e4-84a2-0bdea45f5c52" ParentLink="ComplexStatement_Statement" LowerBound="170.1" HigherBound="205.1">
+                            <om:Property Name="InitializedTransactionType" Value="True" />
+                            <om:Property Name="IsSynchronized" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Scope" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="d76255f9-cd12-4d78-bc6c-c1b80caf0a88" ParentLink="ComplexStatement_Statement" LowerBound="175.1" HigherBound="196.1">
+                                <om:Property Name="Expression" Value="MsgPart = oXMessage[n];&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;FileName = System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.FileName)));&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;EDI.Orders.Router-&quot; + context_id + &quot;: Mime FileName  - &quot; + System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.FileName))));&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;EDI.Orders.Router-&quot; + context_id + &quot;: Secondary Header Value  - &quot; + System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.PartContentTypeSecondaryHeaderValue))));&#xD;&#xA;&#xD;&#xA;if (FileName == &quot;&quot;){&#xD;&#xA;    FileName = System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.PartContentTypeSecondaryHeaderValue)));&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;if (FileName == &quot;&quot;){&#xD;&#xA;    FileName = MsgPart.Name;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;EDI.Order.Router: FileName - &quot; + FileName);&#xD;&#xA;OrderMsg = System.Convert.ToString(MsgPart.GetPartProperty(typeof(Microsoft.XLANGs.BaseTypes.ContentType)));&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="GetOriginalFileName" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Catch" OID="8b7f7032-29f7-4979-95c8-8d9eec373f31" ParentLink="Scope_Catch" LowerBound="199.1" HigherBound="203.1">
+                                <om:Property Name="ExceptionName" Value="IndexExcep" />
+                                <om:Property Name="ExceptionType" Value="System.IndexOutOfRangeException" />
+                                <om:Property Name="IsFaultMessage" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="IndexOutOfRange" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Decision" OID="bd9d6fa8-bb0e-49e2-aba4-2a4908006bc2" ParentLink="ComplexStatement_Statement" LowerBound="205.1" HigherBound="293.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CheckAttachment" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="9e495527-7af3-4f7d-9739-5474ec02b98e" ParentLink="ReallyComplexStatement_Branch" LowerBound="206.25" HigherBound="224.1">
+                                <om:Property Name="Expression" Value="OrderMsg.ToLower() == &quot;application/ms-tnef&quot; " />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ifTNEF" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Construct" OID="139b3239-5ecb-4895-ad59-a7f6aa37d4c6" ParentLink="ComplexStatement_Statement" LowerBound="208.1" HigherBound="221.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructOut" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="cabfd7cc-a461-49a5-b57f-1c559fb2d815" ParentLink="Construct_MessageRef" LowerBound="209.39" HigherBound="209.42">
+                                        <om:Property Name="Ref" Value="Out" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessageAssignment" OID="c413e48a-6f70-4cd5-938f-0d2accd22ca2" ParentLink="ComplexStatement_Statement" LowerBound="211.1" HigherBound="220.1">
+                                        <om:Property Name="Expression" Value="&#xD;&#xA;Out = oXMessage[n];&#xD;&#xA;Out(SMTP.Subject) = &quot;TNEF Attachment from: &quot; + email_to;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignmentOut" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Send" OID="2f40074a-7504-406c-8d1d-c5c423b6f26b" ParentLink="ComplexStatement_Statement" LowerBound="221.1" HigherBound="223.1">
+                                    <om:Property Name="PortName" Value="Port_ErrorNotification" />
+                                    <om:Property Name="MessageName" Value="Out" />
+                                    <om:Property Name="OperationName" Value="Email" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Notify_Support" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="428236e2-f537-4863-b3cb-fd882c18855f" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Decision" OID="bc1e11d8-a4b7-4b2d-858e-ad0122f6e288" ParentLink="ComplexStatement_Statement" LowerBound="226.1" HigherBound="292.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Decide_ToSend" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="DecisionBranch" OID="cfd44bfb-32c4-4dcc-ab3f-53aa0b086585" ParentLink="ReallyComplexStatement_Branch" LowerBound="227.29" HigherBound="256.1">
+                                        <om:Property Name="Expression" Value="!(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(OrderMsg, &quot;EDI.Order.Router&quot;) == &quot;notallowed&quot;) &amp;&amp;  &#xD;&#xA;!email_to.Contains(&quot;amazon&quot;)" />
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Rule_NotImage" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="Construct" OID="7290f4ee-ee00-49e8-bc17-0a7ee66c51c2" ParentLink="ComplexStatement_Statement" LowerBound="230.1" HigherBound="251.1">
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="ConstructOut" />
+                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Element Type="MessageRef" OID="63122996-d436-41c2-bc22-bb7f032ced72" ParentLink="Construct_MessageRef" LowerBound="231.43" HigherBound="231.46">
+                                                <om:Property Name="Ref" Value="Out" />
+                                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                            <om:Element Type="MessageAssignment" OID="a44fe600-c1da-4743-8997-3fa5be6fe143" ParentLink="ComplexStatement_Statement" LowerBound="233.1" HigherBound="250.1">
+                                                <om:Property Name="Expression" Value="&#xD;&#xA;Out = oXMessage[n];&#xD;&#xA;&#xD;&#xA;var_mail = email_to + &quot;,&quot; + var_cc_mail;&#xD;&#xA;&#xD;&#xA;var_code = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetInterfaceFolderPath(var_mail);&#xD;&#xA;&#xD;&#xA;Out(FILE.ReceivedFileName) = context_id + &quot;_&quot; + FileName;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;var_code = var_code.Substring(0,var_code.LastIndexOf(&quot;@&quot;));&#xD;&#xA;&#xD;&#xA;Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetCustomerCode(var_code) + &quot;~&quot; + context_id + &quot;_&quot; + FileName;&#xD;&#xA;Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.TransportType) = &quot;FILE&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                                <om:Property Name="Name" Value="MessageAssignmentOut" />
+                                                <om:Property Name="Signal" Value="True" />
+                                            </om:Element>
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="3350de80-ba8e-41e7-9874-6ad557a479e0" ParentLink="ComplexStatement_Statement" LowerBound="251.1" HigherBound="253.1">
+                                            <om:Property Name="PortName" Value="Port_SaveAttachment" />
+                                            <om:Property Name="MessageName" Value="Out" />
+                                            <om:Property Name="OperationName" Value="Inbound" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_Attachment" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="a7099297-e389-4cf4-b4df-cadbaf761d9a" ParentLink="ComplexStatement_Statement" LowerBound="253.1" HigherBound="255.1">
+                                            <om:Property Name="PortName" Value="Port_Backup" />
+                                            <om:Property Name="MessageName" Value="Out" />
+                                            <om:Property Name="OperationName" Value="Backup" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_Backup" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="DecisionBranch" OID="f2b2d961-129d-4bc2-a730-70e38f9882d8" ParentLink="ReallyComplexStatement_Branch" LowerBound="256.34" HigherBound="287.1">
+                                        <om:Property Name="Expression" Value="OrderMsg==&quot;text/html&quot; &amp;&amp;  &#xD;&#xA;email_to.Contains(&quot;amazon&quot;)" />
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Amazon_Orders" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="Construct" OID="03e34ca6-29b0-45d7-970d-5c055a95b4f6" ParentLink="ComplexStatement_Statement" LowerBound="259.1" HigherBound="282.1">
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="ConstructOut" />
+                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Element Type="MessageRef" OID="bbdede9d-9ff9-481d-9713-31896e341988" ParentLink="Construct_MessageRef" LowerBound="260.43" HigherBound="260.46">
+                                                <om:Property Name="Ref" Value="Out" />
+                                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                            <om:Element Type="MessageAssignment" OID="9ba5321a-e393-4142-b08b-8bbb521d7aba" ParentLink="ComplexStatement_Statement" LowerBound="262.1" HigherBound="281.1">
+                                                <om:Property Name="Expression" Value="&#xD;&#xA;Out = oXMessage[n];&#xD;&#xA;&#xD;&#xA;var_mail = email_to + &quot;,&quot; + var_cc_mail;&#xD;&#xA;&#xD;&#xA;var_code = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetInterfaceFolderPath(var_mail);&#xD;&#xA;&#xD;&#xA;Out(FILE.ReceivedFileName) = context_id + &quot;_&quot; + FileName;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;//var_code = var_code.Substring(0,var_code.LastIndexOf(&quot;_v@&quot;));&#xD;&#xA;var_code = var_code.Substring(0,var_code.LastIndexOf(&quot;@&quot;));&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetCustomerCode(var_code) + &quot;~&quot; + context_id + &quot;_&quot; + FileName;&#xD;&#xA;Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.TransportType) = &quot;FILE&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                                <om:Property Name="Name" Value="MessageAssignmentOut" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="faef1de3-429b-4b91-b0b2-1e0e4cc79814" ParentLink="ComplexStatement_Statement" LowerBound="282.1" HigherBound="284.1">
+                                            <om:Property Name="PortName" Value="Port_SaveAttachment" />
+                                            <om:Property Name="MessageName" Value="Out" />
+                                            <om:Property Name="OperationName" Value="Inbound" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_Attachment" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="235c464f-0c2c-4cdb-9bc0-1ecb10cf6969" ParentLink="ComplexStatement_Statement" LowerBound="284.1" HigherBound="286.1">
+                                            <om:Property Name="PortName" Value="Port_Backup" />
+                                            <om:Property Name="MessageName" Value="Out" />
+                                            <om:Property Name="OperationName" Value="Backup" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_Backup" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="DecisionBranch" OID="72721caa-c2ce-4d94-9193-fd6200fabd1b" ParentLink="ReallyComplexStatement_Branch">
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Else" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="VariableAssignment" OID="9be4d475-7f3b-4d06-af13-b60cb91de24f" ParentLink="ComplexStatement_Statement" LowerBound="289.1" HigherBound="291.1">
+                                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;EDI.Orders.Router: (&quot; + email_to + &quot;) &quot; +  FileName);" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="EventLog" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="4b5d398b-6179-456c-96d7-ea2e8b02d47c" ParentLink="ComplexStatement_Statement" LowerBound="293.1" HigherBound="295.1">
+                            <om:Property Name="Expression" Value="n=n+1;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Increment N" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="6c39718a-51d1-43ff-a4de-0b632a937c6f" ParentLink="Scope_Catch" LowerBound="299.1" HigherBound="310.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="System Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="ccbbbd19-45b0-46a7-bba9-4992b20be8ff" ParentLink="Catch_Statement" LowerBound="302.1" HigherBound="307.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;EDI.Order.Router: Error - &quot; + FileName);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Error" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="2031aa74-28e2-4df7-b682-3808cfb070d8" ParentLink="Catch_Statement" LowerBound="307.1" HigherBound="309.1">
+                            <om:Property Name="ErrorMessage" Value="ex.Message.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend_Message" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a08ef3d-062f-439b-97c3-45c4e67dcdc2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="47.1" HigherBound="49.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.EDI.Order.Router.Orchestrations.Message_In" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_OrderAttachment" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6482f95c-9fcd-4a5e-b860-5ce9420cb144" ParentLink="PortDeclaration_CLRAttribute" LowerBound="47.1" HigherBound="48.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="fcc6a1e6-d1d2-45ef-8762-0a0ab26560cd" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="49.1" HigherBound="51.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="115" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.EDI.Order.Router.Orchestrations.PortType_ErrorNotification" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ErrorNotification" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="954dd920-1fb0-40d4-86c4-f4b0ce993bcb" ParentLink="PortDeclaration_CLRAttribute" LowerBound="49.1" HigherBound="50.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7212bba9-01eb-4717-9677-96888d36555a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="51.1" HigherBound="53.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="131" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.EDI.Order.Router.Orchestrations.PT_Inbound" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SaveAttachment" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="PhysicalBindingAttribute" OID="e8743fde-acfd-4cd7-9857-51491c764a5c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="51.1" HigherBound="52.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="bc602cbb-056b-481b-9866-80ef03e330f7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="53.1" HigherBound="55.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="135" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.EDI.Order.Router.Orchestrations.PortType_Backup" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Backup" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="77c66d1d-347a-4bbc-b712-869711687d3f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="53.1" HigherBound="54.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="26ed89bc-fe4f-4f59-b8fe-a991ffadde48" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="9.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AttachmentIn" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="07f9db91-a731-44ff-8535-b53efd168c7f" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="System.Xml.XmlDocument" />
+                <om:Property Name="IsBodyPart" Value="False" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="PartDeclaration" OID="5b99dc88-3c60-4248-bf2e-12cd8940ce5d" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="ClassName" Value="System.Xml.XmlDocument" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Attachment" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.EDI.Order.Router.Orchestrations
+{
+    internal messagetype AttachmentIn
+    {
+        System.Xml.XmlDocument Body;
+        body System.Xml.XmlDocument Attachment;
+    };
+    internal porttype Message_In
+    {
+        oneway EMailIn
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PT_Inbound
+    {
+        oneway Inbound
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PollerAlertPortType
+    {
+        oneway PollerAlertOperation
+        {
+            System.String
+        };
+    };
+    public porttype PortType_ErrorNotification
+    {
+        oneway Email
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    public porttype PortType_Backup
+    {
+        oneway Backup
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service AttachmentsExtract
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Message_In Port_OrderAttachment;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_ErrorNotification Port_ErrorNotification;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.PassThruTransmit))]
+        port uses dynamic PT_Inbound Port_SaveAttachment;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Backup Port_Backup;
+        message System.Xml.XmlDocument In;
+        message System.Xml.XmlDocument Out;
+        message System.String MsgString;
+        message AttachmentIn MsgWithAttachment;
+        System.Int32 nCount;
+        System.Int32 n;
+        Microsoft.XLANGs.BaseTypes.XLANGMessage oXMessage;
+        System.String Mailbox;
+        Microsoft.XLANGs.BaseTypes.XLANGPart MsgPart;
+        System.String FileName;
+        System.String context_id;
+        System.String email_from;
+        System.String email_to;
+        System.String email_subject;
+        System.Boolean bRequiresContext;
+        System.String var_cc_mail;
+        System.String var_mail;
+        System.String var_code;
+        System.String OrderMsg;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d1e5fb25-f931-478a-a24c-e601c3c4dc2f")]
+            activate receive (Port_OrderAttachment.EMailIn, In);
+            nCount = 0;
+            n = 1;
+            Mailbox = "";
+            FileName = "";
+            context_id = "";
+            email_from = "";
+            email_to = "";
+            email_subject = "";
+            bRequiresContext = true;
+            var_cc_mail = "";
+            var_mail = "";
+            var_code = "";
+            OrderMsg = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("955a3b71-6fa7-479a-9f74-0a65ef1a43c1")]
+            
+            oXMessage = In;
+            Mailbox = In(BTS.InboundTransportLocation);
+            
+            
+            Mailbox = Mailbox.Substring(Mailbox.LastIndexOf("#") + 1);
+            
+            if (Mailbox.Contains(@"visyau\"))
+            {
+                Mailbox = Mailbox.Substring(Mailbox.LastIndexOf(@"\"));
+            }
+            else
+            {
+                //assume username@visy.com.au
+                Mailbox = Mailbox.Substring(0,Mailbox.LastIndexOf("@"));
+            }
+            
+            // Get count
+            nCount = oXMessage.Count;
+            context_id = In(BTS.MessageID);
+            
+            
+            
+            
+            
+            
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("28980335-a975-4e73-9524-2bdf3e403e68")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("63b37869-f27c-4c8d-bf19-995780c7d314")]
+                    var_cc_mail = In(POP3.CC);
+                    
+                    
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("214b2f4c-dafb-46d3-9d9f-37f1a6bee7ae")]
+                    catch (Microsoft.XLANGs.BaseTypes.MissingPropertyException ex)
+                    {
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d2d8935c-753b-40ba-a5d2-2163411ed9e5")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("22315236-ef8e-4790-86a8-e487b1ffb83f")]
+                    email_from = In(POP3.From);
+                    email_subject = In(POP3.Subject);
+                    email_to = In(POP3.To);
+                    email_to = email_to.ToLower();
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a8a5330f-5b07-4b06-ad87-a25d3586ddd6")]
+                    catch
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("44b8f2e6-20ec-4a3c-9f3b-70093b58af14")]
+                        email_from = "";
+                        email_subject = "";
+                        email_to = "";
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6e6e2107-4fcf-4bbc-a990-6d33a0ca99ad")]
+            n = 0;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b271d6d1-b6f6-45e2-ae00-effd8f6f9b91")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2fca73ff-cbff-48cc-9853-f21322cc8810")]
+                    while (n < nCount)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1f6621ea-2b24-41e4-84a2-0bdea45f5c52")]
+                        scope
+                        {
+                            body
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d76255f9-cd12-4d78-bc6c-c1b80caf0a88")]
+                                MsgPart = oXMessage[n];
+                                
+                                
+                                FileName = System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.FileName)));
+                                
+                                System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "EDI.Orders.Router-" + context_id + ": Mime FileName  - " + System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.FileName))));
+                                
+                                System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "EDI.Orders.Router-" + context_id + ": Secondary Header Value  - " + System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.PartContentTypeSecondaryHeaderValue))));
+                                
+                                if (FileName == ""){
+                                    FileName = System.Convert.ToString(MsgPart.GetPartProperty(typeof(MIME.PartContentTypeSecondaryHeaderValue)));
+                                }
+                                
+                                if (FileName == ""){
+                                    FileName = MsgPart.Name;
+                                }
+                                
+                                System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "EDI.Order.Router: FileName - " + FileName);
+                                OrderMsg = System.Convert.ToString(MsgPart.GetPartProperty(typeof(Microsoft.XLANGs.BaseTypes.ContentType)));
+                                
+                            }
+                            exceptions
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8b7f7032-29f7-4979-95c8-8d9eec373f31")]
+                                catch (System.IndexOutOfRangeException IndexExcep)
+                                {
+                                }
+                            }
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("bd9d6fa8-bb0e-49e2-aba4-2a4908006bc2")]
+                        if (OrderMsg.ToLower() == "application/ms-tnef" )
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("139b3239-5ecb-4895-ad59-a7f6aa37d4c6")]
+                            construct Out
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c413e48a-6f70-4cd5-938f-0d2accd22ca2")]
+                                
+                                Out = oXMessage[n];
+                                Out(SMTP.Subject) = "TNEF Attachment from: " + email_to;
+                                
+                                
+                                
+                                
+                                
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2f40074a-7504-406c-8d1d-c5c423b6f26b")]
+                            send (Port_ErrorNotification.Email, Out);
+                        }
+                        else 
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bc1e11d8-a4b7-4b2d-858e-ad0122f6e288")]
+                            if (!(Visy.Middleware.Components.Utilities.DataLookupHelper.GetInterfaceLookupData(OrderMsg, "EDI.Order.Router") == "notallowed") &&  
+                                !email_to.Contains("amazon"))
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7290f4ee-ee00-49e8-bc17-0a7ee66c51c2")]
+                                construct Out
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a44fe600-c1da-4743-8997-3fa5be6fe143")]
+                                    
+                                    Out = oXMessage[n];
+                                    
+                                    var_mail = email_to + "," + var_cc_mail;
+                                    
+                                    var_code = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetInterfaceFolderPath(var_mail);
+                                    
+                                    Out(FILE.ReceivedFileName) = context_id + "_" + FileName;
+                                    
+                                    
+                                    var_code = var_code.Substring(0,var_code.LastIndexOf("@"));
+                                    
+                                    Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetCustomerCode(var_code) + "~" + context_id + "_" + FileName;
+                                    Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.TransportType) = "FILE";
+                                    
+                                    
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3350de80-ba8e-41e7-9874-6ad557a479e0")]
+                                send (Port_SaveAttachment.Inbound, Out);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a7099297-e389-4cf4-b4df-cadbaf761d9a")]
+                                send (Port_Backup.Backup, Out);
+                            }
+                            else if (OrderMsg=="text/html" &&  
+                                email_to.Contains("amazon"))
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("03e34ca6-29b0-45d7-970d-5c055a95b4f6")]
+                                construct Out
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9ba5321a-e393-4142-b08b-8bbb521d7aba")]
+                                    
+                                    Out = oXMessage[n];
+                                    
+                                    var_mail = email_to + "," + var_cc_mail;
+                                    
+                                    var_code = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetInterfaceFolderPath(var_mail);
+                                    
+                                    Out(FILE.ReceivedFileName) = context_id + "_" + FileName;
+                                    
+                                    
+                                    //var_code = var_code.Substring(0,var_code.LastIndexOf("_v@"));
+                                    var_code = var_code.Substring(0,var_code.LastIndexOf("@"));
+                                    
+                                    
+                                    Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.Address) = Visy.Middleware.EDI.Order.Router.Components.GetFolderLocation.GetCustomerCode(var_code) + "~" + context_id + "_" + FileName;
+                                    Port_SaveAttachment(Microsoft.XLANGs.BaseTypes.TransportType) = "FILE";
+                                    
+                                    
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("faef1de3-429b-4b91-b0b2-1e0e4cc79814")]
+                                send (Port_SaveAttachment.Inbound, Out);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("235c464f-0c2c-4cdb-9bc0-1ecb10cf6969")]
+                                send (Port_Backup.Backup, Out);
+                            }
+                            else 
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9be4d475-7f3b-4d06-af13-b60cb91de24f")]
+                                System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "EDI.Orders.Router: (" + email_to + ") " +  FileName);
+                            }
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4b5d398b-6179-456c-96d7-ea2e8b02d47c")]
+                        n=n+1;
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6c39718a-51d1-43ff-a4de-0b632a937c6f")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("ccbbbd19-45b0-46a7-bba9-4992b20be8ff")]
+                        
+                        System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "EDI.Order.Router: Error - " + FileName);
+                        
+                        
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2031aa74-28e2-4df7-b682-3808cfb070d8")]
+                        suspend ex.Message.ToString();
+                    }
+                }
+            }
+        }
+    }
+}
+

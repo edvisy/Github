@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns3="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/ZMATLCLASS//740" elementFormDefault="qualified" targetNamespace="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/3/ZMATLCLASS//740" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\IDocSharedTypes.xsd" namespace="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">IDoc.ZMATLCLASS.740.3</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="ZMATL">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="ZMATL000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MATNR" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material Number</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="18" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="MAKTX" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Material Description (Short Text)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="40" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="CHGIND" nillable="true" type="ns3:ZMATL_CHGIND">
+        <xs:annotation>
+          <xs:documentation>Application object change type (U, I, E, D)</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="1" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="941" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZMATL" nillable="true" type="ns3:ZMATL" />
+  <xs:simpleType name="ZMATL_CHGIND">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="U">
+        <xs:annotation>
+          <xs:documentation>Update</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="I">
+        <xs:annotation>
+          <xs:documentation>Insert</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="E">
+        <xs:annotation>
+          <xs:documentation>Delete (Single Field Documentation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="D">
+        <xs:annotation>
+          <xs:documentation>Delete</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="J">
+        <xs:annotation>
+          <xs:documentation>Insert (Single Field Documentation)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="">
+        <xs:annotation>
+          <xs:documentation>Initial: Accept blanks</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ZMATL_CHGIND" nillable="true" type="ns3:ZMATL_CHGIND" />
+  <xs:complexType name="ZVBAM">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" default="ZVBAM000" name="DATAHEADERCOLUMN_SEGNAM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="30" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_MANDT" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_DOCNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="16" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_SEGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_PSGNUM" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="6" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="DATAHEADERCOLUMN_HLEVEL" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="2" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="WEBSITE" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Comment</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="50" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FLAG" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>3-Byte field</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="3" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="SEGMENTPAD" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Padding White Spaces against the Total Segment Length</xs:documentation>
+          <xs:appinfo>
+            <fieldInfo pad_char="0x20" pad_char_type="hex" justification="left" pos_offset="0" pos_length="947" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </fieldInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ZVBAM" nillable="true" type="ns3:ZVBAM" />
+  <xs:complexType name="ZMATL000GRP">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ZMATL000" type="ns3:ZMATL">
+        <xs:annotation>
+          <xs:documentation>VBAM Material Segment</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="1" tag_name="ZMATL000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="2147483647" name="ZVBAM000" type="ns3:ZVBAM">
+        <xs:annotation>
+          <xs:documentation>VBAM Material Class ZVBAM Characteristic Value</xs:documentation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="2" tag_name="ZVBAM000" tag_offset="0" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ZMATLCLASS">
+    <xs:annotation>
+      <xs:appinfo>
+        <groupInfo sequence_number="0" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+        </groupInfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element xmlns:q1="http://Microsoft.LobServices.Sap/2007/03/Types/Idoc/Common/" minOccurs="1" maxOccurs="1" name="EDI_DC40" type="q1:EDI_DC40">
+        <xs:annotation>
+          <xs:appinfo>
+            <recordInfo structure="positional" sequence_number="1" tag_name="ZMATLCLASS" tag_offset="39" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="2147483647" name="ZMATL000GRP" type="ns3:ZMATL000GRP">
+        <xs:annotation>
+          <xs:appinfo>
+            <recordInfo structure="delimited" child_delimiter_type="hex" child_delimiter="0xd 0xa" child_order="infix" sequence_number="2" preserve_delimiter_for_empty_data="True" suppress_trailing_delimiters="False" xmlns="http://schemas.microsoft.com/BizTalk/2003">
+            </recordInfo>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,124 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:simpleType name="fourDecimalPlaces">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="UpdateConsignment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Sender" type="xs:string"/>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="ConsignmentNumber" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ConsignmentOwner" type="xs:string" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="ConsignmentId" type="xs:positiveInteger" minOccurs="0" maxOccurs="1"/>
+				<xs:element name="Updates">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="UpdatePickupDueAt" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Date" type="xs:date"/>
+										<xs:element name="Time" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="UpdateDeliveryDueAt" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Date" type="xs:date"/>
+										<xs:element name="Time" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AssignVehicle" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="VehicleName" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AssignCarrierSubcontractor" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="SubcontractorCode" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SetBookingReference" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="BookingReference" type="xs:string"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DispatchConsignment" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DepartedAt" type="xs:dateTime"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DeliverConsignment" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ArrivedAt" type="xs:dateTime"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SetReceivedOrderLineItems" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="OrderLineItems" minOccurs="1" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="OrderLineItem" minOccurs="0" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Code" minOccurs="1" maxOccurs="1">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="200"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="Description" minOccurs="1" maxOccurs="1">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="60"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element type="fourDecimalPlaces" name="WeightKilogram" minOccurs="0" maxOccurs="1"/>
+																<xs:element type="fourDecimalPlaces" name="VolumeCubicMetre" minOccurs="0" maxOccurs="1"/>
+																<xs:element name="Measure" minOccurs="0" maxOccurs="5">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element type="fourDecimalPlaces" name="Value" minOccurs="1" maxOccurs="1"/>
+																			<xs:element type="xs:string" name="Unit" minOccurs="1" maxOccurs="1"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="WithdrawConsignment" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Comment" type="xs:string" minOccurs="0" maxOccurs="1"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

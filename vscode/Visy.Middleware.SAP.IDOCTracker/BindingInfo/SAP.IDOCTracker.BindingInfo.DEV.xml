@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="1" TotalEndpoints="1">
+  <Timestamp>2018-01-16T15:05:46.5972257+08:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:SAP.IDOCTracker]" Version="" Culture="" PublicKeyToken="" FullName="[Application:SAP.IDOCTracker], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocProperties" AssemblyQualifiedName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocProperties,Visy.Middleware.SAP.IDOCTracker.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema" RootName="WaitForIdocRequest" AssemblyQualifiedName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema,Visy.Middleware.SAP.IDOCTracker.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema" RootName="WaitForIdocResponse" AssemblyQualifiedName="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema,Visy.Middleware.SAP.IDOCTracker.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.IDOCTracker.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.IDOCTracker.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.IDOCTracker.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.IDOCTracker.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.IDOCTracker.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.IDOCTracker.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.SAP.IDOCTracker.Orchestrations.WaitForIdoc" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false">
+          <Ports>
+            <Port Name="GetIdocStatus_RfcPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.IDOCTracker.Send.Request" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SAP.IDOCTracker.Send.Request" IsStatic="true" IsTwoWay="true" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>sap://Client=330;Lang=EN@b/erptest/SP1?GROUP=DEFAULT&amp;ListenerGwHost=erptest&amp;ListenerGwServ=sapgw02&amp;RfcSdkTrace=True&amp;AbapDebug=False</Address>
+        <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sapBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sapBinding" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="Z_BIZTALK_GET_IDOC_STATUS" Action="http://Microsoft.LobServices.Sap/2007/03/Rfc/Z_BIZTALK_GET_IDOC_STATUS" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyUserName vt="8" /&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8"&gt;CPIC_BIZTALK&lt;/UserName&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;Password vt="1" /&gt;&lt;IsolationLevel vt="8"&gt;Serializable&lt;/IsolationLevel&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;-1&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-01-15T16:00:00</FromTime>
+        <ToTime>2018-01-16T15:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2018-01-15T16:00:00</FromTime>
+        <ToTime>2018-01-16T15:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.IDOCTracker</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection />
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="3" TotalEndpoints="3">
+  <Timestamp>2018-04-13T18:52:27.8932485+10:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:SAP.Poller.Mail]" Version="" Culture="" PublicKeyToken="" FullName="[Application:SAP.Poller.Mail], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Visy.Middleware.SAP.Poller.Mail.Orchestrations" Version="1.0.0.0" Culture="neutral" PublicKeyToken="7e7bc6e5fd308d12" FullName="Visy.Middleware.SAP.Poller.Mail.Orchestrations, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12">
+      <Services>
+        <Service Name="Visy.Middleware.SAP.Poller.Mail.Orchestrations.ExtractAttachments" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="MailServer" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="SAP.Poller.Mail.Receive.AttachmentPort" />
+            </Port>
+            <Port Name="SaveBodyAsAttachment" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.Poller.Mail.Send.Body.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SaveAttachments" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SAP.Poller.Mail.Send.Attachment.FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="SAPProcessHost" NTGroupName="VISY\PROD_BizTalk Application Users" Type="1" Trusted="true" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SAP.Poller.Mail.Send.Body.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.Poller.Mail\Outbound\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-12-19T13:00:00</FromTime>
+        <ToTime>2017-12-20T12:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-12-19T13:00:00</FromTime>
+        <ToTime>2017-12-20T12:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.Poller.Mail</ApplicationName>
+    </SendPort>
+    <SendPort Name="SAP.Poller.Mail.Send.Attachment.FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>d:\interfaces\SAP.Poller.Mail\Outbound\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-12-19T13:00:00</FromTime>
+        <ToTime>2017-12-20T12:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="SAPCommonSendHost" HostTrusted="true">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2017-12-19T13:00:00</FromTime>
+        <ToTime>2017-12-20T12:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.Poller.Mail</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="SAP.Poller.Mail.Receive.AttachmentPort" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.2183_18942.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#2183_18942@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#2183_18942@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;2183_18942@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-09-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.JFE.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#jfe@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#jfe@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;jfe@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-09-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.TravelMgr.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#travelmgr_visy@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#travelmgr_visy@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;travelmgr_visy@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-09-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.GSGlobal.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#gsglobal@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#gsglobal@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;gsglobal@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-09-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.Kemeny.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#kemeny@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2000-01-01T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2000-01-01T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2000-01-01T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2000-01-01T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#kemeny@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;kemeny@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2017-09-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.NipponSteel.SMTP">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#miso@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-01-03T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-01-03T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-01-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-01-04T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#miso@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;miso@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartContentType /&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;30&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-01-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.MSCans.POP3">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#mscan@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-02-19T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-02-19T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-02-19T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-02-20T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;mscan@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;1&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#mscan@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-02-19T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.Hindustantin.POP3">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#asn_htwl@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-02-26T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-02-26T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-02-26T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-02-27T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;asn_htwl@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;1&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#asn_htwl@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-02-26T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Rasselstein.POP3">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#asn.rasselstein2@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-03-05T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-03-05T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-03-05T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-03-06T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#asn.rasselstein2@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;0&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;asn.rasselstein2@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;1&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Minutes&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-03-05T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+        <ReceiveLocation Name="SAP.Poller.Mail.Receive.Attachment.Novelis.POP3">
+          <Description xsi:nil="true" />
+          <Address>POP3://pop.gmail.com#novelis.asn@visy.com.au</Address>
+          <PublicAddress />
+          <Primary>false</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2018-04-10T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2018-04-10T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2018-04-10T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2018-04-11T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;uri&amp;gt;POP3://pop.gmail.com#novelis.asn@visy.com.au&amp;lt;/uri&amp;gt;&amp;lt;mailServer&amp;gt;pop.gmail.com&amp;lt;/mailServer&amp;gt;&amp;lt;serverPort&amp;gt;995&amp;lt;/serverPort&amp;gt;&amp;lt;userName&amp;gt;novelis.asn@visy.com.au&amp;lt;/userName&amp;gt;&amp;lt;password&amp;gt;unPact12#&amp;lt;/password&amp;gt;&amp;lt;authenticationScheme&amp;gt;Basic&amp;lt;/authenticationScheme&amp;gt;&amp;lt;sslRequired&amp;gt;true&amp;lt;/sslRequired&amp;gt;&amp;lt;applyMIME&amp;gt;true&amp;lt;/applyMIME&amp;gt;&amp;lt;bodyPartIndex&amp;gt;0&amp;lt;/bodyPartIndex&amp;gt;&amp;lt;errorThreshold&amp;gt;1000&amp;lt;/errorThreshold&amp;gt;&amp;lt;pollingInterval&amp;gt;60&amp;lt;/pollingInterval&amp;gt;&amp;lt;pollingUnitOfMeasure&amp;gt;Seconds&amp;lt;/pollingUnitOfMeasure&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="POP3Host" HostTrusted="true">
+            <TransportType Name="POP3" Capabilities="71689" ConfigurationClsid="1787fcc1-9aaa-4bbd-9096-7eb77e3d9d9b" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2018-04-10T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>SAP.Poller.Mail</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

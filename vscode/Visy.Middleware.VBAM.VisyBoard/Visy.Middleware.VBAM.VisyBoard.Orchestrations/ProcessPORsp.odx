@@ -1,0 +1,326 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="efc245da-01bc-4e4a-9433-c463ec4d4639" LowerBound="1.1" HigherBound="98.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="584b7c91-2c0f-4442-a980-461d9e18b6f3" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_PORsp" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a0c5fe94-8cf2-4613-9208-1b7488ec81e8" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Staging" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a5cf938b-ea8e-431e-9cd0-dd75cc267a72" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.23">
+                    <om:Property Name="Ref" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.m_LGXPORsp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e3fdf1f0-69eb-4f89-9c0e-4c4c0dbd3f9f" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_NotifySupportOrdRsp" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7a5f92fe-1e98-4099-9e08-a8632e12e9bd" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SMTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="73aa4d27-23ce-4fec-b763-5efad465a8ed" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.20">
+                    <om:Property Name="Ref" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.m_Email" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="17a64622-f3af-409f-a033-59811a8418be" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_LGXPORsp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="2b3345cf-fa23-4098-93f9-91ed75945a7b" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.LGX.ORDRSP" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="20f38ece-ff9e-4572-816e-453eea108282" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="97.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessPORsp" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="367043d9-e028-413f-ba66-0a429555b6ce" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_rejectMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="0bfc8632-0a0a-4384-bfc0-25a12ca20c0b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_MsgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2cf66973-2c72-4a79-85c2-62971d5379ab" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_poNumber" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3672e441-e3d8-416d-b57d-abf407e22786" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_customerCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0dcdfa27-f1e3-45c4-8b02-2e19a19efc2a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.m_LGXPORsp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_LGXPORsp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="586b220d-9025-406a-ba34-1b6899a9be52" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.m_Email" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Email" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="a00d7c50-69ed-4154-bffd-39230fdd84f6" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="75e8ed4e-f0c2-4687-a4a4-59b8a538c447" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="43.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_PORsp" />
+                    <om:Property Name="MessageName" Value="msg_LGXPORsp" />
+                    <om:Property Name="OperationName" Value="Staging" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_OrdResponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="1075286e-a2c2-4f48-a644-79e791c89690" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="53.1">
+                    <om:Property Name="Expression" Value="v_rejectMessage = xpath(msg_LGXPORsp.xml, &quot;//*[local-name()='Header']/@*[local-name()='reject_message']&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;VBAM Reject Message: &quot; + v_rejectMessage);&#xD;&#xA;v_rejectMessage = v_rejectMessage.Trim();&#xD;&#xA;&#xD;&#xA;if (v_rejectMessage == &quot;&quot;){&#xD;&#xA;  v_rejectMessage = xpath(msg_LGXPORsp.xml, &quot;//*[local-name()='Detail'][1]/@*[local-name()='reject_message']&quot;);&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;v_rejectMessage = v_rejectMessage.Trim();" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Get Status Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="c6984145-c61a-409b-a797-0b757c7cdce8" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="95.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CheckOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="ba8b32c1-8fee-4a1f-a60d-41f6a9ca5942" ParentLink="ReallyComplexStatement_Branch" LowerBound="54.13" HigherBound="95.1">
+                        <om:Property Name="Expression" Value="Visy.Middleware.Components.OrderTracking.OrderTracking.IsOrderExists(msg_LGXPORsp.xml.OrderResponse.Header.biztalk_id, msg_LGXPORsp.xml.OrderResponse.Header.purchase_order_status, v_rejectMessage)" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ifOrderExists" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Decision" OID="090f8a4a-5d97-4235-93f9-23f29888d61f" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="94.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CheckStatus" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="9f367761-9dff-42dd-af87-6151a4382775" ParentLink="ReallyComplexStatement_Branch" LowerBound="57.17" HigherBound="94.1">
+                                <om:Property Name="Expression" Value="v_rejectMessage.Contains(&quot;Error on creating order&quot;)" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Rejected" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Construct" OID="245f518d-4074-46a4-b1f0-8aecf84e2644" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="91.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructMessage_Exc" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="e67fbdf9-7cfa-41f8-976e-381a5cf0dce9" ParentLink="Construct_MessageRef" LowerBound="60.31" HigherBound="60.40">
+                                        <om:Property Name="Ref" Value="msg_Email" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessageAssignment" OID="b67f10f0-9340-424c-bf20-4614cb94bed1" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="90.1">
+                                        <om:Property Name="Expression" Value="v_poNumber = xpath(msg_LGXPORsp.xml,&quot;//@purchase_order_number&quot;);&#xD;&#xA;v_customerCode=xpath(msg_LGXPORsp.xml,&quot;//@customer_code&quot;);&#xD;&#xA;&#xD;&#xA;//BUILD HTML MESSAGE&#xD;&#xA;v_MsgBody = new System.Text.StringBuilder();&#xD;&#xA;&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;//v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 12pt\&quot;&gt;Visy: BizTalk 2016&lt;/p&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;VBAM to LGX Error Occurred&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;Please check the Purchase Order (&quot; + v_poNumber + &quot;).&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;BizTalk ID: (&quot; + msg_LGXPORsp.xml.OrderResponse.Header.biztalk_id + &quot;).&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;/p&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;Error Details: &lt;/p&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt;color:red\&quot;&gt;&quot;+ v_rejectMessage);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;/p&gt;&lt;br /&gt;&quot;);&#xD;&#xA;&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;v_MsgBody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//SET EMAIL PROPERTIES&#xD;&#xA;msg_Email.EmailBody = new Visy.Middleware.Components.Utilities.RawString(v_MsgBody.ToString());&#xD;&#xA;msg_Email.EmailBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;msg_Email(SMTP.Subject) = &quot;SAP-BizTalk-VBAM Order Response Integration po ref#: &quot; + v_poNumber;&#xD;&#xA;msg_Email(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Send" OID="210d90b3-fb15-4fb8-aad8-f9ffe21c2cbf" ParentLink="ComplexStatement_Statement" LowerBound="91.1" HigherBound="93.1">
+                                    <om:Property Name="PortName" Value="Port_NotifySupportOrdRsp" />
+                                    <om:Property Name="MessageName" Value="msg_Email" />
+                                    <om:Property Name="OperationName" Value="SMTP" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Send_NotifySupport" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="8455faec-45f9-4092-ab50-c47db7942835" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="e7cb61a8-33e5-4c6a-b7e0-aab8ff6d7d70" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c5a7db13-f3b7-4c06-9033-93abec6c05b4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.PortType_PORsp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_PORsp" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="1a12a956-8fbf-4dad-a2ed-9748437786ef" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5d7c37c8-f346-42cd-a76e-e0717a1982aa" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="31" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.VBAM.VisyBoard.Orchestrations.PortType_NotifySupportOrdRsp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_NotifySupportOrdRsp" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="73fb3681-2b3c-4515-842e-94be7d15440a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.VBAM.VisyBoard.Orchestrations
+{
+    internal messagetype m_LGXPORsp
+    {
+        body Visy.Middleware.Common.Schemas.LGX.ORDRSP xml;
+    };
+    internal porttype PortType_PORsp
+    {
+        oneway Staging
+        {
+            m_LGXPORsp
+        };
+    };
+    internal porttype PortType_NotifySupportOrdRsp
+    {
+        oneway SMTP
+        {
+            m_Email
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessPORsp
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_PORsp Port_PORsp;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_NotifySupportOrdRsp Port_NotifySupportOrdRsp;
+        message m_LGXPORsp msg_LGXPORsp;
+        message m_Email msg_Email;
+        System.String v_rejectMessage;
+        System.Text.StringBuilder v_MsgBody;
+        System.String v_poNumber;
+        System.String v_customerCode;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("75e8ed4e-f0c2-4687-a4a4-59b8a538c447")]
+            activate receive (Port_PORsp.Staging, msg_LGXPORsp);
+            v_rejectMessage = "";
+            v_MsgBody = new System.Text.StringBuilder();
+            v_poNumber = "";
+            v_customerCode = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1075286e-a2c2-4f48-a644-79e791c89690")]
+            v_rejectMessage = xpath(msg_LGXPORsp.xml, "//*[local-name()='Header']/@*[local-name()='reject_message']");
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "VBAM Reject Message: " + v_rejectMessage);
+            v_rejectMessage = v_rejectMessage.Trim();
+            
+            if (v_rejectMessage == ""){
+              v_rejectMessage = xpath(msg_LGXPORsp.xml, "//*[local-name()='Detail'][1]/@*[local-name()='reject_message']");
+            }
+            
+            v_rejectMessage = v_rejectMessage.Trim();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c6984145-c61a-409b-a797-0b757c7cdce8")]
+            if (Visy.Middleware.Components.OrderTracking.OrderTracking.IsOrderExists(msg_LGXPORsp.xml.OrderResponse.Header.biztalk_id, msg_LGXPORsp.xml.OrderResponse.Header.purchase_order_status, v_rejectMessage))
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("090f8a4a-5d97-4235-93f9-23f29888d61f")]
+                if (v_rejectMessage.Contains("Error on creating order"))
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("245f518d-4074-46a4-b1f0-8aecf84e2644")]
+                    construct msg_Email
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b67f10f0-9340-424c-bf20-4614cb94bed1")]
+                        v_poNumber = xpath(msg_LGXPORsp.xml,"//@purchase_order_number");
+                        v_customerCode=xpath(msg_LGXPORsp.xml,"//@customer_code");
+                        
+                        //BUILD HTML MESSAGE
+                        v_MsgBody = new System.Text.StringBuilder();
+                        
+                        v_MsgBody.AppendLine("<html>");
+                        v_MsgBody.AppendLine("<head>");
+                        v_MsgBody.AppendLine("</head>");
+                        v_MsgBody.AppendLine("<body>");
+                        //v_MsgBody.AppendLine("<p style=\"font-size: 12pt\">Visy: BizTalk 2016</p>");
+                        v_MsgBody.AppendLine("<p style=\"font-size: 9pt\">VBAM to LGX Error Occurred");
+                        v_MsgBody.AppendLine("<p style=\"font-size: 9pt\">Please check the Purchase Order (" + v_poNumber + ").");
+                        v_MsgBody.AppendLine("<p style=\"font-size: 9pt\">BizTalk ID: (" + msg_LGXPORsp.xml.OrderResponse.Header.biztalk_id + ").");
+                        v_MsgBody.AppendLine("</p>");
+                        v_MsgBody.AppendLine("<p style=\"font-size: 9pt\">Error Details: </p>");
+                        v_MsgBody.AppendLine("<p style=\"font-size: 9pt;color:red\">"+ v_rejectMessage);
+                        v_MsgBody.AppendLine("</p><br />");
+                        
+                        v_MsgBody.AppendLine("</body>");
+                        v_MsgBody.AppendLine("</html>");
+                        
+                        //SET EMAIL PROPERTIES
+                        msg_Email.EmailBody = new Visy.Middleware.Components.Utilities.RawString(v_MsgBody.ToString());
+                        msg_Email.EmailBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                        msg_Email(SMTP.Subject) = "SAP-BizTalk-VBAM Order Response Integration po ref#: " + v_poNumber;
+                        msg_Email(SMTP.EmailBodyFileCharset) = "UTF-8";
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("210d90b3-fb15-4fb8-aad8-f9ffe21c2cbf")]
+                    send (Port_NotifySupportOrdRsp.SMTP, msg_Email);
+                }
+            }
+        }
+    }
+}
+

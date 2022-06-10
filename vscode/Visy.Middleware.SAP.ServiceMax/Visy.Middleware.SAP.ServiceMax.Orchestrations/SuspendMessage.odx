@@ -1,0 +1,189 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1598231f-c8f9-4230-a4b5-9931947a7ead" LowerBound="1.1" HigherBound="40.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="5a343034-09fd-4a6f-a9ed-520a812e7bed" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendResubmitMsg" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="48edfb16-ffe5-495a-8b2f-a04c3419eb49" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_SendResubmitMsg" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="5a54fdc7-12b8-4501-99e9-7d57edc8b27a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="62d41d0f-9e57-401d-baca-9d7127ad40a3" ParentLink="Module_ServiceDeclaration" LowerBound="15.1" HigherBound="39.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SuspendMessage" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="097a6ab3-58d1-42fb-852e-b5f56ea266bd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="errorMsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="afda9b27-a512-47cc-9541-da8cdfad4a7a" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.CorrelationType_MsgType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_MsgType" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="94cf1bbc-3525-47e4-becb-8c536bc8bf29" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="36.88" HigherBound="36.118">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="09f3998d-325b-4db8-bc04-4ea50bfd6c6c" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9ff6c9a2-bca4-429c-b9ae-efe04c38d8d8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgMessageToSuspend" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="0666ca3e-db6d-4892-87c7-064daa27dfc9" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="61b76b2a-ceed-48dd-9af5-ef50c79ae879" ParentLink="ServiceBody_Statement" LowerBound="27.1" HigherBound="30.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_RecSusMsg" />
+                    <om:Property Name="MessageName" Value="msgMessageToSuspend" />
+                    <om:Property Name="OperationName" Value="Operation_SendSusMsg" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="rcv_MessageToSuspend" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="4f0f5b7b-e3b5-4f1c-a8ba-7b3d2945cb26" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="33.1">
+                    <om:Property Name="Expression" Value="errorMsg = &quot;Error Description: &quot;+ msgMessageToSuspend(Visy.Middleware.SAP.ServiceMax.Schemas.ErrorDescription)+&quot;. Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="exp_BuildErrorDetails" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Suspend" OID="5098fd93-da2a-4fb0-95c1-b4f2bcc551a7" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="35.1">
+                    <om:Property Name="ErrorMessage" Value="errorMsg;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="suspend_Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="09f3998d-325b-4db8-bc04-4ea50bfd6c6c" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="37.1">
+                    <om:Property Name="PortName" Value="Port_SendResubmitMsg" />
+                    <om:Property Name="MessageName" Value="msgMessageToSuspend" />
+                    <om:Property Name="OperationName" Value="Operation_SendResubmitMsg" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="send_ResubmitMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="dbbe8734-2752-42f5-9613-4b9c48b1ce8a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="18.1" HigherBound="20.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_SendResubmitMsg" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendResubmitMsg" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="81b888fd-20c2-483c-ac81-2a227b05eded" ParentLink="PortDeclaration_CLRAttribute" LowerBound="18.1" HigherBound="19.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6d12a996-4ce3-4f04-afbe-844e227b0ec6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="20.1" HigherBound="22.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.PortType_SendSusMsg" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_RecSusMsg" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="1341006c-732e-4555-8dda-a15aac7d5092" ParentLink="PortDeclaration_CLRAttribute" LowerBound="20.1" HigherBound="21.1">
+                    <om:Property Name="PartnerPort" Value="Port_RecSusMsg" />
+                    <om:Property Name="PartnerService" Value="Visy.Middleware.SAP.ServiceMax.Orchestrations.SuspendMessage" />
+                    <om:Property Name="DirectBindingType" Value="PartnerPort" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="da9875a2-b24a-417d-8b92-0903c51fb403" ParentLink="Module_CorrelationType" LowerBound="11.1" HigherBound="15.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_MsgType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="9518d2a4-7044-4671-9bef-1a268ccf99fe" ParentLink="CorrelationType_PropertyRef" LowerBound="13.9" HigherBound="13.24">
+                <om:Property Name="Ref" Value="BTS.MessageType" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.ServiceMax.Orchestrations
+{
+    internal porttype PortType_SendResubmitMsg
+    {
+        oneway Operation_SendResubmitMsg
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal correlationtype CorrelationType_MsgType
+    {
+        BTS.MessageType
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service SuspendMessage
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses PortType_SendResubmitMsg Port_SendResubmitMsg;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding(typeof(Visy.Middleware.SAP.ServiceMax.Orchestrations.SuspendMessage), "Port_RecSusMsg")]
+        port implements PortType_SendSusMsg Port_RecSusMsg;
+        correlation CorrelationType_MsgType Correlation_MsgType;
+        message System.Xml.XmlDocument msgMessageToSuspend;
+        System.String errorMsg;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("61b76b2a-ceed-48dd-9af5-ef50c79ae879")]
+            activate receive (Port_RecSusMsg.Operation_SendSusMsg, msgMessageToSuspend);
+            errorMsg = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4f0f5b7b-e3b5-4f1c-a8ba-7b3d2945cb26")]
+            errorMsg = "Error Description: "+ msgMessageToSuspend(Visy.Middleware.SAP.ServiceMax.Schemas.ErrorDescription)+". Resume the instance after correcting the error to resubmit the message. If the instance cannot be resumed, please take a copy of the message and terminate.";
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5098fd93-da2a-4fb0-95c1-b4f2bcc551a7")]
+            suspend errorMsg;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("09f3998d-325b-4db8-bc04-4ea50bfd6c6c")]
+            send (Port_SendResubmitMsg.Operation_SendResubmitMsg, msgMessageToSuspend, initialize Correlation_MsgType);
+        }
+    }
+}
+

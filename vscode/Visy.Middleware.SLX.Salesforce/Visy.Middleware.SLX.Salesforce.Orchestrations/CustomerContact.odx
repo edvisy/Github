@@ -1,0 +1,238 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="43753dd3-397a-4a7c-90c1-c4f00ea40772" LowerBound="1.1" HigherBound="54.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SLX.Salesforce.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="6375202b-7d67-4498-b91c-2b646539f5db" ParentLink="Module_ServiceDeclaration" LowerBound="4.1" HigherBound="53.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CustomerContact" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="abb52560-ba1b-4333-9d49-5dfc56b924c9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SLX.Salesforce.Orchestrations.MultipartType_LGX_CustomerContact_Response" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLGXCustomerContactResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e11d029c-c2a2-477e-a5dc-34d0a5164f54" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="8.1" HigherBound="9.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SLX.Salesforce.Orchestrations.MultipartType_LGX_CustomerContact_Request" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="mLGXCustomerContactRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="807f9ffb-a974-42b9-9fdc-9e7a3ec439bb" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Scope" OID="b1b04f49-3700-49d2-88f3-19bf557c8114" ParentLink="ServiceBody_Statement" LowerBound="11.1" HigherBound="51.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="True" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_InsertCustomerContactToLGX" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="5667a117-6379-4721-907c-862879ba3b11" ParentLink="ComplexStatement_Statement" LowerBound="16.1" HigherBound="24.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_InsertCustomerContactToLGX" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="e251876c-da90-4deb-9efc-8f3d442c3f75" ParentLink="Construct_MessageRef" LowerBound="17.31" HigherBound="17.57">
+                            <om:Property Name="Ref" Value="mLGXCustomerContactRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="6486b9ff-a06b-41ea-a577-c268bf0c7349" ParentLink="ComplexStatement_Statement" LowerBound="19.1" HigherBound="21.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SLX.Salesforce.Maps.Map_SFRToLGX_InsertCustomerContact" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_SFRToLGX_InsertProspectCustomerRequest" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="64970514-2d96-44d3-9887-e7742a81f482" ParentLink="Transform_InputMessagePartRef">
+                                <om:Property Name="MessageRef" Value="mSFRProspectCustomerRequest" />
+                                <om:Property Name="PartRef" Value="MessagePart_SFR_ProspectCustomer_Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_12" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="a175fff3-f862-4dea-a95b-75aac619e93e" ParentLink="Transform_InputMessagePartRef">
+                                <om:Property Name="MessageRef" Value="mSFRProspectCustomerResponse" />
+                                <om:Property Name="PartRef" Value="MessagePart_SFR_ProspectCustomer_Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_13" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="c1b0cdf6-4458-4024-8b36-e4f6b9535a2d" ParentLink="Transform_OutputMessagePartRef">
+                                <om:Property Name="MessageRef" Value="mLGXCustomerContactRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_14" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="2e8ee8d5-dfec-47a4-ab6c-82ddeb0e6323" ParentLink="ComplexStatement_Statement" LowerBound="21.1" HigherBound="23.1">
+                            <om:Property Name="Expression" Value="mLGXCustomerContactRequest(FILE.ReceivedFileName) = mSFRProspectCustomerResponse(Visy.Middleware.SLX.Salesforce.Schemas.PropertySchema.LgxCustomerCode);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_LgxCustomerCode_ContectProperty" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="a17b84c3-8f94-4eee-b4df-3528e7779ba1" ParentLink="ComplexStatement_Statement" LowerBound="24.1" HigherBound="26.1">
+                        <om:Property Name="PortName" Value="LGXInsertReqRespToLGX" />
+                        <om:Property Name="MessageName" Value="mLGXCustomerContactRequest" />
+                        <om:Property Name="OperationName" Value="Insert" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_LGX_InsertCustomerContactRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="c8f14fb5-9b99-4cfe-9c73-3bb0c4877271" ParentLink="ComplexStatement_Statement" LowerBound="26.1" HigherBound="28.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="LGXInsertReqRespToLGX" />
+                        <om:Property Name="MessageName" Value="mLGXCustomerContactResponse" />
+                        <om:Property Name="OperationName" Value="Insert" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_LGX_InsertCustomerContactResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="9d2d83c6-3bd1-4973-bcd7-46c9d2ff8deb" ParentLink="ComplexStatement_Statement" LowerBound="28.1" HigherBound="30.1">
+                        <om:Property Name="PortName" Value="LGXInsertReqToFolder" />
+                        <om:Property Name="MessageName" Value="mLGXCustomerContactRequest" />
+                        <om:Property Name="OperationName" Value="Archive" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_LGX_InsertCustomerContactRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="68d7e169-78bc-4f31-ae3f-b90ec667d344" ParentLink="Scope_Catch" LowerBound="33.1" HigherBound="49.1">
+                        <om:Property Name="ExceptionName" Value="CatchSystemException" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch System Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="d6d86cb7-156e-4898-a916-51f0aaf99b10" ParentLink="Catch_Statement" LowerBound="36.1" HigherBound="38.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;SAP.Salesforce&quot;,&quot;Catch LGX Exception object Insert Contact&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Event Log" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="c0955fab-06cd-4ab2-8e3e-d046a49103e2" ParentLink="Catch_Statement" LowerBound="38.1" HigherBound="42.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct SFRProspectCustomerFault" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="d33b7a7f-6b28-4ee3-b435-a0d46a88f4aa" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SLX.Salesforce.Maps.Map_SFRToSFR_ProspectCustomerFault" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_SFRToSFR_ProspectCustomerFault" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="61692d83-cfe4-4498-8e86-b38287318a03" ParentLink="Transform_OutputMessagePartRef">
+                                    <om:Property Name="MessageRef" Value="mSFRProspectCustomerFault" />
+                                    <om:Property Name="PartRef" Value="MessagePart_SFR_ProspectCustomer_Fault" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_16" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="8486d878-14a0-4c14-bdaa-4824ebe37db4" ParentLink="Transform_InputMessagePartRef">
+                                    <om:Property Name="MessageRef" Value="mSFRProspectCustomerRequest" />
+                                    <om:Property Name="PartRef" Value="MessagePart_SFR_ProspectCustomer_Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_15" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="3c27b770-d2a7-4279-8dd9-1df5d5cb3a46" ParentLink="ComplexStatement_Statement">
+                                <om:Property Name="Expression" Value="mSFRProspectCustomerFault.MessagePart_SFR_ProspectCustomer_Fault.FaultMessage = &quot;LGX didn't insert Customer Contact. Error Message: &quot; + CatchSystemException.Message;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_FaultMessage" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="1caced24-ba46-4bcb-ba6a-84d503e2c09f" ParentLink="Construct_MessageRef">
+                                <om:Property Name="Ref" Value="mSFRProspectCustomerFault" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="0c0426ab-4024-4299-a3f7-3e77aaa244ab" ParentLink="Catch_Statement" LowerBound="42.1" HigherBound="44.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;SAP.Salesforce&quot;,&quot;Sending back LGX Exception Insert Contact&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Event Log" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="24fd4736-23f4-425d-bd4d-88cc4587d8fb" ParentLink="Catch_Statement" LowerBound="44.1" HigherBound="46.1">
+                            <om:Property Name="PortName" Value="ProCustFromSFR" />
+                            <om:Property Name="MessageName" Value="mSFRProspectCustomerFault" />
+                            <om:Property Name="OperationName" Value="Create" />
+                            <om:Property Name="OperationMessageName" Value="FaultMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_FaultMessageToSFR" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Terminate" OID="e5754616-1ef3-4873-9f4d-182cb9d45197" ParentLink="Catch_Statement" LowerBound="46.1" HigherBound="48.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;System Exception&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Terminate_Instance_LGXAPI3_Scope" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SLX.Salesforce.Orchestrations
+{
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CustomerContact
+    {
+        message MultipartType_LGX_CustomerContact_Response mLGXCustomerContactResponse;
+        message MultipartType_LGX_CustomerContact_Request mLGXCustomerContactRequest;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b1b04f49-3700-49d2-88f3-19bf557c8114")]
+            scope synchronized
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5667a117-6379-4721-907c-862879ba3b11")]
+                    construct mLGXCustomerContactRequest
+                    {
+
+#error "No Mapping Configuration."
+
+#error "The expression that you have entered is not valid."
+                    }
+
+#error "Operation 'LGXInsertReqRespToLGX.Insert.Request' does not exist or is not valid."
+
+#error "Operation 'LGXInsertReqRespToLGX.Insert.Response' does not exist or is not valid."
+
+#error "Operation 'LGXInsertReqToFolder.Archive.Request' does not exist or is not valid."
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("68d7e169-78bc-4f31-ae3f-b90ec667d344")]
+                    catch (System.Exception CatchSystemException)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d6d86cb7-156e-4898-a916-51f0aaf99b10")]
+                        System.Diagnostics.EventLog.WriteEntry("SAP.Salesforce","Catch LGX Exception object Insert Contact");
+
+#error "Message 'mSFRProspectCustomerFault' does not exist or is not valid."
+
+#error "Errors exist for one or more children."
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c0426ab-4024-4299-a3f7-3e77aaa244ab")]
+                        System.Diagnostics.EventLog.WriteEntry("SAP.Salesforce","Sending back LGX Exception Insert Contact");
+
+#error "Message 'mSFRProspectCustomerFault' does not exist or is not valid."
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e5754616-1ef3-4873-9f4d-182cb9d45197")]
+                        terminate "System Exception";;
+                    }
+                }
+            }
+        }
+    }
+}
+

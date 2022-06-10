@@ -1,0 +1,220 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="c3da3cd5-7bb1-4998-96f9-aa8e78b070b1" LowerBound="1.1" HigherBound="55.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Common.Listener.CreditNote" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="714dff13-ebdb-4dbe-8434-ea3f0b8a1a10" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveCreditNote_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d6068ced-a67d-499d-9f6f-abc1a0349e16" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCreditNote_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="118ddca6-c099-4b88-9c12-3940329e8100" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.58">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a6fdb5d3-60da-4faa-9dd1-236c2ef11ec9" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="WriteCreditNote_PortTypee" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8830f6b6-e1ef-477b-9d22-376c740f1197" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WriteCreditNote_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4d69e7e1-30c3-4134-87a0-87a94b507f68" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.58">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="184a7ad3-90f4-4f95-867e-32ee294f7244" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="54.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CreditNoteRouter" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="b426d486-95af-4875-a1d9-4474b8dda793" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GUID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="feaf8fec-2503-4bbe-b3d8-1fe61ff4132f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CustCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="8b42117e-0ca0-4ea9-8dd9-c774bd90dac4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BizTalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="74b1f564-63f9-43fe-a342-4b22b8a6270c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="41486caa-e152-49cb-9ead-a0705034b722" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="4ee05c7b-eb64-4c1a-92aa-b8cbdad33f22" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="5c06ae4f-0689-4abf-a906-e7c0860f46e9" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="36.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveCreditNote_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="ReceiveCreditNote_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Credit" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="b91020ce-7201-4c0a-a3f6-71e8741ddb43" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="50.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="c292c927-8c20-4ab4-87f8-f17c9c97910c" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="49.1">
+                        <om:Property Name="Expression" Value="Outbound = Inbound;&#xD;&#xA;Outbound(*) = Inbound(*);&#xD;&#xA;GUID = System.Guid.NewGuid();&#xD;&#xA;BizTalkID = GUID.ToString();&#xD;&#xA;BizTalkID = BizTalkID.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;BizTalkID = BizTalkID.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;CustCode = Inbound.Header.CustomerCode;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = &quot;CREDITNOTE.&quot; + CustCode + &quot;~&quot; + BizTalkID + &quot;~1~1.xml&quot;;&#xD;&#xA;//Visy.WSS.Data.Reporting.Add(BizTalkID,&quot;COMMON.LISTENER&quot;,CustCode,&quot;RC&quot;,&quot;LGX&quot;,&quot;OUTBOUND&quot;,&quot;CREDIT&quot;);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Record &amp; Create Output" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="643dfc3d-291e-4876-a85b-f86c26f9e2a9" ParentLink="Construct_MessageRef" LowerBound="37.23" HigherBound="37.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="45818572-b338-4d62-99bb-675cdfd4590c" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="52.1">
+                    <om:Property Name="PortName" Value="WriteCreditNote_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="WriteCreditNote_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="86e6c129-9c76-444d-8236-19a0106ea648" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Common.Listener.CreditNote.ReceiveCreditNote_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCreditNote_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="69f88960-4de2-4d49-b60c-2df26dca75a4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="90e07e98-af2a-4a89-a16c-edcd6e07a6ae" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="18" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Common.Listener.CreditNote.WriteCreditNote_PortTypee" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WriteCreditNote_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5827d14d-60fa-4ff9-bdd1-b6c71c653a2c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Common.Listener.CreditNote
+{
+    internal porttype ReceiveCreditNote_PortType
+    {
+        oneway ReceiveCreditNote_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.CREDITNOTE
+        };
+    };
+    internal porttype WriteCreditNote_PortTypee
+    {
+        oneway WriteCreditNote_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.CREDITNOTE
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CreditNoteRouter
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveCreditNote_PortType ReceiveCreditNote_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses WriteCreditNote_PortTypee WriteCreditNote_Port;
+        message Visy.Middleware.Common.Schemas.LGX.CREDITNOTE Inbound;
+        message Visy.Middleware.Common.Schemas.LGX.CREDITNOTE Outbound;
+        System.Guid GUID;
+        System.String CustCode;
+        System.String BizTalkID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5c06ae4f-0689-4abf-a906-e7c0860f46e9")]
+            activate receive (ReceiveCreditNote_Port.ReceiveCreditNote_PortOperation, Inbound);
+            CustCode = "";
+            BizTalkID = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b91020ce-7201-4c0a-a3f6-71e8741ddb43")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c292c927-8c20-4ab4-87f8-f17c9c97910c")]
+                Outbound = Inbound;
+                Outbound(*) = Inbound(*);
+                GUID = System.Guid.NewGuid();
+                BizTalkID = GUID.ToString();
+                BizTalkID = BizTalkID.Replace("{","");
+                BizTalkID = BizTalkID.Replace("}","");
+                CustCode = Inbound.Header.CustomerCode;
+                Outbound(FILE.ReceivedFileName) = "CREDITNOTE." + CustCode + "~" + BizTalkID + "~1~1.xml";
+                //Visy.WSS.Data.Reporting.Add(BizTalkID,"COMMON.LISTENER",CustCode,"RC","LGX","OUTBOUND","CREDIT");
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("45818572-b338-4d62-99bb-675cdfd4590c")]
+            send (WriteCreditNote_Port.WriteCreditNote_PortOperation, Outbound);
+        }
+    }
+}
+

@@ -1,0 +1,45 @@
+﻿@model PagedList.IPagedList<Visy.Middleware.Web.Models.Recordset1>
+@using PagedList.Mvc;
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+  
+</script>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+@*@model Visy.Middleware.Web.Models.OrderTracking*@
+<table class="table table-bordered table-condensed table-hover table-striped">
+    <thead>
+        <tr>
+            <th>@Html.ActionLink("PO Number", "Index", new { sortOrder = ViewBag.POSortParm, currentFilter = ViewBag.CurrentFilter })</th>
+            <th>@Html.ActionLink("Customer Code", "Index", new { sortOrder = ViewBag.CustomerCodeSortParm, currentFilter = ViewBag.CurrentFilter })</th>
+            <th>@Html.ActionLink("Customer Name", "Index", new { sortOrder = ViewBag.CustomerNameSortParm, currentFilter = ViewBag.CurrentFilter })</th>
+            <th>Reference ID</th>
+        </tr>
+
+
+        @foreach (var ot in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => ot.po_number)</td>
+                <td>@Html.DisplayFor(modelItem => ot.customer_code)</td>
+                <td>@Html.DisplayFor(modelItem => ot.customer_name)</td>
+                <td>@Html.DisplayFor(modelItem => ot.biztalk_id)</td>
+            </tr>
+
+        }
+    </thead>
+
+    <tbody></tbody>
+</table>  
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

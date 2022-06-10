@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope" xmlns:nseps="urn:schemas-IBX:/docs/endpoint.nsendpoint" targetNamespace="urn:schemas-IBX:/docs/endpoint.nsendpoint" attributeFormDefault="qualified">
+	<xs:import namespace="http://www.w3.org/2003/05/soap-envelope" schemaLocation="SOAP-ENV.xsd"/>
+	<xs:element name="endpoints" type="nseps:endpointsType"/>
+	<xs:complexType name="endpointsType">
+		<xs:sequence>
+			<xs:element ref="nseps:to">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:element>
+			<xs:element ref="nseps:from">
+		<xs:annotation>
+			<xs:documentation></xs:documentation>
+		</xs:annotation>
+	</xs:element>
+		</xs:sequence>
+		<xs:attribute ref="SOAP-ENV:mustUnderstand" use="optional" default="true">
+		<xs:annotation>
+			<xs:documentation>The SOAP mustUnderstand attribute indicates whether a header entry is mandatory or optional for the recipient to process. If mustUnderstand="1" or "true" then this indicates that the receiver processing the Header must recognize the element. If the receiver does not recognize the element it will fail when processing the Header.
+</xs:documentation>
+		</xs:annotation>
+	</xs:attribute>
+	</xs:complexType>
+	<xs:element name="to" type="nseps:endpoint">
+		<xs:annotation>
+			<xs:documentation>In the child element "address" it contains the identifier for the business partner which shall finally receive the document.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="from" type="nseps:endpoint">
+		<xs:annotation>
+			<xs:documentation>In the child element "address" it contains the identifier for the business partner which sends the document.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="endpoint">
+		<xs:sequence>
+			<xs:element ref="nseps:address">
+		<xs:annotation>
+			<xs:documentation>Usually an IBX Platform unique trading partner ID (TPID) that must be registered and reckognized to match a trading partner profile within IBX Connect.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="address" type="xs:anyURI"/>
+</xs:schema>

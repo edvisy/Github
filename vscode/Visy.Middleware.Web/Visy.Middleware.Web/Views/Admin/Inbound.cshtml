@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "Inbound";  
+}
+
+@model PagedList.IPagedList<Visy.Middleware.Web.Models.InboundRec2>
+@using PagedList.Mvc;
+
+@using (Ajax.BeginForm("Inbound", "Admin", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "UpdateContentDiv" }, new { id = "form1" }))
+{
+
+    <div class="row" style="width:650px">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" name="SearchString" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <input type="submit" name="find" value="Go!" class="btn btn-default" />
+                </span>
+            </div>
+        </div>
+    </div>
+}
+<div id="users-contain" class="ui-widget">
+    <table class="ui-widget ui-widget-content" style="font-size: 12px; font-family:MuseoSans_500">
+        <thead>
+            <tr class="ui-widget-header ">
+                <th>Source</th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Reference",
+                                "Inbound",
+                                new { sortOrder = ViewBag.RefSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Customer Code",
+                                "Inbound",
+                                new { sortOrder = ViewBag.CustomerCodeSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Company Name",
+                                "Inbound",
+                                new { sortOrder = ViewBag.CustomerNameSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>Company Code</th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Reference Date",
+                                "Inbound",
+                                new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>Message Type</th>
+                <th>Created Date</th>
+            </tr>
+
+
+            @foreach (var ot in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => ot.source)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.reference_number)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.customer_code)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.company_name)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.company_code)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.reference_date)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.message_type)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.created_date)</td>
+                </tr>
+
+            }
+        </thead>
+
+        <tbody></tbody>
+    </table>
+</div>
+   
+@using (Ajax.BeginForm("Inbound", "Admin", new AjaxOptions { HttpMethod = "GET" }, new { id = "form1" }))
+{
+    <div style="width: 100%">
+        <div style="display:inline-block;">
+            <div class="pagination" style="display:inline-block; vertical-align:middle; margin:0px;">
+                @Html.PagedListPager(Model, page => Url.Action("Inbound"
+                        , new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, pageSize = ViewBag.psize }),
+                        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "UpdateContentDiv" }))
+            </div>
+            <div class="page-count" style="display:inline-block; vertical-align:middle; margin:0px;">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            </div>
+        </div>
+        <div style="display:inline-block; float:right">
+            Page Size: @Html.DropDownList("pageSize")
+        </div>
+    </div>
+}
+<script type="text/javascript">
+         $(function () {
+             $("#pageSize").change(function () {
+                 $.ajax({
+                     url: "Admin/Inbound?pageSize=" + $('#pageSize :selected').text() + "&currentFilter=" + "@(ViewBag.CurrentFilter)",
+                    cache: false
+                })
+             .done(function (html) {
+                 $("#UpdateContentDiv").html(html);
+             });
+            });
+         });
+</script>

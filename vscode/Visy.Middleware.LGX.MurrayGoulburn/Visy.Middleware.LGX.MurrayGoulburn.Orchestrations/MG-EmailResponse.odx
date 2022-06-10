@@ -1,0 +1,325 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="39aa1358-e987-4fef-b135-d1718e0a96f3" LowerBound="1.1" HigherBound="97.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="14da0a29-bf87-4a29-8328-714978acbb27" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceivePOA_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c907fcd3-8026-45e0-8c4a-83d850851c88" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="706ea462-cadc-41cc-8ed9-e513c25b085e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.54">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.ORDRSP" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8b016d2c-c00b-4201-8cea-a385f371d691" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendEmailSMTP_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="30045d30-246d-4c95-99e1-dcd4aabbee4b" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="18e391c9-1a69-4cf9-ae1a-16e793a82e43" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.21">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.MailType" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4f94d9b8-e517-4dc9-ba50-4ea84c4bc0d6" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ArchiveOriginalPOA_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="02a9f6c2-b3fe-46e4-a26f-9a667510b36f" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="a8c4d926-dc0e-47b2-85f6-bc4024d969f1" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.54">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.ORDRSP" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d6b3071b-86be-4df2-9819-2423a271a33d" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MailType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8dc41ab4-9f9e-424c-ba86-e49511f55885" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Components.Utilities.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EmailBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="9b200b33-9cea-443f-b924-41020448d6ba" ParentLink="Module_ServiceDeclaration" LowerBound="29.1" HigherBound="96.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MG_EmailResponse" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="fcdf9ffc-927f-4be7-ac17-f13a7476361a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgbody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6864d728-7c83-4a23-916f-f5fc45502c23" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="baseDIR" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b212a65e-74d1-4ed4-aba7-cb418fc65f0e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7dd939b8-93e4-47c1-9402-5e685d23619c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.MailType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMail" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fef145c3-456a-4c0e-ab25-b80f985dbaa3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.ORDRSP" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="POA_Instance" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="35d2c19e-812f-4ca3-ab87-eca432a26ea7" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b08f54d9-742b-4a1d-9c9a-d6e6055351dd" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="50.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceivePOA_Port" />
+                    <om:Property Name="MessageName" Value="POA_Instance" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_POA" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="ceeef32d-104b-443c-9366-ee35a0ba3b05" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="52.1">
+                    <om:Property Name="PortName" Value="ArchiveOriginalPOA_Port" />
+                    <om:Property Name="MessageName" Value="POA_Instance" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ArchiveOriginalPOA" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="9b6bd18f-eea4-482b-9ea5-cc37daecf111" ParentLink="ServiceBody_Statement" LowerBound="52.1" HigherBound="90.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="80cb5fc2-ae55-40ef-b87f-057ed746b19c" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="89.1">
+                        <om:Property Name="Expression" Value="//BUILD HTML MESSAGE&#xD;&#xA;msgbody = new System.Text.StringBuilder();&#xD;&#xA;baseDIR = System.Environment.MachineName + @&quot;\d$\interfaces\&quot;;&#xD;&#xA;&#xD;&#xA;msgbody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 12pt\&quot;&gt;Visy: Biztalk 2006 &lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;&gt;This is an automated Visy Order Response.&lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;APPLICATION : Murray Goulburn&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;DATE TIME&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + System.DateTime.Now.ToString() + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//SET EMAIL PROPERTIES&#xD;&#xA;EMail.EmailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());&#xD;&#xA;EMail.EmailBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;EMail(SMTP.Subject) = &quot;Automated Visy PO Response.&quot;;&#xD;&#xA;EMail(SMTP.From) = &quot;webitadmin@visy.com.au&quot;;&#xD;&#xA;EMail(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;EMail(SMTP.MessagePartsAttachments) = 1;&#xD;&#xA;sMsgID = POA_Instance(FILE.ReceivedFileName);&#xD;&#xA;sMsgID = sMsgID.Substring(sMsgID.LastIndexOf(&quot;\\&quot;));&#xD;&#xA;EMail(SMTP.Attachments) = &quot;\\\\&quot; + System.Environment.MachineName + @&quot;\d$\interfaces\LGX.MURRAYGOULBURN\Archive&quot; + sMsgID;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="39878a24-38f0-477c-a5b4-3838b5a05a7c" ParentLink="Construct_MessageRef" LowerBound="53.23" HigherBound="53.28">
+                        <om:Property Name="Ref" Value="EMail" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Delay" OID="b0872183-e9ed-49d4-a968-7d4ede5211be" ParentLink="ServiceBody_Statement" LowerBound="90.1" HigherBound="92.1">
+                    <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,5,0);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Delay_5Seconds" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="39d9289c-8873-451a-b9c9-6b6d1c6951c3" ParentLink="ServiceBody_Statement" LowerBound="92.1" HigherBound="94.1">
+                    <om:Property Name="PortName" Value="SendEmailSMTP_Port" />
+                    <om:Property Name="MessageName" Value="EMail" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Email" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ab11135c-70ad-4e97-980b-9c1bb8e81e2c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.ReceivePOA_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceivePOA_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="29aa9a7f-8a49-4841-8fd4-708af76657bc" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="13a53622-688a-49b0-b4d2-a742fedea596" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="34.1" HigherBound="36.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="16" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.SendEmailSMTP_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEmailSMTP_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="06f4ee86-511d-460a-9fd1-0cff6a817c25" ParentLink="PortDeclaration_CLRAttribute" LowerBound="34.1" HigherBound="35.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9a3c423b-34f8-43b6-9d95-ee5b1702f613" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="36.1" HigherBound="38.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.ArchiveOriginalPOA_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArchiveOriginalPOA_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="55601206-3788-49f0-a1f8-38c5dfaf8953" ParentLink="PortDeclaration_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.MurrayGoulburn.Orchestrations
+{
+    internal messagetype MailType
+    {
+        body Visy.Middleware.Components.Utilities.RawString EmailBody;
+    };
+    internal porttype ReceivePOA_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.Common.Schemas.LGX.ORDRSP
+        };
+    };
+    internal porttype SendEmailSMTP_PortType
+    {
+        oneway Operation_1
+        {
+            MailType
+        };
+    };
+    internal porttype ArchiveOriginalPOA_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.Common.Schemas.LGX.ORDRSP
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service MG_EmailResponse
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceivePOA_PortType ReceivePOA_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendEmailSMTP_PortType SendEmailSMTP_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ArchiveOriginalPOA_PortType ArchiveOriginalPOA_Port;
+        message MailType EMail;
+        message Visy.Middleware.Common.Schemas.LGX.ORDRSP POA_Instance;
+        System.Text.StringBuilder msgbody;
+        System.String baseDIR;
+        System.String sMsgID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b08f54d9-742b-4a1d-9c9a-d6e6055351dd")]
+            activate receive (ReceivePOA_Port.Operation_1, POA_Instance);
+            msgbody = new System.Text.StringBuilder();
+            baseDIR = "";
+            sMsgID = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ceeef32d-104b-443c-9366-ee35a0ba3b05")]
+            send (ArchiveOriginalPOA_Port.Operation_1, POA_Instance);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b6bd18f-eea4-482b-9ea5-cc37daecf111")]
+            construct EMail
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("80cb5fc2-ae55-40ef-b87f-057ed746b19c")]
+                //BUILD HTML MESSAGE
+                msgbody = new System.Text.StringBuilder();
+                baseDIR = System.Environment.MachineName + @"\d$\interfaces\";
+                
+                msgbody.AppendLine("<html>");
+                msgbody.AppendLine("<head>");
+                msgbody.AppendLine("</head>");
+                msgbody.AppendLine("<body>");
+                msgbody.AppendLine("<p style=\"font-size: 12pt\">Visy: Biztalk 2006 </p>");
+                msgbody.AppendLine("<p style=\"font-size: 9pt\">>This is an automated Visy Order Response.</p>");
+                msgbody.AppendLine("<table>");
+                msgbody.AppendLine("<tr>");
+                msgbody.AppendLine("<td>APPLICATION : Murray Goulburn</td>");
+                msgbody.AppendLine("<td>" + "</td>");
+                msgbody.AppendLine("</tr>");
+                msgbody.AppendLine("<tr>");
+                msgbody.AppendLine("<td>DATE TIME</td>");
+                msgbody.AppendLine("<td>" + System.DateTime.Now.ToString() + "</td>");
+                msgbody.AppendLine("</tr>");
+                msgbody.AppendLine("</table>");
+                msgbody.AppendLine("</body>");
+                msgbody.AppendLine("</html>");
+                
+                //SET EMAIL PROPERTIES
+                EMail.EmailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());
+                EMail.EmailBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                EMail(SMTP.Subject) = "Automated Visy PO Response.";
+                EMail(SMTP.From) = "webitadmin@visy.com.au";
+                EMail(SMTP.EmailBodyFileCharset) = "UTF-8";
+                EMail(SMTP.MessagePartsAttachments) = 1;
+                sMsgID = POA_Instance(FILE.ReceivedFileName);
+                sMsgID = sMsgID.Substring(sMsgID.LastIndexOf("\\"));
+                EMail(SMTP.Attachments) = "\\\\" + System.Environment.MachineName + @"\d$\interfaces\LGX.MURRAYGOULBURN\Archive" + sMsgID;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b0872183-e9ed-49d4-a968-7d4ede5211be")]
+            delay new System.TimeSpan(0,0,0,5,0);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("39d9289c-8873-451a-b9c9-6b6d1c6951c3")]
+            send (SendEmailSMTP_Port.Operation_1, EMail);
+        }
+    }
+}
+

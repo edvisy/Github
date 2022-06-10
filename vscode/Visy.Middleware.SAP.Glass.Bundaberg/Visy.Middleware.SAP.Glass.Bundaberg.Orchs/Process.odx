@@ -1,0 +1,333 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="568ea763-9ca4-43e6-a61d-02b87e5e57e1" LowerBound="1.1" HigherBound="67.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="9d5bfe1a-4bb4-4120-a52c-4ffc42157508" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_IDOCAsn" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="17dcd909-5349-4a38-bf82-596b27fe8e15" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="266246b4-e0c6-4ea6-b666-62a5922ea2a3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.22">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_IDOCAsn" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="b266d6d5-343d-4bde-92ca-0dad63c660b2" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_CustomerAsn" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f92a817b-94b6-41b0-aaf9-1373257485fe" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="84c8bad0-8633-430a-aeb7-4d1182c202e5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.26">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_CustomerASN" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="74d5f27f-799d-47ca-81ae-8d6e2f21eaa2" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_IDOCAsn" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="91a5e843-c358-4df3-b43f-3374a942c7b7" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.SAP.Generated.Delvry07.IDocOperation_DELVRY07_740_3_Receive" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="67fda295-9aaf-4fd2-aaaf-60c5f9e8ee9a" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_CustomerASN" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="df1e70fb-4fc3-4a1d-9cb1-a63852642976" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.Bundaberg.Schemas.Asn" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="bc26cca4-43e5-43a6-9e0d-95fd8ccbbf6f" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="66.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="f6f7c848-669b-4266-b77f-5e7dbb7ce20c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_IDOCAsn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_IDOC" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5090bcc1-e75c-473d-a048-3856653bf44e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_CustomerASN" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_CustomerAsn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f49588d3-b056-467b-9a36-5a40ba080eaf" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_CustomerASN" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_CustomerAsnFinal" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3bb526a7-eb39-4f8d-9da1-c9a5d29194e1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.m_CustomerASN" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Normalized" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="111f96b8-c979-4cbf-85ac-029f2fa72cce" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="5c3462fd-1fac-48b2-9c52-d5ea649c1bf3" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="41.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_IDOCAsn" />
+                    <om:Property Name="MessageName" Value="msg_IDOC" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_IDOC" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="1e78b447-794b-444a-aebc-fae347d654ba" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="47.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_CustAsn" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="ed313fac-ae98-4c0b-91b4-6a4d58237cd0" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="46.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.Bundaberg.Maps.Map_SAPZ2DESADV_To_cXMLFulfill" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="X_IDOC_To_CustomerAsn" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="6ffc0c5d-e0c6-4e17-ac55-fdd8fb667953" ParentLink="Transform_InputMessagePartRef" LowerBound="45.124" HigherBound="45.136">
+                            <om:Property Name="MessageRef" Value="msg_IDOC" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="eb26ac4d-4c84-4ea3-9d3d-ca5dce4527c0" ParentLink="Transform_OutputMessagePartRef" LowerBound="45.28" HigherBound="45.47">
+                            <om:Property Name="MessageRef" Value="msg_CustomerAsn" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="73e0384a-70b4-4b90-82ce-6ae3179aabac" ParentLink="Construct_MessageRef" LowerBound="42.23" HigherBound="42.38">
+                        <om:Property Name="Ref" Value="msg_CustomerAsn" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="3bdef597-ced3-4729-84f7-be981dee732c" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="53.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Final" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="3875b807-573b-4fe7-81ad-85402e3f3b8a" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="52.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.Bundaberg.Maps.Final_Transform" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_Final" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="9832ac23-14c2-4a32-88a9-97d9354c5740" ParentLink="Transform_InputMessagePartRef" LowerBound="51.114" HigherBound="51.133">
+                            <om:Property Name="MessageRef" Value="msg_CustomerAsn" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="65ce804a-2ee1-451f-8e96-49baaceab005" ParentLink="Transform_OutputMessagePartRef" LowerBound="51.28" HigherBound="51.52">
+                            <om:Property Name="MessageRef" Value="msg_CustomerAsnFinal" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="159f85c3-890e-4238-8d4c-82761fc58729" ParentLink="Construct_MessageRef" LowerBound="48.23" HigherBound="48.43">
+                        <om:Property Name="Ref" Value="msg_CustomerAsnFinal" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="61e3cb40-e1ed-4a5d-819e-478d7c3d3fdf" ParentLink="ServiceBody_Statement" LowerBound="53.1" HigherBound="59.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Clean" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="d779198c-9bc0-4f18-9d76-2a2f2d74c3cd" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.Bundaberg.Maps.RemoveDuplicates" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Remove_Duplicates" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="4d598145-8bd4-4b5f-be02-dd696609d677" ParentLink="Transform_InputMessagePartRef" LowerBound="57.109" HigherBound="57.133">
+                            <om:Property Name="MessageRef" Value="msg_CustomerAsnFinal" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="14a2e98a-8920-4c80-a94b-f22506ebf312" ParentLink="Transform_OutputMessagePartRef" LowerBound="57.28" HigherBound="57.46">
+                            <om:Property Name="MessageRef" Value="msg_Normalized" />
+                            <om:Property Name="PartRef" Value="xml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_6" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="308e12c8-f3f7-4014-9a33-d3590f45bb66" ParentLink="Construct_MessageRef" LowerBound="54.23" HigherBound="54.37">
+                        <om:Property Name="Ref" Value="msg_Normalized" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="701c8b24-be8a-4b5c-80a9-8d15f41627c5" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="62.1">
+                    <om:Property Name="Expression" Value="Port_CustomerAsn(Microsoft.XLANGs.BaseTypes.Address) = &quot;d:\\interfaces\\SAP.Glass.Bundaberg\\Staging\\&quot; + msg_CustomerAsnFinal.xml.Body.maintainPOShipper.dsPOShipper.ttPOShipper.absId + &quot;.xml&quot;;&#xD;&#xA;Port_CustomerAsn(Microsoft.XLANGs.BaseTypes.TransportType) = &quot;FILE&quot;;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Set Port" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="d80ec8f2-5431-4952-b86a-876b1d8f6e16" ParentLink="ServiceBody_Statement" LowerBound="62.1" HigherBound="64.1">
+                    <om:Property Name="PortName" Value="Port_CustomerAsn" />
+                    <om:Property Name="MessageName" Value="msg_Normalized" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_CustAsn" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0020c88e-5c7e-4476-8609-d60b30c38999" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.PortType_IDOCAsn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_IDOCAsn" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="69c2c8e6-1ab8-4c2a-890c-a6f9f295fddb" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="76770046-d708-4078-82d4-ebf5284162ce" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="31.1" HigherBound="33.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.Bundaberg.Orchs.PortType_CustomerAsn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_CustomerAsn" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="3c18e6a3-18ec-403d-8ccd-ff3a836542be" ParentLink="PortDeclaration_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Visy.Middleware.SAP.Glass.Bundaberg.Pipelines.RemoveNSAsm" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Glass.Bundaberg.Orchs
+{
+    internal messagetype m_IDOCAsn
+    {
+        body Visy.Middleware.Schemas.SAP.Generated.Delvry07.IDocOperation_DELVRY07_740_3_Receive xml;
+    };
+    internal messagetype m_CustomerASN
+    {
+        body Visy.Middleware.SAP.Glass.Bundaberg.Schemas.Asn xml;
+    };
+    internal porttype PortType_IDOCAsn
+    {
+        oneway FILE
+        {
+            m_IDOCAsn
+        };
+    };
+    internal porttype PortType_CustomerAsn
+    {
+        oneway FILE
+        {
+            m_CustomerASN
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Process
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_IDOCAsn Port_IDOCAsn;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Visy.Middleware.SAP.Glass.Bundaberg.Pipelines.RemoveNSAsm))]
+        port uses dynamic PortType_CustomerAsn Port_CustomerAsn;
+        message m_IDOCAsn msg_IDOC;
+        message m_CustomerASN msg_CustomerAsn;
+        message m_CustomerASN msg_CustomerAsnFinal;
+        message m_CustomerASN msg_Normalized;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5c3462fd-1fac-48b2-9c52-d5ea649c1bf3")]
+            activate receive (Port_IDOCAsn.FILE, msg_IDOC);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1e78b447-794b-444a-aebc-fae347d654ba")]
+            construct msg_CustomerAsn
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("ed313fac-ae98-4c0b-91b4-6a4d58237cd0")]
+                transform (msg_CustomerAsn.xml) = Visy.Middleware.SAP.Glass.Bundaberg.Maps.Map_SAPZ2DESADV_To_cXMLFulfill (msg_IDOC.xml);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3bdef597-ced3-4729-84f7-be981dee732c")]
+            construct msg_CustomerAsnFinal
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3875b807-573b-4fe7-81ad-85402e3f3b8a")]
+                transform (msg_CustomerAsnFinal.xml) = Visy.Middleware.SAP.Glass.Bundaberg.Maps.Final_Transform (msg_CustomerAsn.xml);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("61e3cb40-e1ed-4a5d-819e-478d7c3d3fdf")]
+            construct msg_Normalized
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d779198c-9bc0-4f18-9d76-2a2f2d74c3cd")]
+                transform (msg_Normalized.xml) = Visy.Middleware.SAP.Glass.Bundaberg.Maps.RemoveDuplicates (msg_CustomerAsnFinal.xml);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("701c8b24-be8a-4b5c-80a9-8d15f41627c5")]
+            Port_CustomerAsn(Microsoft.XLANGs.BaseTypes.Address) = "d:\\interfaces\\SAP.Glass.Bundaberg\\Staging\\" + msg_CustomerAsnFinal.xml.Body.maintainPOShipper.dsPOShipper.ttPOShipper.absId + ".xml";
+            Port_CustomerAsn(Microsoft.XLANGs.BaseTypes.TransportType) = "FILE";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d80ec8f2-5431-4952-b86a-876b1d8f6e16")]
+            send (Port_CustomerAsn.FILE, msg_Normalized);
+        }
+    }
+}
+

@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "LGX Orders";    
+}
+
+@model PagedList.IPagedList<Visy.Middleware.Web.Models.Recordset1>
+@using PagedList.Mvc;
+
+@using (Ajax.BeginForm("OrderTracking", "Admin", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "UpdateContentDiv" }, new { id = "form1" }))
+{
+
+    <div class="row" style="width:650px">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" name="SearchString" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <input type="submit" name="find" value="Go!" class="btn btn-default" />
+                </span>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="users-contain" class="ui-widget">
+    <table class="ui-widget ui-widget-content" style="font-size: 12px; font-family:MuseoSans_500;">
+        <thead>
+            <tr class="ui-widget-header ">
+                <th>
+                    @Ajax.ActionLink(
+                                "PO Number",
+                                "OrderTracking",
+                                new { sortOrder = ViewBag.POSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Customer Code",
+                                "OrderTracking",
+                                new { sortOrder = ViewBag.CustomerCodeSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Customer Name",
+                                "OrderTracking",
+                                new { sortOrder = ViewBag.CustomerNameSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>
+                <th>Reference ID</th>
+                <th>
+                    @Ajax.ActionLink(
+                                "Created Date",
+                                "OrderTracking",
+                                new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                </th>                
+                <th>Status</th>
+                <th>View Xml</th>
+            </tr>
+
+
+            @foreach (var ot in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => ot.po_number)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.customer_code)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.customer_name)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.biztalk_id)</td>
+                    <td>@Html.DisplayFor(modelItem => ot.created_date)</td>
+                    <td data-toggle="tooltip" title="@Html.DisplayFor(modelItem => ot.reject_message)" data-placement="right">
+                        @switch (ot.order_sp)
+                        {
+                            case 0:
+                                <div>In Progress</div>
+                                break;
+                            case 1:
+                                <div>Completed</div>
+                                break;
+                            case 2:
+                                <div><a href="#">Rejected</a></div>
+                                break;
+                        }
+                    </td>
+                    <td>@Html.ActionLink("LGX Xml", "Download", new { name = ot.archive_file_name })</td>
+                </tr>
+
+            }
+        </thead>
+
+        <tbody></tbody>
+    </table>
+</div>
+   
+@using (Ajax.BeginForm("OrderTracking", "Admin", new AjaxOptions { HttpMethod = "GET" }, new { id = "form1" }))
+{
+    <div style="width: 100%">
+        <div style="display:inline-block;">
+            <div class="pagination" style="display:inline-block; vertical-align:middle; margin:0px;">
+                @Html.PagedListPager(Model, page => Url.Action("OrderTracking"
+                        , new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, pageSize = ViewBag.psize }),
+                        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "UpdateContentDiv" }))
+            </div>
+            <div class="page-count" style="display:inline-block; vertical-align:middle; margin:0px;">
+                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            </div>
+        </div>
+        <div style="display:inline-block; float:right">
+            Page Size: @Html.DropDownList("pageSize")
+        </div>
+    </div>
+}
+  <script type="text/javascript">
+      $(function () {
+             $("#pageSize").change(function () {
+                 $.ajax({
+                     url: "Admin/OrderTracking?pageSize=" + $('#pageSize :selected').text() + "&currentFilter=" + "@(ViewBag.CurrentFilter)",
+                    cache: false
+                })
+             .done(function (html) {
+                 $("#UpdateContentDiv").html(html);
+             });
+            });
+         });
+</script>

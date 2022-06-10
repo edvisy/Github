@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:tns="urn:Magento" targetNamespace="urn:Magento" id="catalogProductInfoRequest" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation=".\MagentoService_Magento.xsd" />
+  <xs:element name="catalogProductInfo">
+    <xs:annotation>
+      <xs:documentation>Wrapper element for message "catalogProductInfoRequest" of RPC operation "catalogProductInfo".</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sessionId" type="xs:string" />
+        <xs:element name="product" type="xs:string" />
+        <xs:element name="storeView" type="xs:string" />
+        <xs:element name="attributes" type="tns:catalogProductRequestAttributes" />
+        <xs:element name="productIdentifierType" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

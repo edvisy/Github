@@ -1,0 +1,368 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="eec62707-7df6-4a0c-b004-d4ca77e4eb95" LowerBound="1.1" HigherBound="81.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Woolworths.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MultipartMessageType" OID="88059669-5fbe-4b96-aa8a-50c06db781ea" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_LGXInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="33376fde-52d9-4341-a795-fa8da46672ef" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="1832eaac-eec7-4df3-b8d3-45e34f9c3235" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_AribaInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="dd05e145-7e16-4e36-ae2e-765423199c7a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ec828f6c-bb3f-42de-8b8c-94d89ff24fd2" ParentLink="Module_ServiceDeclaration" LowerBound="40.1" HigherBound="80.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessInvoice" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="ca09ef47-b6d5-481e-9706-75b5e117a6f7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e45042d4-1b9d-4ff5-9070-47803a2742b0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_LGXInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_LGXInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f9d80686-4a47-4ebd-91f4-a434adce20ae" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_AribaInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_AribaInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="518c4eb8-4fd5-475c-8b1f-59b87c3641aa" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Resp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b9dbef76-63ea-4aed-9658-b0607ccc5306" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="555e5fbf-2d79-42d1-ba19-a8b661015112" ParentLink="ServiceBody_Statement" LowerBound="55.1" HigherBound="58.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_LGXInvoice" />
+                    <om:Property Name="MessageName" Value="msg_LGXInvoice" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="3d2c4deb-5eba-434e-bbcf-44feb9f12388" ParentLink="ServiceBody_Statement" LowerBound="58.1" HigherBound="64.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_AribaInvoice" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="465784d6-257d-4b26-a99e-86deb84ebd03" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="63.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Woolworths.Maps.LGXInvoice_To_cXMLInvoice" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_AribaInvoice" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="7e97be11-c917-4e37-9de1-14d256a40299" ParentLink="Transform_InputMessagePartRef" LowerBound="62.115" HigherBound="62.133">
+                            <om:Property Name="MessageRef" Value="msg_LGXInvoice" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="87ded75b-1d4e-4548-bbca-8dae68b63f3d" ParentLink="Transform_OutputMessagePartRef" LowerBound="62.28" HigherBound="62.48">
+                            <om:Property Name="MessageRef" Value="msg_AribaInvoice" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="75c6765f-dd6e-4300-9204-e26c23ff4160" ParentLink="Construct_MessageRef" LowerBound="59.23" HigherBound="59.39">
+                        <om:Property Name="Ref" Value="msg_AribaInvoice" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="2d8284e1-6a15-45d6-9eb3-c2cff0f17e12" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="68.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_AribaInvoice.XML;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.Woolworths.Invoice: Invoice Request: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="7d1f49cc-f27f-4b3b-a51b-506e7fbb2481" ParentLink="ServiceBody_Statement" LowerBound="68.1" HigherBound="70.1">
+                    <om:Property Name="PortName" Value="Port_InvArchive" />
+                    <om:Property Name="MessageName" Value="msg_AribaInvoice" />
+                    <om:Property Name="OperationName" Value="Archive" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Archive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="63a67f4b-a9de-4e14-ac7f-779ac69f0e9c" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="72.1">
+                    <om:Property Name="PortName" Value="Port_Ariba" />
+                    <om:Property Name="MessageName" Value="msg_AribaInvoice" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="23717d08-53bf-4384-b1e2-6e6881cb91ab" ParentLink="ServiceBody_Statement" LowerBound="72.1" HigherBound="74.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_Ariba" />
+                    <om:Property Name="MessageName" Value="msg_Resp" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_Resp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="f7153669-991a-4135-9838-1b97612d694b" ParentLink="ServiceBody_Statement" LowerBound="74.1" HigherBound="78.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_Resp;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.Woolworths.Invoice: Invoice Response: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7db4b0ab-5872-4463-a8c2-8cc103697e15" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.PortType_LGXInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_LGXInvoice" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4151cb56-e590-433e-a480-5d4664db28e3" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5c783ddd-ff8a-4b55-a4da-af7d242a12b9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="26" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.PortType_Ariba" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Ariba" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="722f708a-7917-40f7-9c6b-35ac77ab5956" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="4fc040e1-9230-4474-9835-b7327772c000" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="47.1" HigherBound="49.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="18" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.PortType_InvArchive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_InvArchive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b7486072-6f2d-4971-9e29-e454a29f9416" ParentLink="PortDeclaration_CLRAttribute" LowerBound="47.1" HigherBound="48.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="412b76e6-810b-4e08-aa5f-3401d8cc833d" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_LGXInvoice" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c26f13ca-a309-4938-89a1-57962a57d06a" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0084339b-b0b9-42a3-be91-cf8e5569b5ad" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.25">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_LGXInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a2a55db9-5b6a-4cca-bf61-dba3dd164c48" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Ariba" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="20efddf1-ee43-44d1-9472-4351cd34a2af" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HTTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1859cfe6-2f01-4bc8-ae99-f22c88b710e0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.27">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_AribaInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="6b038d1b-f57d-4972-abcd-b262aba111ee" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="23.29" HigherBound="23.51">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="eacafac1-55d8-45a5-b3f6-29781d88de19" ParentLink="Module_PortType" LowerBound="26.1" HigherBound="33.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ArchiveRequest" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="6c52e1c0-9855-426b-8eca-2ff08bdbc03f" ParentLink="PortType_OperationDeclaration" LowerBound="28.1" HigherBound="32.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Archive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7943f425-42ac-49cd-bf75-fc17287cc676" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="30.13" HigherBound="30.27">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_AribaInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a327bc0d-cb6d-4ca2-9642-b64880e7082d" ParentLink="Module_PortType" LowerBound="33.1" HigherBound="40.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_InvArchive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="98f41d72-7b83-4ee8-a46b-3447eca62a10" ParentLink="PortType_OperationDeclaration" LowerBound="35.1" HigherBound="39.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Archive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="8c364fed-99d2-454a-8002-5c98803954c8" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="37.13" HigherBound="37.27">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Woolworths.Orchestrations.m_AribaInvoice" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Woolworths.Orchestrations
+{
+    internal messagetype m_LGXInvoice
+    {
+        body Visy.Middleware.Common.Schemas.LGX.INVOICE XML;
+    };
+    internal messagetype m_AribaInvoice
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML XML;
+    };
+    internal porttype PortType_LGXInvoice
+    {
+        oneway FILE
+        {
+            m_LGXInvoice
+        };
+    };
+    public porttype PortType_Ariba
+    {
+        requestresponse HTTP
+        {
+            m_AribaInvoice, System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_ArchiveRequest
+    {
+        oneway Archive
+        {
+            m_AribaInvoice
+        };
+    };
+    internal porttype PortType_InvArchive
+    {
+        oneway Archive
+        {
+            m_AribaInvoice
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessInvoice
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_LGXInvoice Port_LGXInvoice;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Ariba Port_Ariba;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_InvArchive Port_InvArchive;
+        message m_LGXInvoice msg_LGXInvoice;
+        message m_AribaInvoice msg_AribaInvoice;
+        message System.Xml.XmlDocument msg_Resp;
+        System.Xml.XmlDocument v_Xml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("555e5fbf-2d79-42d1-ba19-a8b661015112")]
+            activate receive (Port_LGXInvoice.FILE, msg_LGXInvoice);
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3d2c4deb-5eba-434e-bbcf-44feb9f12388")]
+            construct msg_AribaInvoice
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("465784d6-257d-4b26-a99e-86deb84ebd03")]
+                transform (msg_AribaInvoice.XML) = Visy.Middleware.LGX.Woolworths.Maps.LGXInvoice_To_cXMLInvoice (msg_LGXInvoice.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d8284e1-6a15-45d6-9eb3-c2cff0f17e12")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_AribaInvoice.XML;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.Woolworths.Invoice: Invoice Request: " + v_Xml.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7d1f49cc-f27f-4b3b-a51b-506e7fbb2481")]
+            send (Port_InvArchive.Archive, msg_AribaInvoice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("63a67f4b-a9de-4e14-ac7f-779ac69f0e9c")]
+            send (Port_Ariba.HTTP, msg_AribaInvoice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("23717d08-53bf-4384-b1e2-6e6881cb91ab")]
+            receive (Port_Ariba.HTTP, msg_Resp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f7153669-991a-4135-9838-1b97612d694b")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_Resp;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.Woolworths.Invoice: Invoice Response: " + v_Xml.OuterXml);
+        }
+    }
+}
+

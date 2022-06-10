@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<schema elementFormDefault="qualified" targetNamespace="http://ws.xi.mdm.oi.com/types" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="Warespec">
+    <sequence>
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="capacity" type="decimal" />
+      <element minOccurs="0" name="capacityUnits" type="string" />
+      <element minOccurs="0" name="weight" type="decimal" />
+      <element minOccurs="0" name="weightUnits" type="string" />
+      <element minOccurs="0" name="finishType" type="string" />
+      <element minOccurs="0" name="returnable" type="boolean" />
+      <element minOccurs="0" name="round" type="boolean" />
+      <element minOccurs="0" name="pressurised" type="boolean" />
+      <element name="glassContainer" xmlns:q1="http://ws.xi.mdm.oi.com/types" type="q1:GlassContainer" />
+      <element minOccurs="0" name="process" type="int" />
+      <element minOccurs="0" name="finishDescription" type="string" />
+      <element minOccurs="0" name="height" type="decimal" />
+      <element minOccurs="0" name="heightUnits" type="string" />
+      <element minOccurs="0" name="diameter" type="decimal" />
+      <element minOccurs="0" name="diameterUnits" type="string" />
+      <element minOccurs="0" name="marketHierachy" type="string" />
+      <element minOccurs="0" name="firstGlassDate" type="date" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="drawingNumber" type="string" />
+      <element minOccurs="0" name="windchillDesignCode" type="string" />
+      <element minOccurs="0" name="finishNum" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="GlassContainer">
+    <sequence>
+      <element name="id" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="colour" type="string" />
+      <element minOccurs="0" name="endUse" type="string" />
+      <element minOccurs="0" name="design" type="string" />
+      <element minOccurs="0" name="mould" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SKU">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="glassContainerId" type="string" />
+      <element minOccurs="0" name="customerPrimary" type="string" />
+      <element minOccurs="0" name="customerSecondary" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="tiers" type="int" />
+      <element minOccurs="0" name="bottlesPerTier" type="int" />
+      <element minOccurs="0" name="bottlesPerPallet" type="int" />
+      <element minOccurs="0" name="skuHeight" type="decimal" />
+      <element minOccurs="0" name="skuHeightUnits" type="string" />
+      <element minOccurs="0" name="skuNetWeight" type="decimal" />
+      <element minOccurs="0" name="skuNetWeightUnits" type="string" />
+      <element minOccurs="0" name="skuGrossWeight" type="decimal" />
+      <element minOccurs="0" name="skuGrossWeightUnits" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="skuUnits" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="WorkCentre">
+    <sequence>
+      <element name="id" type="string" />
+      <element name="name" type="string" />
+      <element minOccurs="0" name="plantId" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="FunctionalLocation">
+    <sequence>
+      <element name="id" type="string" />
+      <element name="name" type="string" />
+      <element minOccurs="0" name="sortOrder" type="int" />
+      <element minOccurs="0" name="plantId" type="string" />
+      <element minOccurs="0" name="parentLocationId" type="string" />
+      <element minOccurs="0" name="workCentreId" type="string" />
+      <element name="active" type="boolean" />
+    </sequence>
+  </complexType>
+  <complexType name="Department">
+    <sequence>
+      <element name="id" type="string" />
+      <element name="name" type="string" />
+      <element minOccurs="0" name="plantId" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="EquipmentType">
+    <sequence>
+      <element name="id" type="string" />
+      <element name="name" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Equipment">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="sortOrder" type="int" />
+      <element minOccurs="0" name="plantId" type="string" />
+      <element minOccurs="0" name="departmentId" type="string" />
+      <element minOccurs="0" name="equipmentTypeId" type="string" />
+      <element minOccurs="0" name="functionalLocationId" type="string" />
+      <element minOccurs="0" name="workCentreId" type="string" />
+      <element name="active" type="boolean" />
+      <element minOccurs="0" name="problemGroupsList" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="ProblemGroup">
+    <sequence>
+      <element name="id" type="string" />
+      <element name="name" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="Problem">
+    <sequence>
+      <element name="code" type="string" />
+      <element name="problemGroupId" type="string" />
+      <element name="name" type="string" />
+      <element name="active" type="boolean" />
+    </sequence>
+  </complexType>
+  <complexType name="Translation">
+    <sequence>
+      <element name="tableName" type="string" />
+      <element name="objectId" type="string" />
+      <element name="language" xmlns:q2="http://ws.xi.mdm.oi.com/types" type="q2:Language" />
+      <element name="value" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="Language">
+    <restriction base="string">
+      <pattern value="[Cc][Ss]" />
+      <pattern value="[Dd][Ee]" />
+      <pattern value="[Ee][Nn]" />
+      <pattern value="[Ee][Ss]" />
+      <pattern value="[Ee][Tt]" />
+      <pattern value="[Ff][Rr]" />
+      <pattern value="[Hh][Uu]" />
+      <pattern value="[Ii][Tt]" />
+      <pattern value="[Nn][Ll]" />
+      <pattern value="[Pp][Ll]" />
+      <pattern value="[Pp][Tt]" />
+      <pattern value="[Zz][Hh]" />
+    </restriction>
+  </simpleType>
+  <complexType name="SystemInfo">
+    <sequence>
+      <element name="attribute" xmlns:q3="http://ws.xi.mdm.oi.com/types" type="q3:SystemAttribute" />
+      <element name="value" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="SystemAttribute">
+    <restriction base="string">
+      <enumeration value="VERSION" />
+      <enumeration value="TIME_ZONE" />
+      <enumeration value="MEMORY_ALLOCATED" />
+      <enumeration value="MEMORY_USED" />
+      <enumeration value="STATUS" />
+    </restriction>
+  </simpleType>
+</schema>

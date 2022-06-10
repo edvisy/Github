@@ -1,0 +1,220 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="579de469-f250-4d81-92f2-61bd1f459d17" LowerBound="1.1" HigherBound="55.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Common.Listener.INVOICE" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="1e3388b3-edef-44df-9ad7-3992b726ce14" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveInvoice_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e485e712-0c6f-453e-8028-6193a14c9c20" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveInvoice_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="d96a8664-86c3-440b-92c1-57dd7fda1603" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.55">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2ff84393-74eb-448e-ae8c-ae8a42751aa7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendInvoice_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="753442ca-467c-4817-bc52-573ad79fd1db" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendInvoice_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="3de6ebdd-3d5b-4851-ac6e-9129bca8dd35" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.55">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="eedbf7dd-90d2-4cb8-ba8e-eb9a58ee627b" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="54.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="InvoiceRouter" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="e42bf5be-5bee-4a16-9db3-e6d22580fd6c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BizTalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d5bf0aaa-c834-48b1-b39e-35ca77be4d25" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CustCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2498413a-cbfc-42a3-a155-18453eb3b66e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GUID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0c6c976c-dcf6-44c7-9080-19630051321b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5f2f83f0-a83c-468a-bc12-09856ce15bc8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="7f4a15b5-11eb-44ec-b493-a194c4d489dc" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="f9e36f4e-d0dd-4f59-a690-8b0c9b9b5318" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="36.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveInvoice_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="ReceiveInvoice_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="15a9a19a-f543-44e2-8eff-91f4206f897f" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="50.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="b7795625-c420-493e-8076-b5bbcfe5b307" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="49.1">
+                        <om:Property Name="Expression" Value="Outbound = Inbound;&#xD;&#xA;Outbound(*) = Inbound(*);&#xD;&#xA;GUID = System.Guid.NewGuid();&#xD;&#xA;BizTalkID = GUID.ToString();&#xD;&#xA;BizTalkID = BizTalkID.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;BizTalkID = BizTalkID.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;CustCode = Inbound.Header.CompanyCode;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = &quot;INVOICE.&quot; + CustCode + &quot;~&quot; + BizTalkID + &quot;~1~1.xml&quot;;&#xD;&#xA;//Visy.WSS.Data.Reporting.Add(BizTalkID,&quot;COMMON.LISTENER&quot;,CustCode,&quot;RC&quot;,&quot;LGX&quot;,&quot;OUTBOUND&quot;,&quot;INVOICE&quot;);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Record &amp; Create Output" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b1426577-7338-4c11-9fbc-59c1477d1cd3" ParentLink="Construct_MessageRef" LowerBound="37.23" HigherBound="37.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="81f1f54a-f083-47d9-8c9b-ad00a02aef2b" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="52.1">
+                    <om:Property Name="PortName" Value="SendInvoice_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="SendInvoice_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9a5c63bb-e141-4344-982c-411755dd81d3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Common.Listener.INVOICE.ReceiveInvoice_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveInvoice_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="3c82e09b-2bae-4dad-9aee-a6ec5beac470" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a4e787d8-5536-453e-a944-0b3c5166bd46" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="17" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Common.Listener.INVOICE.SendInvoice_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendInvoice_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="0aae3a89-31c1-4bd3-95b0-dffc968f603c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Common.Listener.INVOICE
+{
+    internal porttype ReceiveInvoice_PortType
+    {
+        oneway ReceiveInvoice_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.INVOICE
+        };
+    };
+    internal porttype SendInvoice_PortType
+    {
+        oneway SendInvoice_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.INVOICE
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service InvoiceRouter
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveInvoice_PortType ReceiveInvoice_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendInvoice_PortType SendInvoice_Port;
+        message Visy.Middleware.Common.Schemas.LGX.INVOICE Inbound;
+        message Visy.Middleware.Common.Schemas.LGX.INVOICE Outbound;
+        System.String BizTalkID;
+        System.String CustCode;
+        System.Guid GUID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f9e36f4e-d0dd-4f59-a690-8b0c9b9b5318")]
+            activate receive (ReceiveInvoice_Port.ReceiveInvoice_PortOperation, Inbound);
+            BizTalkID = "";
+            CustCode = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("15a9a19a-f543-44e2-8eff-91f4206f897f")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b7795625-c420-493e-8076-b5bbcfe5b307")]
+                Outbound = Inbound;
+                Outbound(*) = Inbound(*);
+                GUID = System.Guid.NewGuid();
+                BizTalkID = GUID.ToString();
+                BizTalkID = BizTalkID.Replace("{","");
+                BizTalkID = BizTalkID.Replace("}","");
+                CustCode = Inbound.Header.CompanyCode;
+                Outbound(FILE.ReceivedFileName) = "INVOICE." + CustCode + "~" + BizTalkID + "~1~1.xml";
+                //Visy.WSS.Data.Reporting.Add(BizTalkID,"COMMON.LISTENER",CustCode,"RC","LGX","OUTBOUND","INVOICE");
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("81f1f54a-f083-47d9-8c9b-ad00a02aef2b")]
+            send (SendInvoice_Port.SendInvoice_PortOperation, Outbound);
+        }
+    }
+}
+

@@ -1,0 +1,435 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1442ccbd-f296-40da-a5cd-68b188633a5f" LowerBound="1.1" HigherBound="108.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.AMS.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="e1c4a547-dae0-45d1-8e29-297af496b8fd" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAPOutboundAccDocPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f6f66a47-f2ac-4f9d-988f-4ce6babb13ac" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="80c50107-e3d6-4ba0-8201-cd3cfa34cace" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d085842a-cac9-4714-89bc-1dcb342b5c8c" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="IFSInbound_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="48e9c7a2-70c4-4c3c-b706-34b486476b3a" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_RECEIVE_ACCOUNTING_JOURNAL" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="283e042f-b05a-4af7-bb35-e94c7f9d3e64" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.71">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.AMS.Schemas.RECEIVE_ACCOUNTING_JOURNAL" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="868664ae-978e-465a-ac05-e3f60b0c549d" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="IFSInboundSupplierInvoicePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8ed29d5e-1f2a-46db-8cbd-0bdaadbc2511" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_RECEIVE_SUPPLIER_INVOICE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="27a3a950-f31f-4119-9af8-107e638b04ff" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.69">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.AMS.Schemas.RECEIVE_SUPPLIER_INVOICE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="11135f8f-0465-4173-9b89-5084e1ccf4b7" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="107.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AccountingDocument" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="62829bb8-cecf-4b02-b333-dcc23e9d5cbe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DocumentType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9eb17624-a708-42d2-a7cd-bce79fa66cbb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0aadea6b-9ea3-44ce-b536-97dd6382bc9d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.SAP.AMS.ZFIDCCP02.IDocOperation_ZFIDCCP02_620_3_Receive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AccountingDocumentMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="60f66e02-d48c-48d6-89fe-3b8162fd9660" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Schemas.RECEIVE_ACCOUNTING_JOURNAL" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveAccountingJournalMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7ee6eae6-5e0a-408e-b0cd-b4589da101ca" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Schemas.RECEIVE_SUPPLIER_INVOICE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveSupplierInvoiceMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="89505822-354a-47c3-a869-71f7283d88a2" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="acbfb3bb-430f-4613-ad73-db58c4d0c629" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="44.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="SAPOutboundPort" />
+                    <om:Property Name="MessageName" Value="IncomingMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveIncomingMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="21570f83-5e53-4fd2-8f3f-960871af1d76" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="105.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Process Message" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="aaea2835-618b-4360-b824-b61c034756d0" ParentLink="ComplexStatement_Statement" LowerBound="49.1" HigherBound="55.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Accounting Document" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="a92de459-27bc-499d-8f45-11758fc3a42c" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="54.1">
+                            <om:Property Name="Expression" Value="AccountingDocumentMessage = IncomingMessage;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Accounting Document Message Assignment" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="a6b1c18d-5d31-4932-8ced-4506f9f9e121" ParentLink="Construct_MessageRef" LowerBound="50.31" HigherBound="50.56">
+                            <om:Property Name="Ref" Value="AccountingDocumentMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="2cb758ac-ff74-49c1-b443-c9a35b5e9865" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="59.1">
+                        <om:Property Name="Expression" Value="DocumentType = xpath(IncomingMessage, &quot;string(/*[local-name()='Receive']/*[local-name()='idocData']/*[local-name()='Z2MB1AIFS000']/*[local-name()='MOVE_TYPE']/text())&quot;);&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(System.String.Format(&quot;MovementType = {0}&quot;, DocumentType));" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Document Type" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="b64f9f0f-67b6-45ec-a6c3-ea336195d336" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="87.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Determine Document Type" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="c7165296-a824-422c-877d-6ae16c04bd4a" ParentLink="ReallyComplexStatement_Branch" LowerBound="60.21" HigherBound="71.1">
+                            <om:Property Name="Expression" Value="DocumentType == &quot;SA&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Accounting Document" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Construct" OID="7ab0b916-4ca1-4e0f-8294-af17ccc10a82" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="68.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="RECEIVE_ACCOUNTING_JOURNAL" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="2d9233a4-6b11-4722-9c3e-0c5c00818da0" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="67.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.AMS.Maps.ZFIDCC2_to_RECEIVE_ACCOUNTING_JOURNAL" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="RECEIVE_ACCOUNTING_JOURNAL Transform" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="e615b171-8abf-4579-bafa-35ecbede6ad8" ParentLink="Transform_InputMessagePartRef" LowerBound="66.143" HigherBound="66.168">
+                                        <om:Property Name="MessageRef" Value="AccountingDocumentMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_1" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="26e69e57-7305-458e-9c15-bd51f97d0d35" ParentLink="Transform_OutputMessagePartRef" LowerBound="66.40" HigherBound="66.71">
+                                        <om:Property Name="MessageRef" Value="ReceiveAccountingJournalMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="dcc69a9a-324c-4685-b63e-c4d05e49940e" ParentLink="Construct_MessageRef" LowerBound="63.35" HigherBound="63.66">
+                                    <om:Property Name="Ref" Value="ReceiveAccountingJournalMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="134ce46c-4432-4422-90b8-4f01249d58ad" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                                <om:Property Name="PortName" Value="IFSInboundAccountingJournalPort" />
+                                <om:Property Name="MessageName" Value="ReceiveAccountingJournalMessage" />
+                                <om:Property Name="OperationName" Value="Send_RECEIVE_ACCOUNTING_JOURNAL" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send RECEIVE_ACCOUNTING_JOURNAL" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="9d455e43-05b4-47f1-9e3a-1bbcaadabe53" ParentLink="ReallyComplexStatement_Branch" LowerBound="71.26" HigherBound="82.1">
+                            <om:Property Name="Expression" Value="DocumentType == &quot;RF&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Supplier Invoice" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Construct" OID="a4d46be3-2eb3-4f49-b60e-8cd75c2db47c" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="79.1">
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="RECEIVE_SUPPLIER_INVOICE" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Transform" OID="e45a5d02-1a90-4f6e-97a7-6461ae0f0cda" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="78.1">
+                                    <om:Property Name="ClassName" Value="Visy.Middleware.SAP.AMS.Maps.ZFIDCC2_to_RECEIVE_SUPPLIER_INVOICE" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="RECEIVE_SUPPLIER_INVOICE Transform" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessagePartRef" OID="d7300652-3507-4b1b-b570-f6b63195f2ec" ParentLink="Transform_InputMessagePartRef" LowerBound="77.139" HigherBound="77.164">
+                                        <om:Property Name="MessageRef" Value="AccountingDocumentMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_3" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessagePartRef" OID="d44ea48f-26e8-406b-adba-fb8fe5eb5b76" ParentLink="Transform_OutputMessagePartRef" LowerBound="77.40" HigherBound="77.69">
+                                        <om:Property Name="MessageRef" Value="ReceiveSupplierInvoiceMessage" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="MessagePartReference_4" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="MessageRef" OID="8c9f0e75-2d0a-44b8-8134-a8f3947609d7" ParentLink="Construct_MessageRef" LowerBound="74.35" HigherBound="74.64">
+                                    <om:Property Name="Ref" Value="ReceiveSupplierInvoiceMessage" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="Send" OID="a8972ebe-a61d-453c-aade-d19810dea870" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                                <om:Property Name="PortName" Value="IFSInboundSupplierInvoicePort" />
+                                <om:Property Name="MessageName" Value="ReceiveSupplierInvoiceMessage" />
+                                <om:Property Name="OperationName" Value="Send_RECEIVE_SUPPLIER_INVOICE" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Send RECEIVE_SUPPLIER_INVOICE" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="c43dff4d-bc57-4437-a532-f5f976f450f4" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="aaa5b7d9-bfa9-4f45-9c8b-794168386ce3" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="86.1">
+                                <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(System.String.Format(&quot;Invalid Document Type {0}&quot;, DocumentType));" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Trace" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="9f3f9317-dd7a-48c9-a576-e21ad51daa87" ParentLink="Scope_Catch" LowerBound="90.1" HigherBound="103.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.SystemException" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="6f6823ec-6b72-4d9e-9a79-37be9b49e1ff" ParentLink="Catch_Statement" LowerBound="93.1" HigherBound="95.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(ex.Message);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Trace" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="0197c16b-e9c3-45bc-9980-341b8a3aacea" ParentLink="Catch_Statement" LowerBound="95.1" HigherBound="102.1">
+                            <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;Processing of IFS Accounting Document {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}&quot;,&#xD;&#xA;    DocumentType,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.Message,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.StackTrace);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="27675245-2746-4ae1-aa1c-5fdbb412afb9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.SAPOutboundAccDocPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAPOutboundPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4438b42c-1ec4-4d9b-9a93-ce6fb394cecd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3a52e42f-14c8-4ab5-8453-10dd7d899711" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="44" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.IFSInbound_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IFSInboundAccountingJournalPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="de3edbe5-eb38-4de4-8362-2f26d43454a1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5e48148c-c174-427a-8ac2-a76d3a53bb6e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="46" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.IFSInboundSupplierInvoicePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IFSInboundSupplierInvoicePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e22f25f7-a213-4689-8093-a6e6e0b973ab" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.AMS.Orchestrations
+{
+    internal porttype SAPOutboundAccDocPortType
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype IFSInbound_PortType
+    {
+        oneway Send_RECEIVE_ACCOUNTING_JOURNAL
+        {
+            Visy.Middleware.SAP.AMS.Schemas.RECEIVE_ACCOUNTING_JOURNAL
+        };
+    };
+    internal porttype IFSInboundSupplierInvoicePortType
+    {
+        oneway Send_RECEIVE_SUPPLIER_INVOICE
+        {
+            Visy.Middleware.SAP.AMS.Schemas.RECEIVE_SUPPLIER_INVOICE
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service AccountingDocument
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SAPOutboundAccDocPortType SAPOutboundPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses IFSInbound_PortType IFSInboundAccountingJournalPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses IFSInboundSupplierInvoicePortType IFSInboundSupplierInvoicePort;
+        message System.Xml.XmlDocument IncomingMessage;
+        message Visy.Middleware.Common.SAP.AMS.ZFIDCCP02.IDocOperation_ZFIDCCP02_620_3_Receive AccountingDocumentMessage;
+        message Visy.Middleware.SAP.AMS.Schemas.RECEIVE_ACCOUNTING_JOURNAL ReceiveAccountingJournalMessage;
+        message Visy.Middleware.SAP.AMS.Schemas.RECEIVE_SUPPLIER_INVOICE ReceiveSupplierInvoiceMessage;
+        System.String DocumentType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("acbfb3bb-430f-4613-ad73-db58c4d0c629")]
+            activate receive (SAPOutboundPort.Operation_1, IncomingMessage);
+            DocumentType = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("21570f83-5e53-4fd2-8f3f-960871af1d76")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aaea2835-618b-4360-b824-b61c034756d0")]
+                    construct AccountingDocumentMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a92de459-27bc-499d-8f45-11758fc3a42c")]
+                        AccountingDocumentMessage = IncomingMessage;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2cb758ac-ff74-49c1-b443-c9a35b5e9865")]
+                    DocumentType = xpath(IncomingMessage, "string(/*[local-name()='Receive']/*[local-name()='idocData']/*[local-name()='Z2MB1AIFS000']/*[local-name()='MOVE_TYPE']/text())");
+                    
+                    System.Diagnostics.Trace.WriteLine(System.String.Format("MovementType = {0}", DocumentType));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b64f9f0f-67b6-45ec-a6c3-ea336195d336")]
+                    if (DocumentType == "SA")
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7ab0b916-4ca1-4e0f-8294-af17ccc10a82")]
+                        construct ReceiveAccountingJournalMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d9233a4-6b11-4722-9c3e-0c5c00818da0")]
+                            transform (ReceiveAccountingJournalMessage) = Visy.Middleware.SAP.AMS.Maps.ZFIDCC2_to_RECEIVE_ACCOUNTING_JOURNAL (AccountingDocumentMessage);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("134ce46c-4432-4422-90b8-4f01249d58ad")]
+                        send (IFSInboundAccountingJournalPort.Send_RECEIVE_ACCOUNTING_JOURNAL, ReceiveAccountingJournalMessage);
+                    }
+                    else if (DocumentType == "RF")
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a4d46be3-2eb3-4f49-b60e-8cd75c2db47c")]
+                        construct ReceiveSupplierInvoiceMessage
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e45a5d02-1a90-4f6e-97a7-6461ae0f0cda")]
+                            transform (ReceiveSupplierInvoiceMessage) = Visy.Middleware.SAP.AMS.Maps.ZFIDCC2_to_RECEIVE_SUPPLIER_INVOICE (AccountingDocumentMessage);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a8972ebe-a61d-453c-aade-d19810dea870")]
+                        send (IFSInboundSupplierInvoicePort.Send_RECEIVE_SUPPLIER_INVOICE, ReceiveSupplierInvoiceMessage);
+                    }
+                    else 
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("aaa5b7d9-bfa9-4f45-9c8b-794168386ce3")]
+                        System.Diagnostics.Trace.WriteLine(System.String.Format("Invalid Document Type {0}", DocumentType));
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9f3f9317-dd7a-48c9-a576-e21ad51daa87")]
+                    catch (System.SystemException ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("6f6823ec-6b72-4d9e-9a79-37be9b49e1ff")]
+                        System.Diagnostics.Trace.WriteLine(ex.Message);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0197c16b-e9c3-45bc-9980-341b8a3aacea")]
+                        suspend System.String.Format("Processing of IFS Accounting Document {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}",
+                                DocumentType,
+                                System.Environment.NewLine,
+                                ex.Message,
+                                System.Environment.NewLine,
+                                ex.StackTrace);
+                    }
+                }
+            }
+        }
+    }
+}
+

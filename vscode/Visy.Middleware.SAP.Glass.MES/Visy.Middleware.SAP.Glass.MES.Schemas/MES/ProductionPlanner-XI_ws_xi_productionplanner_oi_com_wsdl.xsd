@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.xi.productionplanner.oi.com/wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation=".\ProductionPlanner-XI_ws_xi_productionplanner_oi_com_types.xsd" namespace="http://ws.xi.productionplanner.oi.com/types" />
+  <element name="updateGlassOrders">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="glassOrders" xmlns:q1="http://ws.xi.productionplanner.oi.com/types" type="q1:GlassOrder" />
+        <element minOccurs="0" name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateGlassOrdersResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateBottleOrders">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="bottleOrders" xmlns:q2="http://ws.xi.productionplanner.oi.com/types" type="q2:BottleOrder" />
+        <element minOccurs="0" name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateBottleOrdersResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateSKUOrders">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="skuOrders" xmlns:q3="http://ws.xi.productionplanner.oi.com/types" type="q3:SKUOrder" />
+        <element minOccurs="0" name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateSKUOrdersResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updatePlannedOutages">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="plannedOutages" xmlns:q4="http://ws.xi.productionplanner.oi.com/types" type="q4:PlannedOutage" />
+        <element minOccurs="0" name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updatePlannedOutagesResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="getSystemInfo">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="attributes" xmlns:q5="http://ws.xi.productionplanner.oi.com/types" type="q5:SystemAttribute" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getSystemInfoResponse">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="getSystemInfoReturn" xmlns:q6="http://ws.xi.productionplanner.oi.com/types" type="q6:SystemInfo" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="ppXiServiceFault">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" name="code" type="int" />
+        <element name="description" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

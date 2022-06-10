@@ -1,0 +1,228 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="38aacf1c-58a1-4d07-a2fc-a4eaba04b129" LowerBound="1.1" HigherBound="53.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.GSGlobal.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="c814ec83-1a1a-4b9c-aa3d-5b5357cddeee" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Receive_SinglePOASN_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7912f68e-849c-41d0-9be4-dffdd81cbe29" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="20cfaf2d-4b01-40f3-8096-e94358c65b08" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.61">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.GSGlobal.Schemas.SinglePOASN" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="49492d2b-6d1b-4e84-b53f-c3a5c683dd98" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_DESADV_SAP_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="eb48accf-1f21-446e-b02a-8e351f3c1f12" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_DESADV_SAP_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="00f4f4ea-e4ef-425b-a81e-ecb2623c1ecd" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.63">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="6e979f82-b737-4a8c-a9ac-42bc6ed446f4" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="52.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessSinglePOASN" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="97a2781d-b852-4493-b581-9a71788cd1b0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="62a1b434-abe4-40de-9283-436566dcbe84" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="temp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="875b11bf-e47a-4694-8eb9-375f52312c4a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.GSGlobal.Schemas.SinglePOASN" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a9722747-03e5-4bfc-82c9-37088d81345e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Outbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="425f58cb-e7ae-42a0-9c1a-412e6b81f79b" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="292f7d15-37fe-4918-bf64-9b927531b99f" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Receive_SinglePOASN_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_SinglePOASN" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="fdc6b76f-a268-4f8d-bdbd-e8c710427cf3" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="48.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct_DESADV" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="48d96384-cf05-4425-86f6-838d5b1eef29" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="40.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.GSGlobal.Maps.SinglePOASN_DESADV01" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_ASN" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="e9e11864-34d6-464f-aefa-c40cad900007" ParentLink="Transform_InputMessagePartRef" LowerBound="39.96" HigherBound="39.103">
+                            <om:Property Name="MessageRef" Value="Inbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="6f4a694c-6360-461e-b7fd-1a32003bcaed" ParentLink="Transform_OutputMessagePartRef" LowerBound="39.28" HigherBound="39.36">
+                            <om:Property Name="MessageRef" Value="Outbound" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="e30277cb-a1b9-4b07-9ef6-6db927865275" ParentLink="ComplexStatement_Statement" LowerBound="40.1" HigherBound="47.1">
+                        <om:Property Name="Expression" Value="temp = Inbound(BTS.MessageID);&#xD;&#xA;temp = temp.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;temp = temp.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;Outbound.EDI_DC40.ARCKEY = temp + &quot;~1~1&quot;;&#xD;&#xA;FileName = &quot;GSGLOBAL.11214.&quot; + temp + &quot;~1~1.xml&quot;;&#xD;&#xA;Outbound(FILE.ReceivedFileName) = FileName;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Assigning FileName" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="ec4aaeaf-5501-4c72-82f5-b48e0c38f4e6" ParentLink="Construct_MessageRef" LowerBound="36.23" HigherBound="36.31">
+                        <om:Property Name="Ref" Value="Outbound" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="de353b82-6fab-4711-a5d7-fc416262e2be" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="50.1">
+                    <om:Property Name="PortName" Value="Send_DESADV_SAP_Port" />
+                    <om:Property Name="MessageName" Value="Outbound" />
+                    <om:Property Name="OperationName" Value="Send_DESADV_SAP_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_DESADV" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="fd7bb254-2b05-419b-bc98-6122725680da" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="4" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.GSGlobal.Orchestrations.Receive_SinglePOASN_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive_SinglePOASN_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="c195c1fa-707f-4cac-9c20-15a04cb61397" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="ed300240-766f-471d-93b5-c11519d2074e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="19" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.GSGlobal.Orchestrations.Send_DESADV_SAP_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_DESADV_SAP_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="439d6981-3d0a-4999-80b9-14b40dcf71d1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.GSGlobal.Orchestrations
+{
+    internal porttype Receive_SinglePOASN_PortType
+    {
+        oneway Operation
+        {
+            Visy.Middleware.SAP.GSGlobal.Schemas.SinglePOASN
+        };
+    };
+    internal porttype Send_DESADV_SAP_PortType
+    {
+        oneway Send_DESADV_SAP_Operation
+        {
+            Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessSinglePOASN
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Receive_SinglePOASN_PortType Receive_SinglePOASN_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send_DESADV_SAP_PortType Send_DESADV_SAP_Port;
+        message Visy.Middleware.SAP.GSGlobal.Schemas.SinglePOASN Inbound;
+        message Visy.Middleware.Common.Schemas.SAP.DesAdv.DESADV01 Outbound;
+        System.String FileName;
+        System.String temp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("292f7d15-37fe-4918-bf64-9b927531b99f")]
+            activate receive (Receive_SinglePOASN_Port.Operation, Inbound);
+            FileName = "";
+            temp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fdc6b76f-a268-4f8d-bdbd-e8c710427cf3")]
+            construct Outbound
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("48d96384-cf05-4425-86f6-838d5b1eef29")]
+                transform (Outbound) = Visy.Middleware.SAP.GSGlobal.Maps.SinglePOASN_DESADV01 (Inbound);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e30277cb-a1b9-4b07-9ef6-6db927865275")]
+                temp = Inbound(BTS.MessageID);
+                temp = temp.Replace("{","");
+                temp = temp.Replace("}","");
+                Outbound.EDI_DC40.ARCKEY = temp + "~1~1";
+                FileName = "GSGLOBAL.11214." + temp + "~1~1.xml";
+                Outbound(FILE.ReceivedFileName) = FileName;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("de353b82-6fab-4711-a5d7-fc416262e2be")]
+            send (Send_DESADV_SAP_Port.Send_DESADV_SAP_Operation, Outbound);
+        }
+    }
+}
+

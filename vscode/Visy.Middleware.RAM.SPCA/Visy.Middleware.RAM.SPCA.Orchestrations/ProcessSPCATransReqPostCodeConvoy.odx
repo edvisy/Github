@@ -1,0 +1,534 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="336a3f3c-449f-427a-9f8d-397b7749fbb8" LowerBound="1.1" HigherBound="114.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.RAM.SPCA.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="0c2d8b2c-3a78-4768-acb1-3cfd8961c025" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SPCAInboundPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="23eee6fe-535b-4530-afe3-f19f4516ac0e" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvTransportOrderFF" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="9bf13359-44ac-4d24-b884-66a2b66915bc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.67">
+                    <om:Property Name="Ref" Value="Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8fa06073-2f94-47b5-a04c-41d888968631" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendToTemp" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2d939762-2f86-4e37-ad46-2d1e814103fd" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="d1ea21ef-88eb-4fdf-8f44-ce3f1109457d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.43">
+                    <om:Property Name="Ref" Value="Visy.Middleware.RAM.SPCA.Orchestrations.mpMsgTransportRequestsInternal" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="8bd68d5e-56f7-4717-b2eb-81083cb2065b" ParentLink="Module_ServiceDeclaration" LowerBound="30.1" HigherBound="113.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessSPCATransReqPostCodeConvoy" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="924ba57a-87eb-4c5b-9f49-2ea3d3d5067d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="InitialValue" Value="false" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Boolean" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="hasTimeOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="b8b5398e-33ba-4c24-982a-dae807984ee6" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.CorTypeTruckLoadPostCode" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_TruckLoadNoPostCode" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="7dff045b-654d-499d-8b52-1a92ba66b675" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="48.290" HigherBound="48.332">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="dd321cf1-a4a5-4b66-b222-b431b01a2beb" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="c0a77cbe-edd2-42ee-8555-6f87a3a80d5c" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="68.114" HigherBound="68.145">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="be5d1142-cf0e-41d3-a5f4-f0b5a975b2f5" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="cc883e30-18af-4bd9-beac-e5027f1e5cdd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Schemas.Purchase_Order" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="POCreateUTF8Message" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e5db1880-87f9-4184-a676-e506428d2ee9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgTransportRequestFF" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="15bba8f7-a17a-4f61-a8cb-04ea4a7a2032" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Schemas.Purchase_Order" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="POCreateMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ae1d58a8-bc47-4a80-a616-fbac97855e8e" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.mpMsgTransportRequestsInternal" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgTransportRequestsInternal" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b1e1c350-bfec-4ed4-8597-18686bdeb819" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.mpMsgTransportRequestInternal" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgTransportRequestInternal" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6fa90371-1274-4b9f-a01a-05af462b72f9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgSubsequentTransportRequestFF" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="444b07c5-1776-4fb7-910a-35ebf0e14a96" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.mpMsgTransportRequestsInternal" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgAggregatedRequests" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="05b96c45-3e38-479f-88c0-9459f8f2c3b8" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="dd321cf1-a4a5-4b66-b222-b431b01a2beb" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="50.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="SPCAInboundPort" />
+                    <om:Property Name="MessageName" Value="MsgTransportRequestFF" />
+                    <om:Property Name="OperationName" Value="RcvTransportOrderFF" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveTransportFFMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="a11bfa1b-cce9-42b0-8498-028b2f1939f0" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://Manhattan.SPCA.Schemas.TransportRequestMulti#Request&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="ad42626e-3705-4260-abc4-a2f0f0a3abb5" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="Manhattan.SPCA.Schemas.IsWoolworthCharged" />
+                        <om:Property Name="RHS" Value="&quot;false&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="DNFPredicate" OID="7988c6a1-e8fc-4202-aadd-bc5c39038204" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="Manhattan.SPCA.Schemas.IsPostCodeGrouping" />
+                        <om:Property Name="RHS" Value="&quot;true&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="317c3da9-e620-4af1-9b9f-3e98ebc28649" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="111.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_Convoy" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="86f28906-d1cb-49f1-8f64-d3be683bcf79" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="61.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMsgTransportRequestsInternal" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="2133eb44-cd5b-418c-a474-6ee2703fb7d2" ParentLink="Construct_MessageRef" LowerBound="56.31" HigherBound="56.59">
+                            <om:Property Name="Ref" Value="MsgTransportRequestsInternal" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="a4cf2e04-b520-4b34-a03b-8203e0f73049" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="60.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.RAM.SPCA.Maps.TransportRequestMulti_To_TransportRequestsInternal" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_MsgTransportRequestsInternal" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="9dcbf193-d37e-4c93-89ad-a97433a77cfd" ParentLink="Transform_InputMessagePartRef" LowerBound="59.158" HigherBound="59.179">
+                                <om:Property Name="MessageRef" Value="MsgTransportRequestFF" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="9588c40d-5c22-46ee-b98c-2032c8066f25" ParentLink="Transform_OutputMessagePartRef" LowerBound="59.36" HigherBound="59.72">
+                                <om:Property Name="MessageRef" Value="MsgTransportRequestsInternal" />
+                                <om:Property Name="PartRef" Value="msgBody" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="While" OID="19876b2c-cf3f-4bed-99f0-30ced4a64166" ParentLink="ComplexStatement_Statement" LowerBound="61.1" HigherBound="98.1">
+                        <om:Property Name="Expression" Value="hasTimeOut ==  false" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Loop untill timeout" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Listen" OID="7b1612e9-d0d3-46ea-9c59-e208ce35abef" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="97.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Listen_ForSubsequentTransportOrders" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="ListenBranch" OID="2affcf40-d1d9-4462-b747-3c1026677d2d" ParentLink="ReallyComplexStatement_Branch" LowerBound="64.1" HigherBound="64.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ListenBranch_1" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="Receive" OID="be5d1142-cf0e-41d3-a5f4-f0b5a975b2f5" ParentLink="ListenBranch_Statement" LowerBound="67.1" HigherBound="68.146">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="SPCAInboundPort" />
+                                    <om:Property Name="MessageName" Value="MsgSubsequentTransportRequestFF" />
+                                    <om:Property Name="OperationName" Value="RcvTransportOrderFF" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Receive_SubsequentTransportOrders" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Construct" OID="0f0e3536-5433-48be-8dc9-b68a4e5e10da" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="76.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="ConstructMsgTransportRequestInternal" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="54e21c8f-35b0-43c6-abeb-3552fe4f8513" ParentLink="Construct_MessageRef" LowerBound="71.43" HigherBound="71.70">
+                                        <om:Property Name="Ref" Value="MsgTransportRequestInternal" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Transform" OID="e4726f14-5c30-451f-8220-68580708f9db" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="75.1">
+                                        <om:Property Name="ClassName" Value="Visy.Middleware.RAM.SPCA.Maps.TransportRequestMulti_To_TransportRequestInternal" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Transform_MsgTransportRequestInternal" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="MessagePartRef" OID="3c1f7c6d-b72d-4dac-8148-e630be7bec7c" ParentLink="Transform_InputMessagePartRef" LowerBound="74.168" HigherBound="74.199">
+                                            <om:Property Name="MessageRef" Value="MsgSubsequentTransportRequestFF" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="11883014-da97-4f0a-8c4a-0da8e72352d2" ParentLink="Transform_OutputMessagePartRef" LowerBound="74.48" HigherBound="74.83">
+                                            <om:Property Name="MessageRef" Value="MsgTransportRequestInternal" />
+                                            <om:Property Name="PartRef" Value="msgBody" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Construct" OID="c6672bdd-6f46-413c-84e4-fb4d1c91e713" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="82.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="AggregateTransportRequests" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="d9bc39db-e7ff-473a-b114-21208b5d7eae" ParentLink="Construct_MessageRef" LowerBound="77.43" HigherBound="77.64">
+                                        <om:Property Name="Ref" Value="MsgAggregatedRequests" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Transform" OID="c7a38cec-7bfd-4cca-b842-8611d44565c9" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                                        <om:Property Name="ClassName" Value="Visy.Middleware.RAM.SPCA.Maps.ConstructAggregatedTransportRequests" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="ConstructAggregatedRequests" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="MessagePartRef" OID="b7c5a120-0ed2-41d9-95ac-6a100cfd6ca4" ParentLink="Transform_InputMessagePartRef" LowerBound="80.149" HigherBound="80.184">
+                                            <om:Property Name="MessageRef" Value="MsgTransportRequestInternal" />
+                                            <om:Property Name="PartRef" Value="msgBody" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="df87ae07-36bd-4498-b201-f7c1ed82fb63" ParentLink="Transform_InputMessagePartRef" LowerBound="80.186" HigherBound="80.222">
+                                            <om:Property Name="MessageRef" Value="MsgTransportRequestsInternal" />
+                                            <om:Property Name="PartRef" Value="msgBody" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_6" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="2d8a896f-c225-4329-8d6b-a4e78654f1f7" ParentLink="Transform_OutputMessagePartRef" LowerBound="80.48" HigherBound="80.77">
+                                            <om:Property Name="MessageRef" Value="MsgAggregatedRequests" />
+                                            <om:Property Name="PartRef" Value="msgBody" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_7" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Construct" OID="d872cdd9-5acf-401a-9544-edab11588c2a" ParentLink="ComplexStatement_Statement" LowerBound="82.1" HigherBound="89.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="CopyToMsgTransportRequestsInternal" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageAssignment" OID="942c616d-bf69-48ec-b755-23cced8712fa" ParentLink="ComplexStatement_Statement" LowerBound="85.1" HigherBound="88.1">
+                                        <om:Property Name="Expression" Value="MsgTransportRequestsInternal.msgBody = MsgAggregatedRequests.msgBody;&#xD;&#xA;MsgTransportRequestsInternal(*) = MsgAggregatedRequests(*);&#xD;&#xA;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="MessageRef" OID="7501f9e6-f53e-49f9-bb7a-bb10161c9fdd" ParentLink="Construct_MessageRef" LowerBound="83.43" HigherBound="83.71">
+                                        <om:Property Name="Ref" Value="MsgTransportRequestsInternal" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="ListenBranch" OID="7e45c2ac-bb59-4bab-89ae-9e265685f097" ParentLink="ReallyComplexStatement_Branch" LowerBound="64.1" HigherBound="64.1">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ListenBranch_2" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="VariableAssignment" OID="6f8ac571-6391-4f1f-b251-303907989c5c" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="95.1">
+                                    <om:Property Name="Expression" Value="hasTimeOut = true;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Set Time Out" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Delay" OID="a7324b15-04de-44db-9619-3ef2cbd812a4" ParentLink="ListenBranch_Statement" LowerBound="90.1" HigherBound="91.68">
+                                    <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,30,0)" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Wait for 30 seconds" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Call" OID="e42c45b3-f540-4a5e-b2d9-1f6e1a8d7781" ParentLink="ComplexStatement_Statement" LowerBound="98.1" HigherBound="100.1">
+                        <om:Property Name="Identifier" Value="CallSendToTransportRequestsToTMS" />
+                        <om:Property Name="Invokee" Value="Visy.Middleware.RAM.SPCA.Orchestrations.SendTransportRequestsToTMS" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CallSendToTransportRequestsToTMS" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Parameter" OID="94fe7857-9c29-42f0-8635-41e82891a947" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="MsgTransportRequestsInternal" />
+                            <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.mpMsgTransportRequestsInternal" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="ef34a712-e333-4526-84ed-842694a80017" ParentLink="Scope_Catch" LowerBound="103.1" HigherBound="109.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch_SystemException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="4d65518b-c41a-4e7c-8768-29eb70825c59" ParentLink="Catch_Statement" LowerBound="106.1" HigherBound="108.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;Manhattan.SPCA&quot;,System.String.Format(&quot;An exception occurred in ProcessSPCATransReqPostCodeConvoy.odx.The details are : {0}&quot;, ex.InnerException.ToString()));" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Write To Event Log" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="eae7484c-f49b-4bcd-bd10-71056c5531f4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="33.1" HigherBound="36.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="True" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.RAM.SPCA.Orchestrations.SPCAInboundPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SPCAInboundPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="4d917276-6c76-4e6d-964b-0d876ca85a01" ParentLink="PortDeclaration_CLRAttribute" LowerBound="33.1" HigherBound="34.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="dd1705c1-6503-4c3d-be86-549472afc340" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="mpMsgTransportRequestsInternal" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="41825139-2374-4943-9ab6-2585276280a2" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.RAM.SPCA.Schemas.TransportRequestsInternal" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9035c13c-1b20-46bb-8dea-885b33473f78" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="mpMsgTransportRequestInternal" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8e4321af-cb25-499d-9b92-ac9003fbe961" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.RAM.SPCA.Schemas.TransportRequestInternal" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="cd239e1d-aec2-4510-a0c5-d4679b922643" ParentLink="Module_CorrelationType" LowerBound="26.1" HigherBound="30.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorTypeTruckLoadPostCode" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="47b29a34-3eb4-42e8-91a0-4967dcdd37db" ParentLink="CorrelationType_PropertyRef">
+                <om:Property Name="Ref" Value="Manhattan.SPCA.Schemas.ShipToPostCodeModified" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="PropertyRef" OID="94a1cfd8-eafe-450f-8e14-d2686cd8b471" ParentLink="CorrelationType_PropertyRef">
+                <om:Property Name="Ref" Value="Manhattan.SPCA.Schemas.TruckLoadNumber" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.RAM.SPCA.Orchestrations
+{
+    internal messagetype mpMsgTransportRequestsInternal
+    {
+        body Visy.Middleware.RAM.SPCA.Schemas.TransportRequestsInternal msgBody;
+    };
+    internal messagetype mpMsgTransportRequestInternal
+    {
+        body Visy.Middleware.RAM.SPCA.Schemas.TransportRequestInternal msgBody;
+    };
+    internal porttype SPCAInboundPortType
+    {
+        oneway RcvTransportOrderFF
+        {
+            Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti
+        };
+    };
+    internal porttype PortType_SendToTemp
+    {
+        oneway Operation_1
+        {
+            mpMsgTransportRequestsInternal
+        };
+    };
+
+#error "Property '%1' does not exist or is not valid."
+
+#error "Property '%1' does not exist or is not valid."
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessSPCATransReqPostCodeConvoy
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.OrderedDelivery()]
+        port implements SPCAInboundPortType SPCAInboundPort;
+        correlation CorTypeTruckLoadPostCode Correlation_TruckLoadNoPostCode;
+        message Visy.Middleware.RAM.SPCA.Schemas.Purchase_Order POCreateUTF8Message;
+        message Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti MsgTransportRequestFF;
+        message Visy.Middleware.RAM.SPCA.Schemas.Purchase_Order POCreateMessage;
+        message mpMsgTransportRequestsInternal MsgTransportRequestsInternal;
+        message mpMsgTransportRequestInternal MsgTransportRequestInternal;
+        message Visy.Middleware.RAM.SPCA.Schemas.TransportRequestMulti MsgSubsequentTransportRequestFF;
+        message mpMsgTransportRequestsInternal MsgAggregatedRequests;
+        System.Boolean hasTimeOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("dd321cf1-a4a5-4b66-b222-b431b01a2beb")]
+            activate ((BTS.MessageType == "http://Manhattan.SPCA.Schemas.TransportRequestMulti#Request") && (Manhattan.SPCA.Schemas.IsWoolworthCharged == "false") && (Manhattan.SPCA.Schemas.IsPostCodeGrouping == "true"))receive (SPCAInboundPort.RcvTransportOrderFF, MsgTransportRequestFF, initialize Correlation_TruckLoadNoPostCode);
+            hasTimeOut = false;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("317c3da9-e620-4af1-9b9f-3e98ebc28649")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("86f28906-d1cb-49f1-8f64-d3be683bcf79")]
+                    construct MsgTransportRequestsInternal
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a4cf2e04-b520-4b34-a03b-8203e0f73049")]
+                        transform (MsgTransportRequestsInternal.msgBody) = Visy.Middleware.RAM.SPCA.Maps.TransportRequestMulti_To_TransportRequestsInternal (MsgTransportRequestFF);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("19876b2c-cf3f-4bed-99f0-30ced4a64166")]
+                    while (hasTimeOut ==  false)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7b1612e9-d0d3-46ea-9c59-e208ce35abef")]
+                        listen
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("be5d1142-cf0e-41d3-a5f4-f0b5a975b2f5")]
+                            until receive (SPCAInboundPort.RcvTransportOrderFF, MsgSubsequentTransportRequestFF, Correlation_TruckLoadNoPostCode)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("0f0e3536-5433-48be-8dc9-b68a4e5e10da")]
+                                construct MsgTransportRequestInternal
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e4726f14-5c30-451f-8220-68580708f9db")]
+                                    transform (MsgTransportRequestInternal.msgBody) = Visy.Middleware.RAM.SPCA.Maps.TransportRequestMulti_To_TransportRequestInternal (MsgSubsequentTransportRequestFF);
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c6672bdd-6f46-413c-84e4-fb4d1c91e713")]
+                                construct MsgAggregatedRequests
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c7a38cec-7bfd-4cca-b842-8611d44565c9")]
+                                    transform (MsgAggregatedRequests.msgBody) = Visy.Middleware.RAM.SPCA.Maps.ConstructAggregatedTransportRequests (MsgTransportRequestInternal.msgBody, MsgTransportRequestsInternal.msgBody);
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("d872cdd9-5acf-401a-9544-edab11588c2a")]
+                                construct MsgTransportRequestsInternal
+                                {
+                                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("942c616d-bf69-48ec-b755-23cced8712fa")]
+                                    MsgTransportRequestsInternal.msgBody = MsgAggregatedRequests.msgBody;
+                                    MsgTransportRequestsInternal(*) = MsgAggregatedRequests(*);
+                                }
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a7324b15-04de-44db-9619-3ef2cbd812a4")]
+                            timeout new System.TimeSpan(0,0,0,30,0)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6f8ac571-6391-4f1f-b251-303907989c5c")]
+                                hasTimeOut = true;
+                            }
+                        }
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e42c45b3-f540-4a5e-b2d9-1f6e1a8d7781")]
+                    call Visy.Middleware.RAM.SPCA.Orchestrations.SendTransportRequestsToTMS (MsgTransportRequestsInternal);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ef34a712-e333-4526-84ed-842694a80017")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4d65518b-c41a-4e7c-8768-29eb70825c59")]
+                        System.Diagnostics.EventLog.WriteEntry("Manhattan.SPCA",System.String.Format("An exception occurred in ProcessSPCATransReqPostCodeConvoy.odx.The details are : {0}", ex.InnerException.ToString()));
+                    }
+                }
+            }
+        }
+    }
+}
+

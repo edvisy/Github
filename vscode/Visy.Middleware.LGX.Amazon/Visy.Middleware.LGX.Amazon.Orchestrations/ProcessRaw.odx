@@ -1,0 +1,325 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="a0aac2b6-c3b3-4637-a903-af6b040305f8" LowerBound="1.1" HigherBound="75.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Amazon.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="13830060-9049-4781-a384-d2fef8e8855f" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveRaw" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="09cc3646-c142-4856-8974-944eeb8f222b" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1153a2fe-7dc4-4c68-8f15-1b29c394762a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="86835249-dab9-465c-ad29-f14004ca28f5" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendXmlString" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="67100a39-2753-42f5-9684-9a064d033d3c" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LGX" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="97d28350-a460-452a-8221-7f81cca653a2" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.21">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.Amazon.Orchestrations.m_LGXXml" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="1b03a234-9c05-4834-96fb-58286a4567be" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_xmlString" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="36b0f9ef-2f16-424d-955d-1c149afc722a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Amazon.Schemas.xmlstring" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="eafa30b5-7aff-45fe-8856-932095487c07" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_LGXXml" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8407e060-0692-4eed-bfec-fccac3e49991" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="0325b557-fed5-4819-935f-2edd1402c876" ParentLink="Module_ServiceDeclaration" LowerBound="26.1" HigherBound="74.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessRaw" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="c3e002fa-0269-4ef3-b5b6-c9213941159a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="varStrXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="750c4f21-2939-475a-859e-70a973ea1749" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="varXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="02686f80-8ba3-40d7-b2e5-cb6cf8e7339e" ParentLink="ServiceDeclaration_Transaction" LowerBound="27.21" HigherBound="27.56">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4fd6f81f-d45c-4946-aeaa-b06775969927" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgRaw" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="28827823-54d2-412c-a030-3c590d210591" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Amazon.Orchestrations.m_xmlString" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgStrXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7acc11f7-8d97-4a25-a895-c773ae4ed5f6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Amazon.Orchestrations.m_LGXXml" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLGX" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="08109377-fd0f-45a1-8455-75c7ecce83f5" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="128bdc03-33d5-4720-8ec5-943c391d8fd6" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="44.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_ReceiveRaw" />
+                    <om:Property Name="MessageName" Value="msgRaw" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_Raw" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="c4cf0528-3c25-4e1c-8f9b-49e4d71e708d" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="72.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_Atomic" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="AtomicTransaction" OID="8a84a989-e456-42e4-bfbf-8ce563b78c14" ParentLink="Scope_Transaction" LowerBound="46.18" HigherBound="46.51">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="6dfaa553-4977-452a-b97b-9c7090fd986b" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="54.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;varStrXml = Visy.Middleware.LGX.Amazon.Components.RawHtmlParser.CleanHtml(Visy.Middleware.LGX.Amazon.Components.XlangMessageHelper.XlangMessageToString(msgRaw));&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Expressions" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="67ef6806-859d-4ceb-96b8-e8743927654b" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="62.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_msgStrXml" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="97c77c01-e7b2-454d-8d30-1d92c1f284dd" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="61.1">
+                            <om:Property Name="Expression" Value="varXml = new System.Xml.XmlDocument();&#xD;&#xA;varXml.LoadXml(Visy.Middleware.LGX.Amazon.Components.XlangMessageHelper.BuildXmlString(varStrXml));&#xD;&#xA;msgStrXml.xml = varXml;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_xml" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="ef540ebe-3cee-4031-84b4-7ca8657ccd80" ParentLink="Construct_MessageRef" LowerBound="55.31" HigherBound="55.40">
+                            <om:Property Name="Ref" Value="msgStrXml" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="30e096ce-4e25-4e99-9f8b-ede193c0ef35" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="68.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_LGX" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="866ef6d3-ed1f-4629-87b4-887e8642f557" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="67.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Amazon.Maps.htmlraw_to_lgx" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_LGXXml" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="1d746103-02ad-4d12-a358-2db6aed535d7" ParentLink="Transform_InputMessagePartRef" LowerBound="66.98" HigherBound="66.111">
+                                <om:Property Name="MessageRef" Value="msgStrXml" />
+                                <om:Property Name="PartRef" Value="xml" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="430c1b09-53d5-40a8-aba8-f68f0e16212a" ParentLink="Transform_OutputMessagePartRef" LowerBound="66.36" HigherBound="66.46">
+                                <om:Property Name="MessageRef" Value="msgLGX" />
+                                <om:Property Name="PartRef" Value="xml" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="225736d8-6c1f-4211-9911-b6789d4b6a25" ParentLink="Construct_MessageRef" LowerBound="63.31" HigherBound="63.37">
+                            <om:Property Name="Ref" Value="msgLGX" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="524bf285-d868-4202-8059-475fc4ba589c" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                        <om:Property Name="PortName" Value="Port_SendXmlString" />
+                        <om:Property Name="MessageName" Value="msgLGX" />
+                        <om:Property Name="OperationName" Value="LGX" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Lgx" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="TransactionAttribute" OID="7aff054f-9348-4b12-a5d1-7ec04e91e6d4" ParentLink="Statement_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                        <om:Property Name="Batch" Value="True" />
+                        <om:Property Name="Retry" Value="True" />
+                        <om:Property Name="Timeout" Value="60" />
+                        <om:Property Name="Isolation" Value="Serializable" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="30bedbfe-41f3-48d0-962e-82b8a70b9f34" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="29.1" HigherBound="31.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Amazon.Orchestrations.PortType_ReceiveRaw" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_ReceiveRaw" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="485fb765-88c6-4452-aa07-ed2e3f403e78" ParentLink="PortDeclaration_CLRAttribute" LowerBound="29.1" HigherBound="30.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c774658b-7a6b-471c-888b-1711e03b5e74" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="31.1" HigherBound="33.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="24" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Amazon.Orchestrations.PortType_SendXmlString" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendXmlString" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="2224f891-a155-4fbe-b929-594b5cb434a9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="31.1" HigherBound="32.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Amazon.Orchestrations
+{
+    internal messagetype m_xmlString
+    {
+        body Visy.Middleware.LGX.Amazon.Schemas.xmlstring xml;
+    };
+    internal messagetype m_LGXXml
+    {
+        body Visy.Middleware.Common.Schemas.LGX.ORDER xml;
+    };
+    internal porttype PortType_ReceiveRaw
+    {
+        oneway FILE
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_SendXmlString
+    {
+        oneway LGX
+        {
+            m_LGXXml
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction ProcessRaw
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveRaw Port_ReceiveRaw;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendXmlString Port_SendXmlString;
+        message System.Xml.XmlDocument msgRaw;
+        message m_xmlString msgStrXml;
+        message m_LGXXml msgLGX;
+        System.String varStrXml;
+        System.Xml.XmlDocument varXml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("128bdc03-33d5-4720-8ec5-943c391d8fd6")]
+            activate receive (Port_ReceiveRaw.FILE, msgRaw);
+            varStrXml = "";
+            varXml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c4cf0528-3c25-4e1c-8f9b-49e4d71e708d")]
+            [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+            scope atomic transaction Transaction_2
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6dfaa553-4977-452a-b97b-9c7090fd986b")]
+                    
+                    
+                    varStrXml = Visy.Middleware.LGX.Amazon.Components.RawHtmlParser.CleanHtml(Visy.Middleware.LGX.Amazon.Components.XlangMessageHelper.XlangMessageToString(msgRaw));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("67ef6806-859d-4ceb-96b8-e8743927654b")]
+                    construct msgStrXml
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("97c77c01-e7b2-454d-8d30-1d92c1f284dd")]
+                        varXml = new System.Xml.XmlDocument();
+                        varXml.LoadXml(Visy.Middleware.LGX.Amazon.Components.XlangMessageHelper.BuildXmlString(varStrXml));
+                        msgStrXml.xml = varXml;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("30e096ce-4e25-4e99-9f8b-ede193c0ef35")]
+                    construct msgLGX
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("866ef6d3-ed1f-4629-87b4-887e8642f557")]
+                        transform (msgLGX.xml) = Visy.Middleware.LGX.Amazon.Maps.htmlraw_to_lgx (msgStrXml.xml);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("524bf285-d868-4202-8059-475fc4ba589c")]
+                    send (Port_SendXmlString.LGX, msgLGX);
+                }
+            }
+        }
+    }
+}
+

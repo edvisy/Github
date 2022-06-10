@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{662F3CB4-AE77-4694-A113-52CC32C261C4}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.LGX.Woolworths.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.LGX.Woolworths.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.LGX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Source\References\Visy.Middleware.Common.Schemas.LGX.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Ed\Source\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.RuleEngineComponents.InterfaceLookup, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.RuleEngineComponents.InterfaceLookup.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Schemas.cXML.1.2.031, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Schemas.cXML.1.2.031.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="cXMLOrder_To_LGXOrder.btm">
+      <TypeName>cXMLOrder_To_LGXOrder</TypeName>
+      <Namespace>Visy.Middleware.LGX.Woolworths.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="LGXInvoice_To_cXMLInvoice.btm">
+      <TypeName>LGXInvoice_To_cXMLInvoice</TypeName>
+      <Namespace>Visy.Middleware.LGX.Woolworths.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="LGXCreditNotes_To_cXMLInvoice.btm">
+      <TypeName>LGXCreditNotes_To_cXMLInvoice</TypeName>
+      <Namespace>Visy.Middleware.LGX.Woolworths.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="cXMLOrder_To_LGXOrder.xsl" />
+    <Content Include="cXMLOrder_To_LGXOrder_extxml.xml" />
+    <Content Include="LGXCreditNotes_To_cXMLInvoice.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="LGXInvoice_To_cXMLInvoice.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="LGXCreditNotes_To_cXMLInvoice_extxml.xml" />
+    <Content Include="LGXInvoice_To_cXMLInvoice_extxml.xml" />
+    <Content Include="Transform_OrderResponsecXML.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Transform_OrderResponsecXML_extxml.xml" />
+    <Map Include="Transform_OrderResponsecXML.btm">
+      <TypeName>Transform_OrderResponsecXML</TypeName>
+      <Namespace>Visy.Middleware.LGX.Woolworths.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.LGX.Woolworths.Components\Visy.Middleware.LGX.Woolworths.Components.btproj">
+      <Project>{27b9dcaf-73f0-4b9e-b3c3-bb0a560eeda6}</Project>
+      <Name>Visy.Middleware.LGX.Woolworths.Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

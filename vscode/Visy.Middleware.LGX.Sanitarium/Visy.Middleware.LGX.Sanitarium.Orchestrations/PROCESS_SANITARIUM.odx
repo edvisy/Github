@@ -1,0 +1,287 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="1601f738-fadc-4220-b79d-cc8da60239ea" LowerBound="1.1" HigherBound="72.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.Sanitarium.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="760320ba-75e9-4f0e-b5a4-b41752842dc0" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SanitariumPort" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="8fe213c1-baa5-4b02-baaf-28758971f115" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InSanitariumOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="892c1804-eb6c-4754-b8b3-23da144b9a21" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="84c7a34a-5383-4ca7-8bfd-c8b080d1b174" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendOrder" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5e27a184-68b8-42a3-9e4e-8ac2a45f85ba" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendSanitariumOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="dafbd30b-7db4-4926-b8e9-f6355117ba6f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.53">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="0a73a743-c65c-4618-bedb-fc609013f405" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="71.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PROCESS_SANITARIUM" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="5c33d236-0e4b-4d60-9885-f3e7d083fea1" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="03a64d83-4630-4e5b-acb8-e1e17a93e835" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sFileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ad2dab6f-e94e-4878-a302-52aa16317c56" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Guid" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GUID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d413a993-a901-4202-9fca-c5a1f41b84c6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="temp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0d3676af-0759-462d-8b7a-917365e01f41" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.ORDER" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgCommonOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e2bc6cb5-4c3f-42f6-9d8e-b51f1ecb2b19" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.Orders.EAN008.EFACT_D96A_ORDERS_EAN008" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSanitariumOrder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="2dda81be-8707-4c11-8e3f-a49d1c11a824" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgXmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="a52bbe30-c9b7-433f-a168-5681ccd726d7" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="a0926df7-d511-4830-b378-cf32d52fa434" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="39.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="RcvSanitariumOrder" />
+                    <om:Property Name="MessageName" Value="msgXmlDoc" />
+                    <om:Property Name="OperationName" Value="InSanitariumOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="3966043f-defc-43d5-bb43-b7eda1b2636c" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="47.1">
+                    <om:Property Name="Expression" Value="//xmlDoc = msgEDI_Order;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(msgXmlDoc.OuterXml);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Trace Input Message" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="1cdf6d04-6e8c-42a0-a2d3-4931608385ef" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="67.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructCommon Message" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="552fd88d-a0bd-4a76-8d3f-4254c5114da7" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="58.1">
+                        <om:Property Name="Expression" Value="msgSanitariumOrder = msgXmlDoc;&#xD;&#xA;GUID = System.Guid.NewGuid();&#xD;&#xA;temp = GUID.ToString();&#xD;&#xA;temp = temp.Replace(&quot;{&quot;,&quot;&quot;);&#xD;&#xA;temp = temp.Replace(&quot;}&quot;,&quot;&quot;);&#xD;&#xA;sFileName = &quot;SANITARIUM..&quot; + temp + &quot;~1~1.xml&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Assign msgSanitariumOrde" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Transform" OID="73cfcd34-85cb-4748-9cd2-b840ef37a753" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="60.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.Sanitarium.Maps.SANITARIUM_MAP" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="SanitEDI_X_CommenOrder" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="f9babb28-063b-48ef-8cac-18e238878598" ParentLink="Transform_InputMessagePartRef" LowerBound="59.98" HigherBound="59.116">
+                            <om:Property Name="MessageRef" Value="msgSanitariumOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="4e5689bf-d28e-4b38-b12d-464026bda06c" ParentLink="Transform_OutputMessagePartRef" LowerBound="59.28" HigherBound="59.42">
+                            <om:Property Name="MessageRef" Value="msgCommonOrder" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="6a5a6ec7-8982-4959-81ba-075538beab4f" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="66.1">
+                        <om:Property Name="Expression" Value="msgCommonOrder.Header.biztalk_id = temp + &quot;~1~1&quot;;&#xD;&#xA;xmlDoc = msgCommonOrder;&#xD;&#xA;&#xD;&#xA;msgCommonOrder(FILE.ReceivedFileName) = sFileName;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;msgCommonOrder &quot; + xmlDoc.OuterXml);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Trace Outgoing Message" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="c3faf131-cb98-489e-b245-be1c0d5582b5" ParentLink="Construct_MessageRef" LowerBound="48.23" HigherBound="48.37">
+                        <om:Property Name="Ref" Value="msgCommonOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="6f0443a5-3008-4625-b5f8-646d4d865a6f" ParentLink="Construct_MessageRef" LowerBound="48.39" HigherBound="48.57">
+                        <om:Property Name="Ref" Value="msgSanitariumOrder" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="e42a35d5-d220-4713-88b9-6efab4a0581e" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="69.1">
+                    <om:Property Name="PortName" Value="SendOrderCommon" />
+                    <om:Property Name="MessageName" Value="msgCommonOrder" />
+                    <om:Property Name="OperationName" Value="SendSanitariumOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendCommonOrder" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1cf73af5-f829-4f46-ba3e-93e36e30ccbc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Sanitarium.Orchestrations.SanitariumPort" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvSanitariumOrder" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="f15c6af7-2ccd-436c-9bee-db0f3df861d4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b6c41972-c15c-4514-ada3-3bcd1e5ead16" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.Sanitarium.Orchestrations.PortType_SendOrder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendOrderCommon" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="8aa7075b-c545-4fdb-bcee-50cb817c9413" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.Sanitarium.Orchestrations
+{
+    internal porttype SanitariumPort
+    {
+        oneway InSanitariumOperation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_SendOrder
+    {
+        oneway SendSanitariumOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.ORDER
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PROCESS_SANITARIUM
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SanitariumPort RcvSanitariumOrder;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendOrder SendOrderCommon;
+        message Visy.Middleware.Common.Schemas.LGX.ORDER msgCommonOrder;
+        message Visy.Middleware.Common.Schemas.EDI.Orders.EAN008.EFACT_D96A_ORDERS_EAN008 msgSanitariumOrder;
+        message System.Xml.XmlDocument msgXmlDoc;
+        System.Xml.XmlDocument xmlDoc;
+        System.String sFileName;
+        System.Guid GUID;
+        System.String temp;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a0926df7-d511-4830-b378-cf32d52fa434")]
+            activate receive (RcvSanitariumOrder.InSanitariumOperation, msgXmlDoc);
+            xmlDoc = new System.Xml.XmlDocument();
+            sFileName = "";
+            temp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3966043f-defc-43d5-bb43-b7eda1b2636c")]
+            //xmlDoc = msgEDI_Order;
+            
+            System.Diagnostics.Trace.WriteLine(msgXmlDoc.OuterXml);
+            
+            
+            
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1cdf6d04-6e8c-42a0-a2d3-4931608385ef")]
+            construct msgCommonOrder, msgSanitariumOrder
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("552fd88d-a0bd-4a76-8d3f-4254c5114da7")]
+                msgSanitariumOrder = msgXmlDoc;
+                GUID = System.Guid.NewGuid();
+                temp = GUID.ToString();
+                temp = temp.Replace("{","");
+                temp = temp.Replace("}","");
+                sFileName = "SANITARIUM.." + temp + "~1~1.xml";
+                
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("73cfcd34-85cb-4748-9cd2-b840ef37a753")]
+                transform (msgCommonOrder) = Visy.Middleware.LGX.Sanitarium.Maps.SANITARIUM_MAP (msgSanitariumOrder);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a5a6ec7-8982-4959-81ba-075538beab4f")]
+                msgCommonOrder.Header.biztalk_id = temp + "~1~1";
+                xmlDoc = msgCommonOrder;
+                
+                msgCommonOrder(FILE.ReceivedFileName) = sFileName;
+                System.Diagnostics.Trace.WriteLine("msgCommonOrder " + xmlDoc.OuterXml);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e42a35d5-d220-4713-88b9-6efab4a0581e")]
+            send (SendOrderCommon.SendSanitariumOperation, msgCommonOrder);
+        }
+    }
+}
+

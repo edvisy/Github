@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA2F3122-E6A1-464B-8CE7-B6391AD231CD}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</RootNamespace>
+    <AssemblyName>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.LGX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.LGX.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="PDFAttachmentExtract.odx">
+      <TypeName>PDFAttachmentExtract</TypeName>
+      <Namespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.LGX.DeliveryWare.Orders.Component\Visy.Middleware.LGX.DeliveryWare.Orders.Component.csproj">
+      <Project>{227fd113-a8e8-4fb9-95b8-8ac01bd16d18}</Project>
+      <Name>Visy.Middleware.LGX.DeliveryWare.Orders.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.LGX.DeliveryWare.Orders.Maps\Visy.Middleware.LGX.DeliveryWare.Orders.Maps.btproj">
+      <Project>{be424f8d-953c-463e-af30-0c0aef0e79cc}</Project>
+      <Name>Visy.Middleware.LGX.DeliveryWare.Orders.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.LGX.DeliveryWare.Orders.Schemas\Visy.Middleware.LGX.DeliveryWare.Orders.Schemas.btproj">
+      <Project>{e148964f-ecc0-4c81-9de1-c69de40d48af}</Project>
+      <Name>Visy.Middleware.LGX.DeliveryWare.Orders.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="InboundSingleton.odx">
+      <TypeName>InboundSingleton</TypeName>
+      <Namespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="LGXOrdRspConvoy.odx">
+      <TypeName>LGXOrdRspConvoy</TypeName>
+      <Namespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="ProcessOrder.odx">
+      <TypeName>ProcessOrder</TypeName>
+      <Namespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="ProcessOrderResponse.odx">
+      <TypeName>ProcessOrderResponse</TypeName>
+      <Namespace>Visy.Middleware.LGX.DeliveryWare.Orders.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

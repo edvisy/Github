@@ -1,0 +1,330 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="b83c4ae1-498f-4e75-879e-cdec0aa88d1f" LowerBound="1.1" HigherBound="92.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="39f14c75-ab47-4e5b-bfcd-13edd0080baa" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveNIPPONSTEEL_FF_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2f3a78dc-f65c-459d-bbf8-be4113497fdf" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveNIPPONSTEEL_FF_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="4fb06220-7a05-46b0-b3a9-3d5d511cceb3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.67">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.NipponSteel.Schemas.NIPPONSTEEL_FF" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="26165f14-ff24-4965-a50a-da176649a18b" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendGoodReceipt_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="968b8dc0-00f5-4bd4-9029-d6bfe3040129" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGoodReceipt_Operation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="53e6030e-67aa-4b5f-8dde-70b43da8e360" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="532db7ea-e983-4c3f-9e2c-976dd62fd62a" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="91.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CreateGoodsReceipt" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="0777455f-d92a-47fb-b7c0-2f0652f7fc8e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Components.GoodsReceiptBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Builder" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5be096fd-d3ff-4c40-bd7d-e83a468ece3b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3992fd39-fe96-4ca1-af3d-655343eebb5f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Counter" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="bcdca7c1-0d24-4769-ae37-2393974001b4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.UInt32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="loopIndex" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5c73ed6d-9957-4cd9-b3c4-46a9496888f9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="str" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a2458ffa-f397-4087-80c5-d8fffef9f351" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.UInt32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xpathIndex" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="AtomicTransaction" OID="886aefc9-4ec2-4832-9ea4-257fc82b696a" ParentLink="ServiceDeclaration_Transaction" LowerBound="20.21" HigherBound="20.40">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="TransactionAttribute" OID="c9605104-fa75-4af7-b16e-5693dbbdbde0" ParentLink="ServiceDeclaration_CLRAttribute" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="Batch" Value="True" />
+                <om:Property Name="Retry" Value="True" />
+                <om:Property Name="Timeout" Value="60" />
+                <om:Property Name="Isolation" Value="Serializable" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="635a646a-602c-4488-849f-a0cffd473132" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Schemas.NIPPONSTEEL_FF" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9f2d0afe-00b5-4df9-ba4e-0b82448ae28f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e78c6bd7-4302-4145-b3aa-575073595987" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Schemas.ArrayCount" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArrayCountmsg" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="1b25ad4c-eb4f-41c0-b9d4-66238fbfd710" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="a4bbb135-0036-44d8-ab42-b7f6977fd5be" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="43.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveNIPPONSTEEL_FF_Port" />
+                    <om:Property Name="MessageName" Value="Inbound" />
+                    <om:Property Name="OperationName" Value="ReceiveNIPPONSTEEL_FF_Operation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_In" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="a14efde1-e1d3-45de-a2cd-e40dcc74dff6" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="61.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_2" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="f28db622-6b8e-4852-8b0e-a721195a0c20" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="60.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;Builder = new Visy.Middleware.SAP.NipponSteel.Components.GoodsReceiptBuilder(Inbound);&#xD;&#xA;&#xD;&#xA;ArrayCountmsg = Builder.CountOrders();&#xD;&#xA;&#xD;&#xA; xmlDoc=ArrayCountmsg;&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;DEBUG FROM ORCH &quot; + xmlDoc.OuterXml)  ;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Counter = System.Convert.ToInt32(xpath(ArrayCountmsg, &quot;count(//*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''])&quot;));&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;DEBUG xpath count &quot; + Counter.ToString());" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="f9ec1815-bd47-4b15-9de2-691364ad07d7" ParentLink="Construct_MessageRef" LowerBound="44.23" HigherBound="44.36">
+                        <om:Property Name="Ref" Value="ArrayCountmsg" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="While" OID="827b9d53-74fc-44cc-a7b1-c5674041572e" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="89.1">
+                    <om:Property Name="Expression" Value="loopIndex &lt; Counter" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Extracted_PO" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="62500042-b93d-490f-af55-16075b81b1a4" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="68.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;System.Diagnostics.Trace.WriteLine(&quot;LDEBUG: inside the loop&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Trace" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="61a16459-4287-4381-82d9-63c4b3f06f6c" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="86.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_GoodRece" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="b626f52c-62bd-4f76-b405-2e12a7802101" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="85.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;xpathIndex = loopIndex + 1;&#xD;&#xA;str = &quot;/*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''][&quot;+ xpathIndex.ToString()  + &quot;]&quot;;&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(&quot;ADEBUG ArrayCountmsg,xpath &quot; +str );&#xD;&#xA;&#xD;&#xA;str = xpath(ArrayCountmsg,str);&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(&quot;ADEBUG ArrayCountmsg,str &quot; +str );&#xD;&#xA;&#xD;&#xA;Out = Builder.GetOrder(xpath(ArrayCountmsg,str));&#xD;&#xA;&#xD;&#xA;loopIndex = loopIndex + 1;&#xD;&#xA;&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(&quot;DEBUG counter&quot; + Counter.ToString());" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="CreateGoodsReceipt" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="f8e36ef4-2649-4703-aa58-7bc2a6933b97" ParentLink="Construct_MessageRef" LowerBound="69.27" HigherBound="69.30">
+                            <om:Property Name="Ref" Value="Out" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="aea1f7b2-1584-492b-96d2-35c289332f83" ParentLink="ComplexStatement_Statement" LowerBound="86.1" HigherBound="88.1">
+                        <om:Property Name="PortName" Value="SendGoodReceipt_Port" />
+                        <om:Property Name="MessageName" Value="Out" />
+                        <om:Property Name="OperationName" Value="SendGoodReceipt_Operation" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send Out" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="535e78ac-2dcc-4a53-9519-d7b01dab6925" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="22.1" HigherBound="24.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations.ReceiveNIPPONSTEEL_FF_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveNIPPONSTEEL_FF_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="704952c8-dcb4-4d10-a98d-3bedcd84ac5f" ParentLink="PortDeclaration_CLRAttribute" LowerBound="22.1" HigherBound="23.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8144acf9-1b50-4b93-991d-a24e43ca7788" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="24.1" HigherBound="26.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="38" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.NipponSteel.Orchestrations.SendGoodReceipt_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendGoodReceipt_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="e01f680c-218b-4ac4-9212-8fda1b99eb03" ParentLink="PortDeclaration_CLRAttribute" LowerBound="24.1" HigherBound="25.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.NipponSteel.Orchestrations
+{
+    internal porttype ReceiveNIPPONSTEEL_FF_PortType
+    {
+        oneway ReceiveNIPPONSTEEL_FF_Operation
+        {
+            Visy.Middleware.SAP.NipponSteel.Schemas.NIPPONSTEEL_FF
+        };
+    };
+    internal porttype SendGoodReceipt_PortType
+    {
+        oneway SendGoodReceipt_Operation
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    [Microsoft.XLANGs.BaseTypes.Transaction(Retry=true,Batch=true,Timeout=60,TranIsolationLevel=System.Data.IsolationLevel.Serializable)]
+    internal service atomic transaction CreateGoodsReceipt
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveNIPPONSTEEL_FF_PortType ReceiveNIPPONSTEEL_FF_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendGoodReceipt_PortType SendGoodReceipt_Port;
+        message Visy.Middleware.SAP.NipponSteel.Schemas.NIPPONSTEEL_FF Inbound;
+        message System.Xml.XmlDocument Out;
+        message Visy.Middleware.SAP.NipponSteel.Schemas.ArrayCount ArrayCountmsg;
+        Visy.Middleware.SAP.NipponSteel.Components.GoodsReceiptBuilder Builder;
+        System.Xml.XmlDocument xmlDoc;
+        System.Int32 Counter;
+        System.UInt32 loopIndex;
+        System.String str;
+        System.UInt32 xpathIndex;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a4bbb135-0036-44d8-ab42-b7f6977fd5be")]
+            activate receive (ReceiveNIPPONSTEEL_FF_Port.ReceiveNIPPONSTEEL_FF_Operation, Inbound);
+            xmlDoc = new System.Xml.XmlDocument();
+            Counter = 1;
+            loopIndex = 0;
+            str = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a14efde1-e1d3-45de-a2cd-e40dcc74dff6")]
+            construct ArrayCountmsg
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("f28db622-6b8e-4852-8b0e-a721195a0c20")]
+                
+                Builder = new Visy.Middleware.SAP.NipponSteel.Components.GoodsReceiptBuilder(Inbound);
+                
+                ArrayCountmsg = Builder.CountOrders();
+                
+                 xmlDoc=ArrayCountmsg;
+                
+                System.Diagnostics.Trace.WriteLine("DEBUG FROM ORCH " + xmlDoc.OuterXml)  ;
+                
+                
+                Counter = System.Convert.ToInt32(xpath(ArrayCountmsg, "count(//*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()=''])"));
+                
+                System.Diagnostics.Trace.WriteLine("DEBUG xpath count " + Counter.ToString());
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("827b9d53-74fc-44cc-a7b1-c5674041572e")]
+            while (loopIndex < Counter)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("62500042-b93d-490f-af55-16075b81b1a4")]
+                
+                
+                System.Diagnostics.Trace.WriteLine("LDEBUG: inside the loop");
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("61a16459-4287-4381-82d9-63c4b3f06f6c")]
+                construct Out
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b626f52c-62bd-4f76-b405-2e12a7802101")]
+                    
+                    xpathIndex = loopIndex + 1;
+                    str = "/*[local-name()='ArrayOfString' and namespace-uri()='']/*[local-name()='string' and namespace-uri()='']["+ xpathIndex.ToString()  + "]";
+                    //System.Diagnostics.Trace.WriteLine("ADEBUG ArrayCountmsg,xpath " +str );
+                    
+                    str = xpath(ArrayCountmsg,str);
+                    //System.Diagnostics.Trace.WriteLine("ADEBUG ArrayCountmsg,str " +str );
+                    
+                    Out = Builder.GetOrder(xpath(ArrayCountmsg,str));
+                    
+                    loopIndex = loopIndex + 1;
+                    
+                    //System.Diagnostics.Trace.WriteLine("DEBUG counter" + Counter.ToString());
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("aea1f7b2-1584-492b-96d2-35c289332f83")]
+                send (SendGoodReceipt_Port.SendGoodReceipt_Operation, Out);
+            }
+        }
+    }
+}
+

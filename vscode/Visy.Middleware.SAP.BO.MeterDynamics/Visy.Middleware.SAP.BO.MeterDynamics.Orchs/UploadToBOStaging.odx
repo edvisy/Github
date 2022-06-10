@@ -1,0 +1,221 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="6170a6a7-4922-4d49-aff1-afc1274fdf07" LowerBound="1.1" HigherBound="45.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.BO.MeterDynamics.Orchs" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="b5e02f3c-64a3-4170-8674-4cc16fc60d0e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9cb2d7ca-ee87-4ce4-9ca0-7a02102985c8" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveJSON_Port_Op" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="010e4971-1f41-4d2e-bae8-b7ab17dc3ba7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.69">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.JSONSchema1" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0daef58a-954d-4585-9679-9922dda10469" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_2" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="340958cc-abd5-4cbf-ba36-dda3add60642" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Insert" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="15f3092f-02a4-4e00-b7bc-68859fe56ae5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.100">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.Insert" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="75fc64f2-df01-4064-b3cb-eb44342c5551" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="15.102" HigherBound="15.197">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.InsertResponse" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="01ad9ce7-0c41-421f-8184-6028e4fcace1" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="44.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="UploadToBOStaging" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="1df554a3-9d7c-4d40-9eae-7f1a866bda7d" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="447e74eb-07d0-4e13-8346-358e051f4d74" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveJSON_Port" />
+                    <om:Property Name="MessageName" Value="jsonin" />
+                    <om:Property Name="OperationName" Value="ReceiveJSON_Port_Op" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_JSON" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="e595ad61-1f30-4050-948c-efa3072e39a0" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="38.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct SQL XML from JSON XML" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="c0f740db-6229-48d3-bc70-29ba62bb7bb6" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="37.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.BO.MeterDynamics.Maps.JSONXMLToSQLXML" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_JSONXML_To_SQLXML" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="a18b9d7a-5a3d-4643-900c-6b8b7e37f9c5" ParentLink="Transform_InputMessagePartRef" LowerBound="36.107" HigherBound="36.113">
+                            <om:Property Name="MessageRef" Value="jsonin" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="6d1b3c50-3e4d-4745-b519-84360ff0add6" ParentLink="Transform_OutputMessagePartRef" LowerBound="36.28" HigherBound="36.44">
+                            <om:Property Name="MessageRef" Value="sqlinsertrequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b75c086e-c306-4a9a-a0aa-767aa6e23a1b" ParentLink="Construct_MessageRef" LowerBound="33.23" HigherBound="33.39">
+                        <om:Property Name="Ref" Value="sqlinsertrequest" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="58c28817-64af-491a-a8b7-bbd76eb01e09" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="40.1">
+                    <om:Property Name="PortName" Value="InsertXML_Port" />
+                    <om:Property Name="MessageName" Value="sqlinsertrequest" />
+                    <om:Property Name="OperationName" Value="Insert" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_SQLinsertrequest" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="21886eb1-d77c-442e-8e30-ce487f7f5b02" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="InsertXML_Port" />
+                    <om:Property Name="MessageName" Value="sqlinsertresponse" />
+                    <om:Property Name="OperationName" Value="Insert" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_SQLinsertresponse" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3ad7f913-01a7-4473-a165-51f7f5dcd985" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.BO.MeterDynamics.Orchs.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveJSON_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="36f27a88-3724-4d2f-bca0-beff27180ad1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="4944f13d-f513-4556-85df-2386dae01260" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="27" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.BO.MeterDynamics.Orchs.PortType_2" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InsertXML_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="1272bad9-bffc-4b15-99e1-d29210607e36" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="cccca79b-c1f9-4f11-b9ae-3a8940199242" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.JSONSchema1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="jsonin" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="566ad3d7-8144-4683-9e32-6303bfb412ba" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.Insert" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sqlinsertrequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ae1467c7-329b-48dd-b784-ddff463aacaa" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.InsertResponse" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sqlinsertresponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.BO.MeterDynamics.Orchs
+{
+    public porttype PortType_1
+    {
+        oneway ReceiveJSON_Port_Op
+        {
+            Visy.Middleware.SAP.BO.MeterDynamics.Schemas.JSONSchema1
+        };
+    };
+    internal porttype PortType_2
+    {
+        requestresponse Insert
+        {
+            Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.Insert, Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.InsertResponse
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service UploadToBOStaging
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_1 ReceiveJSON_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_2 InsertXML_Port;
+        message Visy.Middleware.SAP.BO.MeterDynamics.Schemas.JSONSchema1 jsonin;
+        message Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.Insert sqlinsertrequest;
+        message Visy.Middleware.SAP.BO.MeterDynamics.Schemas.TableOperation_dbo_MeteringDynamics.InsertResponse sqlinsertresponse;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("447e74eb-07d0-4e13-8346-358e051f4d74")]
+            activate receive (ReceiveJSON_Port.ReceiveJSON_Port_Op, jsonin);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e595ad61-1f30-4050-948c-efa3072e39a0")]
+            construct sqlinsertrequest
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c0f740db-6229-48d3-bc70-29ba62bb7bb6")]
+                transform (sqlinsertrequest) = Visy.Middleware.SAP.BO.MeterDynamics.Maps.JSONXMLToSQLXML (jsonin);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("58c28817-64af-491a-a8b7-bbd76eb01e09")]
+            send (InsertXML_Port.Insert, sqlinsertrequest);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("21886eb1-d77c-442e-8e30-ce487f7f5b02")]
+            receive (InsertXML_Port.Insert, sqlinsertresponse);
+        }
+    }
+}
+

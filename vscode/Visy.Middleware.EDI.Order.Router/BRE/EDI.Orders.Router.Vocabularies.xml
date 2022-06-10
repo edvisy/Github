@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="EDI.Orders.Router.Policies">
+    <version major="1" minor="2" description="" modifiedby="VISY\bangged" date="2018-10-10T13:01:15.0915091+11:00" />
+    <version major="1" minor="0" description="" modifiedby="VISY\bangged" date="2018-10-10T13:02:21.8111939+11:00" />
+    <configuration />
+    <bindings>
+      <class ref="EDIOrderFactObject" class="EDIOrderFactObject" instance="0" instances="16" selectivity="1">
+        <assembly>Visy.Middleware.EDI.Order.Router.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Visy.Middleware.EDI.Order.Router.Components\v4.0_1.0.0.0__7e7bc6e5fd308d12\Visy.Middleware.EDI.Order.Router.Components.dll-->
+        <namespace>Visy.Middleware.EDI.Order.Router.Components</namespace>
+      </class>
+    </bindings>
+    <rule name="Dominos" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="7cb58f2e-b94d-48e8-b00b-1acc6e3573f6" />
+              <classmember member="EmailAddress" sideeffects="true">
+                <classref ref="EDIOrderFactObject" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>pdf.test@visy.com.au</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="846faad3-05c0-471f-b077-43a646e80dbc" element="8d81d42d-6779-4902-aee9-00cd2f0b5df5" />
+          <classmember member="InterfaceFolderPath" sideeffects="true">
+            <classref ref="EDIOrderFactObject" />
+            <argument>
+              <constant>
+                <string>D:\interfaces\LGX.Dominos\Inbound</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

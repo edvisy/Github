@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF58D98F-DDD9-4B3D-AAF2-4F5035CBFA72}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.Common.Schemas.EDI</RootNamespace>
+    <AssemblyName>Visy.Middleware.Common.Schemas.EDI</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+    <Schema Include="EFACT_D96A_DESADV.xsd">
+      <TypeName>EFACT_D96A_DESADV</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="EFACT_D96A_INVOIC.xsd">
+      <TypeName>EFACT_D96A_INVOIC</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ACKControl.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ACKControl</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="ACKControl1.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ACKControl1</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="ACKControl2.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ACKControl2</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_4.1_CONTRL.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_4_1_CONTRL</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_D00A_INVOIC.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_D00A_INVOIC</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_D01B_DESADV.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_D01B_DESADV</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_D01B_INVOIC_EAN011.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_D01B_INVOIC_EAN011</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_D01B_REMADV_EAN005.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_D01B_REMADV_EAN005</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+    <Schema Include="EFACT_D96A_REMADV.xsd">
+      <SubType>Task</SubType>
+      <TypeName>EFACT_D96A_REMADV</TypeName>
+      <Namespace>Visy.Middleware.Common.Schemas.EDI</Namespace>
+    </Schema>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)*.dll" "..\..\..\..\References" /Y 
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

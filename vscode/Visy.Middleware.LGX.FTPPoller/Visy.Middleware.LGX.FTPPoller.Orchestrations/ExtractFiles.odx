@@ -1,0 +1,231 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="0668ae77-a5cd-4b2f-9633-f4e987e16ed7" LowerBound="1.1" HigherBound="68.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.FTPPoller" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="37200f8d-737c-4971-a015-803e71eaa904" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Message_In" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e567323a-4c72-40d0-96e0-d297465d82d0" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMailIn" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="7c48d5a2-d413-4d50-9e2d-dd3924aba465" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="8356e61e-aa64-41b4-ba2f-6a905b4fe1d7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Messag_Out" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9d352efd-ff9d-469f-bfa1-5e57b50acdd5" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SingleMessageOut" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="11329819-2ba4-4c18-9394-d34ce685fc41" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="40f3bf55-7388-484e-a9f0-f6172021f5d8" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="67.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ExtractFiles" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="81b0863e-31e7-4a1b-905e-7a77aa7dabfe" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="filePrefix" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ba28a028-8050-4ac0-b356-c5339f86c4e6" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FileNameExtension" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b3f4934c-201e-46b5-afa1-656d2393bcfe" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5a0a5c24-8417-48e5-957f-6f6f5e511b11" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="b01b64af-08b6-4178-be8f-f319f2e48067" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="d1e5fb25-f931-478a-a24c-e601c3c4dc2f" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="MailServer" />
+                    <om:Property Name="MessageName" Value="In" />
+                    <om:Property Name="OperationName" Value="EMailIn" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_In" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="955a3b71-6fa7-479a-9f74-0a65ef1a43c1" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="49.1">
+                    <om:Property Name="Expression" Value="filePrefix = In(BTS.InboundTransportLocation);&#xD;&#xA;&#xD;&#xA;//System.Diagnostics.EventLog.WriteEntry(&quot;FTPPOLLER&quot;,&quot;Before : &quot; + filePrefix);&#xD;&#xA;&#xD;&#xA;//Get string after //  ( incomming string should look like ftp://servername:port//directory1/directory2/...&#xD;&#xA;filePrefix = filePrefix.Substring(filePrefix.LastIndexOf(&quot;//&quot;) + 2);&#xD;&#xA;//replace / with .&#xD;&#xA;filePrefix = filePrefix.Replace('/','.');&#xD;&#xA;&#xD;&#xA;//System.Diagnostics.EventLog.WriteEntry(&quot;FTPPOLLER&quot;,&quot;After : &quot; + filePrefix);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Calculate Prefix" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="fca8b327-344d-4e26-8f76-8a7c50f8637c" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="63.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct Message" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="c0b39014-27a3-4aeb-b641-497b712bb299" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="62.1">
+                        <om:Property Name="Expression" Value="Out = In;&#xD;&#xA;FileNameExtension = In(FTP.ReceivedFileName);&#xD;&#xA;FileNameExtension = System.IO.Path.GetExtension(FileNameExtension);&#xD;&#xA;&#xD;&#xA;// Set message properties&#xD;&#xA;Out(FILE.ReceivedFileName) = filePrefix + &quot;~&quot; + In(BTS.MessageID) + &quot;~01&quot; + FileNameExtension;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="Copy Message" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="a9baae99-e397-4316-a414-381210a708d2" ParentLink="Construct_MessageRef" LowerBound="50.23" HigherBound="50.26">
+                        <om:Property Name="Ref" Value="Out" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="5fd4a3d4-8b65-4e87-b966-c5b22c19a91a" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
+                    <om:Property Name="PortName" Value="SaveBodyAsAttachment" />
+                    <om:Property Name="MessageName" Value="Out" />
+                    <om:Property Name="OperationName" Value="SingleMessageOut" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="OutMsg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a08ef3d-062f-439b-97c3-45c4e67dcdc2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.FTPPoller.Message_In" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MailServer" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="e909c027-3f7e-4b05-97a3-ebe9d4e8d164" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c71af13a-c17b-4cac-9a87-52cb75a1769b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="35" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.FTPPoller.Messag_Out" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SaveBodyAsAttachment" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="59ead1d4-93ed-4cd2-946d-3077fba75230" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.FTPPoller
+{
+    internal porttype Message_In
+    {
+        oneway EMailIn
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype Messag_Out
+    {
+        oneway SingleMessageOut
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ExtractFiles
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements Message_In MailServer;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Messag_Out SaveBodyAsAttachment;
+        message System.Xml.XmlDocument In;
+        message System.Xml.XmlDocument Out;
+        System.String filePrefix;
+        System.String FileNameExtension;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d1e5fb25-f931-478a-a24c-e601c3c4dc2f")]
+            activate receive (MailServer.EMailIn, In);
+            filePrefix = "";
+            FileNameExtension = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("955a3b71-6fa7-479a-9f74-0a65ef1a43c1")]
+            filePrefix = In(BTS.InboundTransportLocation);
+            
+            //System.Diagnostics.EventLog.WriteEntry("FTPPOLLER","Before : " + filePrefix);
+            
+            //Get string after //  ( incomming string should look like ftp://servername:port//directory1/directory2/...
+            filePrefix = filePrefix.Substring(filePrefix.LastIndexOf("//") + 2);
+            //replace / with .
+            filePrefix = filePrefix.Replace('/','.');
+            
+            //System.Diagnostics.EventLog.WriteEntry("FTPPOLLER","After : " + filePrefix);
+            
+            
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fca8b327-344d-4e26-8f76-8a7c50f8637c")]
+            construct Out
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c0b39014-27a3-4aeb-b641-497b712bb299")]
+                Out = In;
+                FileNameExtension = In(FTP.ReceivedFileName);
+                FileNameExtension = System.IO.Path.GetExtension(FileNameExtension);
+                
+                // Set message properties
+                Out(FILE.ReceivedFileName) = filePrefix + "~" + In(BTS.MessageID) + "~01" + FileNameExtension;
+                
+                
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5fd4a3d4-8b65-4e87-b966-c5b22c19a91a")]
+            send (SaveBodyAsAttachment.SingleMessageOut, Out);
+        }
+    }
+}
+

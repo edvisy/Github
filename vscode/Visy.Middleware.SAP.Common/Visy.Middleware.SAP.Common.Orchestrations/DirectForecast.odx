@@ -1,0 +1,383 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="3384953a-40bd-44ec-98ff-9bb6cd044108" LowerBound="1.1" HigherBound="98.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Common.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="f3736ce9-6c42-4c49-8a70-926871180a78" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveDirectFC_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="de38407a-0a64-40ca-9654-22cb6ff160dc" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="45812d9a-40b7-41b5-9d41-26e35928fff4" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.74">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="660dcd3d-da2f-49b7-a6ac-0a2da771d8e6" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ArchiveFC_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7506bff8-111a-4123-a2da-64cd835ba6cf" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="adb004ff-f47c-4c13-937f-b671b00cece9" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.74">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="6673c80f-df48-4658-8c44-8dd92a9563cc" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send2SAP_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8d229e8a-106e-482a-91ff-805a9aa99050" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="618a90e5-9eee-4173-9bc5-723fd8ca966d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.74">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="f48fd016-05ce-43b5-9a1d-6c55d4c3877c" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="97.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DirectForecast" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="22549d9f-cad5-41c3-974b-8b5aeeb3914c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sFileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="355a164e-9263-450f-af1a-c5fec6864e28" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sCustomerCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f1837a0b-8366-47fc-94c0-a3979cdd845a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sDocType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7922b720-6469-41a8-b84c-79f738d74fba" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="40.1" HigherBound="41.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sApplicationName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="179d8961-6a23-4d81-97e3-77c530bba3d4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sBiztalkID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e81e065e-ced3-4abe-9f24-892facfa4c4f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sTemp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="026b6b83-512c-4209-aa1c-572c17a30fcb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sExtension" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="97c9e7d5-eef7-482a-b84d-1b1af1348f25" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sOutputFileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="824ea3f6-9b7e-433b-8572-8131359c422c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="77257624-0d4e-49bd-b895-4d274c5a93f5" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e32bf30e-d4fc-44df-8011-fca2153e59b2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArchForecast" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="857086a1-4809-42da-a314-ca3363fa70e7" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e36d4d1c-81a3-46b3-a6c8-9cabdd5197db" ParentLink="ServiceBody_Statement" LowerBound="47.1" HigherBound="57.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveDirectFC_Port" />
+                    <om:Property Name="MessageName" Value="InForecast" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_FC" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="8506e255-ff80-4db5-a667-90ae8ee54174" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="78.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="86e4bdf7-9c3d-4ecf-bf0b-9f37ee6c4605" ParentLink="ComplexStatement_Statement" LowerBound="60.1" HigherBound="62.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Common.Maps.DirectForecastMap" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="6bf8205a-931c-4131-bca8-6e40bba7d020" ParentLink="Transform_InputMessagePartRef" LowerBound="61.94" HigherBound="61.104">
+                            <om:Property Name="MessageRef" Value="InForecast" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="3a6306ef-40d4-4353-9b01-251570d615ea" ParentLink="Transform_OutputMessagePartRef" LowerBound="61.28" HigherBound="61.39">
+                            <om:Property Name="MessageRef" Value="OutForecast" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageAssignment" OID="5e2bf2b7-b5d9-4b57-87af-ed54a8cb93ab" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="77.1">
+                        <om:Property Name="Expression" Value="ArchForecast = OutForecast;&#xD;&#xA;&#xD;&#xA;//OutForecast(FILE.ReceivedFileName) = InForecast(FILE.ReceivedFileName);&#xD;&#xA;&#xD;&#xA;//Change file name to INCLUDE OUTPUT.&#xD;&#xA;sTemp = InForecast(FILE.ReceivedFileName);&#xD;&#xA;sTemp = sTemp.Replace(&quot;DIRECTFC.&quot;,&quot;&quot;);&#xD;&#xA;&#xD;&#xA;sOutputFileName = System.IO.Path.GetFileNameWithoutExtension(sTemp);&#xD;&#xA;sExtension = System.IO.Path.GetExtension(sTemp);&#xD;&#xA;&#xD;&#xA;ArchForecast(FILE.ReceivedFileName) = sOutputFileName + sExtension;&#xD;&#xA;OutForecast(FILE.ReceivedFileName) = sOutputFileName + &quot;.dat&quot;;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="481e4445-bd10-4c77-97e9-2b14c3e5c6bf" ParentLink="Construct_MessageRef" LowerBound="58.23" HigherBound="58.34">
+                        <om:Property Name="Ref" Value="OutForecast" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="c13d3f47-4375-47d3-969a-61bcd812cf02" ParentLink="Construct_MessageRef" LowerBound="58.36" HigherBound="58.48">
+                        <om:Property Name="Ref" Value="ArchForecast" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="12ccb44e-0cbe-4610-b24c-6f5d3adf443c" ParentLink="ServiceBody_Statement" LowerBound="78.1" HigherBound="91.1">
+                    <om:Property Name="Expression" Value="sFileName = sOutputFileName;&#xD;&#xA;&#xD;&#xA;sDocType = &quot;FORECAST&quot;;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;sFileName&quot;,sFileName);&#xD;&#xA;sApplicationName = sFileName.Substring(0,sFileName.IndexOf(&quot;.&quot;));&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;sApplicationName&quot;,sApplicationName);&#xD;&#xA;sFileName = sFileName.Substring(sFileName.IndexOf(&quot;.&quot;)+1);&#xD;&#xA;sCustomerCode = sFileName.Substring(0,sFileName.IndexOf(&quot;.&quot;));&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;sCustomerCode&quot;,sCustomerCode);&#xD;&#xA;sFileName = sFileName.Substring(sFileName.IndexOf(&quot;.&quot;)+1);&#xD;&#xA;sBiztalkID = sFileName;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;sBiztalkID&quot;,sBiztalkID);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Initialise" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="0cd1ca08-0dc3-4d5c-a29c-0846caca8cb8" ParentLink="ServiceBody_Statement" LowerBound="91.1" HigherBound="93.1">
+                    <om:Property Name="PortName" Value="ArchiveFC_Port" />
+                    <om:Property Name="MessageName" Value="ArchForecast" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Archive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="f7aa81ac-7eb3-4a15-a238-88218f9263de" ParentLink="ServiceBody_Statement" LowerBound="93.1" HigherBound="95.1">
+                    <om:Property Name="PortName" Value="Send2SAP_Port" />
+                    <om:Property Name="MessageName" Value="OutForecast" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send2SAP" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c98a0b4a-6747-433b-93f8-453ed790a675" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Orchestrations.ReceiveDirectFC_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveDirectFC_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4913286c-0393-4ee1-81ea-41c0aa0bebc1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="dd806f14-7e11-4481-85e9-3e0ab4c20f52" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="31" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Orchestrations.ArchiveFC_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ArchiveFC_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="f4d52821-0e8b-4473-8b27-2fb21847f8fd" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0761c20c-bf6f-4615-a19f-d71a43692f05" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="32" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Common.Orchestrations.Send2SAP_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send2SAP_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="dd1cb18f-55a5-4614-b9f2-0c0fdfacfafa" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Common.Orchestrations
+{
+    internal porttype ReceiveDirectFC_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W
+        };
+    };
+    internal porttype ArchiveFC_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W
+        };
+    };
+    internal porttype Send2SAP_PortType
+    {
+        oneway Operation_1
+        {
+            Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service DirectForecast
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveDirectFC_PortType ReceiveDirectFC_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses ArchiveFC_PortType ArchiveFC_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses Send2SAP_PortType Send2SAP_Port;
+        message Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W InForecast;
+        message Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W OutForecast;
+        message Visy.Middleware.Common.Schemas.SAP.FileStructures.FORECAST52W ArchForecast;
+        System.String sFileName;
+        System.String sCustomerCode;
+        System.String sDocType;
+        System.String sApplicationName;
+        System.String sBiztalkID;
+        System.String sTemp;
+        System.String sExtension;
+        System.String sOutputFileName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e36d4d1c-81a3-46b3-a6c8-9cabdd5197db")]
+            activate receive (ReceiveDirectFC_Port.Operation_1, InForecast);
+            sFileName = "";
+            sCustomerCode = "";
+            sDocType = "";
+            sApplicationName = "";
+            sBiztalkID = "";
+            sTemp = "";
+            sExtension = "";
+            sOutputFileName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8506e255-ff80-4db5-a667-90ae8ee54174")]
+            construct OutForecast, ArchForecast
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("86e4bdf7-9c3d-4ecf-bf0b-9f37ee6c4605")]
+                transform (OutForecast) = Visy.Middleware.SAP.Common.Maps.DirectForecastMap (InForecast);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("5e2bf2b7-b5d9-4b57-87af-ed54a8cb93ab")]
+                ArchForecast = OutForecast;
+                
+                //OutForecast(FILE.ReceivedFileName) = InForecast(FILE.ReceivedFileName);
+                
+                //Change file name to INCLUDE OUTPUT.
+                sTemp = InForecast(FILE.ReceivedFileName);
+                sTemp = sTemp.Replace("DIRECTFC.","");
+                
+                sOutputFileName = System.IO.Path.GetFileNameWithoutExtension(sTemp);
+                sExtension = System.IO.Path.GetExtension(sTemp);
+                
+                ArchForecast(FILE.ReceivedFileName) = sOutputFileName + sExtension;
+                OutForecast(FILE.ReceivedFileName) = sOutputFileName + ".dat";
+                
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("12ccb44e-0cbe-4610-b24c-6f5d3adf443c")]
+            sFileName = sOutputFileName;
+            
+            sDocType = "FORECAST";
+            System.Diagnostics.EventLog.WriteEntry("sFileName",sFileName);
+            sApplicationName = sFileName.Substring(0,sFileName.IndexOf("."));
+            System.Diagnostics.EventLog.WriteEntry("sApplicationName",sApplicationName);
+            sFileName = sFileName.Substring(sFileName.IndexOf(".")+1);
+            sCustomerCode = sFileName.Substring(0,sFileName.IndexOf("."));
+            System.Diagnostics.EventLog.WriteEntry("sCustomerCode",sCustomerCode);
+            sFileName = sFileName.Substring(sFileName.IndexOf(".")+1);
+            sBiztalkID = sFileName;
+            System.Diagnostics.EventLog.WriteEntry("sBiztalkID",sBiztalkID);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0cd1ca08-0dc3-4d5c-a29c-0846caca8cb8")]
+            send (ArchiveFC_Port.Operation_1, ArchForecast);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f7aa81ac-7eb3-4a15-a238-88218f9263de")]
+            send (Send2SAP_Port.Operation_1, OutForecast);
+        }
+    }
+}
+

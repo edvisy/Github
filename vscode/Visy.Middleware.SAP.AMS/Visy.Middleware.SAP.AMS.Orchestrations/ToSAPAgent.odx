@@ -1,0 +1,325 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="35604d34-12f9-40e6-985d-16257fa00086" LowerBound="1.1" HigherBound="99.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.AMS.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="d451d04f-7906-4e05-ba6a-fca69e69b8fe" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="IFSOutboundPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="05ce1c3e-cf2a-4233-9cb7-cc02ad6a2e46" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="RcvIncomingMessage" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="17f330bc-7e70-4ac7-bb4f-26c92caf236d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="73ddfe1e-df2d-44b3-90ed-7a15bc492fdd" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendIFSOutboundPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5f96fd0b-4242-472e-9f95-9b453bd5d93b" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendMessage" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="6bb12b4f-cd41-4ecd-80de-0a74dba5b2dd" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="f3b6a3ea-589b-4f0e-a37c-80099dca4015" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="IFSOutboundResubmitPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="9c83fa9c-d3d9-4f60-a274-d83c317ec496" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SndResubmitMessage" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="f9ef8664-7ea8-4656-b060-ec54dcea4db3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="d8958d64-d7a6-4a10-a492-8b11cddf5b0b" ParentLink="Module_ServiceDeclaration" LowerBound="25.1" HigherBound="98.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ToSAPAgent" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="e874fe1c-5fc7-4198-a412-20a94a480996" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="messageType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="0cceed71-fb27-403b-a4bb-b614328c0b80" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IncomingMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="17025273-3d09-4e7b-b46c-9b93fb35a738" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OutgoingMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="4585824f-791f-481e-8520-a0592f8b8901" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="80649fc9-13d8-43b8-9977-59e35d4120c4" ParentLink="ServiceBody_Statement" LowerBound="39.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="IFSOutboundPort" />
+                    <om:Property Name="MessageName" Value="IncomingMessage" />
+                    <om:Property Name="OperationName" Value="RcvIncomingMessage" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="ef4e0409-283a-440c-8169-9470addb2156" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="96.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Main Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="0aa6821f-ca87-4024-8d7e-fc7df494c7dd" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="66.1">
+                        <om:Property Name="Expression" Value="if (System.Convert.ToInt32(xpath(IncomingMessage, &quot;count(//*[local-name()='WORK_ORDER'])&quot;)) &gt; 0)&#xD;&#xA;{&#xD;&#xA;    messageType = &quot;WORK_ORDER&quot;;&#xD;&#xA;}&#xD;&#xA;else if (System.Convert.ToInt32(xpath(IncomingMessage, &quot;count(//*[local-name()='MATERIAL_REQ'])&quot;)) &gt; 0)&#xD;&#xA;{&#xD;&#xA;    messageType = &quot;MATERIAL_REQ&quot;;&#xD;&#xA;}&#xD;&#xA;else if (System.Convert.ToInt32(xpath(IncomingMessage, &quot;count(//*[local-name()='PURCHASE_REQ'])&quot;)) &gt; 0)&#xD;&#xA;{&#xD;&#xA;    messageType = &quot;PURCHASE_REQ&quot;;&#xD;&#xA;}&#xD;&#xA;else&#xD;&#xA;{&#xD;&#xA;    messageType = &quot;NOT_KNOWN&quot;;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;//System.Diagnostics.Trace.WriteLine(System.String.Format(&quot;Root Service: {0}, Message Type: {1}&quot;, Microsoft.XLANGs.Core.Service.RootService.Name, messageType));" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GetMessageType" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="a8c10642-34e2-41c4-8c80-202bef20f156" ParentLink="ComplexStatement_Statement" LowerBound="66.1" HigherBound="74.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageAssignment" OID="695369cb-b151-4f2a-9a65-95b0e15caef5" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="73.1">
+                            <om:Property Name="Expression" Value="OutgoingMessage = IncomingMessage;&#xD;&#xA;&#xD;&#xA;OutgoingMessage(FILE.ReceivedFileName) = messageType;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="8118ae15-9381-4594-a375-47937736f6b0" ParentLink="Construct_MessageRef" LowerBound="67.31" HigherBound="67.46">
+                            <om:Property Name="Ref" Value="OutgoingMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="f1af02b3-cd5a-4537-b563-ab50c4e578ec" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="76.1">
+                        <om:Property Name="PortName" Value="SendIFSOutboundPort" />
+                        <om:Property Name="MessageName" Value="OutgoingMessage" />
+                        <om:Property Name="OperationName" Value="SendMessage" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="SendMessage" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="f0f1bb52-8ae1-4763-a185-f2695f050af9" ParentLink="Scope_Catch" LowerBound="79.1" HigherBound="94.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="250ca37b-8f6a-4107-abb6-6a176762db68" ParentLink="Catch_Statement" LowerBound="82.1" HigherBound="84.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.Trace.WriteLine(ex.Message);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Trace" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="0142365b-a15b-4fd4-bb40-1dae198172fe" ParentLink="Catch_Statement" LowerBound="84.1" HigherBound="91.1">
+                            <om:Property Name="ErrorMessage" Value="System.String.Format(&quot;Processing of IFS Outbound {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}&quot;,&#xD;&#xA;    messageType,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.Message,&#xD;&#xA;    System.Environment.NewLine,&#xD;&#xA;    ex.StackTrace);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend Errors" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="29afc9ed-2d75-4616-899c-8b0a9e4ffa67" ParentLink="Catch_Statement" LowerBound="91.1" HigherBound="93.1">
+                            <om:Property Name="PortName" Value="IFSOutboundResubmitPort" />
+                            <om:Property Name="MessageName" Value="IncomingMessage" />
+                            <om:Property Name="OperationName" Value="SndResubmitMessage" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Resubmit Message" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a7ea9e24-7cb3-44dc-a647-bc6212099022" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="28.1" HigherBound="30.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.IFSOutboundPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IFSOutboundPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="75dcfe3a-50a3-4df1-af6b-32fd43f5576a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="28.1" HigherBound="29.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7bc0ed0f-e81d-4861-bd3e-4597cbf151bc" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="30.1" HigherBound="32.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="27" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.SendIFSOutboundPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendIFSOutboundPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="00ec78b5-9422-447b-8506-19885f656410" ParentLink="PortDeclaration_CLRAttribute" LowerBound="30.1" HigherBound="31.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0e47dc19-3f3f-4142-8d46-cadc632b6ee2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="32.1" HigherBound="34.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="49" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.AMS.Orchestrations.IFSOutboundResubmitPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IFSOutboundResubmitPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b858ad33-db4c-4907-b334-b284e5d609ce" ParentLink="PortDeclaration_CLRAttribute" LowerBound="32.1" HigherBound="33.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.AMS.Orchestrations
+{
+    internal porttype IFSOutboundPortType
+    {
+        oneway RcvIncomingMessage
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype SendIFSOutboundPortType
+    {
+        oneway SendMessage
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype IFSOutboundResubmitPortType
+    {
+        oneway SndResubmitMessage
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ToSAPAgent
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements IFSOutboundPortType IFSOutboundPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendIFSOutboundPortType SendIFSOutboundPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses IFSOutboundResubmitPortType IFSOutboundResubmitPort;
+        message System.Xml.XmlDocument IncomingMessage;
+        message System.Xml.XmlDocument OutgoingMessage;
+        System.String messageType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("80649fc9-13d8-43b8-9977-59e35d4120c4")]
+            activate receive (IFSOutboundPort.RcvIncomingMessage, IncomingMessage);
+            messageType = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ef4e0409-283a-440c-8169-9470addb2156")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("0aa6821f-ca87-4024-8d7e-fc7df494c7dd")]
+                    if (System.Convert.ToInt32(xpath(IncomingMessage, "count(//*[local-name()='WORK_ORDER'])")) > 0)
+                    {
+                        messageType = "WORK_ORDER";
+                    }
+                    else if (System.Convert.ToInt32(xpath(IncomingMessage, "count(//*[local-name()='MATERIAL_REQ'])")) > 0)
+                    {
+                        messageType = "MATERIAL_REQ";
+                    }
+                    else if (System.Convert.ToInt32(xpath(IncomingMessage, "count(//*[local-name()='PURCHASE_REQ'])")) > 0)
+                    {
+                        messageType = "PURCHASE_REQ";
+                    }
+                    else
+                    {
+                        messageType = "NOT_KNOWN";
+                    }
+                    
+                    //System.Diagnostics.Trace.WriteLine(System.String.Format("Root Service: {0}, Message Type: {1}", Microsoft.XLANGs.Core.Service.RootService.Name, messageType));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a8c10642-34e2-41c4-8c80-202bef20f156")]
+                    construct OutgoingMessage
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("695369cb-b151-4f2a-9a65-95b0e15caef5")]
+                        OutgoingMessage = IncomingMessage;
+                        
+                        OutgoingMessage(FILE.ReceivedFileName) = messageType;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f1af02b3-cd5a-4537-b563-ab50c4e578ec")]
+                    send (SendIFSOutboundPort.SendMessage, OutgoingMessage);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f0f1bb52-8ae1-4763-a185-f2695f050af9")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("250ca37b-8f6a-4107-abb6-6a176762db68")]
+                        System.Diagnostics.Trace.WriteLine(ex.Message);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0142365b-a15b-4fd4-bb40-1dae198172fe")]
+                        suspend System.String.Format("Processing of IFS Outbound {0} message encountered an exception and has been suspended.{1}Exception details: {2}{3}Stack Trace: {4}",
+                                messageType,
+                                System.Environment.NewLine,
+                                ex.Message,
+                                System.Environment.NewLine,
+                                ex.StackTrace);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("29afc9ed-2d75-4616-899c-8b0a9e4ffa67")]
+                        send (IFSOutboundResubmitPort.SndResubmitMessage, IncomingMessage);
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<schema elementFormDefault="qualified" targetNamespace="http://ws.xi.mdm.oi.com/wsdl" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation=".\MDM-XI_ws_xi_mdm_oi_com_types.xsd" namespace="http://ws.xi.mdm.oi.com/types" />
+  <element name="updateWarespecs">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="warespecs" xmlns:q1="http://ws.xi.mdm.oi.com/types" type="q1:Warespec" />
+        <element minOccurs="0" name="rollingData" type="boolean" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateWarespecsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateSKUs">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="SKUs" xmlns:q2="http://ws.xi.mdm.oi.com/types" type="q2:SKU" />
+        <element minOccurs="0" name="rollingData" type="boolean" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateSKUsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateWorkCentres">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="WorkCentres" xmlns:q3="http://ws.xi.mdm.oi.com/types" type="q3:WorkCentre" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateWorkCentresResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateFunctionalLocations">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="functionalLocations" xmlns:q4="http://ws.xi.mdm.oi.com/types" type="q4:FunctionalLocation" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateFunctionalLocationsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateDepartments">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="Departments" xmlns:q5="http://ws.xi.mdm.oi.com/types" type="q5:Department" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateDepartmentsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateEquipmentTypes">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="EquipmentTypes" xmlns:q6="http://ws.xi.mdm.oi.com/types" type="q6:EquipmentType" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateEquipmentTypesResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateEquipments">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="Equipments" xmlns:q7="http://ws.xi.mdm.oi.com/types" type="q7:Equipment" />
+        <element minOccurs="0" name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateEquipmentsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateProblemGroups">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="ProblemGroups" xmlns:q8="http://ws.xi.mdm.oi.com/types" type="q8:ProblemGroup" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateProblemGroupsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateProblems">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="Problems" xmlns:q9="http://ws.xi.mdm.oi.com/types" type="q9:Problem" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateProblemsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="updateTranslations">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="Translations" xmlns:q10="http://ws.xi.mdm.oi.com/types" type="q10:Translation" />
+        <element name="source" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="updateTranslationsResponse">
+    <complexType>
+      <sequence />
+    </complexType>
+  </element>
+  <element name="getSystemInfo">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" maxOccurs="unbounded" name="attributes" xmlns:q11="http://ws.xi.mdm.oi.com/types" type="q11:SystemAttribute" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="getSystemInfoResponse">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="getSystemInfoReturn" xmlns:q12="http://ws.xi.mdm.oi.com/types" type="q12:SystemInfo" />
+      </sequence>
+    </complexType>
+  </element>
+  <element name="mdmXiServiceFault">
+    <complexType>
+      <sequence>
+        <element minOccurs="0" name="code" type="int" />
+        <element name="description" type="string" />
+      </sequence>
+    </complexType>
+  </element>
+</schema>

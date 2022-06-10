@@ -1,0 +1,550 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f98a67d3-62eb-4387-92c2-fa4f57637bcb" LowerBound="1.1" HigherBound="165.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Magento2.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="4513d3c6-80bf-42a2-9984-1ba231a9b11e" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_PriceIdoc" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="110ea697-e900-45c6-9eb9-6a76f7a32fc0" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Inbound" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="011757d0-7c1c-4404-90f7-752f9734ee2f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.26">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Magento2.Orchestrations.m_ZMatPrice01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="38f0e1af-b848-439b-840c-b7be50f1606e" ParentLink="Module_ServiceDeclaration" LowerBound="19.1" HigherBound="164.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="LoadPricing" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="b278e042-5c8a-4934-8f1c-4b7c72a1b8f4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9dde78c6-b1b4-4d3b-8592-eca393bb1f12" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int64" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="counterInt" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="55cf4752-85aa-4566-8559-4ae9248bbebc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento2.Components.PriceInfo" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_PricingInfo" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f651df7a-a04e-4b8e-b367-b5a03892dd4a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento2.Components.ConnectionInfo" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_ConnectionInfo" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3150f989-4fba-4104-9237-d88cf4f1acd7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e961d68a-e68c-430b-b9f6-e8fe88c8a059" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierCounter" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="99b3767d-4567-4e1f-9a5d-019706fe3bf9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierField" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="65b75a83-461e-418e-9236-44b320e927b7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierPrice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6cfb9599-d9a9-40e9-9af7-2ab9a70b0fda" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierQty" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4fa26140-584f-4865-8972-6abb649fba01" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="35.1" HigherBound="36.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="updateFlag" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="675d42a7-6a84-4e3a-9207-cbdbae4c8890" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="36.1" HigherBound="37.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="priceTierCountXpath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="57614445-3a6a-4ae1-b6ad-79f1ac9a2eae" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="37.1" HigherBound="38.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="customerCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="49f8d943-3769-487e-a955-75b75f5d193e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="price" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ea34738d-f356-483d-befb-0ae8567a25d1" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="39.1" HigherBound="40.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="product" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a6f4a333-60bf-456c-8aa3-03af1aea03d6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento2.Orchestrations.m_PriceCanonical" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_PriceCanonical" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="6a2e0a5c-e4e8-44c3-b892-208f63b0de84" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento2.Orchestrations.m_ZMatPrice01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_ZMatPrice01" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="91db4cc2-998b-4bb1-8d44-74f31951fbb5" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="709c7ee5-2ec7-45f9-bd6c-c312d1c1c7a2" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="54.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_PriceIdoc" />
+                    <om:Property Name="MessageName" Value="msg_ZMatPrice01" />
+                    <om:Property Name="OperationName" Value="Inbound" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_PriceIdoc" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="b690372c-b94f-4615-8b24-20728be9afc0" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="60.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="construct Price Canonical" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="8edfdfdf-394f-4415-85a7-d22622cc0dea" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="59.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento2.Maps.ZMATPrice01_To_PriceCanonical" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ZMATPrice01_To_PriceCanonical" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="2fe965ae-a5ce-4900-b261-36a6f228fcc2" ParentLink="Transform_InputMessagePartRef" LowerBound="58.118" HigherBound="58.138">
+                            <om:Property Name="MessageRef" Value="msg_ZMatPrice01" />
+                            <om:Property Name="PartRef" Value="IDOC" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="86150a73-2a58-4880-81d1-1ac63b96c587" ParentLink="Transform_OutputMessagePartRef" LowerBound="58.28" HigherBound="58.50">
+                            <om:Property Name="MessageRef" Value="msg_PriceCanonical" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="00cd93a7-e952-424c-a830-88b4a9aaa86a" ParentLink="Construct_MessageRef" LowerBound="55.23" HigherBound="55.41">
+                        <om:Property Name="Ref" Value="msg_PriceCanonical" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="37c1a667-9cd4-4b67-aed4-973878896c73" ParentLink="ServiceBody_Statement" LowerBound="60.1" HigherBound="70.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;priceCount = xpath(msg_PriceCanonical.XML, &quot;count(//*[local-name()='Lists'])&quot;); &#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Load Pricing: Initializing &quot; + priceCount.ToString() + &quot; total products&quot;);&#xD;&#xA;counterInt = 1;&#xD;&#xA;&#xD;&#xA;v_ConnectionInfo = new Visy.Middleware.SAP.Magento2.Components.ConnectionInfo();&#xD;&#xA;&#xD;&#xA;v_ConnectionInfo.Action = &quot;Pricing&quot;;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Set Variables" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="CallRules" OID="c3258311-9149-44d0-bfe9-c6ff81e7d0f5" ParentLink="ServiceBody_Statement" LowerBound="70.1" HigherBound="86.1">
+                    <om:Property Name="PolicyName" Value="SAP.Magento2.API.Policies" />
+                    <om:Property Name="PolicyVersion" Value="-1" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="CallRules_API" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="RulesParameterRef" OID="2a1cb349-0fcf-42ba-b992-93969a65a2e8" ParentLink="CallRules_RulesParameterRef">
+                        <om:Property Name="Reference" Value="v_ConnectionInfo" />
+                        <om:Property Name="Alias" Value="Visy.Middleware.SAP.Magento2.Components.ConnectionInfo" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="RulesParameterRef_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="While" OID="c3c8983f-05e9-4d14-8231-1448a0fb5bf7" ParentLink="ServiceBody_Statement" LowerBound="86.1" HigherBound="158.1">
+                    <om:Property Name="Expression" Value="counterInt &lt;= priceCount" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Loop_Prices" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="VariableAssignment" OID="e3d8f4aa-f8a1-4a48-ab57-dbc4fa48b58a" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="109.1">
+                        <om:Property Name="Expression" Value="v_PricingInfo = new Visy.Middleware.SAP.Magento2.Components.PriceInfo();&#xD;&#xA;&#xD;&#xA;updateFlag =  System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='Flag']/text())&quot;, counterInt);&#xD;&#xA;updateFlag = System.Convert.ToString(xpath(msg_PriceCanonical.XML, updateFlag));&#xD;&#xA;&#xD;&#xA;v_PricingInfo.DeleteAPIUrl = v_ConnectionInfo.DeleteAPIUrl;&#xD;&#xA;v_PricingInfo.InsertAPIUrl = v_ConnectionInfo.InsertAPIUrl;&#xD;&#xA;v_PricingInfo.UpdateAPIUrl = v_ConnectionInfo.UpdateAPIUrl;&#xD;&#xA;v_PricingInfo.AuthenticationURL = v_ConnectionInfo.AuthenticationURL;&#xD;&#xA;v_PricingInfo.UserName = v_ConnectionInfo.UserName;&#xD;&#xA;v_PricingInfo.Password = v_ConnectionInfo.Password;&#xD;&#xA;&#xD;&#xA;customerCode = System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='CustomerCode']/text())&quot;, counterInt);&#xD;&#xA;product =  System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='ProductSKU']/text())&quot;, counterInt);;&#xD;&#xA;price = System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='Price']/text())&quot;, counterInt);;&#xD;&#xA;&#xD;&#xA;v_PricingInfo.CustomerCode=System.Convert.ToString(xpath(msg_PriceCanonical.XML, customerCode));&#xD;&#xA;v_PricingInfo.Price=System.Convert.ToString(xpath(msg_PriceCanonical.XML, price));&#xD;&#xA;v_PricingInfo.Product_Sku = System.Convert.ToString(xpath(msg_PriceCanonical.XML, product));&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Check Flag" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="7ce7a49a-ffea-4003-bf7e-9bed94cbf2f8" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="118.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;priceTierCountXpath = System.String.Format(&quot;count(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'])&quot;, counterInt);&#xD;&#xA;&#xD;&#xA;priceTierCount = xpath(msg_PriceCanonical.XML, priceTierCountXpath); &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;priceTierCounter = 1;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Set Price Tier" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Decision" OID="3f9eb572-ada7-48ac-98c2-37615ff6cbfc" ParentLink="ComplexStatement_Statement" LowerBound="118.1" HigherBound="136.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="tier count" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="6ae7e60e-5688-45b9-9c08-b21964908e3e" ParentLink="ReallyComplexStatement_Branch" LowerBound="119.17" HigherBound="136.1">
+                            <om:Property Name="Expression" Value="priceTierCount &gt; 0" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="&gt; 0" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="While" OID="a6a3722d-25b4-4977-8b92-0485c7d13086" ParentLink="ComplexStatement_Statement" LowerBound="121.1" HigherBound="133.1">
+                                <om:Property Name="Expression" Value="priceTierCounter &lt;= priceTierCount" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Loop_PriceTier" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="VariableAssignment" OID="d7489515-1537-40ba-819e-d0661e62a38c" ParentLink="ComplexStatement_Statement" LowerBound="124.1" HigherBound="132.1">
+                                    <om:Property Name="Expression" Value="&#xD;&#xA;priceTierPrice = System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'][{1}]/*[local-name()='tPrice']/text())&quot;,counterInt ,priceTierCounter);&#xD;&#xA;priceTierQty = System.String.Format(&quot;string(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'][{1}]/*[local-name()='Qty']/text())&quot;,counterInt, priceTierCounter);&#xD;&#xA;priceTierField = priceTierField + Visy.Middleware.SAP.Magento2.Components.OrchestrationHelper.BuildPriceTierField(System.Convert.ToString(xpath(msg_PriceCanonical.XML, priceTierPrice)), System.Convert.ToString(xpath(msg_PriceCanonical.XML, priceTierQty))) + &quot;,&quot;;&#xD;&#xA;&#xD;&#xA;priceTierCounter = priceTierCounter + 1;&#xD;&#xA;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Set Price Tier Field" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="aea36279-f7ce-42fc-9f5c-49735edbb4fb" ParentLink="ComplexStatement_Statement" LowerBound="133.1" HigherBound="135.1">
+                                <om:Property Name="Expression" Value="v_PricingInfo.Tier_Price = Visy.Middleware.SAP.Magento2.Components.OrchestrationHelper.BuildPriceTier(priceTierField, priceTierCount);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Build Price Tier" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="692f29e6-8699-451f-8eaa-ba21bad69148" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Decision" OID="c999204e-40ec-4fde-91f8-4353ef41cecc" ParentLink="ComplexStatement_Statement" LowerBound="136.1" HigherBound="154.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Check Flag" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="DecisionBranch" OID="73a838bd-bc2f-4714-9ab4-96523087d42a" ParentLink="ReallyComplexStatement_Branch" LowerBound="137.17" HigherBound="143.1">
+                            <om:Property Name="Expression" Value="updateFlag.ToUpper() == &quot;U&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Update" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="VariableAssignment" OID="c70b6a0b-e150-4d9b-891c-77103e32bd77" ParentLink="ComplexStatement_Statement" LowerBound="139.1" HigherBound="142.1">
+                                <om:Property Name="Expression" Value="Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);&#xD;&#xA;Visy.Middleware.SAP.Magento2.Components.PricingAPI.Insert(v_PricingInfo);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Update Price" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="9325d9d8-58d5-41f0-bfa0-22bf4d86e6b1" ParentLink="ReallyComplexStatement_Branch" LowerBound="143.22" HigherBound="149.1">
+                            <om:Property Name="Expression" Value="updateFlag.ToUpper() == &quot;I&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Insert" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="91ce68de-d38e-46d4-a1ac-1a66ff6f2c62" ParentLink="ComplexStatement_Statement" LowerBound="145.1" HigherBound="148.1">
+                                <om:Property Name="Expression" Value="Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);&#xD;&#xA;Visy.Middleware.SAP.Magento2.Components.PricingAPI.Insert(v_PricingInfo);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Insert Price" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="80f2f9bf-d198-407d-918d-0f7cce93621f" ParentLink="ReallyComplexStatement_Branch" LowerBound="149.22" HigherBound="154.1">
+                            <om:Property Name="Expression" Value="updateFlag.ToUpper() == &quot;D&quot;" />
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Delete" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="0f8afb71-8eb7-486d-9801-01286a8b733e" ParentLink="ComplexStatement_Statement" LowerBound="151.1" HigherBound="153.1">
+                                <om:Property Name="Expression" Value="Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delete Price" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="DecisionBranch" OID="29d4e3bf-9a04-4e38-83f9-c3197ce4ae75" ParentLink="ReallyComplexStatement_Branch">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Else" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="72c4f142-0938-4825-99b5-7ff43ed2b57f" ParentLink="ComplexStatement_Statement" LowerBound="154.1" HigherBound="157.1">
+                        <om:Property Name="Expression" Value="counterInt = counterInt + 1;&#xD;&#xA;priceTierField = &quot;&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Increment PriceCount" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="0ab4761c-8401-4c72-bd62-d1cf4b0496ba" ParentLink="ServiceBody_Statement" LowerBound="158.1" HigherBound="162.1">
+                    <om:Property Name="Expression" Value="&#xD;&#xA;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Load Pricing: Processed &quot; + priceCount.ToString() + &quot; products&quot;);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1afa64b6-76ad-4463-83ae-6e43df28d7ac" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="22.1" HigherBound="24.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Magento2.Orchestrations.PortType_PriceIdoc" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_PriceIdoc" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="12d29bd1-417c-4d70-8b5a-d7d356097cfb" ParentLink="PortDeclaration_CLRAttribute" LowerBound="22.1" HigherBound="23.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="e3738109-f22c-4604-baad-77159cfd6b45" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_PriceCanonical" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c8cdd5e6-a1d7-4959-b77e-a780264660d9" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento2.Schemas.PriceCanonical" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f4014baa-3673-430e-8712-4f81d31b3dd4" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_ZMatPrice01" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="0feceed4-5744-46e2-9c6c-de358c85d71a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Magento2.Schemas.IDocOperation_ZMATPRICE01_740_3_Receive" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IDOC" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Magento2.Orchestrations
+{
+    internal messagetype m_PriceCanonical
+    {
+        body Visy.Middleware.SAP.Magento2.Schemas.PriceCanonical XML;
+    };
+    internal messagetype m_ZMatPrice01
+    {
+        body Visy.Middleware.SAP.Magento2.Schemas.IDocOperation_ZMATPRICE01_740_3_Receive IDOC;
+    };
+    public porttype PortType_PriceIdoc
+    {
+        oneway Inbound
+        {
+            m_ZMatPrice01
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service LoadPricing
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_PriceIdoc Port_PriceIdoc;
+        message m_PriceCanonical msg_PriceCanonical;
+        message m_ZMatPrice01 msg_ZMatPrice01;
+        System.Int32 priceCount;
+        System.Int64 counterInt;
+        Visy.Middleware.SAP.Magento2.Components.PriceInfo v_PricingInfo;
+        Visy.Middleware.SAP.Magento2.Components.ConnectionInfo v_ConnectionInfo;
+        System.Int32 priceTierCount;
+        System.Int32 priceTierCounter;
+        System.String priceTierField;
+        System.String priceTierPrice;
+        System.String priceTierQty;
+        System.String updateFlag;
+        System.String priceTierCountXpath;
+        System.String customerCode;
+        System.String price;
+        System.String product;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("709c7ee5-2ec7-45f9-bd6c-c312d1c1c7a2")]
+            activate receive (Port_PriceIdoc.Inbound, msg_ZMatPrice01);
+            v_PricingInfo = new Visy.Middleware.SAP.Magento2.Components.PriceInfo();
+            v_ConnectionInfo = new Visy.Middleware.SAP.Magento2.Components.ConnectionInfo();
+            priceTierField = "";
+            priceTierPrice = "";
+            priceTierQty = "";
+            updateFlag = "";
+            priceTierCountXpath = "";
+            customerCode = "";
+            price = "";
+            product = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b690372c-b94f-4615-8b24-20728be9afc0")]
+            construct msg_PriceCanonical
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8edfdfdf-394f-4415-85a7-d22622cc0dea")]
+                transform (msg_PriceCanonical.XML) = Visy.Middleware.SAP.Magento2.Maps.ZMATPrice01_To_PriceCanonical (msg_ZMatPrice01.IDOC);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("37c1a667-9cd4-4b67-aed4-973878896c73")]
+            
+            priceCount = xpath(msg_PriceCanonical.XML, "count(//*[local-name()='Lists'])"); 
+            
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Load Pricing: Initializing " + priceCount.ToString() + " total products");
+            counterInt = 1;
+            
+            v_ConnectionInfo = new Visy.Middleware.SAP.Magento2.Components.ConnectionInfo();
+            
+            v_ConnectionInfo.Action = "Pricing";
+
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c3258311-9149-44d0-bfe9-c6ff81e7d0f5")]
+            scope
+            {
+                Microsoft.RuleEngine.Policy  policy_1__;
+
+                body
+                {
+                    
+                    policy_1__ = new Microsoft.RuleEngine.Policy("SAP.Magento2.API.Policies");
+                    policy_1__.Execute(
+                        v_ConnectionInfo);
+
+                    policy_1__.Dispose();
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c3c8983f-05e9-4d14-8231-1448a0fb5bf7")]
+            while (counterInt <= priceCount)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3d8f4aa-f8a1-4a48-ab57-dbc4fa48b58a")]
+                v_PricingInfo = new Visy.Middleware.SAP.Magento2.Components.PriceInfo();
+                
+                updateFlag =  System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='Flag']/text())", counterInt);
+                updateFlag = System.Convert.ToString(xpath(msg_PriceCanonical.XML, updateFlag));
+                
+                v_PricingInfo.DeleteAPIUrl = v_ConnectionInfo.DeleteAPIUrl;
+                v_PricingInfo.InsertAPIUrl = v_ConnectionInfo.InsertAPIUrl;
+                v_PricingInfo.UpdateAPIUrl = v_ConnectionInfo.UpdateAPIUrl;
+                v_PricingInfo.AuthenticationURL = v_ConnectionInfo.AuthenticationURL;
+                v_PricingInfo.UserName = v_ConnectionInfo.UserName;
+                v_PricingInfo.Password = v_ConnectionInfo.Password;
+                
+                customerCode = System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='CustomerCode']/text())", counterInt);
+                product =  System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='ProductSKU']/text())", counterInt);;
+                price = System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='Price']/text())", counterInt);;
+                
+                v_PricingInfo.CustomerCode=System.Convert.ToString(xpath(msg_PriceCanonical.XML, customerCode));
+                v_PricingInfo.Price=System.Convert.ToString(xpath(msg_PriceCanonical.XML, price));
+                v_PricingInfo.Product_Sku = System.Convert.ToString(xpath(msg_PriceCanonical.XML, product));
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7ce7a49a-ffea-4003-bf7e-9bed94cbf2f8")]
+                
+                priceTierCountXpath = System.String.Format("count(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'])", counterInt);
+                
+                priceTierCount = xpath(msg_PriceCanonical.XML, priceTierCountXpath); 
+                
+                
+                priceTierCounter = 1;
+                
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3f9eb572-ada7-48ac-98c2-37615ff6cbfc")]
+                if (priceTierCount > 0)
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6a3722d-25b4-4977-8b92-0485c7d13086")]
+                    while (priceTierCounter <= priceTierCount)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d7489515-1537-40ba-819e-d0661e62a38c")]
+                        
+                        priceTierPrice = System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'][{1}]/*[local-name()='tPrice']/text())",counterInt ,priceTierCounter);
+                        priceTierQty = System.String.Format("string(//*[local-name()='Lists'][{0}]/*[local-name()='TierPrice'][{1}]/*[local-name()='Qty']/text())",counterInt, priceTierCounter);
+                        priceTierField = priceTierField + Visy.Middleware.SAP.Magento2.Components.OrchestrationHelper.BuildPriceTierField(System.Convert.ToString(xpath(msg_PriceCanonical.XML, priceTierPrice)), System.Convert.ToString(xpath(msg_PriceCanonical.XML, priceTierQty))) + ",";
+                        
+                        priceTierCounter = priceTierCounter + 1;
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aea36279-f7ce-42fc-9f5c-49735edbb4fb")]
+                    v_PricingInfo.Tier_Price = Visy.Middleware.SAP.Magento2.Components.OrchestrationHelper.BuildPriceTier(priceTierField, priceTierCount);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c999204e-40ec-4fde-91f8-4353ef41cecc")]
+                if (updateFlag.ToUpper() == "U")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c70b6a0b-e150-4d9b-891c-77103e32bd77")]
+                    Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);
+                    Visy.Middleware.SAP.Magento2.Components.PricingAPI.Insert(v_PricingInfo);
+                }
+                else if (updateFlag.ToUpper() == "I")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("91ce68de-d38e-46d4-a1ac-1a66ff6f2c62")]
+                    Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);
+                    Visy.Middleware.SAP.Magento2.Components.PricingAPI.Insert(v_PricingInfo);
+                }
+                else if (updateFlag.ToUpper() == "D")
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("0f8afb71-8eb7-486d-9801-01286a8b733e")]
+                    Visy.Middleware.SAP.Magento2.Components.PricingAPI.Delete(v_PricingInfo);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("72c4f142-0938-4825-99b5-7ff43ed2b57f")]
+                counterInt = counterInt + 1;
+                priceTierField = "";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("0ab4761c-8401-4c72-bd62-d1cf4b0496ba")]
+            
+            
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Load Pricing: Processed " + priceCount.ToString() + " products");
+        }
+    }
+}
+

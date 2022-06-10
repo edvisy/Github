@@ -1,0 +1,685 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="449bd8b9-4f23-40c8-9f09-bb1d1cc1b0bd" LowerBound="1.1" HigherBound="150.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.US.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="32de1a88-271a-4436-bd1e-a296f0b20204" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="149.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process_ChangePurchaseOrder" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="a1bb30bc-18e6-470f-86ce-0af6138a7922" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Request" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Request" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="acadeee5-032c-4ed3-836a-96f9ed9b465a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Response" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="a843df5d-cf38-43c5-8ecb-bc260db4bc57" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="5772bf82-9e40-43d8-8a18-5102b719f7f7" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="33.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="WebServiceRequest_Port" />
+                    <om:Property Name="MessageName" Value="Request" />
+                    <om:Property Name="OperationName" Value="ChangePurchaseOrder" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive ChangePurchaseOrder Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="464830df-581b-43b1-a5ba-d0e6134650fb" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="49.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receipt Scope" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Construct" OID="5567c291-f408-46be-b60c-3c3b1c57c784" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="45.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct Receipt" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="550b8832-400e-470e-bd13-c2d2170ad63f" ParentLink="Construct_MessageRef" LowerBound="40.31" HigherBound="40.46">
+                            <om:Property Name="Ref" Value="ReceiptResponse" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="cbc0a0d8-04b7-45d0-aaee-e1db61adee9b" ParentLink="ComplexStatement_Statement" LowerBound="42.1" HigherBound="44.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="a17811f5-3ec9-4923-a0ff-1303d6db2376" ParentLink="Transform_OutputMessagePartRef" LowerBound="43.36" HigherBound="43.51">
+                                <om:Property Name="MessageRef" Value="ReceiptResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_4" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="93b28281-bc93-4a33-9da0-68b4bd12123b" ParentLink="Transform_InputMessagePartRef" LowerBound="43.142" HigherBound="43.149">
+                                <om:Property Name="MessageRef" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_3" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="ba015edd-c5bb-4e7e-a734-cab221c0774c" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="47.1">
+                        <om:Property Name="PortName" Value="WebServiceRequest_Port" />
+                        <om:Property Name="MessageName" Value="ReceiptResponse" />
+                        <om:Property Name="OperationName" Value="ChangePurchaseOrder" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send Response" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="c4eec5b5-d7c6-4464-b078-c8625506f5ee" ParentLink="Scope_MessageDeclaration" LowerBound="36.1" HigherBound="37.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ReceiptResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="6e1b4f08-3962-4fb0-b8d6-f6e2eeac2f8e" ParentLink="ServiceBody_Statement" LowerBound="49.1" HigherBound="87.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Create IDoc Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="9062c86e-af9a-48e2-89d5-b2fbf1d8c389" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="62.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct iDoc" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="93e8ace3-c53b-4032-b997-e0dcc75f8fce" ParentLink="Construct_MessageRef" LowerBound="57.31" HigherBound="57.39">
+                            <om:Property Name="Ref" Value="PORDCH01" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="4517102f-8120-4ad3-9998-cc8f8ed7b37c" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.ChangePurchaseOrder_to_PORDCH01" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ChangePurchaseOrder_to_PORDCH01" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="26c3ce16-3d9f-4529-a570-6f5c990c4210" ParentLink="Transform_InputMessagePartRef" LowerBound="60.109" HigherBound="60.116">
+                                <om:Property Name="MessageRef" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_5" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="828f435e-5412-4a27-99b4-8f845c7ea6b7" ParentLink="Transform_OutputMessagePartRef" LowerBound="60.36" HigherBound="60.44">
+                                <om:Property Name="MessageRef" Value="PORDCH01" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_6" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="aac8f197-0698-4c2e-af52-85b0ae95a5f3" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                        <om:Property Name="PortName" Value="Port_Archive" />
+                        <om:Property Name="MessageName" Value="PORDCH01" />
+                        <om:Property Name="OperationName" Value="Save" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Archive" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Send" OID="1eefa000-a1c1-44ca-b288-c85b217b52fa" ParentLink="ComplexStatement_Statement" LowerBound="64.1" HigherBound="66.1">
+                        <om:Property Name="PortName" Value="SapIdocSend_Port" />
+                        <om:Property Name="MessageName" Value="PORDCH01" />
+                        <om:Property Name="OperationName" Value="SendPORDCH01" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send PORDCH01" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="24395980-aef9-4008-875f-1c76b4596611" ParentLink="Scope_MessageDeclaration" LowerBound="52.1" HigherBound="53.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.PORDCH01.IDocOperation_PORDCH01_620_3_Send" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="PORDCH01" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="ef4cb549-8cb1-4d40-8dd6-ab08bbf35788" ParentLink="Scope_MessageDeclaration" LowerBound="53.1" HigherBound="54.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ErrorResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="12f361c0-4288-4961-814f-a78c222f20e9" ParentLink="Scope_Catch" LowerBound="69.1" HigherBound="85.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch .Net Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="4b78e74f-1e23-4bbc-95d6-129934ac481f" ParentLink="Catch_Statement" LowerBound="72.1" HigherBound="80.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct ErrorResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="f77a5f0d-8762-4353-9eb5-da29cbd5fedb" ParentLink="Construct_MessageRef" LowerBound="73.35" HigherBound="73.48">
+                                <om:Property Name="Ref" Value="ErrorResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="75078661-99f9-4ea5-826d-30e74592fac7" ParentLink="ComplexStatement_Statement" LowerBound="75.1" HigherBound="77.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.CreatePurchaseOrderRequest_to_CreatePurchaseOrderResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CreatePurchaseOrderRequest_to_CreatePurchaseOrderResponse" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="4dfc8cd5-666b-4d48-912c-5a38aeeb5f52" ParentLink="Transform_InputMessagePartRef" LowerBound="76.144" HigherBound="76.151">
+                                    <om:Property Name="MessageRef" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_9" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="048d3884-8432-4c96-975b-1d59b3eb3a95" ParentLink="Transform_OutputMessagePartRef" LowerBound="76.40" HigherBound="76.53">
+                                    <om:Property Name="MessageRef" Value="ErrorResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_10" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="8657f1d1-ae7a-4113-af24-c2138faebca3" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
+                                <om:Property Name="Expression" Value="Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(ErrorResponse, ex);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="Set Error Message" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="263a3e2e-5696-4624-a762-242e81983016" ParentLink="Catch_Statement" LowerBound="80.1" HigherBound="82.1">
+                            <om:Property Name="PortName" Value="WebServiceResponse_Port" />
+                            <om:Property Name="MessageName" Value="ErrorResponse" />
+                            <om:Property Name="OperationName" Value="SendChangePurchaseOrderResponse" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send ErrorResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Terminate" OID="806d91e4-de72-4c4b-bca4-b72b93a0f202" ParentLink="Catch_Statement" LowerBound="82.1" HigherBound="84.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Terminated with exception: &quot; + ex.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Terminate with exception" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="090b8a00-f17f-4ba0-a622-db5dbc5d13a2" ParentLink="ServiceBody_Statement" LowerBound="87.1" HigherBound="147.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="WaitForIdoc Scope" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="CorrelationDeclaration" OID="043c0b70-9c7f-443c-8f9a-0021c3a681fc" ParentLink="Scope_CorrelationDeclaration" LowerBound="93.1" HigherBound="94.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.IdocTrackerCorrelationType" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="IdocTrackerCorrelation" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="StatementRef" OID="f5f3d23e-25e5-4572-bb19-80e336695e90" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="103.75" HigherBound="103.108">
+                            <om:Property Name="Initializes" Value="True" />
+                            <om:Property Name="Ref" Value="9ed26ec9-c0bb-4c38-a1f3-1169b50a578f" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="StatementRef_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="StatementRef" OID="ce2c2080-5944-4ff2-9e61-653cb2845766" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="105.87" HigherBound="105.109">
+                            <om:Property Name="Initializes" Value="False" />
+                            <om:Property Name="Ref" Value="d924f0bc-019f-41f0-b226-2123728554bd" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="StatementRef_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="31b58a96-2d92-4bbd-97a0-100bc2a6a72d" ParentLink="ComplexStatement_Statement" LowerBound="96.1" HigherBound="102.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct WaitForIdoc Request" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="8af2b577-3a87-420b-8214-bcd2c9d90baa" ParentLink="Construct_MessageRef" LowerBound="97.31" HigherBound="97.49">
+                            <om:Property Name="Ref" Value="WaitForIdocRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="0c53b6a6-2549-457a-a48c-8e7379758c65" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="101.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.ChangePurchaseOrder_to_WaitForIdocRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ChangePurchaseOrder_to_WaitForIdocRequest" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="dd19199c-f682-47fe-8100-f40f346aadd6" ParentLink="Transform_OutputMessagePartRef" LowerBound="100.36" HigherBound="100.54">
+                                <om:Property Name="MessageRef" Value="WaitForIdocRequest" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="2abed510-b5a7-4ade-89a6-66a11ee96434" ParentLink="Transform_InputMessagePartRef" LowerBound="100.129" HigherBound="100.136">
+                                <om:Property Name="MessageRef" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="9ed26ec9-c0bb-4c38-a1f3-1169b50a578f" ParentLink="ComplexStatement_Statement" LowerBound="102.1" HigherBound="104.1">
+                        <om:Property Name="PortName" Value="SendToIdocTrackerPort" />
+                        <om:Property Name="MessageName" Value="WaitForIdocRequest" />
+                        <om:Property Name="OperationName" Value="Send" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send To Idoc Tracker" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="d924f0bc-019f-41f0-b226-2123728554bd" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="106.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="ReceiveFromIdocTrackerPort" />
+                        <om:Property Name="MessageName" Value="WaitForIdocResponse" />
+                        <om:Property Name="OperationName" Value="Receive" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive From Idoc Tracker" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="f4b0f1d8-25b9-4ada-b62b-b08e99001c23" ParentLink="ComplexStatement_Statement" LowerBound="106.1" HigherBound="124.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct Response" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="ce4e8f4f-c720-49c7-a100-1aa5755ad5bc" ParentLink="Construct_MessageRef" LowerBound="107.31" HigherBound="107.39">
+                            <om:Property Name="Ref" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="96cdb4fd-71dc-4373-8b79-f24afa587dd5" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="111.1">
+                            <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="fa6dc008-e767-454d-b8c0-99200c4c7663" ParentLink="Transform_OutputMessagePartRef" LowerBound="110.36" HigherBound="110.44">
+                                <om:Property Name="MessageRef" Value="Response" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_8" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="129b5063-1335-4b5a-af47-0f69800c55b2" ParentLink="Transform_InputMessagePartRef" LowerBound="110.135" HigherBound="110.142">
+                                <om:Property Name="MessageRef" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_7" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="65d112de-332f-41cb-8761-e17af8e42076" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="123.1">
+                            <om:Property Name="Expression" Value="Response = Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(&#xD;&#xA;    Response, &#xD;&#xA;    WaitForIdocResponse.Status, &#xD;&#xA;    System.Convert.ToString(WaitForIdocResponse.StatusCode), &#xD;&#xA;    WaitForIdocResponse.StatusText);&#xD;&#xA; &#xD;&#xA; &#xD;&#xA; &#xD;&#xA; &#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Update Status" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="fb1cb533-e71c-4c89-8692-0e57ce37ba9c" ParentLink="ComplexStatement_Statement" LowerBound="124.1" HigherBound="126.1">
+                        <om:Property Name="PortName" Value="WebServiceResponse_Port" />
+                        <om:Property Name="MessageName" Value="Response" />
+                        <om:Property Name="OperationName" Value="SendChangePurchaseOrderResponse" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send Unformatted Response" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="5056be10-955b-40c0-bb19-d13cf3dfe571" ParentLink="Scope_MessageDeclaration" LowerBound="90.1" HigherBound="91.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="WaitForIdocRequest" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="6015a7ad-7977-4b9f-a4fd-b47345c15e33" ParentLink="Scope_MessageDeclaration" LowerBound="91.1" HigherBound="92.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="WaitForIdocResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageDeclaration" OID="5ed03c8f-5fe4-4ca2-9e21-80d13890f61b" ParentLink="Scope_MessageDeclaration" LowerBound="92.1" HigherBound="93.1">
+                        <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response" />
+                        <om:Property Name="ParamDirection" Value="In" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ErrorResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="9b0d5139-e612-4f00-80b7-0963b45288e3" ParentLink="Scope_Catch" LowerBound="129.1" HigherBound="145.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch .Net Exception" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="0e850187-db82-495e-b6eb-373b00593313" ParentLink="Catch_Statement" LowerBound="132.1" HigherBound="140.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct ErrorResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="8149d36f-54a7-4341-b7b8-48a22feb55a2" ParentLink="Construct_MessageRef" LowerBound="133.35" HigherBound="133.48">
+                                <om:Property Name="Ref" Value="ErrorResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="41ecc229-7c7c-4e13-8682-faf68ec230ee" ParentLink="ComplexStatement_Statement" LowerBound="135.1" HigherBound="137.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="CreatePurchaseOrderRequest_to_CreatePurchaseOrderResponse" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="81f474b3-a3b6-4b5f-ad00-8d665a67dced" ParentLink="Transform_InputMessagePartRef" LowerBound="136.144" HigherBound="136.151">
+                                    <om:Property Name="MessageRef" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_11" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="df1d9d44-60a9-45bc-b7ed-4e28851e7798" ParentLink="Transform_OutputMessagePartRef" LowerBound="136.40" HigherBound="136.53">
+                                    <om:Property Name="MessageRef" Value="ErrorResponse" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_12" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="e56247bb-190b-48b1-bd90-4b106a1e7435" ParentLink="ComplexStatement_Statement" LowerBound="137.1" HigherBound="139.1">
+                                <om:Property Name="Expression" Value="Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(ErrorResponse, ex);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="Set Error Message" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="afe0583d-e084-43bf-a870-88f4883f5cd4" ParentLink="Catch_Statement" LowerBound="140.1" HigherBound="142.1">
+                            <om:Property Name="PortName" Value="WebServiceResponse_Port" />
+                            <om:Property Name="MessageName" Value="ErrorResponse" />
+                            <om:Property Name="OperationName" Value="SendChangePurchaseOrderResponse" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send ErrorResponse" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Terminate" OID="4b448409-a54d-4c0a-bbf1-151d87a4e8b1" ParentLink="Catch_Statement" LowerBound="142.1" HigherBound="144.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Terminate with exception: &quot; + ex.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Terminate_Trans" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="15ff1e85-aec7-4182-809f-4e518f926ab2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.WebServiceRequest_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WebServiceRequest_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="3b0e7afb-5149-456a-9a5a-407e0453d2ab" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="89274056-9893-429f-8ed1-2594a16b03fe" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="19.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="44" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="Transmitted" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.SapIdocSend_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SapIdocSend_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="a6e5d665-cfec-4176-80de-e77ad2357a2e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="cfa79afd-5b35-4e67-8dc8-6a69b3b2163b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="19.1" HigherBound="21.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="86" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.WebServiceResponse_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="WebServiceResponse_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="6840277b-f1a0-4e1f-8657-11b243e73f1c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="19.1" HigherBound="20.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="00d847b4-179a-40cb-91c9-7c80418a99d1" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="95" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.SendToIdocTrackerPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendToIdocTrackerPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="4d7bb771-ee39-4275-a272-837dcb96bb66" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e84e5cb4-6418-4b1f-872c-128fd176a238" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="99" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.ReceiveFromIdocTrackerPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveFromIdocTrackerPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="DirectBindingAttribute" OID="97f3a020-8e35-40a9-b0aa-88f96e4fc5ca" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="7c049146-7fc2-4f41-8309-9fb2f55f43d3" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="36" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.US.Orchestrations.PortType_Archive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Archive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="3587730a-02de-482e-b83d-1baddc7b0edf" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e8998842-b9da-41be-8b86-e26864801488" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Archive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="399306f8-4a8c-4664-a84e-1b449c8c018c" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Save" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="62f00d85-ca06-4bda-a926-f5a816f4e627" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.90">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.PORDCH01.IDocOperation_PORDCH01_620_3_Send" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.US.Orchestrations
+{
+    internal porttype PortType_Archive
+    {
+        oneway Save
+        {
+            Visy.Middleware.Common.Schemas.SAP.PORDCH01.IDocOperation_PORDCH01_620_3_Send
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Process_ChangePurchaseOrder
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements WebServiceRequest_PortType WebServiceRequest_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        [Microsoft.XLANGs.BaseTypes.DeliveryNotification(Microsoft.XLANGs.BaseTypes.DeliveryNotification.NotificationLevel.Transmitted)]
+        port uses SapIdocSend_PortType SapIdocSend_Port;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses WebServiceResponse_PortType WebServiceResponse_Port;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses SendToIdocTrackerPortType SendToIdocTrackerPort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements ReceiveFromIdocTrackerPortType ReceiveFromIdocTrackerPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Archive Port_Archive;
+        message Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Request Request;
+        message Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response Response;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5772bf82-9e40-43d8-8a18-5102b719f7f7")]
+            activate receive (WebServiceRequest_Port.ChangePurchaseOrder, Request);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("464830df-581b-43b1-a5ba-d0e6134650fb")]
+            scope
+            {
+                message Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response ReceiptResponse;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5567c291-f408-46be-b60c-3c3b1c57c784")]
+                    construct ReceiptResponse
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("cbc0a0d8-04b7-45d0-aaee-e1db61adee9b")]
+                        transform (ReceiptResponse) = Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse (Request);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ba015edd-c5bb-4e7e-a734-cab221c0774c")]
+                    send (WebServiceRequest_Port.ChangePurchaseOrder, ReceiptResponse);
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6e1b4f08-3962-4fb0-b8d6-f6e2eeac2f8e")]
+            scope
+            {
+                message Visy.Middleware.Common.Schemas.SAP.PORDCH01.IDocOperation_PORDCH01_620_3_Send PORDCH01;
+                message Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response ErrorResponse;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9062c86e-af9a-48e2-89d5-b2fbf1d8c389")]
+                    construct PORDCH01
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4517102f-8120-4ad3-9998-cc8f8ed7b37c")]
+                        transform (PORDCH01) = Visy.Middleware.SAP.US.Maps.ChangePurchaseOrder_to_PORDCH01 (Request);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("aac8f197-0698-4c2e-af52-85b0ae95a5f3")]
+                    send (Port_Archive.Save, PORDCH01);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("1eefa000-a1c1-44ca-b288-c85b217b52fa")]
+                    send (SapIdocSend_Port.SendPORDCH01, PORDCH01);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("12f361c0-4288-4961-814f-a78c222f20e9")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4b78e74f-1e23-4bbc-95d6-129934ac481f")]
+                        construct ErrorResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("75078661-99f9-4ea5-826d-30e74592fac7")]
+                            transform (ErrorResponse) = Visy.Middleware.SAP.US.Maps.CreatePurchaseOrderRequest_to_CreatePurchaseOrderResponse (Request);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8657f1d1-ae7a-4113-af24-c2138faebca3")]
+                            Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(ErrorResponse, ex);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("263a3e2e-5696-4624-a762-242e81983016")]
+                        send (WebServiceResponse_Port.SendChangePurchaseOrderResponse, ErrorResponse);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("806d91e4-de72-4c4b-bca4-b72b93a0f202")]
+                        terminate "Terminated with exception: " + ex.ToString();;
+                    }
+                }
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("090b8a00-f17f-4ba0-a622-db5dbc5d13a2")]
+            scope
+            {
+                message Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocRequest WaitForIdocRequest;
+                message Visy.Middleware.SAP.IDOCTracker.Schemas.WaitForIdocSchema.WaitForIdocResponse WaitForIdocResponse;
+                message Visy.Middleware.SAP.US.Schemas.ChangePurchaseOrder.Response ErrorResponse;
+                correlation IdocTrackerCorrelationType IdocTrackerCorrelation;
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("31b58a96-2d92-4bbd-97a0-100bc2a6a72d")]
+                    construct WaitForIdocRequest
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0c53b6a6-2549-457a-a48c-8e7379758c65")]
+                        transform (WaitForIdocRequest) = Visy.Middleware.SAP.US.Maps.ChangePurchaseOrder_to_WaitForIdocRequest (Request);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9ed26ec9-c0bb-4c38-a1f3-1169b50a578f")]
+                    send (SendToIdocTrackerPort.Send, WaitForIdocRequest, initialize IdocTrackerCorrelation);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d924f0bc-019f-41f0-b226-2123728554bd")]
+                    receive (ReceiveFromIdocTrackerPort.Receive, WaitForIdocResponse, IdocTrackerCorrelation);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f4b0f1d8-25b9-4ada-b62b-b08e99001c23")]
+                    construct Response
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("96cdb4fd-71dc-4373-8b79-f24afa587dd5")]
+                        transform (Response) = Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse (Request);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("65d112de-332f-41cb-8761-e17af8e42076")]
+                        Response = Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(
+                            Response, 
+                            WaitForIdocResponse.Status, 
+                            System.Convert.ToString(WaitForIdocResponse.StatusCode), 
+                            WaitForIdocResponse.StatusText);
+                         
+                         
+                         
+                         
+                        
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("fb1cb533-e71c-4c89-8692-0e57ce37ba9c")]
+                    send (WebServiceResponse_Port.SendChangePurchaseOrderResponse, Response);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9b0d5139-e612-4f00-80b7-0963b45288e3")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0e850187-db82-495e-b6eb-373b00593313")]
+                        construct ErrorResponse
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("41ecc229-7c7c-4e13-8682-faf68ec230ee")]
+                            transform (ErrorResponse) = Visy.Middleware.SAP.US.Maps.ChangePurchaseOrderRequest_to_ChangePurchaseOrderResponse (Request);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e56247bb-190b-48b1-bd90-4b106a1e7435")]
+                            Visy.Middleware.SAP.US.Components.MessageHelper.AddMessageStatus(ErrorResponse, ex);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("afe0583d-e084-43bf-a870-88f4883f5cd4")]
+                        send (WebServiceResponse_Port.SendChangePurchaseOrderResponse, ErrorResponse);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4b448409-a54d-4c0a-bbf1-151d87a4e8b1")]
+                        terminate "Terminate with exception: " + ex.ToString();;
+                    }
+                }
+            }
+        }
+    }
+}
+

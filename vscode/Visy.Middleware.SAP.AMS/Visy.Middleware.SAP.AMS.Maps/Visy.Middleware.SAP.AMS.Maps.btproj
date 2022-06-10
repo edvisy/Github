@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FC04A650-66E6-4495-B708-CF71C81863F1}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.AMS.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.AMS.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.INFREC01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.INFREC01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.MATERIALRES_CREAT101.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.MATMAS05">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.MATMAS05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.MBGMCR02">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.MBGMCR02.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.SRCLST01, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.SRCLST01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.Z1ORDERS05">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.Z1ORDERS05.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZCREMAS04">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZCREMAS04.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZFIDCCP02">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZFIDCCP02.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZINTERNALORDER01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZINTERNALORDER01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZINV01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZINV01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZLFMAS02">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZLFMAS02.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZMATERIALRESERVATION.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZMB1AIFS01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZMB1AIFS01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZPREQCR03">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZPREQCR03.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZPROJECT01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZPROJECT01.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.SAP.AMS.ZSTOCK01">
+      <HintPath>..\..\References\Visy.Middleware.Common.SAP.AMS.ZSTOCK01.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="CLFMAS_to_RECEIVE_INVENTORY_PART_CHR.btm">
+      <TypeName>CLFMAS_to_RECEIVE_INVENTORY_PART_CHR</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="CREMAS_to_RECEIVE_SUPPLIER_INFO.btm">
+      <TypeName>CREMAS_to_RECEIVE_SUPPLIER_INFO</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="INFREC_to_RECEIVE_SUPPLIER_FOR_PURCH_PARTS.btm">
+      <TypeName>INFREC_to_RECEIVE_SUPPLIER_FOR_PURCH_PARTS</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="MATERIAL_REQ_to_ZMATERIALRESERVATION_DELETE.btm">
+      <TypeName>MATERIAL_REQ_to_ZMATERIALRESERVATION_DELETE</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="MATMAS_to_RECEIVE_INVENTORY_PART.btm">
+      <TypeName>MATMAS_to_RECEIVE_INVENTORY_PART</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="MBGMCR_to_RECEIVE_PURCHASE_RECEIPT.btm">
+      <TypeName>MBGMCR_to_RECEIVE_PURCHASE_RECEIPT</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ORDERS_to_RECEIVE_PURCHASE_ORDER.btm">
+      <TypeName>ORDERS_to_RECEIVE_PURCHASE_ORDER</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="PURCHASE_REQ_to_ZPREQCR.btm">
+      <TypeName>PURCHASE_REQ_to_ZPREQCR</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="WORK_ORDER_to_ZINTERNAL_ORDER.btm">
+      <TypeName>WORK_ORDER_to_ZINTERNAL_ORDER</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZFIDCC2_to_RECEIVE_ACCOUNTING_JOURNAL.btm">
+      <TypeName>ZFIDCC2_to_RECEIVE_ACCOUNTING_JOURNAL</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZFIDCC2_to_RECEIVE_SUPPLIER_INVOICE.btm">
+      <TypeName>ZFIDCC2_to_RECEIVE_SUPPLIER_INVOICE</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZINV01_to_RECEIVE_STOCK_LEVEL.btm">
+      <TypeName>ZINV01_to_RECEIVE_STOCK_LEVEL</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZMB1AIFS_to_RECEIVE_SCRAP.btm">
+      <TypeName>ZMB1AIFS_to_RECEIVE_SCRAP</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZMB1AIFS_to_RECEIVE_WORK_ORDER_ISSUE.btm">
+      <TypeName>ZMB1AIFS_to_RECEIVE_WORK_ORDER_ISSUE</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="ZPROJECT_to_RECEIVE_PROJECT_ORDER.btm">
+      <TypeName>ZPROJECT_to_RECEIVE_PROJECT_ORDER</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.AMS.Components\Visy.Middleware.SAP.AMS.Components.csproj">
+      <Project>{f7ce84a9-93a8-4202-9289-f04e01085d41}</Project>
+      <Name>Visy.Middleware.SAP.AMS.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.AMS.Schemas\Visy.Middleware.SAP.AMS.Schemas.btproj">
+      <Project>{d54a8ea8-1866-434c-b407-72f3b9a30311}</Project>
+      <Name>Visy.Middleware.SAP.AMS.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MATERIAL_REQ_to_MATERIALRES_CREATE1_740.btm">
+      <SubType>Task</SubType>
+      <TypeName>MATERIAL_REQ_to_MATERIALRES_CREATE1_740</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="SRCLST01_to_RECEIVE_SUPP_SOURCE_LISTS.btm">
+      <TypeName>SRCLST01_to_RECEIVE_SUPP_SOURCE_LISTS</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SRCLST01_to_RECEIVE_SUPP_SOURCE_LISTS.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ZSTOCK01_to_RECEIVE_SUPPLY_DEMAND.xsl" />
+    <Map Include="ZSTOCK01_to_RECEIVE_SUPPLY_DEMAND.btm">
+      <TypeName>ZSTOCK01_to_RECEIVE_SUPPLY_DEMAND</TypeName>
+      <Namespace>Visy.Middleware.SAP.AMS.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

@@ -1,0 +1,86 @@
+﻿
+
+@model Visy.Middleware.Web.Models.PDFOrderSettingsRec2
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function CreateSuccess() {
+        $("#dialog-new").dialog('destroy');
+
+        SetPDFOrderList();
+
+        $("#dialog-confirm-saved").dialog({
+            autoOpen: false,
+            resizable: false,
+            height: 170,
+            width: 350,
+            show: { effect: 'drop', direction: "up" },
+            modal: true,
+            draggable: true,
+            buttons: {
+                "OK": function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+        $("#dialog-confirm-saved").dialog('open');
+
+    }
+</script>
+
+@using (Ajax.BeginForm("AddRecord", "Admin", new AjaxOptions { HttpMethod = "POST", OnSuccess = "CreateSuccess" }))
+{
+    @Html.ValidationSummary(true)    
+
+        <fieldset>
+            <div class="editor-label">              
+                <label class="form-label">Customer Email</label>    
+                @Html.ValidationMessageFor(model => model.from_email, "", new { @class = "text-danger" })           
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.from_email, new { htmlAttributes = new { @class = "text ui-widget-content ui-corner-all" } })
+              
+            </div>
+
+            <div class="editor-label">
+                <label class="form-label">Customer Name</label>         
+                @Html.ValidationMessageFor(model => model.customer_name, "", new { @class = "text-danger" })       
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.customer_name, new { htmlAttributes = new { @class = "text ui-widget-content ui-corner-all" } })
+              
+            </div>
+
+            <div class="editor-label">
+                <label class="form-label">Customer Code</label>    
+                @Html.ValidationMessageFor(model => model.customer_code, "", new { @class = "text-danger" })            
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.customer_code, new { htmlAttributes = new { @class = "text ui-widget-content ui-corner-all" } })
+             
+            </div>
+
+            <div class="editor-label">
+                <label class="form-label">Unit Price Factor</label>  
+                @Html.ValidationMessageFor(model => model.unit_price_factor, "", new { @class = "text-danger" })              
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.unit_price_factor, new { htmlAttributes = new { @class = "text ui-widget-content ui-corner-all" } })
+             
+            </div>
+
+            <div class="editor-label">
+                <label class="form-label">Customer EAN</label> 
+                @Html.ValidationMessageFor(model => model.customer_ean, "", new { @class = "text-danger" })               
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.customer_ean, new { htmlAttributes = new { @class = "text ui-widget-content ui-corner-all" } })             
+            </div>
+
+            <p>
+                <input type="submit" value="Save" id="btnSave" name="cmd" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" />                           
+            </p>
+        </fieldset>  
+}

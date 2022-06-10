@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="cb3b1044-365b-4d09-92ec-487c6664fcd1" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.FoxConn.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="5bfe966c-6eae-4a2e-b49c-b6f883f47b94" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PROCESS_FOXCONN" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="ServiceBody" OID="67d2c952-e8e8-45e3-9dea-f3be894aef2e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="425f3ad6-54b6-4a95-b8fd-2da75ff6f00b" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveLGXInvoice" />
+                    <om:Property Name="MessageName" Value="LGX_Invoice" />
+                    <om:Property Name="OperationName" Value="ReceiveFOXCONNOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_LGX_Invoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="d2ff5f25-b667-466e-8fcb-df5ede900921" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Construct_FOXCONN_EDI_Message" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="fe5c83c1-9c4c-48b9-8487-b1fad6bf8e60" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.FoxConn.Maps.LGX_Invoice_To_X12" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="LGX_Invoice_X_FOXCONN_EDI" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="cd06a918-d045-431f-a41f-e3047486930c" ParentLink="Transform_InputMessagePartRef" LowerBound="35.92" HigherBound="35.103">
+                            <om:Property Name="MessageRef" Value="LGX_Invoice" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="f499e391-bdaa-4a0a-a664-f60ec21ee70d" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.35">
+                            <om:Property Name="MessageRef" Value="Fox_EDI" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="14191e7f-08df-4664-86a9-7f9e13d57a0a" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.30">
+                        <om:Property Name="Ref" Value="Fox_EDI" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="c4795104-b7d9-4a01-9c26-bb3ec85be4b3" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="SendFoxEDI" />
+                    <om:Property Name="MessageName" Value="Fox_EDI" />
+                    <om:Property Name="OperationName" Value="SendFOXCONNOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_EDI" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="4f2bd359-656f-43cb-997e-ef0619616c7b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.FoxConn.Orchestrations.PortType_LGXInvoice" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveLGXInvoice" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="88bc71c2-0ee6-4a23-9f4a-3b43a7c0d844" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="9204e418-46c7-4ca9-aa98-53215237fee5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.FoxConn.Orchestrations.PortType_SendFoxEDI" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFoxEDI" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="4277907e-f991-4863-a5ca-f96a516de0c7" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e7ea65d0-fd7d-4dc8-8f71-35e9d0906ca1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="LGX_Invoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b98e52b5-729d-42da-8391-da7833308413" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.FoxConn.Schemas.X12_00204_810" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Fox_EDI" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d7c0b1ed-ddd1-4d6f-b6fc-5933a6d98d55" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_LGXInvoice" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="6d471c1a-fb47-43e0-afa8-79064fe831ad" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveFOXCONNOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="ed577190-4c78-4393-9fb1-25d146086a5f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.55">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.INVOICE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="903f310b-31c7-4789-bf51-bb851255e699" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendFoxEDI" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="3f375aaa-7b76-45d3-a241-42a256daef61" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendFOXCONNOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1a101b9a-3584-4950-90fb-307624d4d7e5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.62">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.FoxConn.Schemas.X12_00204_810" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.FoxConn.Orchestrations
+{
+    internal porttype PortType_LGXInvoice
+    {
+        oneway ReceiveFOXCONNOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.INVOICE
+        };
+    };
+    internal porttype PortType_SendFoxEDI
+    {
+        oneway SendFOXCONNOperation
+        {
+            Visy.Middleware.LGX.FoxConn.Schemas.X12_00204_810
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PROCESS_FOXCONN
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_LGXInvoice ReceiveLGXInvoice;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SendFoxEDI SendFoxEDI;
+        message Visy.Middleware.Common.Schemas.LGX.INVOICE LGX_Invoice;
+        message Visy.Middleware.LGX.FoxConn.Schemas.X12_00204_810 Fox_EDI;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("425f3ad6-54b6-4a95-b8fd-2da75ff6f00b")]
+            activate receive (ReceiveLGXInvoice.ReceiveFOXCONNOperation, LGX_Invoice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("d2ff5f25-b667-466e-8fcb-df5ede900921")]
+            construct Fox_EDI
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fe5c83c1-9c4c-48b9-8487-b1fad6bf8e60")]
+                transform (Fox_EDI) = Visy.Middleware.LGX.FoxConn.Maps.LGX_Invoice_To_X12 (LGX_Invoice);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("c4795104-b7d9-4a01-9c26-bb3ec85be4b3")]
+            send (SendFoxEDI.SendFOXCONNOperation, Fox_EDI);
+        }
+    }
+}
+

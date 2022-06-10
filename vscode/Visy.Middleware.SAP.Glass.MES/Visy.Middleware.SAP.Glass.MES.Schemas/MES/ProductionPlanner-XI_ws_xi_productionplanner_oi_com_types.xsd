@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<schema elementFormDefault="qualified" targetNamespace="http://ws.xi.productionplanner.oi.com/types" xmlns="http://www.w3.org/2001/XMLSchema">
+  <complexType name="GlassOrder">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="furnace" type="string" />
+      <element minOccurs="0" name="colour" type="string" />
+      <element minOccurs="0" name="start" type="date" />
+      <element minOccurs="0" name="end" type="date" />
+    </sequence>
+  </complexType>
+  <complexType name="BottleOrder">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="plant" type="string" />
+      <element minOccurs="0" name="workCentre" type="string" />
+      <element minOccurs="0" name="glassContainer" type="string" />
+      <element minOccurs="0" name="start" type="date" />
+      <element minOccurs="0" name="end" type="date" />
+      <element minOccurs="0" name="quantity" type="double" />
+      <element minOccurs="0" name="quantityUnits" type="string" />
+      <element minOccurs="0" name="planSpeed" type="double" />
+      <element minOccurs="0" name="planEfficiency" type="double" />
+      <element minOccurs="0" name="planWeight" type="double" />
+      <element minOccurs="0" name="planCavitiesUsed" type="double" />
+      <element minOccurs="0" name="mouldSet" type="string" />
+      <element minOccurs="0" name="blankSet" type="string" />
+      <element minOccurs="0" name="colour" type="string" />
+      <element minOccurs="0" name="process" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SKUOrder">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="line" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="start" type="date" />
+      <element minOccurs="0" name="end" type="date" />
+      <element minOccurs="0" name="quantity" type="double" />
+      <element minOccurs="0" name="quantityUnits" type="string" />
+      <element minOccurs="0" name="glassContainer" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="PlannedOutage">
+    <sequence minOccurs="0">
+      <element minOccurs="0" name="id" type="string" />
+      <element minOccurs="0" name="line" type="string" />
+      <element minOccurs="0" name="start" type="date" />
+      <element minOccurs="0" name="end" type="date" />
+      <element minOccurs="0" name="comments" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SystemInfo">
+    <sequence>
+      <element name="attribute" xmlns:q1="http://ws.xi.productionplanner.oi.com/types" type="q1:SystemAttribute" />
+      <element name="value" type="string" />
+    </sequence>
+  </complexType>
+  <simpleType name="SystemAttribute">
+    <restriction base="string">
+      <enumeration value="VERSION" />
+      <enumeration value="TIME_ZONE" />
+      <enumeration value="MEMORY_ALLOCATED" />
+      <enumeration value="MEMORY_USED" />
+      <enumeration value="STATUS" />
+    </restriction>
+  </simpleType>
+</schema>

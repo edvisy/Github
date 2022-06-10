@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<brl xmlns="http://schemas.microsoft.com/businessruleslanguage/2002">
+  <ruleset name="SAP.Magento.API.Policies">
+    <version major="1" minor="0" description="" modifiedby="VISY\bangged" date="2018-12-03T17:42:51.6381535+11:00" />
+    <configuration />
+    <bindings>
+      <class ref="ConnectionInfo" class="ConnectionInfo" instance="0" instances="16" selectivity="1">
+        <assembly>Visy.Middleware.SAP.Magento.Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12</assembly>
+        <!--C:\Windows\Microsoft.Net\assembly\GAC_MSIL\Visy.Middleware.SAP.Magento.Components\v4.0_1.0.0.0__7e7bc6e5fd308d12\Visy.Middleware.SAP.Magento.Components.dll-->
+        <namespace>Visy.Middleware.SAP.Magento.Components</namespace>
+      </class>
+    </bindings>
+    <rule name="Pricing" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="93dc2257-ae96-49af-b8f1-23809987864c" />
+              <classmember member="Action" sideeffects="true">
+                <classref ref="ConnectionInfo" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>Pricing</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="79ff1f83-6565-4e8c-99b3-f0a9a8bec6c1" />
+          <classmember member="AuthenticationURL" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-flow-db.pratt.visy.com:27080/visy/_authenticate</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="ec82f433-5f0e-404a-817f-dd4c02eada2e" />
+          <classmember member="UpdateAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-flow-db.pratt.visy.com:27080/visy/price/_update</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="3dec7e11-acaa-4835-918a-c29585ff2826" />
+          <classmember member="InsertAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-flow-db.pratt.visy.com:27080/visy/price/_insert</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="28bf722b-af35-488b-91fb-b7b573e95553" />
+          <classmember member="DeleteAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-flow-db.pratt.visy.com:27080/visy/price/_remove</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="4e2aa4b5-b492-4936-9792-7d0386132168" />
+          <classmember member="UserName" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>biztalk</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="947f6761-27a8-427e-9a3a-bc9b4f0f9d97" />
+          <classmember member="Password" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>Fbrg8RjmR6ngHEA2N54at</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+    <rule name="SoapConnection" priority="0" active="true">
+      <if>
+        <compare operator="equal">
+          <vocabularylink uri="3f0e9bcc-6212-4e6a-853c-e517f157a626" element="05703dd9-1111-40b8-890d-ad7bfc45a925" />
+          <lhs>
+            <function>
+              <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="93dc2257-ae96-49af-b8f1-23809987864c" />
+              <classmember member="Action" sideeffects="true">
+                <classref ref="ConnectionInfo" />
+              </classmember>
+            </function>
+          </lhs>
+          <rhs>
+            <constant>
+              <string>SoapConnection</string>
+            </constant>
+          </rhs>
+        </compare>
+      </if>
+      <then>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="79ff1f83-6565-4e8c-99b3-f0a9a8bec6c1" />
+          <classmember member="AuthenticationURL" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-app01.pratt.visy.com/index.php/api/v2_soap</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="ec82f433-5f0e-404a-817f-dd4c02eada2e" />
+          <classmember member="UpdateAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-app01.pratt.visy.com/index.php/api/v2_soap</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="3dec7e11-acaa-4835-918a-c29585ff2826" />
+          <classmember member="InsertAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-app01.pratt.visy.com/index.php/api/v2_soap</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="28bf722b-af35-488b-91fb-b7b573e95553" />
+          <classmember member="DeleteAPIUrl" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>http://dev-bam-app01.pratt.visy.com/index.php/api/v2_soap</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="4e2aa4b5-b492-4936-9792-7d0386132168" />
+          <classmember member="UserName" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>biztalk</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+        <function>
+          <vocabularylink uri="4f760f28-cefe-4d44-92e8-f17098b16add" element="947f6761-27a8-427e-9a3a-bc9b4f0f9d97" />
+          <classmember member="Password" sideeffects="true">
+            <classref ref="ConnectionInfo" />
+            <argument>
+              <constant>
+                <string>UbV7CaRn7qXwhhG7c6zKyeL4</string>
+              </constant>
+            </argument>
+          </classmember>
+        </function>
+      </then>
+    </rule>
+  </ruleset>
+</brl>

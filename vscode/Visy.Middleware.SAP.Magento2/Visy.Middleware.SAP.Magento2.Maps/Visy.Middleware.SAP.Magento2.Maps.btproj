@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E70DA59-6CBE-431C-97E3-6D5B30FF7127}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Visy.Middleware.SAP.Magento2.Maps</RootNamespace>
+    <AssemblyName>Visy.Middleware.SAP.Magento2.Maps</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Visy.Middleware.Common.Schemas.SAP.PORDCR101, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Common.Schemas.SAP.PORDCR101.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Components.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Components.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.SAP.Magento.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.SAP.Magento.Schemas.dll</HintPath>
+    </Reference>
+    <Reference Include="Visy.Middleware.Schemas.SAP.Generated.Orders05, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7e7bc6e5fd308d12, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\Visy.Middleware.Schemas.SAP.Generated.Orders05.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Common\Visy.Middleware.snk">
+      <Link>Visy.Middleware.snk</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.SAP.Magento2.Components\Visy.Middleware.SAP.Magento2.Components.csproj">
+      <Project>{866db1c9-926e-4ad2-9ff7-76b07b4c4af1}</Project>
+      <Name>Visy.Middleware.SAP.Magento2.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Visy.Middleware.SAP.Magento2.Schemas\Visy.Middleware.SAP.Magento2.Schemas.btproj">
+      <Project>{3973bcc9-03f6-4c34-b4c4-047dfdd5dc9f}</Project>
+      <Name>Visy.Middleware.SAP.Magento2.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ZMatPrice_To_PriceCsv.btm">
+      <TypeName>ZMatPrice_To_PriceCsv</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="ZCustClassSingle_To_CustomerJsonXml.btm">
+      <TypeName>ZCustClassSingle_To_CustomerJsonXml</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ZMatPrice_To_PriceCsv.xsl" />
+    <Content Include="ZMatPrice_To_PriceCsv_extxml.xml" />
+    <Map Include="ZMatLClass_To_catalogProductCreate.btm">
+      <TypeName>ZMatLClass_To_catalogProductCreate</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="ZMatLClass_To_catalogProductCreate.xsl" />
+    <Content Include="ZMatLClass_To_catalogProductCreate_extxml.xml" />
+    <Map Include="Magento_To_Orders05.btm">
+      <TypeName>Magento_To_Orders05</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Invoice02_To_salesInvoiceCreate.btm">
+      <TypeName>Invoice02_To_salesInvoiceCreate</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Invoice02_To_salesInvoiceCreate.xsl" />
+    <Content Include="Invoice02_To_salesInvoiceCreate_extxml.xml" />
+    <Content Include="Magento_To_Orders05.xsl">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Magento_To_Orders05_extxml.xml" />
+    <Map Include="Magento_To_PORDCR101.btm">
+      <TypeName>Magento_To_PORDCR101</TypeName>
+      <Namespace>Visy.Middleware.SAP.Magento2.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Content Include="Magento_To_PORDCR101.xsl" />
+    <Content Include="Magento_To_PORDCR101_extxml.xml" />
+    <Content Include="ZCustClassSingle_To_CustomerJsonXml.xsl" />
+    <Content Include="ZCustClassSingle_To_CustomerJsonXml_extxml.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

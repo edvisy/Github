@@ -1,0 +1,360 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="014ca96c-ea24-4f56-99f7-08f91b66fdb8" LowerBound="1.1" HigherBound="80.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="de863cf4-374b-455a-981a-edbee6581dbc" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_UnTypedIDoc" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="c3160bfc-f89f-42d9-a34d-712204090308" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="IDOC" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="51cb45ad-c8d5-4a1c-96c2-57f79d975ef5" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.81">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="358f803a-99db-4f58-9228-40813b6fd5e7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Archive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="7b0ee19e-815e-48e8-a6bc-704eed6e3525" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1c38d406-e478-42e6-b82c-fc765748a7d0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.81">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="cf0edcf4-1701-4946-ba88-b7c45f7301af" ParentLink="Module_PortType" LowerBound="18.1" HigherBound="25.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_BartenderSoap" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5e8d03a1-0b9b-4ade-88ef-9d714e272987" ParentLink="PortType_OperationDeclaration" LowerBound="20.1" HigherBound="24.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Soap" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a0579f61-547b-40b4-a03e-c0bff3885e0b" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="22.13" HigherBound="22.98">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="8db96b5a-65c9-4383-8be7-8781129792ce" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="22.100" HigherBound="22.122">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="a21da7b3-960a-4516-ab7e-babac841f656" ParentLink="Module_PortType" LowerBound="25.1" HigherBound="32.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_BartenderArchive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="2064864d-e591-402d-a03a-b29d3149b9b5" ParentLink="PortType_OperationDeclaration" LowerBound="27.1" HigherBound="31.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Archive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a1fbc54e-bd2f-46de-8061-7c71d17fcdaf" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="29.13" HigherBound="29.98">
+                    <om:Property Name="Ref" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="54645f5b-8847-46e4-a7e5-f5818f61513a" ParentLink="Module_ServiceDeclaration" LowerBound="32.1" HigherBound="79.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessOutbound" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="6408091c-1dcd-43f5-a386-bcbeebbcab50" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_StrOutputDevice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f32e1a05-b4af-4107-931d-8f4de1132e8b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="41.1" HigherBound="42.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_XmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="495a320d-ad91-44d1-9ec0-beb152315f97" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Resp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c6fa88a6-60e7-4eee-a758-157cfe4ca313" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_HuLabelXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="29196852-adf6-45a6-82e7-533620598c78" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_BartenderXml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="e1522948-acd0-4208-9df6-8f7900b9895b" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="6da299b1-f24e-48a3-a1e7-daf5c540a0b6" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="51.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_UnTypedIDoc" />
+                    <om:Property Name="MessageName" Value="msg_HuLabelXml" />
+                    <om:Property Name="OperationName" Value="IDOC" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_UntypedIdoc" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="4a8d6bfe-5b7a-4e8f-a436-a58e1d8379ea" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="54.1">
+                    <om:Property Name="Expression" Value="v_StrOutputDevice = xpath(msg_HuLabelXml, &quot;translate(/*[local-name()='ZITF_HU_LABEL']/*[local-name()='IDOC']/*[local-name()='E1BPOUTPDEVEXT']/*[local-name()='OUTPUT_DEVICE']/text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;Sap.Glass.Thingworx: HULabel OUTPUT_DEVICE: &quot; + v_StrOutputDevice);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="GetOutputDevice" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="30a8ddeb-f202-423a-87a6-4ab6f59ff2de" ParentLink="ServiceBody_Statement" LowerBound="54.1" HigherBound="56.1">
+                    <om:Property Name="PortName" Value="Port_Archive" />
+                    <om:Property Name="MessageName" Value="msg_HuLabelXml" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Archive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="fa37f532-a7d5-4a70-a8be-eb7e8abd6be4" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="77.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Check_v_StrOutputDevice" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="8bacc4c4-0a1d-4efb-b9fe-0ee6cda91202" ParentLink="ReallyComplexStatement_Branch" LowerBound="57.13" HigherBound="63.1">
+                        <om:Property Name="Expression" Value="v_StrOutputDevice == &quot;THINGWORX&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="THINGWORX" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="VariableAssignment" OID="74285c06-0145-4d66-a070-a747928a2dae" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="62.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;Visy.Middleware.SAP.Glass.ThingWorx.Components.HttpPostHelper.HttpPost(msg_HuLabelXml);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Http Post" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="12e83a23-9c28-4e44-80d2-25922b2fbad7" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="8c195e51-8420-4d30-a475-da159cdb3921" ParentLink="ComplexStatement_Statement" LowerBound="65.1" HigherBound="71.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="cm_Bartender" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="a6832382-e7cb-4f94-9844-4fcfde2b599a" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.SAP.Glass.ThingWorx.Maps.ZITF_HU_LABEL_To_CommandXml" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="X_Bartender" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="3b22c959-937a-4cc3-90bc-583e5238340e" ParentLink="Transform_InputMessagePartRef" LowerBound="69.122" HigherBound="69.136">
+                                    <om:Property Name="MessageRef" Value="msg_HuLabelXml" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="30272de8-5763-49c3-b372-07a8246b1a9d" ParentLink="Transform_OutputMessagePartRef" LowerBound="69.32" HigherBound="69.48">
+                                    <om:Property Name="MessageRef" Value="msg_BartenderXml" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="f1c5cccb-e804-42fb-ac45-0949c47b8e8e" ParentLink="Construct_MessageRef" LowerBound="66.27" HigherBound="66.43">
+                                <om:Property Name="Ref" Value="msg_BartenderXml" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="8ee44783-2cb3-4dad-93e9-cd562f3dee1d" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="73.1">
+                            <om:Property Name="PortName" Value="Port_BartenderArchive" />
+                            <om:Property Name="MessageName" Value="msg_BartenderXml" />
+                            <om:Property Name="OperationName" Value="Archive" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_ArchiveReq" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="290228a3-a152-4ad6-925c-7887978129d0" ParentLink="ComplexStatement_Statement" LowerBound="73.1" HigherBound="76.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;Visy.Middleware.SAP.Glass.ThingWorx.Components.HttpPostHelper.HttpPostBartender(msg_BartenderXml);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Http Post" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="03acdc6a-131a-43a2-8f0c-f90f053b34b5" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="35.1" HigherBound="37.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_UnTypedIDoc" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_UnTypedIDoc" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b1e493af-b3b5-483a-af81-0ad5789c40b9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="35.1" HigherBound="36.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="eb48b55a-9cb1-488c-a555-aaef3b7947d6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="37.1" HigherBound="39.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_Archive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Archive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="59d3344a-a966-4d33-999f-6c9d778faa76" ParentLink="PortDeclaration_CLRAttribute" LowerBound="37.1" HigherBound="38.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e24a6985-e930-4a0f-bd49-cc21b9666b9a" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.Glass.ThingWorx.Orchs.PortType_BartenderArchive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_BartenderArchive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="5b25836b-19a6-4ad3-b78a-00880acab15c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.Glass.ThingWorx.Orchs
+{
+    internal porttype PortType_UnTypedIDoc
+    {
+        oneway IDOC
+        {
+            Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target
+        };
+    };
+    internal porttype PortType_Archive
+    {
+        oneway FILE
+        {
+            Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target
+        };
+    };
+    internal porttype PortType_BartenderSoap
+    {
+        requestresponse Soap
+        {
+            Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In, System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_BartenderArchive
+    {
+        oneway Archive
+        {
+            Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessOutbound
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_UnTypedIDoc Port_UnTypedIDoc;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Archive Port_Archive;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_BartenderArchive Port_BartenderArchive;
+        message System.Xml.XmlDocument msg_XmlDoc;
+        message System.Xml.XmlDocument msg_Resp;
+        message Visy.Middleware.SAP.Glass.ThingWorx.Schemas.Thingworx_HULabel_Target msg_HuLabelXml;
+        message Visy.Middleware.SAP.Glass.ThingWorx.Schemas.TargetPayload_x15_N_TagPrinter_Command_In msg_BartenderXml;
+        System.String v_StrOutputDevice;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6da299b1-f24e-48a3-a1e7-daf5c540a0b6")]
+            activate receive (Port_UnTypedIDoc.IDOC, msg_HuLabelXml);
+            v_StrOutputDevice = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4a8d6bfe-5b7a-4e8f-a436-a58e1d8379ea")]
+            v_StrOutputDevice = xpath(msg_HuLabelXml, "translate(/*[local-name()='ZITF_HU_LABEL']/*[local-name()='IDOC']/*[local-name()='E1BPOUTPDEVEXT']/*[local-name()='OUTPUT_DEVICE']/text(),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')");
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "Sap.Glass.Thingworx: HULabel OUTPUT_DEVICE: " + v_StrOutputDevice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("30a8ddeb-f202-423a-87a6-4ab6f59ff2de")]
+            send (Port_Archive.FILE, msg_HuLabelXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fa37f532-a7d5-4a70-a8be-eb7e8abd6be4")]
+            if (v_StrOutputDevice == "THINGWORX")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("74285c06-0145-4d66-a070-a747928a2dae")]
+                
+                Visy.Middleware.SAP.Glass.ThingWorx.Components.HttpPostHelper.HttpPost(msg_HuLabelXml);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c195e51-8420-4d30-a475-da159cdb3921")]
+                construct msg_BartenderXml
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6832382-e7cb-4f94-9844-4fcfde2b599a")]
+                    transform (msg_BartenderXml) = Visy.Middleware.SAP.Glass.ThingWorx.Maps.ZITF_HU_LABEL_To_CommandXml (msg_HuLabelXml);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("8ee44783-2cb3-4dad-93e9-cd562f3dee1d")]
+                send (Port_BartenderArchive.Archive, msg_BartenderXml);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("290228a3-a152-4ad6-925c-7887978129d0")]
+                
+                Visy.Middleware.SAP.Glass.ThingWorx.Components.HttpPostHelper.HttpPostBartender(msg_BartenderXml);
+            }
+        }
+    }
+}
+

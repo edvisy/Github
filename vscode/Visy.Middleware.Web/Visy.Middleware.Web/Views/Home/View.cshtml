@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Visy.Middleware.Web.Models.Recordset>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.po_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.biztalk_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.customer_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.archive_file_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.order_sp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reject_message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created_by)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modified_by)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.po_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.biztalk_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.customer_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.archive_file_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.order_sp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reject_message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created_by)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modified_by)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

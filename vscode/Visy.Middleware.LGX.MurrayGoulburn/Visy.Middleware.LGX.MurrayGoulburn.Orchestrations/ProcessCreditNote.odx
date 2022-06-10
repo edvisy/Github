@@ -1,0 +1,532 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="b835fc4c-ed65-419f-8293-6205916cb44a" LowerBound="1.1" HigherBound="168.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="e605530f-8847-498c-91f2-ec426dc33672" ParentLink="Module_PortType" LowerBound="8.1" HigherBound="15.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveCreditNote_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="07b3e769-8094-4990-a579-3703c35ca4eb" ParentLink="PortType_OperationDeclaration" LowerBound="10.1" HigherBound="14.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCreditNote_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1b8b9dc2-bb62-4aad-9481-4ec2b978d393" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="12.13" HigherBound="12.58">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2b17d0df-dacb-4a30-9a65-d504c19e5fa0" ParentLink="Module_PortType" LowerBound="15.1" HigherBound="22.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendEMailNotification_CreditNote_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="56127729-86ab-41cc-b4f5-2167640d7c5b" ParentLink="PortType_OperationDeclaration" LowerBound="17.1" HigherBound="21.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEMailNotification_CreditNote_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0874da1d-5bb2-40dd-aa35-3968fc05cb14" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="19.13" HigherBound="19.22">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.EMailPart" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="cd4acafc-5a23-4efe-b822-b2f56e78ba98" ParentLink="Module_PortType" LowerBound="22.1" HigherBound="29.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendCreditNote_Invoice_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="d29484ad-b9a3-4ee4-8cf8-f9327e5eaf78" ParentLink="PortType_OperationDeclaration" LowerBound="24.1" HigherBound="28.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendCreditNote_Invoice_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a63310a4-ed2e-442f-b319-15f5fa62f832" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="26.13" HigherBound="26.72">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="685db0de-c533-41d9-a73f-d2de2df8640f" ParentLink="Module_PortType" LowerBound="29.1" HigherBound="36.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendEMail_PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1f14a65b-2f94-43af-a93f-5f24503bc3b2" ParentLink="PortType_OperationDeclaration" LowerBound="31.1" HigherBound="35.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEMail_PortOperation" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="ae7628cd-4f4a-448b-b6c0-38d8c51bc044" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="33.13" HigherBound="33.22">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.EMailPart" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="f263bbba-efef-4a13-8d05-2421b9255e0d" ParentLink="Module_ServiceDeclaration" LowerBound="36.1" HigherBound="167.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessCreditNote" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="1a0cf80a-3aad-4810-b2d2-5c57c4085bca" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreditNo" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="53ccc942-e585-4868-9c16-39e73629069d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Text.StringBuilder" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgbody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="e60b65a8-bd62-49ec-beb7-2109cccb6d93" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="sMsgID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6932ce14-030a-4a53-a4dc-64d6c409b86e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="baseDIR" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="ef0215b7-1856-401f-a502-e42ca0bd2b8a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="fileName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a2a15862-7952-40ec-a416-bd7eba8807d3" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CreditIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1f0fc669-7873-4a8d-9b9c-53bcce1a66d4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InvoiceOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d77fa328-0cd4-4610-a147-3a1f1a2222ac" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.EMailPart" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMail" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f2a156f0-a29a-4596-b494-2837fea5b340" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="fcbe7e36-4d92-47f4-8e65-19fed43dbb71" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="64.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveCreditNote_Port" />
+                    <om:Property Name="MessageName" Value="CreditIn" />
+                    <om:Property Name="OperationName" Value="ReceiveCreditNote_PortOperation" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_CreditNote" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="f79f62ce-5235-46d1-859c-81c56ff1c18d" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="66.1">
+                    <om:Property Name="Expression" Value="CreditNo = CreditIn.Header.CreditNo;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Initialise" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Decision" OID="8fa6d415-8f3d-42a9-9566-2a21d2b6b0c3" ParentLink="ServiceBody_Statement" LowerBound="66.1" HigherBound="165.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Decide CreditNo" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="28449431-0a83-49dc-94f7-4cccce5c95ae" ParentLink="ReallyComplexStatement_Branch" LowerBound="67.13" HigherBound="114.1">
+                        <om:Property Name="Expression" Value="CreditNo.Length == 0" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Empty" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="31f44d65-9d59-4fef-9557-2ca0a0b59800" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="111.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="91f5b9f6-2fae-42bd-9981-7105a8a34bee" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="110.1">
+                                <om:Property Name="Expression" Value="//SET EMAIL PROPERTIES&#xD;&#xA;msgbody = new System.Text.StringBuilder();&#xD;&#xA;&#xD;&#xA;msgbody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 12pt\&quot;&gt;Visy: Biztalk 2006 R2&lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;&gt;LGX MURRAY GOULBURN&lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-weight: bold; font-size: 12pt;font-style: italic; font-family: Verdana\&quot;&gt;Solution Details&lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;APPLICATION : LGX MURRAY GOULBURN&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;DATE TIME&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + System.DateTime.Now.ToString() + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;Status&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;Credit Number is empty. Please resend.&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;Auto-Generated EMail - Please do not reply to this EMail&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;EMail.EMailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());&#xD;&#xA;EMail.EMailBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;EMail(SMTP.Subject) = &quot;BizTalk: LGX MURRAY GOULBURN - Invalid CreditNote received. Please resend.&quot;;&#xD;&#xA;EMail(SMTP.From) = &quot;biz06support@visy.com.au&quot;;&#xD;&#xA;EMail(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;EMail(SMTP.MessagePartsAttachments) = 1;&#xD;&#xA;EMail(SMTP.SMTPHost) = &quot;biztalkmail&quot;;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EMail" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="c3786ada-57ff-454c-8b43-53112c706ec6" ParentLink="Construct_MessageRef" LowerBound="70.27" HigherBound="70.32">
+                                <om:Property Name="Ref" Value="EMail" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="18fab4ed-d186-4cb3-9292-4f122ab4ef6d" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="113.1">
+                            <om:Property Name="PortName" Value="SendEMailNotification_CreditNote_Port" />
+                            <om:Property Name="MessageName" Value="EMail" />
+                            <om:Property Name="OperationName" Value="SendEMailNotification_CreditNote_PortOperation" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="244b9c6b-e66a-4298-a6c5-e3c84210be1a" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Construct" OID="15447cce-1133-4a83-b9e6-12303df07965" ParentLink="ComplexStatement_Statement" LowerBound="116.1" HigherBound="158.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Map" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="833ae069-7853-4a44-b1b9-6935eaf613fe" ParentLink="ComplexStatement_Statement" LowerBound="119.1" HigherBound="121.1">
+                                <om:Property Name="ClassName" Value="Visy.Middleware.LGX.MurrayGoulburn.Maps.MGCCreditMemoMap" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="XForm CreditNote" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="MessagePartRef" OID="2914d7b1-d6b3-4ef4-8a76-58fb021af1c5" ParentLink="Transform_InputMessagePartRef" LowerBound="120.104" HigherBound="120.112">
+                                    <om:Property Name="MessageRef" Value="CreditIn" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_1" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="392ae866-c88f-467c-b046-4428085f5bed" ParentLink="Transform_OutputMessagePartRef" LowerBound="120.32" HigherBound="120.42">
+                                    <om:Property Name="MessageRef" Value="InvoiceOut" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_2" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="e2719e1a-07a3-4b32-8aef-727c19459e25" ParentLink="ComplexStatement_Statement" LowerBound="121.1" HigherBound="124.1">
+                                <om:Property Name="Expression" Value="fileName = &quot;Credit.&quot; + CreditIn.Header.CustomerCode + &quot;.&quot; + CreditIn.Header.CreditNo + &quot;.dat&quot;;&#xD;&#xA;InvoiceOut(FILE.ReceivedFileName) = fileName;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="Assigning FileName" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="7f2e8af1-d9b4-4040-8b94-509ff1e66a8f" ParentLink="ComplexStatement_Statement" LowerBound="124.1" HigherBound="157.1">
+                                <om:Property Name="Expression" Value="//BUILD HTML MESSAGE&#xD;&#xA;msgbody = new System.Text.StringBuilder();&#xD;&#xA;baseDIR = System.Environment.MachineName + @&quot;\d$\interfaces\&quot;;&#xD;&#xA;&#xD;&#xA;msgbody.AppendLine(&quot;&lt;html&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/head&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 12pt\&quot;&gt;Visy: Biztalk 2006 &lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;p style=\&quot;font-size: 9pt\&quot;&gt;&gt;This is an automated Visy eInvoice.&lt;/p&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;APPLICATION : Murray Goulburn&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;DATE TIME&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;td&gt;&quot; + System.DateTime.Now.ToString() + &quot;&lt;/td&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/tr&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/table&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/body&gt;&quot;);&#xD;&#xA;msgbody.AppendLine(&quot;&lt;/html&gt;&quot;);&#xD;&#xA;&#xD;&#xA;//SET EMAIL PROPERTIES&#xD;&#xA;EMail.EMailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());&#xD;&#xA;EMail.EMailBody(Microsoft.XLANGs.BaseTypes.ContentType) = &quot;text/html&quot;;&#xD;&#xA;EMail(SMTP.Subject) = &quot;Automated Visy eInvoice.&quot;;&#xD;&#xA;EMail(SMTP.From) = &quot;webitadmin@visy.com.au&quot;;&#xD;&#xA;EMail(SMTP.EmailBodyFileCharset) = &quot;UTF-8&quot;;&#xD;&#xA;EMail(SMTP.MessagePartsAttachments) = 1;&#xD;&#xA;&#xD;&#xA;EMail(SMTP.Attachments) = &quot;\\\\&quot; + System.Environment.MachineName + @&quot;\d$\interfaces\LGX.MURRAYGOULBURN\Archive\&quot; + fileName;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="EMail" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="c11e5d9b-5756-4e53-b14e-7ccb750a0a24" ParentLink="Construct_MessageRef" LowerBound="117.27" HigherBound="117.37">
+                                <om:Property Name="Ref" Value="InvoiceOut" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="5b3cae4a-785f-448c-b87e-ad7cc6b764fd" ParentLink="Construct_MessageRef" LowerBound="117.39" HigherBound="117.44">
+                                <om:Property Name="Ref" Value="EMail" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="67b3b5e6-efa6-4613-843c-b98498f77909" ParentLink="ComplexStatement_Statement" LowerBound="158.1" HigherBound="160.1">
+                            <om:Property Name="PortName" Value="SendCreditNote_Invoice_Port" />
+                            <om:Property Name="MessageName" Value="InvoiceOut" />
+                            <om:Property Name="OperationName" Value="SendCreditNote_Invoice_PortOperation" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send Invoice" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Delay" OID="1d449c9b-4c7e-4c6c-a8a8-77be540cfc02" ParentLink="ComplexStatement_Statement" LowerBound="160.1" HigherBound="162.1">
+                            <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,5,0);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Delay_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Send" OID="7910a28d-4cd7-4a9e-9b30-90135ffc7423" ParentLink="ComplexStatement_Statement" LowerBound="162.1" HigherBound="164.1">
+                            <om:Property Name="PortName" Value="SendEMail_Port" />
+                            <om:Property Name="MessageName" Value="EMail" />
+                            <om:Property Name="OperationName" Value="SendEMail_PortOperation" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send EMail" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2e1bd1bf-0d8c-4da8-aade-0c0f162232ce" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="39.1" HigherBound="41.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="0" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.ReceiveCreditNote_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCreditNote_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="d766f60f-1b5f-48e5-88cf-3cde80fe577a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="39.1" HigherBound="40.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b959ebe4-6e08-4bbe-87ba-df687a9a0fa4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="26" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.SendEMailNotification_CreditNote_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEMailNotification_CreditNote_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4334e69e-be37-4422-80af-fa0315413330" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="2516ee87-c825-4131-ae7c-318de7a408af" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="35" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.SendCreditNote_Invoice_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendCreditNote_Invoice_Port" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="6fc1c507-481b-4ebd-808d-af16acd16648" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a3653732-3f3c-4758-868c-a0fddcbe3d0c" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="45.1" HigherBound="47.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="38" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.MurrayGoulburn.Orchestrations.SendEMail_PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendEMail_Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="acf029ec-a2b3-4ee5-bd69-aeca9f033376" ParentLink="PortDeclaration_CLRAttribute" LowerBound="45.1" HigherBound="46.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="dc9441e7-68f5-4ac3-b007-2ba4315dda78" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="EMailPart" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6dc395be-d3ee-4611-828d-37ce1a96a323" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Components.Utilities.RawString" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="EMailBody" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.MurrayGoulburn.Orchestrations
+{
+    internal messagetype EMailPart
+    {
+        body Visy.Middleware.Components.Utilities.RawString EMailBody;
+    };
+    internal porttype ReceiveCreditNote_PortType
+    {
+        oneway ReceiveCreditNote_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.LGX.CREDITNOTE
+        };
+    };
+    internal porttype SendEMailNotification_CreditNote_PortType
+    {
+        oneway SendEMailNotification_CreditNote_PortOperation
+        {
+            EMailPart
+        };
+    };
+    internal porttype SendCreditNote_Invoice_PortType
+    {
+        oneway SendCreditNote_Invoice_PortOperation
+        {
+            Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011
+        };
+    };
+    internal porttype SendEMail_PortType
+    {
+        oneway SendEMail_PortOperation
+        {
+            EMailPart
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessCreditNote
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveCreditNote_PortType ReceiveCreditNote_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendEMailNotification_CreditNote_PortType SendEMailNotification_CreditNote_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendCreditNote_Invoice_PortType SendCreditNote_Invoice_Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendEMail_PortType SendEMail_Port;
+        message Visy.Middleware.Common.Schemas.LGX.CREDITNOTE CreditIn;
+        message Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011 InvoiceOut;
+        message EMailPart EMail;
+        System.String CreditNo;
+        System.Text.StringBuilder msgbody;
+        System.String sMsgID;
+        System.String baseDIR;
+        System.String fileName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fcbe7e36-4d92-47f4-8e65-19fed43dbb71")]
+            activate receive (ReceiveCreditNote_Port.ReceiveCreditNote_PortOperation, CreditIn);
+            CreditNo = "";
+            msgbody = new System.Text.StringBuilder();
+            sMsgID = "";
+            baseDIR = "";
+            fileName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f79f62ce-5235-46d1-859c-81c56ff1c18d")]
+            CreditNo = CreditIn.Header.CreditNo;
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8fa6d415-8f3d-42a9-9566-2a21d2b6b0c3")]
+            if (CreditNo.Length == 0)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("31f44d65-9d59-4fef-9557-2ca0a0b59800")]
+                construct EMail
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("91f5b9f6-2fae-42bd-9981-7105a8a34bee")]
+                    //SET EMAIL PROPERTIES
+                    msgbody = new System.Text.StringBuilder();
+                    
+                    msgbody.AppendLine("<html>");
+                    msgbody.AppendLine("<head>");
+                    msgbody.AppendLine("</head>");
+                    msgbody.AppendLine("<body>");
+                    msgbody.AppendLine("<p style=\"font-size: 12pt\">Visy: Biztalk 2006 R2</p>");
+                    msgbody.AppendLine("<p style=\"font-size: 9pt\">>LGX MURRAY GOULBURN</p>");
+                    msgbody.AppendLine("<p style=\"font-weight: bold; font-size: 12pt;font-style: italic; font-family: Verdana\">Solution Details</p>");
+                    msgbody.AppendLine("<table>");
+                    msgbody.AppendLine("<tr>");
+                    msgbody.AppendLine("<td>APPLICATION : LGX MURRAY GOULBURN</td>");
+                    msgbody.AppendLine("<td>" + "</td>");
+                    msgbody.AppendLine("</tr>");
+                    msgbody.AppendLine("<tr>");
+                    msgbody.AppendLine("<td>DATE TIME</td>");
+                    msgbody.AppendLine("<td>" + System.DateTime.Now.ToString() + "</td>");
+                    msgbody.AppendLine("</tr>");
+                    msgbody.AppendLine("<tr>");
+                    msgbody.AppendLine("<td>Status</td>");
+                    msgbody.AppendLine("<td>Credit Number is empty. Please resend.</td>");
+                    msgbody.AppendLine("</tr>");
+                    msgbody.AppendLine("</table>");
+                    msgbody.AppendLine("Auto-Generated EMail - Please do not reply to this EMail");
+                    msgbody.AppendLine("</body>");
+                    msgbody.AppendLine("</html>");
+                    
+                    EMail.EMailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());
+                    EMail.EMailBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                    EMail(SMTP.Subject) = "BizTalk: LGX MURRAY GOULBURN - Invalid CreditNote received. Please resend.";
+                    EMail(SMTP.From) = "biz06support@visy.com.au";
+                    EMail(SMTP.EmailBodyFileCharset) = "UTF-8";
+                    EMail(SMTP.MessagePartsAttachments) = 1;
+                    EMail(SMTP.SMTPHost) = "biztalkmail";
+                    
+                    
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("18fab4ed-d186-4cb3-9292-4f122ab4ef6d")]
+                send (SendEMailNotification_CreditNote_Port.SendEMailNotification_CreditNote_PortOperation, EMail);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("15447cce-1133-4a83-b9e6-12303df07965")]
+                construct InvoiceOut, EMail
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("833ae069-7853-4a44-b1b9-6935eaf613fe")]
+                    transform (InvoiceOut) = Visy.Middleware.LGX.MurrayGoulburn.Maps.MGCCreditMemoMap (CreditIn);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e2719e1a-07a3-4b32-8aef-727c19459e25")]
+                    fileName = "Credit." + CreditIn.Header.CustomerCode + "." + CreditIn.Header.CreditNo + ".dat";
+                    InvoiceOut(FILE.ReceivedFileName) = fileName;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f2e8af1-d9b4-4040-8b94-509ff1e66a8f")]
+                    //BUILD HTML MESSAGE
+                    msgbody = new System.Text.StringBuilder();
+                    baseDIR = System.Environment.MachineName + @"\d$\interfaces\";
+                    
+                    msgbody.AppendLine("<html>");
+                    msgbody.AppendLine("<head>");
+                    msgbody.AppendLine("</head>");
+                    msgbody.AppendLine("<body>");
+                    msgbody.AppendLine("<p style=\"font-size: 12pt\">Visy: Biztalk 2006 </p>");
+                    msgbody.AppendLine("<p style=\"font-size: 9pt\">>This is an automated Visy eInvoice.</p>");
+                    msgbody.AppendLine("<table>");
+                    msgbody.AppendLine("<tr>");
+                    msgbody.AppendLine("<td>APPLICATION : Murray Goulburn</td>");
+                    msgbody.AppendLine("<td>" + "</td>");
+                    msgbody.AppendLine("</tr>");
+                    msgbody.AppendLine("<tr>");
+                    msgbody.AppendLine("<td>DATE TIME</td>");
+                    msgbody.AppendLine("<td>" + System.DateTime.Now.ToString() + "</td>");
+                    msgbody.AppendLine("</tr>");
+                    msgbody.AppendLine("</table>");
+                    msgbody.AppendLine("</body>");
+                    msgbody.AppendLine("</html>");
+                    
+                    //SET EMAIL PROPERTIES
+                    EMail.EMailBody = new Visy.Middleware.Components.Utilities.RawString(msgbody.ToString());
+                    EMail.EMailBody(Microsoft.XLANGs.BaseTypes.ContentType) = "text/html";
+                    EMail(SMTP.Subject) = "Automated Visy eInvoice.";
+                    EMail(SMTP.From) = "webitadmin@visy.com.au";
+                    EMail(SMTP.EmailBodyFileCharset) = "UTF-8";
+                    EMail(SMTP.MessagePartsAttachments) = 1;
+                    
+                    EMail(SMTP.Attachments) = "\\\\" + System.Environment.MachineName + @"\d$\interfaces\LGX.MURRAYGOULBURN\Archive\" + fileName;
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("67b3b5e6-efa6-4613-843c-b98498f77909")]
+                send (SendCreditNote_Invoice_Port.SendCreditNote_Invoice_PortOperation, InvoiceOut);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("1d449c9b-4c7e-4c6c-a8a8-77be540cfc02")]
+                delay new System.TimeSpan(0,0,0,5,0);
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7910a28d-4cd7-4a9e-9b30-90135ffc7423")]
+                send (SendEMail_Port.SendEMail_PortOperation, EMail);
+            }
+        }
+    }
+}
+

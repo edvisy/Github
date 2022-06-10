@@ -1,0 +1,276 @@
+﻿
+@{
+    ViewBag.Title = "PDFOrderSettings";   
+}
+
+@model PagedList.IPagedList<Visy.Middleware.Web.Models.PDFOrderSettingsRec2>
+@using PagedList.Mvc;
+
+<script type="text/javascript">
+    $(document).ready(function () {
+            $.ajaxSetup({ cache: false });
+            $(".openDialog").on("click", function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $("#dialog-new").dialog({
+                    title: 'Add Settings',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 480,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+                $("#dialog-new").dialog('open');
+                return false;
+            });
+            $(".editDialog").on("click", function (e) {
+                var url = $(this).attr('href');
+                $("#dialog-edit").dialog({
+                    title: 'Edit Settings',
+                    autoOpen: false,
+                    resizable: false,
+                    height: 480,
+                    width: 400,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    open: function (event, ui) {
+                        $(this).load(url);
+                    },
+                    close: function (event, ui) {
+                        $(this).dialog('close');
+                    }
+                });
+                $("#dialog-edit").dialog('open');
+                return false;
+            });
+            $(".confirmDialog").on("click", function (e) {
+                var eurl = $(this).attr('href');
+                $("#dialog-confirm").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    height: 170,
+                    width: 350,
+                    show: { effect: 'drop', direction: "up" },
+                    modal: true,
+                    draggable: true,
+                    buttons: {
+                        "OK": function () {
+                            $(this).dialog("close");
+                            $.ajax({
+                                url: eurl,
+                                cache: false
+                            });
+                            SetPDFOrderList();
+                        },
+                        "Cancel": function () {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function (event, ui) {
+                        $(this).empty().dialog('destroy');
+                    }
+                });
+                $("#dialog-confirm").dialog('open');
+                return false;
+            });
+        });
+
+        function SetPDFOrderList() {
+            $.ajax({
+                url: "Admin/PDFOrderSettings?pageSize=" + $('#pageSize :selected').text() + "&currentFilter=" + "@(ViewBag.CurrentFilter)",
+                cache: false
+            })
+              .done(function (html) {
+                  $("#UpdateContentDiv").html(html);
+              });
+        }
+</script>
+
+
+@using (Ajax.BeginForm("PDFOrderSettings", "Admin", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "UpdateContentDiv" }, new { id = "form1" }))
+{
+    
+    <div class="row" style="width:650px">
+        <div class="col-lg-6">
+            <div class="input-group input-group-width">
+                <input type="text" name="SearchString" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <input type="submit" name="find" value="Go!" class="btn btn-default" />
+                </span>
+            </div>
+        </div>
+    </div>
+}
+
+<div id="users-contain" class="ui-widget">     
+        <table class="ui-widget ui-widget-content" style="font-size: 12px; font-family:MuseoSans_500">
+            <thead>
+                <tr class="ui-widget-header">
+                    <th>@Ajax.ActionLink(
+                                "Email",
+                                "PDFOrderSettings",
+                                new { sortOrder = ViewBag.RefSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })</th>
+                    <th>
+                        @Ajax.ActionLink(
+                                "Customer Code",
+                                "PDFOrderSettings",
+                                new { sortOrder = ViewBag.CustomerCodeSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                    </th>
+                    <th>
+                        @Ajax.ActionLink(
+                                "Customer Name",
+                                "PDFOrderSettings",
+                                new { sortOrder = ViewBag.CustomerNameSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                    </th>
+                    <th>Price Factor</th>
+                    <th>Customer EAN</th>
+                    @*<th>
+                        @Ajax.ActionLink(
+                                "Created Date",
+                                "PDFOrderSettings",
+                                new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                    </th>*@
+                    <th>
+                        @Ajax.ActionLink(
+                                "Modified Date",
+                                "PDFOrderSettings",
+                                new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter },
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "UpdateContentDiv",
+                                    InsertionMode = InsertionMode.Replace,
+                                    HttpMethod = "GET",
+                                    LoadingElementId = "divLoading",
+                                    OnBegin = "onAjaxBegin",
+                                    OnComplete = "onAjaxComplete"
+                                })
+                    </th>
+                    <th>Modified By</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var ot in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => ot.from_email)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.customer_code)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.customer_name)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.unit_price_factor)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.customer_ean)</td>
+                        @*<td>@Html.DisplayFor(modelItem => ot.created_date)</td>*@
+                        <td>@Html.DisplayFor(modelItem => ot.modified_date)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.modified_by)</td>
+                        @*<td>@Html.DisplayFor(modelItem => ot.created_by)</td>
+                        <td>@Html.DisplayFor(modelItem => ot.modified_by)</td>*@
+                        <td>
+                            @Html.ActionLink("Edit", "ViewRecord", new { id = ot.pk }, new { @class = "editDialog" })|
+                            @Html.ActionLink("Delete", "DeleteRecord", new { id = ot.pk }, new { @class = "confirmDialog" })
+                        </td>
+                    </tr>
+                }
+            </thead>
+
+            <tbody></tbody>
+        </table>
+</div>
+
+    <div>@Html.ActionLink("Create", "NewRecord", new { }, new { @class = "openDialog btn btn-default" })</div>
+
+    @using (Ajax.BeginForm("PDFOrderSettings", "Admin", new AjaxOptions { HttpMethod = "GET" }, new { id = "form1" }))
+    {
+        <div style="width: 100%">
+            <div style="display:inline-block;">
+                <div class="pagination" style="display:inline-block; vertical-align:middle; margin:0px;">
+                    @Html.PagedListPager(Model, page => Url.Action("PDFOrderSettings"
+                        , new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter, pageSize = ViewBag.psize }),
+                        PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "UpdateContentDiv" }))
+                </div>
+                <div class="page-count" style="display:inline-block; vertical-align:middle; margin:0px;">
+                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                </div>
+            </div>
+            <div style="display:inline-block; float:right">
+                Page Size: @Html.DropDownList("pageSize")
+            </div>
+        </div>
+    }
+
+
+    <div id="dialog-confirm" style="display: none">
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+            Are you sure to delete ?
+        </p>
+    </div>
+    <div id="dialog-edit" style="display: none">
+    </div>
+    <div id="dialog-new" style="display: none">
+    </div>
+    <div id="dialog-view" style="display: none">
+    </div>
+    <div id="dialog-confirm-saved" style="display: none">
+        <p>
+            <span class="ui-icon ui-icon-bullet" style="float: left; margin: 0 7px 20px 0;"></span>
+            Record saved
+        </p>
+    </div>
+    <script type="text/javascript">
+         $(function () {
+             $("#pageSize").change(function () {                
+                 $.ajax({                   
+                     url: "Admin/PDFOrderSettings?pageSize=" + $('#pageSize :selected').text() + "&currentFilter=" + "@(ViewBag.CurrentFilter)",
+                    cache: false
+                })
+             .done(function (html) {
+                 $("#UpdateContentDiv").html(html);
+             });
+            });
+         });
+    </script>
+
+

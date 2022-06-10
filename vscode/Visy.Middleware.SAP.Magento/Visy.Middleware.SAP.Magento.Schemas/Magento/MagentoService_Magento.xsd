@@ -1,0 +1,2270 @@
+<?xml version="1.0"?>
+<schema targetNamespace="urn:Magento" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation=".\MagentoService_schemas_xmlsoap_org_soap_encoding_1.xsd" namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+  <complexType name="associativeEntity">
+    <all>
+      <element name="key" type="string" />
+      <element name="value" type="string" />
+    </all>
+  </complexType>
+  <complexType name="associativeArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q1="http://schemas.xmlsoap.org/soap/encoding/" base="q1:Array">
+        <attribute xmlns:q2="urn:Magento" d5p1:arrayType="q2:associativeEntity[]" ref="q1:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="associativeMultiEntity">
+    <all>
+      <element name="key" type="string" />
+      <element name="value" xmlns:q3="urn:Magento" type="q3:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="associativeMultiArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q4="http://schemas.xmlsoap.org/soap/encoding/" base="q4:Array">
+        <attribute xmlns:q5="urn:Magento" d5p1:arrayType="q5:associativeMultiEntity[]" ref="q4:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="associativeAnyTypeEntity">
+    <all>
+      <element name="key" type="string" />
+      <element name="value" type="anyType" />
+    </all>
+  </complexType>
+  <complexType name="filters">
+    <all>
+      <element minOccurs="0" name="filter" xmlns:q6="urn:Magento" type="q6:associativeArray" />
+      <element minOccurs="0" name="complex_filter" xmlns:q7="urn:Magento" type="q7:complexFilterArray" />
+    </all>
+  </complexType>
+  <complexType name="complexFilterArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q8="http://schemas.xmlsoap.org/soap/encoding/" base="q8:Array">
+        <attribute xmlns:q9="urn:Magento" d5p1:arrayType="q9:complexFilter[]" ref="q8:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="complexFilter">
+    <all>
+      <element name="key" type="string" />
+      <element name="value" xmlns:q10="urn:Magento" type="q10:associativeAnyTypeEntity" />
+    </all>
+  </complexType>
+  <complexType name="ArrayOfString">
+    <complexContent mixed="false">
+      <restriction xmlns:q11="http://schemas.xmlsoap.org/soap/encoding/" base="q11:Array">
+        <attribute d5p1:arrayType="string[]" ref="q11:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ArrayOfInt">
+    <complexContent mixed="false">
+      <restriction xmlns:q12="http://schemas.xmlsoap.org/soap/encoding/" base="q12:Array">
+        <attribute d5p1:arrayType="int[]" ref="q12:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="apiMethodEntity">
+    <all>
+      <element name="title" type="string" />
+      <element name="path" type="string" />
+      <element name="name" type="string" />
+      <element name="aliases" xmlns:q13="urn:Magento" type="q13:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="ArrayOfApiMethods">
+    <complexContent mixed="false">
+      <restriction xmlns:q14="http://schemas.xmlsoap.org/soap/encoding/" base="q14:Array">
+        <attribute xmlns:q15="urn:Magento" d5p1:arrayType="q15:apiMethodEntity[]" ref="q14:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="apiEntity">
+    <all>
+      <element name="title" type="string" />
+      <element name="name" type="string" />
+      <element name="aliases" xmlns:q16="urn:Magento" type="q16:ArrayOfString" />
+      <element name="methods" xmlns:q17="urn:Magento" type="q17:ArrayOfApiMethods" />
+    </all>
+  </complexType>
+  <complexType name="ArrayOfApis">
+    <complexContent mixed="false">
+      <restriction xmlns:q18="http://schemas.xmlsoap.org/soap/encoding/" base="q18:Array">
+        <attribute xmlns:q19="urn:Magento" d5p1:arrayType="q19:apiEntity[]" ref="q18:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="existsFaltureEntity">
+    <all>
+      <element name="code" type="string" />
+      <element name="message" type="string" />
+    </all>
+  </complexType>
+  <complexType name="ArrayOfExistsFaltures">
+    <complexContent mixed="false">
+      <restriction xmlns:q20="http://schemas.xmlsoap.org/soap/encoding/" base="q20:Array">
+        <attribute xmlns:q21="urn:Magento" d5p1:arrayType="q21:existsFaltureEntity[]" ref="q20:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="storeEntity">
+    <all>
+      <element name="store_id" type="int" />
+      <element name="code" type="string" />
+      <element name="website_id" type="int" />
+      <element name="group_id" type="int" />
+      <element name="name" type="string" />
+      <element name="sort_order" type="int" />
+      <element name="is_active" type="int" />
+    </all>
+  </complexType>
+  <complexType name="storeEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q22="http://schemas.xmlsoap.org/soap/encoding/" base="q22:Array">
+        <attribute xmlns:q23="urn:Magento" d5p1:arrayType="q23:storeEntity[]" ref="q22:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="magentoInfoEntity">
+    <all>
+      <element name="magento_version" type="string" />
+      <element name="magento_edition" type="string" />
+    </all>
+  </complexType>
+  <complexType name="directoryCountryEntity">
+    <all>
+      <element name="country_id" type="string" />
+      <element name="iso2_code" type="string" />
+      <element name="iso3_code" type="string" />
+      <element name="name" type="string" />
+    </all>
+  </complexType>
+  <complexType name="directoryCountryEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q24="http://schemas.xmlsoap.org/soap/encoding/" base="q24:Array">
+        <attribute xmlns:q25="urn:Magento" d5p1:arrayType="q25:directoryCountryEntity[]" ref="q24:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="directoryRegionEntity">
+    <all>
+      <element name="region_id" type="string" />
+      <element name="code" type="string" />
+      <element name="name" type="string" />
+    </all>
+  </complexType>
+  <complexType name="directoryRegionEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q26="http://schemas.xmlsoap.org/soap/encoding/" base="q26:Array">
+        <attribute xmlns:q27="urn:Magento" d5p1:arrayType="q27:directoryRegionEntity[]" ref="q26:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="customerCustomerEntityToCreate">
+    <all>
+      <element minOccurs="0" name="customer_id" type="int" />
+      <element minOccurs="0" name="email" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="password" type="string" />
+      <element minOccurs="0" name="website_id" type="int" />
+      <element minOccurs="0" name="store_id" type="int" />
+      <element minOccurs="0" name="group_id" type="int" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="customer_code" type="string" />
+      <element minOccurs="0" name="po_enabled" type="int" />
+      <element minOccurs="0" name="lead_time" type="int" />
+      <element minOccurs="0" name="abcn" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="company_authorised" type="int" />
+      <element minOccurs="0" name="company_type" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="region" type="int" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+    </all>
+  </complexType>
+  <complexType name="customerCustomerEntity">
+    <all>
+      <element minOccurs="0" name="customer_id" type="int" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="store_id" type="int" />
+      <element minOccurs="0" name="website_id" type="int" />
+      <element minOccurs="0" name="created_in" type="string" />
+      <element minOccurs="0" name="email" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="middlename" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="group_id" type="int" />
+      <element minOccurs="0" name="prefix" type="string" />
+      <element minOccurs="0" name="suffix" type="string" />
+      <element minOccurs="0" name="dob" type="string" />
+      <element minOccurs="0" name="taxvat" type="string" />
+      <element minOccurs="0" name="confirmation" type="boolean" />
+      <element minOccurs="0" name="password_hash" type="string" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="customer_code" type="string" />
+      <element minOccurs="0" name="po_enabled" type="int" />
+      <element minOccurs="0" name="lead_time" type="int" />
+      <element minOccurs="0" name="abcn" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="company_authorised" type="int" />
+      <element minOccurs="0" name="company_type" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="region" type="int" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+    </all>
+  </complexType>
+  <complexType name="customerCustomerEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q28="http://schemas.xmlsoap.org/soap/encoding/" base="q28:Array">
+        <attribute xmlns:q29="urn:Magento" d5p1:arrayType="q29:customerCustomerEntity[]" ref="q28:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="customerGroupEntity">
+    <all>
+      <element name="customer_group_id" type="int" />
+      <element name="customer_group_code" type="string" />
+    </all>
+  </complexType>
+  <complexType name="customerGroupEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q30="http://schemas.xmlsoap.org/soap/encoding/" base="q30:Array">
+        <attribute xmlns:q31="urn:Magento" d5p1:arrayType="q31:customerGroupEntity[]" ref="q30:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="customerAddressEntityCreate">
+    <all>
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="country_id" type="string" />
+      <element minOccurs="0" name="fax" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="middlename" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="prefix" type="string" />
+      <element minOccurs="0" name="region_id" type="int" />
+      <element minOccurs="0" name="region" type="string" />
+      <element minOccurs="0" name="street" xmlns:q32="urn:Magento" type="q32:ArrayOfString" />
+      <element minOccurs="0" name="suffix" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="is_default_billing" type="boolean" />
+      <element minOccurs="0" name="is_default_shipping" type="boolean" />
+    </all>
+  </complexType>
+  <complexType name="customerAddressEntityItem">
+    <all>
+      <element minOccurs="0" name="customer_address_id" type="int" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="country_id" type="string" />
+      <element minOccurs="0" name="fax" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="middlename" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="prefix" type="string" />
+      <element minOccurs="0" name="region" type="string" />
+      <element minOccurs="0" name="region_id" type="int" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="suffix" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="is_default_billing" type="boolean" />
+      <element minOccurs="0" name="is_default_shipping" type="boolean" />
+    </all>
+  </complexType>
+  <complexType name="customerAddressEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q33="http://schemas.xmlsoap.org/soap/encoding/" base="q33:Array">
+        <attribute xmlns:q34="urn:Magento" d5p1:arrayType="q34:customerAddressEntityItem[]" ref="q33:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q35="http://schemas.xmlsoap.org/soap/encoding/" base="q35:Array">
+        <attribute xmlns:q36="urn:Magento" d5p1:arrayType="q36:catalogProductEntity[]" ref="q35:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductAdditionalAttributesEntity">
+    <all>
+      <element minOccurs="0" name="multi_data" xmlns:q37="urn:Magento" type="q37:associativeMultiArray" />
+      <element minOccurs="0" name="single_data" xmlns:q38="urn:Magento" type="q38:associativeArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductEntity">
+    <all>
+      <element name="product_id" type="string" />
+      <element name="sku" type="string" />
+      <element name="name" type="string" />
+      <element name="set" type="string" />
+      <element name="type" type="string" />
+      <element name="category_ids" xmlns:q39="urn:Magento" type="q39:ArrayOfString" />
+      <element name="website_ids" xmlns:q40="urn:Magento" type="q40:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductRequestAttributes">
+    <all>
+      <element minOccurs="0" name="attributes" xmlns:q41="urn:Magento" type="q41:ArrayOfString" />
+      <element minOccurs="0" name="additional_attributes" xmlns:q42="urn:Magento" type="q42:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductReturnEntity">
+    <all>
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="set" type="string" />
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="categories" xmlns:q43="urn:Magento" type="q43:ArrayOfString" />
+      <element minOccurs="0" name="websites" xmlns:q44="urn:Magento" type="q44:ArrayOfString" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="type_id" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="short_description" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="url_key" type="string" />
+      <element minOccurs="0" name="url_path" type="string" />
+      <element minOccurs="0" name="visibility" type="string" />
+      <element minOccurs="0" name="category_ids" xmlns:q45="urn:Magento" type="q45:ArrayOfString" />
+      <element minOccurs="0" name="website_ids" xmlns:q46="urn:Magento" type="q46:ArrayOfString" />
+      <element minOccurs="0" name="has_options" type="string" />
+      <element minOccurs="0" name="gift_message_available" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="special_price" type="string" />
+      <element minOccurs="0" name="special_from_date" type="string" />
+      <element minOccurs="0" name="special_to_date" type="string" />
+      <element minOccurs="0" name="tax_class_id" type="string" />
+      <element minOccurs="0" name="tier_price" xmlns:q47="urn:Magento" type="q47:catalogProductTierPriceEntityArray" />
+      <element minOccurs="0" name="meta_title" type="string" />
+      <element minOccurs="0" name="meta_keyword" type="string" />
+      <element minOccurs="0" name="meta_description" type="string" />
+      <element minOccurs="0" name="custom_design" type="string" />
+      <element minOccurs="0" name="custom_layout_update" type="string" />
+      <element minOccurs="0" name="options_container" type="string" />
+      <element minOccurs="0" name="additional_attributes" xmlns:q48="urn:Magento" type="q48:associativeArray" />
+      <element minOccurs="0" name="enable_googlecheckout" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCreateEntity">
+    <all>
+      <element minOccurs="0" name="categories" xmlns:q49="urn:Magento" type="q49:ArrayOfString" />
+      <element minOccurs="0" name="websites" xmlns:q50="urn:Magento" type="q50:ArrayOfString" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="short_description" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="url_key" type="string" />
+      <element minOccurs="0" name="url_path" type="string" />
+      <element minOccurs="0" name="visibility" type="string" />
+      <element minOccurs="0" name="category_ids" xmlns:q51="urn:Magento" type="q51:ArrayOfString" />
+      <element minOccurs="0" name="website_ids" xmlns:q52="urn:Magento" type="q52:ArrayOfString" />
+      <element minOccurs="0" name="has_options" type="string" />
+      <element minOccurs="0" name="gift_message_available" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="special_price" type="string" />
+      <element minOccurs="0" name="special_from_date" type="string" />
+      <element minOccurs="0" name="special_to_date" type="string" />
+      <element minOccurs="0" name="tax_class_id" type="string" />
+      <element minOccurs="0" name="tier_price" xmlns:q53="urn:Magento" type="q53:catalogProductTierPriceEntityArray" />
+      <element minOccurs="0" name="meta_title" type="string" />
+      <element minOccurs="0" name="meta_keyword" type="string" />
+      <element minOccurs="0" name="meta_description" type="string" />
+      <element minOccurs="0" name="custom_design" type="string" />
+      <element minOccurs="0" name="custom_layout_update" type="string" />
+      <element minOccurs="0" name="options_container" type="string" />
+      <element minOccurs="0" name="additional_attributes" xmlns:q54="urn:Magento" type="q54:catalogProductAdditionalAttributesEntity" />
+      <element minOccurs="0" name="stock_data" xmlns:q55="urn:Magento" type="q55:catalogInventoryStockItemUpdateEntity" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeSetEntity">
+    <all>
+      <element minOccurs="0" name="set_id" type="int" />
+      <element minOccurs="0" name="name" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeSetEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q56="http://schemas.xmlsoap.org/soap/encoding/" base="q56:Array">
+        <attribute xmlns:q57="urn:Magento" d5p1:arrayType="q57:catalogProductAttributeSetEntity[]" ref="q56:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductTypeEntity">
+    <all>
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="label" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTypeEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q58="http://schemas.xmlsoap.org/soap/encoding/" base="q58:Array">
+        <attribute xmlns:q59="urn:Magento" d5p1:arrayType="q59:catalogProductTypeEntity[]" ref="q58:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductTierPriceEntity">
+    <all>
+      <element minOccurs="0" name="customer_group_id" type="string" />
+      <element minOccurs="0" name="website" type="string" />
+      <element minOccurs="0" name="qty" type="int" />
+      <element minOccurs="0" name="price" type="double" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTierPriceEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q60="http://schemas.xmlsoap.org/soap/encoding/" base="q60:Array">
+        <attribute xmlns:q61="urn:Magento" d5p1:arrayType="q61:catalogProductTierPriceEntity[]" ref="q60:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="ArrayOfCatalogCategoryEntities">
+    <complexContent mixed="false">
+      <restriction xmlns:q62="http://schemas.xmlsoap.org/soap/encoding/" base="q62:Array">
+        <attribute xmlns:q63="urn:Magento" d5p1:arrayType="q63:catalogCategoryEntity[]" ref="q62:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogCategoryEntity">
+    <all>
+      <element name="category_id" type="int" />
+      <element name="parent_id" type="int" />
+      <element name="name" type="string" />
+      <element name="is_active" type="int" />
+      <element name="position" type="int" />
+      <element name="level" type="int" />
+      <element name="children" xmlns:q64="urn:Magento" type="q64:ArrayOfCatalogCategoryEntities" />
+    </all>
+  </complexType>
+  <complexType name="catalogCategoryEntityNoChildren">
+    <all>
+      <element name="category_id" type="int" />
+      <element name="parent_id" type="int" />
+      <element name="name" type="string" />
+      <element name="is_active" type="int" />
+      <element name="position" type="int" />
+      <element name="level" type="int" />
+    </all>
+  </complexType>
+  <complexType name="ArrayOfCatalogCategoryEntitiesNoChildren">
+    <complexContent mixed="false">
+      <restriction xmlns:q65="http://schemas.xmlsoap.org/soap/encoding/" base="q65:Array">
+        <attribute xmlns:q66="urn:Magento" d5p1:arrayType="q66:catalogCategoryEntityNoChildren[]" ref="q65:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogCategoryTree">
+    <all>
+      <element name="category_id" type="int" />
+      <element name="parent_id" type="int" />
+      <element name="name" type="string" />
+      <element name="position" type="int" />
+      <element name="level" type="int" />
+      <element name="children" xmlns:q67="urn:Magento" type="q67:ArrayOfCatalogCategoryEntities" />
+    </all>
+  </complexType>
+  <complexType name="catalogCategoryEntityCreate">
+    <all>
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="position" type="int" />
+      <element minOccurs="0" name="available_sort_by" xmlns:q68="urn:Magento" type="q68:ArrayOfString" />
+      <element minOccurs="0" name="custom_design" type="string" />
+      <element minOccurs="0" name="custom_design_apply" type="int" />
+      <element minOccurs="0" name="custom_design_from" type="string" />
+      <element minOccurs="0" name="custom_design_to" type="string" />
+      <element minOccurs="0" name="custom_layout_update" type="string" />
+      <element minOccurs="0" name="default_sort_by" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="display_mode" type="string" />
+      <element minOccurs="0" name="is_anchor" type="int" />
+      <element minOccurs="0" name="landing_page" type="int" />
+      <element minOccurs="0" name="meta_description" type="string" />
+      <element minOccurs="0" name="meta_keywords" type="string" />
+      <element minOccurs="0" name="meta_title" type="string" />
+      <element minOccurs="0" name="page_layout" type="string" />
+      <element minOccurs="0" name="url_key" type="string" />
+      <element minOccurs="0" name="include_in_menu" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogCategoryInfo">
+    <all>
+      <element name="category_id" type="string" />
+      <element name="is_active" type="int" />
+      <element name="position" type="string" />
+      <element name="level" type="string" />
+      <element name="parent_id" type="string" />
+      <element name="all_children" type="string" />
+      <element name="children" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="url_key" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="meta_title" type="string" />
+      <element minOccurs="0" name="meta_keywords" type="string" />
+      <element minOccurs="0" name="meta_description" type="string" />
+      <element minOccurs="0" name="path" type="string" />
+      <element minOccurs="0" name="url_path" type="string" />
+      <element minOccurs="0" name="children_count" type="int" />
+      <element minOccurs="0" name="display_mode" type="string" />
+      <element minOccurs="0" name="is_anchor" type="int" />
+      <element minOccurs="0" name="available_sort_by" xmlns:q69="urn:Magento" type="q69:ArrayOfString" />
+      <element minOccurs="0" name="custom_design" type="string" />
+      <element minOccurs="0" name="custom_design_apply" type="string" />
+      <element minOccurs="0" name="custom_design_from" type="string" />
+      <element minOccurs="0" name="custom_design_to" type="string" />
+      <element minOccurs="0" name="page_layout" type="string" />
+      <element minOccurs="0" name="custom_layout_update" type="string" />
+      <element minOccurs="0" name="default_sort_by" type="string" />
+      <element minOccurs="0" name="landing_page" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogAssignedProduct">
+    <all>
+      <element name="product_id" type="int" />
+      <element name="type" type="string" />
+      <element name="set" type="int" />
+      <element name="sku" type="string" />
+      <element name="position" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogAssignedProductArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q70="http://schemas.xmlsoap.org/soap/encoding/" base="q70:Array">
+        <attribute xmlns:q71="urn:Magento" d5p1:arrayType="q71:catalogAssignedProduct[]" ref="q70:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogAttributeEntity">
+    <all>
+      <element minOccurs="0" name="attribute_id" type="int" />
+      <element minOccurs="0" name="code" type="string" />
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="required" type="string" />
+      <element minOccurs="0" name="scope" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogAttributeEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q72="http://schemas.xmlsoap.org/soap/encoding/" base="q72:Array">
+        <attribute xmlns:q73="urn:Magento" d5p1:arrayType="q73:catalogAttributeEntity[]" ref="q72:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogAttributeOptionEntity">
+    <all>
+      <element name="label" type="string" />
+      <element name="value" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogAttributeOptionEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q74="http://schemas.xmlsoap.org/soap/encoding/" base="q74:Array">
+        <attribute xmlns:q75="urn:Magento" d5p1:arrayType="q75:catalogAttributeOptionEntity[]" ref="q74:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductImageEntity">
+    <all>
+      <element name="file" type="string" />
+      <element name="label" type="string" />
+      <element name="position" type="string" />
+      <element name="exclude" type="string" />
+      <element name="url" type="string" />
+      <element name="types" xmlns:q76="urn:Magento" type="q76:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductImageEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q77="http://schemas.xmlsoap.org/soap/encoding/" base="q77:Array">
+        <attribute xmlns:q78="urn:Magento" d5p1:arrayType="q78:catalogProductImageEntity[]" ref="q77:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductAttributeMediaTypeEntity">
+    <all>
+      <element name="code" type="string" />
+      <element name="scope" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeMediaTypeEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q79="http://schemas.xmlsoap.org/soap/encoding/" base="q79:Array">
+        <attribute xmlns:q80="urn:Magento" d5p1:arrayType="q80:catalogProductAttributeMediaTypeEntity[]" ref="q79:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductImageFileEntity">
+    <all>
+      <element name="content" type="string" />
+      <element name="mime" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeMediaCreateEntity">
+    <all>
+      <element minOccurs="0" name="file" xmlns:q81="urn:Magento" type="q81:catalogProductImageFileEntity" />
+      <element minOccurs="0" name="label" type="string" />
+      <element minOccurs="0" name="position" type="string" />
+      <element minOccurs="0" name="types" xmlns:q82="urn:Magento" type="q82:ArrayOfString" />
+      <element minOccurs="0" name="exclude" type="string" />
+      <element minOccurs="0" name="remove" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductLinkEntity">
+    <all>
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="set" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="position" type="string" />
+      <element minOccurs="0" name="qty" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductLinkEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q83="http://schemas.xmlsoap.org/soap/encoding/" base="q83:Array">
+        <attribute xmlns:q84="urn:Magento" d5p1:arrayType="q84:catalogProductLinkEntity[]" ref="q83:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductLinkAttributeEntity">
+    <all>
+      <element minOccurs="0" name="code" type="string" />
+      <element minOccurs="0" name="type" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductLinkAttributeEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q85="http://schemas.xmlsoap.org/soap/encoding/" base="q85:Array">
+        <attribute xmlns:q86="urn:Magento" d5p1:arrayType="q86:catalogProductLinkAttributeEntity[]" ref="q85:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductAttributeFrontendLabelEntity">
+    <all>
+      <element name="store_id" type="string" />
+      <element name="label" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeFrontendLabelArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q87="http://schemas.xmlsoap.org/soap/encoding/" base="q87:Array">
+        <attribute xmlns:q88="urn:Magento" d5p1:arrayType="q88:catalogProductAttributeFrontendLabelEntity[]" ref="q87:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductAttributeEntityToCreate">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="attribute_code" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="frontend_input" type="string" />
+      <element minOccurs="0" name="scope" type="string" />
+      <element minOccurs="0" name="default_value" type="string" />
+      <element minOccurs="0" name="is_unique" type="int" />
+      <element minOccurs="0" name="is_required" type="int" />
+      <element minOccurs="0" name="apply_to" xmlns:q89="urn:Magento" type="q89:ArrayOfString" />
+      <element minOccurs="0" name="is_configurable" type="int" />
+      <element minOccurs="0" name="is_searchable" type="int" />
+      <element minOccurs="0" name="is_visible_in_advanced_search" type="int" />
+      <element minOccurs="0" name="is_comparable" type="int" />
+      <element minOccurs="0" name="is_used_for_promo_rules" type="int" />
+      <element minOccurs="0" name="is_visible_on_front" type="int" />
+      <element minOccurs="0" name="used_in_product_listing" type="int" />
+      <element minOccurs="0" name="additional_fields" xmlns:q90="urn:Magento" type="q90:associativeArray" />
+      <element minOccurs="1" name="frontend_label" xmlns:q91="urn:Magento" type="q91:catalogProductAttributeFrontendLabelArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeEntityToUpdate">
+    <all>
+      <element minOccurs="0" name="scope" type="string" />
+      <element minOccurs="0" name="default_value" type="string" />
+      <element minOccurs="0" name="is_unique" type="int" />
+      <element minOccurs="0" name="is_required" type="int" />
+      <element minOccurs="0" name="apply_to" xmlns:q92="urn:Magento" type="q92:ArrayOfString" />
+      <element minOccurs="0" name="is_configurable" type="int" />
+      <element minOccurs="0" name="is_searchable" type="int" />
+      <element minOccurs="0" name="is_visible_in_advanced_search" type="int" />
+      <element minOccurs="0" name="is_comparable" type="int" />
+      <element minOccurs="0" name="is_used_for_promo_rules" type="int" />
+      <element minOccurs="0" name="is_visible_on_front" type="int" />
+      <element minOccurs="0" name="used_in_product_listing" type="int" />
+      <element minOccurs="0" name="additional_fields" xmlns:q93="urn:Magento" type="q93:associativeArray" />
+      <element minOccurs="1" name="frontend_label" xmlns:q94="urn:Magento" type="q94:catalogProductAttributeFrontendLabelArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="attribute_id" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="attribute_code" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="frontend_input" type="string" />
+      <element minOccurs="0" name="scope" type="string" />
+      <element minOccurs="0" name="default_value" type="string" />
+      <element minOccurs="0" name="is_unique" type="int" />
+      <element minOccurs="0" name="is_required" type="int" />
+      <element minOccurs="0" name="apply_to" xmlns:q95="urn:Magento" type="q95:ArrayOfString" />
+      <element minOccurs="0" name="is_configurable" type="int" />
+      <element minOccurs="0" name="is_searchable" type="int" />
+      <element minOccurs="0" name="is_visible_in_advanced_search" type="int" />
+      <element minOccurs="0" name="is_comparable" type="int" />
+      <element minOccurs="0" name="is_used_for_promo_rules" type="int" />
+      <element minOccurs="0" name="is_visible_on_front" type="int" />
+      <element minOccurs="0" name="used_in_product_listing" type="int" />
+      <element minOccurs="0" name="additional_fields" xmlns:q96="urn:Magento" type="q96:associativeArray" />
+      <element minOccurs="0" name="options" xmlns:q97="urn:Magento" type="q97:catalogAttributeOptionEntityArray" />
+      <element minOccurs="1" name="frontend_label" xmlns:q98="urn:Magento" type="q98:catalogProductAttributeFrontendLabelArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeOptionLabelEntity">
+    <all>
+      <element name="store_id" xmlns:q99="urn:Magento" type="q99:ArrayOfString" />
+      <element name="value" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductAttributeOptionLabelArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q100="http://schemas.xmlsoap.org/soap/encoding/" base="q100:Array">
+        <attribute xmlns:q101="urn:Magento" d5p1:arrayType="q101:catalogProductAttributeOptionLabelEntity[]" ref="q100:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductAttributeOptionEntityToAdd">
+    <all>
+      <element name="label" xmlns:q102="urn:Magento" type="q102:catalogProductAttributeOptionLabelArray" />
+      <element name="order" type="int" />
+      <element name="is_default" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionAdditionalFieldsEntity">
+    <all>
+      <element minOccurs="0" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="price" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="price_type" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sku" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="max_characters" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="file_extension" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="image_size_x" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="image_size_y" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="value_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionAdditionalFieldsArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q103="http://schemas.xmlsoap.org/soap/encoding/" base="q103:Array">
+        <attribute xmlns:q104="urn:Magento" d5p1:arrayType="q104:catalogProductCustomOptionAdditionalFieldsEntity[]" ref="q103:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductCustomOptionToAdd">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="type" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="is_require" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="additional_fields" xmlns:q105="urn:Magento" type="q105:catalogProductCustomOptionAdditionalFieldsArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionToUpdate">
+    <all>
+      <element minOccurs="0" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="type" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="is_require" type="int" />
+      <element minOccurs="0" maxOccurs="1" name="additional_fields" xmlns:q106="urn:Magento" type="q106:catalogProductCustomOptionAdditionalFieldsArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionInfoEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="is_require" type="int" />
+      <element minOccurs="1" maxOccurs="1" name="additional_fields" xmlns:q107="urn:Magento" type="q107:catalogProductCustomOptionAdditionalFieldsArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionListEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="option_id" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="is_require" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionListArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q108="http://schemas.xmlsoap.org/soap/encoding/" base="q108:Array">
+        <attribute xmlns:q109="urn:Magento" d5p1:arrayType="q109:catalogProductCustomOptionListEntity[]" ref="q108:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductCustomOptionTypesEntity">
+    <all>
+      <element name="label" type="string" />
+      <element name="value" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionTypesArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q110="http://schemas.xmlsoap.org/soap/encoding/" base="q110:Array">
+        <attribute xmlns:q111="urn:Magento" d5p1:arrayType="q111:catalogProductCustomOptionTypesEntity[]" ref="q110:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueInfoEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="value_id" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="option_id" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sku" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sort_order" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="default_price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="default_price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="store_price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="store_price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="default_title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="store_title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueListEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="value_id" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sku" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sort_order" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueListArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q112="http://schemas.xmlsoap.org/soap/encoding/" base="q112:Array">
+        <attribute xmlns:q113="urn:Magento" d5p1:arrayType="q113:catalogProductCustomOptionValueListEntity[]" ref="q112:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueAddEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sku" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sort_order" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueAddArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q114="http://schemas.xmlsoap.org/soap/encoding/" base="q114:Array">
+        <attribute xmlns:q115="urn:Magento" d5p1:arrayType="q115:catalogProductCustomOptionValueAddEntity[]" ref="q114:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductCustomOptionValueUpdateEntity">
+    <all>
+      <element minOccurs="1" maxOccurs="1" name="title" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="price_type" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="sku" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="sort_order" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="customer_id" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_amount" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="subtotal" type="string" />
+      <element minOccurs="0" name="grand_total" type="string" />
+      <element minOccurs="0" name="total_paid" type="string" />
+      <element minOccurs="0" name="total_refunded" type="string" />
+      <element minOccurs="0" name="total_qty_ordered" type="string" />
+      <element minOccurs="0" name="total_canceled" type="string" />
+      <element minOccurs="0" name="total_invoiced" type="string" />
+      <element minOccurs="0" name="total_online_refunded" type="string" />
+      <element minOccurs="0" name="total_offline_refunded" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_amount" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="base_subtotal" type="string" />
+      <element minOccurs="0" name="base_grand_total" type="string" />
+      <element minOccurs="0" name="base_total_paid" type="string" />
+      <element minOccurs="0" name="base_total_refunded" type="string" />
+      <element minOccurs="0" name="base_total_qty_ordered" type="string" />
+      <element minOccurs="0" name="base_total_canceled" type="string" />
+      <element minOccurs="0" name="base_total_invoiced" type="string" />
+      <element minOccurs="0" name="base_total_online_refunded" type="string" />
+      <element minOccurs="0" name="base_total_offline_refunded" type="string" />
+      <element minOccurs="0" name="billing_address_id" type="string" />
+      <element minOccurs="0" name="billing_firstname" type="string" />
+      <element minOccurs="0" name="billing_lastname" type="string" />
+      <element minOccurs="0" name="shipping_address_id" type="string" />
+      <element minOccurs="0" name="shipping_firstname" type="string" />
+      <element minOccurs="0" name="shipping_lastname" type="string" />
+      <element minOccurs="0" name="billing_name" type="string" />
+      <element minOccurs="0" name="shipping_name" type="string" />
+      <element minOccurs="0" name="store_to_base_rate" type="string" />
+      <element minOccurs="0" name="store_to_order_rate" type="string" />
+      <element minOccurs="0" name="base_to_global_rate" type="string" />
+      <element minOccurs="0" name="base_to_order_rate" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="store_name" type="string" />
+      <element minOccurs="0" name="remote_ip" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="state" type="string" />
+      <element minOccurs="0" name="applied_rule_ids" type="string" />
+      <element minOccurs="0" name="global_currency_code" type="string" />
+      <element minOccurs="0" name="base_currency_code" type="string" />
+      <element minOccurs="0" name="store_currency_code" type="string" />
+      <element minOccurs="0" name="order_currency_code" type="string" />
+      <element minOccurs="0" name="shipping_method" type="string" />
+      <element minOccurs="0" name="shipping_description" type="string" />
+      <element minOccurs="0" name="customer_email" type="string" />
+      <element minOccurs="0" name="customer_firstname" type="string" />
+      <element minOccurs="0" name="customer_lastname" type="string" />
+      <element minOccurs="0" name="quote_id" type="string" />
+      <element minOccurs="0" name="is_virtual" type="string" />
+      <element minOccurs="0" name="customer_group_id" type="string" />
+      <element minOccurs="0" name="customer_note_notify" type="string" />
+      <element minOccurs="0" name="customer_is_guest" type="string" />
+      <element minOccurs="0" name="email_sent" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="gift_message_id" type="string" />
+      <element minOccurs="0" name="gift_message" type="string" />
+      <element minOccurs="0" name="shipping_address" xmlns:q116="urn:Magento" type="q116:salesOrderAddressEntity" />
+      <element minOccurs="0" name="billing_address" xmlns:q117="urn:Magento" type="q117:salesOrderAddressEntity" />
+      <element minOccurs="0" name="items" xmlns:q118="urn:Magento" type="q118:salesOrderItemEntityArray" />
+      <element minOccurs="0" name="payment" xmlns:q119="urn:Magento" type="q119:salesOrderPaymentEntity" />
+      <element minOccurs="0" name="status_history" xmlns:q120="urn:Magento" type="q120:salesOrderStatusHistoryEntityArray" />
+      <element minOccurs="0" name="due_date" type="string" />
+      <element minOccurs="0" name="division_request_date" type="string" />
+      <element minOccurs="0" name="division_remarks" type="string" />
+      <element minOccurs="0" name="division_raised_by" type="string" />
+      <element minOccurs="0" name="custom_purchase_number" type="string" />
+      <element minOccurs="0" name="division_deliver_to" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderListEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="customer_id" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_amount" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="subtotal" type="string" />
+      <element minOccurs="0" name="grand_total" type="string" />
+      <element minOccurs="0" name="total_paid" type="string" />
+      <element minOccurs="0" name="total_refunded" type="string" />
+      <element minOccurs="0" name="total_qty_ordered" type="string" />
+      <element minOccurs="0" name="total_canceled" type="string" />
+      <element minOccurs="0" name="total_invoiced" type="string" />
+      <element minOccurs="0" name="total_online_refunded" type="string" />
+      <element minOccurs="0" name="total_offline_refunded" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_amount" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="base_subtotal" type="string" />
+      <element minOccurs="0" name="base_grand_total" type="string" />
+      <element minOccurs="0" name="base_total_paid" type="string" />
+      <element minOccurs="0" name="base_total_refunded" type="string" />
+      <element minOccurs="0" name="base_total_qty_ordered" type="string" />
+      <element minOccurs="0" name="base_total_canceled" type="string" />
+      <element minOccurs="0" name="base_total_invoiced" type="string" />
+      <element minOccurs="0" name="base_total_online_refunded" type="string" />
+      <element minOccurs="0" name="base_total_offline_refunded" type="string" />
+      <element minOccurs="0" name="billing_address_id" type="string" />
+      <element minOccurs="0" name="billing_firstname" type="string" />
+      <element minOccurs="0" name="billing_lastname" type="string" />
+      <element minOccurs="0" name="shipping_address_id" type="string" />
+      <element minOccurs="0" name="shipping_firstname" type="string" />
+      <element minOccurs="0" name="shipping_lastname" type="string" />
+      <element minOccurs="0" name="billing_name" type="string" />
+      <element minOccurs="0" name="shipping_name" type="string" />
+      <element minOccurs="0" name="store_to_base_rate" type="string" />
+      <element minOccurs="0" name="store_to_order_rate" type="string" />
+      <element minOccurs="0" name="base_to_global_rate" type="string" />
+      <element minOccurs="0" name="base_to_order_rate" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="store_name" type="string" />
+      <element minOccurs="0" name="remote_ip" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="state" type="string" />
+      <element minOccurs="0" name="applied_rule_ids" type="string" />
+      <element minOccurs="0" name="global_currency_code" type="string" />
+      <element minOccurs="0" name="base_currency_code" type="string" />
+      <element minOccurs="0" name="store_currency_code" type="string" />
+      <element minOccurs="0" name="order_currency_code" type="string" />
+      <element minOccurs="0" name="shipping_method" type="string" />
+      <element minOccurs="0" name="shipping_description" type="string" />
+      <element minOccurs="0" name="customer_email" type="string" />
+      <element minOccurs="0" name="customer_firstname" type="string" />
+      <element minOccurs="0" name="customer_lastname" type="string" />
+      <element minOccurs="0" name="quote_id" type="string" />
+      <element minOccurs="0" name="is_virtual" type="string" />
+      <element minOccurs="0" name="customer_group_id" type="string" />
+      <element minOccurs="0" name="customer_note_notify" type="string" />
+      <element minOccurs="0" name="customer_is_guest" type="string" />
+      <element minOccurs="0" name="email_sent" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="gift_message_id" type="string" />
+      <element minOccurs="0" name="coupon_code" type="string" />
+      <element minOccurs="0" name="protect_code" type="string" />
+      <element minOccurs="0" name="base_discount_canceled" type="string" />
+      <element minOccurs="0" name="base_discount_invoiced" type="string" />
+      <element minOccurs="0" name="base_discount_refunded" type="string" />
+      <element minOccurs="0" name="base_shipping_canceled" type="string" />
+      <element minOccurs="0" name="base_shipping_invoiced" type="string" />
+      <element minOccurs="0" name="base_shipping_refunded" type="string" />
+      <element minOccurs="0" name="base_shipping_tax_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_tax_refunded" type="string" />
+      <element minOccurs="0" name="base_subtotal_canceled" type="string" />
+      <element minOccurs="0" name="base_subtotal_invoiced" type="string" />
+      <element minOccurs="0" name="base_subtotal_refunded" type="string" />
+      <element minOccurs="0" name="base_tax_canceled" type="string" />
+      <element minOccurs="0" name="base_tax_invoiced" type="string" />
+      <element minOccurs="0" name="base_tax_refunded" type="string" />
+      <element minOccurs="0" name="base_total_invoiced_cost" type="string" />
+      <element minOccurs="0" name="discount_canceled" type="string" />
+      <element minOccurs="0" name="discount_invoiced" type="string" />
+      <element minOccurs="0" name="discount_refunded" type="string" />
+      <element minOccurs="0" name="shipping_canceled" type="string" />
+      <element minOccurs="0" name="shipping_invoiced" type="string" />
+      <element minOccurs="0" name="shipping_refunded" type="string" />
+      <element minOccurs="0" name="shipping_tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_tax_refunded" type="string" />
+      <element minOccurs="0" name="subtotal_canceled" type="string" />
+      <element minOccurs="0" name="subtotal_invoiced" type="string" />
+      <element minOccurs="0" name="subtotal_refunded" type="string" />
+      <element minOccurs="0" name="tax_canceled" type="string" />
+      <element minOccurs="0" name="tax_invoiced" type="string" />
+      <element minOccurs="0" name="tax_refunded" type="string" />
+      <element minOccurs="0" name="can_ship_partially" type="string" />
+      <element minOccurs="0" name="can_ship_partially_item" type="string" />
+      <element minOccurs="0" name="edit_increment" type="string" />
+      <element minOccurs="0" name="forced_do_shipment_with_invoice" type="string" />
+      <element minOccurs="0" name="payment_authorization_expiration" type="string" />
+      <element minOccurs="0" name="paypal_ipn_customer_notified" type="string" />
+      <element minOccurs="0" name="quote_address_id" type="string" />
+      <element minOccurs="0" name="adjustment_negative" type="string" />
+      <element minOccurs="0" name="adjustment_positive" type="string" />
+      <element minOccurs="0" name="base_adjustment_negative" type="string" />
+      <element minOccurs="0" name="base_adjustment_positive" type="string" />
+      <element minOccurs="0" name="base_shipping_discount_amount" type="string" />
+      <element minOccurs="0" name="base_subtotal_incl_tax" type="string" />
+      <element minOccurs="0" name="base_total_due" type="string" />
+      <element minOccurs="0" name="payment_authorization_amount" type="string" />
+      <element minOccurs="0" name="shipping_discount_amount" type="string" />
+      <element minOccurs="0" name="subtotal_incl_tax" type="string" />
+      <element minOccurs="0" name="total_due" type="string" />
+      <element minOccurs="0" name="customer_dob" type="string" />
+      <element minOccurs="0" name="customer_middlename" type="string" />
+      <element minOccurs="0" name="customer_prefix" type="string" />
+      <element minOccurs="0" name="customer_suffix" type="string" />
+      <element minOccurs="0" name="customer_taxvat" type="string" />
+      <element minOccurs="0" name="discount_description" type="string" />
+      <element minOccurs="0" name="ext_customer_id" type="string" />
+      <element minOccurs="0" name="ext_order_id" type="string" />
+      <element minOccurs="0" name="hold_before_state" type="string" />
+      <element minOccurs="0" name="hold_before_status" type="string" />
+      <element minOccurs="0" name="original_increment_id" type="string" />
+      <element minOccurs="0" name="relation_child_id" type="string" />
+      <element minOccurs="0" name="relation_child_real_id" type="string" />
+      <element minOccurs="0" name="relation_parent_id" type="string" />
+      <element minOccurs="0" name="relation_parent_real_id" type="string" />
+      <element minOccurs="0" name="x_forwarded_for" type="string" />
+      <element minOccurs="0" name="customer_note" type="string" />
+      <element minOccurs="0" name="total_item_count" type="string" />
+      <element minOccurs="0" name="customer_gender" type="string" />
+      <element minOccurs="0" name="hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="base_hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="hidden_tax_invoiced" type="string" />
+      <element minOccurs="0" name="base_hidden_tax_invoiced" type="string" />
+      <element minOccurs="0" name="hidden_tax_refunded" type="string" />
+      <element minOccurs="0" name="base_hidden_tax_refunded" type="string" />
+      <element minOccurs="0" name="shipping_incl_tax" type="string" />
+      <element minOccurs="0" name="base_shipping_incl_tax" type="string" />
+      <element minOccurs="0" name="base_customer_balance_amount" type="string" />
+      <element minOccurs="0" name="customer_balance_amount" type="string" />
+      <element minOccurs="0" name="base_customer_balance_invoiced" type="string" />
+      <element minOccurs="0" name="customer_balance_invoiced" type="string" />
+      <element minOccurs="0" name="base_customer_balance_refunded" type="string" />
+      <element minOccurs="0" name="customer_balance_refunded" type="string" />
+      <element minOccurs="0" name="base_customer_balance_total_refunded" type="string" />
+      <element minOccurs="0" name="customer_balance_total_refunded" type="string" />
+      <element minOccurs="0" name="gift_cards" type="string" />
+      <element minOccurs="0" name="base_gift_cards_amount" type="string" />
+      <element minOccurs="0" name="gift_cards_amount" type="string" />
+      <element minOccurs="0" name="base_gift_cards_invoiced" type="string" />
+      <element minOccurs="0" name="gift_cards_invoiced" type="string" />
+      <element minOccurs="0" name="base_gift_cards_refunded" type="string" />
+      <element minOccurs="0" name="gift_cards_refunded" type="string" />
+      <element minOccurs="0" name="reward_points_balance" type="string" />
+      <element minOccurs="0" name="base_reward_currency_amount" type="string" />
+      <element minOccurs="0" name="reward_currency_amount" type="string" />
+      <element minOccurs="0" name="base_reward_currency_amount_invoiced" type="string" />
+      <element minOccurs="0" name="reward_currency_amount_invoiced" type="string" />
+      <element minOccurs="0" name="base_reward_currency_amount_refunded" type="string" />
+      <element minOccurs="0" name="reward_currency_amount_refunded" type="string" />
+      <element minOccurs="0" name="reward_points_balance_refunded" type="string" />
+      <element minOccurs="0" name="reward_points_balance_to_refund" type="string" />
+      <element minOccurs="0" name="reward_salesrule_points" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderListEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q121="http://schemas.xmlsoap.org/soap/encoding/" base="q121:Array">
+        <attribute xmlns:q122="urn:Magento" d5p1:arrayType="q122:salesOrderListEntity[]" ref="q121:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderAddressEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="address_type" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="region" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="country_id" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="fax" type="string" />
+      <element minOccurs="0" name="region_id" type="string" />
+      <element minOccurs="0" name="address_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderItemEntity">
+    <all>
+      <element minOccurs="0" name="item_id" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="quote_item_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="product_type" type="string" />
+      <element minOccurs="0" name="product_options" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="is_virtual" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="applied_rule_ids" type="string" />
+      <element minOccurs="0" name="free_shipping" type="string" />
+      <element minOccurs="0" name="is_qty_decimal" type="string" />
+      <element minOccurs="0" name="no_discount" type="string" />
+      <element minOccurs="0" name="qty_canceled" type="string" />
+      <element minOccurs="0" name="qty_invoiced" type="string" />
+      <element minOccurs="0" name="qty_ordered" type="string" />
+      <element minOccurs="0" name="qty_refunded" type="string" />
+      <element minOccurs="0" name="qty_shipped" type="string" />
+      <element minOccurs="0" name="cost" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="base_price" type="string" />
+      <element minOccurs="0" name="original_price" type="string" />
+      <element minOccurs="0" name="base_original_price" type="string" />
+      <element minOccurs="0" name="tax_percent" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="tax_invoiced" type="string" />
+      <element minOccurs="0" name="base_tax_invoiced" type="string" />
+      <element minOccurs="0" name="discount_percent" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="discount_invoiced" type="string" />
+      <element minOccurs="0" name="base_discount_invoiced" type="string" />
+      <element minOccurs="0" name="amount_refunded" type="string" />
+      <element minOccurs="0" name="base_amount_refunded" type="string" />
+      <element minOccurs="0" name="row_total" type="string" />
+      <element minOccurs="0" name="base_row_total" type="string" />
+      <element minOccurs="0" name="row_invoiced" type="string" />
+      <element minOccurs="0" name="base_row_invoiced" type="string" />
+      <element minOccurs="0" name="row_weight" type="string" />
+      <element minOccurs="0" name="gift_message_id" type="string" />
+      <element minOccurs="0" name="gift_message" type="string" />
+      <element minOccurs="0" name="gift_message_available" type="string" />
+      <element minOccurs="0" name="base_tax_before_discount" type="string" />
+      <element minOccurs="0" name="tax_before_discount" type="string" />
+      <element minOccurs="0" name="weee_tax_applied" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="base_weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="base_weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="product_sku" type="string" />
+      <element minOccurs="0" name="product_option_sku" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q123="http://schemas.xmlsoap.org/soap/encoding/" base="q123:Array">
+        <attribute xmlns:q124="urn:Magento" d5p1:arrayType="q124:salesOrderItemEntity[]" ref="q123:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="orderItemIdQty">
+    <all>
+      <element name="order_item_id" type="int" />
+      <element name="qty" type="double" />
+    </all>
+  </complexType>
+  <complexType name="orderItemIdQtyArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q125="http://schemas.xmlsoap.org/soap/encoding/" base="q125:Array">
+        <attribute xmlns:q126="urn:Magento" d5p1:arrayType="q126:orderItemIdQty[]" ref="q125:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderPaymentEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="amount_ordered" type="string" />
+      <element minOccurs="0" name="shipping_amount" type="string" />
+      <element minOccurs="0" name="base_amount_ordered" type="string" />
+      <element minOccurs="0" name="base_shipping_amount" type="string" />
+      <element minOccurs="0" name="method" type="string" />
+      <element minOccurs="0" name="po_number" type="string" />
+      <element minOccurs="0" name="cc_type" type="string" />
+      <element minOccurs="0" name="cc_number_enc" type="string" />
+      <element minOccurs="0" name="cc_last4" type="string" />
+      <element minOccurs="0" name="cc_owner" type="string" />
+      <element minOccurs="0" name="cc_exp_month" type="string" />
+      <element minOccurs="0" name="cc_exp_year" type="string" />
+      <element minOccurs="0" name="cc_ss_start_month" type="string" />
+      <element minOccurs="0" name="cc_ss_start_year" type="string" />
+      <element minOccurs="0" name="payment_id" type="string" />
+      <element minOccurs="0" name="division" type="string" />
+      <element minOccurs="0" name="sub_division" type="string" />
+      <element minOccurs="0" name="business_area" type="string" />
+      <element minOccurs="0" name="cost_center" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderStatusHistoryEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="is_customer_notified" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="comment" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderStatusHistoryEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q127="http://schemas.xmlsoap.org/soap/encoding/" base="q127:Array">
+        <attribute xmlns:q128="urn:Magento" d5p1:arrayType="q128:salesOrderStatusHistoryEntity[]" ref="q127:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderShipmentEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="shipping_address_id" type="string" />
+      <element minOccurs="0" name="shipping_firstname" type="string" />
+      <element minOccurs="0" name="shipping_lastname" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="order_increment_id" type="string" />
+      <element minOccurs="0" name="order_created_at" type="string" />
+      <element minOccurs="0" name="total_qty" type="string" />
+      <element minOccurs="0" name="shipment_id" type="string" />
+      <element minOccurs="0" name="items" xmlns:q129="urn:Magento" type="q129:salesOrderShipmentItemEntityArray" />
+      <element minOccurs="0" name="tracks" xmlns:q130="urn:Magento" type="q130:salesOrderShipmentTrackEntityArray" />
+      <element minOccurs="0" name="comments" xmlns:q131="urn:Magento" type="q131:salesOrderShipmentCommentEntityArray" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderShipmentEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q132="http://schemas.xmlsoap.org/soap/encoding/" base="q132:Array">
+        <attribute xmlns:q133="urn:Magento" d5p1:arrayType="q133:salesOrderShipmentEntity[]" ref="q132:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderShipmentCommentEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="comment" type="string" />
+      <element minOccurs="0" name="is_customer_notified" type="string" />
+      <element minOccurs="0" name="comment_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderShipmentCommentEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q134="http://schemas.xmlsoap.org/soap/encoding/" base="q134:Array">
+        <attribute xmlns:q135="urn:Magento" d5p1:arrayType="q135:salesOrderShipmentCommentEntity[]" ref="q134:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderShipmentTrackEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="carrier_code" type="string" />
+      <element minOccurs="0" name="title" type="string" />
+      <element minOccurs="0" name="number" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="track_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderShipmentTrackEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q136="http://schemas.xmlsoap.org/soap/encoding/" base="q136:Array">
+        <attribute xmlns:q137="urn:Magento" d5p1:arrayType="q137:salesOrderShipmentTrackEntity[]" ref="q136:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderShipmentItemEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="order_item_id" type="string" />
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="weight" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="qty" type="string" />
+      <element minOccurs="0" name="item_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderShipmentItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q138="http://schemas.xmlsoap.org/soap/encoding/" base="q138:Array">
+        <attribute xmlns:q139="urn:Magento" d5p1:arrayType="q139:salesOrderShipmentItemEntity[]" ref="q138:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderInvoiceEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="global_currency_code" type="string" />
+      <element minOccurs="0" name="base_currency_code" type="string" />
+      <element minOccurs="0" name="store_currency_code" type="string" />
+      <element minOccurs="0" name="order_currency_code" type="string" />
+      <element minOccurs="0" name="store_to_base_rate" type="string" />
+      <element minOccurs="0" name="store_to_order_rate" type="string" />
+      <element minOccurs="0" name="base_to_global_rate" type="string" />
+      <element minOccurs="0" name="base_to_order_rate" type="string" />
+      <element minOccurs="0" name="subtotal" type="string" />
+      <element minOccurs="0" name="base_subtotal" type="string" />
+      <element minOccurs="0" name="base_grand_total" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="shipping_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_amount" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="billing_address_id" type="string" />
+      <element minOccurs="0" name="billing_firstname" type="string" />
+      <element minOccurs="0" name="billing_lastname" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="order_increment_id" type="string" />
+      <element minOccurs="0" name="order_created_at" type="string" />
+      <element minOccurs="0" name="state" type="string" />
+      <element minOccurs="0" name="grand_total" type="string" />
+      <element minOccurs="0" name="invoice_id" type="string" />
+      <element minOccurs="0" name="items" xmlns:q140="urn:Magento" type="q140:salesOrderInvoiceItemEntityArray" />
+      <element minOccurs="0" name="comments" xmlns:q141="urn:Magento" type="q141:salesOrderInvoiceCommentEntityArray" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderInvoiceEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q142="http://schemas.xmlsoap.org/soap/encoding/" base="q142:Array">
+        <attribute xmlns:q143="urn:Magento" d5p1:arrayType="q143:salesOrderInvoiceEntity[]" ref="q142:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderInvoiceItemEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="weee_tax_applied" type="string" />
+      <element minOccurs="0" name="qty" type="string" />
+      <element minOccurs="0" name="cost" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="row_total" type="string" />
+      <element minOccurs="0" name="base_price" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="base_row_total" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="base_weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="base_weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="order_item_id" type="string" />
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="item_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderInvoiceItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q144="http://schemas.xmlsoap.org/soap/encoding/" base="q144:Array">
+        <attribute xmlns:q145="urn:Magento" d5p1:arrayType="q145:salesOrderInvoiceItemEntity[]" ref="q144:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderInvoiceCommentEntity">
+    <all>
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="is_active" type="string" />
+      <element minOccurs="0" name="comment" type="string" />
+      <element minOccurs="0" name="is_customer_notified" type="string" />
+      <element minOccurs="0" name="comment_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderInvoiceCommentEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q146="http://schemas.xmlsoap.org/soap/encoding/" base="q146:Array">
+        <attribute xmlns:q147="urn:Magento" d5p1:arrayType="q147:salesOrderInvoiceCommentEntity[]" ref="q146:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderCreditmemoEntity">
+    <all>
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="increment_id" type="string" />
+      <element minOccurs="0" name="transaction_id" type="string" />
+      <element minOccurs="0" name="global_currency_code" type="string" />
+      <element minOccurs="0" name="base_currency_code" type="string" />
+      <element minOccurs="0" name="order_currency_code" type="string" />
+      <element minOccurs="0" name="store_currency_code" type="string" />
+      <element minOccurs="0" name="cybersource_token" type="string" />
+      <element minOccurs="0" name="invoice_id" type="string" />
+      <element minOccurs="0" name="billing_address_id" type="string" />
+      <element minOccurs="0" name="shipping_address_id" type="string" />
+      <element minOccurs="0" name="state" type="string" />
+      <element minOccurs="0" name="creditmemo_status" type="string" />
+      <element minOccurs="0" name="email_sent" type="string" />
+      <element minOccurs="0" name="order_id" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_tax_amount" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="base_adjustment_positive" type="string" />
+      <element minOccurs="0" name="base_grand_total" type="string" />
+      <element minOccurs="0" name="adjustment" type="string" />
+      <element minOccurs="0" name="subtotal" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="base_subtotal" type="string" />
+      <element minOccurs="0" name="base_adjustment" type="string" />
+      <element minOccurs="0" name="base_to_global_rate" type="string" />
+      <element minOccurs="0" name="store_to_base_rate" type="string" />
+      <element minOccurs="0" name="base_shipping_amount" type="string" />
+      <element minOccurs="0" name="adjustment_negative" type="string" />
+      <element minOccurs="0" name="subtotal_incl_tax" type="string" />
+      <element minOccurs="0" name="shipping_amount" type="string" />
+      <element minOccurs="0" name="base_subtotal_incl_tax" type="string" />
+      <element minOccurs="0" name="base_adjustment_negative" type="string" />
+      <element minOccurs="0" name="grand_total" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="base_to_order_rate" type="string" />
+      <element minOccurs="0" name="store_to_order_rate" type="string" />
+      <element minOccurs="0" name="base_shipping_tax_amount" type="string" />
+      <element minOccurs="0" name="adjustment_positive" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="base_hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="shipping_hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="base_shipping_hidden_tax_amnt" type="string" />
+      <element minOccurs="0" name="shipping_incl_tax" type="string" />
+      <element minOccurs="0" name="base_shipping_incl_tax" type="string" />
+      <element minOccurs="0" name="base_customer_balance_amount" type="string" />
+      <element minOccurs="0" name="customer_balance_amount" type="string" />
+      <element minOccurs="0" name="bs_customer_bal_total_refunded" type="string" />
+      <element minOccurs="0" name="customer_bal_total_refunded" type="string" />
+      <element minOccurs="0" name="base_gift_cards_amount" type="string" />
+      <element minOccurs="0" name="gift_cards_amount" type="string" />
+      <element minOccurs="0" name="gw_base_price" type="string" />
+      <element minOccurs="0" name="gw_price" type="string" />
+      <element minOccurs="0" name="gw_items_base_price" type="string" />
+      <element minOccurs="0" name="gw_items_price" type="string" />
+      <element minOccurs="0" name="gw_card_base_price" type="string" />
+      <element minOccurs="0" name="gw_card_price" type="string" />
+      <element minOccurs="0" name="gw_base_tax_amount" type="string" />
+      <element minOccurs="0" name="gw_tax_amount" type="string" />
+      <element minOccurs="0" name="gw_items_base_tax_amount" type="string" />
+      <element minOccurs="0" name="gw_items_tax_amount" type="string" />
+      <element minOccurs="0" name="gw_card_base_tax_amount" type="string" />
+      <element minOccurs="0" name="gw_card_tax_amount" type="string" />
+      <element minOccurs="0" name="base_reward_currency_amount" type="string" />
+      <element minOccurs="0" name="reward_currency_amount" type="string" />
+      <element minOccurs="0" name="reward_points_balance" type="string" />
+      <element minOccurs="0" name="reward_points_balance_refund" type="string" />
+      <element minOccurs="0" name="creditmemo_id" type="string" />
+      <element minOccurs="0" name="items" xmlns:q148="urn:Magento" type="q148:salesOrderCreditmemoItemEntityArray" />
+      <element minOccurs="0" name="comments" xmlns:q149="urn:Magento" type="q149:salesOrderCreditmemoCommentEntityArray" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderCreditmemoEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q150="http://schemas.xmlsoap.org/soap/encoding/" base="q150:Array">
+        <attribute xmlns:q151="urn:Magento" d5p1:arrayType="q151:salesOrderCreditmemoEntity[]" ref="q150:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderCreditmemoItemEntity">
+    <all>
+      <element minOccurs="0" name="item_id" type="string" />
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="base_price" type="string" />
+      <element minOccurs="0" name="base_weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="tax_amount" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_row_disposition" type="string" />
+      <element minOccurs="0" name="base_row_total" type="string" />
+      <element minOccurs="0" name="discount_amount" type="string" />
+      <element minOccurs="0" name="row_total" type="string" />
+      <element minOccurs="0" name="weee_tax_applied_amount" type="string" />
+      <element minOccurs="0" name="base_discount_amount" type="string" />
+      <element minOccurs="0" name="base_weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="price_incl_tax" type="string" />
+      <element minOccurs="0" name="base_tax_amount" type="string" />
+      <element minOccurs="0" name="weee_tax_disposition" type="string" />
+      <element minOccurs="0" name="base_price_incl_tax" type="string" />
+      <element minOccurs="0" name="qty" type="string" />
+      <element minOccurs="0" name="base_cost" type="string" />
+      <element minOccurs="0" name="base_weee_tax_applied_row_amount" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="base_row_total_incl_tax" type="string" />
+      <element minOccurs="0" name="row_total_incl_tax" type="string" />
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="order_item_id" type="string" />
+      <element minOccurs="0" name="additional_data" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="weee_tax_applied" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="hidden_tax_amount" type="string" />
+      <element minOccurs="0" name="base_hidden_tax_amount" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderCreditmemoItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q152="http://schemas.xmlsoap.org/soap/encoding/" base="q152:Array">
+        <attribute xmlns:q153="urn:Magento" d5p1:arrayType="q153:salesOrderCreditmemoItemEntity[]" ref="q152:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderCreditmemoCommentEntity">
+    <all>
+      <element minOccurs="0" name="parent_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="comment" type="string" />
+      <element minOccurs="0" name="is_customer_notified" type="string" />
+      <element minOccurs="0" name="comment_id" type="string" />
+      <element minOccurs="0" name="is_visible_on_front" type="string" />
+    </all>
+  </complexType>
+  <complexType name="salesOrderCreditmemoCommentEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q154="http://schemas.xmlsoap.org/soap/encoding/" base="q154:Array">
+        <attribute xmlns:q155="urn:Magento" d5p1:arrayType="q155:salesOrderCreditmemoCommentEntity[]" ref="q154:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="salesOrderCreditmemoData">
+    <all>
+      <element minOccurs="0" name="qtys" xmlns:q156="urn:Magento" type="q156:orderItemIdQtyArray" />
+      <element minOccurs="0" name="shipping_amount" type="double" />
+      <element minOccurs="0" name="adjustment_positive" type="double" />
+      <element minOccurs="0" name="adjustment_negative" type="double" />
+    </all>
+  </complexType>
+  <complexType name="catalogInventoryStockItemEntity">
+    <all>
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="qty" type="string" />
+      <element minOccurs="0" name="is_in_stock" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogInventoryStockItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q157="http://schemas.xmlsoap.org/soap/encoding/" base="q157:Array">
+        <attribute xmlns:q158="urn:Magento" d5p1:arrayType="q158:catalogInventoryStockItemEntity[]" ref="q157:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogInventoryStockItemUpdateEntity">
+    <all>
+      <element minOccurs="0" name="qty" type="string" />
+      <element minOccurs="0" name="is_in_stock" type="int" />
+      <element minOccurs="0" name="manage_stock" type="int" />
+      <element minOccurs="0" name="use_config_manage_stock" type="int" />
+      <element minOccurs="0" name="min_qty" type="int" />
+      <element minOccurs="0" name="use_config_min_qty" type="int" />
+      <element minOccurs="0" name="min_sale_qty" type="int" />
+      <element minOccurs="0" name="use_config_min_sale_qty" type="int" />
+      <element minOccurs="0" name="max_sale_qty" type="int" />
+      <element minOccurs="0" name="use_config_max_sale_qty" type="int" />
+      <element minOccurs="0" name="is_qty_decimal" type="int" />
+      <element minOccurs="0" name="backorders" type="int" />
+      <element minOccurs="0" name="use_config_backorders" type="int" />
+      <element minOccurs="0" name="notify_stock_qty" type="int" />
+      <element minOccurs="0" name="use_config_notify_stock_qty" type="int" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartAddressEntity">
+    <all>
+      <element minOccurs="0" name="address_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="customer_id" type="string" />
+      <element minOccurs="0" name="save_in_address_book" type="int" />
+      <element minOccurs="0" name="customer_address_id" type="string" />
+      <element minOccurs="0" name="address_type" type="string" />
+      <element minOccurs="0" name="email" type="string" />
+      <element minOccurs="0" name="prefix" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="middlename" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="suffix" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="region" type="string" />
+      <element minOccurs="0" name="region_id" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="country_id" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="fax" type="string" />
+      <element minOccurs="0" name="same_as_billing" type="int" />
+      <element minOccurs="0" name="free_shipping" type="int" />
+      <element minOccurs="0" name="shipping_method" type="string" />
+      <element minOccurs="0" name="shipping_description" type="string" />
+      <element minOccurs="0" name="weight" type="double" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartItemEntity">
+    <all>
+      <element minOccurs="0" name="item_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="parent_item_id" type="string" />
+      <element minOccurs="0" name="is_virtual" type="int" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="description" type="string" />
+      <element minOccurs="0" name="applied_rule_ids" type="string" />
+      <element minOccurs="0" name="additional_data" type="string" />
+      <element minOccurs="0" name="free_shipping" type="string" />
+      <element minOccurs="0" name="is_qty_decimal" type="string" />
+      <element minOccurs="0" name="no_discount" type="string" />
+      <element minOccurs="0" name="weight" type="double" />
+      <element minOccurs="0" name="qty" type="double" />
+      <element minOccurs="0" name="price" type="double" />
+      <element minOccurs="0" name="base_price" type="double" />
+      <element minOccurs="0" name="custom_price" type="double" />
+      <element minOccurs="0" name="discount_percent" type="double" />
+      <element minOccurs="0" name="discount_amount" type="double" />
+      <element minOccurs="0" name="base_discount_amount" type="double" />
+      <element minOccurs="0" name="tax_percent" type="double" />
+      <element minOccurs="0" name="tax_amount" type="double" />
+      <element minOccurs="0" name="base_tax_amount" type="double" />
+      <element minOccurs="0" name="row_total" type="double" />
+      <element minOccurs="0" name="base_row_total" type="double" />
+      <element minOccurs="0" name="row_total_with_discount" type="double" />
+      <element minOccurs="0" name="row_weight" type="double" />
+      <element minOccurs="0" name="product_type" type="string" />
+      <element minOccurs="0" name="base_tax_before_discount" type="double" />
+      <element minOccurs="0" name="tax_before_discount" type="double" />
+      <element minOccurs="0" name="original_custom_price" type="double" />
+      <element minOccurs="0" name="base_cost" type="double" />
+      <element minOccurs="0" name="price_incl_tax" type="double" />
+      <element minOccurs="0" name="base_price_incl_tax" type="double" />
+      <element minOccurs="0" name="row_total_incl_tax" type="double" />
+      <element minOccurs="0" name="base_row_total_incl_tax" type="double" />
+      <element minOccurs="0" name="gift_message_id" type="string" />
+      <element minOccurs="0" name="gift_message" type="string" />
+      <element minOccurs="0" name="gift_message_available" type="string" />
+      <element minOccurs="0" name="weee_tax_applied" type="double" />
+      <element minOccurs="0" name="weee_tax_applied_amount" type="double" />
+      <element minOccurs="0" name="weee_tax_applied_row_amount" type="double" />
+      <element minOccurs="0" name="base_weee_tax_applied_amount" type="double" />
+      <element minOccurs="0" name="base_weee_tax_applied_row_amount" type="double" />
+      <element minOccurs="0" name="weee_tax_disposition" type="double" />
+      <element minOccurs="0" name="weee_tax_row_disposition" type="double" />
+      <element minOccurs="0" name="base_weee_tax_disposition" type="double" />
+      <element minOccurs="0" name="base_weee_tax_row_disposition" type="double" />
+      <element minOccurs="0" name="tax_class_id" type="string" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q159="http://schemas.xmlsoap.org/soap/encoding/" base="q159:Array">
+        <attribute xmlns:q160="urn:Magento" d5p1:arrayType="q160:shoppingCartItemEntity[]" ref="q159:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartPaymentEntity">
+    <all>
+      <element minOccurs="0" name="payment_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="method" type="string" />
+      <element minOccurs="0" name="cc_type" type="string" />
+      <element minOccurs="0" name="cc_number_enc" type="string" />
+      <element minOccurs="0" name="cc_last4" type="string" />
+      <element minOccurs="0" name="cc_cid_enc" type="string" />
+      <element minOccurs="0" name="cc_owner" type="string" />
+      <element minOccurs="0" name="cc_exp_month" type="string" />
+      <element minOccurs="0" name="cc_exp_year" type="string" />
+      <element minOccurs="0" name="cc_ss_owner" type="string" />
+      <element minOccurs="0" name="cc_ss_start_month" type="string" />
+      <element minOccurs="0" name="cc_ss_start_year" type="string" />
+      <element minOccurs="0" name="cc_ss_issue" type="string" />
+      <element minOccurs="0" name="po_number" type="string" />
+      <element minOccurs="0" name="additional_data" type="string" />
+      <element minOccurs="0" name="additional_information" type="string" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartInfoEntity">
+    <all>
+      <element minOccurs="0" name="store_id" type="string" />
+      <element minOccurs="0" name="created_at" type="string" />
+      <element minOccurs="0" name="updated_at" type="string" />
+      <element minOccurs="0" name="converted_at" type="string" />
+      <element minOccurs="0" name="quote_id" type="int" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="is_virtual" type="int" />
+      <element minOccurs="0" name="is_multi_shipping" type="int" />
+      <element minOccurs="0" name="items_count" type="double" />
+      <element minOccurs="0" name="items_qty" type="double" />
+      <element minOccurs="0" name="orig_order_id" type="string" />
+      <element minOccurs="0" name="store_to_base_rate" type="string" />
+      <element minOccurs="0" name="store_to_quote_rate" type="string" />
+      <element minOccurs="0" name="base_currency_code" type="string" />
+      <element minOccurs="0" name="store_currency_code" type="string" />
+      <element minOccurs="0" name="quote_currency_code" type="string" />
+      <element minOccurs="0" name="grand_total" type="string" />
+      <element minOccurs="0" name="base_grand_total" type="string" />
+      <element minOccurs="0" name="checkout_method" type="string" />
+      <element minOccurs="0" name="customer_id" type="string" />
+      <element minOccurs="0" name="customer_tax_class_id" type="string" />
+      <element minOccurs="0" name="customer_group_id" type="int" />
+      <element minOccurs="0" name="customer_email" type="string" />
+      <element minOccurs="0" name="customer_prefix" type="string" />
+      <element minOccurs="0" name="customer_firstname" type="string" />
+      <element minOccurs="0" name="customer_middlename" type="string" />
+      <element minOccurs="0" name="customer_lastname" type="string" />
+      <element minOccurs="0" name="customer_suffix" type="string" />
+      <element minOccurs="0" name="customer_note" type="string" />
+      <element minOccurs="0" name="customer_note_notify" type="string" />
+      <element minOccurs="0" name="customer_is_guest" type="string" />
+      <element minOccurs="0" name="applied_rule_ids" type="string" />
+      <element minOccurs="0" name="reserved_order_id" type="string" />
+      <element minOccurs="0" name="password_hash" type="string" />
+      <element minOccurs="0" name="coupon_code" type="string" />
+      <element minOccurs="0" name="global_currency_code" type="string" />
+      <element minOccurs="0" name="base_to_global_rate" type="double" />
+      <element minOccurs="0" name="base_to_quote_rate" type="double" />
+      <element minOccurs="0" name="customer_taxvat" type="string" />
+      <element minOccurs="0" name="customer_gender" type="string" />
+      <element minOccurs="0" name="subtotal" type="double" />
+      <element minOccurs="0" name="base_subtotal" type="double" />
+      <element minOccurs="0" name="subtotal_with_discount" type="double" />
+      <element minOccurs="0" name="base_subtotal_with_discount" type="double" />
+      <element minOccurs="0" name="ext_shipping_info" type="string" />
+      <element minOccurs="0" name="gift_message_id" type="string" />
+      <element minOccurs="0" name="gift_message" type="string" />
+      <element minOccurs="0" name="customer_balance_amount_used" type="double" />
+      <element minOccurs="0" name="base_customer_balance_amount_used" type="double" />
+      <element minOccurs="0" name="use_customer_balance" type="string" />
+      <element minOccurs="0" name="gift_cards_amount" type="string" />
+      <element minOccurs="0" name="base_gift_cards_amount" type="string" />
+      <element minOccurs="0" name="gift_cards_amount_used" type="string" />
+      <element minOccurs="0" name="use_reward_points" type="string" />
+      <element minOccurs="0" name="reward_points_balance" type="string" />
+      <element minOccurs="0" name="base_reward_currency_amount" type="string" />
+      <element minOccurs="0" name="reward_currency_amount" type="string" />
+      <element minOccurs="0" name="shipping_address" xmlns:q161="urn:Magento" type="q161:shoppingCartAddressEntity" />
+      <element minOccurs="0" name="billing_address" xmlns:q162="urn:Magento" type="q162:shoppingCartAddressEntity" />
+      <element minOccurs="0" name="items" xmlns:q163="urn:Magento" type="q163:shoppingCartItemEntityArray" />
+      <element minOccurs="0" name="payment" xmlns:q164="urn:Magento" type="q164:shoppingCartPaymentEntity" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartTotalsEntity">
+    <all>
+      <element minOccurs="0" name="title" type="string" />
+      <element minOccurs="0" name="amount" type="double" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartTotalsEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q165="http://schemas.xmlsoap.org/soap/encoding/" base="q165:Array">
+        <attribute xmlns:q166="urn:Magento" d5p1:arrayType="q166:shoppingCartTotalsEntity[]" ref="q165:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartLicenseEntity">
+    <all>
+      <element minOccurs="0" name="agreement_id" type="string" />
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="content" type="string" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="is_html" type="int" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartLicenseEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q167="http://schemas.xmlsoap.org/soap/encoding/" base="q167:Array">
+        <attribute xmlns:q168="urn:Magento" d5p1:arrayType="q168:shoppingCartLicenseEntity[]" ref="q167:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartProductEntity">
+    <all>
+      <element minOccurs="0" name="product_id" type="string" />
+      <element minOccurs="0" name="sku" type="string" />
+      <element minOccurs="0" name="qty" type="double" />
+      <element minOccurs="0" name="options" xmlns:q169="urn:Magento" type="q169:associativeArray" />
+      <element minOccurs="0" name="bundle_option" xmlns:q170="urn:Magento" type="q170:associativeArray" />
+      <element minOccurs="0" name="bundle_option_qty" xmlns:q171="urn:Magento" type="q171:associativeArray" />
+      <element minOccurs="0" name="links" xmlns:q172="urn:Magento" type="q172:ArrayOfString" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartProductEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q173="http://schemas.xmlsoap.org/soap/encoding/" base="q173:Array">
+        <attribute xmlns:q174="urn:Magento" d5p1:arrayType="q174:shoppingCartProductEntity[]" ref="q173:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartProductResponseEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q175="http://schemas.xmlsoap.org/soap/encoding/" base="q175:Array">
+        <attribute xmlns:q176="urn:Magento" d5p1:arrayType="q176:catalogProductEntity[]" ref="q175:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartCustomerEntity">
+    <all>
+      <element minOccurs="0" name="mode" type="string" />
+      <element minOccurs="0" name="customer_id" type="int" />
+      <element minOccurs="0" name="email" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="password" type="string" />
+      <element minOccurs="0" name="confirmation" type="string" />
+      <element minOccurs="0" name="website_id" type="int" />
+      <element minOccurs="0" name="store_id" type="int" />
+      <element minOccurs="0" name="group_id" type="int" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartCustomerAddressEntity">
+    <all>
+      <element minOccurs="0" name="mode" type="string" />
+      <element minOccurs="0" name="address_id" type="string" />
+      <element minOccurs="0" name="firstname" type="string" />
+      <element minOccurs="0" name="lastname" type="string" />
+      <element minOccurs="0" name="company" type="string" />
+      <element minOccurs="0" name="street" type="string" />
+      <element minOccurs="0" name="city" type="string" />
+      <element minOccurs="0" name="region" type="string" />
+      <element minOccurs="0" name="region_id" type="string" />
+      <element minOccurs="0" name="postcode" type="string" />
+      <element minOccurs="0" name="country_id" type="string" />
+      <element minOccurs="0" name="telephone" type="string" />
+      <element minOccurs="0" name="fax" type="string" />
+      <element minOccurs="0" name="is_default_billing" type="int" />
+      <element minOccurs="0" name="is_default_shipping" type="int" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartCustomerAddressEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q177="http://schemas.xmlsoap.org/soap/encoding/" base="q177:Array">
+        <attribute xmlns:q178="urn:Magento" d5p1:arrayType="q178:shoppingCartCustomerAddressEntity[]" ref="q177:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartShippingMethodEntity">
+    <all>
+      <element minOccurs="0" name="code" type="string" />
+      <element minOccurs="0" name="carrier" type="string" />
+      <element minOccurs="0" name="carrier_title" type="string" />
+      <element minOccurs="0" name="method" type="string" />
+      <element minOccurs="0" name="method_title" type="string" />
+      <element minOccurs="0" name="method_description" type="string" />
+      <element minOccurs="0" name="price" type="double" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartShippingMethodEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q179="http://schemas.xmlsoap.org/soap/encoding/" base="q179:Array">
+        <attribute xmlns:q180="urn:Magento" d5p1:arrayType="q180:shoppingCartShippingMethodEntity[]" ref="q179:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="shoppingCartPaymentMethodEntity">
+    <all>
+      <element minOccurs="0" name="po_number" type="string" />
+      <element minOccurs="0" name="method" type="string" />
+      <element minOccurs="0" name="cc_cid" type="string" />
+      <element minOccurs="0" name="cc_owner" type="string" />
+      <element minOccurs="0" name="cc_number" type="string" />
+      <element minOccurs="0" name="cc_type" type="string" />
+      <element minOccurs="0" name="cc_exp_year" type="string" />
+      <element minOccurs="0" name="cc_exp_month" type="string" />
+    </all>
+  </complexType>
+  <complexType name="shoppingCartPaymentMethodResponseEntityArray">
+    <all>
+      <element name="code" type="string" />
+      <element name="title" type="string" />
+      <element name="cc_types" xmlns:q181="urn:Magento" type="q181:associativeArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTagListEntity">
+    <all>
+      <element minOccurs="1" name="tag_id" type="string" />
+      <element minOccurs="1" name="name" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTagListEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q182="http://schemas.xmlsoap.org/soap/encoding/" base="q182:Array">
+        <attribute xmlns:q183="urn:Magento" d5p1:arrayType="q183:catalogProductTagListEntity[]" ref="q182:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductTagAddEntity">
+    <all>
+      <element minOccurs="1" name="tag" type="string" />
+      <element minOccurs="1" name="product_id" type="string" />
+      <element minOccurs="1" name="customer_id" type="string" />
+      <element minOccurs="1" name="store" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTagUpdateEntity">
+    <all>
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="base_popularity" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductTagInfoEntity">
+    <all>
+      <element minOccurs="1" name="name" type="string" />
+      <element minOccurs="1" name="status" type="string" />
+      <element minOccurs="1" name="base_popularity" type="string" />
+      <element minOccurs="1" name="products" xmlns:q184="urn:Magento" type="q184:associativeArray" />
+    </all>
+  </complexType>
+  <complexType name="giftMessageEntity">
+    <sequence>
+      <element minOccurs="0" name="from" type="string" />
+      <element minOccurs="0" name="to" type="string" />
+      <element minOccurs="0" name="message" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="giftMessageResponse">
+    <sequence>
+      <element minOccurs="0" name="entityId" type="string" />
+      <element minOccurs="0" name="result" type="boolean" />
+      <element minOccurs="0" name="error" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="giftMessageResponseArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q185="http://schemas.xmlsoap.org/soap/encoding/" base="q185:Array">
+        <attribute xmlns:q186="urn:Magento" d5p1:arrayType="q186:giftMessageResponse[]" ref="q185:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="giftMessageAssociativeProductsEntity">
+    <sequence>
+      <element name="product" xmlns:q187="urn:Magento" type="q187:shoppingCartProductEntity" />
+      <element name="message" xmlns:q188="urn:Magento" type="q188:giftMessageEntity" />
+    </sequence>
+  </complexType>
+  <complexType name="giftMessageAssociativeProductsEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q189="http://schemas.xmlsoap.org/soap/encoding/" base="q189:Array">
+        <attribute xmlns:q190="urn:Magento" d5p1:arrayType="q190:giftMessageAssociativeProductsEntity[]" ref="q189:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkFileEntity">
+    <all>
+      <element minOccurs="0" name="name" type="string" />
+      <element minOccurs="0" name="base64_content" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkAddSampleEntity">
+    <all>
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="file" xmlns:q191="urn:Magento" type="q191:catalogProductDownloadableLinkFileEntity" />
+      <element minOccurs="0" name="url" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkAddEntity">
+    <all>
+      <element minOccurs="1" name="title" type="string" />
+      <element minOccurs="0" name="price" type="string" />
+      <element minOccurs="0" name="is_unlimited" type="int" />
+      <element minOccurs="0" name="number_of_downloads" type="int" />
+      <element minOccurs="0" name="is_shareable" type="int" />
+      <element minOccurs="0" name="sample" xmlns:q192="urn:Magento" type="q192:catalogProductDownloadableLinkAddSampleEntity" />
+      <element minOccurs="0" name="type" type="string" />
+      <element minOccurs="0" name="file" xmlns:q193="urn:Magento" type="q193:catalogProductDownloadableLinkFileEntity" />
+      <element minOccurs="0" name="link_url" type="string" />
+      <element minOccurs="0" name="sample_url" type="string" />
+      <element minOccurs="0" name="sort_order" type="int" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkFileInfoEntity">
+    <all>
+      <element name="file" type="string" />
+      <element name="name" type="string" />
+      <element name="size" type="int" />
+      <element name="status" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkFileInfoEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q194="http://schemas.xmlsoap.org/soap/encoding/" base="q194:Array">
+        <attribute xmlns:q195="urn:Magento" d5p1:arrayType="q195:catalogProductDownloadableLinkFileInfoEntity[]" ref="q194:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkEntity">
+    <all>
+      <element name="link_id" type="string" />
+      <element name="title" type="string" />
+      <element name="price" type="string" />
+      <element minOccurs="0" name="number_of_downloads" type="int" />
+      <element minOccurs="0" name="is_unlimited" type="int" />
+      <element name="is_shareable" type="int" />
+      <element name="link_url" type="string" />
+      <element name="link_type" type="string" />
+      <element minOccurs="0" name="sample_file" type="string" />
+      <element minOccurs="0" name="sample_url" type="string" />
+      <element name="sample_type" type="string" />
+      <element name="sort_order" type="int" />
+      <element minOccurs="0" name="file_save" xmlns:q196="urn:Magento" type="q196:catalogProductDownloadableLinkFileInfoEntityArray" />
+      <element minOccurs="0" name="sample_file_save" xmlns:q197="urn:Magento" type="q197:catalogProductDownloadableLinkFileInfoEntityArray" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q198="http://schemas.xmlsoap.org/soap/encoding/" base="q198:Array">
+        <attribute xmlns:q199="urn:Magento" d5p1:arrayType="q199:catalogProductDownloadableLinkEntity[]" ref="q198:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkSampleEntity">
+    <all>
+      <element name="sample_id" type="string" />
+      <element name="product_id" type="string" />
+      <element minOccurs="0" name="sample_file" type="string" />
+      <element minOccurs="0" name="sample_url" type="string" />
+      <element name="sample_type" type="string" />
+      <element name="sort_order" type="string" />
+      <element name="default_title" type="string" />
+      <element name="store_title" type="string" />
+      <element name="title" type="string" />
+    </all>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkSampleEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q200="http://schemas.xmlsoap.org/soap/encoding/" base="q200:Array">
+        <attribute xmlns:q201="urn:Magento" d5p1:arrayType="q201:catalogProductDownloadableLinkSampleEntity[]" ref="q200:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="catalogProductDownloadableLinkInfoEntity">
+    <all>
+      <element name="links" xmlns:q202="urn:Magento" type="q202:catalogProductDownloadableLinkEntityArray" />
+      <element name="samples" xmlns:q203="urn:Magento" type="q203:catalogProductDownloadableLinkSampleEntityArray" />
+    </all>
+  </complexType>
+  <complexType name="enterpriseCustomerbalanceHistoryItemEntity">
+    <all>
+      <element name="history_id" type="string" />
+      <element name="balance_id" type="string" />
+      <element name="updated_at" type="string" />
+      <element name="action" type="string" />
+      <element name="balance_amount" type="string" />
+      <element name="balance_delta" type="string" />
+      <element name="additional_info" type="string" />
+      <element name="is_customer_notified" type="string" />
+      <element name="customer_id" type="string" />
+      <element name="website_id" type="string" />
+      <element name="base_currency_code" type="string" />
+    </all>
+  </complexType>
+  <complexType name="enterpriseCustomerbalanceHistoryItemEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q204="http://schemas.xmlsoap.org/soap/encoding/" base="q204:Array">
+        <attribute xmlns:q205="urn:Magento" d5p1:arrayType="q205:enterpriseCustomerbalanceHistoryItemEntity[]" ref="q204:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="giftcardAccountCreateGiftcardAccountData">
+    <all>
+      <element name="status" type="string" />
+      <element minOccurs="0" name="date_expires" type="string" />
+      <element name="website_id" type="string" />
+      <element name="balance" type="string" />
+      <element minOccurs="0" name="state" type="string" />
+      <element name="is_redeemable" type="string" />
+    </all>
+  </complexType>
+  <complexType name="giftcardAccountCreateNotificationData">
+    <all>
+      <element name="recipient_name" type="string" />
+      <element name="recipient_email" type="string" />
+      <element minOccurs="0" name="recipient_store" type="string" />
+    </all>
+  </complexType>
+  <complexType name="giftcardAccountEntity">
+    <all>
+      <element minOccurs="0" name="giftcard_id" type="int" />
+      <element minOccurs="0" name="code" type="string" />
+      <element minOccurs="0" name="store_id" type="int" />
+      <element minOccurs="0" name="date_created" type="string" />
+      <element minOccurs="0" name="expire_date" type="string" />
+      <element minOccurs="0" name="is_active" type="int" />
+      <element minOccurs="0" name="is_redeemable" type="int" />
+      <element minOccurs="0" name="status" type="string" />
+      <element minOccurs="0" name="balance" type="double" />
+      <element minOccurs="0" name="history" xmlns:q206="urn:Magento" type="q206:giftcardAccountEntityHistoryArray" />
+    </all>
+  </complexType>
+  <complexType name="giftcardAccountEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q207="http://schemas.xmlsoap.org/soap/encoding/" base="q207:Array">
+        <attribute xmlns:q208="urn:Magento" d5p1:arrayType="q208:giftcardAccountEntity[]" ref="q207:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="giftcardAccountEntityHistory">
+    <all>
+      <element minOccurs="0" name="record_id" type="int" />
+      <element minOccurs="0" name="date" type="string" />
+      <element minOccurs="0" name="action" type="string" />
+      <element minOccurs="0" name="balance_delta" type="double" />
+      <element minOccurs="0" name="balance" type="double" />
+      <element minOccurs="0" name="info" type="string" />
+    </all>
+  </complexType>
+  <complexType name="giftcardAccountEntityHistoryArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q209="http://schemas.xmlsoap.org/soap/encoding/" base="q209:Array">
+        <attribute xmlns:q210="urn:Magento" d5p1:arrayType="q210:giftcardAccountEntityHistory[]" ref="q209:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="giftcardAccountEntityToUpdate">
+    <all>
+      <element minOccurs="0" name="is_active" type="boolean" />
+      <element minOccurs="0" name="is_redeemable" type="boolean" />
+      <element minOccurs="0" name="store_id" type="int" />
+      <element minOccurs="0" name="balance" type="double" />
+      <element minOccurs="0" name="date_expires" type="string" />
+    </all>
+  </complexType>
+  <complexType name="giftcardCustomerEntity">
+    <all>
+      <element minOccurs="0" name="balance" type="double" />
+      <element minOccurs="0" name="expire_date" type="string" />
+    </all>
+  </complexType>
+  <complexType name="enterpriseGiftcardaccountListEntity">
+    <all>
+      <element name="giftcardaccount_id" type="string" />
+      <element name="code" type="string" />
+      <element name="used_amount" type="string" />
+      <element name="base_amount" type="string" />
+    </all>
+  </complexType>
+  <complexType name="enterpriseGiftcardaccountListEntityArray">
+    <complexContent mixed="false">
+      <restriction xmlns:q211="http://schemas.xmlsoap.org/soap/encoding/" base="q211:Array">
+        <attribute xmlns:q212="urn:Magento" d5p1:arrayType="q212:enterpriseGiftcardaccountListEntity[]" ref="q211:arrayType" xmlns:d5p1="http://schemas.xmlsoap.org/wsdl/" />
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

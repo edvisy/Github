@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_accounting_journal_request" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:ifsworld-com:schemas:sap_interface_inbound_messages_receive_accounting_journal_request" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RECEIVE_ACCOUNTING_JOURNAL">
+    <xs:complexType>
+      <xs:all>
+        <xs:element minOccurs="0" name="ACCOUNTING_JOURNALS" nillable="true">
+          <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+              <xs:element name="ACCOUNTING_JOURNAL">
+                <xs:complexType>
+                  <xs:all>
+                    <xs:element minOccurs="0" name="WO_NO" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="COST" nillable="true" type="xs:float" />
+                    <xs:element minOccurs="0" name="CMNT" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="ACCOUNT_NO" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element minOccurs="0" name="COST_CENTER" nillable="true">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:maxLength value="200" />
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

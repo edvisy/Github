@@ -1,0 +1,195 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="a113a6fe-04c5-4f41-bb95-c919b88b7f0e" LowerBound="1.1" HigherBound="42.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="43cc92e3-e5a6-4a67-a535-2b3557e5577d" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SAP2INVOICEPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f302054a-3b88-41da-aebd-ddde5c2b554b" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsSAP2INVOICE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="5bc4ce2f-67e6-4128-b033-70b27106e027" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.69">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01.Z3INVOIC01" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="19a46764-7354-42fd-b3e1-c2fde774e4c7" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SendLionEDIInvoicePortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="446f61d7-4711-4dde-ba57-a5e29887114f" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="OpsSendLionEDIInvoice" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="19233a0b-82ed-4a0a-9ce0-9ac091329b21" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.72">
+                    <om:Property Name="Ref" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="408565be-64bd-4c06-816c-e9e897f6e54f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessInvoice" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="MessageDeclaration" OID="f22cecc9-916f-4305-b51f-dc41eb30658b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01.Z3INVOIC01" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgSAPInvoice" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="76035ec5-27ca-450e-a61f-022fae4233d6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msgLionnathanEDI" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="cbe14702-2772-4396-8eaf-6a9075afa88d" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="183e3a41-8982-4fd4-aa62-dbafe6c29273" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="SAP2INVOICEPort" />
+                    <om:Property Name="MessageName" Value="msgSAPInvoice" />
+                    <om:Property Name="OperationName" Value="OpsSAP2INVOICE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="RcvSAPInvoice" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="404a9c4a-603a-4d78-8884-53f9c65c8dd6" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructLionEDIInvoice" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageRef" OID="3571e627-8ef6-4391-a5d2-ff4df48ab245" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.39">
+                        <om:Property Name="Ref" Value="msgLionnathanEDI" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Transform" OID="090ef927-cf0c-414c-b1d4-8a51bf5e5e4a" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPInvoiceToLionsInvoiceMap" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="TransformSAPInvoiceToLionsInvoice" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="c67d5a9a-bd32-41da-bf8a-8d09cbd20375" ParentLink="Transform_InputMessagePartRef" LowerBound="35.122" HigherBound="35.135">
+                            <om:Property Name="MessageRef" Value="msgSAPInvoice" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="3db74104-4df9-4a44-b98d-da8fe8961e70" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.44">
+                            <om:Property Name="MessageRef" Value="msgLionnathanEDI" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="89d21c14-9f99-47ab-9bc4-aae2c58092bf" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
+                    <om:Property Name="PortName" Value="SendLionEDIInvoicePort" />
+                    <om:Property Name="MessageName" Value="msgLionnathanEDI" />
+                    <om:Property Name="OperationName" Value="OpsSendLionEDIInvoice" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendLionnathanEDI" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="eb0672c9-8c10-4484-9c62-1b25c07a3507" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.SAP2INVOICEPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SAP2INVOICEPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="4c02f2fa-6b48-4ab1-8d55-cc0c802245a8" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="48fa6874-faf7-4cc2-8519-cfe6f5ac1bb0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations.SendLionEDIInvoicePortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="SendLionEDIInvoicePort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="165cc40f-ca80-43d7-be5b-0105a0dca72a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.SAP.LionNathan.Plastics.Orchestrations
+{
+    public porttype SAP2INVOICEPortType
+    {
+        oneway OpsSAP2INVOICE
+        {
+            Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01.Z3INVOIC01
+        };
+    };
+    internal porttype SendLionEDIInvoicePortType
+    {
+        oneway OpsSendLionEDIInvoice
+        {
+            Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessInvoice
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements SAP2INVOICEPortType SAP2INVOICEPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses SendLionEDIInvoicePortType SendLionEDIInvoicePort;
+        message Visy.Middleware.Common.Schemas.SAP.Z3INVOIC01.Z3INVOIC01 msgSAPInvoice;
+        message Visy.Middleware.Common.Schemas.EDI.EFACT_D01B_INVOIC_EAN011 msgLionnathanEDI;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("183e3a41-8982-4fd4-aa62-dbafe6c29273")]
+            activate receive (SAP2INVOICEPort.OpsSAP2INVOICE, msgSAPInvoice);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("404a9c4a-603a-4d78-8884-53f9c65c8dd6")]
+            construct msgLionnathanEDI
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("090ef927-cf0c-414c-b1d4-8a51bf5e5e4a")]
+                transform (msgLionnathanEDI) = Visy.Middleware.SAP.LionNathan.Plastics.Maps.SAPInvoiceToLionsInvoiceMap (msgSAPInvoice);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("89d21c14-9f99-47ab-9bc4-aae2c58092bf")]
+            send (SendLionEDIInvoicePort.OpsSendLionEDIInvoice, msgLionnathanEDI);
+        }
+    }
+}
+
