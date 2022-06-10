@@ -39,6 +39,11 @@
     <AssemblyOriginatorKeyFile>..\..\Common\Visy.Middleware.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ESB.Namespace.PipelineComponents, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft BizTalk ESB Toolkit\Bin\Microsoft.Practices.ESB.Namespace.PipelineComponents.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -81,6 +86,26 @@
   <ItemGroup>
     <Pipeline Include="ExcelDasm.btp">
       <TypeName>ExcelDasm</TypeName>
+      <Namespace>Visy.Middleware.LGX.Bundaberg.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Visy.Middleware.LGX.Bundaberg.Schemas\Visy.Middleware.LGX.Bundaberg.Schemas.btproj">
+      <Project>{08b99054-bea2-4ca0-b0cf-35697c601194}</Project>
+      <Name>Visy.Middleware.LGX.Bundaberg.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="BBDInvoiceFFDasm.btp">
+      <TypeName>BBDInvoiceFFDasm</TypeName>
+      <Namespace>Visy.Middleware.LGX.Bundaberg.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="RemoveNSAsm.btp">
+      <TypeName>RemoveNSAsm</TypeName>
       <Namespace>Visy.Middleware.LGX.Bundaberg.Pipelines</Namespace>
       <SubType>Task</SubType>
     </Pipeline>

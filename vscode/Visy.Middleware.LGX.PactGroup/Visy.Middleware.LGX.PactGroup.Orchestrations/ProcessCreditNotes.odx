@@ -1,0 +1,342 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="24dcd43c-f9be-49f2-b5ad-981902346eef" LowerBound="1.1" HigherBound="74.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Visy.Middleware.LGX.PactGroup.Orchestrations" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="MultipartMessageType" OID="07bb896e-b60f-48df-9ecc-4e2291a3a9f3" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_LGXCreditNotes" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="b1e599f4-eaeb-4450-9525-be5fc6be3333" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Common.Schemas.LGX.CREDITNOTE" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="27feee3a-6441-4fc8-b644-ea64b3150c3e" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="m_AribaCreditNotes" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="46a18bd5-d419-4e9a-b2a9-94ee9436be10" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="XML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="cc1510df-ae72-4ee5-a3c8-abdf1f294ee6" ParentLink="Module_ServiceDeclaration" LowerBound="33.1" HigherBound="73.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessCreditNotes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="9f725717-8719-44ad-9ae9-c8f3847bd5cb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="v_Xml" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e7b34416-1df5-47a7-964a-f1022991295a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.m_LGXCreditNotes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_LGXCreditNotes" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e59c9d23-ec60-4c13-89a2-3ddfe4c23e2b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.m_AribaCreditNotes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_AribaCreditNotes" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="f5daddb8-7606-4620-9872-1799232d9cf4" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_Resp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="25be0c4e-5095-49ce-b2db-002ddb4b21ee" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="2fe92e99-ba0d-4bed-a091-7c7a1ae519f3" ParentLink="ServiceBody_Statement" LowerBound="48.1" HigherBound="51.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_LGXCreditNotes" />
+                    <om:Property Name="MessageName" Value="msg_LGXCreditNotes" />
+                    <om:Property Name="OperationName" Value="FILE" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_CreditNotes" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="57d2828f-4cc0-479c-8657-a3e038027537" ParentLink="ServiceBody_Statement" LowerBound="51.1" HigherBound="57.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_CreditNotesReq" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="e153ef7e-4eb8-4f0b-be74-bc07d3b5e184" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="56.1">
+                        <om:Property Name="ClassName" Value="Visy.Middleware.LGX.PactGroup.Maps.LGXCreditNotes_To_cXMLInvoice" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_CreditNotes" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="MessagePartRef" OID="fe3eacb4-07cc-4302-8a95-9ae808eab81b" ParentLink="Transform_InputMessagePartRef" LowerBound="55.123" HigherBound="55.145">
+                            <om:Property Name="MessageRef" Value="msg_LGXCreditNotes" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="272e6e62-7237-478f-ba58-f804a464d507" ParentLink="Transform_OutputMessagePartRef" LowerBound="55.28" HigherBound="55.52">
+                            <om:Property Name="MessageRef" Value="msg_AribaCreditNotes" />
+                            <om:Property Name="PartRef" Value="XML" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="b4af74ee-2fdc-4044-92d2-31a242700524" ParentLink="Construct_MessageRef" LowerBound="52.23" HigherBound="52.43">
+                        <om:Property Name="Ref" Value="msg_AribaCreditNotes" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="5671f102-401f-416b-a325-66e91560488c" ParentLink="ServiceBody_Statement" LowerBound="57.1" HigherBound="61.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_AribaCreditNotes.XML;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.PactGroup.CreditNotes: Credit Notes Request: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Send" OID="17b93b71-c5af-4587-b47d-5c308df36a70" ParentLink="ServiceBody_Statement" LowerBound="61.1" HigherBound="63.1">
+                    <om:Property Name="PortName" Value="Port_AribaArchive" />
+                    <om:Property Name="MessageName" Value="msg_AribaCreditNotes" />
+                    <om:Property Name="OperationName" Value="Archive" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_Archive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="170ef2eb-f1aa-43bc-b408-2967641211f0" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="65.1">
+                    <om:Property Name="PortName" Value="Port_AribaCreditNotes" />
+                    <om:Property Name="MessageName" Value="msg_AribaCreditNotes" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_CreditNotesReq" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="80e0c3f6-4bff-458b-823e-c5c3eb21f6d4" ParentLink="ServiceBody_Statement" LowerBound="65.1" HigherBound="67.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="Port_AribaCreditNotes" />
+                    <om:Property Name="MessageName" Value="msg_Resp" />
+                    <om:Property Name="OperationName" Value="HTTP" />
+                    <om:Property Name="OperationMessageName" Value="Response" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rcv_CreditNotesRes" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="121d5293-2f24-495f-964a-3fa14ac1e367" ParentLink="ServiceBody_Statement" LowerBound="67.1" HigherBound="71.1">
+                    <om:Property Name="Expression" Value="v_Xml = new System.Xml.XmlDocument();&#xD;&#xA;v_Xml = msg_Resp;&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;BizTalkApp&quot;, &quot;LGX.PactGroup.CreditNotes: Credit Notes Response: &quot; + v_Xml.OuterXml);" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Log Event" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c0e215aa-8075-4422-bfee-ddb7f9ab03c4" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="36.1" HigherBound="38.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.PortType_LGXCreditNotes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_LGXCreditNotes" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="69e1faad-0b75-4880-9687-49d71efa07a2" ParentLink="PortDeclaration_CLRAttribute" LowerBound="36.1" HigherBound="37.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="8fdffd4e-513f-480f-b13d-8169ae8bf9ca" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="38.1" HigherBound="40.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="27" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.PortType_AribaCreditNotes" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_AribaCreditNotes" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="8e2742bd-8598-4cf1-b3de-d0d0c73fb6d1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="38.1" HigherBound="39.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="6a21248e-4f32-4f3f-81fe-a523a4074a18" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="40.1" HigherBound="42.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="21" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.PortType_AribaArchive" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_AribaArchive" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="431c9e9f-9954-4057-a00b-6acd726bf5f4" ParentLink="PortDeclaration_CLRAttribute" LowerBound="40.1" HigherBound="41.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="3a9cf1c2-88ee-47f8-a7c4-cb45fb0ef220" ParentLink="Module_PortType" LowerBound="12.1" HigherBound="19.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_LGXCreditNotes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1ffb4b4d-1a45-4313-8bfa-975d1bab9b3b" ParentLink="PortType_OperationDeclaration" LowerBound="14.1" HigherBound="18.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="FILE" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="d04e3dd0-fe3d-4514-b803-aa4acb4f35a7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="16.13" HigherBound="16.29">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.m_LGXCreditNotes" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="df0eb911-78e7-4b9a-8797-95b5c999a916" ParentLink="Module_PortType" LowerBound="19.1" HigherBound="26.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AribaCreditNotes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="e157432a-5e05-4333-aaa7-c22d041ed9aa" ParentLink="PortType_OperationDeclaration" LowerBound="21.1" HigherBound="25.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="HTTP" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c8a26dc6-c924-4b00-b60d-960118a48d1c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="23.13" HigherBound="23.31">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.m_AribaCreditNotes" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="1da9174c-da73-4afd-bacc-d8be7b12644d" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="23.33" HigherBound="23.55">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="fdab282e-dd5f-430d-8a96-52319d099ae5" ParentLink="Module_PortType" LowerBound="26.1" HigherBound="33.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Public" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AribaArchive" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="964fe141-14e4-47c0-b7c9-8202afac9a21" ParentLink="PortType_OperationDeclaration" LowerBound="28.1" HigherBound="32.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Archive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1df3c2fb-d0ac-49c5-ac2e-2ca4e44246ff" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="30.13" HigherBound="30.31">
+                    <om:Property Name="Ref" Value="Visy.Middleware.LGX.PactGroup.Orchestrations.m_AribaCreditNotes" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Visy.Middleware.LGX.PactGroup.Orchestrations
+{
+    internal messagetype m_LGXCreditNotes
+    {
+        body Visy.Middleware.Common.Schemas.LGX.CREDITNOTE XML;
+    };
+    internal messagetype m_AribaCreditNotes
+    {
+        body Visy.Middleware.Schemas.cXML_1_2_031.InvoiceDetail_1_2_031.cXML XML;
+    };
+    internal porttype PortType_LGXCreditNotes
+    {
+        oneway FILE
+        {
+            m_LGXCreditNotes
+        };
+    };
+    public porttype PortType_AribaCreditNotes
+    {
+        requestresponse HTTP
+        {
+            m_AribaCreditNotes, System.Xml.XmlDocument
+        };
+    };
+    public porttype PortType_AribaArchive
+    {
+        oneway Archive
+        {
+            m_AribaCreditNotes
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ProcessCreditNotes
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_LGXCreditNotes Port_LGXCreditNotes;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_AribaCreditNotes Port_AribaCreditNotes;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_AribaArchive Port_AribaArchive;
+        message m_LGXCreditNotes msg_LGXCreditNotes;
+        message m_AribaCreditNotes msg_AribaCreditNotes;
+        message System.Xml.XmlDocument msg_Resp;
+        System.Xml.XmlDocument v_Xml;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2fe92e99-ba0d-4bed-a091-7c7a1ae519f3")]
+            activate receive (Port_LGXCreditNotes.FILE, msg_LGXCreditNotes);
+            v_Xml = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("57d2828f-4cc0-479c-8657-a3e038027537")]
+            construct msg_AribaCreditNotes
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e153ef7e-4eb8-4f0b-be74-bc07d3b5e184")]
+                transform (msg_AribaCreditNotes.XML) = Visy.Middleware.LGX.PactGroup.Maps.LGXCreditNotes_To_cXMLInvoice (msg_LGXCreditNotes.XML);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5671f102-401f-416b-a325-66e91560488c")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_AribaCreditNotes.XML;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.PactGroup.CreditNotes: Credit Notes Request: " + v_Xml.OuterXml);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("17b93b71-c5af-4587-b47d-5c308df36a70")]
+            send (Port_AribaArchive.Archive, msg_AribaCreditNotes);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("170ef2eb-f1aa-43bc-b408-2967641211f0")]
+            send (Port_AribaCreditNotes.HTTP, msg_AribaCreditNotes);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("80e0c3f6-4bff-458b-823e-c5c3eb21f6d4")]
+            receive (Port_AribaCreditNotes.HTTP, msg_Resp);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("121d5293-2f24-495f-964a-3fa14ac1e367")]
+            v_Xml = new System.Xml.XmlDocument();
+            v_Xml = msg_Resp;
+            System.Diagnostics.EventLog.WriteEntry("BizTalkApp", "LGX.PactGroup.CreditNotes: Credit Notes Response: " + v_Xml.OuterXml);
+        }
+    }
+}
+
